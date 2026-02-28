@@ -1,0 +1,4 @@
+# coding=utf-8
+
+VERTICAL=1
+HORIZONTAL=-1

@@ -1,0 +1,9 @@
+.ipynb_checkpoints/
+__pycache__/
+*.update
+looper.log
+looper.stop
+*.ipynb
+token.json
+*.xlsx
+*.error
