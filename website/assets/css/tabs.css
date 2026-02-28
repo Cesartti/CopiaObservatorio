@@ -1,0 +1,46 @@
+.tabButton, .active {
+	font-family: 'QuickSand' sans-serif;
+	font-size: 1.5em;
+	border: 0;
+	display: block;
+	width: 100%;
+	padding: 5px;
+	transition: 0.3s;
+}
+
+.tabButton {
+	font-family: 'QuickSand' sans-serif;
+	border: 1px solid #ffffff;
+	color: #ffffff;
+	cursor: pointer;
+}
+
+.active {
+	cursor: normal;
+}
+
+.tabContent {
+	padding: 10px;
+	padding-top: 40px;
+	background-color: #f1f1f1;
+	border: 1px solid #ccc;
+	animation: fadeEffect 1s;
+}
+
+.tabLegend {
+	padding-bottom: 50px;
+}
+
+.popup {
+	padding: 6px 8px;
+	font: 14px/16px Arial, Helvetica, sans-serif;
+	background: white;
+	background: rgba(255,255,255,0.8);
+	box-shadow: 0 0 15px rgba(0,0,0,0.2);
+	border-radius: 5px;
+}
+
+@keyframes fadeEffect {
+	from {opacity: 0;}
+	to {opacity: 1;}
+}

@@ -1,0 +1,33 @@
+#container{
+	font-size:16px;
+	text-align: center;
+}
+
+th, td {
+	border: 1px solid;
+	padding: 5px;
+}
+
+td {
+	padding: 10px;
+	text-align: center;
+}
+
+.clasificacion {
+	margin: 50px;
+	border-collapse: collapse;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#source{
+	font-style: italic;
+	color: #aaaaaa;
+	font-size:.8em;
+	margin: 1rem 0;
+	text-align: center;
+}
+
+.foot-container {
+    margin: 1rem 0;
+}

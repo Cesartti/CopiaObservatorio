@@ -1,0 +1,340 @@
+/* ============================================================
+   ESTILOS GENERALES DE TABS ECONÓMICO
+   ============================================================ */
+
+/* Wrapper */
+.econ-tabs-wrapper {
+    margin-top: 2rem;
+}
+
+/* Tabs Bootstrap mejoradas */
+.nav-tabs {
+    border-bottom: none;
+    gap: 1rem;
+}
+
+.econ-tab {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 170px;
+    padding: 1rem 1.5rem;
+    border-radius: 15px 15px 0 0;
+    background: #ffffff;
+    border: none;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+    font-weight: bold;
+    transition: all .25s ease;
+    color: #333;
+}
+
+.econ-tab__icon {
+    font-size: 2rem;
+}
+
+.econ-tab:hover {
+    transform: translateY(-3px);
+}
+
+/* TAB ACTIVO */
+.econ-tab.active {
+    background: #ED9A15; /* Naranja institucional */
+    color: #fff;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* ============================================================
+   ESTILOS DE PANEL Y FONDOS POR TAB (ALTERNANCIA)
+   ============================================================ */
+
+/* Alternancia automática:
+   - TAB 1 = amarillo
+   - TAB 2 = blanco
+   - TAB 3 = amarillo
+   - TAB 4 = blanco
+*/
+
+#tablero.econ-pane       { background: #FDE38A !important; }
+#hojavida.econ-pane      { background: #ffffff !important; }
+#categorias.econ-pane    { background: #FDE38A !important; }
+#datalake.econ-pane      { background: #ffffff !important; }
+
+/* Panel contenedor */
+.econ-pane {
+    padding: 2rem;
+    border-radius: 0 0 15px 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+    border: 1px solid rgba(0,0,0,0.1);
+}
+
+/* ============================================================
+   ACORDEÓN DE CATEGORÍAS
+   ============================================================ */
+
+.accordion-item {
+    border-bottom: 1px solid #ddd;
+    margin-top: 10px;
+}
+
+.accordion-button {
+    width: 100%;
+    text-align: left;
+    background: #fffbe6;
+    border: none;
+    padding: 14px;
+    font-size: 17px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: background .3s ease;
+}
+
+.accordion-button:hover {
+    background: #ffe68c;
+}
+
+.accordion-button.active {
+    background: #ED9A15;
+    color: white;
+}
+
+.accordion-content {
+    display: none;
+    padding: 15px;
+    background: #fffdf2;
+    border-radius: 0 0 10px 10px;
+    border: 1px solid #f0d97c;
+}
+
+.icon-list-items li {
+    list-style: none;
+    padding: 7px 0;
+    font-size: 15px;
+}
+
+.icon-list-items li a {
+    text-decoration: none;
+    color: #333;
+}
+
+.icon-list-items li a:hover {
+    text-decoration: underline;
+}
+
+/* ============================================================
+   DATALAKE — LISTAS, ICONOS, CARDS, DOWNLOAD
+   ============================================================ */
+
+.datalake-title {
+    color: #ED9A15 !important;
+    font-weight: 800;
+}
+
+#datalake .description {
+    color: #444 !important;
+}
+
+#datalake a {
+    color: #ED9A15 !important;
+    font-weight: 600;
+}
+
+#datalake a:hover {
+    color: #b66f0c !important;
+    text-decoration: underline;
+}
+
+.datalake-list {
+    margin-top: 2rem;
+}
+
+.datalake-block {
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid rgba(0,0,0,0.08);
+    transition: all .25s ease;
+    padding: 25px;
+}
+
+.datalake-block:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+.dl-icon {
+    font-size: 1.4rem;
+    margin-right: 6px;
+    color: #ED9A15 !important;
+}
+
+.dl-text {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.datalake-ul {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0 0 0;
+}
+
+.datalake-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.datalake-item:last-child {
+    border-bottom: none;
+}
+
+.dl-download-btn {
+    border-radius: 8px;
+    padding: 5px 12px;
+    font-size: 14px;
+}
+
+.dl-download-btn:hover {
+    background: #333;
+    color: #fff;
+}
+
+/* ============================================================
+   IFRAME DEL TABLERO
+   ============================================================ */
+
+.iframe-full {
+    width: 100%;
+    height: 80vh;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 768px) {
+
+    .econ-tab {
+        min-width: 140px;
+        padding: 0.8rem;
+    }
+
+    .econ-tab__icon {
+        font-size: 1.6rem;
+    }
+
+    .econ-pane {
+        padding: 1.2rem;
+    }
+
+}
+/* REPARA EL ESPACIO VACÍO ANTES DEL BANNER */
+.section-indicador-top {
+    padding: 0 !important;
+    margin: 0 !important;
+    height: auto !important;
+}
+
+/* ELIMINA EL ESPACIO DE ARRIBA QUE SE CREÓ POR LOS TABS */
+.section-indicador {
+    margin-top: -40px !important;
+    padding-top: 0 !important;
+}
+
+/* ASEGURA QUE EL BANNER NO SE MUEVA */
+.section-indicador img,
+.banner-economico {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* EVITA QUE EL CONTENEDOR DE TABS EMPUJE HACIA ABAJO */
+.econ-tabs-wrapper {
+    margin-top: -10px !important;
+    padding-top: 0 !important;
+}
+.section-indicador .row {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+.section-indicador .col-12 {
+    margin-top: 0 !important;
+}
+
+
+/* ============================================
+   BANNER ECONÓMICO — OVERLAY + TEXTO ENCIMA
+============================================ */
+
+.banner-economico-wrapper {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.banner-economico {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Capa oscura encima del banner */
+.banner-economico-wrapper::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.45); /* MISMO NIVEL DE OSCURECIDO QUE SOCIAL */
+    z-index: 1;
+}
+
+/* Contenedor del texto */
+.banner-economico-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    text-align: center;
+    padding: 0 20px;
+    width: 85%;
+}
+
+/* Título */
+.banner-economico-text h2 {
+    color: #fff;
+    font-size: 2.8rem;
+    font-weight: 800;
+    text-shadow: 0 3px 8px rgba(0,0,0,0.4);
+}
+
+/* Descripción */
+.banner-economico-text p {
+    color: #fff;
+    font-size: 1.2rem;
+    margin-top: 15px;
+    line-height: 1.5;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.4);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .banner-economico-text h2 {
+        font-size: 2rem;
+    }
+
+    .banner-economico-text p {
+        font-size: 1rem;
+    }
+}

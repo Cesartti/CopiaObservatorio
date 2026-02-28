@@ -1,0 +1,3691 @@
+geo,Municipio,Año,Nivel,Tasa
+15001,Tunja,2015,Total,0.074300
+15022,Almeida,2015,Total,0.027300
+15047,Aquitania,2015,Total,0.033300
+15051,Arcabuco,2015,Total,0.000000
+15087,Belén,2015,Total,0.000600
+15090,Berbeo,2015,Total,0.006600
+15092,Betéitiva,2015,Total,0.006000
+15097,Boavita,2015,Total,0.000900
+15104,Boyacá,2015,Total,0.005500
+15106,Briceño,2015,Total,0.000000
+15109,Buenavista,2015,Total,0.049400
+15114,Busbanzá,2015,Total,0.000000
+15131,Caldas,2015,Total,0.008900
+15135,Campohermoso,2015,Total,0.001900
+15162,Cerinza,2015,Total,0.004600
+15172,Chinavita,2015,Total,0.030700
+15176,Chiquinquirá,2015,Total,0.006100
+15180,Chiscas,2015,Total,0.000000
+15183,Chita,2015,Total,0.014400
+15185,Chitaraque,2015,Total,0.000000
+15187,Chivatá,2015,Total,0.024000
+15189,Ciénega,2015,Total,0.008300
+15204,Cómbita,2015,Total,0.011700
+15212,Coper,2015,Total,0.017800
+15215,Corrales,2015,Total,0.000000
+15218,Covarachía,2015,Total,0.011800
+15223,Cubará,2015,Total,0.006600
+15224,Cucaita,2015,Total,0.019300
+15226,Cuítiva,2015,Total,0.000000
+15232,Chíquiza,2015,Total,0.000000
+15236,Chivor,2015,Total,0.064600
+15238,Duitama,2015,Total,0.074800
+15244,El Cocuy,2015,Total,0.024000
+15248,El Espino,2015,Total,0.022200
+15272,Firavitoba,2015,Total,0.012800
+15276,Floresta,2015,Total,0.003300
+15293,Gachantivá,2015,Total,0.000000
+15296,Gameza,2015,Total,0.071400
+15299,Garagoa,2015,Total,0.007200
+15317,Guacamayas,2015,Total,0.006500
+15322,Guateque,2015,Total,0.000500
+15325,Guayatá,2015,Total,0.000000
+15332,Güicán,2015,Total,0.000000
+15362,Iza,2015,Total,0.026100
+15367,Jenesano,2015,Total,0.003800
+15368,Jericó,2015,Total,0.000000
+15377,Labranzagrande,2015,Total,0.000000
+15380,La Capilla,2015,Total,0.024000
+15401,La Victoria,2015,Total,0.021300
+15403,La Uvita,2015,Total,0.000000
+15407,Villa de Leyva,2015,Total,0.006400
+15425,Macanal,2015,Total,0.040400
+15442,Maripí,2015,Total,0.011700
+15455,Miraflores,2015,Total,0.004200
+15464,Mongua,2015,Total,0.007700
+15466,Monguí,2015,Total,0.007400
+15469,Moniquirá,2015,Total,0.007100
+15476,Motavita,2015,Total,0.000000
+15480,Muzo,2015,Total,0.003100
+15491,Nobsa,2015,Total,0.007400
+15494,Nuevo Colón,2015,Total,0.008800
+15500,Oicatá,2015,Total,0.004500
+15507,Otanche,2015,Total,0.011400
+15511,Pachavita,2015,Total,0.039300
+15514,Páez,2015,Total,0.000000
+15516,Paipa,2015,Total,0.007600
+15518,Pajarito,2015,Total,0.035600
+15522,Panqueba,2015,Total,0.007100
+15531,Pauna,2015,Total,0.000000
+15533,Paya,2015,Total,0.022000
+15537,Paz de Río,2015,Total,0.000000
+15542,Pesca,2015,Total,0.003700
+15550,Pisba,2015,Total,0.002900
+15572,Puerto Boyacá,2015,Total,0.016300
+15580,Quípama,2015,Total,0.038100
+15599,Ramiriquí,2015,Total,0.003400
+15600,Ráquira,2015,Total,0.008100
+15621,Rondón,2015,Total,0.024000
+15632,Saboyá,2015,Total,0.009300
+15638,Sáchica,2015,Total,0.000000
+15646,Samacá,2015,Total,0.015800
+15660,San Eduardo,2015,Total,0.025500
+15664,San José de Pare,2015,Total,0.002500
+15667,San Luis de Gaceno,2015,Total,0.012400
+15673,San Mateo,2015,Total,0.008800
+15676,San Miguel de Sema,2015,Total,0.014600
+15681,San Pablo de Borbur,2015,Total,0.002000
+15686,Santana,2015,Total,0.054900
+15690,Santa María,2015,Total,0.039000
+15693,Santa Rosa de Viterbo,2015,Total,0.000600
+15696,Santa Sofía,2015,Total,0.023800
+15720,Sativanorte,2015,Total,0.000000
+15723,Sativasur,2015,Total,0.000000
+15740,Siachoque,2015,Total,0.006700
+15753,Soatá,2015,Total,0.000600
+15755,Socotá,2015,Total,0.009200
+15757,Socha,2015,Total,0.001900
+15759,Sogamoso,2015,Total,0.039000
+15761,Somondoco,2015,Total,0.000000
+15762,Sora,2015,Total,0.013600
+15763,Sotaquirá,2015,Total,0.005800
+15764,Soracá,2015,Total,0.009800
+15774,Susacón,2015,Total,0.000000
+15776,Sutamarchán,2015,Total,0.002900
+15778,Sutatenza,2015,Total,0.000000
+15790,Tasco,2015,Total,0.004100
+15798,Tenza,2015,Total,0.022200
+15804,Tibaná,2015,Total,0.016800
+15806,Tibasosa,2015,Total,0.007100
+15808,Tinjacá,2015,Total,0.000000
+15810,Tipacoque,2015,Total,0.007700
+15814,Toca,2015,Total,0.028300
+15816,Togüí,2015,Total,0.054000
+15820,Tópaga,2015,Total,0.001300
+15822,Tota,2015,Total,0.006100
+15832,Tununguá,2015,Total,0.000000
+15835,Turmequé,2015,Total,0.003100
+15837,Tuta,2015,Total,0.007000
+15839,Tutazá,2015,Total,0.000000
+15842,Umbita,2015,Total,0.002000
+15861,Ventaquemada,2015,Total,0.000700
+15879,Viracachá,2015,Total,0.000000
+15897,Zetaquira,2015,Total,0.007900
+15001,Tunja,2015,Transición,0.026100
+15022,Almeida,2015,Transición,0.000000
+15047,Aquitania,2015,Transición,0.003500
+15051,Arcabuco,2015,Transición,0.000000
+15087,Belén,2015,Transición,0.000000
+15090,Berbeo,2015,Transición,0.000000
+15092,Betéitiva,2015,Transición,0.000000
+15097,Boavita,2015,Transición,0.000000
+15104,Boyacá,2015,Transición,0.000000
+15106,Briceño,2015,Transición,0.000000
+15109,Buenavista,2015,Transición,0.000000
+15114,Busbanzá,2015,Transición,0.000000
+15131,Caldas,2015,Transición,0.000000
+15135,Campohermoso,2015,Transición,0.000000
+15162,Cerinza,2015,Transición,0.000000
+15172,Chinavita,2015,Transición,0.000000
+15176,Chiquinquirá,2015,Transición,0.000000
+15180,Chiscas,2015,Transición,0.000000
+15183,Chita,2015,Transición,0.000000
+15185,Chitaraque,2015,Transición,0.000000
+15187,Chivatá,2015,Transición,0.000000
+15189,Ciénega,2015,Transición,0.000000
+15204,Cómbita,2015,Transición,0.000000
+15212,Coper,2015,Transición,0.018200
+15215,Corrales,2015,Transición,0.000000
+15218,Covarachía,2015,Transición,0.000000
+15223,Cubará,2015,Transición,0.026300
+15224,Cucaita,2015,Transición,0.000000
+15226,Cuítiva,2015,Transición,0.000000
+15232,Chíquiza,2015,Transición,0.000000
+15236,Chivor,2015,Transición,0.000000
+15238,Duitama,2015,Transición,0.030200
+15244,El Cocuy,2015,Transición,0.000000
+15248,El Espino,2015,Transición,0.000000
+15272,Firavitoba,2015,Transición,0.000000
+15276,Floresta,2015,Transición,0.000000
+15293,Gachantivá,2015,Transición,0.000000
+15296,Gameza,2015,Transición,0.000000
+15299,Garagoa,2015,Transición,0.000000
+15317,Guacamayas,2015,Transición,0.000000
+15322,Guateque,2015,Transición,0.000000
+15325,Guayatá,2015,Transición,0.000000
+15332,Güicán,2015,Transición,0.000000
+15362,Iza,2015,Transición,0.000000
+15367,Jenesano,2015,Transición,0.013200
+15368,Jericó,2015,Transición,0.000000
+15377,Labranzagrande,2015,Transición,0.000000
+15380,La Capilla,2015,Transición,0.000000
+15401,La Victoria,2015,Transición,0.000000
+15403,La Uvita,2015,Transición,0.000000
+15407,Villa de Leyva,2015,Transición,0.000000
+15425,Macanal,2015,Transición,0.000000
+15442,Maripí,2015,Transición,0.000000
+15455,Miraflores,2015,Transición,0.000000
+15464,Mongua,2015,Transición,0.000000
+15466,Monguí,2015,Transición,0.000000
+15469,Moniquirá,2015,Transición,0.000000
+15476,Motavita,2015,Transición,0.000000
+15480,Muzo,2015,Transición,0.000000
+15491,Nobsa,2015,Transición,0.000000
+15494,Nuevo Colón,2015,Transición,0.000000
+15500,Oicatá,2015,Transición,0.000000
+15507,Otanche,2015,Transición,0.000000
+15511,Pachavita,2015,Transición,0.000000
+15514,Páez,2015,Transición,0.000000
+15516,Paipa,2015,Transición,0.000000
+15518,Pajarito,2015,Transición,0.000000
+15522,Panqueba,2015,Transición,0.000000
+15531,Pauna,2015,Transición,0.000000
+15533,Paya,2015,Transición,0.000000
+15537,Paz de Río,2015,Transición,0.000000
+15542,Pesca,2015,Transición,0.000000
+15550,Pisba,2015,Transición,0.000000
+15572,Puerto Boyacá,2015,Transición,0.000000
+15580,Quípama,2015,Transición,0.000000
+15599,Ramiriquí,2015,Transición,0.000000
+15600,Ráquira,2015,Transición,0.000000
+15621,Rondón,2015,Transición,0.000000
+15632,Saboyá,2015,Transición,0.000000
+15638,Sáchica,2015,Transición,0.000000
+15646,Samacá,2015,Transición,0.000000
+15660,San Eduardo,2015,Transición,0.000000
+15664,San José de Pare,2015,Transición,0.000000
+15667,San Luis de Gaceno,2015,Transición,0.000000
+15673,San Mateo,2015,Transición,0.000000
+15676,San Miguel de Sema,2015,Transición,0.000000
+15681,San Pablo de Borbur,2015,Transición,0.000000
+15686,Santana,2015,Transición,0.000000
+15690,Santa María,2015,Transición,0.000000
+15693,Santa Rosa de Viterbo,2015,Transición,0.000000
+15696,Santa Sofía,2015,Transición,0.000000
+15720,Sativanorte,2015,Transición,0.000000
+15723,Sativasur,2015,Transición,0.000000
+15740,Siachoque,2015,Transición,0.000000
+15753,Soatá,2015,Transición,0.000000
+15755,Socotá,2015,Transición,0.000000
+15757,Socha,2015,Transición,0.000000
+15759,Sogamoso,2015,Transición,0.007400
+15761,Somondoco,2015,Transición,0.000000
+15762,Sora,2015,Transición,0.000000
+15763,Sotaquirá,2015,Transición,0.000000
+15764,Soracá,2015,Transición,0.000000
+15774,Susacón,2015,Transición,0.000000
+15776,Sutamarchán,2015,Transición,0.000000
+15778,Sutatenza,2015,Transición,0.000000
+15790,Tasco,2015,Transición,0.000000
+15798,Tenza,2015,Transición,0.000000
+15804,Tibaná,2015,Transición,0.000000
+15806,Tibasosa,2015,Transición,0.000000
+15808,Tinjacá,2015,Transición,0.000000
+15810,Tipacoque,2015,Transición,0.000000
+15814,Toca,2015,Transición,0.013300
+15816,Togüí,2015,Transición,0.000000
+15820,Tópaga,2015,Transición,0.000000
+15822,Tota,2015,Transición,0.000000
+15832,Tununguá,2015,Transición,0.000000
+15835,Turmequé,2015,Transición,0.010100
+15837,Tuta,2015,Transición,0.000000
+15839,Tutazá,2015,Transición,0.000000
+15842,Umbita,2015,Transición,0.000000
+15861,Ventaquemada,2015,Transición,0.000000
+15879,Viracachá,2015,Transición,0.000000
+15897,Zetaquira,2015,Transición,0.000000
+15001,Tunja,2015,Primaria,0.040500
+15022,Almeida,2015,Primaria,0.036000
+15047,Aquitania,2015,Primaria,0.017400
+15051,Arcabuco,2015,Primaria,0.000000
+15087,Belén,2015,Primaria,0.000000
+15090,Berbeo,2015,Primaria,0.000000
+15092,Betéitiva,2015,Primaria,0.016100
+15097,Boavita,2015,Primaria,0.000000
+15104,Boyacá,2015,Primaria,0.002400
+15106,Briceño,2015,Primaria,0.000000
+15109,Buenavista,2015,Primaria,0.053600
+15114,Busbanzá,2015,Primaria,0.000000
+15131,Caldas,2015,Primaria,0.017700
+15135,Campohermoso,2015,Primaria,0.000000
+15162,Cerinza,2015,Primaria,0.003700
+15172,Chinavita,2015,Primaria,0.029400
+15176,Chiquinquirá,2015,Primaria,0.005700
+15180,Chiscas,2015,Primaria,0.000000
+15183,Chita,2015,Primaria,0.018100
+15185,Chitaraque,2015,Primaria,0.000000
+15187,Chivatá,2015,Primaria,0.021800
+15189,Ciénega,2015,Primaria,0.010000
+15204,Cómbita,2015,Primaria,0.014900
+15212,Coper,2015,Primaria,0.003300
+15215,Corrales,2015,Primaria,0.000000
+15218,Covarachía,2015,Primaria,0.008500
+15223,Cubará,2015,Primaria,0.007400
+15224,Cucaita,2015,Primaria,0.023300
+15226,Cuítiva,2015,Primaria,0.000000
+15232,Chíquiza,2015,Primaria,0.000000
+15236,Chivor,2015,Primaria,0.070900
+15238,Duitama,2015,Primaria,0.058500
+15244,El Cocuy,2015,Primaria,0.029400
+15248,El Espino,2015,Primaria,0.004700
+15272,Firavitoba,2015,Primaria,0.005300
+15276,Floresta,2015,Primaria,0.003900
+15293,Gachantivá,2015,Primaria,0.000000
+15296,Gameza,2015,Primaria,0.000000
+15299,Garagoa,2015,Primaria,0.007500
+15317,Guacamayas,2015,Primaria,0.000000
+15322,Guateque,2015,Primaria,0.000000
+15325,Guayatá,2015,Primaria,0.000000
+15332,Güicán,2015,Primaria,0.000000
+15362,Iza,2015,Primaria,0.006900
+15367,Jenesano,2015,Primaria,0.005400
+15368,Jericó,2015,Primaria,0.000000
+15377,Labranzagrande,2015,Primaria,0.000000
+15380,La Capilla,2015,Primaria,0.000000
+15401,La Victoria,2015,Primaria,0.019200
+15403,La Uvita,2015,Primaria,0.025100
+15407,Villa de Leyva,2015,Primaria,0.004700
+15425,Macanal,2015,Primaria,0.022800
+15442,Maripí,2015,Primaria,0.005700
+15455,Miraflores,2015,Primaria,0.003500
+15464,Mongua,2015,Primaria,0.011900
+15466,Monguí,2015,Primaria,0.002800
+15469,Moniquirá,2015,Primaria,0.004600
+15476,Motavita,2015,Primaria,0.000000
+15480,Muzo,2015,Primaria,0.004800
+15491,Nobsa,2015,Primaria,0.004600
+15494,Nuevo Colón,2015,Primaria,0.013000
+15500,Oicatá,2015,Primaria,0.005300
+15507,Otanche,2015,Primaria,0.007800
+15511,Pachavita,2015,Primaria,0.021400
+15514,Páez,2015,Primaria,0.000000
+15516,Paipa,2015,Primaria,0.008900
+15518,Pajarito,2015,Primaria,0.043500
+15522,Panqueba,2015,Primaria,0.000000
+15531,Pauna,2015,Primaria,0.000000
+15533,Paya,2015,Primaria,0.029000
+15537,Paz de Río,2015,Primaria,0.000000
+15542,Pesca,2015,Primaria,0.000000
+15550,Pisba,2015,Primaria,0.005300
+15572,Puerto Boyacá,2015,Primaria,0.016800
+15580,Quípama,2015,Primaria,0.058200
+15599,Ramiriquí,2015,Primaria,0.000000
+15600,Ráquira,2015,Primaria,0.009400
+15621,Rondón,2015,Primaria,0.014100
+15632,Saboyá,2015,Primaria,0.008400
+15638,Sáchica,2015,Primaria,0.000000
+15646,Samacá,2015,Primaria,0.008800
+15660,San Eduardo,2015,Primaria,0.023100
+15664,San José de Pare,2015,Primaria,0.002800
+15667,San Luis de Gaceno,2015,Primaria,0.011000
+15673,San Mateo,2015,Primaria,0.015900
+15676,San Miguel de Sema,2015,Primaria,0.005900
+15681,San Pablo de Borbur,2015,Primaria,0.004500
+15686,Santana,2015,Primaria,0.056900
+15690,Santa María,2015,Primaria,0.058000
+15693,Santa Rosa de Viterbo,2015,Primaria,0.001400
+15696,Santa Sofía,2015,Primaria,0.018500
+15720,Sativanorte,2015,Primaria,0.000000
+15723,Sativasur,2015,Primaria,0.000000
+15740,Siachoque,2015,Primaria,0.006700
+15753,Soatá,2015,Primaria,0.001500
+15755,Socotá,2015,Primaria,0.018800
+15757,Socha,2015,Primaria,0.001600
+15759,Sogamoso,2015,Primaria,0.026800
+15761,Somondoco,2015,Primaria,0.000000
+15762,Sora,2015,Primaria,0.020200
+15763,Sotaquirá,2015,Primaria,0.004100
+15764,Soracá,2015,Primaria,0.022200
+15774,Susacón,2015,Primaria,0.000000
+15776,Sutamarchán,2015,Primaria,0.006700
+15778,Sutatenza,2015,Primaria,0.000000
+15790,Tasco,2015,Primaria,0.003600
+15798,Tenza,2015,Primaria,0.029100
+15804,Tibaná,2015,Primaria,0.015900
+15806,Tibasosa,2015,Primaria,0.009100
+15808,Tinjacá,2015,Primaria,0.000000
+15810,Tipacoque,2015,Primaria,0.015700
+15814,Toca,2015,Primaria,0.019300
+15816,Togüí,2015,Primaria,0.022100
+15820,Tópaga,2015,Primaria,0.000000
+15822,Tota,2015,Primaria,0.003900
+15832,Tununguá,2015,Primaria,0.000000
+15835,Turmequé,2015,Primaria,0.004800
+15837,Tuta,2015,Primaria,0.001200
+15839,Tutazá,2015,Primaria,0.000000
+15842,Umbita,2015,Primaria,0.000000
+15861,Ventaquemada,2015,Primaria,0.001600
+15879,Viracachá,2015,Primaria,0.000000
+15897,Zetaquira,2015,Primaria,0.014800
+15001,Tunja,2015,Secundaria,0.000000
+15022,Almeida,2015,Secundaria,0.036400
+15047,Aquitania,2015,Secundaria,0.057100
+15051,Arcabuco,2015,Secundaria,0.000000
+15087,Belén,2015,Secundaria,0.001600
+15090,Berbeo,2015,Secundaria,0.017700
+15092,Betéitiva,2015,Secundaria,0.000000
+15097,Boavita,2015,Secundaria,0.002200
+15104,Boyacá,2015,Secundaria,0.012800
+15106,Briceño,2015,Secundaria,0.000000
+15109,Buenavista,2015,Secundaria,0.070900
+15114,Busbanzá,2015,Secundaria,0.000000
+15131,Caldas,2015,Secundaria,0.004000
+15135,Campohermoso,2015,Secundaria,0.005100
+15162,Cerinza,2015,Secundaria,0.004200
+15172,Chinavita,2015,Secundaria,0.034200
+15176,Chiquinquirá,2015,Secundaria,0.008700
+15180,Chiscas,2015,Secundaria,0.000000
+15183,Chita,2015,Secundaria,0.013600
+15185,Chitaraque,2015,Secundaria,0.000000
+15187,Chivatá,2015,Secundaria,0.037600
+15189,Ciénega,2015,Secundaria,0.011300
+15204,Cómbita,2015,Secundaria,0.014800
+15212,Coper,2015,Secundaria,0.034200
+15215,Corrales,2015,Secundaria,0.000000
+15218,Covarachía,2015,Secundaria,0.022900
+15223,Cubará,2015,Secundaria,0.000000
+15224,Cucaita,2015,Secundaria,0.016200
+15226,Cuítiva,2015,Secundaria,0.000000
+15232,Chíquiza,2015,Secundaria,0.000000
+15236,Chivor,2015,Secundaria,0.078200
+15238,Duitama,2015,Secundaria,0.101900
+15244,El Cocuy,2015,Secundaria,0.029900
+15248,El Espino,2015,Secundaria,0.053900
+15272,Firavitoba,2015,Secundaria,0.026100
+15276,Floresta,2015,Secundaria,0.004400
+15293,Gachantivá,2015,Secundaria,0.000000
+15296,Gameza,2015,Secundaria,0.080900
+15299,Garagoa,2015,Secundaria,0.010800
+15317,Guacamayas,2015,Secundaria,0.017900
+15322,Guateque,2015,Secundaria,0.001500
+15325,Guayatá,2015,Secundaria,0.000000
+15332,Güicán,2015,Secundaria,0.000000
+15362,Iza,2015,Secundaria,0.076900
+15367,Jenesano,2015,Secundaria,0.001900
+15368,Jericó,2015,Secundaria,0.000000
+15377,Labranzagrande,2015,Secundaria,0.000000
+15380,La Capilla,2015,Secundaria,0.061800
+15401,La Victoria,2015,Secundaria,0.021700
+15403,La Uvita,2015,Secundaria,0.000000
+15407,Villa de Leyva,2015,Secundaria,0.009000
+15425,Macanal,2015,Secundaria,0.080200
+15442,Maripí,2015,Secundaria,0.022700
+15455,Miraflores,2015,Secundaria,0.003700
+15464,Mongua,2015,Secundaria,0.007100
+15466,Monguí,2015,Secundaria,0.013800
+15469,Moniquirá,2015,Secundaria,0.011900
+15476,Motavita,2015,Secundaria,0.000000
+15480,Muzo,2015,Secundaria,0.001400
+15491,Nobsa,2015,Secundaria,0.013600
+15494,Nuevo Colón,2015,Secundaria,0.002900
+15500,Oicatá,2015,Secundaria,0.006000
+15507,Otanche,2015,Secundaria,0.021700
+15511,Pachavita,2015,Secundaria,0.060200
+15514,Páez,2015,Secundaria,0.000000
+15516,Paipa,2015,Secundaria,0.008800
+15518,Pajarito,2015,Secundaria,0.047100
+15522,Panqueba,2015,Secundaria,0.018800
+15531,Pauna,2015,Secundaria,0.000000
+15533,Paya,2015,Secundaria,0.024300
+15537,Paz de Río,2015,Secundaria,0.000000
+15542,Pesca,2015,Secundaria,0.011000
+15550,Pisba,2015,Secundaria,0.000000
+15572,Puerto Boyacá,2015,Secundaria,0.022000
+15580,Quípama,2015,Secundaria,0.029100
+15599,Ramiriquí,2015,Secundaria,0.007400
+15600,Ráquira,2015,Secundaria,0.008200
+15621,Rondón,2015,Secundaria,0.049700
+15632,Saboyá,2015,Secundaria,0.008500
+15638,Sáchica,2015,Secundaria,0.000000
+15646,Samacá,2015,Secundaria,0.030700
+15660,San Eduardo,2015,Secundaria,0.040300
+15664,San José de Pare,2015,Secundaria,0.003500
+15667,San Luis de Gaceno,2015,Secundaria,0.017100
+15673,San Mateo,2015,Secundaria,0.007300
+15676,San Miguel de Sema,2015,Secundaria,0.011600
+15681,San Pablo de Borbur,2015,Secundaria,0.000000
+15686,Santana,2015,Secundaria,0.078500
+15690,Santa María,2015,Secundaria,0.039700
+15693,Santa Rosa de Viterbo,2015,Secundaria,0.000000
+15696,Santa Sofía,2015,Secundaria,0.039200
+15720,Sativanorte,2015,Secundaria,0.000000
+15723,Sativasur,2015,Secundaria,0.000000
+15740,Siachoque,2015,Secundaria,0.010000
+15753,Soatá,2015,Secundaria,0.000000
+15755,Socotá,2015,Secundaria,0.000000
+15757,Socha,2015,Secundaria,0.003400
+15759,Sogamoso,2015,Secundaria,0.064500
+15761,Somondoco,2015,Secundaria,0.000000
+15762,Sora,2015,Secundaria,0.013600
+15763,Sotaquirá,2015,Secundaria,0.011200
+15764,Soracá,2015,Secundaria,0.000000
+15774,Susacón,2015,Secundaria,0.000000
+15776,Sutamarchán,2015,Secundaria,0.000000
+15778,Sutatenza,2015,Secundaria,0.000000
+15790,Tasco,2015,Secundaria,0.004700
+15798,Tenza,2015,Secundaria,0.027400
+15804,Tibaná,2015,Secundaria,0.025400
+15806,Tibasosa,2015,Secundaria,0.007500
+15808,Tinjacá,2015,Secundaria,0.000000
+15810,Tipacoque,2015,Secundaria,0.004000
+15814,Toca,2015,Secundaria,0.047500
+15816,Togüí,2015,Secundaria,0.000000
+15820,Tópaga,2015,Secundaria,0.003500
+15822,Tota,2015,Secundaria,0.013900
+15832,Tununguá,2015,Secundaria,0.000000
+15835,Turmequé,2015,Secundaria,0.001600
+15837,Tuta,2015,Secundaria,0.016400
+15839,Tutazá,2015,Secundaria,0.000000
+15842,Umbita,2015,Secundaria,0.003600
+15861,Ventaquemada,2015,Secundaria,0.000000
+15879,Viracachá,2015,Secundaria,0.000000
+15897,Zetaquira,2015,Secundaria,0.005300
+15001,Tunja,2015,Edu_Media,0.036100
+15022,Almeida,2015,Edu_Media,0.000000
+15047,Aquitania,2015,Edu_Media,0.040000
+15051,Arcabuco,2015,Edu_Media,0.000000
+15087,Belén,2015,Edu_Media,0.000000
+15090,Berbeo,2015,Edu_Media,0.000000
+15092,Betéitiva,2015,Edu_Media,0.000000
+15097,Boavita,2015,Edu_Media,0.000000
+15104,Boyacá,2015,Edu_Media,0.000000
+15106,Briceño,2015,Edu_Media,0.000000
+15109,Buenavista,2015,Edu_Media,0.000000
+15114,Busbanzá,2015,Edu_Media,0.000000
+15131,Caldas,2015,Edu_Media,0.000000
+15135,Campohermoso,2015,Edu_Media,0.000000
+15162,Cerinza,2015,Edu_Media,0.010000
+15172,Chinavita,2015,Edu_Media,0.038000
+15176,Chiquinquirá,2015,Edu_Media,0.003500
+15180,Chiscas,2015,Edu_Media,0.000000
+15183,Chita,2015,Edu_Media,0.011400
+15185,Chitaraque,2015,Edu_Media,0.000000
+15187,Chivatá,2015,Edu_Media,0.000000
+15189,Ciénega,2015,Edu_Media,0.000000
+15204,Cómbita,2015,Edu_Media,0.000000
+15212,Coper,2015,Edu_Media,0.018200
+15215,Corrales,2015,Edu_Media,0.000000
+15218,Covarachía,2015,Edu_Media,0.000000
+15223,Cubará,2015,Edu_Media,0.000000
+15224,Cucaita,2015,Edu_Media,0.000000
+15226,Cuítiva,2015,Edu_Media,0.000000
+15232,Chíquiza,2015,Edu_Media,0.000000
+15236,Chivor,2015,Edu_Media,0.012500
+15238,Duitama,2015,Edu_Media,0.000000
+15244,El Cocuy,2015,Edu_Media,0.007000
+15248,El Espino,2015,Edu_Media,0.000000
+15272,Firavitoba,2015,Edu_Media,0.007800
+15276,Floresta,2015,Edu_Media,0.000000
+15293,Gachantivá,2015,Edu_Media,0.000000
+15296,Gameza,2015,Edu_Media,0.045900
+15299,Garagoa,2015,Edu_Media,0.000000
+15317,Guacamayas,2015,Edu_Media,0.000000
+15322,Guateque,2015,Edu_Media,0.000000
+15325,Guayatá,2015,Edu_Media,0.000000
+15332,Güicán,2015,Edu_Media,0.000000
+15362,Iza,2015,Edu_Media,0.000000
+15367,Jenesano,2015,Edu_Media,0.000000
+15368,Jericó,2015,Edu_Media,0.000000
+15377,Labranzagrande,2015,Edu_Media,0.000000
+15380,La Capilla,2015,Edu_Media,0.000000
+15401,La Victoria,2015,Edu_Media,0.047600
+15403,La Uvita,2015,Edu_Media,0.026000
+15407,Villa de Leyva,2015,Edu_Media,0.007500
+15425,Macanal,2015,Edu_Media,0.009400
+15442,Maripí,2015,Edu_Media,0.000000
+15455,Miraflores,2015,Edu_Media,0.009000
+15464,Mongua,2015,Edu_Media,0.000000
+15466,Monguí,2015,Edu_Media,0.006800
+15469,Moniquirá,2015,Edu_Media,0.005600
+15476,Motavita,2015,Edu_Media,0.000000
+15480,Muzo,2015,Edu_Media,0.003800
+15491,Nobsa,2015,Edu_Media,0.002800
+15494,Nuevo Colón,2015,Edu_Media,0.014200
+15500,Oicatá,2015,Edu_Media,0.000000
+15507,Otanche,2015,Edu_Media,0.000000
+15511,Pachavita,2015,Edu_Media,0.000000
+15514,Páez,2015,Edu_Media,0.000000
+15516,Paipa,2015,Edu_Media,0.003800
+15518,Pajarito,2015,Edu_Media,0.000000
+15522,Panqueba,2015,Edu_Media,0.000000
+15531,Pauna,2015,Edu_Media,0.000000
+15533,Paya,2015,Edu_Media,0.000000
+15537,Paz de Río,2015,Edu_Media,0.000000
+15542,Pesca,2015,Edu_Media,0.000000
+15550,Pisba,2015,Edu_Media,0.000000
+15572,Puerto Boyacá,2015,Edu_Media,0.005400
+15580,Quípama,2015,Edu_Media,0.016400
+15599,Ramiriquí,2015,Edu_Media,0.003100
+15600,Ráquira,2015,Edu_Media,0.007800
+15621,Rondón,2015,Edu_Media,0.000000
+15632,Saboyá,2015,Edu_Media,0.017300
+15638,Sáchica,2015,Edu_Media,0.000000
+15646,Samacá,2015,Edu_Media,0.012800
+15660,San Eduardo,2015,Edu_Media,0.000000
+15664,San José de Pare,2015,Edu_Media,0.000000
+15667,San Luis de Gaceno,2015,Edu_Media,0.007900
+15673,San Mateo,2015,Edu_Media,0.000000
+15676,San Miguel de Sema,2015,Edu_Media,0.056600
+15681,San Pablo de Borbur,2015,Edu_Media,0.000000
+15686,Santana,2015,Edu_Media,0.005000
+15690,Santa María,2015,Edu_Media,0.000000
+15693,Santa Rosa de Viterbo,2015,Edu_Media,0.000000
+15696,Santa Sofía,2015,Edu_Media,0.000000
+15720,Sativanorte,2015,Edu_Media,0.000000
+15723,Sativasur,2015,Edu_Media,0.000000
+15740,Siachoque,2015,Edu_Media,0.000000
+15753,Soatá,2015,Edu_Media,0.000000
+15755,Socotá,2015,Edu_Media,0.000000
+15757,Socha,2015,Edu_Media,0.000000
+15759,Sogamoso,2015,Edu_Media,0.020300
+15761,Somondoco,2015,Edu_Media,0.000000
+15762,Sora,2015,Edu_Media,0.000000
+15763,Sotaquirá,2015,Edu_Media,0.000000
+15764,Soracá,2015,Edu_Media,0.000000
+15774,Susacón,2015,Edu_Media,0.000000
+15776,Sutamarchán,2015,Edu_Media,0.000000
+15778,Sutatenza,2015,Edu_Media,0.000000
+15790,Tasco,2015,Edu_Media,0.006500
+15798,Tenza,2015,Edu_Media,0.000000
+15804,Tibaná,2015,Edu_Media,0.004600
+15806,Tibasosa,2015,Edu_Media,0.003600
+15808,Tinjacá,2015,Edu_Media,0.000000
+15810,Tipacoque,2015,Edu_Media,0.000000
+15814,Toca,2015,Edu_Media,0.016600
+15816,Togüí,2015,Edu_Media,0.012500
+15820,Tópaga,2015,Edu_Media,0.000000
+15822,Tota,2015,Edu_Media,0.000000
+15832,Tununguá,2015,Edu_Media,0.000000
+15835,Turmequé,2015,Edu_Media,0.000000
+15837,Tuta,2015,Edu_Media,0.000000
+15839,Tutazá,2015,Edu_Media,0.000000
+15842,Umbita,2015,Edu_Media,0.004600
+15861,Ventaquemada,2015,Edu_Media,0.000000
+15879,Viracachá,2015,Edu_Media,0.000000
+15897,Zetaquira,2015,Edu_Media,0.000000
+15001,Tunja,2016,Total,0.061300
+15022,Almeida,2016,Total,0.000000
+15047,Aquitania,2016,Total,0.050400
+15051,Arcabuco,2016,Total,0.000000
+15087,Belén,2016,Total,0.003100
+15090,Berbeo,2016,Total,0.012600
+15092,Betéitiva,2016,Total,0.020200
+15097,Boavita,2016,Total,0.000900
+15104,Boyacá,2016,Total,0.005600
+15106,Briceño,2016,Total,0.000000
+15109,Buenavista,2016,Total,0.025600
+15114,Busbanzá,2016,Total,0.000000
+15131,Caldas,2016,Total,0.014600
+15135,Campohermoso,2016,Total,0.000000
+15162,Cerinza,2016,Total,0.007800
+15172,Chinavita,2016,Total,0.061800
+15176,Chiquinquirá,2016,Total,0.013000
+15180,Chiscas,2016,Total,0.017400
+15183,Chita,2016,Total,0.011100
+15185,Chitaraque,2016,Total,0.000000
+15187,Chivatá,2016,Total,0.016200
+15189,Ciénega,2016,Total,0.022200
+15204,Cómbita,2016,Total,0.016200
+15212,Coper,2016,Total,0.009100
+15215,Corrales,2016,Total,0.000000
+15218,Covarachía,2016,Total,0.004100
+15223,Cubará,2016,Total,0.045200
+15224,Cucaita,2016,Total,0.009600
+15226,Cuítiva,2016,Total,0.000000
+15232,Chíquiza,2016,Total,0.004500
+15236,Chivor,2016,Total,0.036000
+15238,Duitama,2016,Total,0.054300
+15244,El Cocuy,2016,Total,0.003300
+15248,El Espino,2016,Total,0.007700
+15272,Firavitoba,2016,Total,0.003600
+15276,Floresta,2016,Total,0.000000
+15293,Gachantivá,2016,Total,0.001500
+15296,Gameza,2016,Total,0.036300
+15299,Garagoa,2016,Total,0.006500
+15317,Guacamayas,2016,Total,0.003500
+15322,Guateque,2016,Total,0.004900
+15325,Guayatá,2016,Total,0.001800
+15332,Güicán,2016,Total,0.000000
+15362,Iza,2016,Total,0.043300
+15367,Jenesano,2016,Total,0.003900
+15368,Jericó,2016,Total,0.000000
+15377,Labranzagrande,2016,Total,0.000000
+15380,La Capilla,2016,Total,0.026500
+15401,La Victoria,2016,Total,0.000000
+15403,La Uvita,2016,Total,0.000000
+15407,Villa de Leyva,2016,Total,0.014700
+15425,Macanal,2016,Total,0.014300
+15442,Maripí,2016,Total,0.009700
+15455,Miraflores,2016,Total,0.004200
+15464,Mongua,2016,Total,0.006700
+15466,Monguí,2016,Total,0.013000
+15469,Moniquirá,2016,Total,0.007700
+15476,Motavita,2016,Total,0.001000
+15480,Muzo,2016,Total,0.009700
+15491,Nobsa,2016,Total,0.003800
+15494,Nuevo Colón,2016,Total,0.007100
+15500,Oicatá,2016,Total,0.017300
+15507,Otanche,2016,Total,0.002400
+15511,Pachavita,2016,Total,0.045200
+15514,Páez,2016,Total,0.000000
+15516,Paipa,2016,Total,0.010800
+15518,Pajarito,2016,Total,0.020400
+15522,Panqueba,2016,Total,0.005400
+15531,Pauna,2016,Total,0.003600
+15533,Paya,2016,Total,0.024000
+15537,Paz de Río,2016,Total,0.001500
+15542,Pesca,2016,Total,0.003000
+15550,Pisba,2016,Total,0.042300
+15572,Puerto Boyacá,2016,Total,0.006400
+15580,Quípama,2016,Total,0.024200
+15599,Ramiriquí,2016,Total,0.001500
+15600,Ráquira,2016,Total,0.012600
+15621,Rondón,2016,Total,0.046000
+15632,Saboyá,2016,Total,0.013300
+15638,Sáchica,2016,Total,0.001400
+15646,Samacá,2016,Total,0.013300
+15660,San Eduardo,2016,Total,0.003400
+15664,San José de Pare,2016,Total,0.000000
+15667,San Luis de Gaceno,2016,Total,0.008800
+15673,San Mateo,2016,Total,0.008900
+15676,San Miguel de Sema,2016,Total,0.002800
+15681,San Pablo de Borbur,2016,Total,0.000000
+15686,Santana,2016,Total,0.028000
+15690,Santa María,2016,Total,0.001500
+15693,Santa Rosa de Viterbo,2016,Total,0.001800
+15696,Santa Sofía,2016,Total,0.043200
+15720,Sativanorte,2016,Total,0.026200
+15723,Sativasur,2016,Total,0.051900
+15740,Siachoque,2016,Total,0.002300
+15753,Soatá,2016,Total,0.002400
+15755,Socotá,2016,Total,0.019900
+15757,Socha,2016,Total,0.004000
+15759,Sogamoso,2016,Total,0.030200
+15761,Somondoco,2016,Total,0.002100
+15762,Sora,2016,Total,0.008000
+15763,Sotaquirá,2016,Total,0.000000
+15764,Soracá,2016,Total,0.011600
+15774,Susacón,2016,Total,0.004900
+15776,Sutamarchán,2016,Total,0.018900
+15778,Sutatenza,2016,Total,0.000000
+15790,Tasco,2016,Total,0.000000
+15798,Tenza,2016,Total,0.000000
+15804,Tibaná,2016,Total,0.004300
+15806,Tibasosa,2016,Total,0.011200
+15808,Tinjacá,2016,Total,0.000000
+15810,Tipacoque,2016,Total,0.007900
+15814,Toca,2016,Total,0.024800
+15816,Togüí,2016,Total,0.023700
+15820,Tópaga,2016,Total,0.008000
+15822,Tota,2016,Total,0.002700
+15832,Tununguá,2016,Total,0.000000
+15835,Turmequé,2016,Total,0.000600
+15837,Tuta,2016,Total,0.005200
+15839,Tutazá,2016,Total,0.000000
+15842,Umbita,2016,Total,0.003500
+15861,Ventaquemada,2016,Total,0.003700
+15879,Viracachá,2016,Total,0.000000
+15897,Zetaquira,2016,Total,0.004000
+15001,Tunja,2016,Transición,0.023800
+15022,Almeida,2016,Transición,0.000000
+15047,Aquitania,2016,Transición,0.000000
+15051,Arcabuco,2016,Transición,0.000000
+15087,Belén,2016,Transición,0.009200
+15090,Berbeo,2016,Transición,0.000000
+15092,Betéitiva,2016,Transición,0.000000
+15097,Boavita,2016,Transición,0.000000
+15104,Boyacá,2016,Transición,0.000000
+15106,Briceño,2016,Transición,0.000000
+15109,Buenavista,2016,Transición,0.015900
+15114,Busbanzá,2016,Transición,0.000000
+15131,Caldas,2016,Transición,0.000000
+15135,Campohermoso,2016,Transición,0.000000
+15162,Cerinza,2016,Transición,0.000000
+15172,Chinavita,2016,Transición,0.000000
+15176,Chiquinquirá,2016,Transición,0.000000
+15180,Chiscas,2016,Transición,0.000000
+15183,Chita,2016,Transición,0.000000
+15185,Chitaraque,2016,Transición,0.000000
+15187,Chivatá,2016,Transición,0.000000
+15189,Ciénega,2016,Transición,0.000000
+15204,Cómbita,2016,Transición,0.000000
+15212,Coper,2016,Transición,0.000000
+15215,Corrales,2016,Transición,0.000000
+15218,Covarachía,2016,Transición,0.000000
+15223,Cubará,2016,Transición,0.000000
+15224,Cucaita,2016,Transición,0.000000
+15226,Cuítiva,2016,Transición,0.000000
+15232,Chíquiza,2016,Transición,0.000000
+15236,Chivor,2016,Transición,0.000000
+15238,Duitama,2016,Transición,0.010500
+15244,El Cocuy,2016,Transición,0.000000
+15248,El Espino,2016,Transición,0.000000
+15272,Firavitoba,2016,Transición,0.000000
+15276,Floresta,2016,Transición,0.000000
+15293,Gachantivá,2016,Transición,0.000000
+15296,Gameza,2016,Transición,0.000000
+15299,Garagoa,2016,Transición,0.000000
+15317,Guacamayas,2016,Transición,0.000000
+15322,Guateque,2016,Transición,0.000000
+15325,Guayatá,2016,Transición,0.000000
+15332,Güicán,2016,Transición,0.000000
+15362,Iza,2016,Transición,0.081100
+15367,Jenesano,2016,Transición,0.000000
+15368,Jericó,2016,Transición,0.000000
+15377,Labranzagrande,2016,Transición,0.000000
+15380,La Capilla,2016,Transición,0.000000
+15401,La Victoria,2016,Transición,0.000000
+15403,La Uvita,2016,Transición,0.000000
+15407,Villa de Leyva,2016,Transición,0.014200
+15425,Macanal,2016,Transición,0.000000
+15442,Maripí,2016,Transición,0.000000
+15455,Miraflores,2016,Transición,0.000000
+15464,Mongua,2016,Transición,0.000000
+15466,Monguí,2016,Transición,0.000000
+15469,Moniquirá,2016,Transición,0.000000
+15476,Motavita,2016,Transición,0.000000
+15480,Muzo,2016,Transición,0.000000
+15491,Nobsa,2016,Transición,0.000000
+15494,Nuevo Colón,2016,Transición,0.000000
+15500,Oicatá,2016,Transición,0.000000
+15507,Otanche,2016,Transición,0.000000
+15511,Pachavita,2016,Transición,0.000000
+15514,Páez,2016,Transición,0.000000
+15516,Paipa,2016,Transición,0.002900
+15518,Pajarito,2016,Transición,0.050000
+15522,Panqueba,2016,Transición,0.000000
+15531,Pauna,2016,Transición,0.000000
+15533,Paya,2016,Transición,0.000000
+15537,Paz de Río,2016,Transición,0.000000
+15542,Pesca,2016,Transición,0.000000
+15550,Pisba,2016,Transición,0.000000
+15572,Puerto Boyacá,2016,Transición,0.000000
+15580,Quípama,2016,Transición,0.000000
+15599,Ramiriquí,2016,Transición,0.000000
+15600,Ráquira,2016,Transición,0.010000
+15621,Rondón,2016,Transición,0.027800
+15632,Saboyá,2016,Transición,0.000000
+15638,Sáchica,2016,Transición,0.000000
+15646,Samacá,2016,Transición,0.000000
+15660,San Eduardo,2016,Transición,0.000000
+15664,San José de Pare,2016,Transición,0.000000
+15667,San Luis de Gaceno,2016,Transición,0.000000
+15673,San Mateo,2016,Transición,0.040800
+15676,San Miguel de Sema,2016,Transición,0.000000
+15681,San Pablo de Borbur,2016,Transición,0.000000
+15686,Santana,2016,Transición,0.000000
+15690,Santa María,2016,Transición,0.000000
+15693,Santa Rosa de Viterbo,2016,Transición,0.000000
+15696,Santa Sofía,2016,Transición,0.022700
+15720,Sativanorte,2016,Transición,0.000000
+15723,Sativasur,2016,Transición,0.000000
+15740,Siachoque,2016,Transición,0.000000
+15753,Soatá,2016,Transición,0.000000
+15755,Socotá,2016,Transición,0.000000
+15757,Socha,2016,Transición,0.000000
+15759,Sogamoso,2016,Transición,0.010700
+15761,Somondoco,2016,Transición,0.000000
+15762,Sora,2016,Transición,0.000000
+15763,Sotaquirá,2016,Transición,0.000000
+15764,Soracá,2016,Transición,0.000000
+15774,Susacón,2016,Transición,0.000000
+15776,Sutamarchán,2016,Transición,0.000000
+15778,Sutatenza,2016,Transición,0.000000
+15790,Tasco,2016,Transición,0.000000
+15798,Tenza,2016,Transición,0.000000
+15804,Tibaná,2016,Transición,0.000000
+15806,Tibasosa,2016,Transición,0.014500
+15808,Tinjacá,2016,Transición,0.000000
+15810,Tipacoque,2016,Transición,0.000000
+15814,Toca,2016,Transición,0.000000
+15816,Togüí,2016,Transición,0.000000
+15820,Tópaga,2016,Transición,0.000000
+15822,Tota,2016,Transición,0.000000
+15832,Tununguá,2016,Transición,0.000000
+15835,Turmequé,2016,Transición,0.000000
+15837,Tuta,2016,Transición,0.000000
+15839,Tutazá,2016,Transición,0.000000
+15842,Umbita,2016,Transición,0.000000
+15861,Ventaquemada,2016,Transición,0.000000
+15879,Viracachá,2016,Transición,0.000000
+15897,Zetaquira,2016,Transición,0.000000
+15001,Tunja,2016,Primaria,0.040700
+15022,Almeida,2016,Primaria,0.000000
+15047,Aquitania,2016,Primaria,0.013100
+15051,Arcabuco,2016,Primaria,0.000000
+15087,Belén,2016,Primaria,0.000000
+15090,Berbeo,2016,Primaria,0.000000
+15092,Betéitiva,2016,Primaria,0.024600
+15097,Boavita,2016,Primaria,0.002600
+15104,Boyacá,2016,Primaria,0.002400
+15106,Briceño,2016,Primaria,0.000000
+15109,Buenavista,2016,Primaria,0.043400
+15114,Busbanzá,2016,Primaria,0.000000
+15131,Caldas,2016,Primaria,0.004300
+15135,Campohermoso,2016,Primaria,0.000000
+15162,Cerinza,2016,Primaria,0.007600
+15172,Chinavita,2016,Primaria,0.075600
+15176,Chiquinquirá,2016,Primaria,0.004400
+15180,Chiscas,2016,Primaria,0.021100
+15183,Chita,2016,Primaria,0.022400
+15185,Chitaraque,2016,Primaria,0.000000
+15187,Chivatá,2016,Primaria,0.013600
+15189,Ciénega,2016,Primaria,0.027100
+15204,Cómbita,2016,Primaria,0.016900
+15212,Coper,2016,Primaria,0.014400
+15215,Corrales,2016,Primaria,0.000000
+15218,Covarachía,2016,Primaria,0.004700
+15223,Cubará,2016,Primaria,0.085800
+15224,Cucaita,2016,Primaria,0.012000
+15226,Cuítiva,2016,Primaria,0.000000
+15232,Chíquiza,2016,Primaria,0.002500
+15236,Chivor,2016,Primaria,0.042900
+15238,Duitama,2016,Primaria,0.045000
+15244,El Cocuy,2016,Primaria,0.002400
+15248,El Espino,2016,Primaria,0.005200
+15272,Firavitoba,2016,Primaria,0.000000
+15276,Floresta,2016,Primaria,0.000000
+15293,Gachantivá,2016,Primaria,0.000000
+15296,Gameza,2016,Primaria,0.044900
+15299,Garagoa,2016,Primaria,0.005200
+15317,Guacamayas,2016,Primaria,0.008800
+15322,Guateque,2016,Primaria,0.001400
+15325,Guayatá,2016,Primaria,0.000000
+15332,Güicán,2016,Primaria,0.000000
+15362,Iza,2016,Primaria,0.027800
+15367,Jenesano,2016,Primaria,0.007400
+15368,Jericó,2016,Primaria,0.000000
+15377,Labranzagrande,2016,Primaria,0.000000
+15380,La Capilla,2016,Primaria,0.000000
+15401,La Victoria,2016,Primaria,0.000000
+15403,La Uvita,2016,Primaria,0.000000
+15407,Villa de Leyva,2016,Primaria,0.008100
+15425,Macanal,2016,Primaria,0.016300
+15442,Maripí,2016,Primaria,0.002000
+15455,Miraflores,2016,Primaria,0.005100
+15464,Mongua,2016,Primaria,0.002400
+15466,Monguí,2016,Primaria,0.010700
+15469,Moniquirá,2016,Primaria,0.009400
+15476,Motavita,2016,Primaria,0.000000
+15480,Muzo,2016,Primaria,0.009400
+15491,Nobsa,2016,Primaria,0.001200
+15494,Nuevo Colón,2016,Primaria,0.002300
+15500,Oicatá,2016,Primaria,0.000000
+15507,Otanche,2016,Primaria,0.002900
+15511,Pachavita,2016,Primaria,0.012000
+15514,Páez,2016,Primaria,0.000000
+15516,Paipa,2016,Primaria,0.007100
+15518,Pajarito,2016,Primaria,0.012300
+15522,Panqueba,2016,Primaria,0.000000
+15531,Pauna,2016,Primaria,0.000000
+15533,Paya,2016,Primaria,0.031800
+15537,Paz de Río,2016,Primaria,0.004100
+15542,Pesca,2016,Primaria,0.001600
+15550,Pisba,2016,Primaria,0.035300
+15572,Puerto Boyacá,2016,Primaria,0.007600
+15580,Quípama,2016,Primaria,0.040300
+15599,Ramiriquí,2016,Primaria,0.003600
+15600,Ráquira,2016,Primaria,0.016400
+15621,Rondón,2016,Primaria,0.026300
+15632,Saboyá,2016,Primaria,0.004900
+15638,Sáchica,2016,Primaria,0.000000
+15646,Samacá,2016,Primaria,0.006100
+15660,San Eduardo,2016,Primaria,0.008100
+15664,San José de Pare,2016,Primaria,0.000000
+15667,San Luis de Gaceno,2016,Primaria,0.004700
+15673,San Mateo,2016,Primaria,0.015100
+15676,San Miguel de Sema,2016,Primaria,0.000000
+15681,San Pablo de Borbur,2016,Primaria,0.000000
+15686,Santana,2016,Primaria,0.041700
+15690,Santa María,2016,Primaria,0.000000
+15693,Santa Rosa de Viterbo,2016,Primaria,0.004300
+15696,Santa Sofía,2016,Primaria,0.019900
+15720,Sativanorte,2016,Primaria,0.046700
+15723,Sativasur,2016,Primaria,0.037000
+15740,Siachoque,2016,Primaria,0.000000
+15753,Soatá,2016,Primaria,0.003000
+15755,Socotá,2016,Primaria,0.023400
+15757,Socha,2016,Primaria,0.005000
+15759,Sogamoso,2016,Primaria,0.020300
+15761,Somondoco,2016,Primaria,0.000000
+15762,Sora,2016,Primaria,0.010800
+15763,Sotaquirá,2016,Primaria,0.000000
+15764,Soracá,2016,Primaria,0.016500
+15774,Susacón,2016,Primaria,0.000000
+15776,Sutamarchán,2016,Primaria,0.002500
+15778,Sutatenza,2016,Primaria,0.000000
+15790,Tasco,2016,Primaria,0.000000
+15798,Tenza,2016,Primaria,0.000000
+15804,Tibaná,2016,Primaria,0.005700
+15806,Tibasosa,2016,Primaria,0.007300
+15808,Tinjacá,2016,Primaria,0.000000
+15810,Tipacoque,2016,Primaria,0.011200
+15814,Toca,2016,Primaria,0.029300
+15816,Togüí,2016,Primaria,0.042900
+15820,Tópaga,2016,Primaria,0.000000
+15822,Tota,2016,Primaria,0.003900
+15832,Tununguá,2016,Primaria,0.000000
+15835,Turmequé,2016,Primaria,0.001700
+15837,Tuta,2016,Primaria,0.002700
+15839,Tutazá,2016,Primaria,0.000000
+15842,Umbita,2016,Primaria,0.003400
+15861,Ventaquemada,2016,Primaria,0.002500
+15879,Viracachá,2016,Primaria,0.000000
+15897,Zetaquira,2016,Primaria,0.000000
+15001,Tunja,2016,Secundaria,0.102700
+15022,Almeida,2016,Secundaria,0.000000
+15047,Aquitania,2016,Secundaria,0.107600
+15051,Arcabuco,2016,Secundaria,0.000000
+15087,Belén,2016,Secundaria,0.005400
+15090,Berbeo,2016,Secundaria,0.033100
+15092,Betéitiva,2016,Secundaria,0.028800
+15097,Boavita,2016,Secundaria,0.000000
+15104,Boyacá,2016,Secundaria,0.009500
+15106,Briceño,2016,Secundaria,0.000000
+15109,Buenavista,2016,Secundaria,0.016300
+15114,Busbanzá,2016,Secundaria,0.000000
+15131,Caldas,2016,Secundaria,0.035900
+15135,Campohermoso,2016,Secundaria,0.000000
+15162,Cerinza,2016,Secundaria,0.012900
+15172,Chinavita,2016,Secundaria,0.082600
+15176,Chiquinquirá,2016,Secundaria,0.026200
+15180,Chiscas,2016,Secundaria,0.024400
+15183,Chita,2016,Secundaria,0.002800
+15185,Chitaraque,2016,Secundaria,0.000000
+15187,Chivatá,2016,Secundaria,0.027900
+15189,Ciénega,2016,Secundaria,0.020000
+15204,Cómbita,2016,Secundaria,0.024900
+15212,Coper,2016,Secundaria,0.008300
+15215,Corrales,2016,Secundaria,0.000000
+15218,Covarachía,2016,Secundaria,0.005500
+15223,Cubará,2016,Secundaria,0.002900
+15224,Cucaita,2016,Secundaria,0.010200
+15226,Cuítiva,2016,Secundaria,0.000000
+15232,Chíquiza,2016,Secundaria,0.006500
+15236,Chivor,2016,Secundaria,0.049700
+15238,Duitama,2016,Secundaria,0.078800
+15244,El Cocuy,2016,Secundaria,0.006700
+15248,El Espino,2016,Secundaria,0.015000
+15272,Firavitoba,2016,Secundaria,0.006900
+15276,Floresta,2016,Secundaria,0.000000
+15293,Gachantivá,2016,Secundaria,0.004200
+15296,Gameza,2016,Secundaria,0.047800
+15299,Garagoa,2016,Secundaria,0.008000
+15317,Guacamayas,2016,Secundaria,0.000000
+15322,Guateque,2016,Secundaria,0.007700
+15325,Guayatá,2016,Secundaria,0.000000
+15332,Güicán,2016,Secundaria,0.000000
+15362,Iza,2016,Secundaria,0.043000
+15367,Jenesano,2016,Secundaria,0.002200
+15368,Jericó,2016,Secundaria,0.000000
+15377,Labranzagrande,2016,Secundaria,0.000000
+15380,La Capilla,2016,Secundaria,0.063200
+15401,La Victoria,2016,Secundaria,0.000000
+15403,La Uvita,2016,Secundaria,0.000000
+15407,Villa de Leyva,2016,Secundaria,0.028500
+15425,Macanal,2016,Secundaria,0.021200
+15442,Maripí,2016,Secundaria,0.022200
+15455,Miraflores,2016,Secundaria,0.005800
+15464,Mongua,2016,Secundaria,0.013900
+15466,Monguí,2016,Secundaria,0.023700
+15469,Moniquirá,2016,Secundaria,0.009300
+15476,Motavita,2016,Secundaria,0.002800
+15480,Muzo,2016,Secundaria,0.015200
+15491,Nobsa,2016,Secundaria,0.008000
+15494,Nuevo Colón,2016,Secundaria,0.019200
+15500,Oicatá,2016,Secundaria,0.019400
+15507,Otanche,2016,Secundaria,0.003200
+15511,Pachavita,2016,Secundaria,0.080300
+15514,Páez,2016,Secundaria,0.000000
+15516,Paipa,2016,Secundaria,0.013500
+15518,Pajarito,2016,Secundaria,0.033600
+15522,Panqueba,2016,Secundaria,0.006800
+15531,Pauna,2016,Secundaria,0.006200
+15533,Paya,2016,Secundaria,0.023300
+15537,Paz de Río,2016,Secundaria,0.000000
+15542,Pesca,2016,Secundaria,0.006400
+15550,Pisba,2016,Secundaria,0.083300
+15572,Puerto Boyacá,2016,Secundaria,0.007700
+15580,Quípama,2016,Secundaria,0.018000
+15599,Ramiriquí,2016,Secundaria,0.000000
+15600,Ráquira,2016,Secundaria,0.011000
+15621,Rondón,2016,Secundaria,0.082800
+15632,Saboyá,2016,Secundaria,0.030700
+15638,Sáchica,2016,Secundaria,0.004300
+15646,Samacá,2016,Secundaria,0.027100
+15660,San Eduardo,2016,Secundaria,0.000000
+15664,San José de Pare,2016,Secundaria,0.000000
+15667,San Luis de Gaceno,2016,Secundaria,0.017600
+15673,San Mateo,2016,Secundaria,0.000000
+15676,San Miguel de Sema,2016,Secundaria,0.007500
+15681,San Pablo de Borbur,2016,Secundaria,0.000000
+15686,Santana,2016,Secundaria,0.025900
+15690,Santa María,2016,Secundaria,0.004700
+15693,Santa Rosa de Viterbo,2016,Secundaria,0.000000
+15696,Santa Sofía,2016,Secundaria,0.086100
+15720,Sativanorte,2016,Secundaria,0.016900
+15723,Sativasur,2016,Secundaria,0.081600
+15740,Siachoque,2016,Secundaria,0.004700
+15753,Soatá,2016,Secundaria,0.000000
+15755,Socotá,2016,Secundaria,0.023700
+15757,Socha,2016,Secundaria,0.005100
+15759,Sogamoso,2016,Secundaria,0.050000
+15761,Somondoco,2016,Secundaria,0.005100
+15762,Sora,2016,Secundaria,0.009100
+15763,Sotaquirá,2016,Secundaria,0.000000
+15764,Soracá,2016,Secundaria,0.008600
+15774,Susacón,2016,Secundaria,0.012700
+15776,Sutamarchán,2016,Secundaria,0.043000
+15778,Sutatenza,2016,Secundaria,0.000000
+15790,Tasco,2016,Secundaria,0.000000
+15798,Tenza,2016,Secundaria,0.000000
+15804,Tibaná,2016,Secundaria,0.005000
+15806,Tibasosa,2016,Secundaria,0.013900
+15808,Tinjacá,2016,Secundaria,0.000000
+15810,Tipacoque,2016,Secundaria,0.009000
+15814,Toca,2016,Secundaria,0.028800
+15816,Togüí,2016,Secundaria,0.008800
+15820,Tópaga,2016,Secundaria,0.015000
+15822,Tota,2016,Secundaria,0.002900
+15832,Tununguá,2016,Secundaria,0.000000
+15835,Turmequé,2016,Secundaria,0.000000
+15837,Tuta,2016,Secundaria,0.005100
+15839,Tutazá,2016,Secundaria,0.000000
+15842,Umbita,2016,Secundaria,0.002000
+15861,Ventaquemada,2016,Secundaria,0.006100
+15879,Viracachá,2016,Secundaria,0.000000
+15897,Zetaquira,2016,Secundaria,0.005000
+15001,Tunja,2016,Edu_Media,0.025000
+15022,Almeida,2016,Edu_Media,0.000000
+15047,Aquitania,2016,Edu_Media,0.055000
+15051,Arcabuco,2016,Edu_Media,0.000000
+15087,Belén,2016,Edu_Media,0.003700
+15090,Berbeo,2016,Edu_Media,0.000000
+15092,Betéitiva,2016,Edu_Media,0.000000
+15097,Boavita,2016,Edu_Media,0.000000
+15104,Boyacá,2016,Edu_Media,0.009400
+15106,Briceño,2016,Edu_Media,0.000000
+15109,Buenavista,2016,Edu_Media,0.000000
+15114,Busbanzá,2016,Edu_Media,0.000000
+15131,Caldas,2016,Edu_Media,0.000000
+15135,Campohermoso,2016,Edu_Media,0.000000
+15162,Cerinza,2016,Edu_Media,0.000000
+15172,Chinavita,2016,Edu_Media,0.000000
+15176,Chiquinquirá,2016,Edu_Media,0.008800
+15180,Chiscas,2016,Edu_Media,0.000000
+15183,Chita,2016,Edu_Media,0.000000
+15185,Chitaraque,2016,Edu_Media,0.000000
+15187,Chivatá,2016,Edu_Media,0.000000
+15189,Ciénega,2016,Edu_Media,0.021700
+15204,Cómbita,2016,Edu_Media,0.000000
+15212,Coper,2016,Edu_Media,0.000000
+15215,Corrales,2016,Edu_Media,0.000000
+15218,Covarachía,2016,Edu_Media,0.000000
+15223,Cubará,2016,Edu_Media,0.000000
+15224,Cucaita,2016,Edu_Media,0.007400
+15226,Cuítiva,2016,Edu_Media,0.000000
+15232,Chíquiza,2016,Edu_Media,0.009300
+15236,Chivor,2016,Edu_Media,0.000000
+15238,Duitama,2016,Edu_Media,0.031000
+15244,El Cocuy,2016,Edu_Media,0.000000
+15248,El Espino,2016,Edu_Media,0.000000
+15272,Firavitoba,2016,Edu_Media,0.006900
+15276,Floresta,2016,Edu_Media,0.000000
+15293,Gachantivá,2016,Edu_Media,0.000000
+15296,Gameza,2016,Edu_Media,0.000000
+15299,Garagoa,2016,Edu_Media,0.008300
+15317,Guacamayas,2016,Edu_Media,0.000000
+15322,Guateque,2016,Edu_Media,0.008000
+15325,Guayatá,2016,Edu_Media,0.014500
+15332,Güicán,2016,Edu_Media,0.000000
+15362,Iza,2016,Edu_Media,0.076900
+15367,Jenesano,2016,Edu_Media,0.000000
+15368,Jericó,2016,Edu_Media,0.000000
+15377,Labranzagrande,2016,Edu_Media,0.000000
+15380,La Capilla,2016,Edu_Media,0.014900
+15401,La Victoria,2016,Edu_Media,0.000000
+15403,La Uvita,2016,Edu_Media,0.000000
+15407,Villa de Leyva,2016,Edu_Media,0.000000
+15425,Macanal,2016,Edu_Media,0.000000
+15442,Maripí,2016,Edu_Media,0.000000
+15455,Miraflores,2016,Edu_Media,0.000000
+15464,Mongua,2016,Edu_Media,0.009600
+15466,Monguí,2016,Edu_Media,0.000000
+15469,Moniquirá,2016,Edu_Media,0.001800
+15476,Motavita,2016,Edu_Media,0.000000
+15480,Muzo,2016,Edu_Media,0.000000
+15491,Nobsa,2016,Edu_Media,0.002800
+15494,Nuevo Colón,2016,Edu_Media,0.000000
+15500,Oicatá,2016,Edu_Media,0.065600
+15507,Otanche,2016,Edu_Media,0.000000
+15511,Pachavita,2016,Edu_Media,0.105300
+15514,Páez,2016,Edu_Media,0.000000
+15516,Paipa,2016,Edu_Media,0.016800
+15518,Pajarito,2016,Edu_Media,0.000000
+15522,Panqueba,2016,Edu_Media,0.012200
+15531,Pauna,2016,Edu_Media,0.008400
+15533,Paya,2016,Edu_Media,0.017200
+15537,Paz de Río,2016,Edu_Media,0.000000
+15542,Pesca,2016,Edu_Media,0.000000
+15550,Pisba,2016,Edu_Media,0.000000
+15572,Puerto Boyacá,2016,Edu_Media,0.000900
+15580,Quípama,2016,Edu_Media,0.000000
+15599,Ramiriquí,2016,Edu_Media,0.000000
+15600,Ráquira,2016,Edu_Media,0.000000
+15621,Rondón,2016,Edu_Media,0.027000
+15632,Saboyá,2016,Edu_Media,0.002500
+15638,Sáchica,2016,Edu_Media,0.000000
+15646,Samacá,2016,Edu_Media,0.012700
+15660,San Eduardo,2016,Edu_Media,0.000000
+15664,San José de Pare,2016,Edu_Media,0.000000
+15667,San Luis de Gaceno,2016,Edu_Media,0.000000
+15673,San Mateo,2016,Edu_Media,0.000000
+15676,San Miguel de Sema,2016,Edu_Media,0.000000
+15681,San Pablo de Borbur,2016,Edu_Media,0.000000
+15686,Santana,2016,Edu_Media,0.000000
+15690,Santa María,2016,Edu_Media,0.000000
+15693,Santa Rosa de Viterbo,2016,Edu_Media,0.000000
+15696,Santa Sofía,2016,Edu_Media,0.000000
+15720,Sativanorte,2016,Edu_Media,0.000000
+15723,Sativasur,2016,Edu_Media,0.025000
+15740,Siachoque,2016,Edu_Media,0.003500
+15753,Soatá,2016,Edu_Media,0.006100
+15755,Socotá,2016,Edu_Media,0.007200
+15757,Socha,2016,Edu_Media,0.000000
+15759,Sogamoso,2016,Edu_Media,0.015300
+15761,Somondoco,2016,Edu_Media,0.000000
+15762,Sora,2016,Edu_Media,0.000000
+15763,Sotaquirá,2016,Edu_Media,0.000000
+15764,Soracá,2016,Edu_Media,0.009900
+15774,Susacón,2016,Edu_Media,0.000000
+15776,Sutamarchán,2016,Edu_Media,0.018000
+15778,Sutatenza,2016,Edu_Media,0.000000
+15790,Tasco,2016,Edu_Media,0.000000
+15798,Tenza,2016,Edu_Media,0.000000
+15804,Tibaná,2016,Edu_Media,0.000000
+15806,Tibasosa,2016,Edu_Media,0.013700
+15808,Tinjacá,2016,Edu_Media,0.000000
+15810,Tipacoque,2016,Edu_Media,0.000000
+15814,Toca,2016,Edu_Media,0.016700
+15816,Togüí,2016,Edu_Media,0.000000
+15820,Tópaga,2016,Edu_Media,0.019600
+15822,Tota,2016,Edu_Media,0.000000
+15832,Tununguá,2016,Edu_Media,0.000000
+15835,Turmequé,2016,Edu_Media,0.000000
+15837,Tuta,2016,Edu_Media,0.014700
+15839,Tutazá,2016,Edu_Media,0.000000
+15842,Umbita,2016,Edu_Media,0.008600
+15861,Ventaquemada,2016,Edu_Media,0.002200
+15879,Viracachá,2016,Edu_Media,0.000000
+15897,Zetaquira,2016,Edu_Media,0.012300
+15001,Tunja,2017,Total,0.054100
+15022,Almeida,2017,Total,0.000000
+15047,Aquitania,2017,Total,0.036800
+15051,Arcabuco,2017,Total,0.000000
+15087,Belén,2017,Total,0.004500
+15090,Berbeo,2017,Total,0.010200
+15092,Betéitiva,2017,Total,0.007200
+15097,Boavita,2017,Total,0.004700
+15104,Boyacá,2017,Total,0.001100
+15106,Briceño,2017,Total,0.000000
+15109,Buenavista,2017,Total,0.020100
+15114,Busbanzá,2017,Total,0.028000
+15131,Caldas,2017,Total,0.015600
+15135,Campohermoso,2017,Total,0.006000
+15162,Cerinza,2017,Total,0.000000
+15172,Chinavita,2017,Total,0.032800
+15176,Chiquinquirá,2017,Total,0.014800
+15180,Chiscas,2017,Total,0.001500
+15183,Chita,2017,Total,0.013200
+15185,Chitaraque,2017,Total,0.006000
+15187,Chivatá,2017,Total,0.064900
+15189,Ciénega,2017,Total,0.011700
+15204,Cómbita,2017,Total,0.052100
+15212,Coper,2017,Total,0.001600
+15215,Corrales,2017,Total,0.002300
+15218,Covarachía,2017,Total,0.031300
+15223,Cubará,2017,Total,0.048700
+15224,Cucaita,2017,Total,0.009700
+15226,Cuítiva,2017,Total,0.000000
+15232,Chíquiza,2017,Total,0.000000
+15236,Chivor,2017,Total,0.024000
+15238,Duitama,2017,Total,0.066200
+15244,El Cocuy,2017,Total,0.009200
+15248,El Espino,2017,Total,0.030800
+15272,Firavitoba,2017,Total,0.001200
+15276,Floresta,2017,Total,0.000000
+15293,Gachantivá,2017,Total,0.000000
+15296,Gameza,2017,Total,0.015800
+15299,Garagoa,2017,Total,0.009000
+15317,Guacamayas,2017,Total,0.000000
+15322,Guateque,2017,Total,0.008300
+15325,Guayatá,2017,Total,0.000000
+15332,Güicán,2017,Total,0.000000
+15362,Iza,2017,Total,0.018700
+15367,Jenesano,2017,Total,0.003200
+15368,Jericó,2017,Total,0.000000
+15377,Labranzagrande,2017,Total,0.037000
+15380,La Capilla,2017,Total,0.021500
+15401,La Victoria,2017,Total,0.037200
+15403,La Uvita,2017,Total,0.000000
+15407,Villa de Leyva,2017,Total,0.009000
+15425,Macanal,2017,Total,0.000000
+15442,Maripí,2017,Total,0.012300
+15455,Miraflores,2017,Total,0.003600
+15464,Mongua,2017,Total,0.006800
+15466,Monguí,2017,Total,0.000000
+15469,Moniquirá,2017,Total,0.008200
+15476,Motavita,2017,Total,0.000000
+15480,Muzo,2017,Total,0.007900
+15491,Nobsa,2017,Total,0.008500
+15494,Nuevo Colón,2017,Total,0.008400
+15500,Oicatá,2017,Total,0.002400
+15507,Otanche,2017,Total,0.010000
+15511,Pachavita,2017,Total,0.045200
+15514,Páez,2017,Total,0.009200
+15516,Paipa,2017,Total,0.010300
+15518,Pajarito,2017,Total,0.022200
+15522,Panqueba,2017,Total,0.005700
+15531,Pauna,2017,Total,0.000000
+15533,Paya,2017,Total,0.036100
+15537,Paz de Río,2017,Total,0.000000
+15542,Pesca,2017,Total,0.003200
+15550,Pisba,2017,Total,0.019400
+15572,Puerto Boyacá,2017,Total,0.009100
+15580,Quípama,2017,Total,0.067500
+15599,Ramiriquí,2017,Total,0.001000
+15600,Ráquira,2017,Total,0.018900
+15621,Rondón,2017,Total,0.020000
+15632,Saboyá,2017,Total,0.026300
+15638,Sáchica,2017,Total,0.005700
+15646,Samacá,2017,Total,0.009800
+15660,San Eduardo,2017,Total,0.020100
+15664,San José de Pare,2017,Total,0.000000
+15667,San Luis de Gaceno,2017,Total,0.030300
+15673,San Mateo,2017,Total,0.012600
+15676,San Miguel de Sema,2017,Total,0.005700
+15681,San Pablo de Borbur,2017,Total,0.001400
+15686,Santana,2017,Total,0.056400
+15690,Santa María,2017,Total,0.009600
+15693,Santa Rosa de Viterbo,2017,Total,0.014700
+15696,Santa Sofía,2017,Total,0.011400
+15720,Sativanorte,2017,Total,0.022500
+15723,Sativasur,2017,Total,0.004700
+15740,Siachoque,2017,Total,0.016300
+15753,Soatá,2017,Total,0.000600
+15755,Socotá,2017,Total,0.007900
+15757,Socha,2017,Total,0.000000
+15759,Sogamoso,2017,Total,0.026300
+15761,Somondoco,2017,Total,0.000000
+15762,Sora,2017,Total,0.000000
+15763,Sotaquirá,2017,Total,0.002000
+15764,Soracá,2017,Total,0.000600
+15774,Susacón,2017,Total,0.000000
+15776,Sutamarchán,2017,Total,0.010900
+15778,Sutatenza,2017,Total,0.000000
+15790,Tasco,2017,Total,0.001700
+15798,Tenza,2017,Total,0.000000
+15804,Tibaná,2017,Total,0.006300
+15806,Tibasosa,2017,Total,0.021400
+15808,Tinjacá,2017,Total,0.000000
+15810,Tipacoque,2017,Total,0.007800
+15814,Toca,2017,Total,0.016000
+15816,Togüí,2017,Total,0.016200
+15820,Tópaga,2017,Total,0.004200
+15822,Tota,2017,Total,0.000900
+15832,Tununguá,2017,Total,0.000000
+15835,Turmequé,2017,Total,0.000000
+15837,Tuta,2017,Total,0.024800
+15839,Tutazá,2017,Total,0.027900
+15842,Umbita,2017,Total,0.001500
+15861,Ventaquemada,2017,Total,0.014800
+15879,Viracachá,2017,Total,0.081000
+15897,Zetaquira,2017,Total,0.003100
+15001,Tunja,2017,Transición,0.011800
+15022,Almeida,2017,Transición,0.000000
+15047,Aquitania,2017,Transición,0.000000
+15051,Arcabuco,2017,Transición,0.000000
+15087,Belén,2017,Transición,0.000000
+15090,Berbeo,2017,Transición,0.000000
+15092,Betéitiva,2017,Transición,0.000000
+15097,Boavita,2017,Transición,0.000000
+15104,Boyacá,2017,Transición,0.000000
+15106,Briceño,2017,Transición,0.000000
+15109,Buenavista,2017,Transición,0.020000
+15114,Busbanzá,2017,Transición,0.000000
+15131,Caldas,2017,Transición,0.000000
+15135,Campohermoso,2017,Transición,0.000000
+15162,Cerinza,2017,Transición,0.000000
+15172,Chinavita,2017,Transición,0.000000
+15176,Chiquinquirá,2017,Transición,0.003000
+15180,Chiscas,2017,Transición,0.000000
+15183,Chita,2017,Transición,0.000000
+15185,Chitaraque,2017,Transición,0.000000
+15187,Chivatá,2017,Transición,0.000000
+15189,Ciénega,2017,Transición,0.000000
+15204,Cómbita,2017,Transición,0.000000
+15212,Coper,2017,Transición,0.000000
+15215,Corrales,2017,Transición,0.000000
+15218,Covarachía,2017,Transición,0.000000
+15223,Cubará,2017,Transición,0.008000
+15224,Cucaita,2017,Transición,0.000000
+15226,Cuítiva,2017,Transición,0.000000
+15232,Chíquiza,2017,Transición,0.000000
+15236,Chivor,2017,Transición,0.000000
+15238,Duitama,2017,Transición,0.022300
+15244,El Cocuy,2017,Transición,0.000000
+15248,El Espino,2017,Transición,0.000000
+15272,Firavitoba,2017,Transición,0.000000
+15276,Floresta,2017,Transición,0.000000
+15293,Gachantivá,2017,Transición,0.000000
+15296,Gameza,2017,Transición,0.000000
+15299,Garagoa,2017,Transición,0.000000
+15317,Guacamayas,2017,Transición,0.000000
+15322,Guateque,2017,Transición,0.000000
+15325,Guayatá,2017,Transición,0.000000
+15332,Güicán,2017,Transición,0.000000
+15362,Iza,2017,Transición,0.000000
+15367,Jenesano,2017,Transición,0.000000
+15368,Jericó,2017,Transición,0.000000
+15377,Labranzagrande,2017,Transición,0.000000
+15380,La Capilla,2017,Transición,0.000000
+15401,La Victoria,2017,Transición,0.000000
+15403,La Uvita,2017,Transición,0.000000
+15407,Villa de Leyva,2017,Transición,0.000000
+15425,Macanal,2017,Transición,0.000000
+15442,Maripí,2017,Transición,0.013300
+15455,Miraflores,2017,Transición,0.000000
+15464,Mongua,2017,Transición,0.000000
+15466,Monguí,2017,Transición,0.000000
+15469,Moniquirá,2017,Transición,0.000000
+15476,Motavita,2017,Transición,0.000000
+15480,Muzo,2017,Transición,0.009200
+15491,Nobsa,2017,Transición,0.000000
+15494,Nuevo Colón,2017,Transición,0.000000
+15500,Oicatá,2017,Transición,0.000000
+15507,Otanche,2017,Transición,0.000000
+15511,Pachavita,2017,Transición,0.000000
+15514,Páez,2017,Transición,0.000000
+15516,Paipa,2017,Transición,0.000000
+15518,Pajarito,2017,Transición,0.000000
+15522,Panqueba,2017,Transición,0.000000
+15531,Pauna,2017,Transición,0.000000
+15533,Paya,2017,Transición,0.000000
+15537,Paz de Río,2017,Transición,0.000000
+15542,Pesca,2017,Transición,0.000000
+15550,Pisba,2017,Transición,0.000000
+15572,Puerto Boyacá,2017,Transición,0.002700
+15580,Quípama,2017,Transición,0.000000
+15599,Ramiriquí,2017,Transición,0.008500
+15600,Ráquira,2017,Transición,0.000000
+15621,Rondón,2017,Transición,0.000000
+15632,Saboyá,2017,Transición,0.000000
+15638,Sáchica,2017,Transición,0.000000
+15646,Samacá,2017,Transición,0.000000
+15660,San Eduardo,2017,Transición,0.000000
+15664,San José de Pare,2017,Transición,0.000000
+15667,San Luis de Gaceno,2017,Transición,0.014900
+15673,San Mateo,2017,Transición,0.000000
+15676,San Miguel de Sema,2017,Transición,0.000000
+15681,San Pablo de Borbur,2017,Transición,0.000000
+15686,Santana,2017,Transición,0.000000
+15690,Santa María,2017,Transición,0.030300
+15693,Santa Rosa de Viterbo,2017,Transición,0.016100
+15696,Santa Sofía,2017,Transición,0.025000
+15720,Sativanorte,2017,Transición,0.000000
+15723,Sativasur,2017,Transición,0.000000
+15740,Siachoque,2017,Transición,0.013200
+15753,Soatá,2017,Transición,0.000000
+15755,Socotá,2017,Transición,0.009100
+15757,Socha,2017,Transición,0.000000
+15759,Sogamoso,2017,Transición,0.006600
+15761,Somondoco,2017,Transición,0.000000
+15762,Sora,2017,Transición,0.000000
+15763,Sotaquirá,2017,Transición,0.000000
+15764,Soracá,2017,Transición,0.000000
+15774,Susacón,2017,Transición,0.000000
+15776,Sutamarchán,2017,Transición,0.000000
+15778,Sutatenza,2017,Transición,0.000000
+15790,Tasco,2017,Transición,0.000000
+15798,Tenza,2017,Transición,0.000000
+15804,Tibaná,2017,Transición,0.000000
+15806,Tibasosa,2017,Transición,0.000000
+15808,Tinjacá,2017,Transición,0.000000
+15810,Tipacoque,2017,Transición,0.000000
+15814,Toca,2017,Transición,0.000000
+15816,Togüí,2017,Transición,0.000000
+15820,Tópaga,2017,Transición,0.000000
+15822,Tota,2017,Transición,0.000000
+15832,Tununguá,2017,Transición,0.000000
+15835,Turmequé,2017,Transición,0.000000
+15837,Tuta,2017,Transición,0.008500
+15839,Tutazá,2017,Transición,0.000000
+15842,Umbita,2017,Transición,0.000000
+15861,Ventaquemada,2017,Transición,0.000000
+15879,Viracachá,2017,Transición,0.000000
+15897,Zetaquira,2017,Transición,0.000000
+15001,Tunja,2017,Primaria,0.035600
+15022,Almeida,2017,Primaria,0.000000
+15047,Aquitania,2017,Primaria,0.005900
+15051,Arcabuco,2017,Primaria,0.000000
+15087,Belén,2017,Primaria,0.001500
+15090,Berbeo,2017,Primaria,0.016800
+15092,Betéitiva,2017,Primaria,0.009300
+15097,Boavita,2017,Primaria,0.002500
+15104,Boyacá,2017,Primaria,0.002600
+15106,Briceño,2017,Primaria,0.000000
+15109,Buenavista,2017,Primaria,0.020300
+15114,Busbanzá,2017,Primaria,0.000000
+15131,Caldas,2017,Primaria,0.004500
+15135,Campohermoso,2017,Primaria,0.000000
+15162,Cerinza,2017,Primaria,0.000000
+15172,Chinavita,2017,Primaria,0.018300
+15176,Chiquinquirá,2017,Primaria,0.006700
+15180,Chiscas,2017,Primaria,0.003700
+15183,Chita,2017,Primaria,0.015100
+15185,Chitaraque,2017,Primaria,0.000000
+15187,Chivatá,2017,Primaria,0.018000
+15189,Ciénega,2017,Primaria,0.013100
+15204,Cómbita,2017,Primaria,0.023100
+15212,Coper,2017,Primaria,0.000000
+15215,Corrales,2017,Primaria,0.000000
+15218,Covarachía,2017,Primaria,0.049800
+15223,Cubará,2017,Primaria,0.069900
+15224,Cucaita,2017,Primaria,0.014700
+15226,Cuítiva,2017,Primaria,0.000000
+15232,Chíquiza,2017,Primaria,0.000000
+15236,Chivor,2017,Primaria,0.006800
+15238,Duitama,2017,Primaria,0.059200
+15244,El Cocuy,2017,Primaria,0.012600
+15248,El Espino,2017,Primaria,0.019200
+15272,Firavitoba,2017,Primaria,0.000000
+15276,Floresta,2017,Primaria,0.000000
+15293,Gachantivá,2017,Primaria,0.000000
+15296,Gameza,2017,Primaria,0.012900
+15299,Garagoa,2017,Primaria,0.009000
+15317,Guacamayas,2017,Primaria,0.000000
+15322,Guateque,2017,Primaria,0.004300
+15325,Guayatá,2017,Primaria,0.000000
+15332,Güicán,2017,Primaria,0.000000
+15362,Iza,2017,Primaria,0.019400
+15367,Jenesano,2017,Primaria,0.001900
+15368,Jericó,2017,Primaria,0.000000
+15377,Labranzagrande,2017,Primaria,0.043500
+15380,La Capilla,2017,Primaria,0.018000
+15401,La Victoria,2017,Primaria,0.000000
+15403,La Uvita,2017,Primaria,0.000000
+15407,Villa de Leyva,2017,Primaria,0.004600
+15425,Macanal,2017,Primaria,0.000000
+15442,Maripí,2017,Primaria,0.006900
+15455,Miraflores,2017,Primaria,0.001700
+15464,Mongua,2017,Primaria,0.004600
+15466,Monguí,2017,Primaria,0.000000
+15469,Moniquirá,2017,Primaria,0.007300
+15476,Motavita,2017,Primaria,0.000000
+15480,Muzo,2017,Primaria,0.002500
+15491,Nobsa,2017,Primaria,0.004800
+15494,Nuevo Colón,2017,Primaria,0.014600
+15500,Oicatá,2017,Primaria,0.005900
+15507,Otanche,2017,Primaria,0.006200
+15511,Pachavita,2017,Primaria,0.022900
+15514,Páez,2017,Primaria,0.012100
+15516,Paipa,2017,Primaria,0.006300
+15518,Pajarito,2017,Primaria,0.047900
+15522,Panqueba,2017,Primaria,0.000000
+15531,Pauna,2017,Primaria,0.000000
+15533,Paya,2017,Primaria,0.026700
+15537,Paz de Río,2017,Primaria,0.000000
+15542,Pesca,2017,Primaria,0.001700
+15550,Pisba,2017,Primaria,0.036400
+15572,Puerto Boyacá,2017,Primaria,0.006400
+15580,Quípama,2017,Primaria,0.047600
+15599,Ramiriquí,2017,Primaria,0.001300
+15600,Ráquira,2017,Primaria,0.032400
+15621,Rondón,2017,Primaria,0.014700
+15632,Saboyá,2017,Primaria,0.005200
+15638,Sáchica,2017,Primaria,0.006600
+15646,Samacá,2017,Primaria,0.005400
+15660,San Eduardo,2017,Primaria,0.015700
+15664,San José de Pare,2017,Primaria,0.000000
+15667,San Luis de Gaceno,2017,Primaria,0.014900
+15673,San Mateo,2017,Primaria,0.023400
+15676,San Miguel de Sema,2017,Primaria,0.006800
+15681,San Pablo de Borbur,2017,Primaria,0.000000
+15686,Santana,2017,Primaria,0.030200
+15690,Santa María,2017,Primaria,0.000000
+15693,Santa Rosa de Viterbo,2017,Primaria,0.026400
+15696,Santa Sofía,2017,Primaria,0.013700
+15720,Sativanorte,2017,Primaria,0.019700
+15723,Sativasur,2017,Primaria,0.000000
+15740,Siachoque,2017,Primaria,0.003000
+15753,Soatá,2017,Primaria,0.001600
+15755,Socotá,2017,Primaria,0.008500
+15757,Socha,2017,Primaria,0.000000
+15759,Sogamoso,2017,Primaria,0.020200
+15761,Somondoco,2017,Primaria,0.000000
+15762,Sora,2017,Primaria,0.000000
+15763,Sotaquirá,2017,Primaria,0.000000
+15764,Soracá,2017,Primaria,0.000000
+15774,Susacón,2017,Primaria,0.000000
+15776,Sutamarchán,2017,Primaria,0.004900
+15778,Sutatenza,2017,Primaria,0.000000
+15790,Tasco,2017,Primaria,0.000000
+15798,Tenza,2017,Primaria,0.000000
+15804,Tibaná,2017,Primaria,0.007500
+15806,Tibasosa,2017,Primaria,0.011200
+15808,Tinjacá,2017,Primaria,0.000000
+15810,Tipacoque,2017,Primaria,0.010900
+15814,Toca,2017,Primaria,0.024600
+15816,Togüí,2017,Primaria,0.011000
+15820,Tópaga,2017,Primaria,0.003100
+15822,Tota,2017,Primaria,0.000000
+15832,Tununguá,2017,Primaria,0.000000
+15835,Turmequé,2017,Primaria,0.000000
+15837,Tuta,2017,Primaria,0.004000
+15839,Tutazá,2017,Primaria,0.042900
+15842,Umbita,2017,Primaria,0.001700
+15861,Ventaquemada,2017,Primaria,0.003300
+15879,Viracachá,2017,Primaria,0.010400
+15897,Zetaquira,2017,Primaria,0.002700
+15001,Tunja,2017,Secundaria,0.086700
+15022,Almeida,2017,Secundaria,0.000000
+15047,Aquitania,2017,Secundaria,0.093100
+15051,Arcabuco,2017,Secundaria,0.000000
+15087,Belén,2017,Secundaria,0.011000
+15090,Berbeo,2017,Secundaria,0.009200
+15092,Betéitiva,2017,Secundaria,0.011100
+15097,Boavita,2017,Secundaria,0.007100
+15104,Boyacá,2017,Secundaria,0.000000
+15106,Briceño,2017,Secundaria,0.000000
+15109,Buenavista,2017,Secundaria,0.025200
+15114,Busbanzá,2017,Secundaria,0.075000
+15131,Caldas,2017,Secundaria,0.026900
+15135,Campohermoso,2017,Secundaria,0.016600
+15162,Cerinza,2017,Secundaria,0.000000
+15172,Chinavita,2017,Secundaria,0.058500
+15176,Chiquinquirá,2017,Secundaria,0.029600
+15180,Chiscas,2017,Secundaria,0.000000
+15183,Chita,2017,Secundaria,0.019100
+15185,Chitaraque,2017,Secundaria,0.014500
+15187,Chivatá,2017,Secundaria,0.098300
+15189,Ciénega,2017,Secundaria,0.018800
+15204,Cómbita,2017,Secundaria,0.117200
+15212,Coper,2017,Secundaria,0.004400
+15215,Corrales,2017,Secundaria,0.000000
+15218,Covarachía,2017,Secundaria,0.023300
+15223,Cubará,2017,Secundaria,0.026100
+15224,Cucaita,2017,Secundaria,0.003500
+15226,Cuítiva,2017,Secundaria,0.000000
+15232,Chíquiza,2017,Secundaria,0.000000
+15236,Chivor,2017,Secundaria,0.064500
+15238,Duitama,2017,Secundaria,0.086800
+15244,El Cocuy,2017,Secundaria,0.010200
+15248,El Espino,2017,Secundaria,0.048600
+15272,Firavitoba,2017,Secundaria,0.003300
+15276,Floresta,2017,Secundaria,0.000000
+15293,Gachantivá,2017,Secundaria,0.000000
+15296,Gameza,2017,Secundaria,0.027600
+15299,Garagoa,2017,Secundaria,0.010200
+15317,Guacamayas,2017,Secundaria,0.000000
+15322,Guateque,2017,Secundaria,0.014900
+15325,Guayatá,2017,Secundaria,0.000000
+15332,Güicán,2017,Secundaria,0.000000
+15362,Iza,2017,Secundaria,0.027000
+15367,Jenesano,2017,Secundaria,0.002100
+15368,Jericó,2017,Secundaria,0.000000
+15377,Labranzagrande,2017,Secundaria,0.049300
+15380,La Capilla,2017,Secundaria,0.038200
+15401,La Victoria,2017,Secundaria,0.100000
+15403,La Uvita,2017,Secundaria,0.000000
+15407,Villa de Leyva,2017,Secundaria,0.015000
+15425,Macanal,2017,Secundaria,0.000000
+15442,Maripí,2017,Secundaria,0.018300
+15455,Miraflores,2017,Secundaria,0.008400
+15464,Mongua,2017,Secundaria,0.014600
+15466,Monguí,2017,Secundaria,0.000000
+15469,Moniquirá,2017,Secundaria,0.012900
+15476,Motavita,2017,Secundaria,0.000000
+15480,Muzo,2017,Secundaria,0.014100
+15491,Nobsa,2017,Secundaria,0.013500
+15494,Nuevo Colón,2017,Secundaria,0.006300
+15500,Oicatá,2017,Secundaria,0.000000
+15507,Otanche,2017,Secundaria,0.020100
+15511,Pachavita,2017,Secundaria,0.087600
+15514,Páez,2017,Secundaria,0.011700
+15516,Paipa,2017,Secundaria,0.016400
+15518,Pajarito,2017,Secundaria,0.006800
+15522,Panqueba,2017,Secundaria,0.015000
+15531,Pauna,2017,Secundaria,0.000000
+15533,Paya,2017,Secundaria,0.055900
+15537,Paz de Río,2017,Secundaria,0.000000
+15542,Pesca,2017,Secundaria,0.007000
+15550,Pisba,2017,Secundaria,0.000000
+15572,Puerto Boyacá,2017,Secundaria,0.013500
+15580,Quípama,2017,Secundaria,0.116200
+15599,Ramiriquí,2017,Secundaria,0.000000
+15600,Ráquira,2017,Secundaria,0.005100
+15621,Rondón,2017,Secundaria,0.033800
+15632,Saboyá,2017,Secundaria,0.044900
+15638,Sáchica,2017,Secundaria,0.007900
+15646,Samacá,2017,Secundaria,0.020500
+15660,San Eduardo,2017,Secundaria,0.010300
+15664,San José de Pare,2017,Secundaria,0.000000
+15667,San Luis de Gaceno,2017,Secundaria,0.060800
+15673,San Mateo,2017,Secundaria,0.008500
+15676,San Miguel de Sema,2017,Secundaria,0.007400
+15681,San Pablo de Borbur,2017,Secundaria,0.001900
+15686,Santana,2017,Secundaria,0.123300
+15690,Santa María,2017,Secundaria,0.024400
+15693,Santa Rosa de Viterbo,2017,Secundaria,0.005000
+15696,Santa Sofía,2017,Secundaria,0.010800
+15720,Sativanorte,2017,Secundaria,0.039400
+15723,Sativasur,2017,Secundaria,0.010900
+15740,Siachoque,2017,Secundaria,0.027700
+15753,Soatá,2017,Secundaria,0.000000
+15755,Socotá,2017,Secundaria,0.006500
+15757,Socha,2017,Secundaria,0.000000
+15759,Sogamoso,2017,Secundaria,0.043000
+15761,Somondoco,2017,Secundaria,0.000000
+15762,Sora,2017,Secundaria,0.000000
+15763,Sotaquirá,2017,Secundaria,0.005800
+15764,Soracá,2017,Secundaria,0.000000
+15774,Susacón,2017,Secundaria,0.000000
+15776,Sutamarchán,2017,Secundaria,0.003000
+15778,Sutatenza,2017,Secundaria,0.000000
+15790,Tasco,2017,Secundaria,0.004800
+15798,Tenza,2017,Secundaria,0.000000
+15804,Tibaná,2017,Secundaria,0.009200
+15806,Tibasosa,2017,Secundaria,0.029200
+15808,Tinjacá,2017,Secundaria,0.000000
+15810,Tipacoque,2017,Secundaria,0.009500
+15814,Toca,2017,Secundaria,0.011000
+15816,Togüí,2017,Secundaria,0.029800
+15820,Tópaga,2017,Secundaria,0.008200
+15822,Tota,2017,Secundaria,0.002800
+15832,Tununguá,2017,Secundaria,0.000000
+15835,Turmequé,2017,Secundaria,0.000000
+15837,Tuta,2017,Secundaria,0.049500
+15839,Tutazá,2017,Secundaria,0.026000
+15842,Umbita,2017,Secundaria,0.002200
+15861,Ventaquemada,2017,Secundaria,0.028000
+15879,Viracachá,2017,Secundaria,0.154800
+15897,Zetaquira,2017,Secundaria,0.000000
+15001,Tunja,2017,Edu_Media,0.035100
+15022,Almeida,2017,Edu_Media,0.000000
+15047,Aquitania,2017,Edu_Media,0.024000
+15051,Arcabuco,2017,Edu_Media,0.000000
+15087,Belén,2017,Edu_Media,0.000000
+15090,Berbeo,2017,Edu_Media,0.000000
+15092,Betéitiva,2017,Edu_Media,0.000000
+15097,Boavita,2017,Edu_Media,0.005300
+15104,Boyacá,2017,Edu_Media,0.000000
+15106,Briceño,2017,Edu_Media,0.000000
+15109,Buenavista,2017,Edu_Media,0.007100
+15114,Busbanzá,2017,Edu_Media,0.000000
+15131,Caldas,2017,Edu_Media,0.021100
+15135,Campohermoso,2017,Edu_Media,0.000000
+15162,Cerinza,2017,Edu_Media,0.000000
+15172,Chinavita,2017,Edu_Media,0.023000
+15176,Chiquinquirá,2017,Edu_Media,0.006000
+15180,Chiscas,2017,Edu_Media,0.000000
+15183,Chita,2017,Edu_Media,0.000000
+15185,Chitaraque,2017,Edu_Media,0.010200
+15187,Chivatá,2017,Edu_Media,0.159400
+15189,Ciénega,2017,Edu_Media,0.000000
+15204,Cómbita,2017,Edu_Media,0.004900
+15212,Coper,2017,Edu_Media,0.000000
+15215,Corrales,2017,Edu_Media,0.015600
+15218,Covarachía,2017,Edu_Media,0.000000
+15223,Cubará,2017,Edu_Media,0.029100
+15224,Cucaita,2017,Edu_Media,0.015200
+15226,Cuítiva,2017,Edu_Media,0.000000
+15232,Chíquiza,2017,Edu_Media,0.000000
+15236,Chivor,2017,Edu_Media,0.000000
+15238,Duitama,2017,Edu_Media,0.047800
+15244,El Cocuy,2017,Edu_Media,0.000000
+15248,El Espino,2017,Edu_Media,0.032300
+15272,Firavitoba,2017,Edu_Media,0.000000
+15276,Floresta,2017,Edu_Media,0.000000
+15293,Gachantivá,2017,Edu_Media,0.000000
+15296,Gameza,2017,Edu_Media,0.008100
+15299,Garagoa,2017,Edu_Media,0.009000
+15317,Guacamayas,2017,Edu_Media,0.000000
+15322,Guateque,2017,Edu_Media,0.006100
+15325,Guayatá,2017,Edu_Media,0.000000
+15332,Güicán,2017,Edu_Media,0.000000
+15362,Iza,2017,Edu_Media,0.000000
+15367,Jenesano,2017,Edu_Media,0.011200
+15368,Jericó,2017,Edu_Media,0.000000
+15377,Labranzagrande,2017,Edu_Media,0.014300
+15380,La Capilla,2017,Edu_Media,0.000000
+15401,La Victoria,2017,Edu_Media,0.000000
+15403,La Uvita,2017,Edu_Media,0.000000
+15407,Villa de Leyva,2017,Edu_Media,0.010100
+15425,Macanal,2017,Edu_Media,0.000000
+15442,Maripí,2017,Edu_Media,0.010500
+15455,Miraflores,2017,Edu_Media,0.000000
+15464,Mongua,2017,Edu_Media,0.000000
+15466,Monguí,2017,Edu_Media,0.000000
+15469,Moniquirá,2017,Edu_Media,0.003400
+15476,Motavita,2017,Edu_Media,0.000000
+15480,Muzo,2017,Edu_Media,0.008300
+15491,Nobsa,2017,Edu_Media,0.009800
+15494,Nuevo Colón,2017,Edu_Media,0.000000
+15500,Oicatá,2017,Edu_Media,0.000000
+15507,Otanche,2017,Edu_Media,0.000000
+15511,Pachavita,2017,Edu_Media,0.027800
+15514,Páez,2017,Edu_Media,0.000000
+15516,Paipa,2017,Edu_Media,0.010600
+15518,Pajarito,2017,Edu_Media,0.000000
+15522,Panqueba,2017,Edu_Media,0.000000
+15531,Pauna,2017,Edu_Media,0.000000
+15533,Paya,2017,Edu_Media,0.036400
+15537,Paz de Río,2017,Edu_Media,0.000000
+15542,Pesca,2017,Edu_Media,0.000000
+15550,Pisba,2017,Edu_Media,0.000000
+15572,Puerto Boyacá,2017,Edu_Media,0.010400
+15580,Quípama,2017,Edu_Media,0.014400
+15599,Ramiriquí,2017,Edu_Media,0.000000
+15600,Ráquira,2017,Edu_Media,0.016100
+15621,Rondón,2017,Edu_Media,0.013900
+15632,Saboyá,2017,Edu_Media,0.050400
+15638,Sáchica,2017,Edu_Media,0.000000
+15646,Samacá,2017,Edu_Media,0.004300
+15660,San Eduardo,2017,Edu_Media,0.054500
+15664,San José de Pare,2017,Edu_Media,0.000000
+15667,San Luis de Gaceno,2017,Edu_Media,0.000000
+15673,San Mateo,2017,Edu_Media,0.000000
+15676,San Miguel de Sema,2017,Edu_Media,0.000000
+15681,San Pablo de Borbur,2017,Edu_Media,0.005000
+15686,Santana,2017,Edu_Media,0.004800
+15690,Santa María,2017,Edu_Media,0.000000
+15693,Santa Rosa de Viterbo,2017,Edu_Media,0.004400
+15696,Santa Sofía,2017,Edu_Media,0.000000
+15720,Sativanorte,2017,Edu_Media,0.000000
+15723,Sativasur,2017,Edu_Media,0.000000
+15740,Siachoque,2017,Edu_Media,0.025300
+15753,Soatá,2017,Edu_Media,0.000000
+15755,Socotá,2017,Edu_Media,0.008300
+15757,Socha,2017,Edu_Media,0.000000
+15759,Sogamoso,2017,Edu_Media,0.008800
+15761,Somondoco,2017,Edu_Media,0.000000
+15762,Sora,2017,Edu_Media,0.000000
+15763,Sotaquirá,2017,Edu_Media,0.000000
+15764,Soracá,2017,Edu_Media,0.005000
+15774,Susacón,2017,Edu_Media,0.000000
+15776,Sutamarchán,2017,Edu_Media,0.045200
+15778,Sutatenza,2017,Edu_Media,0.000000
+15790,Tasco,2017,Edu_Media,0.000000
+15798,Tenza,2017,Edu_Media,0.000000
+15804,Tibaná,2017,Edu_Media,0.000000
+15806,Tibasosa,2017,Edu_Media,0.036800
+15808,Tinjacá,2017,Edu_Media,0.000000
+15810,Tipacoque,2017,Edu_Media,0.000000
+15814,Toca,2017,Edu_Media,0.010000
+15816,Togüí,2017,Edu_Media,0.000000
+15820,Tópaga,2017,Edu_Media,0.000000
+15822,Tota,2017,Edu_Media,0.000000
+15832,Tununguá,2017,Edu_Media,0.000000
+15835,Turmequé,2017,Edu_Media,0.000000
+15837,Tuta,2017,Edu_Media,0.020100
+15839,Tutazá,2017,Edu_Media,0.014100
+15842,Umbita,2017,Edu_Media,0.000000
+15861,Ventaquemada,2017,Edu_Media,0.019700
+15879,Viracachá,2017,Edu_Media,0.147100
+15897,Zetaquira,2017,Edu_Media,0.013100
+15001,Tunja,2018,Total,0.036300
+15022,Almeida,2018,Total,0.000000
+15047,Aquitania,2018,Total,0.021600
+15051,Arcabuco,2018,Total,0.000000
+15087,Belén,2018,Total,0.013800
+15090,Berbeo,2018,Total,0.026900
+15092,Betéitiva,2018,Total,0.019000
+15097,Boavita,2018,Total,0.017500
+15104,Boyacá,2018,Total,0.007200
+15106,Briceño,2018,Total,0.019600
+15109,Buenavista,2018,Total,0.012100
+15114,Busbanzá,2018,Total,0.000000
+15131,Caldas,2018,Total,0.034500
+15135,Campohermoso,2018,Total,0.004100
+15162,Cerinza,2018,Total,0.000000
+15172,Chinavita,2018,Total,0.033500
+15176,Chiquinquirá,2018,Total,0.009600
+15180,Chiscas,2018,Total,0.003000
+15183,Chita,2018,Total,0.011100
+15185,Chitaraque,2018,Total,0.000000
+15187,Chivatá,2018,Total,0.027700
+15189,Ciénega,2018,Total,0.014100
+15204,Cómbita,2018,Total,0.057900
+15212,Coper,2018,Total,0.000000
+15215,Corrales,2018,Total,0.024900
+15218,Covarachía,2018,Total,0.032200
+15223,Cubará,2018,Total,0.025300
+15224,Cucaita,2018,Total,0.008800
+15226,Cuítiva,2018,Total,0.000000
+15232,Chíquiza,2018,Total,0.000000
+15236,Chivor,2018,Total,0.031300
+15238,Duitama,2018,Total,0.031200
+15244,El Cocuy,2018,Total,0.015200
+15248,El Espino,2018,Total,0.004000
+15272,Firavitoba,2018,Total,0.009600
+15276,Floresta,2018,Total,0.000000
+15293,Gachantivá,2018,Total,0.000000
+15296,Gameza,2018,Total,0.013700
+15299,Garagoa,2018,Total,0.010900
+15317,Guacamayas,2018,Total,0.000000
+15322,Guateque,2018,Total,0.007000
+15325,Guayatá,2018,Total,0.005900
+15332,Güicán,2018,Total,0.000000
+15362,Iza,2018,Total,0.049000
+15367,Jenesano,2018,Total,0.004800
+15368,Jericó,2018,Total,0.000000
+15377,Labranzagrande,2018,Total,0.040100
+15380,La Capilla,2018,Total,0.005000
+15401,La Victoria,2018,Total,0.000000
+15403,La Uvita,2018,Total,0.000000
+15407,Villa de Leyva,2018,Total,0.013400
+15425,Macanal,2018,Total,0.000000
+15442,Maripí,2018,Total,0.002800
+15455,Miraflores,2018,Total,0.010500
+15464,Mongua,2018,Total,0.005700
+15466,Monguí,2018,Total,0.000000
+15469,Moniquirá,2018,Total,0.004300
+15476,Motavita,2018,Total,0.002200
+15480,Muzo,2018,Total,0.000600
+15491,Nobsa,2018,Total,0.006100
+15494,Nuevo Colón,2018,Total,0.005600
+15500,Oicatá,2018,Total,0.000000
+15507,Otanche,2018,Total,0.002000
+15511,Pachavita,2018,Total,0.088100
+15514,Páez,2018,Total,0.001900
+15516,Paipa,2018,Total,0.011100
+15518,Pajarito,2018,Total,0.035400
+15522,Panqueba,2018,Total,0.008800
+15531,Pauna,2018,Total,0.001400
+15533,Paya,2018,Total,0.016700
+15537,Paz de Río,2018,Total,0.000000
+15542,Pesca,2018,Total,0.005400
+15550,Pisba,2018,Total,0.000000
+15572,Puerto Boyacá,2018,Total,0.013200
+15580,Quípama,2018,Total,0.022900
+15599,Ramiriquí,2018,Total,0.000500
+15600,Ráquira,2018,Total,0.034000
+15621,Rondón,2018,Total,0.094000
+15632,Saboyá,2018,Total,0.009800
+15638,Sáchica,2018,Total,0.017000
+15646,Samacá,2018,Total,0.002300
+15660,San Eduardo,2018,Total,0.003700
+15664,San José de Pare,2018,Total,0.002600
+15667,San Luis de Gaceno,2018,Total,0.053800
+15673,San Mateo,2018,Total,0.003100
+15676,San Miguel de Sema,2018,Total,0.021600
+15681,San Pablo de Borbur,2018,Total,0.006000
+15686,Santana,2018,Total,0.070000
+15690,Santa María,2018,Total,0.031400
+15693,Santa Rosa de Viterbo,2018,Total,0.001800
+15696,Santa Sofía,2018,Total,0.003700
+15720,Sativanorte,2018,Total,0.014400
+15723,Sativasur,2018,Total,0.000000
+15740,Siachoque,2018,Total,0.026900
+15753,Soatá,2018,Total,0.000600
+15755,Socotá,2018,Total,0.005500
+15757,Socha,2018,Total,0.005100
+15759,Sogamoso,2018,Total,0.024000
+15761,Somondoco,2018,Total,0.000000
+15762,Sora,2018,Total,0.000000
+15763,Sotaquirá,2018,Total,0.002700
+15764,Soracá,2018,Total,0.001200
+15774,Susacón,2018,Total,0.000000
+15776,Sutamarchán,2018,Total,0.021900
+15778,Sutatenza,2018,Total,0.002100
+15790,Tasco,2018,Total,0.000000
+15798,Tenza,2018,Total,0.000000
+15804,Tibaná,2018,Total,0.000600
+15806,Tibasosa,2018,Total,0.017600
+15808,Tinjacá,2018,Total,0.000000
+15810,Tipacoque,2018,Total,0.003200
+15814,Toca,2018,Total,0.019800
+15816,Togüí,2018,Total,0.021800
+15820,Tópaga,2018,Total,0.018800
+15822,Tota,2018,Total,0.001000
+15832,Tununguá,2018,Total,0.000000
+15835,Turmequé,2018,Total,0.004700
+15837,Tuta,2018,Total,0.000500
+15839,Tutazá,2018,Total,0.000000
+15842,Umbita,2018,Total,0.000000
+15861,Ventaquemada,2018,Total,0.000000
+15879,Viracachá,2018,Total,0.004500
+15897,Zetaquira,2018,Total,0.009900
+15001,Tunja,2018,Transición,0.005400
+15022,Almeida,2018,Transición,0.000000
+15047,Aquitania,2018,Transición,0.004400
+15051,Arcabuco,2018,Transición,0.000000
+15087,Belén,2018,Transición,0.000000
+15090,Berbeo,2018,Transición,0.000000
+15092,Betéitiva,2018,Transición,0.000000
+15097,Boavita,2018,Transición,0.000000
+15104,Boyacá,2018,Transición,0.000000
+15106,Briceño,2018,Transición,0.000000
+15109,Buenavista,2018,Transición,0.000000
+15114,Busbanzá,2018,Transición,0.000000
+15131,Caldas,2018,Transición,0.051300
+15135,Campohermoso,2018,Transición,0.000000
+15162,Cerinza,2018,Transición,0.000000
+15172,Chinavita,2018,Transición,0.000000
+15176,Chiquinquirá,2018,Transición,0.006100
+15180,Chiscas,2018,Transición,0.000000
+15183,Chita,2018,Transición,0.000000
+15185,Chitaraque,2018,Transición,0.000000
+15187,Chivatá,2018,Transición,0.000000
+15189,Ciénega,2018,Transición,0.000000
+15204,Cómbita,2018,Transición,0.000000
+15212,Coper,2018,Transición,0.000000
+15215,Corrales,2018,Transición,0.000000
+15218,Covarachía,2018,Transición,0.000000
+15223,Cubará,2018,Transición,0.000000
+15224,Cucaita,2018,Transición,0.016700
+15226,Cuítiva,2018,Transición,0.000000
+15232,Chíquiza,2018,Transición,0.000000
+15236,Chivor,2018,Transición,0.032300
+15238,Duitama,2018,Transición,0.006800
+15244,El Cocuy,2018,Transición,0.000000
+15248,El Espino,2018,Transición,0.000000
+15272,Firavitoba,2018,Transición,0.000000
+15276,Floresta,2018,Transición,0.000000
+15293,Gachantivá,2018,Transición,0.000000
+15296,Gameza,2018,Transición,0.000000
+15299,Garagoa,2018,Transición,0.000000
+15317,Guacamayas,2018,Transición,0.000000
+15322,Guateque,2018,Transición,0.000000
+15325,Guayatá,2018,Transición,0.000000
+15332,Güicán,2018,Transición,0.000000
+15362,Iza,2018,Transición,0.000000
+15367,Jenesano,2018,Transición,0.000000
+15368,Jericó,2018,Transición,0.000000
+15377,Labranzagrande,2018,Transición,0.000000
+15380,La Capilla,2018,Transición,0.000000
+15401,La Victoria,2018,Transición,0.000000
+15403,La Uvita,2018,Transición,0.000000
+15407,Villa de Leyva,2018,Transición,0.000000
+15425,Macanal,2018,Transición,0.000000
+15442,Maripí,2018,Transición,0.000000
+15455,Miraflores,2018,Transición,0.000000
+15464,Mongua,2018,Transición,0.000000
+15466,Monguí,2018,Transición,0.000000
+15469,Moniquirá,2018,Transición,0.000000
+15476,Motavita,2018,Transición,0.000000
+15480,Muzo,2018,Transición,0.000000
+15491,Nobsa,2018,Transición,0.000000
+15494,Nuevo Colón,2018,Transición,0.000000
+15500,Oicatá,2018,Transición,0.000000
+15507,Otanche,2018,Transición,0.000000
+15511,Pachavita,2018,Transición,0.000000
+15514,Páez,2018,Transición,0.000000
+15516,Paipa,2018,Transición,0.000000
+15518,Pajarito,2018,Transición,0.000000
+15522,Panqueba,2018,Transición,0.000000
+15531,Pauna,2018,Transición,0.000000
+15533,Paya,2018,Transición,0.000000
+15537,Paz de Río,2018,Transición,0.000000
+15542,Pesca,2018,Transición,0.000000
+15550,Pisba,2018,Transición,0.000000
+15572,Puerto Boyacá,2018,Transición,0.000000
+15580,Quípama,2018,Transición,0.000000
+15599,Ramiriquí,2018,Transición,0.000000
+15600,Ráquira,2018,Transición,0.000000
+15621,Rondón,2018,Transición,0.000000
+15632,Saboyá,2018,Transición,0.006300
+15638,Sáchica,2018,Transición,0.000000
+15646,Samacá,2018,Transición,0.000000
+15660,San Eduardo,2018,Transición,0.000000
+15664,San José de Pare,2018,Transición,0.000000
+15667,San Luis de Gaceno,2018,Transición,0.000000
+15673,San Mateo,2018,Transición,0.000000
+15676,San Miguel de Sema,2018,Transición,0.000000
+15681,San Pablo de Borbur,2018,Transición,0.000000
+15686,Santana,2018,Transición,0.000000
+15690,Santa María,2018,Transición,0.000000
+15693,Santa Rosa de Viterbo,2018,Transición,0.000000
+15696,Santa Sofía,2018,Transición,0.000000
+15720,Sativanorte,2018,Transición,0.000000
+15723,Sativasur,2018,Transición,0.000000
+15740,Siachoque,2018,Transición,0.007800
+15753,Soatá,2018,Transición,0.000000
+15755,Socotá,2018,Transición,0.000000
+15757,Socha,2018,Transición,0.000000
+15759,Sogamoso,2018,Transición,0.002400
+15761,Somondoco,2018,Transición,0.000000
+15762,Sora,2018,Transición,0.000000
+15763,Sotaquirá,2018,Transición,0.000000
+15764,Soracá,2018,Transición,0.000000
+15774,Susacón,2018,Transición,0.000000
+15776,Sutamarchán,2018,Transición,0.000000
+15778,Sutatenza,2018,Transición,0.000000
+15790,Tasco,2018,Transición,0.000000
+15798,Tenza,2018,Transición,0.000000
+15804,Tibaná,2018,Transición,0.000000
+15806,Tibasosa,2018,Transición,0.000000
+15808,Tinjacá,2018,Transición,0.000000
+15810,Tipacoque,2018,Transición,0.000000
+15814,Toca,2018,Transición,0.000000
+15816,Togüí,2018,Transición,0.000000
+15820,Tópaga,2018,Transición,0.000000
+15822,Tota,2018,Transición,0.000000
+15832,Tununguá,2018,Transición,0.000000
+15835,Turmequé,2018,Transición,0.000000
+15837,Tuta,2018,Transición,0.000000
+15839,Tutazá,2018,Transición,0.000000
+15842,Umbita,2018,Transición,0.000000
+15861,Ventaquemada,2018,Transición,0.000000
+15879,Viracachá,2018,Transición,0.000000
+15897,Zetaquira,2018,Transición,0.000000
+15001,Tunja,2018,Primaria,0.025600
+15022,Almeida,2018,Primaria,0.000000
+15047,Aquitania,2018,Primaria,0.005500
+15051,Arcabuco,2018,Primaria,0.000000
+15087,Belén,2018,Primaria,0.004900
+15090,Berbeo,2018,Primaria,0.050000
+15092,Betéitiva,2018,Primaria,0.026800
+15097,Boavita,2018,Primaria,0.007600
+15104,Boyacá,2018,Primaria,0.005400
+15106,Briceño,2018,Primaria,0.017800
+15109,Buenavista,2018,Primaria,0.017700
+15114,Busbanzá,2018,Primaria,0.000000
+15131,Caldas,2018,Primaria,0.024200
+15135,Campohermoso,2018,Primaria,0.004700
+15162,Cerinza,2018,Primaria,0.000000
+15172,Chinavita,2018,Primaria,0.026700
+15176,Chiquinquirá,2018,Primaria,0.004500
+15180,Chiscas,2018,Primaria,0.000000
+15183,Chita,2018,Primaria,0.010300
+15185,Chitaraque,2018,Primaria,0.000000
+15187,Chivatá,2018,Primaria,0.054200
+15189,Ciénega,2018,Primaria,0.020300
+15204,Cómbita,2018,Primaria,0.040400
+15212,Coper,2018,Primaria,0.000000
+15215,Corrales,2018,Primaria,0.026200
+15218,Covarachía,2018,Primaria,0.048100
+15223,Cubará,2018,Primaria,0.041400
+15224,Cucaita,2018,Primaria,0.015200
+15226,Cuítiva,2018,Primaria,0.000000
+15232,Chíquiza,2018,Primaria,0.000000
+15236,Chivor,2018,Primaria,0.019600
+15238,Duitama,2018,Primaria,0.030800
+15244,El Cocuy,2018,Primaria,0.014100
+15248,El Espino,2018,Primaria,0.000000
+15272,Firavitoba,2018,Primaria,0.008600
+15276,Floresta,2018,Primaria,0.000000
+15293,Gachantivá,2018,Primaria,0.000000
+15296,Gameza,2018,Primaria,0.018100
+15299,Garagoa,2018,Primaria,0.019000
+15317,Guacamayas,2018,Primaria,0.000000
+15322,Guateque,2018,Primaria,0.001600
+15325,Guayatá,2018,Primaria,0.000000
+15332,Güicán,2018,Primaria,0.000000
+15362,Iza,2018,Primaria,0.012200
+15367,Jenesano,2018,Primaria,0.008000
+15368,Jericó,2018,Primaria,0.000000
+15377,Labranzagrande,2018,Primaria,0.018900
+15380,La Capilla,2018,Primaria,0.000000
+15401,La Victoria,2018,Primaria,0.000000
+15403,La Uvita,2018,Primaria,0.000000
+15407,Villa de Leyva,2018,Primaria,0.013800
+15425,Macanal,2018,Primaria,0.000000
+15442,Maripí,2018,Primaria,0.002500
+15455,Miraflores,2018,Primaria,0.008800
+15464,Mongua,2018,Primaria,0.007400
+15466,Monguí,2018,Primaria,0.000000
+15469,Moniquirá,2018,Primaria,0.003200
+15476,Motavita,2018,Primaria,0.002500
+15480,Muzo,2018,Primaria,0.001400
+15491,Nobsa,2018,Primaria,0.001200
+15494,Nuevo Colón,2018,Primaria,0.005100
+15500,Oicatá,2018,Primaria,0.000000
+15507,Otanche,2018,Primaria,0.005000
+15511,Pachavita,2018,Primaria,0.048500
+15514,Páez,2018,Primaria,0.000000
+15516,Paipa,2018,Primaria,0.008700
+15518,Pajarito,2018,Primaria,0.011200
+15522,Panqueba,2018,Primaria,0.000000
+15531,Pauna,2018,Primaria,0.000000
+15533,Paya,2018,Primaria,0.009500
+15537,Paz de Río,2018,Primaria,0.000000
+15542,Pesca,2018,Primaria,0.003300
+15550,Pisba,2018,Primaria,0.000000
+15572,Puerto Boyacá,2018,Primaria,0.014600
+15580,Quípama,2018,Primaria,0.030900
+15599,Ramiriquí,2018,Primaria,0.000000
+15600,Ráquira,2018,Primaria,0.032300
+15621,Rondón,2018,Primaria,0.054100
+15632,Saboyá,2018,Primaria,0.007800
+15638,Sáchica,2018,Primaria,0.013000
+15646,Samacá,2018,Primaria,0.003900
+15660,San Eduardo,2018,Primaria,0.008900
+15664,San José de Pare,2018,Primaria,0.003000
+15667,San Luis de Gaceno,2018,Primaria,0.036800
+15673,San Mateo,2018,Primaria,0.003800
+15676,San Miguel de Sema,2018,Primaria,0.015200
+15681,San Pablo de Borbur,2018,Primaria,0.005600
+15686,Santana,2018,Primaria,0.072800
+15690,Santa María,2018,Primaria,0.035700
+15693,Santa Rosa de Viterbo,2018,Primaria,0.002900
+15696,Santa Sofía,2018,Primaria,0.000000
+15720,Sativanorte,2018,Primaria,0.000000
+15723,Sativasur,2018,Primaria,0.000000
+15740,Siachoque,2018,Primaria,0.019400
+15753,Soatá,2018,Primaria,0.000000
+15755,Socotá,2018,Primaria,0.005800
+15757,Socha,2018,Primaria,0.004900
+15759,Sogamoso,2018,Primaria,0.018900
+15761,Somondoco,2018,Primaria,0.000000
+15762,Sora,2018,Primaria,0.000000
+15763,Sotaquirá,2018,Primaria,0.001500
+15764,Soracá,2018,Primaria,0.000000
+15774,Susacón,2018,Primaria,0.000000
+15776,Sutamarchán,2018,Primaria,0.000000
+15778,Sutatenza,2018,Primaria,0.005500
+15790,Tasco,2018,Primaria,0.000000
+15798,Tenza,2018,Primaria,0.000000
+15804,Tibaná,2018,Primaria,0.000000
+15806,Tibasosa,2018,Primaria,0.004000
+15808,Tinjacá,2018,Primaria,0.000000
+15810,Tipacoque,2018,Primaria,0.003700
+15814,Toca,2018,Primaria,0.011700
+15816,Togüí,2018,Primaria,0.016900
+15820,Tópaga,2018,Primaria,0.003200
+15822,Tota,2018,Primaria,0.000000
+15832,Tununguá,2018,Primaria,0.000000
+15835,Turmequé,2018,Primaria,0.013100
+15837,Tuta,2018,Primaria,0.001400
+15839,Tutazá,2018,Primaria,0.000000
+15842,Umbita,2018,Primaria,0.000000
+15861,Ventaquemada,2018,Primaria,0.000000
+15879,Viracachá,2018,Primaria,0.005800
+15897,Zetaquira,2018,Primaria,0.000000
+15001,Tunja,2018,Secundaria,0.055800
+15022,Almeida,2018,Secundaria,0.000000
+15047,Aquitania,2018,Secundaria,0.034500
+15051,Arcabuco,2018,Secundaria,0.000000
+15087,Belén,2018,Secundaria,0.020400
+15090,Berbeo,2018,Secundaria,0.018900
+15092,Betéitiva,2018,Secundaria,0.023500
+15097,Boavita,2018,Secundaria,0.021900
+15104,Boyacá,2018,Secundaria,0.010100
+15106,Briceño,2018,Secundaria,0.033300
+15109,Buenavista,2018,Secundaria,0.014500
+15114,Busbanzá,2018,Secundaria,0.000000
+15131,Caldas,2018,Secundaria,0.049500
+15135,Campohermoso,2018,Secundaria,0.006300
+15162,Cerinza,2018,Secundaria,0.000000
+15172,Chinavita,2018,Secundaria,0.051500
+15176,Chiquinquirá,2018,Secundaria,0.018300
+15180,Chiscas,2018,Secundaria,0.008400
+15183,Chita,2018,Secundaria,0.014300
+15185,Chitaraque,2018,Secundaria,0.000000
+15187,Chivatá,2018,Secundaria,0.012700
+15189,Ciénega,2018,Secundaria,0.016000
+15204,Cómbita,2018,Secundaria,0.097500
+15212,Coper,2018,Secundaria,0.000000
+15215,Corrales,2018,Secundaria,0.033100
+15218,Covarachía,2018,Secundaria,0.026700
+15223,Cubará,2018,Secundaria,0.006000
+15224,Cucaita,2018,Secundaria,0.003600
+15226,Cuítiva,2018,Secundaria,0.000000
+15232,Chíquiza,2018,Secundaria,0.000000
+15236,Chivor,2018,Secundaria,0.033900
+15238,Duitama,2018,Secundaria,0.042400
+15244,El Cocuy,2018,Secundaria,0.021400
+15248,El Espino,2018,Secundaria,0.011400
+15272,Firavitoba,2018,Secundaria,0.016000
+15276,Floresta,2018,Secundaria,0.000000
+15293,Gachantivá,2018,Secundaria,0.000000
+15296,Gameza,2018,Secundaria,0.016100
+15299,Garagoa,2018,Secundaria,0.009500
+15317,Guacamayas,2018,Secundaria,0.000000
+15322,Guateque,2018,Secundaria,0.011900
+15325,Guayatá,2018,Secundaria,0.015100
+15332,Güicán,2018,Secundaria,0.000000
+15362,Iza,2018,Secundaria,0.116300
+15367,Jenesano,2018,Secundaria,0.000000
+15368,Jericó,2018,Secundaria,0.000000
+15377,Labranzagrande,2018,Secundaria,0.094200
+15380,La Capilla,2018,Secundaria,0.013400
+15401,La Victoria,2018,Secundaria,0.000000
+15403,La Uvita,2018,Secundaria,0.000000
+15407,Villa de Leyva,2018,Secundaria,0.017600
+15425,Macanal,2018,Secundaria,0.000000
+15442,Maripí,2018,Secundaria,0.002300
+15455,Miraflores,2018,Secundaria,0.018900
+15464,Mongua,2018,Secundaria,0.007100
+15466,Monguí,2018,Secundaria,0.000000
+15469,Moniquirá,2018,Secundaria,0.007700
+15476,Motavita,2018,Secundaria,0.003100
+15480,Muzo,2018,Secundaria,0.000000
+15491,Nobsa,2018,Secundaria,0.015600
+15494,Nuevo Colón,2018,Secundaria,0.009400
+15500,Oicatá,2018,Secundaria,0.000000
+15507,Otanche,2018,Secundaria,0.000000
+15511,Pachavita,2018,Secundaria,0.180300
+15514,Páez,2018,Secundaria,0.000000
+15516,Paipa,2018,Secundaria,0.014600
+15518,Pajarito,2018,Secundaria,0.074300
+15522,Panqueba,2018,Secundaria,0.021700
+15531,Pauna,2018,Secundaria,0.001800
+15533,Paya,2018,Secundaria,0.034500
+15537,Paz de Río,2018,Secundaria,0.000000
+15542,Pesca,2018,Secundaria,0.009200
+15550,Pisba,2018,Secundaria,0.000000
+15572,Puerto Boyacá,2018,Secundaria,0.016500
+15580,Quípama,2018,Secundaria,0.024200
+15599,Ramiriquí,2018,Secundaria,0.001400
+15600,Ráquira,2018,Secundaria,0.056000
+15621,Rondón,2018,Secundaria,0.173700
+15632,Saboyá,2018,Secundaria,0.010600
+15638,Sáchica,2018,Secundaria,0.030900
+15646,Samacá,2018,Secundaria,0.001400
+15660,San Eduardo,2018,Secundaria,0.000000
+15664,San José de Pare,2018,Secundaria,0.003900
+15667,San Luis de Gaceno,2018,Secundaria,0.081600
+15673,San Mateo,2018,Secundaria,0.004300
+15676,San Miguel de Sema,2018,Secundaria,0.037500
+15681,San Pablo de Borbur,2018,Secundaria,0.010100
+15686,Santana,2018,Secundaria,0.104300
+15690,Santa María,2018,Secundaria,0.046600
+15693,Santa Rosa de Viterbo,2018,Secundaria,0.001700
+15696,Santa Sofía,2018,Secundaria,0.005300
+15720,Sativanorte,2018,Secundaria,0.030300
+15723,Sativasur,2018,Secundaria,0.000000
+15740,Siachoque,2018,Secundaria,0.048300
+15753,Soatá,2018,Secundaria,0.001700
+15755,Socotá,2018,Secundaria,0.007800
+15757,Socha,2018,Secundaria,0.008300
+15759,Sogamoso,2018,Secundaria,0.037500
+15761,Somondoco,2018,Secundaria,0.000000
+15762,Sora,2018,Secundaria,0.000000
+15763,Sotaquirá,2018,Secundaria,0.003800
+15764,Soracá,2018,Secundaria,0.003200
+15774,Susacón,2018,Secundaria,0.000000
+15776,Sutamarchán,2018,Secundaria,0.041500
+15778,Sutatenza,2018,Secundaria,0.000000
+15790,Tasco,2018,Secundaria,0.000000
+15798,Tenza,2018,Secundaria,0.000000
+15804,Tibaná,2018,Secundaria,0.001900
+15806,Tibasosa,2018,Secundaria,0.030900
+15808,Tinjacá,2018,Secundaria,0.000000
+15810,Tipacoque,2018,Secundaria,0.004900
+15814,Toca,2018,Secundaria,0.034100
+15816,Togüí,2018,Secundaria,0.038600
+15820,Tópaga,2018,Secundaria,0.043900
+15822,Tota,2018,Secundaria,0.002900
+15832,Tununguá,2018,Secundaria,0.000000
+15835,Turmequé,2018,Secundaria,0.000000
+15837,Tuta,2018,Secundaria,0.000000
+15839,Tutazá,2018,Secundaria,0.000000
+15842,Umbita,2018,Secundaria,0.000000
+15861,Ventaquemada,2018,Secundaria,0.000000
+15879,Viracachá,2018,Secundaria,0.006000
+15897,Zetaquira,2018,Secundaria,0.016300
+15001,Tunja,2018,Edu_Media,0.023600
+15022,Almeida,2018,Edu_Media,0.000000
+15047,Aquitania,2018,Edu_Media,0.052400
+15051,Arcabuco,2018,Edu_Media,0.000000
+15087,Belén,2018,Edu_Media,0.025300
+15090,Berbeo,2018,Edu_Media,0.000000
+15092,Betéitiva,2018,Edu_Media,0.000000
+15097,Boavita,2018,Edu_Media,0.036600
+15104,Boyacá,2018,Edu_Media,0.008100
+15106,Briceño,2018,Edu_Media,0.000000
+15109,Buenavista,2018,Edu_Media,0.000000
+15114,Busbanzá,2018,Edu_Media,0.000000
+15131,Caldas,2018,Edu_Media,0.013500
+15135,Campohermoso,2018,Edu_Media,0.000000
+15162,Cerinza,2018,Edu_Media,0.000000
+15172,Chinavita,2018,Edu_Media,0.023500
+15176,Chiquinquirá,2018,Edu_Media,0.002500
+15180,Chiscas,2018,Edu_Media,0.000000
+15183,Chita,2018,Edu_Media,0.010800
+15185,Chitaraque,2018,Edu_Media,0.000000
+15187,Chivatá,2018,Edu_Media,0.000000
+15189,Ciénega,2018,Edu_Media,0.000000
+15204,Cómbita,2018,Edu_Media,0.031400
+15212,Coper,2018,Edu_Media,0.000000
+15215,Corrales,2018,Edu_Media,0.016900
+15218,Covarachía,2018,Edu_Media,0.014100
+15223,Cubará,2018,Edu_Media,0.009400
+15224,Cucaita,2018,Edu_Media,0.000000
+15226,Cuítiva,2018,Edu_Media,0.000000
+15232,Chíquiza,2018,Edu_Media,0.000000
+15236,Chivor,2018,Edu_Media,0.048800
+15238,Duitama,2018,Edu_Media,0.014800
+15244,El Cocuy,2018,Edu_Media,0.008800
+15248,El Espino,2018,Edu_Media,0.000000
+15272,Firavitoba,2018,Edu_Media,0.000000
+15276,Floresta,2018,Edu_Media,0.000000
+15293,Gachantivá,2018,Edu_Media,0.000000
+15296,Gameza,2018,Edu_Media,0.000000
+15299,Garagoa,2018,Edu_Media,0.000000
+15317,Guacamayas,2018,Edu_Media,0.000000
+15322,Guateque,2018,Edu_Media,0.010600
+15325,Guayatá,2018,Edu_Media,0.000000
+15332,Güicán,2018,Edu_Media,0.000000
+15362,Iza,2018,Edu_Media,0.000000
+15367,Jenesano,2018,Edu_Media,0.011300
+15368,Jericó,2018,Edu_Media,0.000000
+15377,Labranzagrande,2018,Edu_Media,0.037700
+15380,La Capilla,2018,Edu_Media,0.000000
+15401,La Victoria,2018,Edu_Media,0.000000
+15403,La Uvita,2018,Edu_Media,0.000000
+15407,Villa de Leyva,2018,Edu_Media,0.007800
+15425,Macanal,2018,Edu_Media,0.000000
+15442,Maripí,2018,Edu_Media,0.005700
+15455,Miraflores,2018,Edu_Media,0.000000
+15464,Mongua,2018,Edu_Media,0.000000
+15466,Monguí,2018,Edu_Media,0.000000
+15469,Moniquirá,2018,Edu_Media,0.001800
+15476,Motavita,2018,Edu_Media,0.000000
+15480,Muzo,2018,Edu_Media,0.000000
+15491,Nobsa,2018,Edu_Media,0.000000
+15494,Nuevo Colón,2018,Edu_Media,0.000000
+15500,Oicatá,2018,Edu_Media,0.000000
+15507,Otanche,2018,Edu_Media,0.000000
+15511,Pachavita,2018,Edu_Media,0.020400
+15514,Páez,2018,Edu_Media,0.013300
+15516,Paipa,2018,Edu_Media,0.012600
+15518,Pajarito,2018,Edu_Media,0.033900
+15522,Panqueba,2018,Edu_Media,0.000000
+15531,Pauna,2018,Edu_Media,0.004100
+15533,Paya,2018,Edu_Media,0.000000
+15537,Paz de Río,2018,Edu_Media,0.000000
+15542,Pesca,2018,Edu_Media,0.006100
+15550,Pisba,2018,Edu_Media,0.000000
+15572,Puerto Boyacá,2018,Edu_Media,0.005300
+15580,Quípama,2018,Edu_Media,0.006800
+15599,Ramiriquí,2018,Edu_Media,0.000000
+15600,Ráquira,2018,Edu_Media,0.007400
+15621,Rondón,2018,Edu_Media,0.031700
+15632,Saboyá,2018,Edu_Media,0.014500
+15638,Sáchica,2018,Edu_Media,0.000000
+15646,Samacá,2018,Edu_Media,0.000000
+15660,San Eduardo,2018,Edu_Media,0.000000
+15664,San José de Pare,2018,Edu_Media,0.000000
+15667,San Luis de Gaceno,2018,Edu_Media,0.047900
+15673,San Mateo,2018,Edu_Media,0.000000
+15676,San Miguel de Sema,2018,Edu_Media,0.000000
+15681,San Pablo de Borbur,2018,Edu_Media,0.000000
+15686,Santana,2018,Edu_Media,0.000000
+15690,Santa María,2018,Edu_Media,0.000000
+15693,Santa Rosa de Viterbo,2018,Edu_Media,0.000000
+15696,Santa Sofía,2018,Edu_Media,0.014300
+15720,Sativanorte,2018,Edu_Media,0.020000
+15723,Sativasur,2018,Edu_Media,0.000000
+15740,Siachoque,2018,Edu_Media,0.004300
+15753,Soatá,2018,Edu_Media,0.000000
+15755,Socotá,2018,Edu_Media,0.000000
+15757,Socha,2018,Edu_Media,0.000000
+15759,Sogamoso,2018,Edu_Media,0.013200
+15761,Somondoco,2018,Edu_Media,0.000000
+15762,Sora,2018,Edu_Media,0.000000
+15763,Sotaquirá,2018,Edu_Media,0.005600
+15764,Soracá,2018,Edu_Media,0.000000
+15774,Susacón,2018,Edu_Media,0.000000
+15776,Sutamarchán,2018,Edu_Media,0.051300
+15778,Sutatenza,2018,Edu_Media,0.000000
+15790,Tasco,2018,Edu_Media,0.000000
+15798,Tenza,2018,Edu_Media,0.000000
+15804,Tibaná,2018,Edu_Media,0.000000
+15806,Tibasosa,2018,Edu_Media,0.024500
+15808,Tinjacá,2018,Edu_Media,0.000000
+15810,Tipacoque,2018,Edu_Media,0.000000
+15814,Toca,2018,Edu_Media,0.023400
+15816,Togüí,2018,Edu_Media,0.000000
+15820,Tópaga,2018,Edu_Media,0.023800
+15822,Tota,2018,Edu_Media,0.000000
+15832,Tununguá,2018,Edu_Media,0.000000
+15835,Turmequé,2018,Edu_Media,0.000000
+15837,Tuta,2018,Edu_Media,0.000000
+15839,Tutazá,2018,Edu_Media,0.000000
+15842,Umbita,2018,Edu_Media,0.000000
+15861,Ventaquemada,2018,Edu_Media,0.000000
+15879,Viracachá,2018,Edu_Media,0.000000
+15897,Zetaquira,2018,Edu_Media,0.020300
+15001,Tunja,2019,Total,0.036700
+15022,Almeida,2019,Total,0.000000
+15047,Aquitania,2019,Total,0.036300
+15051,Arcabuco,2019,Total,0.001800
+15087,Belén,2019,Total,0.004000
+15090,Berbeo,2019,Total,0.017700
+15092,Betéitiva,2019,Total,0.083300
+15097,Boavita,2019,Total,0.002000
+15104,Boyacá,2019,Total,0.001200
+15106,Briceño,2019,Total,0.024800
+15109,Buenavista,2019,Total,0.023000
+15114,Busbanzá,2019,Total,0.009300
+15131,Caldas,2019,Total,0.029500
+15135,Campohermoso,2019,Total,0.018500
+15162,Cerinza,2019,Total,0.000000
+15172,Chinavita,2019,Total,0.066000
+15176,Chiquinquirá,2019,Total,0.018400
+15180,Chiscas,2019,Total,0.001500
+15183,Chita,2019,Total,0.004600
+15185,Chitaraque,2019,Total,0.000000
+15187,Chivatá,2019,Total,0.026300
+15189,Ciénega,2019,Total,0.021900
+15204,Cómbita,2019,Total,0.080100
+15212,Coper,2019,Total,0.019000
+15215,Corrales,2019,Total,0.002300
+15218,Covarachía,2019,Total,0.025500
+15223,Cubará,2019,Total,0.079400
+15224,Cucaita,2019,Total,0.015100
+15226,Cuítiva,2019,Total,0.000000
+15232,Chíquiza,2019,Total,0.001200
+15236,Chivor,2019,Total,0.032700
+15238,Duitama,2019,Total,0.031000
+15244,El Cocuy,2019,Total,0.019900
+15248,El Espino,2019,Total,0.006100
+15272,Firavitoba,2019,Total,0.003700
+15276,Floresta,2019,Total,0.002000
+15293,Gachantivá,2019,Total,0.001700
+15296,Gameza,2019,Total,0.004200
+15299,Garagoa,2019,Total,0.005300
+15317,Guacamayas,2019,Total,0.004000
+15322,Guateque,2019,Total,0.000600
+15325,Guayatá,2019,Total,0.016500
+15332,Güicán,2019,Total,0.000000
+15362,Iza,2019,Total,0.087200
+15367,Jenesano,2019,Total,0.000000
+15368,Jericó,2019,Total,0.001300
+15377,Labranzagrande,2019,Total,0.009600
+15380,La Capilla,2019,Total,0.007700
+15401,La Victoria,2019,Total,0.000000
+15403,La Uvita,2019,Total,0.004300
+15407,Villa de Leyva,2019,Total,0.007900
+15425,Macanal,2019,Total,0.000000
+15442,Maripí,2019,Total,0.018000
+15455,Miraflores,2019,Total,0.010500
+15464,Mongua,2019,Total,0.003500
+15466,Monguí,2019,Total,0.007800
+15469,Moniquirá,2019,Total,0.015100
+15476,Motavita,2019,Total,0.024400
+15480,Muzo,2019,Total,0.002500
+15491,Nobsa,2019,Total,0.035700
+15494,Nuevo Colón,2019,Total,0.021800
+15500,Oicatá,2019,Total,0.002600
+15507,Otanche,2019,Total,0.021500
+15511,Pachavita,2019,Total,0.051300
+15514,Páez,2019,Total,0.000000
+15516,Paipa,2019,Total,0.034400
+15518,Pajarito,2019,Total,0.077700
+15522,Panqueba,2019,Total,0.000000
+15531,Pauna,2019,Total,0.000700
+15533,Paya,2019,Total,0.021500
+15537,Paz de Río,2019,Total,0.000000
+15542,Pesca,2019,Total,0.003900
+15550,Pisba,2019,Total,0.006200
+15572,Puerto Boyacá,2019,Total,0.010900
+15580,Quípama,2019,Total,0.027900
+15599,Ramiriquí,2019,Total,0.002200
+15600,Ráquira,2019,Total,0.015400
+15621,Rondón,2019,Total,0.037100
+15632,Saboyá,2019,Total,0.008500
+15638,Sáchica,2019,Total,0.009100
+15646,Samacá,2019,Total,0.002400
+15660,San Eduardo,2019,Total,0.000000
+15664,San José de Pare,2019,Total,0.005300
+15667,San Luis de Gaceno,2019,Total,0.037400
+15673,San Mateo,2019,Total,0.003200
+15676,San Miguel de Sema,2019,Total,0.007500
+15681,San Pablo de Borbur,2019,Total,0.025200
+15686,Santana,2019,Total,0.051200
+15690,Santa María,2019,Total,0.014500
+15693,Santa Rosa de Viterbo,2019,Total,0.011000
+15696,Santa Sofía,2019,Total,0.005600
+15720,Sativanorte,2019,Total,0.000000
+15723,Sativasur,2019,Total,0.000000
+15740,Siachoque,2019,Total,0.026100
+15753,Soatá,2019,Total,0.006200
+15755,Socotá,2019,Total,0.002600
+15757,Socha,2019,Total,0.003000
+15759,Sogamoso,2019,Total,0.021900
+15761,Somondoco,2019,Total,0.030400
+15762,Sora,2019,Total,0.000000
+15763,Sotaquirá,2019,Total,0.001500
+15764,Soracá,2019,Total,0.023400
+15774,Susacón,2019,Total,0.005300
+15776,Sutamarchán,2019,Total,0.018100
+15778,Sutatenza,2019,Total,0.004400
+15790,Tasco,2019,Total,0.000000
+15798,Tenza,2019,Total,0.001900
+15804,Tibaná,2019,Total,0.003300
+15806,Tibasosa,2019,Total,0.011200
+15808,Tinjacá,2019,Total,0.000000
+15810,Tipacoque,2019,Total,0.015200
+15814,Toca,2019,Total,0.027100
+15816,Togüí,2019,Total,0.012700
+15820,Tópaga,2019,Total,0.017800
+15822,Tota,2019,Total,0.001000
+15832,Tununguá,2019,Total,0.020600
+15835,Turmequé,2019,Total,0.004000
+15837,Tuta,2019,Total,0.003100
+15839,Tutazá,2019,Total,0.000000
+15842,Umbita,2019,Total,0.000000
+15861,Ventaquemada,2019,Total,0.000700
+15879,Viracachá,2019,Total,0.007300
+15897,Zetaquira,2019,Total,0.004700
+15001,Tunja,2019,Transición,0.021600
+15022,Almeida,2019,Transición,0.000000
+15047,Aquitania,2019,Transición,0.009000
+15051,Arcabuco,2019,Transición,0.000000
+15087,Belén,2019,Transición,0.000000
+15090,Berbeo,2019,Transición,0.000000
+15092,Betéitiva,2019,Transición,0.000000
+15097,Boavita,2019,Transición,0.000000
+15104,Boyacá,2019,Transición,0.000000
+15106,Briceño,2019,Transición,0.000000
+15109,Buenavista,2019,Transición,0.000000
+15114,Busbanzá,2019,Transición,0.000000
+15131,Caldas,2019,Transición,0.000000
+15135,Campohermoso,2019,Transición,0.000000
+15162,Cerinza,2019,Transición,0.000000
+15172,Chinavita,2019,Transición,0.000000
+15176,Chiquinquirá,2019,Transición,0.003100
+15180,Chiscas,2019,Transición,0.000000
+15183,Chita,2019,Transición,0.006300
+15185,Chitaraque,2019,Transición,0.000000
+15187,Chivatá,2019,Transición,0.000000
+15189,Ciénega,2019,Transición,0.000000
+15204,Cómbita,2019,Transición,0.022500
+15212,Coper,2019,Transición,0.000000
+15215,Corrales,2019,Transición,0.000000
+15218,Covarachía,2019,Transición,0.000000
+15223,Cubará,2019,Transición,0.000000
+15224,Cucaita,2019,Transición,0.032300
+15226,Cuítiva,2019,Transición,0.000000
+15232,Chíquiza,2019,Transición,0.000000
+15236,Chivor,2019,Transición,0.000000
+15238,Duitama,2019,Transición,0.006000
+15244,El Cocuy,2019,Transición,0.000000
+15248,El Espino,2019,Transición,0.000000
+15272,Firavitoba,2019,Transición,0.000000
+15276,Floresta,2019,Transición,0.000000
+15293,Gachantivá,2019,Transición,0.000000
+15296,Gameza,2019,Transición,0.000000
+15299,Garagoa,2019,Transición,0.000000
+15317,Guacamayas,2019,Transición,0.000000
+15322,Guateque,2019,Transición,0.000000
+15325,Guayatá,2019,Transición,0.000000
+15332,Güicán,2019,Transición,0.000000
+15362,Iza,2019,Transición,0.000000
+15367,Jenesano,2019,Transición,0.000000
+15368,Jericó,2019,Transición,0.000000
+15377,Labranzagrande,2019,Transición,0.000000
+15380,La Capilla,2019,Transición,0.000000
+15401,La Victoria,2019,Transición,0.000000
+15403,La Uvita,2019,Transición,0.000000
+15407,Villa de Leyva,2019,Transición,0.010900
+15425,Macanal,2019,Transición,0.000000
+15442,Maripí,2019,Transición,0.000000
+15455,Miraflores,2019,Transición,0.000000
+15464,Mongua,2019,Transición,0.000000
+15466,Monguí,2019,Transición,0.000000
+15469,Moniquirá,2019,Transición,0.004200
+15476,Motavita,2019,Transición,0.039200
+15480,Muzo,2019,Transición,0.000000
+15491,Nobsa,2019,Transición,0.000000
+15494,Nuevo Colón,2019,Transición,0.000000
+15500,Oicatá,2019,Transición,0.000000
+15507,Otanche,2019,Transición,0.000000
+15511,Pachavita,2019,Transición,0.000000
+15514,Páez,2019,Transición,0.000000
+15516,Paipa,2019,Transición,0.005900
+15518,Pajarito,2019,Transición,0.000000
+15522,Panqueba,2019,Transición,0.000000
+15531,Pauna,2019,Transición,0.000000
+15533,Paya,2019,Transición,0.000000
+15537,Paz de Río,2019,Transición,0.000000
+15542,Pesca,2019,Transición,0.000000
+15550,Pisba,2019,Transición,0.000000
+15572,Puerto Boyacá,2019,Transición,0.000000
+15580,Quípama,2019,Transición,0.034500
+15599,Ramiriquí,2019,Transición,0.000000
+15600,Ráquira,2019,Transición,0.000000
+15621,Rondón,2019,Transición,0.000000
+15632,Saboyá,2019,Transición,0.000000
+15638,Sáchica,2019,Transición,0.000000
+15646,Samacá,2019,Transición,0.000000
+15660,San Eduardo,2019,Transición,0.000000
+15664,San José de Pare,2019,Transición,0.000000
+15667,San Luis de Gaceno,2019,Transición,0.000000
+15673,San Mateo,2019,Transición,0.000000
+15676,San Miguel de Sema,2019,Transición,0.023800
+15681,San Pablo de Borbur,2019,Transición,0.000000
+15686,Santana,2019,Transición,0.000000
+15690,Santa María,2019,Transición,0.000000
+15693,Santa Rosa de Viterbo,2019,Transición,0.008300
+15696,Santa Sofía,2019,Transición,0.000000
+15720,Sativanorte,2019,Transición,0.000000
+15723,Sativasur,2019,Transición,0.000000
+15740,Siachoque,2019,Transición,0.000000
+15753,Soatá,2019,Transición,0.000000
+15755,Socotá,2019,Transición,0.000000
+15757,Socha,2019,Transición,0.000000
+15759,Sogamoso,2019,Transición,0.005500
+15761,Somondoco,2019,Transición,0.000000
+15762,Sora,2019,Transición,0.000000
+15763,Sotaquirá,2019,Transición,0.000000
+15764,Soracá,2019,Transición,0.000000
+15774,Susacón,2019,Transición,0.000000
+15776,Sutamarchán,2019,Transición,0.000000
+15778,Sutatenza,2019,Transición,0.000000
+15790,Tasco,2019,Transición,0.000000
+15798,Tenza,2019,Transición,0.000000
+15804,Tibaná,2019,Transición,0.000000
+15806,Tibasosa,2019,Transición,0.024200
+15808,Tinjacá,2019,Transición,0.000000
+15810,Tipacoque,2019,Transición,0.000000
+15814,Toca,2019,Transición,0.000000
+15816,Togüí,2019,Transición,0.000000
+15820,Tópaga,2019,Transición,0.000000
+15822,Tota,2019,Transición,0.000000
+15832,Tununguá,2019,Transición,0.000000
+15835,Turmequé,2019,Transición,0.000000
+15837,Tuta,2019,Transición,0.000000
+15839,Tutazá,2019,Transición,0.000000
+15842,Umbita,2019,Transición,0.000000
+15861,Ventaquemada,2019,Transición,0.000000
+15879,Viracachá,2019,Transición,0.000000
+15897,Zetaquira,2019,Transición,0.000000
+15001,Tunja,2019,Primaria,0.026300
+15022,Almeida,2019,Primaria,0.000000
+15047,Aquitania,2019,Primaria,0.005100
+15051,Arcabuco,2019,Primaria,0.002200
+15087,Belén,2019,Primaria,0.008600
+15090,Berbeo,2019,Primaria,0.039600
+15092,Betéitiva,2019,Primaria,0.026500
+15097,Boavita,2019,Primaria,0.005100
+15104,Boyacá,2019,Primaria,0.000000
+15106,Briceño,2019,Primaria,0.011400
+15109,Buenavista,2019,Primaria,0.024400
+15114,Busbanzá,2019,Primaria,0.000000
+15131,Caldas,2019,Primaria,0.020800
+15135,Campohermoso,2019,Primaria,0.004700
+15162,Cerinza,2019,Primaria,0.000000
+15172,Chinavita,2019,Primaria,0.042700
+15176,Chiquinquirá,2019,Primaria,0.005800
+15180,Chiscas,2019,Primaria,0.003800
+15183,Chita,2019,Primaria,0.001200
+15185,Chitaraque,2019,Primaria,0.000000
+15187,Chivatá,2019,Primaria,0.010300
+15189,Ciénega,2019,Primaria,0.032300
+15204,Cómbita,2019,Primaria,0.027400
+15212,Coper,2019,Primaria,0.020800
+15215,Corrales,2019,Primaria,0.000000
+15218,Covarachía,2019,Primaria,0.028700
+15223,Cubará,2019,Primaria,0.124400
+15224,Cucaita,2019,Primaria,0.008800
+15226,Cuítiva,2019,Primaria,0.000000
+15232,Chíquiza,2019,Primaria,0.003000
+15236,Chivor,2019,Primaria,0.019200
+15238,Duitama,2019,Primaria,0.020100
+15244,El Cocuy,2019,Primaria,0.021300
+15248,El Espino,2019,Primaria,0.005000
+15272,Firavitoba,2019,Primaria,0.000000
+15276,Floresta,2019,Primaria,0.000000
+15293,Gachantivá,2019,Primaria,0.000000
+15296,Gameza,2019,Primaria,0.006700
+15299,Garagoa,2019,Primaria,0.000000
+15317,Guacamayas,2019,Primaria,0.000000
+15322,Guateque,2019,Primaria,0.001500
+15325,Guayatá,2019,Primaria,0.015600
+15332,Güicán,2019,Primaria,0.000000
+15362,Iza,2019,Primaria,0.059100
+15367,Jenesano,2019,Primaria,0.000000
+15368,Jericó,2019,Primaria,0.002800
+15377,Labranzagrande,2019,Primaria,0.015000
+15380,La Capilla,2019,Primaria,0.000000
+15401,La Victoria,2019,Primaria,0.000000
+15403,La Uvita,2019,Primaria,0.010800
+15407,Villa de Leyva,2019,Primaria,0.011800
+15425,Macanal,2019,Primaria,0.000000
+15442,Maripí,2019,Primaria,0.012300
+15455,Miraflores,2019,Primaria,0.016500
+15464,Mongua,2019,Primaria,0.005100
+15466,Monguí,2019,Primaria,0.010200
+15469,Moniquirá,2019,Primaria,0.011600
+15476,Motavita,2019,Primaria,0.013300
+15480,Muzo,2019,Primaria,0.001500
+15491,Nobsa,2019,Primaria,0.010100
+15494,Nuevo Colón,2019,Primaria,0.016300
+15500,Oicatá,2019,Primaria,0.000000
+15507,Otanche,2019,Primaria,0.020500
+15511,Pachavita,2019,Primaria,0.000000
+15514,Páez,2019,Primaria,0.000000
+15516,Paipa,2019,Primaria,0.026800
+15518,Pajarito,2019,Primaria,0.055900
+15522,Panqueba,2019,Primaria,0.000000
+15531,Pauna,2019,Primaria,0.000000
+15533,Paya,2019,Primaria,0.029000
+15537,Paz de Río,2019,Primaria,0.000000
+15542,Pesca,2019,Primaria,0.003400
+15550,Pisba,2019,Primaria,0.000000
+15572,Puerto Boyacá,2019,Primaria,0.009100
+15580,Quípama,2019,Primaria,0.024700
+15599,Ramiriquí,2019,Primaria,0.001500
+15600,Ráquira,2019,Primaria,0.016700
+15621,Rondón,2019,Primaria,0.040000
+15632,Saboyá,2019,Primaria,0.009200
+15638,Sáchica,2019,Primaria,0.012700
+15646,Samacá,2019,Primaria,0.003200
+15660,San Eduardo,2019,Primaria,0.000000
+15664,San José de Pare,2019,Primaria,0.002900
+15667,San Luis de Gaceno,2019,Primaria,0.033000
+15673,San Mateo,2019,Primaria,0.000000
+15676,San Miguel de Sema,2019,Primaria,0.004500
+15681,San Pablo de Borbur,2019,Primaria,0.029000
+15686,Santana,2019,Primaria,0.053500
+15690,Santa María,2019,Primaria,0.006900
+15693,Santa Rosa de Viterbo,2019,Primaria,0.011700
+15696,Santa Sofía,2019,Primaria,0.007800
+15720,Sativanorte,2019,Primaria,0.000000
+15723,Sativasur,2019,Primaria,0.000000
+15740,Siachoque,2019,Primaria,0.029100
+15753,Soatá,2019,Primaria,0.000000
+15755,Socotá,2019,Primaria,0.004400
+15757,Socha,2019,Primaria,0.001600
+15759,Sogamoso,2019,Primaria,0.011300
+15761,Somondoco,2019,Primaria,0.014100
+15762,Sora,2019,Primaria,0.000000
+15763,Sotaquirá,2019,Primaria,0.001600
+15764,Soracá,2019,Primaria,0.057900
+15774,Susacón,2019,Primaria,0.000000
+15776,Sutamarchán,2019,Primaria,0.000000
+15778,Sutatenza,2019,Primaria,0.000000
+15790,Tasco,2019,Primaria,0.000000
+15798,Tenza,2019,Primaria,0.004400
+15804,Tibaná,2019,Primaria,0.003100
+15806,Tibasosa,2019,Primaria,0.010700
+15808,Tinjacá,2019,Primaria,0.000000
+15810,Tipacoque,2019,Primaria,0.015400
+15814,Toca,2019,Primaria,0.029800
+15816,Togüí,2019,Primaria,0.005300
+15820,Tópaga,2019,Primaria,0.016700
+15822,Tota,2019,Primaria,0.002000
+15832,Tununguá,2019,Primaria,0.000000
+15835,Turmequé,2019,Primaria,0.009600
+15837,Tuta,2019,Primaria,0.000000
+15839,Tutazá,2019,Primaria,0.000000
+15842,Umbita,2019,Primaria,0.000000
+15861,Ventaquemada,2019,Primaria,0.000900
+15879,Viracachá,2019,Primaria,0.005700
+15897,Zetaquira,2019,Primaria,0.000000
+15001,Tunja,2019,Secundaria,0.057500
+15022,Almeida,2019,Secundaria,0.000000
+15047,Aquitania,2019,Secundaria,0.068000
+15051,Arcabuco,2019,Secundaria,0.002300
+15087,Belén,2019,Secundaria,0.001800
+15090,Berbeo,2019,Secundaria,0.008200
+15092,Betéitiva,2019,Secundaria,0.108400
+15097,Boavita,2019,Secundaria,0.000000
+15104,Boyacá,2019,Secundaria,0.003100
+15106,Briceño,2019,Secundaria,0.045200
+15109,Buenavista,2019,Secundaria,0.032300
+15114,Busbanzá,2019,Secundaria,0.022700
+15131,Caldas,2019,Secundaria,0.040200
+15135,Campohermoso,2019,Secundaria,0.035500
+15162,Cerinza,2019,Secundaria,0.000000
+15172,Chinavita,2019,Secundaria,0.100000
+15176,Chiquinquirá,2019,Secundaria,0.033700
+15180,Chiscas,2019,Secundaria,0.000000
+15183,Chita,2019,Secundaria,0.010200
+15185,Chitaraque,2019,Secundaria,0.000000
+15187,Chivatá,2019,Secundaria,0.055200
+15189,Ciénega,2019,Secundaria,0.023300
+15204,Cómbita,2019,Secundaria,0.150600
+15212,Coper,2019,Secundaria,0.019100
+15215,Corrales,2019,Secundaria,0.006800
+15218,Covarachía,2019,Secundaria,0.029200
+15223,Cubará,2019,Secundaria,0.035300
+15224,Cucaita,2019,Secundaria,0.017500
+15226,Cuítiva,2019,Secundaria,0.000000
+15232,Chíquiza,2019,Secundaria,0.000000
+15236,Chivor,2019,Secundaria,0.055100
+15238,Duitama,2019,Secundaria,0.049800
+15244,El Cocuy,2019,Secundaria,0.023700
+15248,El Espino,2019,Secundaria,0.005600
+15272,Firavitoba,2019,Secundaria,0.006000
+15276,Floresta,2019,Secundaria,0.000000
+15293,Gachantivá,2019,Secundaria,0.004300
+15296,Gameza,2019,Secundaria,0.003200
+15299,Garagoa,2019,Secundaria,0.011900
+15317,Guacamayas,2019,Secundaria,0.010800
+15322,Guateque,2019,Secundaria,0.000000
+15325,Guayatá,2019,Secundaria,0.025300
+15332,Güicán,2019,Secundaria,0.000000
+15362,Iza,2019,Secundaria,0.139500
+15367,Jenesano,2019,Secundaria,0.000000
+15368,Jericó,2019,Secundaria,0.000000
+15377,Labranzagrande,2019,Secundaria,0.007000
+15380,La Capilla,2019,Secundaria,0.021600
+15401,La Victoria,2019,Secundaria,0.000000
+15403,La Uvita,2019,Secundaria,0.000000
+15407,Villa de Leyva,2019,Secundaria,0.003000
+15425,Macanal,2019,Secundaria,0.000000
+15442,Maripí,2019,Secundaria,0.035500
+15455,Miraflores,2019,Secundaria,0.009800
+15464,Mongua,2019,Secundaria,0.003400
+15466,Monguí,2019,Secundaria,0.010200
+15469,Moniquirá,2019,Secundaria,0.018800
+15476,Motavita,2019,Secundaria,0.041700
+15480,Muzo,2019,Secundaria,0.005400
+15491,Nobsa,2019,Secundaria,0.070900
+15494,Nuevo Colón,2019,Secundaria,0.033700
+15500,Oicatá,2019,Secundaria,0.006500
+15507,Otanche,2019,Secundaria,0.030000
+15511,Pachavita,2019,Secundaria,0.164900
+15514,Páez,2019,Secundaria,0.000000
+15516,Paipa,2019,Secundaria,0.052400
+15518,Pajarito,2019,Secundaria,0.138900
+15522,Panqueba,2019,Secundaria,0.000000
+15531,Pauna,2019,Secundaria,0.001800
+15533,Paya,2019,Secundaria,0.018800
+15537,Paz de Río,2019,Secundaria,0.000000
+15542,Pesca,2019,Secundaria,0.006500
+15550,Pisba,2019,Secundaria,0.020600
+15572,Puerto Boyacá,2019,Secundaria,0.017100
+15580,Quípama,2019,Secundaria,0.040000
+15599,Ramiriquí,2019,Secundaria,0.004100
+15600,Ráquira,2019,Secundaria,0.020200
+15621,Rondón,2019,Secundaria,0.044000
+15632,Saboyá,2019,Secundaria,0.010500
+15638,Sáchica,2019,Secundaria,0.010800
+15646,Samacá,2019,Secundaria,0.002800
+15660,San Eduardo,2019,Secundaria,0.000000
+15664,San José de Pare,2019,Secundaria,0.012300
+15667,San Luis de Gaceno,2019,Secundaria,0.049900
+15673,San Mateo,2019,Secundaria,0.008400
+15676,San Miguel de Sema,2019,Secundaria,0.009800
+15681,San Pablo de Borbur,2019,Secundaria,0.032800
+15686,Santana,2019,Secundaria,0.066500
+15690,Santa María,2019,Secundaria,0.036100
+15693,Santa Rosa de Viterbo,2019,Secundaria,0.011600
+15696,Santa Sofía,2019,Secundaria,0.006000
+15720,Sativanorte,2019,Secundaria,0.000000
+15723,Sativasur,2019,Secundaria,0.000000
+15740,Siachoque,2019,Secundaria,0.037100
+15753,Soatá,2019,Secundaria,0.000000
+15755,Socotá,2019,Secundaria,0.001900
+15757,Socha,2019,Secundaria,0.006000
+15759,Sogamoso,2019,Secundaria,0.038200
+15761,Somondoco,2019,Secundaria,0.061500
+15762,Sora,2019,Secundaria,0.000000
+15763,Sotaquirá,2019,Secundaria,0.002000
+15764,Soracá,2019,Secundaria,0.000000
+15774,Susacón,2019,Secundaria,0.014900
+15776,Sutamarchán,2019,Secundaria,0.043400
+15778,Sutatenza,2019,Secundaria,0.011200
+15790,Tasco,2019,Secundaria,0.000000
+15798,Tenza,2019,Secundaria,0.000000
+15804,Tibaná,2019,Secundaria,0.005700
+15806,Tibasosa,2019,Secundaria,0.013700
+15808,Tinjacá,2019,Secundaria,0.000000
+15810,Tipacoque,2019,Secundaria,0.023800
+15814,Toca,2019,Secundaria,0.024300
+15816,Togüí,2019,Secundaria,0.026100
+15820,Tópaga,2019,Secundaria,0.016500
+15822,Tota,2019,Secundaria,0.000000
+15832,Tununguá,2019,Secundaria,0.041700
+15835,Turmequé,2019,Secundaria,0.001600
+15837,Tuta,2019,Secundaria,0.006500
+15839,Tutazá,2019,Secundaria,0.000000
+15842,Umbita,2019,Secundaria,0.000000
+15861,Ventaquemada,2019,Secundaria,0.000900
+15879,Viracachá,2019,Secundaria,0.011800
+15897,Zetaquira,2019,Secundaria,0.008900
+15001,Tunja,2019,Edu_Media,0.013700
+15022,Almeida,2019,Edu_Media,0.000000
+15047,Aquitania,2019,Edu_Media,0.066800
+15051,Arcabuco,2019,Edu_Media,0.000000
+15087,Belén,2019,Edu_Media,0.000000
+15090,Berbeo,2019,Edu_Media,0.000000
+15092,Betéitiva,2019,Edu_Media,0.219500
+15097,Boavita,2019,Edu_Media,0.000000
+15104,Boyacá,2019,Edu_Media,0.000000
+15106,Briceño,2019,Edu_Media,0.021300
+15109,Buenavista,2019,Edu_Media,0.006700
+15114,Busbanzá,2019,Edu_Media,0.000000
+15131,Caldas,2019,Edu_Media,0.034900
+15135,Campohermoso,2019,Edu_Media,0.032300
+15162,Cerinza,2019,Edu_Media,0.000000
+15172,Chinavita,2019,Edu_Media,0.076900
+15176,Chiquinquirá,2019,Edu_Media,0.019000
+15180,Chiscas,2019,Edu_Media,0.000000
+15183,Chita,2019,Edu_Media,0.000000
+15185,Chitaraque,2019,Edu_Media,0.000000
+15187,Chivatá,2019,Edu_Media,0.000000
+15189,Ciénega,2019,Edu_Media,0.000000
+15204,Cómbita,2019,Edu_Media,0.076900
+15212,Coper,2019,Edu_Media,0.023000
+15215,Corrales,2019,Edu_Media,0.000000
+15218,Covarachía,2019,Edu_Media,0.024100
+15223,Cubará,2019,Edu_Media,0.000000
+15224,Cucaita,2019,Edu_Media,0.021700
+15226,Cuítiva,2019,Edu_Media,0.000000
+15232,Chíquiza,2019,Edu_Media,0.000000
+15236,Chivor,2019,Edu_Media,0.032300
+15238,Duitama,2019,Edu_Media,0.020400
+15244,El Cocuy,2019,Edu_Media,0.016400
+15248,El Espino,2019,Edu_Media,0.011900
+15272,Firavitoba,2019,Edu_Media,0.008000
+15276,Floresta,2019,Edu_Media,0.012000
+15293,Gachantivá,2019,Edu_Media,0.000000
+15296,Gameza,2019,Edu_Media,0.000000
+15299,Garagoa,2019,Edu_Media,0.004400
+15317,Guacamayas,2019,Edu_Media,0.000000
+15322,Guateque,2019,Edu_Media,0.000000
+15325,Guayatá,2019,Edu_Media,0.000000
+15332,Güicán,2019,Edu_Media,0.000000
+15362,Iza,2019,Edu_Media,0.085700
+15367,Jenesano,2019,Edu_Media,0.000000
+15368,Jericó,2019,Edu_Media,0.000000
+15377,Labranzagrande,2019,Edu_Media,0.000000
+15380,La Capilla,2019,Edu_Media,0.000000
+15401,La Victoria,2019,Edu_Media,0.000000
+15403,La Uvita,2019,Edu_Media,0.000000
+15407,Villa de Leyva,2019,Edu_Media,0.008000
+15425,Macanal,2019,Edu_Media,0.000000
+15442,Maripí,2019,Edu_Media,0.000000
+15455,Miraflores,2019,Edu_Media,0.000000
+15464,Mongua,2019,Edu_Media,0.000000
+15466,Monguí,2019,Edu_Media,0.000000
+15469,Moniquirá,2019,Edu_Media,0.020900
+15476,Motavita,2019,Edu_Media,0.007300
+15480,Muzo,2019,Edu_Media,0.000000
+15491,Nobsa,2019,Edu_Media,0.034500
+15494,Nuevo Colón,2019,Edu_Media,0.015600
+15500,Oicatá,2019,Edu_Media,0.000000
+15507,Otanche,2019,Edu_Media,0.013300
+15511,Pachavita,2019,Edu_Media,0.000000
+15514,Páez,2019,Edu_Media,0.000000
+15516,Paipa,2019,Edu_Media,0.018600
+15518,Pajarito,2019,Edu_Media,0.070200
+15522,Panqueba,2019,Edu_Media,0.000000
+15531,Pauna,2019,Edu_Media,0.000000
+15533,Paya,2019,Edu_Media,0.016100
+15537,Paz de Río,2019,Edu_Media,0.000000
+15542,Pesca,2019,Edu_Media,0.000000
+15550,Pisba,2019,Edu_Media,0.000000
+15572,Puerto Boyacá,2019,Edu_Media,0.004900
+15580,Quípama,2019,Edu_Media,0.000000
+15599,Ramiriquí,2019,Edu_Media,0.000000
+15600,Ráquira,2019,Edu_Media,0.006600
+15621,Rondón,2019,Edu_Media,0.021300
+15632,Saboyá,2019,Edu_Media,0.005600
+15638,Sáchica,2019,Edu_Media,0.000000
+15646,Samacá,2019,Edu_Media,0.000000
+15660,San Eduardo,2019,Edu_Media,0.000000
+15664,San José de Pare,2019,Edu_Media,0.000000
+15667,San Luis de Gaceno,2019,Edu_Media,0.023300
+15673,San Mateo,2019,Edu_Media,0.000000
+15676,San Miguel de Sema,2019,Edu_Media,0.000000
+15681,San Pablo de Borbur,2019,Edu_Media,0.005400
+15686,Santana,2019,Edu_Media,0.007500
+15690,Santa María,2019,Edu_Media,0.000000
+15693,Santa Rosa de Viterbo,2019,Edu_Media,0.008700
+15696,Santa Sofía,2019,Edu_Media,0.000000
+15720,Sativanorte,2019,Edu_Media,0.000000
+15723,Sativasur,2019,Edu_Media,0.000000
+15740,Siachoque,2019,Edu_Media,0.004200
+15753,Soatá,2019,Edu_Media,0.036100
+15755,Socotá,2019,Edu_Media,0.000000
+15757,Socha,2019,Edu_Media,0.000000
+15759,Sogamoso,2019,Edu_Media,0.016300
+15761,Somondoco,2019,Edu_Media,0.000000
+15762,Sora,2019,Edu_Media,0.000000
+15763,Sotaquirá,2019,Edu_Media,0.000000
+15764,Soracá,2019,Edu_Media,0.000000
+15774,Susacón,2019,Edu_Media,0.000000
+15776,Sutamarchán,2019,Edu_Media,0.020500
+15778,Sutatenza,2019,Edu_Media,0.000000
+15790,Tasco,2019,Edu_Media,0.000000
+15798,Tenza,2019,Edu_Media,0.000000
+15804,Tibaná,2019,Edu_Media,0.000000
+15806,Tibasosa,2019,Edu_Media,0.000000
+15808,Tinjacá,2019,Edu_Media,0.000000
+15810,Tipacoque,2019,Edu_Media,0.000000
+15814,Toca,2019,Edu_Media,0.038900
+15816,Togüí,2019,Edu_Media,0.006200
+15820,Tópaga,2019,Edu_Media,0.036100
+15822,Tota,2019,Edu_Media,0.000000
+15832,Tununguá,2019,Edu_Media,0.026300
+15835,Turmequé,2019,Edu_Media,0.000000
+15837,Tuta,2019,Edu_Media,0.002900
+15839,Tutazá,2019,Edu_Media,0.000000
+15842,Umbita,2019,Edu_Media,0.000000
+15861,Ventaquemada,2019,Edu_Media,0.000000
+15879,Viracachá,2019,Edu_Media,0.000000
+15897,Zetaquira,2019,Edu_Media,0.006900
+15001,Tunja,2020,Total,0.067000
+15022,Almeida,2020,Total,0.065700
+15047,Aquitania,2020,Total,0.059200
+15051,Arcabuco,2020,Total,0.045200
+15087,Belén,2020,Total,0.015100
+15090,Berbeo,2020,Total,0.061400
+15092,Betéitiva,2020,Total,0.066100
+15097,Boavita,2020,Total,0.048800
+15104,Boyacá,2020,Total,0.014000
+15106,Briceño,2020,Total,0.144700
+15109,Buenavista,2020,Total,0.054500
+15114,Busbanzá,2020,Total,0.059800
+15131,Caldas,2020,Total,0.023500
+15135,Campohermoso,2020,Total,0.037000
+15162,Cerinza,2020,Total,0.045800
+15172,Chinavita,2020,Total,0.051100
+15176,Chiquinquirá,2020,Total,0.034400
+15180,Chiscas,2020,Total,0.020600
+15183,Chita,2020,Total,0.050500
+15185,Chitaraque,2020,Total,0.023100
+15187,Chivatá,2020,Total,0.083900
+15189,Ciénega,2020,Total,0.073400
+15204,Cómbita,2020,Total,0.077900
+15212,Coper,2020,Total,0.053900
+15215,Corrales,2020,Total,0.072400
+15218,Covarachía,2020,Total,0.091800
+15223,Cubará,2020,Total,0.103700
+15224,Cucaita,2020,Total,0.053200
+15226,Cuítiva,2020,Total,0.055200
+15232,Chíquiza,2020,Total,0.046900
+15236,Chivor,2020,Total,0.113400
+15238,Duitama,2020,Total,0.062500
+15244,El Cocuy,2020,Total,0.049700
+15248,El Espino,2020,Total,0.020900
+15272,Firavitoba,2020,Total,0.043400
+15276,Floresta,2020,Total,0.050900
+15293,Gachantivá,2020,Total,0.008300
+15296,Gameza,2020,Total,0.035200
+15299,Garagoa,2020,Total,0.058200
+15317,Guacamayas,2020,Total,0.030700
+15322,Guateque,2020,Total,0.021700
+15325,Guayatá,2020,Total,0.086000
+15332,Güicán,2020,Total,0.003000
+15362,Iza,2020,Total,0.115500
+15367,Jenesano,2020,Total,0.036300
+15368,Jericó,2020,Total,0.054600
+15377,Labranzagrande,2020,Total,0.047200
+15380,La Capilla,2020,Total,0.039700
+15401,La Victoria,2020,Total,0.010000
+15403,La Uvita,2020,Total,0.069000
+15407,Villa de Leyva,2020,Total,0.067700
+15425,Macanal,2020,Total,0.026600
+15442,Maripí,2020,Total,0.049900
+15455,Miraflores,2020,Total,0.035400
+15464,Mongua,2020,Total,0.010800
+15466,Monguí,2020,Total,0.016800
+15469,Moniquirá,2020,Total,0.060200
+15476,Motavita,2020,Total,0.110400
+15480,Muzo,2020,Total,0.031300
+15491,Nobsa,2020,Total,0.076200
+15494,Nuevo Colón,2020,Total,0.039000
+15500,Oicatá,2020,Total,0.086000
+15507,Otanche,2020,Total,0.026200
+15511,Pachavita,2020,Total,0.047100
+15514,Páez,2020,Total,0.017400
+15516,Paipa,2020,Total,0.082400
+15518,Pajarito,2020,Total,0.043400
+15522,Panqueba,2020,Total,0.046700
+15531,Pauna,2020,Total,0.047900
+15533,Paya,2020,Total,0.057900
+15537,Paz de Río,2020,Total,0.031500
+15542,Pesca,2020,Total,0.028100
+15550,Pisba,2020,Total,0.049200
+15572,Puerto Boyacá,2020,Total,0.062900
+15580,Quípama,2020,Total,0.119000
+15599,Ramiriquí,2020,Total,0.049800
+15600,Ráquira,2020,Total,0.071400
+15621,Rondón,2020,Total,0.043500
+15632,Saboyá,2020,Total,0.078500
+15638,Sáchica,2020,Total,0.039400
+15646,Samacá,2020,Total,0.046700
+15660,San Eduardo,2020,Total,0.059500
+15664,San José de Pare,2020,Total,0.056600
+15667,San Luis de Gaceno,2020,Total,0.066400
+15673,San Mateo,2020,Total,0.062100
+15676,San Miguel de Sema,2020,Total,0.047900
+15681,San Pablo de Borbur,2020,Total,0.057700
+15686,Santana,2020,Total,0.040100
+15690,Santa María,2020,Total,0.034800
+15693,Santa Rosa de Viterbo,2020,Total,0.132100
+15696,Santa Sofía,2020,Total,0.014400
+15720,Sativanorte,2020,Total,0.022900
+15723,Sativasur,2020,Total,0.009400
+15740,Siachoque,2020,Total,0.051100
+15753,Soatá,2020,Total,0.035900
+15755,Socotá,2020,Total,0.040200
+15757,Socha,2020,Total,0.034200
+15759,Sogamoso,2020,Total,0.047000
+15761,Somondoco,2020,Total,0.014000
+15762,Sora,2020,Total,0.023300
+15763,Sotaquirá,2020,Total,0.030200
+15764,Soracá,2020,Total,0.078600
+15774,Susacón,2020,Total,0.017000
+15776,Sutamarchán,2020,Total,0.057000
+15778,Sutatenza,2020,Total,0.014600
+15790,Tasco,2020,Total,0.077400
+15798,Tenza,2020,Total,0.029000
+15804,Tibaná,2020,Total,0.019700
+15806,Tibasosa,2020,Total,0.076400
+15808,Tinjacá,2020,Total,0.013500
+15810,Tipacoque,2020,Total,0.100300
+15814,Toca,2020,Total,0.050600
+15816,Togüí,2020,Total,0.047300
+15820,Tópaga,2020,Total,0.038400
+15822,Tota,2020,Total,0.038500
+15832,Tununguá,2020,Total,0.046800
+15835,Turmequé,2020,Total,0.040100
+15837,Tuta,2020,Total,0.041400
+15839,Tutazá,2020,Total,0.031300
+15842,Umbita,2020,Total,0.026600
+15861,Ventaquemada,2020,Total,0.044000
+15879,Viracachá,2020,Total,0.078300
+15897,Zetaquira,2020,Total,0.070500
+15001,Tunja,2020,Transición,0.006400
+15022,Almeida,2020,Transición,0.000000
+15047,Aquitania,2020,Transición,0.004500
+15051,Arcabuco,2020,Transición,0.014100
+15087,Belén,2020,Transición,0.000000
+15090,Berbeo,2020,Transición,0.000000
+15092,Betéitiva,2020,Transición,0.000000
+15097,Boavita,2020,Transición,0.000000
+15104,Boyacá,2020,Transición,0.000000
+15106,Briceño,2020,Transición,0.057100
+15109,Buenavista,2020,Transición,0.000000
+15114,Busbanzá,2020,Transición,0.000000
+15131,Caldas,2020,Transición,0.000000
+15135,Campohermoso,2020,Transición,0.000000
+15162,Cerinza,2020,Transición,0.000000
+15172,Chinavita,2020,Transición,0.000000
+15176,Chiquinquirá,2020,Transición,0.001600
+15180,Chiscas,2020,Transición,0.000000
+15183,Chita,2020,Transición,0.019000
+15185,Chitaraque,2020,Transición,0.000000
+15187,Chivatá,2020,Transición,0.000000
+15189,Ciénega,2020,Transición,0.000000
+15204,Cómbita,2020,Transición,0.028000
+15212,Coper,2020,Transición,0.000000
+15215,Corrales,2020,Transición,0.000000
+15218,Covarachía,2020,Transición,0.000000
+15223,Cubará,2020,Transición,0.000000
+15224,Cucaita,2020,Transición,0.000000
+15226,Cuítiva,2020,Transición,0.000000
+15232,Chíquiza,2020,Transición,0.000000
+15236,Chivor,2020,Transición,0.000000
+15238,Duitama,2020,Transición,0.001000
+15244,El Cocuy,2020,Transición,0.000000
+15248,El Espino,2020,Transición,0.000000
+15272,Firavitoba,2020,Transición,0.000000
+15276,Floresta,2020,Transición,0.000000
+15293,Gachantivá,2020,Transición,0.023800
+15296,Gameza,2020,Transición,0.000000
+15299,Garagoa,2020,Transición,0.000000
+15317,Guacamayas,2020,Transición,0.000000
+15322,Guateque,2020,Transición,0.000000
+15325,Guayatá,2020,Transición,0.000000
+15332,Güicán,2020,Transición,0.000000
+15362,Iza,2020,Transición,0.000000
+15367,Jenesano,2020,Transición,0.000000
+15368,Jericó,2020,Transición,0.021700
+15377,Labranzagrande,2020,Transición,0.023800
+15380,La Capilla,2020,Transición,0.000000
+15401,La Victoria,2020,Transición,0.000000
+15403,La Uvita,2020,Transición,0.000000
+15407,Villa de Leyva,2020,Transición,0.005800
+15425,Macanal,2020,Transición,0.000000
+15442,Maripí,2020,Transición,0.020400
+15455,Miraflores,2020,Transición,0.000000
+15464,Mongua,2020,Transición,0.000000
+15466,Monguí,2020,Transición,0.000000
+15469,Moniquirá,2020,Transición,0.004000
+15476,Motavita,2020,Transición,0.020000
+15480,Muzo,2020,Transición,0.000000
+15491,Nobsa,2020,Transición,0.007400
+15494,Nuevo Colón,2020,Transición,0.000000
+15500,Oicatá,2020,Transición,0.000000
+15507,Otanche,2020,Transición,0.000000
+15511,Pachavita,2020,Transición,0.000000
+15514,Páez,2020,Transición,0.054100
+15516,Paipa,2020,Transición,0.014100
+15518,Pajarito,2020,Transición,0.023300
+15522,Panqueba,2020,Transición,0.000000
+15531,Pauna,2020,Transición,0.000000
+15533,Paya,2020,Transición,0.000000
+15537,Paz de Río,2020,Transición,0.000000
+15542,Pesca,2020,Transición,0.000000
+15550,Pisba,2020,Transición,0.000000
+15572,Puerto Boyacá,2020,Transición,0.003300
+15580,Quípama,2020,Transición,0.015200
+15599,Ramiriquí,2020,Transición,0.009900
+15600,Ráquira,2020,Transición,0.000000
+15621,Rondón,2020,Transición,0.000000
+15632,Saboyá,2020,Transición,0.000000
+15638,Sáchica,2020,Transición,0.000000
+15646,Samacá,2020,Transición,0.010300
+15660,San Eduardo,2020,Transición,0.000000
+15664,San José de Pare,2020,Transición,0.000000
+15667,San Luis de Gaceno,2020,Transición,0.000000
+15673,San Mateo,2020,Transición,0.000000
+15676,San Miguel de Sema,2020,Transición,0.000000
+15681,San Pablo de Borbur,2020,Transición,0.000000
+15686,Santana,2020,Transición,0.018300
+15690,Santa María,2020,Transición,0.000000
+15693,Santa Rosa de Viterbo,2020,Transición,0.000000
+15696,Santa Sofía,2020,Transición,0.000000
+15720,Sativanorte,2020,Transición,0.000000
+15723,Sativasur,2020,Transición,0.000000
+15740,Siachoque,2020,Transición,0.000000
+15753,Soatá,2020,Transición,0.000000
+15755,Socotá,2020,Transición,0.000000
+15757,Socha,2020,Transición,0.011200
+15759,Sogamoso,2020,Transición,0.003900
+15761,Somondoco,2020,Transición,0.000000
+15762,Sora,2020,Transición,0.000000
+15763,Sotaquirá,2020,Transición,0.000000
+15764,Soracá,2020,Transición,0.010600
+15774,Susacón,2020,Transición,0.000000
+15776,Sutamarchán,2020,Transición,0.000000
+15778,Sutatenza,2020,Transición,0.000000
+15790,Tasco,2020,Transición,0.000000
+15798,Tenza,2020,Transición,0.000000
+15804,Tibaná,2020,Transición,0.000000
+15806,Tibasosa,2020,Transición,0.008400
+15808,Tinjacá,2020,Transición,0.000000
+15810,Tipacoque,2020,Transición,0.000000
+15814,Toca,2020,Transición,0.000000
+15816,Togüí,2020,Transición,0.000000
+15820,Tópaga,2020,Transición,0.000000
+15822,Tota,2020,Transición,0.000000
+15832,Tununguá,2020,Transición,0.000000
+15835,Turmequé,2020,Transición,0.000000
+15837,Tuta,2020,Transición,0.000000
+15839,Tutazá,2020,Transición,0.000000
+15842,Umbita,2020,Transición,0.000000
+15861,Ventaquemada,2020,Transición,0.000000
+15879,Viracachá,2020,Transición,0.000000
+15897,Zetaquira,2020,Transición,0.000000
+15001,Tunja,2020,Primaria,0.042100
+15022,Almeida,2020,Primaria,0.035700
+15047,Aquitania,2020,Primaria,0.045700
+15051,Arcabuco,2020,Primaria,0.035000
+15087,Belén,2020,Primaria,0.007100
+15090,Berbeo,2020,Primaria,0.029700
+15092,Betéitiva,2020,Primaria,0.039600
+15097,Boavita,2020,Primaria,0.023800
+15104,Boyacá,2020,Primaria,0.003100
+15106,Briceño,2020,Primaria,0.037300
+15109,Buenavista,2020,Primaria,0.059700
+15114,Busbanzá,2020,Primaria,0.040000
+15131,Caldas,2020,Primaria,0.017400
+15135,Campohermoso,2020,Primaria,0.024200
+15162,Cerinza,2020,Primaria,0.027600
+15172,Chinavita,2020,Primaria,0.045200
+15176,Chiquinquirá,2020,Primaria,0.024700
+15180,Chiscas,2020,Primaria,0.028500
+15183,Chita,2020,Primaria,0.013300
+15185,Chitaraque,2020,Primaria,0.016600
+15187,Chivatá,2020,Primaria,0.065200
+15189,Ciénega,2020,Primaria,0.071200
+15204,Cómbita,2020,Primaria,0.072300
+15212,Coper,2020,Primaria,0.028300
+15215,Corrales,2020,Primaria,0.092800
+15218,Covarachía,2020,Primaria,0.076600
+15223,Cubará,2020,Primaria,0.141800
+15224,Cucaita,2020,Primaria,0.045800
+15226,Cuítiva,2020,Primaria,0.035700
+15232,Chíquiza,2020,Primaria,0.050100
+15236,Chivor,2020,Primaria,0.042000
+15238,Duitama,2020,Primaria,0.041600
+15244,El Cocuy,2020,Primaria,0.037400
+15248,El Espino,2020,Primaria,0.016400
+15272,Firavitoba,2020,Primaria,0.017100
+15276,Floresta,2020,Primaria,0.023900
+15293,Gachantivá,2020,Primaria,0.013600
+15296,Gameza,2020,Primaria,0.038800
+15299,Garagoa,2020,Primaria,0.051600
+15317,Guacamayas,2020,Primaria,0.022000
+15322,Guateque,2020,Primaria,0.017000
+15325,Guayatá,2020,Primaria,0.068800
+15332,Güicán,2020,Primaria,0.007000
+15362,Iza,2020,Primaria,0.080900
+15367,Jenesano,2020,Primaria,0.019300
+15368,Jericó,2020,Primaria,0.050000
+15377,Labranzagrande,2020,Primaria,0.066400
+15380,La Capilla,2020,Primaria,0.034700
+15401,La Victoria,2020,Primaria,0.025600
+15403,La Uvita,2020,Primaria,0.012200
+15407,Villa de Leyva,2020,Primaria,0.064700
+15425,Macanal,2020,Primaria,0.031700
+15442,Maripí,2020,Primaria,0.046800
+15455,Miraflores,2020,Primaria,0.036400
+15464,Mongua,2020,Primaria,0.010500
+15466,Monguí,2020,Primaria,0.002600
+15469,Moniquirá,2020,Primaria,0.058200
+15476,Motavita,2020,Primaria,0.027700
+15480,Muzo,2020,Primaria,0.034600
+15491,Nobsa,2020,Primaria,0.044200
+15494,Nuevo Colón,2020,Primaria,0.025600
+15500,Oicatá,2020,Primaria,0.067200
+15507,Otanche,2020,Primaria,0.015700
+15511,Pachavita,2020,Primaria,0.035700
+15514,Páez,2020,Primaria,0.017200
+15516,Paipa,2020,Primaria,0.044200
+15518,Pajarito,2020,Primaria,0.041200
+15522,Panqueba,2020,Primaria,0.032800
+15531,Pauna,2020,Primaria,0.023200
+15533,Paya,2020,Primaria,0.031800
+15537,Paz de Río,2020,Primaria,0.024000
+15542,Pesca,2020,Primaria,0.035200
+15550,Pisba,2020,Primaria,0.065800
+15572,Puerto Boyacá,2020,Primaria,0.046700
+15580,Quípama,2020,Primaria,0.090700
+15599,Ramiriquí,2020,Primaria,0.036600
+15600,Ráquira,2020,Primaria,0.036100
+15621,Rondón,2020,Primaria,0.020800
+15632,Saboyá,2020,Primaria,0.043000
+15638,Sáchica,2020,Primaria,0.021000
+15646,Samacá,2020,Primaria,0.040300
+15660,San Eduardo,2020,Primaria,0.067400
+15664,San José de Pare,2020,Primaria,0.030500
+15667,San Luis de Gaceno,2020,Primaria,0.026400
+15673,San Mateo,2020,Primaria,0.019300
+15676,San Miguel de Sema,2020,Primaria,0.035100
+15681,San Pablo de Borbur,2020,Primaria,0.024300
+15686,Santana,2020,Primaria,0.022300
+15690,Santa María,2020,Primaria,0.035600
+15693,Santa Rosa de Viterbo,2020,Primaria,0.115300
+15696,Santa Sofía,2020,Primaria,0.014600
+15720,Sativanorte,2020,Primaria,0.012100
+15723,Sativasur,2020,Primaria,0.000000
+15740,Siachoque,2020,Primaria,0.023000
+15753,Soatá,2020,Primaria,0.013700
+15755,Socotá,2020,Primaria,0.017100
+15757,Socha,2020,Primaria,0.012800
+15759,Sogamoso,2020,Primaria,0.032100
+15761,Somondoco,2020,Primaria,0.007100
+15762,Sora,2020,Primaria,0.031000
+15763,Sotaquirá,2020,Primaria,0.021500
+15764,Soracá,2020,Primaria,0.112000
+15774,Susacón,2020,Primaria,0.013300
+15776,Sutamarchán,2020,Primaria,0.020600
+15778,Sutatenza,2020,Primaria,0.007000
+15790,Tasco,2020,Primaria,0.058200
+15798,Tenza,2020,Primaria,0.037600
+15804,Tibaná,2020,Primaria,0.019300
+15806,Tibasosa,2020,Primaria,0.048300
+15808,Tinjacá,2020,Primaria,0.008600
+15810,Tipacoque,2020,Primaria,0.030500
+15814,Toca,2020,Primaria,0.026700
+15816,Togüí,2020,Primaria,0.043500
+15820,Tópaga,2020,Primaria,0.022200
+15822,Tota,2020,Primaria,0.024000
+15832,Tununguá,2020,Primaria,0.000000
+15835,Turmequé,2020,Primaria,0.035900
+15837,Tuta,2020,Primaria,0.016900
+15839,Tutazá,2020,Primaria,0.032500
+15842,Umbita,2020,Primaria,0.019600
+15861,Ventaquemada,2020,Primaria,0.018100
+15879,Viracachá,2020,Primaria,0.006100
+15897,Zetaquira,2020,Primaria,0.037300
+15001,Tunja,2020,Secundaria,0.107900
+15022,Almeida,2020,Secundaria,0.119000
+15047,Aquitania,2020,Secundaria,0.087900
+15051,Arcabuco,2020,Secundaria,0.070600
+15087,Belén,2020,Secundaria,0.026800
+15090,Berbeo,2020,Secundaria,0.102600
+15092,Betéitiva,2020,Secundaria,0.098900
+15097,Boavita,2020,Secundaria,0.084700
+15104,Boyacá,2020,Secundaria,0.012600
+15106,Briceño,2020,Secundaria,0.290300
+15109,Buenavista,2020,Secundaria,0.060800
+15114,Busbanzá,2020,Secundaria,0.113600
+15131,Caldas,2020,Secundaria,0.037200
+15135,Campohermoso,2020,Secundaria,0.071400
+15162,Cerinza,2020,Secundaria,0.085100
+15172,Chinavita,2020,Secundaria,0.058800
+15176,Chiquinquirá,2020,Secundaria,0.051800
+15180,Chiscas,2020,Secundaria,0.026000
+15183,Chita,2020,Secundaria,0.107100
+15185,Chitaraque,2020,Secundaria,0.035500
+15187,Chivatá,2020,Secundaria,0.121200
+15189,Ciénega,2020,Secundaria,0.097300
+15204,Cómbita,2020,Secundaria,0.098200
+15212,Coper,2020,Secundaria,0.117300
+15215,Corrales,2020,Secundaria,0.068500
+15218,Covarachía,2020,Secundaria,0.135300
+15223,Cubará,2020,Secundaria,0.063400
+15224,Cucaita,2020,Secundaria,0.078200
+15226,Cuítiva,2020,Secundaria,0.103700
+15232,Chíquiza,2020,Secundaria,0.059000
+15236,Chivor,2020,Secundaria,0.216400
+15238,Duitama,2020,Secundaria,0.095700
+15244,El Cocuy,2020,Secundaria,0.078300
+15248,El Espino,2020,Secundaria,0.034300
+15272,Firavitoba,2020,Secundaria,0.059800
+15276,Floresta,2020,Secundaria,0.094200
+15293,Gachantivá,2020,Secundaria,0.004300
+15296,Gameza,2020,Secundaria,0.048000
+15299,Garagoa,2020,Secundaria,0.075100
+15317,Guacamayas,2020,Secundaria,0.040800
+15322,Guateque,2020,Secundaria,0.035800
+15325,Guayatá,2020,Secundaria,0.134700
+15332,Güicán,2020,Secundaria,0.000000
+15362,Iza,2020,Secundaria,0.210900
+15367,Jenesano,2020,Secundaria,0.070500
+15368,Jericó,2020,Secundaria,0.080200
+15377,Labranzagrande,2020,Secundaria,0.039000
+15380,La Capilla,2020,Secundaria,0.069000
+15401,La Victoria,2020,Secundaria,0.000000
+15403,La Uvita,2020,Secundaria,0.140200
+15407,Villa de Leyva,2020,Secundaria,0.094100
+15425,Macanal,2020,Secundaria,0.034600
+15442,Maripí,2020,Secundaria,0.077600
+15455,Miraflores,2020,Secundaria,0.043600
+15464,Mongua,2020,Secundaria,0.014000
+15466,Monguí,2020,Secundaria,0.035400
+15469,Moniquirá,2020,Secundaria,0.078100
+15476,Motavita,2020,Secundaria,0.195900
+15480,Muzo,2020,Secundaria,0.032100
+15491,Nobsa,2020,Secundaria,0.134400
+15494,Nuevo Colón,2020,Secundaria,0.070200
+15500,Oicatá,2020,Secundaria,0.104600
+15507,Otanche,2020,Secundaria,0.049400
+15511,Pachavita,2020,Secundaria,0.071400
+15514,Páez,2020,Secundaria,0.011000
+15516,Paipa,2020,Secundaria,0.139000
+15518,Pajarito,2020,Secundaria,0.045800
+15522,Panqueba,2020,Secundaria,0.085900
+15531,Pauna,2020,Secundaria,0.086300
+15533,Paya,2020,Secundaria,0.109000
+15537,Paz de Río,2020,Secundaria,0.044500
+15542,Pesca,2020,Secundaria,0.021200
+15550,Pisba,2020,Secundaria,0.042100
+15572,Puerto Boyacá,2020,Secundaria,0.095300
+15580,Quípama,2020,Secundaria,0.173100
+15599,Ramiriquí,2020,Secundaria,0.060200
+15600,Ráquira,2020,Secundaria,0.156000
+15621,Rondón,2020,Secundaria,0.068300
+15632,Saboyá,2020,Secundaria,0.141500
+15638,Sáchica,2020,Secundaria,0.061300
+15646,Samacá,2020,Secundaria,0.071700
+15660,San Eduardo,2020,Secundaria,0.089100
+15664,San José de Pare,2020,Secundaria,0.111600
+15667,San Luis de Gaceno,2020,Secundaria,0.136000
+15673,San Mateo,2020,Secundaria,0.101300
+15676,San Miguel de Sema,2020,Secundaria,0.080300
+15681,San Pablo de Borbur,2020,Secundaria,0.104400
+15686,Santana,2020,Secundaria,0.074600
+15690,Santa María,2020,Secundaria,0.045900
+15693,Santa Rosa de Viterbo,2020,Secundaria,0.202100
+15696,Santa Sofía,2020,Secundaria,0.018000
+15720,Sativanorte,2020,Secundaria,0.060000
+15723,Sativasur,2020,Secundaria,0.023800
+15740,Siachoque,2020,Secundaria,0.077800
+15753,Soatá,2020,Secundaria,0.067200
+15755,Socotá,2020,Secundaria,0.081400
+15757,Socha,2020,Secundaria,0.064700
+15759,Sogamoso,2020,Secundaria,0.076600
+15761,Somondoco,2020,Secundaria,0.027900
+15762,Sora,2020,Secundaria,0.028800
+15763,Sotaquirá,2020,Secundaria,0.049500
+15764,Soracá,2020,Secundaria,0.070500
+15774,Susacón,2020,Secundaria,0.029900
+15776,Sutamarchán,2020,Secundaria,0.112400
+15778,Sutatenza,2020,Secundaria,0.031100
+15790,Tasco,2020,Secundaria,0.124400
+15798,Tenza,2020,Secundaria,0.030000
+15804,Tibaná,2020,Secundaria,0.029800
+15806,Tibasosa,2020,Secundaria,0.115900
+15808,Tinjacá,2020,Secundaria,0.026200
+15810,Tipacoque,2020,Secundaria,0.217200
+15814,Toca,2020,Secundaria,0.097000
+15816,Togüí,2020,Secundaria,0.067300
+15820,Tópaga,2020,Secundaria,0.061500
+15822,Tota,2020,Secundaria,0.045200
+15832,Tununguá,2020,Secundaria,0.118600
+15835,Turmequé,2020,Secundaria,0.055100
+15837,Tuta,2020,Secundaria,0.069600
+15839,Tutazá,2020,Secundaria,0.035700
+15842,Umbita,2020,Secundaria,0.043600
+15861,Ventaquemada,2020,Secundaria,0.080000
+15879,Viracachá,2020,Secundaria,0.178300
+15897,Zetaquira,2020,Secundaria,0.117600
+15001,Tunja,2020,Edu_Media,0.045000
+15022,Almeida,2020,Edu_Media,0.032300
+15047,Aquitania,2020,Edu_Media,0.053200
+15051,Arcabuco,2020,Edu_Media,0.013200
+15087,Belén,2020,Edu_Media,0.012400
+15090,Berbeo,2020,Edu_Media,0.051300
+15092,Betéitiva,2020,Edu_Media,0.071400
+15097,Boavita,2020,Edu_Media,0.045200
+15104,Boyacá,2020,Edu_Media,0.056100
+15106,Briceño,2020,Edu_Media,0.093000
+15109,Buenavista,2020,Edu_Media,0.048400
+15114,Busbanzá,2020,Edu_Media,0.000000
+15131,Caldas,2020,Edu_Media,0.011000
+15135,Campohermoso,2020,Edu_Media,0.000000
+15162,Cerinza,2020,Edu_Media,0.011200
+15172,Chinavita,2020,Edu_Media,0.062500
+15176,Chiquinquirá,2020,Edu_Media,0.028600
+15180,Chiscas,2020,Edu_Media,0.000000
+15183,Chita,2020,Edu_Media,0.029200
+15185,Chitaraque,2020,Edu_Media,0.025600
+15187,Chivatá,2020,Edu_Media,0.078900
+15189,Ciénega,2020,Edu_Media,0.058800
+15204,Cómbita,2020,Edu_Media,0.064400
+15212,Coper,2020,Edu_Media,0.000000
+15215,Corrales,2020,Edu_Media,0.058800
+15218,Covarachía,2020,Edu_Media,0.069000
+15223,Cubará,2020,Edu_Media,0.053100
+15224,Cucaita,2020,Edu_Media,0.032300
+15226,Cuítiva,2020,Edu_Media,0.000000
+15232,Chíquiza,2020,Edu_Media,0.028300
+15236,Chivor,2020,Edu_Media,0.085700
+15238,Duitama,2020,Edu_Media,0.052600
+15244,El Cocuy,2020,Edu_Media,0.023600
+15248,El Espino,2020,Edu_Media,0.013300
+15272,Firavitoba,2020,Edu_Media,0.075800
+15276,Floresta,2020,Edu_Media,0.036600
+15293,Gachantivá,2020,Edu_Media,0.000000
+15296,Gameza,2020,Edu_Media,0.007900
+15299,Garagoa,2020,Edu_Media,0.052500
+15317,Guacamayas,2020,Edu_Media,0.047600
+15322,Guateque,2020,Edu_Media,0.006800
+15325,Guayatá,2020,Edu_Media,0.030800
+15332,Güicán,2020,Edu_Media,0.000000
+15362,Iza,2020,Edu_Media,0.060000
+15367,Jenesano,2020,Edu_Media,0.005700
+15368,Jericó,2020,Edu_Media,0.022200
+15377,Labranzagrande,2020,Edu_Media,0.000000
+15380,La Capilla,2020,Edu_Media,0.000000
+15401,La Victoria,2020,Edu_Media,0.000000
+15403,La Uvita,2020,Edu_Media,0.069400
+15407,Villa de Leyva,2020,Edu_Media,0.028800
+15425,Macanal,2020,Edu_Media,0.009400
+15442,Maripí,2020,Edu_Media,0.011400
+15455,Miraflores,2020,Edu_Media,0.026500
+15464,Mongua,2020,Edu_Media,0.009300
+15466,Monguí,2020,Edu_Media,0.023400
+15469,Moniquirá,2020,Edu_Media,0.047200
+15476,Motavita,2020,Edu_Media,0.150800
+15480,Muzo,2020,Edu_Media,0.033500
+15491,Nobsa,2020,Edu_Media,0.061400
+15494,Nuevo Colón,2020,Edu_Media,0.008300
+15500,Oicatá,2020,Edu_Media,0.134600
+15507,Otanche,2020,Edu_Media,0.009400
+15511,Pachavita,2020,Edu_Media,0.054100
+15514,Páez,2020,Edu_Media,0.014900
+15516,Paipa,2020,Edu_Media,0.066300
+15518,Pajarito,2020,Edu_Media,0.062500
+15522,Panqueba,2020,Edu_Media,0.000000
+15531,Pauna,2020,Edu_Media,0.036600
+15533,Paya,2020,Edu_Media,0.058800
+15537,Paz de Río,2020,Edu_Media,0.021300
+15542,Pesca,2020,Edu_Media,0.037000
+15550,Pisba,2020,Edu_Media,0.025000
+15572,Puerto Boyacá,2020,Edu_Media,0.052200
+15580,Quípama,2020,Edu_Media,0.099100
+15599,Ramiriquí,2020,Edu_Media,0.065800
+15600,Ráquira,2020,Edu_Media,0.042900
+15621,Rondón,2020,Edu_Media,0.055600
+15632,Saboyá,2020,Edu_Media,0.049700
+15638,Sáchica,2020,Edu_Media,0.061200
+15646,Samacá,2020,Edu_Media,0.015800
+15660,San Eduardo,2020,Edu_Media,0.000000
+15664,San José de Pare,2020,Edu_Media,0.053200
+15667,San Luis de Gaceno,2020,Edu_Media,0.007600
+15673,San Mateo,2020,Edu_Media,0.120000
+15676,San Miguel de Sema,2020,Edu_Media,0.000000
+15681,San Pablo de Borbur,2020,Edu_Media,0.059100
+15686,Santana,2020,Edu_Media,0.000000
+15690,Santa María,2020,Edu_Media,0.024700
+15693,Santa Rosa de Viterbo,2020,Edu_Media,0.051200
+15696,Santa Sofía,2020,Edu_Media,0.014100
+15720,Sativanorte,2020,Edu_Media,0.000000
+15723,Sativasur,2020,Edu_Media,0.000000
+15740,Siachoque,2020,Edu_Media,0.093000
+15753,Soatá,2020,Edu_Media,0.028300
+15755,Socotá,2020,Edu_Media,0.036400
+15757,Socha,2020,Edu_Media,0.012300
+15759,Sogamoso,2020,Edu_Media,0.031200
+15761,Somondoco,2020,Edu_Media,0.000000
+15762,Sora,2020,Edu_Media,0.000000
+15763,Sotaquirá,2020,Edu_Media,0.018800
+15764,Soracá,2020,Edu_Media,0.034100
+15774,Susacón,2020,Edu_Media,0.000000
+15776,Sutamarchán,2020,Edu_Media,0.046900
+15778,Sutatenza,2020,Edu_Media,0.000000
+15790,Tasco,2020,Edu_Media,0.034200
+15798,Tenza,2020,Edu_Media,0.013000
+15804,Tibaná,2020,Edu_Media,0.008900
+15806,Tibasosa,2020,Edu_Media,0.061200
+15808,Tinjacá,2020,Edu_Media,0.000000
+15810,Tipacoque,2020,Edu_Media,0.052600
+15814,Toca,2020,Edu_Media,0.049800
+15816,Togüí,2020,Edu_Media,0.029900
+15820,Tópaga,2020,Edu_Media,0.051300
+15822,Tota,2020,Edu_Media,0.091700
+15832,Tununguá,2020,Edu_Media,0.000000
+15835,Turmequé,2020,Edu_Media,0.023200
+15837,Tuta,2020,Edu_Media,0.044000
+15839,Tutazá,2020,Edu_Media,0.035100
+15842,Umbita,2020,Edu_Media,0.020100
+15861,Ventaquemada,2020,Edu_Media,0.042400
+15879,Viracachá,2020,Edu_Media,0.044400
+15897,Zetaquira,2020,Edu_Media,0.058400

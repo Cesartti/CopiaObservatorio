@@ -1,0 +1,7 @@
+param:value
+Titulo:Mapa con Multi categorías
+Descripcion:En esta sección encontramos los datos relacionados con el Producto Interno Bruto (Banco de la República, 2022)¹ Departamental PIBD. En la gráfica 1.1. se observa el PIBD en precios constantes en los últimos 5 años que ha estado oscilando entre 22.046 y 23.786, con un comportamiento decreciente en su participación nacional donde su máximo es de 2,75% (2015) y mínimo en 2.68% (2020)
+Fuentes:https://www.dane.gov.co/files/investigaciones/pib/departamentales/B_2015/anexo-2020-preliminar-PIB-total-por-departamento.xlsx
+Vertical:Miles de millones de pesos
+Horizontal:Año
+Tipo:Mapa

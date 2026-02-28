@@ -1,0 +1,98 @@
+/* ================= Ruta 15 - Carrusel Horizontal (scope propio) ================= */
+:root{
+  --hslide-gap: 24px;     /* separación entre slides */
+  --hctrl-size: 44px;     /* diámetro de flechas */
+  --hdot-size: 10px;      /* tamaño de los dots */
+  --h-accent: #7c3aed;    /* color activo de los dots */
+  --header-offset: var(--header-offset, 0px); /* lo actualiza el JS según el header */
+}
+
+/* Contenedor del carrusel */
+.hslider{
+  position: relative;
+  overflow: hidden;
+}
+
+/* Pista con scroll horizontal y snap */
+.hslider__track{
+  display: flex;
+  gap: var(--hslide-gap);
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding: 0 var(--hslide-gap);
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Cada slide ocupa todo el ancho visible */
+.hslide{
+  flex: 0 0 100%;
+  max-width: 100%;
+  scroll-snap-align: start;
+}
+
+/* Asegura que cada .paso llene la altura útil de la pantalla */
+.hslide > .paso{
+  min-height: calc(100svh - var(--header-offset));
+}
+
+/* Controles (flechas) */
+.hslider__ctrl{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: var(--hctrl-size);
+  height: var(--hctrl-size);
+  border-radius: 999px;
+  background: rgba(255,255,255,.95);
+  border: 1px solid rgba(0,0,0,.08);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  user-select: none;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.hslider__ctrl:hover{ transform: translateY(-50%) scale(1.05); box-shadow: 0 6px 18px rgba(0,0,0,.12); }
+.hslider__ctrl:active{ transform: translateY(-50%) scale(.98); }
+.hslider__ctrl[disabled]{ opacity:.45; pointer-events:none; }
+
+.hslider__ctrl--prev{ left: 10px; }
+.hslider__ctrl--next{ right: 10px; }
+.hslider__ctrl--prev::before{ content: "‹"; font-size: 24px; line-height: 1; }
+.hslider__ctrl--next::before{ content: "›"; font-size: 24px; line-height: 1; }
+
+/* Paginación (dots) */
+.hslider__dots{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 10px;
+  z-index: 10;
+  display: flex;
+  gap: 8px;
+  background: rgba(255,255,255,.8);
+  border: 1px solid rgba(0,0,0,.08);
+  border-radius: 999px;
+  padding: 6px 10px;
+  backdrop-filter: blur(6px);
+}
+.hslider__dot{
+  width: var(--hdot-size);
+  height: var(--hdot-size);
+  border-radius: 999px;
+  background: #cfd3d8;
+  cursor: pointer;
+}
+.hslider__dot.is-active{ background: var(--h-accent); }
+
+/* Responsive */
+@media (max-width: 768px){
+  :root{ --hslide-gap: 12px; }
+  .hslider__ctrl{ display:none; } /* en móvil, el swipe es suficiente */
+  .hslider__dots{ bottom: 8px; }
+}
+
+/* Si el viejo indicador vertical está presente, ocúltalo cuando usemos el carrusel */
+.hslider + nav.scroll-indicator{ display: none !important; }

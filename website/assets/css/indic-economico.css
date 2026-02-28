@@ -1,0 +1,59 @@
+.indicador-bg {
+  background-image: url("../svg/bg-purple.svg");
+}
+
+.section-indicador {
+  background-image: url("../svg/bg-banner-economico.png");
+}
+
+.indicador-title {
+  color: #F7B145;
+}
+
+.indicadores-section-title h2 {
+  color: #F7B145;
+}
+
+.indicadores-section-title .indicador-separator {
+  background-color: #D18B26;
+}
+
+ul .icon-list-text {
+  color: #F7B145;
+}
+
+ul .icon-list-text::before {
+  background: url("../../assets/svg/icono-economico.svg") no-repeat;
+}
+
+.mainColor{color: #ED9A15;}
+.oppositeColor{color: #e8fcd0;}
+
+.descripcion {
+	background: #ED9A15;
+}
+
+.clasificacion {
+	border: 2px solid #ED9A15;
+}
+
+.titulo {
+	background: #dcd4e6;
+	color: #ED9A15;
+}
+
+.tabButton, button.active {
+	background-color: #dcd4e6;
+}
+
+.tabButton:hover {
+	background-color: #ED9A15;
+}
+
+button.active {
+	color: #ED9A15;
+}
+
+.footer {
+    background-color: #EFA841;
+}

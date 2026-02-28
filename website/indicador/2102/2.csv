@@ -1,0 +1,74 @@
+geo,Año,Rango de edad,Casos
+15001,2020,Adultez (29 a 59 años),1
+15001,2021,Adultez (29 a 59 años),1
+15001,2021,Juventud (18 a 28 años),1
+15001,2022,Adultez (29 a 59 años),1
+15001,2022,Juventud (18 a 28 años),2
+15001,2023,Adultez (29 a 59 años),3
+15162,2023,Juventud (18 a 28 años),1
+15185,2021,Adultez (29 a 59 años),1
+15223,2021,Adultez (29 a 59 años),1
+15223,2023,Juventud (18 a 28 años),1
+15238,2020,Adultez (29 a 59 años),1
+15238,2021,Adultez (29 a 59 años),1
+15238,2023,Juventud (18 a 28 años),1
+15244,2022,Juventud (18 a 28 años),1
+15332,2020,Adultez (29 a 59 años),1
+15332,2022,Juventud (18 a 28 años),1
+15332,2023,Adultez (29 a 59 años),1
+15368,2023,Juventud (18 a 28 años),1
+15466,2021,Adultez (29 a 59 años),1
+15466,2021,Juventud (18 a 28 años),1
+15469,2021,Juventud (18 a 28 años),1
+15469,2023,Adolescencia (12 a 17 años),1
+15469,2023,Adultez (29 a 59 años),1
+15480,2022,Juventud (18 a 28 años),1
+15516,2023,Adultez (29 a 59 años),1
+15572,2022,Adultez (29 a 59 años),1
+15646,2021,Juventud (18 a 28 años),1
+15646,2022,Adolescencia (12 a 17 años),1
+15740,2020,Juventud (18 a 28 años),1
+15757,2022,Adultez (29 a 59 años),1
+15759,2021,Adultez (29 a 59 años),1
+15759,2022,Juventud (18 a 28 años),1
+15810,2020,Adultez (29 a 59 años),1
+15814,2020,Adultez (29 a 59 años),1
+15837,2023,Adultez (29 a 59 años),1
+15837,2023,Juventud (18 a 28 años),1
+15861,2020,Juventud (18 a 28 años),1
+15879,2023,Juventud (18 a 28 años),1
+15897,2022,Juventud (18 a 28 años),1
+15001,2020,Toda población,1
+15001,2021,Toda población,2
+15001,2022,Toda población,3
+15001,2023,Toda población,3
+15162,2023,Toda población,1
+15185,2021,Toda población,1
+15223,2021,Toda población,1
+15223,2023,Toda población,1
+15238,2020,Toda población,1
+15238,2021,Toda población,1
+15238,2023,Toda población,1
+15244,2022,Toda población,1
+15332,2020,Toda población,1
+15332,2022,Toda población,1
+15332,2023,Toda población,1
+15368,2023,Toda población,1
+15466,2021,Toda población,2
+15469,2021,Toda población,1
+15469,2023,Toda población,2
+15480,2022,Toda población,1
+15516,2023,Toda población,1
+15572,2022,Toda población,1
+15646,2021,Toda población,1
+15646,2022,Toda población,1
+15740,2020,Toda población,1
+15757,2022,Toda población,1
+15759,2021,Toda población,1
+15759,2022,Toda población,1
+15810,2020,Toda población,1
+15814,2020,Toda población,1
+15837,2023,Toda población,2
+15861,2020,Toda población,1
+15879,2023,Toda población,1
+15897,2022,Toda población,1

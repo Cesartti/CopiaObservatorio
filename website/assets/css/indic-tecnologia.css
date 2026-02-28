@@ -1,0 +1,58 @@
+.indicador-bg {
+  background-image: url("../svg/bg-purple.svg");
+}
+.section-indicador {
+  background-image: url("../svg/bg-banner-CTeI.png");
+}
+
+.indicador-title {
+  color: #36B0AC;
+}
+
+.indicadores-section-title h2 {
+  color: #36B0AC;
+}
+
+.indicadores-section-title .indicador-separator {
+  background-color: #36B0AC;
+}
+
+ul .icon-list-text {
+  color: #36B0AC;
+}
+
+ul .icon-list-text::before {
+  background: url("../../assets/svg/icono-tecnologico.svg") no-repeat;
+}
+
+.mainColor{color: #1F746C;}
+.oppositeColor{color: #eeffff;}
+
+.descripcion {
+	background: #1F746C;
+}
+
+.clasificacion {
+	border: 2px solid #1F746C;
+}
+
+.titulo {
+	background: #6BCEC9;
+	color: #1F746C;
+}
+
+.tabButton, button.active {
+	background-color: #6BCEC9;
+}
+
+.tabButton:hover {
+	background-color: #1F746C;
+}
+
+button.active {
+	color: #1F746C;
+}
+
+.footer {
+    background-color: #36B0AC;
+}

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ruta de Atención - Boyacá</title>
+
+  <!-- Bootstrap + fuentes + íconos -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a2d2a64a48.js" crossorigin="anonymous"></script>
+
+  <!-- Tu archivo CSS externo -->
+  <link rel="stylesheet" href="assets/css/rutaVictimas.css" />
+</head>
+<body>
+
+  <div class="container py-5">
+    <h1>¿Qué hacer si soy víctima de violencia de género?</h1>
+
+    <!-- Paso 1 -->
+    <div id="paso1" class="paso activo">
+      <div class="card shadow p-4">
+        <h3>1️⃣ Reconoce la violencia</h3>
+        <p>¿Estás viviendo una situación de violencia?</p>
+        <p>Los siguientes tipos de violencia que pueden activar el Mecanismo:</p>
+        <ul>
+            <li>Violencia física, sexual, psicológica o económica. </li>
+            <li>Amenazas o tentativas de feminicidio.</li>
+            <li>Negación de servicios de salud (ej. IVE, atención por agresión sexual).</li>
+            <li>Discriminación por identidad de género u orientación sexual.</li>
+            <li>Revictimización por instituciones.</li>
+            <li>Falta de medidas de protección efectivas.</li>
+        </ul>
+        <p>Avancemos para conocer los pasos que debes realizar</p>
+        <button class="btn btn-primary" onclick="mostrarPaso(2)">Siguiente <i class="fas fa-arrow-right"></i></button>
+      </div>
+    </div>
+
+    <!-- Paso 2 -->
+    <div id="paso2" class="paso">
+        <div class="card shadow p-4 my-4">
+            <h3><span class="badge bg-primary me-2">2</span>Acude a las instituciones locales competentes</h3>
+            <p>Cuando identifiques una situación de violencia, debes acudir a las entidades responsables en tu municipio según el tipo de ayuda que requieras:</p>
+
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover table-light">
+                <thead class="table-primary">
+                    <tr>
+                    <th>Tipo de ayuda</th>
+                    <th>Entidad que debes buscar</th>
+                    <th>¿Qué pedir?</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    <td>Salud</td>
+                    <td>Hospital / IPS / Secretaría de Salud municipal</td>
+                    <td>Atención médica, registro de lesiones, orientación psicológica.</td>
+                    </tr>
+                    <tr>
+                    <td>Protección</td>
+                    <td>Comisaría de Familia / ICBF</td>
+                    <td>Medidas de protección, separación del agresor, custodia.</td>
+                    </tr>
+                    <tr>
+                    <td>Justicia</td>
+                    <td>Policía / Fiscalía</td>
+                    <td>Denuncia formal del caso, inicio de investigación penal.</td>
+                    </tr>
+                </tbody>
+                </table>
+            </div>
+        <div class="alert alert-warning mt-4" role="alert">
+        ❗ <strong>Importante:</strong> Solicita que quede constancia por escrito de tu caso y exige número de radicado o copia del informe.
+        </div>
+        <button class="btn btn-secondary" onclick="mostrarPaso(1)"><i class="fas fa-arrow-left"></i> Atrás</button>
+        <button class="btn btn-primary" onclick="mostrarPaso(3)">Siguiente <i class="fas fa-arrow-right"></i></button>
+    </div>
+    </div>
+
+    <!-- Paso 3 -->
+    <div id="paso3" class="paso">
+      <div class="card shadow p-4 d-flex flex-column flex-md-row align-items-center gap-4">
+        <div class="col-md-4 text-center">
+          <img src="assets/svg/ayudaInstitucional.png" class="img-paso" alt="Ayuda institucional">
+        </div>
+        <div class="col-md-8">
+          <h3><span class="badge bg-danger me-2">3</span> ¿No te atendieron?</h3>
+          <p>Por que te paso alguna de las siguientes situaciones:</p>
+          <ul>
+            <li>Las instituciones no te atienden o demoran sin justificación.</li>
+            <li>No activan la ruta de atención.</li>
+            <li>Te sientes revictimizada por funcionarios.</li>
+            <li>No se cumplen las medidas de protección.</li>
+          </ul>
+          <p>
+            Se sugiere acudir al municipio con el fin de identificar la entidad responsable del
+            <strong>Mecanismo Articulador Municipal</strong> y/o del
+            <strong>Comité de Salud Mental, Convivencia Social y Abordaje de Violencias Basadas en Género</strong>.
+            Una vez identificada, podrá solicitar la realización de un
+            <strong>estudio mediante sala situacional</strong>, con la participación de todas las entidades
+            competentes para atender y dar solución a su solicitud, en calidad de primeros responsables.
+          </p>
+
+          <p>
+            En caso de contar con <strong>trazabilidad</strong> que evidencie la ausencia de respuesta por parte de esta instancia,
+            podrá elevar su requerimiento al <strong>Mecanismo Articulador Departamental</strong> mediante el correo:
+            <i class="fas fa-envelope" aria-hidden="true"></i>
+            <a href="mailto:mujer.mecanismoarticulador@boyaca.gov.co">mujer.mecanismoarticulador@boyaca.gov.co</a>
+          </p>
+          <div class="d-flex justify-content-between mt-3">
+            <button class="btn btn-secondary" onclick="mostrarPaso(2)"><i class="fas fa-arrow-left"></i> Atrás</button>
+            <button class="btn btn-warning text-white" onclick="mostrarPaso(4)">Siguiente <i class="fas fa-arrow-right"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Paso 4 -->
+    <div id="paso4" class="paso">
+      <div class="card shadow p-4">
+        <h3>4️⃣ Sala Situacional</h3>
+        <p>Tu caso será evaluado por la Secretaría Técnica y convoca una reunión con todas las instituciones que deben dar respuesta.(Justicia, Salud, Protección) para garantizar una solución.</p>
+        <ul>
+          <li>Convocatoria liderada por la Gobernación.</li>
+          <li>Participan Fiscalía, Comisaría, Defensoría del Pueblo y más.</li>
+          <li>Esta sala busca identificar las barreras y comprometer a las entidades a resolverlas.</li>
+          <li>Puede asistir una organización representándote.</li>
+        </ul>
+        <button class="btn btn-secondary" onclick="mostrarPaso(3)"><i class="fas fa-arrow-left"></i> Atrás</button>
+        <button class="btn btn-primary" onclick="mostrarPaso(5)">Siguiente <i class="fas fa-arrow-right"></i></button>
+      </div>
+    </div>
+
+    <!-- Paso 5 -->
+    <div id="paso5" class="paso">
+      <div class="card shadow p-4">
+        <h3>5️⃣ Seguimiento y cierre</h3>
+        <p>Las autoridades hacen seguimiento mensual hasta resolver el caso y garantizar tus derechos.</p>
+        <ul>
+          <li>Resolución de barreras institucionales.</li>
+          <li>Emisión de informe final.</li>
+          <li>Cierre formal del caso.</li>
+        </ul>
+        <button class="btn btn-secondary" onclick="mostrarPaso(4)"><i class="fas fa-arrow-left"></i> Atrás</button>
+        <button class="btn btn-primary" onclick="mostrarPaso(6)">Siguiente <i class="fas fa-arrow-right"></i></button>
+      </div>
+    </div>
+
+    <!-- Paso 6 -->
+    <div id="paso6" class="paso">
+      <div class="card shadow p-4">
+        <h3>6️⃣ ¿Quién puede ayudarte a presentar tu caso?</h3>
+        <ul>
+          <li>Línea 155: Atención a mujeres víctimas de violencia.</li>
+          <li>Defensoría del Pueblo / Personería: Puedes acudir directamente.</li>
+          <li>Organizaciones sociales o redes de mujeres en tu municipio o en Tunja.</li>
+          <li>ICBF: Si hay niños/as involucrados.</li>
+        </ul>
+        <button class="btn btn-secondary" onclick="mostrarPaso(5)"><i class="fas fa-arrow-left"></i> Atrás</button>
+        <button class="btn btn-primary" onclick="mostrarPaso(7)">Siguiente <i class="fas fa-arrow-right"></i></button>
+      </div>
+    </div>
+
+    <!-- Paso 7 -->
+    <div id="paso7" class="paso">
+      <div class="card shadow p-4">
+        <h3>7️⃣ Tus Recomendaciones finales</h3>
+        <ul>
+          <li>Guarda copias o fotos de todas las denuncias, formularios, certificados médicos o comunicaciones.</li>
+          <li>No estás sola: puedes pedir acompañamiento para cada paso.</li>
+          <li>Si no sabes a qué organización acudir, dímelo y te ayudo a identificar redes u organizaciones sociales en tu municipio.</li>
+        </ul>
+        <a href="#paso1" class="btn btn-success" onclick="mostrarPaso(1)">🔁 Comenzar de nuevo</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function mostrarPaso(n) {
+      const pasos = document.querySelectorAll('.paso');
+      pasos.forEach(p => p.classList.remove('activo'));
+      document.getElementById(`paso${n}`).classList.add('activo');
+    }
+  </script>
+</body>
+</html>

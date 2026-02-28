@@ -1,0 +1,739 @@
+geo,Municipio,Año,Sexo,Hembra
+15001,Tunja,2019,Hembra,6138
+15022,Almeida,2019,Hembra,1516
+15047,Aquitania,2019,Hembra,10070
+15051,Arcabuco,2019,Hembra,7415
+15087,Belén,2019,Hembra,10851
+15090,Berbeo,2019,Hembra,2391
+15092,Betéitiva,2019,Hembra,2518
+15097,Boavita,2019,Hembra,4776
+15104,Boyacá,2019,Hembra,3932
+15106,Briceño,2019,Hembra,1938
+15109,Buenavista,2019,Hembra,4462
+15114,Busbanzá,2019,Hembra,627
+15131,Caldas,2019,Hembra,10019
+15135,Campohermoso,2019,Hembra,12196
+15162,Cerinza,2019,Hembra,5418
+15172,Chinavita,2019,Hembra,4120
+15176,Chiquinquirá,2019,Hembra,29514
+15180,Chiscas,2019,Hembra,7572
+15183,Chita,2019,Hembra,5839
+15185,Chitaraque,2019,Hembra,2393
+15187,Chivatá,2019,Hembra,2383
+15189,Ciénega,2019,Hembra,4452
+15204,Cómbita,2019,Hembra,8843
+15212,Coper,2019,Hembra,3879
+15215,Corrales,2019,Hembra,779
+15218,Covarachía,2019,Hembra,1566
+15223,Cubará,2019,Hembra,6116
+15224,Cucaita,2019,Hembra,1786
+15226,Cuítiva,2019,Hembra,2283
+15232,Chíquiza,2019,Hembra,3857
+15236,Chivor,2019,Hembra,1857
+15238,Duitama,2019,Hembra,10955
+15244,El Cocuy,2019,Hembra,7620
+15248,El Espino,2019,Hembra,3744
+15272,Firavitoba,2019,Hembra,9256
+15276,Floresta,2019,Hembra,4829
+15293,Gachantivá,2019,Hembra,3406
+15296,Gámeza,2019,Hembra,4893
+15299,Garagoa,2019,Hembra,9010
+15317,Guacamayas,2019,Hembra,2571
+15322,Guateque,2019,Hembra,2593
+15325,Guayatá,2019,Hembra,3627
+15332,Güicán,2019,Hembra,6135
+15362,Iza,2019,Hembra,3027
+15367,Jenesano,2019,Hembra,4918
+15368,Jericó,2019,Hembra,2082
+15377,Labranzagrande,2019,Hembra,8141
+15380,La Capilla,2019,Hembra,2503
+15401,La Victoria,2019,Hembra,1209
+15403,La Uvita,2019,Hembra,5883
+15407,Villa de Leiva,2019,Hembra,2669
+15425,Macanal,2019,Hembra,5405
+15442,Maripí,2019,Hembra,3657
+15455,Miraflores,2019,Hembra,10870
+15464,Mongua,2019,Hembra,5242
+15466,Monguí,2019,Hembra,2946
+15469,Moniquirá,2019,Hembra,8627
+15476,Motavita,2019,Hembra,4889
+15480,Muzo,2019,Hembra,4363
+15491,Nobsa,2019,Hembra,1488
+15494,Nuevo Colón,2019,Hembra,2385
+15500,Oicatá,2019,Hembra,5000
+15507,Otanche,2019,Hembra,10447
+15511,Pachavita,2019,Hembra,3189
+15514,Páez,2019,Hembra,11826
+15516,Paipa,2019,Hembra,16968
+15518,Pajarito,2019,Hembra,4058
+15522,Panqueba,2019,Hembra,2016
+15531,Pauna,2019,Hembra,5673
+15533,Paya,2019,Hembra,5414
+15537,Paz de Río,2019,Hembra,1741
+15542,Pesca,2019,Hembra,8771
+15550,Pisba,2019,Hembra,2466
+15572,Puerto Boyacá,2019,Hembra,77264
+15580,Quípama,2019,Hembra,3800
+15599,Ramiriquí,2019,Hembra,6129
+15600,Ráquira,2019,Hembra,3833
+15621,Rondón,2019,Hembra,2961
+15632,Saboyá,2019,Hembra,22897
+15638,Sáchica,2019,Hembra,178
+15646,Samacá,2019,Hembra,6696
+15660,San Eduardo,2019,Hembra,3704
+15664,San José de Pare,2019,Hembra,1183
+15667,San Luis de Gaceno,2019,Hembra,23298
+15673,San Mateo,2019,Hembra,4817
+15676,San Miguel de Sema,2019,Hembra,19028
+15681,San Pablo de Borbur,2019,Hembra,5189
+15686,Santana,2019,Hembra,1098
+15690,Santa María,2019,Hembra,8546
+15693,Santa Rosa de Viterbo,2019,Hembra,8497
+15696,Santa Sofía,2019,Hembra,2590
+15720,Sativanorte,2019,Hembra,2383
+15723,Sativasur,2019,Hembra,1085
+15740,Siachoque,2019,Hembra,7751
+15753,Soatá,2019,Hembra,2292
+15755,Socotá,2019,Hembra,5336
+15757,Socha,2019,Hembra,3381
+15759,Sogamoso,2019,Hembra,8941
+15761,Somondoco,2019,Hembra,2956
+15762,Sora,2019,Hembra,1865
+15763,Sotaquirá,2019,Hembra,16158
+15764,Soracá,2019,Hembra,5627
+15774,Susacón,2019,Hembra,3720
+15776,Sutamarchán,2019,Hembra,2602
+15778,Sutatenza,2019,Hembra,2499
+15790,Tasco,2019,Hembra,6485
+15798,Tenza,2019,Hembra,3226
+15804,Tibaná,2019,Hembra,5710
+15806,Tibasosa,2019,Hembra,6230
+15808,Tinjacá,2019,Hembra,2448
+15810,Tipacoque,2019,Hembra,2347
+15814,Toca,2019,Hembra,11242
+15816,Togüí,2019,Hembra,1822
+15820,Tópaga,2019,Hembra,1266
+15822,Tota,2019,Hembra,7069
+15832,Tununguá,2019,Hembra,494
+15835,Turmequé,2019,Hembra,5340
+15837,Tuta,2019,Hembra,19725
+15839,Tutazá,2019,Hembra,5213
+15842,Úmbita,2019,Hembra,7118
+15861,Ventaquemada,2019,Hembra,18007
+15879,Viracachá,2019,Hembra,4549
+15897,Zetaquirá,2019,Hembra,5416
+15001,Tunja,2020,Hembra,7318
+15022,Almeida,2020,Hembra,1576
+15047,Aquitania,2020,Hembra,10466
+15051,Arcabuco,2020,Hembra,7793
+15087,Belén,2020,Hembra,12015
+15090,Berbeo,2020,Hembra,2322
+15092,Betéitiva,2020,Hembra,2303
+15097,Boavita,2020,Hembra,5050
+15104,Boyacá,2020,Hembra,3647
+15106,Briceño,2020,Hembra,2094
+15109,Buenavista,2020,Hembra,4684
+15114,Busbanzá,2020,Hembra,633
+15131,Caldas,2020,Hembra,9868
+15135,Campohermoso,2020,Hembra,11369
+15162,Cerinza,2020,Hembra,5200
+15172,Chinavita,2020,Hembra,4392
+15176,Chiquinquirá,2020,Hembra,29559
+15180,Chiscas,2020,Hembra,7807
+15183,Chita,2020,Hembra,6675
+15185,Chitaraque,2020,Hembra,2648
+15187,Chivatá,2020,Hembra,2518
+15189,Ciénega,2020,Hembra,5686
+15204,Cómbita,2020,Hembra,11460
+15212,Coper,2020,Hembra,3992
+15215,Corrales,2020,Hembra,783
+15218,Covarachía,2020,Hembra,1739
+15223,Cubará,2020,Hembra,6281
+15224,Cucaita,2020,Hembra,1865
+15226,Cuítiva,2020,Hembra,2285
+15232,Chíquiza,2020,Hembra,5096
+15236,Chivor,2020,Hembra,2056
+15238,Duitama,2020,Hembra,10997
+15244,El Cocuy,2020,Hembra,7566
+15248,El Espino,2020,Hembra,4060
+15272,Firavitoba,2020,Hembra,10164
+15276,Floresta,2020,Hembra,5091
+15293,Gachantivá,2020,Hembra,3300
+15296,Gámeza,2020,Hembra,4931
+15299,Garagoa,2020,Hembra,8872
+15317,Guacamayas,2020,Hembra,2790
+15322,Guateque,2020,Hembra,2413
+15325,Guayatá,2020,Hembra,3910
+15332,Güicán,2020,Hembra,5962
+15362,Iza,2020,Hembra,2830
+15367,Jenesano,2020,Hembra,5468
+15368,Jericó,2020,Hembra,2448
+15377,Labranzagrande,2020,Hembra,9130
+15380,La Capilla,2020,Hembra,2359
+15401,La Victoria,2020,Hembra,1220
+15403,La Uvita,2020,Hembra,6013
+15407,Villa de Leiva,2020,Hembra,2707
+15425,Macanal,2020,Hembra,6150
+15442,Maripí,2020,Hembra,2789
+15455,Miraflores,2020,Hembra,10887
+15464,Mongua,2020,Hembra,5807
+15466,Monguí,2020,Hembra,3165
+15469,Moniquirá,2020,Hembra,9129
+15476,Motavita,2020,Hembra,5905
+15480,Muzo,2020,Hembra,4251
+15491,Nobsa,2020,Hembra,1601
+15494,Nuevo Colón,2020,Hembra,2581
+15500,Oicatá,2020,Hembra,5464
+15507,Otanche,2020,Hembra,10150
+15511,Pachavita,2020,Hembra,3349
+15514,Páez,2020,Hembra,11847
+15516,Paipa,2020,Hembra,18907
+15518,Pajarito,2020,Hembra,4236
+15522,Panqueba,2020,Hembra,2147
+15531,Pauna,2020,Hembra,7242
+15533,Paya,2020,Hembra,5345
+15537,Paz de Río,2020,Hembra,1882
+15542,Pesca,2020,Hembra,10581
+15550,Pisba,2020,Hembra,2957
+15572,Puerto Boyacá,2020,Hembra,76818
+15580,Quípama,2020,Hembra,3608
+15599,Ramiriquí,2020,Hembra,6604
+15600,Ráquira,2020,Hembra,3653
+15621,Rondón,2020,Hembra,4316
+15632,Saboyá,2020,Hembra,22846
+15638,Sáchica,2020,Hembra,161
+15646,Samacá,2020,Hembra,6192
+15660,San Eduardo,2020,Hembra,3441
+15664,San José de Pare,2020,Hembra,1349
+15667,San Luis de Gaceno,2020,Hembra,21786
+15673,San Mateo,2020,Hembra,5137
+15676,San Miguel de Sema,2020,Hembra,19851
+15681,San Pablo de Borbur,2020,Hembra,5207
+15686,Santana,2020,Hembra,1042
+15690,Santa María,2020,Hembra,8303
+15693,Santa Rosa de Viterbo,2020,Hembra,8959
+15696,Santa Sofía,2020,Hembra,2684
+15720,Sativanorte,2020,Hembra,2648
+15723,Sativasur,2020,Hembra,1157
+15740,Siachoque,2020,Hembra,9059
+15753,Soatá,2020,Hembra,2406
+15755,Socotá,2020,Hembra,5560
+15757,Socha,2020,Hembra,3373
+15759,Sogamoso,2020,Hembra,9502
+15761,Somondoco,2020,Hembra,2905
+15762,Sora,2020,Hembra,2108
+15763,Sotaquirá,2020,Hembra,18229
+15764,Soracá,2020,Hembra,6279
+15774,Susacón,2020,Hembra,4010
+15776,Sutamarchán,2020,Hembra,3134
+15778,Sutatenza,2020,Hembra,2473
+15790,Tasco,2020,Hembra,6606
+15798,Tenza,2020,Hembra,3435
+15804,Tibaná,2020,Hembra,7044
+15806,Tibasosa,2020,Hembra,7126
+15808,Tinjacá,2020,Hembra,2348
+15810,Tipacoque,2020,Hembra,2556
+15814,Toca,2020,Hembra,11884
+15816,Togüí,2020,Hembra,2004
+15820,Tópaga,2020,Hembra,1251
+15822,Tota,2020,Hembra,7474
+15832,Tununguá,2020,Hembra,421
+15835,Turmequé,2020,Hembra,6419
+15837,Tuta,2020,Hembra,20097
+15839,Tutazá,2020,Hembra,4921
+15842,Úmbita,2020,Hembra,9633
+15861,Ventaquemada,2020,Hembra,19024
+15879,Viracachá,2020,Hembra,5096
+15897,Zetaquirá,2020,Hembra,6194
+15001,Tunja,2021,Hembra,6452
+15022,Almeida,2021,Hembra,1549
+15047,Aquitania,2021,Hembra,9867
+15051,Arcabuco,2021,Hembra,7400
+15087,Belén,2021,Hembra,11202
+15090,Berbeo,2021,Hembra,2282
+15092,Betéitiva,2021,Hembra,2474
+15097,Boavita,2021,Hembra,5014
+15104,Boyacá,2021,Hembra,3510
+15106,Briceño,2021,Hembra,2287
+15109,Buenavista,2021,Hembra,4649
+15114,Busbanzá,2021,Hembra,533
+15131,Caldas,2021,Hembra,9455
+15135,Campohermoso,2021,Hembra,10778
+15162,Cerinza,2021,Hembra,4300
+15172,Chinavita,2021,Hembra,3983
+15176,Chiquinquirá,2021,Hembra,28606
+15180,Chiscas,2021,Hembra,7997
+15183,Chita,2021,Hembra,6372
+15185,Chitaraque,2021,Hembra,2392
+15187,Chivatá,2021,Hembra,2589
+15189,Ciénega,2021,Hembra,4624
+15204,Cómbita,2021,Hembra,10392
+15212,Coper,2021,Hembra,4135
+15215,Corrales,2021,Hembra,854
+15218,Covarachía,2021,Hembra,1601
+15223,Cubará,2021,Hembra,6008
+15224,Cucaita,2021,Hembra,1244
+15226,Cuítiva,2021,Hembra,2039
+15232,Chíquiza,2021,Hembra,5355
+15236,Chivor,2021,Hembra,1607
+15238,Duitama,2021,Hembra,10873
+15244,El Cocuy,2021,Hembra,7165
+15248,El Espino,2021,Hembra,4266
+15272,Firavitoba,2021,Hembra,9462
+15276,Floresta,2021,Hembra,5214
+15293,Gachantivá,2021,Hembra,3180
+15296,Gámeza,2021,Hembra,5018
+15299,Garagoa,2021,Hembra,8571
+15317,Guacamayas,2021,Hembra,2628
+15322,Guateque,2021,Hembra,2293
+15325,Guayatá,2021,Hembra,3601
+15332,Güicán,2021,Hembra,5854
+15362,Iza,2021,Hembra,2807
+15367,Jenesano,2021,Hembra,4667
+15368,Jericó,2021,Hembra,2294
+15377,Labranzagrande,2021,Hembra,8626
+15380,La Capilla,2021,Hembra,2334
+15401,La Victoria,2021,Hembra,1083
+15403,La Uvita,2021,Hembra,6050
+15407,Villa de Leiva,2021,Hembra,2462
+15425,Macanal,2021,Hembra,5653
+15442,Maripí,2021,Hembra,3157
+15455,Miraflores,2021,Hembra,10524
+15464,Mongua,2021,Hembra,6147
+15466,Monguí,2021,Hembra,3485
+15469,Moniquirá,2021,Hembra,8364
+15476,Motavita,2021,Hembra,5609
+15480,Muzo,2021,Hembra,4172
+15491,Nobsa,2021,Hembra,1622
+15494,Nuevo Colón,2021,Hembra,2594
+15500,Oicatá,2021,Hembra,4961
+15507,Otanche,2021,Hembra,9592
+15511,Pachavita,2021,Hembra,3063
+15514,Páez,2021,Hembra,11673
+15516,Paipa,2021,Hembra,17520
+15518,Pajarito,2021,Hembra,4117
+15522,Panqueba,2021,Hembra,2021
+15531,Pauna,2021,Hembra,7090
+15533,Paya,2021,Hembra,5311
+15537,Paz de Río,2021,Hembra,1815
+15542,Pesca,2021,Hembra,11174
+15550,Pisba,2021,Hembra,3015
+15572,Puerto Boyacá,2021,Hembra,75618
+15580,Quípama,2021,Hembra,3318
+15599,Ramiriquí,2021,Hembra,6590
+15600,Ráquira,2021,Hembra,3497
+15621,Rondón,2021,Hembra,3796
+15632,Saboyá,2021,Hembra,22855
+15638,Sáchica,2021,Hembra,171
+15646,Samacá,2021,Hembra,5133
+15660,San Eduardo,2021,Hembra,3344
+15664,San José de Pare,2021,Hembra,1201
+15667,San Luis de Gaceno,2021,Hembra,20704
+15673,San Mateo,2021,Hembra,5275
+15676,San Miguel de Sema,2021,Hembra,20493
+15681,San Pablo de Borbur,2021,Hembra,5027
+15686,Santana,2021,Hembra,964
+15690,Santa María,2021,Hembra,8253
+15693,Santa Rosa de Viterbo,2021,Hembra,8806
+15696,Santa Sofía,2021,Hembra,3128
+15720,Sativanorte,2021,Hembra,2900
+15723,Sativasur,2021,Hembra,1237
+15740,Siachoque,2021,Hembra,8023
+15753,Soatá,2021,Hembra,2448
+15755,Socotá,2021,Hembra,4905
+15757,Socha,2021,Hembra,3226
+15759,Sogamoso,2021,Hembra,8875
+15761,Somondoco,2021,Hembra,2531
+15762,Sora,2021,Hembra,1919
+15763,Sotaquirá,2021,Hembra,17694
+15764,Soracá,2021,Hembra,6213
+15774,Susacón,2021,Hembra,3908
+15776,Sutamarchán,2021,Hembra,2762
+15778,Sutatenza,2021,Hembra,2040
+15790,Tasco,2021,Hembra,6312
+15798,Tenza,2021,Hembra,3220
+15804,Tibaná,2021,Hembra,6751
+15806,Tibasosa,2021,Hembra,7191
+15808,Tinjacá,2021,Hembra,2267
+15810,Tipacoque,2021,Hembra,2561
+15814,Toca,2021,Hembra,11358
+15816,Togüí,2021,Hembra,1781
+15820,Tópaga,2021,Hembra,1316
+15822,Tota,2021,Hembra,6287
+15832,Tununguá,2021,Hembra,505
+15835,Turmequé,2021,Hembra,6483
+15837,Tuta,2021,Hembra,20932
+15839,Tutazá,2021,Hembra,5438
+15842,Úmbita,2021,Hembra,8875
+15861,Ventaquemada,2021,Hembra,17973
+15879,Viracachá,2021,Hembra,5056
+15897,Zetaquirá,2021,Hembra,6023
+15001,Tunja,2019,Macho,3081
+15022,Almeida,2019,Macho,919
+15047,Aquitania,2019,Macho,7824
+15051,Arcabuco,2019,Macho,3234
+15087,Belén,2019,Macho,2853
+15090,Berbeo,2019,Macho,1543
+15092,Betéitiva,2019,Macho,1094
+15097,Boavita,2019,Macho,2836
+15104,Boyacá,2019,Macho,1652
+15106,Briceño,2019,Macho,907
+15109,Buenavista,2019,Macho,2191
+15114,Busbanzá,2019,Macho,356
+15131,Caldas,2019,Macho,1481
+15135,Campohermoso,2019,Macho,6635
+15162,Cerinza,2019,Macho,1162
+15172,Chinavita,2019,Macho,2906
+15176,Chiquinquirá,2019,Macho,3180
+15180,Chiscas,2019,Macho,5795
+15183,Chita,2019,Macho,4511
+15185,Chitaraque,2019,Macho,1409
+15187,Chivatá,2019,Macho,823
+15189,Ciénega,2019,Macho,1887
+15204,Cómbita,2019,Macho,2480
+15212,Coper,2019,Macho,2997
+15215,Corrales,2019,Macho,411
+15218,Covarachía,2019,Macho,923
+15223,Cubará,2019,Macho,4120
+15224,Cucaita,2019,Macho,1011
+15226,Cuítiva,2019,Macho,985
+15232,Chíquiza,2019,Macho,1414
+15236,Chivor,2019,Macho,1054
+15238,Duitama,2019,Macho,2869
+15244,El Cocuy,2019,Macho,5719
+15248,El Espino,2019,Macho,2567
+15272,Firavitoba,2019,Macho,2138
+15276,Floresta,2019,Macho,1382
+15293,Gachantivá,2019,Macho,1942
+15296,Gámeza,2019,Macho,2451
+15299,Garagoa,2019,Macho,5655
+15317,Guacamayas,2019,Macho,1859
+15322,Guateque,2019,Macho,1397
+15325,Guayatá,2019,Macho,2906
+15332,Güicán,2019,Macho,3616
+15362,Iza,2019,Macho,487
+15367,Jenesano,2019,Macho,1658
+15368,Jericó,2019,Macho,1526
+15377,Labranzagrande,2019,Macho,6911
+15380,La Capilla,2019,Macho,1953
+15401,La Victoria,2019,Macho,1246
+15403,La Uvita,2019,Macho,4134
+15407,Villa de Leiva,2019,Macho,2149
+15425,Macanal,2019,Macho,3594
+15442,Maripí,2019,Macho,2535
+15455,Miraflores,2019,Macho,6701
+15464,Mongua,2019,Macho,2602
+15466,Monguí,2019,Macho,1244
+15469,Moniquirá,2019,Macho,4391
+15476,Motavita,2019,Macho,1961
+15480,Muzo,2019,Macho,3089
+15491,Nobsa,2019,Macho,443
+15494,Nuevo Colón,2019,Macho,860
+15500,Oicatá,2019,Macho,1324
+15507,Otanche,2019,Macho,7027
+15511,Pachavita,2019,Macho,1944
+15514,Páez,2019,Macho,7446
+15516,Paipa,2019,Macho,6007
+15518,Pajarito,2019,Macho,4701
+15522,Panqueba,2019,Macho,1482
+15531,Pauna,2019,Macho,2804
+15533,Paya,2019,Macho,2924
+15537,Paz de Río,2019,Macho,986
+15542,Pesca,2019,Macho,3488
+15550,Pisba,2019,Macho,1324
+15572,Puerto Boyacá,2019,Macho,75239
+15580,Quípama,2019,Macho,2618
+15599,Ramiriquí,2019,Macho,3095
+15600,Ráquira,2019,Macho,1562
+15621,Rondón,2019,Macho,2456
+15632,Saboyá,2019,Macho,5184
+15638,Sáchica,2019,Macho,381
+15646,Samacá,2019,Macho,2786
+15660,San Eduardo,2019,Macho,2349
+15664,San José de Pare,2019,Macho,664
+15667,San Luis de Gaceno,2019,Macho,17039
+15673,San Mateo,2019,Macho,3055
+15676,San Miguel de Sema,2019,Macho,1268
+15681,San Pablo de Borbur,2019,Macho,3647
+15686,Santana,2019,Macho,696
+15690,Santa María,2019,Macho,5491
+15693,Santa Rosa de Viterbo,2019,Macho,2000
+15696,Santa Sofía,2019,Macho,2071
+15720,Sativanorte,2019,Macho,1626
+15723,Sativasur,2019,Macho,739
+15740,Siachoque,2019,Macho,2792
+15753,Soatá,2019,Macho,1473
+15755,Socotá,2019,Macho,3773
+15757,Socha,2019,Macho,1632
+15759,Sogamoso,2019,Macho,4550
+15761,Somondoco,2019,Macho,1694
+15762,Sora,2019,Macho,614
+15763,Sotaquirá,2019,Macho,3175
+15764,Soracá,2019,Macho,2193
+15774,Susacón,2019,Macho,2615
+15776,Sutamarchán,2019,Macho,1511
+15778,Sutatenza,2019,Macho,1173
+15790,Tasco,2019,Macho,3017
+15798,Tenza,2019,Macho,1986
+15804,Tibaná,2019,Macho,2733
+15806,Tibasosa,2019,Macho,1752
+15808,Tinjacá,2019,Macho,1057
+15810,Tipacoque,2019,Macho,1545
+15814,Toca,2019,Macho,3250
+15816,Togüí,2019,Macho,977
+15820,Tópaga,2019,Macho,531
+15822,Tota,2019,Macho,2943
+15832,Tununguá,2019,Macho,377
+15835,Turmequé,2019,Macho,2158
+15837,Tuta,2019,Macho,4875
+15839,Tutazá,2019,Macho,2320
+15842,Úmbita,2019,Macho,3109
+15861,Ventaquemada,2019,Macho,5333
+15879,Viracachá,2019,Macho,1812
+15897,Zetaquirá,2019,Macho,3424
+15001,Tunja,2020,Macho,3928
+15022,Almeida,2020,Macho,991
+15047,Aquitania,2020,Macho,8139
+15051,Arcabuco,2020,Macho,3272
+15087,Belén,2020,Macho,3107
+15090,Berbeo,2020,Macho,1593
+15092,Betéitiva,2020,Macho,1131
+15097,Boavita,2020,Macho,2731
+15104,Boyacá,2020,Macho,1717
+15106,Briceño,2020,Macho,816
+15109,Buenavista,2020,Macho,2257
+15114,Busbanzá,2020,Macho,424
+15131,Caldas,2020,Macho,1379
+15135,Campohermoso,2020,Macho,6772
+15162,Cerinza,2020,Macho,1147
+15172,Chinavita,2020,Macho,3078
+15176,Chiquinquirá,2020,Macho,2786
+15180,Chiscas,2020,Macho,5614
+15183,Chita,2020,Macho,4886
+15185,Chitaraque,2020,Macho,2096
+15187,Chivatá,2020,Macho,948
+15189,Ciénega,2020,Macho,2484
+15204,Cómbita,2020,Macho,3497
+15212,Coper,2020,Macho,3196
+15215,Corrales,2020,Macho,453
+15218,Covarachía,2020,Macho,990
+15223,Cubará,2020,Macho,4495
+15224,Cucaita,2020,Macho,1078
+15226,Cuítiva,2020,Macho,1013
+15232,Chíquiza,2020,Macho,1912
+15236,Chivor,2020,Macho,1265
+15238,Duitama,2020,Macho,3199
+15244,El Cocuy,2020,Macho,5497
+15248,El Espino,2020,Macho,2612
+15272,Firavitoba,2020,Macho,2324
+15276,Floresta,2020,Macho,1634
+15293,Gachantivá,2020,Macho,1719
+15296,Gámeza,2020,Macho,2315
+15299,Garagoa,2020,Macho,5334
+15317,Guacamayas,2020,Macho,1727
+15322,Guateque,2020,Macho,1168
+15325,Guayatá,2020,Macho,3265
+15332,Güicán,2020,Macho,3297
+15362,Iza,2020,Macho,343
+15367,Jenesano,2020,Macho,1926
+15368,Jericó,2020,Macho,1785
+15377,Labranzagrande,2020,Macho,7505
+15380,La Capilla,2020,Macho,1798
+15401,La Victoria,2020,Macho,1238
+15403,La Uvita,2020,Macho,3894
+15407,Villa de Leiva,2020,Macho,1804
+15425,Macanal,2020,Macho,4142
+15442,Maripí,2020,Macho,1854
+15455,Miraflores,2020,Macho,6743
+15464,Mongua,2020,Macho,3109
+15466,Monguí,2020,Macho,1248
+15469,Moniquirá,2020,Macho,4314
+15476,Motavita,2020,Macho,2284
+15480,Muzo,2020,Macho,3106
+15491,Nobsa,2020,Macho,504
+15494,Nuevo Colón,2020,Macho,837
+15500,Oicatá,2020,Macho,1381
+15507,Otanche,2020,Macho,6205
+15511,Pachavita,2020,Macho,2100
+15514,Páez,2020,Macho,7439
+15516,Paipa,2020,Macho,6716
+15518,Pajarito,2020,Macho,4334
+15522,Panqueba,2020,Macho,1535
+15531,Pauna,2020,Macho,3636
+15533,Paya,2020,Macho,2838
+15537,Paz de Río,2020,Macho,1245
+15542,Pesca,2020,Macho,4143
+15550,Pisba,2020,Macho,1591
+15572,Puerto Boyacá,2020,Macho,74717
+15580,Quípama,2020,Macho,2775
+15599,Ramiriquí,2020,Macho,3060
+15600,Ráquira,2020,Macho,1510
+15621,Rondón,2020,Macho,3190
+15632,Saboyá,2020,Macho,4780
+15638,Sáchica,2020,Macho,371
+15646,Samacá,2020,Macho,3355
+15660,San Eduardo,2020,Macho,2162
+15664,San José de Pare,2020,Macho,570
+15667,San Luis de Gaceno,2020,Macho,16088
+15673,San Mateo,2020,Macho,3008
+15676,San Miguel de Sema,2020,Macho,1317
+15681,San Pablo de Borbur,2020,Macho,3105
+15686,Santana,2020,Macho,531
+15690,Santa María,2020,Macho,5311
+15693,Santa Rosa de Viterbo,2020,Macho,2101
+15696,Santa Sofía,2020,Macho,1794
+15720,Sativanorte,2020,Macho,1748
+15723,Sativasur,2020,Macho,785
+15740,Siachoque,2020,Macho,3754
+15753,Soatá,2020,Macho,1656
+15755,Socotá,2020,Macho,4103
+15757,Socha,2020,Macho,1651
+15759,Sogamoso,2020,Macho,4928
+15761,Somondoco,2020,Macho,1623
+15762,Sora,2020,Macho,1030
+15763,Sotaquirá,2020,Macho,3515
+15764,Soracá,2020,Macho,2351
+15774,Susacón,2020,Macho,2531
+15776,Sutamarchán,2020,Macho,2050
+15778,Sutatenza,2020,Macho,1242
+15790,Tasco,2020,Macho,3321
+15798,Tenza,2020,Macho,2077
+15804,Tibaná,2020,Macho,3367
+15806,Tibasosa,2020,Macho,2219
+15808,Tinjacá,2020,Macho,1016
+15810,Tipacoque,2020,Macho,1517
+15814,Toca,2020,Macho,3814
+15816,Togüí,2020,Macho,772
+15820,Tópaga,2020,Macho,589
+15822,Tota,2020,Macho,3177
+15832,Tununguá,2020,Macho,398
+15835,Turmequé,2020,Macho,2553
+15837,Tuta,2020,Macho,6314
+15839,Tutazá,2020,Macho,2265
+15842,Úmbita,2020,Macho,3860
+15861,Ventaquemada,2020,Macho,5921
+15879,Viracachá,2020,Macho,2005
+15897,Zetaquirá,2020,Macho,3915
+15001,Tunja,2021,Macho,3643
+15022,Almeida,2021,Macho,864
+15047,Aquitania,2021,Macho,7768
+15051,Arcabuco,2021,Macho,2927
+15087,Belén,2021,Macho,2857
+15090,Berbeo,2021,Macho,1569
+15092,Betéitiva,2021,Macho,1017
+15097,Boavita,2021,Macho,2737
+15104,Boyacá,2021,Macho,1603
+15106,Briceño,2021,Macho,862
+15109,Buenavista,2021,Macho,2192
+15114,Busbanzá,2021,Macho,386
+15131,Caldas,2021,Macho,1010
+15135,Campohermoso,2021,Macho,6562
+15162,Cerinza,2021,Macho,845
+15172,Chinavita,2021,Macho,2897
+15176,Chiquinquirá,2021,Macho,2476
+15180,Chiscas,2021,Macho,5581
+15183,Chita,2021,Macho,5055
+15185,Chitaraque,2021,Macho,1743
+15187,Chivatá,2021,Macho,810
+15189,Ciénega,2021,Macho,2221
+15204,Cómbita,2021,Macho,2640
+15212,Coper,2021,Macho,2870
+15215,Corrales,2021,Macho,416
+15218,Covarachía,2021,Macho,969
+15223,Cubará,2021,Macho,4004
+15224,Cucaita,2021,Macho,847
+15226,Cuítiva,2021,Macho,826
+15232,Chíquiza,2021,Macho,1618
+15236,Chivor,2021,Macho,1078
+15238,Duitama,2021,Macho,2901
+15244,El Cocuy,2021,Macho,5611
+15248,El Espino,2021,Macho,2598
+15272,Firavitoba,2021,Macho,2080
+15276,Floresta,2021,Macho,1517
+15293,Gachantivá,2021,Macho,1884
+15296,Gámeza,2021,Macho,2298
+15299,Garagoa,2021,Macho,5303
+15317,Guacamayas,2021,Macho,1568
+15322,Guateque,2021,Macho,1194
+15325,Guayatá,2021,Macho,3025
+15332,Güicán,2021,Macho,3102
+15362,Iza,2021,Macho,350
+15367,Jenesano,2021,Macho,1855
+15368,Jericó,2021,Macho,1683
+15377,Labranzagrande,2021,Macho,7236
+15380,La Capilla,2021,Macho,1923
+15401,La Victoria,2021,Macho,1348
+15403,La Uvita,2021,Macho,4160
+15407,Villa de Leiva,2021,Macho,1628
+15425,Macanal,2021,Macho,3941
+15442,Maripí,2021,Macho,2290
+15455,Miraflores,2021,Macho,6418
+15464,Mongua,2021,Macho,3165
+15466,Monguí,2021,Macho,1400
+15469,Moniquirá,2021,Macho,4164
+15476,Motavita,2021,Macho,2273
+15480,Muzo,2021,Macho,3227
+15491,Nobsa,2021,Macho,415
+15494,Nuevo Colón,2021,Macho,761
+15500,Oicatá,2021,Macho,1105
+15507,Otanche,2021,Macho,6943
+15511,Pachavita,2021,Macho,2210
+15514,Páez,2021,Macho,7380
+15516,Paipa,2021,Macho,6011
+15518,Pajarito,2021,Macho,4432
+15522,Panqueba,2021,Macho,1547
+15531,Pauna,2021,Macho,3353
+15533,Paya,2021,Macho,2864
+15537,Paz de Río,2021,Macho,1175
+15542,Pesca,2021,Macho,3636
+15550,Pisba,2021,Macho,1708
+15572,Puerto Boyacá,2021,Macho,74637
+15580,Quípama,2021,Macho,2104
+15599,Ramiriquí,2021,Macho,3574
+15600,Ráquira,2021,Macho,1303
+15621,Rondón,2021,Macho,3016
+15632,Saboyá,2021,Macho,4459
+15638,Sáchica,2021,Macho,381
+15646,Samacá,2021,Macho,2955
+15660,San Eduardo,2021,Macho,2128
+15664,San José de Pare,2021,Macho,661
+15667,San Luis de Gaceno,2021,Macho,14155
+15673,San Mateo,2021,Macho,3154
+15676,San Miguel de Sema,2021,Macho,1287
+15681,San Pablo de Borbur,2021,Macho,3151
+15686,Santana,2021,Macho,593
+15690,Santa María,2021,Macho,5481
+15693,Santa Rosa de Viterbo,2021,Macho,1892
+15696,Santa Sofía,2021,Macho,1751
+15720,Sativanorte,2021,Macho,1939
+15723,Sativasur,2021,Macho,812
+15740,Siachoque,2021,Macho,4126
+15753,Soatá,2021,Macho,1748
+15755,Socotá,2021,Macho,3926
+15757,Socha,2021,Macho,1637
+15759,Sogamoso,2021,Macho,4459
+15761,Somondoco,2021,Macho,1357
+15762,Sora,2021,Macho,755
+15763,Sotaquirá,2021,Macho,3114
+15764,Soracá,2021,Macho,2090
+15774,Susacón,2021,Macho,2537
+15776,Sutamarchán,2021,Macho,1627
+15778,Sutatenza,2021,Macho,1138
+15790,Tasco,2021,Macho,3041
+15798,Tenza,2021,Macho,2171
+15804,Tibaná,2021,Macho,3338
+15806,Tibasosa,2021,Macho,1920
+15808,Tinjacá,2021,Macho,974
+15810,Tipacoque,2021,Macho,1517
+15814,Toca,2021,Macho,2995
+15816,Togüí,2021,Macho,892
+15820,Tópaga,2021,Macho,556
+15822,Tota,2021,Macho,2691
+15832,Tununguá,2021,Macho,421
+15835,Turmequé,2021,Macho,2430
+15837,Tuta,2021,Macho,5654
+15839,Tutazá,2021,Macho,2066
+15842,Úmbita,2021,Macho,3581
+15861,Ventaquemada,2021,Macho,5164
+15879,Viracachá,2021,Macho,2133
+15897,Zetaquirá,2021,Macho,4007

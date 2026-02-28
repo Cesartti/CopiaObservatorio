@@ -1,0 +1,493 @@
+Año,geo,variable,Inasistencia,Categoria
+2005,15001,TUNJA,0.006600,Cabecera
+2005,15022,ALMEIDA,0.000000,Cabecera
+2005,15047,AQUITANIA,0.012200,Cabecera
+2005,15051,ARCABUCO,0.002800,Cabecera
+2005,15087,BELÉN,0.000000,Cabecera
+2005,15090,BERBEO,0.016300,Cabecera
+2005,15092,BETÉITIVA,0.000000,Cabecera
+2005,15097,BOAVITA,0.003300,Cabecera
+2005,15104,BOYACÁ,0.000000,Cabecera
+2005,15106,BRICEÑO,0.009500,Cabecera
+2005,15109,BUENAVISTA,0.006900,Cabecera
+2005,15114,BUSBANZÁ,0.000000,Cabecera
+2005,15131,CALDAS,0.025300,Cabecera
+2005,15135,CAMPOHERMOSO,0.008800,Cabecera
+2005,15162,CERINZA,0.000000,Cabecera
+2005,15172,CHINAVITA,0.004400,Cabecera
+2005,15176,CHIQUINQUIRÁ,0.028600,Cabecera
+2005,15180,CHISCAS,0.000000,Cabecera
+2005,15183,CHITA,0.023000,Cabecera
+2005,15185,CHITARAQUE,0.000000,Cabecera
+2005,15187,CHIVATÁ,0.000000,Cabecera
+2005,15189,CIÉNEGA,0.008900,Cabecera
+2005,15204,CÓMBITA,0.008500,Cabecera
+2005,15212,COPER,0.000000,Cabecera
+2005,15215,CORRALES,0.000000,Cabecera
+2005,15218,COVARACHÍA,0.000000,Cabecera
+2005,15223,CUBARÁ,0.003600,Cabecera
+2005,15224,CUCAITA,0.010800,Cabecera
+2005,15226,CUÍTIVA,0.000000,Cabecera
+2005,15232,CHÍQUIZA,0.030300,Cabecera
+2005,15236,CHIVOR,0.000000,Cabecera
+2005,15238,DUITAMA,0.006600,Cabecera
+2005,15244,EL COCUY,0.006800,Cabecera
+2005,15248,EL ESPINO,0.000000,Cabecera
+2005,15272,FIRAVITOBA,0.003900,Cabecera
+2005,15276,FLORESTA,0.021800,Cabecera
+2005,15293,GACHANTIVÁ,0.000000,Cabecera
+2005,15296,GAMEZA,0.004300,Cabecera
+2005,15299,GARAGOA,0.024900,Cabecera
+2005,15317,GUACAMAYAS,0.000000,Cabecera
+2005,15322,GUATEQUE,0.005800,Cabecera
+2005,15325,GUAYATÁ,0.004000,Cabecera
+2005,15332,GÜICÁN,0.004000,Cabecera
+2005,15362,IZA,0.000000,Cabecera
+2005,15367,JENESANO,0.016400,Cabecera
+2005,15368,JERICÓ,0.008300,Cabecera
+2005,15377,LABRANZAGRANDE,0.000000,Cabecera
+2005,15380,LA CAPILLA,0.000000,Cabecera
+2005,15401,LA VICTORIA,0.000000,Cabecera
+2005,15403,LA UVITA,0.003500,Cabecera
+2005,15407,VILLA DE LEYVA,0.008300,Cabecera
+2005,15425,MACANAL,0.000000,Cabecera
+2005,15442,MARIPÍ,0.000000,Cabecera
+2005,15455,MIRAFLORES,0.003600,Cabecera
+2005,15464,MONGUA,0.000000,Cabecera
+2005,15466,MONGUÍ,0.001900,Cabecera
+2005,15469,MONIQUIRÁ,0.004800,Cabecera
+2005,15476,MOTAVITA,0.010000,Cabecera
+2005,15480,MUZO,0.015800,Cabecera
+2005,15491,NOBSA,0.007100,Cabecera
+2005,15494,NUEVO COLÓN,0.015700,Cabecera
+2005,15500,OICATÁ,0.028600,Cabecera
+2005,15507,OTANCHE,0.012700,Cabecera
+2005,15511,PACHAVITA,0.016100,Cabecera
+2005,15514,PÁEZ,0.043900,Cabecera
+2005,15516,PAIPA,0.004800,Cabecera
+2005,15518,PAJARITO,0.000000,Cabecera
+2005,15522,PANQUEBA,0.000000,Cabecera
+2005,15531,PAUNA,0.007200,Cabecera
+2005,15533,PAYA,0.000000,Cabecera
+2005,15537,PAZ DE RÍO,0.004300,Cabecera
+2005,15542,PESCA,0.008400,Cabecera
+2005,15550,PISBA,0.000000,Cabecera
+2005,15572,PUERTO BOYACÁ,0.049800,Cabecera
+2005,15580,QUÍPAMA,0.000000,Cabecera
+2005,15599,RAMIRIQUÍ,0.008700,Cabecera
+2005,15600,RÁQUIRA,0.003200,Cabecera
+2005,15621,RONDÓN,0.000000,Cabecera
+2005,15632,SABOYÁ,0.017300,Cabecera
+2005,15638,SÁCHICA,0.007300,Cabecera
+2005,15646,SAMACÁ,0.015000,Cabecera
+2005,15660,SAN EDUARDO,0.007400,Cabecera
+2005,15664,SAN JOSÉ DE PARE,0.025100,Cabecera
+2005,15667,SAN LUIS DE GACENO,0.007500,Cabecera
+2005,15673,SAN MATEO,0.004400,Cabecera
+2005,15676,SAN MIGUEL DE SEMA,0.000000,Cabecera
+2005,15681,SAN PABLO DE BORBUR,0.000000,Cabecera
+2005,15686,SANTANA,0.013300,Cabecera
+2005,15690,SANTA MARÍA,0.007800,Cabecera
+2005,15693,SANTA ROSA DE VITERBO,0.014100,Cabecera
+2005,15696,SANTA SOFÍA,0.000000,Cabecera
+2005,15720,SATIVANORTE,0.000000,Cabecera
+2005,15723,SATIVASUR,0.000000,Cabecera
+2005,15740,SIACHOQUE,0.015200,Cabecera
+2005,15753,SOATÁ,0.005100,Cabecera
+2005,15755,SOCOTÁ,0.003700,Cabecera
+2005,15757,SOCHA,0.005700,Cabecera
+2005,15759,SOGAMOSO,0.013200,Cabecera
+2005,15761,SOMONDOCO,0.000000,Cabecera
+2005,15762,SORA,0.019800,Cabecera
+2005,15763,SOTAQUIRÁ,0.000000,Cabecera
+2005,15764,SORACÁ,0.018000,Cabecera
+2005,15774,SUSACÓN,0.005500,Cabecera
+2005,15776,SUTAMARCHÁN,0.000000,Cabecera
+2005,15778,SUTATENZA,0.000000,Cabecera
+2005,15790,TASCO,0.001700,Cabecera
+2005,15798,TENZA,0.007700,Cabecera
+2005,15804,TIBANÁ,0.010000,Cabecera
+2005,15806,TIBASOSA,0.004800,Cabecera
+2005,15808,TINJACÁ,0.000000,Cabecera
+2005,15810,TIPACOQUE,0.000000,Cabecera
+2005,15814,TOCA,0.016500,Cabecera
+2005,15816,TOGÜÍ,0.040200,Cabecera
+2005,15820,TÓPAGA,0.000000,Cabecera
+2005,15822,TOTA,0.014200,Cabecera
+2005,15832,TUNUNGUÁ,0.000000,Cabecera
+2005,15835,TURMEQUÉ,0.009700,Cabecera
+2005,15837,TUTA,0.010300,Cabecera
+2005,15839,TUTAZÁ,0.000000,Cabecera
+2005,15842,UMBITA,0.005200,Cabecera
+2005,15861,VENTAQUEMADA,0.008400,Cabecera
+2005,15879,VIRACACHÁ,0.000000,Cabecera
+2005,15897,ZETAQUIRA,0.000000,Cabecera
+2005,15001,TUNJA,0.042700,Centros poblados y rural disperso
+2005,15022,ALMEIDA,0.011700,Centros poblados y rural disperso
+2005,15047,AQUITANIA,0.032800,Centros poblados y rural disperso
+2005,15051,ARCABUCO,0.042000,Centros poblados y rural disperso
+2005,15087,BELÉN,0.011300,Centros poblados y rural disperso
+2005,15090,BERBEO,0.009700,Centros poblados y rural disperso
+2005,15092,BETÉITIVA,0.004400,Centros poblados y rural disperso
+2005,15097,BOAVITA,0.009700,Centros poblados y rural disperso
+2005,15104,BOYACÁ,0.035600,Centros poblados y rural disperso
+2005,15106,BRICEÑO,0.053100,Centros poblados y rural disperso
+2005,15109,BUENAVISTA,0.048700,Centros poblados y rural disperso
+2005,15114,BUSBANZÁ,0.045200,Centros poblados y rural disperso
+2005,15131,CALDAS,0.020300,Centros poblados y rural disperso
+2005,15135,CAMPOHERMOSO,0.054300,Centros poblados y rural disperso
+2005,15162,CERINZA,0.018900,Centros poblados y rural disperso
+2005,15172,CHINAVITA,0.045400,Centros poblados y rural disperso
+2005,15176,CHIQUINQUIRÁ,0.012400,Centros poblados y rural disperso
+2005,15180,CHISCAS,0.022300,Centros poblados y rural disperso
+2005,15183,CHITA,0.036700,Centros poblados y rural disperso
+2005,15185,CHITARAQUE,0.022900,Centros poblados y rural disperso
+2005,15187,CHIVATÁ,0.016100,Centros poblados y rural disperso
+2005,15189,CIÉNEGA,0.041800,Centros poblados y rural disperso
+2005,15204,CÓMBITA,0.013000,Centros poblados y rural disperso
+2005,15212,COPER,0.071400,Centros poblados y rural disperso
+2005,15215,CORRALES,0.010700,Centros poblados y rural disperso
+2005,15218,COVARACHÍA,0.035300,Centros poblados y rural disperso
+2005,15223,CUBARÁ,0.302200,Centros poblados y rural disperso
+2005,15224,CUCAITA,0.047700,Centros poblados y rural disperso
+2005,15226,CUÍTIVA,0.043600,Centros poblados y rural disperso
+2005,15232,CHÍQUIZA,0.059300,Centros poblados y rural disperso
+2005,15236,CHIVOR,0.006800,Centros poblados y rural disperso
+2005,15238,DUITAMA,0.019200,Centros poblados y rural disperso
+2005,15244,EL COCUY,0.018100,Centros poblados y rural disperso
+2005,15248,EL ESPINO,0.015400,Centros poblados y rural disperso
+2005,15272,FIRAVITOBA,0.019000,Centros poblados y rural disperso
+2005,15276,FLORESTA,0.034100,Centros poblados y rural disperso
+2005,15293,GACHANTIVÁ,0.032600,Centros poblados y rural disperso
+2005,15296,GAMEZA,0.033000,Centros poblados y rural disperso
+2005,15299,GARAGOA,0.020300,Centros poblados y rural disperso
+2005,15317,GUACAMAYAS,0.003400,Centros poblados y rural disperso
+2005,15322,GUATEQUE,0.021500,Centros poblados y rural disperso
+2005,15325,GUAYATÁ,0.006000,Centros poblados y rural disperso
+2005,15332,GÜICÁN,0.284000,Centros poblados y rural disperso
+2005,15362,IZA,0.008400,Centros poblados y rural disperso
+2005,15367,JENESANO,0.028600,Centros poblados y rural disperso
+2005,15368,JERICÓ,0.040600,Centros poblados y rural disperso
+2005,15377,LABRANZAGRANDE,0.059100,Centros poblados y rural disperso
+2005,15380,LA CAPILLA,0.042500,Centros poblados y rural disperso
+2005,15401,LA VICTORIA,0.035600,Centros poblados y rural disperso
+2005,15403,LA UVITA,0.004000,Centros poblados y rural disperso
+2005,15407,VILLA DE LEYVA,0.011500,Centros poblados y rural disperso
+2005,15425,MACANAL,0.031400,Centros poblados y rural disperso
+2005,15442,MARIPÍ,0.077200,Centros poblados y rural disperso
+2005,15455,MIRAFLORES,0.025400,Centros poblados y rural disperso
+2005,15464,MONGUA,0.021300,Centros poblados y rural disperso
+2005,15466,MONGUÍ,0.023200,Centros poblados y rural disperso
+2005,15469,MONIQUIRÁ,0.036800,Centros poblados y rural disperso
+2005,15476,MOTAVITA,0.012900,Centros poblados y rural disperso
+2005,15480,MUZO,0.029500,Centros poblados y rural disperso
+2005,15491,NOBSA,0.008600,Centros poblados y rural disperso
+2005,15494,NUEVO COLÓN,0.019300,Centros poblados y rural disperso
+2005,15500,OICATÁ,0.022100,Centros poblados y rural disperso
+2005,15507,OTANCHE,0.084600,Centros poblados y rural disperso
+2005,15511,PACHAVITA,0.014700,Centros poblados y rural disperso
+2005,15514,PÁEZ,0.040300,Centros poblados y rural disperso
+2005,15516,PAIPA,0.022700,Centros poblados y rural disperso
+2005,15518,PAJARITO,0.027800,Centros poblados y rural disperso
+2005,15522,PANQUEBA,0.009500,Centros poblados y rural disperso
+2005,15531,PAUNA,0.083900,Centros poblados y rural disperso
+2005,15533,PAYA,0.141500,Centros poblados y rural disperso
+2005,15537,PAZ DE RÍO,0.013600,Centros poblados y rural disperso
+2005,15542,PESCA,0.032600,Centros poblados y rural disperso
+2005,15550,PISBA,0.076200,Centros poblados y rural disperso
+2005,15572,PUERTO BOYACÁ,0.169600,Centros poblados y rural disperso
+2005,15580,QUÍPAMA,0.039600,Centros poblados y rural disperso
+2005,15599,RAMIRIQUÍ,0.033400,Centros poblados y rural disperso
+2005,15600,RÁQUIRA,0.037200,Centros poblados y rural disperso
+2005,15621,RONDÓN,0.019700,Centros poblados y rural disperso
+2005,15632,SABOYÁ,0.059300,Centros poblados y rural disperso
+2005,15638,SÁCHICA,0.077800,Centros poblados y rural disperso
+2005,15646,SAMACÁ,0.035300,Centros poblados y rural disperso
+2005,15660,SAN EDUARDO,0.024300,Centros poblados y rural disperso
+2005,15664,SAN JOSÉ DE PARE,0.037400,Centros poblados y rural disperso
+2005,15667,SAN LUIS DE GACENO,0.065700,Centros poblados y rural disperso
+2005,15673,SAN MATEO,0.007000,Centros poblados y rural disperso
+2005,15676,SAN MIGUEL DE SEMA,0.030100,Centros poblados y rural disperso
+2005,15681,SAN PABLO DE BORBUR,0.066100,Centros poblados y rural disperso
+2005,15686,SANTANA,0.059700,Centros poblados y rural disperso
+2005,15690,SANTA MARÍA,0.040100,Centros poblados y rural disperso
+2005,15693,SANTA ROSA DE VITERBO,0.026900,Centros poblados y rural disperso
+2005,15696,SANTA SOFÍA,0.039500,Centros poblados y rural disperso
+2005,15720,SATIVANORTE,0.008200,Centros poblados y rural disperso
+2005,15723,SATIVASUR,0.000000,Centros poblados y rural disperso
+2005,15740,SIACHOQUE,0.025700,Centros poblados y rural disperso
+2005,15753,SOATÁ,0.000000,Centros poblados y rural disperso
+2005,15755,SOCOTÁ,0.059300,Centros poblados y rural disperso
+2005,15757,SOCHA,0.025700,Centros poblados y rural disperso
+2005,15759,SOGAMOSO,0.021400,Centros poblados y rural disperso
+2005,15761,SOMONDOCO,0.007600,Centros poblados y rural disperso
+2005,15762,SORA,0.020000,Centros poblados y rural disperso
+2005,15763,SOTAQUIRÁ,0.047100,Centros poblados y rural disperso
+2005,15764,SORACÁ,0.046000,Centros poblados y rural disperso
+2005,15774,SUSACÓN,0.022100,Centros poblados y rural disperso
+2005,15776,SUTAMARCHÁN,0.010500,Centros poblados y rural disperso
+2005,15778,SUTATENZA,0.017700,Centros poblados y rural disperso
+2005,15790,TASCO,0.033700,Centros poblados y rural disperso
+2005,15798,TENZA,0.021600,Centros poblados y rural disperso
+2005,15804,TIBANÁ,0.026200,Centros poblados y rural disperso
+2005,15806,TIBASOSA,0.025600,Centros poblados y rural disperso
+2005,15808,TINJACÁ,0.063000,Centros poblados y rural disperso
+2005,15810,TIPACOQUE,0.014700,Centros poblados y rural disperso
+2005,15814,TOCA,0.008200,Centros poblados y rural disperso
+2005,15816,TOGÜÍ,0.031900,Centros poblados y rural disperso
+2005,15820,TÓPAGA,0.013800,Centros poblados y rural disperso
+2005,15822,TOTA,0.054000,Centros poblados y rural disperso
+2005,15832,TUNUNGUÁ,0.003800,Centros poblados y rural disperso
+2005,15835,TURMEQUÉ,0.002200,Centros poblados y rural disperso
+2005,15837,TUTA,0.018500,Centros poblados y rural disperso
+2005,15839,TUTAZÁ,0.029100,Centros poblados y rural disperso
+2005,15842,UMBITA,0.019600,Centros poblados y rural disperso
+2005,15861,VENTAQUEMADA,0.024100,Centros poblados y rural disperso
+2005,15879,VIRACACHÁ,0.023300,Centros poblados y rural disperso
+2005,15897,ZETAQUIRA,0.030200,Centros poblados y rural disperso
+2018,15001,TUNJA,0.006100,Cabecera
+2018,15022,ALMEIDA,0.000000,Cabecera
+2018,15047,AQUITANIA,0.009500,Cabecera
+2018,15051,ARCABUCO,0.017700,Cabecera
+2018,15087,BELÉN,0.001800,Cabecera
+2018,15090,BERBEO,0.000000,Cabecera
+2018,15092,BETÉITIVA,0.000000,Cabecera
+2018,15097,BOAVITA,0.003500,Cabecera
+2018,15104,BOYACÁ,0.007400,Cabecera
+2018,15106,BRICEÑO,0.000000,Cabecera
+2018,15109,BUENAVISTA,0.000000,Cabecera
+2018,15114,BUSBANZÁ,0.000000,Cabecera
+2018,15131,CALDAS,0.017000,Cabecera
+2018,15135,CAMPOHERMOSO,0.007700,Cabecera
+2018,15162,CERINZA,0.004300,Cabecera
+2018,15172,CHINAVITA,0.007000,Cabecera
+2018,15176,CHIQUINQUIRÁ,0.005700,Cabecera
+2018,15180,CHISCAS,0.005900,Cabecera
+2018,15183,CHITA,0.001100,Cabecera
+2018,15185,CHITARAQUE,0.011200,Cabecera
+2018,15187,CHIVATÁ,0.012800,Cabecera
+2018,15189,CIÉNEGA,0.010800,Cabecera
+2018,15204,CÓMBITA,0.000000,Cabecera
+2018,15212,COPER,0.032900,Cabecera
+2018,15215,CORRALES,0.000000,Cabecera
+2018,15218,COVARACHÍA,0.000000,Cabecera
+2018,15223,CUBARÁ,0.028700,Cabecera
+2018,15224,CUCAITA,0.000000,Cabecera
+2018,15226,CUÍTIVA,0.000000,Cabecera
+2018,15232,CHÍQUIZA,0.000000,Cabecera
+2018,15236,CHIVOR,0.000000,Cabecera
+2018,15238,DUITAMA,0.006800,Cabecera
+2018,15244,EL COCUY,0.013500,Cabecera
+2018,15248,EL ESPINO,0.009000,Cabecera
+2018,15272,FIRAVITOBA,0.003200,Cabecera
+2018,15276,FLORESTA,0.000000,Cabecera
+2018,15293,GACHANTIVÁ,0.000000,Cabecera
+2018,15296,GAMEZA,0.005300,Cabecera
+2018,15299,GARAGOA,0.008700,Cabecera
+2018,15317,GUACAMAYAS,0.030300,Cabecera
+2018,15322,GUATEQUE,0.007500,Cabecera
+2018,15325,GUAYATÁ,0.010000,Cabecera
+2018,15332,GÜICÁN,0.000000,Cabecera
+2018,15362,IZA,0.000000,Cabecera
+2018,15367,JENESANO,0.010100,Cabecera
+2018,15368,JERICÓ,0.000000,Cabecera
+2018,15377,LABRANZAGRANDE,0.000000,Cabecera
+2018,15380,LA CAPILLA,0.000000,Cabecera
+2018,15401,LA VICTORIA,0.000000,Cabecera
+2018,15403,LA UVITA,0.000000,Cabecera
+2018,15407,VILLA DE LEYVA,0.016800,Cabecera
+2018,15425,MACANAL,0.004100,Cabecera
+2018,15442,MARIPÍ,0.012800,Cabecera
+2018,15455,MIRAFLORES,0.001600,Cabecera
+2018,15464,MONGUA,0.002000,Cabecera
+2018,15466,MONGUÍ,0.018500,Cabecera
+2018,15469,MONIQUIRÁ,0.006700,Cabecera
+2018,15476,MOTAVITA,0.000000,Cabecera
+2018,15480,MUZO,0.012700,Cabecera
+2018,15491,NOBSA,0.009900,Cabecera
+2018,15494,NUEVO COLÓN,0.021600,Cabecera
+2018,15500,OICATÁ,0.000000,Cabecera
+2018,15507,OTANCHE,0.007500,Cabecera
+2018,15511,PACHAVITA,0.000000,Cabecera
+2018,15514,PÁEZ,0.002400,Cabecera
+2018,15516,PAIPA,0.005800,Cabecera
+2018,15518,PAJARITO,0.007700,Cabecera
+2018,15522,PANQUEBA,0.011800,Cabecera
+2018,15531,PAUNA,0.006900,Cabecera
+2018,15533,PAYA,0.000000,Cabecera
+2018,15537,PAZ DE RÍO,0.006400,Cabecera
+2018,15542,PESCA,0.000000,Cabecera
+2018,15550,PISBA,0.005700,Cabecera
+2018,15572,PUERTO BOYACÁ,0.010400,Cabecera
+2018,15580,QUÍPAMA,0.040700,Cabecera
+2018,15599,RAMIRIQUÍ,0.002100,Cabecera
+2018,15600,RÁQUIRA,0.004500,Cabecera
+2018,15621,RONDÓN,0.000000,Cabecera
+2018,15632,SABOYÁ,0.000000,Cabecera
+2018,15638,SÁCHICA,0.011800,Cabecera
+2018,15646,SAMACÁ,0.007800,Cabecera
+2018,15660,SAN EDUARDO,0.000000,Cabecera
+2018,15664,SAN JOSÉ DE PARE,0.004200,Cabecera
+2018,15667,SAN LUIS DE GACENO,0.010800,Cabecera
+2018,15673,SAN MATEO,0.000000,Cabecera
+2018,15676,SAN MIGUEL DE SEMA,0.000000,Cabecera
+2018,15681,SAN PABLO DE BORBUR,0.000000,Cabecera
+2018,15686,SANTANA,0.003800,Cabecera
+2018,15690,SANTA MARÍA,0.002000,Cabecera
+2018,15693,SANTA ROSA DE VITERBO,0.005100,Cabecera
+2018,15696,SANTA SOFÍA,0.005100,Cabecera
+2018,15720,SATIVANORTE,0.000000,Cabecera
+2018,15723,SATIVASUR,0.000000,Cabecera
+2018,15740,SIACHOQUE,0.000000,Cabecera
+2018,15753,SOATÁ,0.005500,Cabecera
+2018,15755,SOCOTÁ,0.005200,Cabecera
+2018,15757,SOCHA,0.011600,Cabecera
+2018,15759,SOGAMOSO,0.009100,Cabecera
+2018,15761,SOMONDOCO,0.000000,Cabecera
+2018,15762,SORA,0.004400,Cabecera
+2018,15763,SOTAQUIRÁ,0.025300,Cabecera
+2018,15764,SORACÁ,0.000000,Cabecera
+2018,15774,SUSACÓN,0.000000,Cabecera
+2018,15776,SUTAMARCHÁN,0.009200,Cabecera
+2018,15778,SUTATENZA,0.006100,Cabecera
+2018,15790,TASCO,0.002700,Cabecera
+2018,15798,TENZA,0.000000,Cabecera
+2018,15804,TIBANÁ,0.000000,Cabecera
+2018,15806,TIBASOSA,0.002400,Cabecera
+2018,15808,TINJACÁ,0.000000,Cabecera
+2018,15810,TIPACOQUE,0.000000,Cabecera
+2018,15814,TOCA,0.018800,Cabecera
+2018,15816,TOGÜÍ,0.000000,Cabecera
+2018,15820,TÓPAGA,0.004000,Cabecera
+2018,15822,TOTA,0.000000,Cabecera
+2018,15832,TUNUNGUÁ,0.000000,Cabecera
+2018,15835,TURMEQUÉ,0.003900,Cabecera
+2018,15837,TUTA,0.003900,Cabecera
+2018,15839,TUTAZÁ,0.000000,Cabecera
+2018,15842,UMBITA,0.016800,Cabecera
+2018,15861,VENTAQUEMADA,0.011200,Cabecera
+2018,15879,VIRACACHÁ,0.000000,Cabecera
+2018,15897,ZETAQUIRA,0.008500,Cabecera
+2018,15001,TUNJA,0.008500,Centros poblados y rural disperso
+2018,15022,ALMEIDA,0.016600,Centros poblados y rural disperso
+2018,15047,AQUITANIA,0.017400,Centros poblados y rural disperso
+2018,15051,ARCABUCO,0.062900,Centros poblados y rural disperso
+2018,15087,BELÉN,0.013000,Centros poblados y rural disperso
+2018,15090,BERBEO,0.018100,Centros poblados y rural disperso
+2018,15092,BETÉITIVA,0.008800,Centros poblados y rural disperso
+2018,15097,BOAVITA,0.012000,Centros poblados y rural disperso
+2018,15104,BOYACÁ,0.010300,Centros poblados y rural disperso
+2018,15106,BRICEÑO,0.004400,Centros poblados y rural disperso
+2018,15109,BUENAVISTA,0.022100,Centros poblados y rural disperso
+2018,15114,BUSBANZÁ,0.008200,Centros poblados y rural disperso
+2018,15131,CALDAS,0.011200,Centros poblados y rural disperso
+2018,15135,CAMPOHERMOSO,0.003900,Centros poblados y rural disperso
+2018,15162,CERINZA,0.011400,Centros poblados y rural disperso
+2018,15172,CHINAVITA,0.048400,Centros poblados y rural disperso
+2018,15176,CHIQUINQUIRÁ,0.008000,Centros poblados y rural disperso
+2018,15180,CHISCAS,0.008000,Centros poblados y rural disperso
+2018,15183,CHITA,0.010600,Centros poblados y rural disperso
+2018,15185,CHITARAQUE,0.020300,Centros poblados y rural disperso
+2018,15187,CHIVATÁ,0.007800,Centros poblados y rural disperso
+2018,15189,CIÉNEGA,0.009100,Centros poblados y rural disperso
+2018,15204,CÓMBITA,0.003200,Centros poblados y rural disperso
+2018,15212,COPER,0.047600,Centros poblados y rural disperso
+2018,15215,CORRALES,0.011900,Centros poblados y rural disperso
+2018,15218,COVARACHÍA,0.006600,Centros poblados y rural disperso
+2018,15223,CUBARÁ,0.275400,Centros poblados y rural disperso
+2018,15224,CUCAITA,0.007300,Centros poblados y rural disperso
+2018,15226,CUÍTIVA,0.011600,Centros poblados y rural disperso
+2018,15232,CHÍQUIZA,0.018900,Centros poblados y rural disperso
+2018,15236,CHIVOR,0.007600,Centros poblados y rural disperso
+2018,15238,DUITAMA,0.014500,Centros poblados y rural disperso
+2018,15244,EL COCUY,0.048200,Centros poblados y rural disperso
+2018,15248,EL ESPINO,0.005800,Centros poblados y rural disperso
+2018,15272,FIRAVITOBA,0.007400,Centros poblados y rural disperso
+2018,15276,FLORESTA,0.019600,Centros poblados y rural disperso
+2018,15293,GACHANTIVÁ,0.001800,Centros poblados y rural disperso
+2018,15296,GAMEZA,0.014600,Centros poblados y rural disperso
+2018,15299,GARAGOA,0.021100,Centros poblados y rural disperso
+2018,15317,GUACAMAYAS,0.000000,Centros poblados y rural disperso
+2018,15322,GUATEQUE,0.007500,Centros poblados y rural disperso
+2018,15325,GUAYATÁ,0.005300,Centros poblados y rural disperso
+2018,15332,GÜICÁN,0.149000,Centros poblados y rural disperso
+2018,15362,IZA,0.008900,Centros poblados y rural disperso
+2018,15367,JENESANO,0.014500,Centros poblados y rural disperso
+2018,15368,JERICÓ,0.027800,Centros poblados y rural disperso
+2018,15377,LABRANZAGRANDE,0.009500,Centros poblados y rural disperso
+2018,15380,LA CAPILLA,0.007300,Centros poblados y rural disperso
+2018,15401,LA VICTORIA,0.008000,Centros poblados y rural disperso
+2018,15403,LA UVITA,0.012200,Centros poblados y rural disperso
+2018,15407,VILLA DE LEYVA,0.015900,Centros poblados y rural disperso
+2018,15425,MACANAL,0.022100,Centros poblados y rural disperso
+2018,15442,MARIPÍ,0.008600,Centros poblados y rural disperso
+2018,15455,MIRAFLORES,0.019300,Centros poblados y rural disperso
+2018,15464,MONGUA,0.008700,Centros poblados y rural disperso
+2018,15466,MONGUÍ,0.028700,Centros poblados y rural disperso
+2018,15469,MONIQUIRÁ,0.036500,Centros poblados y rural disperso
+2018,15476,MOTAVITA,0.014200,Centros poblados y rural disperso
+2018,15480,MUZO,0.010700,Centros poblados y rural disperso
+2018,15491,NOBSA,0.006300,Centros poblados y rural disperso
+2018,15494,NUEVO COLÓN,0.028700,Centros poblados y rural disperso
+2018,15500,OICATÁ,0.002900,Centros poblados y rural disperso
+2018,15507,OTANCHE,0.025000,Centros poblados y rural disperso
+2018,15511,PACHAVITA,0.014700,Centros poblados y rural disperso
+2018,15514,PÁEZ,0.014300,Centros poblados y rural disperso
+2018,15516,PAIPA,0.005900,Centros poblados y rural disperso
+2018,15518,PAJARITO,0.002900,Centros poblados y rural disperso
+2018,15522,PANQUEBA,0.026900,Centros poblados y rural disperso
+2018,15531,PAUNA,0.027700,Centros poblados y rural disperso
+2018,15533,PAYA,0.014800,Centros poblados y rural disperso
+2018,15537,PAZ DE RÍO,0.002900,Centros poblados y rural disperso
+2018,15542,PESCA,0.009600,Centros poblados y rural disperso
+2018,15550,PISBA,0.035000,Centros poblados y rural disperso
+2018,15572,PUERTO BOYACÁ,0.021600,Centros poblados y rural disperso
+2018,15580,QUÍPAMA,0.026400,Centros poblados y rural disperso
+2018,15599,RAMIRIQUÍ,0.018700,Centros poblados y rural disperso
+2018,15600,RÁQUIRA,0.034000,Centros poblados y rural disperso
+2018,15621,RONDÓN,0.020800,Centros poblados y rural disperso
+2018,15632,SABOYÁ,0.011500,Centros poblados y rural disperso
+2018,15638,SÁCHICA,0.021500,Centros poblados y rural disperso
+2018,15646,SAMACÁ,0.020000,Centros poblados y rural disperso
+2018,15660,SAN EDUARDO,0.005700,Centros poblados y rural disperso
+2018,15664,SAN JOSÉ DE PARE,0.019700,Centros poblados y rural disperso
+2018,15667,SAN LUIS DE GACENO,0.018300,Centros poblados y rural disperso
+2018,15673,SAN MATEO,0.006100,Centros poblados y rural disperso
+2018,15676,SAN MIGUEL DE SEMA,0.017200,Centros poblados y rural disperso
+2018,15681,SAN PABLO DE BORBUR,0.018100,Centros poblados y rural disperso
+2018,15686,SANTANA,0.011700,Centros poblados y rural disperso
+2018,15690,SANTA MARÍA,0.014300,Centros poblados y rural disperso
+2018,15693,SANTA ROSA DE VITERBO,0.031900,Centros poblados y rural disperso
+2018,15696,SANTA SOFÍA,0.013900,Centros poblados y rural disperso
+2018,15720,SATIVANORTE,0.014800,Centros poblados y rural disperso
+2018,15723,SATIVASUR,0.000000,Centros poblados y rural disperso
+2018,15740,SIACHOQUE,0.009200,Centros poblados y rural disperso
+2018,15753,SOATÁ,0.005200,Centros poblados y rural disperso
+2018,15755,SOCOTÁ,0.031700,Centros poblados y rural disperso
+2018,15757,SOCHA,0.020800,Centros poblados y rural disperso
+2018,15759,SOGAMOSO,0.009200,Centros poblados y rural disperso
+2018,15761,SOMONDOCO,0.013600,Centros poblados y rural disperso
+2018,15762,SORA,0.027200,Centros poblados y rural disperso
+2018,15763,SOTAQUIRÁ,0.061500,Centros poblados y rural disperso
+2018,15764,SORACÁ,0.007700,Centros poblados y rural disperso
+2018,15774,SUSACÓN,0.008100,Centros poblados y rural disperso
+2018,15776,SUTAMARCHÁN,0.012500,Centros poblados y rural disperso
+2018,15778,SUTATENZA,0.008500,Centros poblados y rural disperso
+2018,15790,TASCO,0.017800,Centros poblados y rural disperso
+2018,15798,TENZA,0.005500,Centros poblados y rural disperso
+2018,15804,TIBANÁ,0.010200,Centros poblados y rural disperso
+2018,15806,TIBASOSA,0.035200,Centros poblados y rural disperso
+2018,15808,TINJACÁ,0.010700,Centros poblados y rural disperso
+2018,15810,TIPACOQUE,0.004900,Centros poblados y rural disperso
+2018,15814,TOCA,0.016400,Centros poblados y rural disperso
+2018,15816,TOGÜÍ,0.032900,Centros poblados y rural disperso
+2018,15820,TÓPAGA,0.005900,Centros poblados y rural disperso
+2018,15822,TOTA,0.015400,Centros poblados y rural disperso
+2018,15832,TUNUNGUÁ,0.006300,Centros poblados y rural disperso
+2018,15835,TURMEQUÉ,0.011100,Centros poblados y rural disperso
+2018,15837,TUTA,0.055300,Centros poblados y rural disperso
+2018,15839,TUTAZÁ,0.008000,Centros poblados y rural disperso
+2018,15842,UMBITA,0.012900,Centros poblados y rural disperso
+2018,15861,VENTAQUEMADA,0.013000,Centros poblados y rural disperso
+2018,15879,VIRACACHÁ,0.005500,Centros poblados y rural disperso
+2018,15897,ZETAQUIRA,0.014300,Centros poblados y rural disperso

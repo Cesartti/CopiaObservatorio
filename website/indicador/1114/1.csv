@@ -1,0 +1,1260 @@
+geo,Municipio,Año,Especie,Cantidad
+15001,Tunja,2019,Caprinos,35
+15001,Tunja,2019,Equinos,293
+15001,Tunja,2019,Ovinos,1890
+15001,Tunja,2019,Bufalos,6
+15022,Almeida,2019,Caprinos,70
+15022,Almeida,2019,Equinos,13
+15022,Almeida,2019,Ovinos,141
+15047,Aquitania,2019,Caprinos,235
+15047,Aquitania,2019,Equinos,450
+15047,Aquitania,2019,Ovinos,2520
+15047,Aquitania,2019,Bufalos,24
+15051,Arcabuco,2019,Caprinos,200
+15051,Arcabuco,2019,Equinos,480
+15051,Arcabuco,2019,Ovinos,280
+15051,Arcabuco,2019,Bufalos,2
+15087,Belén,2019,Caprinos,73
+15087,Belén,2019,Equinos,150
+15087,Belén,2019,Ovinos,113
+15087,Belén,2019,Bufalos,13
+15090,Berbeo,2019,Caprinos,15
+15090,Berbeo,2019,Equinos,120
+15090,Berbeo,2019,Ovinos,115
+15092,Betéitiva,2019,Caprinos,410
+15092,Betéitiva,2019,Equinos,85
+15092,Betéitiva,2019,Ovinos,2190
+15092,Betéitiva,2019,Bufalos,2
+15097,Boavita,2019,Caprinos,2730
+15097,Boavita,2019,Equinos,239
+15097,Boavita,2019,Ovinos,1300
+15097,Boavita,2019,Bufalos,4
+15104,Boyacá,2019,Caprinos,31
+15104,Boyacá,2019,Equinos,178
+15104,Boyacá,2019,Ovinos,206
+15106,Briceño,2019,Caprinos,2
+15106,Briceño,2019,Equinos,82
+15109,Buenavista,2019,Caprinos,30
+15109,Buenavista,2019,Equinos,142
+15109,Buenavista,2019,Ovinos,38
+15114,Busbanzá,2019,Caprinos,12
+15114,Busbanzá,2019,Equinos,25
+15114,Busbanzá,2019,Ovinos,450
+15114,Busbanzá,2019,Bufalos,4
+15131,Caldas,2019,Caprinos,45
+15131,Caldas,2019,Equinos,301
+15131,Caldas,2019,Ovinos,254
+15135,Campohermoso,2019,Caprinos,20
+15135,Campohermoso,2019,Equinos,1050
+15135,Campohermoso,2019,Ovinos,10
+15162,Cerinza,2019,Caprinos,35
+15162,Cerinza,2019,Equinos,69
+15162,Cerinza,2019,Ovinos,283
+15162,Cerinza,2019,Bufalos,16
+15172,Chinavita,2019,Caprinos,230
+15172,Chinavita,2019,Equinos,160
+15172,Chinavita,2019,Ovinos,116
+15176,Chiquinquirá,2019,Caprinos,154
+15176,Chiquinquirá,2019,Equinos,750
+15176,Chiquinquirá,2019,Ovinos,320
+15176,Chiquinquirá,2019,Bufalos,1
+15180,Chiscas,2019,Caprinos,1810
+15180,Chiscas,2019,Equinos,890
+15180,Chiscas,2019,Ovinos,4400
+15180,Chiscas,2019,Bufalos,11
+15183,Chita,2019,Caprinos,2460
+15183,Chita,2019,Equinos,1400
+15183,Chita,2019,Ovinos,10780
+15185,Chitaraque,2019,Caprinos,12
+15185,Chitaraque,2019,Equinos,600
+15185,Chitaraque,2019,Ovinos,30
+15187,Chivatá,2019,Caprinos,35
+15187,Chivatá,2019,Equinos,92
+15187,Chivatá,2019,Ovinos,469
+15189,Ciénega,2019,Caprinos,18
+15189,Ciénega,2019,Equinos,323
+15189,Ciénega,2019,Ovinos,230
+15204,Cómbita,2019,Caprinos,78
+15204,Cómbita,2019,Equinos,150
+15204,Cómbita,2019,Ovinos,826
+15204,Cómbita,2019,Bufalos,14
+15212,Coper,2019,Caprinos,2
+15212,Coper,2019,Equinos,72
+15215,Corrales,2019,Caprinos,130
+15215,Corrales,2019,Equinos,150
+15215,Corrales,2019,Ovinos,650
+15218,Covarachía,2019,Caprinos,2750
+15218,Covarachía,2019,Equinos,60
+15218,Covarachía,2019,Ovinos,300
+15223,Cubará,2019,Caprinos,45
+15223,Cubará,2019,Equinos,500
+15223,Cubará,2019,Ovinos,400
+15224,Cucaita,2019,Caprinos,98
+15224,Cucaita,2019,Equinos,73
+15224,Cucaita,2019,Ovinos,271
+15226,Cuítiva,2019,Caprinos,155
+15226,Cuítiva,2019,Equinos,320
+15226,Cuítiva,2019,Ovinos,1200
+15232,Chíquiza,2019,Caprinos,87
+15232,Chíquiza,2019,Equinos,210
+15232,Chíquiza,2019,Ovinos,256
+15236,Chivor,2019,Caprinos,50
+15236,Chivor,2019,Equinos,320
+15236,Chivor,2019,Ovinos,182
+15238,Duitama,2019,Caprinos,12
+15238,Duitama,2019,Equinos,72
+15238,Duitama,2019,Ovinos,594
+15238,Duitama,2019,Bufalos,26
+15244,El Cocuy,2019,Caprinos,988
+15244,El Cocuy,2019,Equinos,150
+15244,El Cocuy,2019,Ovinos,11000
+15248,El Espino,2019,Caprinos,220
+15248,El Espino,2019,Equinos,500
+15248,El Espino,2019,Ovinos,500
+15272,Firavitoba,2019,Caprinos,325
+15272,Firavitoba,2019,Equinos,475
+15272,Firavitoba,2019,Ovinos,260
+15272,Firavitoba,2019,Bufalos,4
+15276,Floresta,2019,Caprinos,638
+15276,Floresta,2019,Equinos,170
+15276,Floresta,2019,Ovinos,2050
+15293,Gachantivá,2019,Caprinos,15
+15293,Gachantivá,2019,Equinos,165
+15293,Gachantivá,2019,Ovinos,180
+15296,Gámeza,2019,Caprinos,58
+15296,Gámeza,2019,Equinos,475
+15296,Gámeza,2019,Ovinos,2060
+15299,Garagoa,2019,Caprinos,150
+15299,Garagoa,2019,Equinos,680
+15299,Garagoa,2019,Ovinos,263
+15317,Guacamayas,2019,Caprinos,1133
+15317,Guacamayas,2019,Equinos,230
+15317,Guacamayas,2019,Ovinos,1300
+15322,Guateque,2019,Caprinos,85
+15322,Guateque,2019,Equinos,152
+15322,Guateque,2019,Ovinos,232
+15322,Guateque,2019,Bufalos,3
+15325,Guayatá,2019,Caprinos,112
+15325,Guayatá,2019,Equinos,320
+15325,Guayatá,2019,Ovinos,273
+15332,Güicán,2019,Caprinos,594
+15332,Güicán,2019,Equinos,72
+15332,Güicán,2019,Ovinos,17000
+15362,Iza,2019,Caprinos,45
+15362,Iza,2019,Equinos,150
+15362,Iza,2019,Ovinos,495
+15362,Iza,2019,Bufalos,4
+15367,Jenesano,2019,Caprinos,36
+15367,Jenesano,2019,Equinos,490
+15367,Jenesano,2019,Ovinos,75
+15368,Jericó,2019,Caprinos,27
+15368,Jericó,2019,Equinos,240
+15368,Jericó,2019,Ovinos,617
+15377,Labranzagrande,2019,Caprinos,5
+15377,Labranzagrande,2019,Equinos,850
+15377,Labranzagrande,2019,Ovinos,195
+15377,Labranzagrande,2019,Bufalos,5
+15380,La Capilla,2019,Caprinos,80
+15380,La Capilla,2019,Equinos,420
+15380,La Capilla,2019,Ovinos,273
+15401,La Victoria,2019,Equinos,140
+15401,La Victoria,2019,Ovinos,10
+15403,La Uvita,2019,Caprinos,450
+15403,La Uvita,2019,Equinos,700
+15403,La Uvita,2019,Ovinos,2400
+15407,Villa de Leiva,2019,Caprinos,250
+15407,Villa de Leiva,2019,Equinos,450
+15407,Villa de Leiva,2019,Ovinos,280
+15407,Villa de Leiva,2019,Bufalos,9
+15425,Macanal,2019,Caprinos,55
+15425,Macanal,2019,Equinos,445
+15425,Macanal,2019,Ovinos,232
+15425,Macanal,2019,Bufalos,4
+15442,Maripí,2019,Caprinos,3
+15442,Maripí,2019,Equinos,50
+15442,Maripí,2019,Ovinos,5
+15455,Miraflores,2019,Caprinos,27
+15455,Miraflores,2019,Equinos,400
+15455,Miraflores,2019,Ovinos,100
+15464,Mongua,2019,Caprinos,210
+15464,Mongua,2019,Equinos,650
+15464,Mongua,2019,Ovinos,4100
+15464,Mongua,2019,Bufalos,2
+15466,Monguí,2019,Caprinos,25
+15466,Monguí,2019,Equinos,165
+15466,Monguí,2019,Ovinos,680
+15466,Monguí,2019,Bufalos,2
+15469,Moniquirá,2019,Caprinos,198
+15469,Moniquirá,2019,Equinos,1532
+15469,Moniquirá,2019,Ovinos,150
+15476,Motavita,2019,Caprinos,27
+15476,Motavita,2019,Equinos,303
+15476,Motavita,2019,Ovinos,710
+15480,Muzo,2019,Equinos,42
+15480,Muzo,2019,Ovinos,5
+15491,Nobsa,2019,Caprinos,130
+15491,Nobsa,2019,Equinos,48
+15491,Nobsa,2019,Ovinos,440
+15491,Nobsa,2019,Bufalos,3
+15494,Nuevo Colón,2019,Caprinos,10
+15494,Nuevo Colón,2019,Equinos,91
+15494,Nuevo Colón,2019,Ovinos,315
+15500,Oicatá,2019,Caprinos,30
+15500,Oicatá,2019,Equinos,76
+15500,Oicatá,2019,Ovinos,463
+15507,Otanche,2019,Caprinos,10
+15507,Otanche,2019,Equinos,278
+15507,Otanche,2019,Ovinos,95
+15511,Pachavita,2019,Caprinos,83
+15511,Pachavita,2019,Equinos,232
+15511,Pachavita,2019,Ovinos,43
+15514,Páez,2019,Caprinos,12
+15514,Páez,2019,Equinos,482
+15514,Páez,2019,Ovinos,100
+15516,Paipa,2019,Caprinos,36
+15516,Paipa,2019,Equinos,336
+15516,Paipa,2019,Ovinos,327
+15516,Paipa,2019,Bufalos,26
+15518,Pajarito,2019,Caprinos,18
+15518,Pajarito,2019,Equinos,452
+15518,Pajarito,2019,Ovinos,80
+15518,Pajarito,2019,Bufalos,1
+15522,Panqueba,2019,Caprinos,330
+15522,Panqueba,2019,Equinos,250
+15522,Panqueba,2019,Ovinos,1200
+15522,Panqueba,2019,Bufalos,6
+15531,Pauna,2019,Caprinos,15
+15531,Pauna,2019,Equinos,420
+15531,Pauna,2019,Ovinos,30
+15533,Paya,2019,Equinos,530
+15533,Paya,2019,Ovinos,220
+15537,Paz de Río,2019,Caprinos,68
+15537,Paz de Río,2019,Equinos,390
+15537,Paz de Río,2019,Ovinos,243
+15537,Paz de Río,2019,Bufalos,8
+15542,Pesca,2019,Caprinos,465
+15542,Pesca,2019,Equinos,1200
+15542,Pesca,2019,Ovinos,2190
+15542,Pesca,2019,Bufalos,1
+15550,Pisba,2019,Caprinos,4
+15550,Pisba,2019,Equinos,585
+15550,Pisba,2019,Ovinos,190
+15550,Pisba,2019,Bufalos,4
+15572,Puerto Boyacá,2019,Caprinos,70
+15572,Puerto Boyacá,2019,Equinos,7000
+15572,Puerto Boyacá,2019,Ovinos,2330
+15572,Puerto Boyacá,2019,Bufalos,4839
+15580,Quípama,2019,Caprinos,8
+15580,Quípama,2019,Equinos,404
+15580,Quípama,2019,Ovinos,30
+15599,Ramiriquí,2019,Caprinos,17
+15599,Ramiriquí,2019,Equinos,188
+15599,Ramiriquí,2019,Ovinos,211
+15600,Ráquira,2019,Caprinos,103
+15600,Ráquira,2019,Equinos,176
+15600,Ráquira,2019,Ovinos,230
+15621,Rondón,2019,Caprinos,20
+15621,Rondón,2019,Equinos,100
+15621,Rondón,2019,Ovinos,150
+15632,Saboyá,2019,Caprinos,76
+15632,Saboyá,2019,Equinos,630
+15632,Saboyá,2019,Ovinos,162
+15638,Sáchica,2019,Caprinos,35
+15638,Sáchica,2019,Equinos,30
+15638,Sáchica,2019,Ovinos,440
+15646,Samacá,2019,Caprinos,14
+15646,Samacá,2019,Equinos,178
+15646,Samacá,2019,Ovinos,245
+15660,San Eduardo,2019,Caprinos,22
+15660,San Eduardo,2019,Equinos,215
+15660,San Eduardo,2019,Ovinos,124
+15664,San José de Pare,2019,Caprinos,15
+15664,San José de Pare,2019,Equinos,1659
+15664,San José de Pare,2019,Ovinos,15
+15667,San Luis de Gaceno,2019,Caprinos,280
+15667,San Luis de Gaceno,2019,Equinos,1900
+15667,San Luis de Gaceno,2019,Ovinos,338
+15673,San Mateo,2019,Caprinos,2900
+15673,San Mateo,2019,Equinos,300
+15673,San Mateo,2019,Ovinos,1300
+15673,San Mateo,2019,Bufalos,1
+15676,San Miguel de Sema,2019,Caprinos,38
+15676,San Miguel de Sema,2019,Equinos,484
+15676,San Miguel de Sema,2019,Ovinos,91
+15681,San Pablo de Borbur,2019,Caprinos,6
+15681,San Pablo de Borbur,2019,Equinos,436
+15681,San Pablo de Borbur,2019,Ovinos,40
+15686,Santana,2019,Caprinos,80
+15686,Santana,2019,Equinos,2022
+15686,Santana,2019,Ovinos,100
+15690,Santa María,2019,Caprinos,970
+15690,Santa María,2019,Equinos,1650
+15690,Santa María,2019,Ovinos,263
+15693,Santa Rosa de Viterbo,2019,Caprinos,92
+15693,Santa Rosa de Viterbo,2019,Equinos,247
+15693,Santa Rosa de Viterbo,2019,Ovinos,222
+15693,Santa Rosa de Viterbo,2019,Bufalos,12
+15696,Santa Sofía,2019,Caprinos,70
+15696,Santa Sofía,2019,Equinos,14
+15696,Santa Sofía,2019,Ovinos,270
+15696,Santa Sofía,2019,Bufalos,9
+15720,Sativanorte,2019,Caprinos,2340
+15720,Sativanorte,2019,Equinos,250
+15720,Sativanorte,2019,Ovinos,8000
+15723,Sativasur,2019,Caprinos,1053
+15723,Sativasur,2019,Equinos,270
+15723,Sativasur,2019,Ovinos,2000
+15740,Siachoque,2019,Caprinos,46
+15740,Siachoque,2019,Equinos,475
+15740,Siachoque,2019,Ovinos,365
+15753,Soatá,2019,Caprinos,3500
+15753,Soatá,2019,Equinos,370
+15753,Soatá,2019,Ovinos,1800
+15755,Socotá,2019,Caprinos,151
+15755,Socotá,2019,Equinos,490
+15755,Socotá,2019,Ovinos,496
+15755,Socotá,2019,Bufalos,49
+15757,Socha,2019,Caprinos,19
+15757,Socha,2019,Equinos,238
+15757,Socha,2019,Ovinos,1168
+15759,Sogamoso,2019,Caprinos,588
+15759,Sogamoso,2019,Equinos,710
+15759,Sogamoso,2019,Ovinos,1980
+15759,Sogamoso,2019,Bufalos,28
+15761,Somondoco,2019,Caprinos,30
+15761,Somondoco,2019,Equinos,150
+15761,Somondoco,2019,Ovinos,236
+15762,Sora,2019,Caprinos,36
+15762,Sora,2019,Equinos,100
+15762,Sora,2019,Ovinos,282
+15763,Sotaquirá,2019,Caprinos,47
+15763,Sotaquirá,2019,Equinos,275
+15763,Sotaquirá,2019,Ovinos,229
+15764,Soracá,2019,Caprinos,21
+15764,Soracá,2019,Equinos,340
+15764,Soracá,2019,Ovinos,278
+15774,Susacón,2019,Caprinos,3770
+15774,Susacón,2019,Equinos,670
+15774,Susacón,2019,Ovinos,2300
+15776,Sutamarchán,2019,Caprinos,130
+15776,Sutamarchán,2019,Equinos,41
+15776,Sutamarchán,2019,Ovinos,18
+15778,Sutatenza,2019,Caprinos,86
+15778,Sutatenza,2019,Equinos,76
+15778,Sutatenza,2019,Ovinos,242
+15790,Tasco,2019,Caprinos,320
+15790,Tasco,2019,Equinos,450
+15790,Tasco,2019,Ovinos,1850
+15790,Tasco,2019,Bufalos,15
+15798,Tenza,2019,Caprinos,54
+15798,Tenza,2019,Equinos,80
+15798,Tenza,2019,Ovinos,5
+15798,Tenza,2019,Bufalos,3
+15804,Tibaná,2019,Caprinos,33
+15804,Tibaná,2019,Equinos,152
+15804,Tibaná,2019,Ovinos,340
+15804,Tibaná,2019,Bufalos,4
+15806,Tibasosa,2019,Caprinos,210
+15806,Tibasosa,2019,Equinos,142
+15806,Tibasosa,2019,Ovinos,1020
+15806,Tibasosa,2019,Bufalos,5
+15808,Tinjacá,2019,Caprinos,15
+15808,Tinjacá,2019,Equinos,19
+15808,Tinjacá,2019,Ovinos,20
+15810,Tipacoque,2019,Caprinos,2340
+15810,Tipacoque,2019,Equinos,170
+15810,Tipacoque,2019,Ovinos,600
+15814,Toca,2019,Caprinos,46
+15814,Toca,2019,Equinos,292
+15814,Toca,2019,Ovinos,1020
+15816,Togüí,2019,Caprinos,16
+15816,Togüí,2019,Equinos,1412
+15816,Togüí,2019,Ovinos,28
+15820,Tópaga,2019,Caprinos,42
+15820,Tópaga,2019,Equinos,51
+15820,Tópaga,2019,Ovinos,1180
+15820,Tópaga,2019,Bufalos,5
+15822,Tota,2019,Caprinos,260
+15822,Tota,2019,Equinos,680
+15822,Tota,2019,Ovinos,5120
+15822,Tota,2019,Bufalos,13
+15832,Tununguá,2019,Equinos,230
+15835,Turmequé,2019,Caprinos,23
+15835,Turmequé,2019,Equinos,157
+15835,Turmequé,2019,Ovinos,460
+15837,Tuta,2019,Caprinos,129
+15837,Tuta,2019,Equinos,328
+15837,Tuta,2019,Ovinos,636
+15837,Tuta,2019,Bufalos,14
+15839,Tutazá,2019,Caprinos,27
+15839,Tutazá,2019,Equinos,362
+15839,Tutazá,2019,Ovinos,137
+15839,Tutazá,2019,Bufalos,10
+15842,Úmbita,2019,Caprinos,250
+15842,Úmbita,2019,Equinos,320
+15842,Úmbita,2019,Ovinos,2828
+15861,Ventaquemada,2019,Caprinos,38
+15861,Ventaquemada,2019,Equinos,207
+15861,Ventaquemada,2019,Ovinos,1600
+15879,Viracachá,2019,Caprinos,15
+15879,Viracachá,2019,Equinos,71
+15879,Viracachá,2019,Ovinos,1180
+15897,Zetaquirá,2019,Caprinos,10
+15897,Zetaquirá,2019,Equinos,110
+15897,Zetaquirá,2019,Ovinos,21
+15001,Tunja,2020,Equinos,290
+15001,Tunja,2020,Caprinos,40
+15001,Tunja,2020,Ovinos,2260
+15001,Tunja,2020,Bufalos,20
+15022,Almeida,2020,Equinos,15
+15022,Almeida,2020,Caprinos,65
+15022,Almeida,2020,Ovinos,135
+15047,Aquitania,2020,Equinos,460
+15047,Aquitania,2020,Caprinos,238
+15047,Aquitania,2020,Ovinos,2540
+15047,Aquitania,2020,Bufalos,3
+15051,Arcabuco,2020,Equinos,470
+15051,Arcabuco,2020,Caprinos,210
+15051,Arcabuco,2020,Ovinos,320
+15051,Arcabuco,2020,Bufalos,10
+15087,Belén,2020,Equinos,156
+15087,Belén,2020,Caprinos,80
+15087,Belén,2020,Ovinos,130
+15087,Belén,2020,Bufalos,12
+15090,Berbeo,2020,Equinos,110
+15090,Berbeo,2020,Caprinos,17
+15090,Berbeo,2020,Ovinos,100
+15090,Berbeo,2020,Bufalos,2
+15092,Betéitiva,2020,Equinos,86
+15092,Betéitiva,2020,Caprinos,420
+15092,Betéitiva,2020,Ovinos,2210
+15092,Betéitiva,2020,Bufalos,3
+15097,Boavita,2020,Equinos,245
+15097,Boavita,2020,Caprinos,2750
+15097,Boavita,2020,Ovinos,1350
+15097,Boavita,2020,Bufalos,7
+15104,Boyacá,2020,Equinos,174
+15104,Boyacá,2020,Caprinos,35
+15104,Boyacá,2020,Ovinos,220
+15106,Briceño,2020,Equinos,90
+15106,Briceño,2020,Caprinos,3
+15109,Buenavista,2020,Equinos,140
+15109,Buenavista,2020,Caprinos,35
+15109,Buenavista,2020,Ovinos,40
+15114,Busbanzá,2020,Equinos,27
+15114,Busbanzá,2020,Caprinos,13
+15114,Busbanzá,2020,Ovinos,480
+15114,Busbanzá,2020,Bufalos,4
+15131,Caldas,2020,Equinos,297
+15131,Caldas,2020,Caprinos,50
+15131,Caldas,2020,Ovinos,300
+15135,Campohermoso,2020,Equinos,1000
+15135,Campohermoso,2020,Caprinos,22
+15135,Campohermoso,2020,Ovinos,12
+15162,Cerinza,2020,Equinos,75
+15162,Cerinza,2020,Caprinos,40
+15162,Cerinza,2020,Ovinos,290
+15162,Cerinza,2020,Bufalos,14
+15172,Chinavita,2020,Equinos,170
+15172,Chinavita,2020,Caprinos,200
+15172,Chinavita,2020,Ovinos,120
+15176,Chiquinquirá,2020,Equinos,746
+15176,Chiquinquirá,2020,Caprinos,165
+15176,Chiquinquirá,2020,Ovinos,350
+15176,Chiquinquirá,2020,Bufalos,35
+15180,Chiscas,2020,Equinos,900
+15180,Chiscas,2020,Caprinos,1830
+15180,Chiscas,2020,Ovinos,4500
+15180,Chiscas,2020,Bufalos,10
+15183,Chita,2020,Equinos,1410
+15183,Chita,2020,Caprinos,2480
+15183,Chita,2020,Ovinos,10750
+15185,Chitaraque,2020,Equinos,590
+15185,Chitaraque,2020,Caprinos,14
+15185,Chitaraque,2020,Ovinos,35
+15187,Chivatá,2020,Equinos,100
+15187,Chivatá,2020,Caprinos,40
+15187,Chivatá,2020,Ovinos,500
+15187,Chivatá,2020,Bufalos,5
+15189,Ciénega,2020,Equinos,312
+15189,Ciénega,2020,Caprinos,20
+15189,Ciénega,2020,Ovinos,240
+15204,Cómbita,2020,Equinos,221
+15204,Cómbita,2020,Caprinos,90
+15204,Cómbita,2020,Ovinos,910
+15204,Cómbita,2020,Bufalos,16
+15212,Coper,2020,Equinos,81
+15212,Coper,2020,Caprinos,3
+15212,Coper,2020,Bufalos,18
+15215,Corrales,2020,Equinos,130
+15215,Corrales,2020,Caprinos,134
+15215,Corrales,2020,Ovinos,660
+15215,Corrales,2020,Bufalos,5
+15218,Covarachía,2020,Equinos,65
+15218,Covarachía,2020,Caprinos,2760
+15218,Covarachía,2020,Ovinos,320
+15223,Cubará,2020,Equinos,693
+15223,Cubará,2020,Caprinos,10
+15223,Cubará,2020,Ovinos,544
+15223,Cubará,2020,Bufalos,1
+15224,Cucaita,2020,Equinos,70
+15224,Cucaita,2020,Caprinos,110
+15224,Cucaita,2020,Ovinos,300
+15224,Cucaita,2020,Bufalos,7
+15226,Cuítiva,2020,Equinos,290
+15226,Cuítiva,2020,Caprinos,145
+15226,Cuítiva,2020,Ovinos,1150
+15226,Cuítiva,2020,Bufalos,5
+15232,Chíquiza,2020,Equinos,230
+15232,Chíquiza,2020,Caprinos,95
+15232,Chíquiza,2020,Ovinos,300
+15236,Chivor,2020,Equinos,300
+15236,Chivor,2020,Caprinos,30
+15236,Chivor,2020,Ovinos,150
+15238,Duitama,2020,Equinos,80
+15238,Duitama,2020,Caprinos,13
+15238,Duitama,2020,Ovinos,620
+15238,Duitama,2020,Bufalos,7
+15244,El Cocuy,2020,Equinos,140
+15244,El Cocuy,2020,Caprinos,950
+15244,El Cocuy,2020,Ovinos,11150
+15248,El Espino,2020,Equinos,490
+15248,El Espino,2020,Caprinos,245
+15248,El Espino,2020,Ovinos,510
+15272,Firavitoba,2020,Equinos,480
+15272,Firavitoba,2020,Caprinos,320
+15272,Firavitoba,2020,Ovinos,265
+15272,Firavitoba,2020,Bufalos,2
+15276,Floresta,2020,Equinos,175
+15276,Floresta,2020,Caprinos,620
+15276,Floresta,2020,Ovinos,2100
+15276,Floresta,2020,Bufalos,7
+15293,Gachantivá,2020,Equinos,160
+15293,Gachantivá,2020,Caprinos,17
+15293,Gachantivá,2020,Ovinos,200
+15293,Gachantivá,2020,Bufalos,2
+15296,Gámeza,2020,Equinos,420
+15296,Gámeza,2020,Caprinos,56
+15296,Gámeza,2020,Ovinos,2080
+15296,Gámeza,2020,Bufalos,47
+15299,Garagoa,2020,Equinos,670
+15299,Garagoa,2020,Caprinos,175
+15299,Garagoa,2020,Ovinos,278
+15299,Garagoa,2020,Bufalos,6
+15317,Guacamayas,2020,Equinos,220
+15317,Guacamayas,2020,Caprinos,1153
+15317,Guacamayas,2020,Ovinos,1310
+15322,Guateque,2020,Equinos,160
+15322,Guateque,2020,Caprinos,89
+15322,Guateque,2020,Ovinos,205
+15322,Guateque,2020,Bufalos,14
+15325,Guayatá,2020,Equinos,360
+15325,Guayatá,2020,Caprinos,115
+15325,Guayatá,2020,Ovinos,280
+15332,Güicán,2020,Equinos,80
+15332,Güicán,2020,Caprinos,585
+15332,Güicán,2020,Ovinos,17500
+15362,Iza,2020,Equinos,160
+15362,Iza,2020,Caprinos,46
+15362,Iza,2020,Ovinos,500
+15362,Iza,2020,Bufalos,1
+15367,Jenesano,2020,Equinos,485
+15367,Jenesano,2020,Caprinos,40
+15367,Jenesano,2020,Ovinos,80
+15367,Jenesano,2020,Bufalos,3
+15368,Jericó,2020,Equinos,255
+15368,Jericó,2020,Caprinos,30
+15368,Jericó,2020,Ovinos,630
+15377,Labranzagrande,2020,Equinos,730
+15377,Labranzagrande,2020,Caprinos,6
+15377,Labranzagrande,2020,Ovinos,204
+15377,Labranzagrande,2020,Bufalos,94
+15380,La Capilla,2020,Equinos,400
+15380,La Capilla,2020,Caprinos,75
+15380,La Capilla,2020,Ovinos,290
+15401,La Victoria,2020,Equinos,136
+15401,La Victoria,2020,Ovinos,12
+15403,La Uvita,2020,Equinos,690
+15403,La Uvita,2020,Caprinos,460
+15403,La Uvita,2020,Ovinos,2500
+15407,Villa de Leiva,2020,Equinos,458
+15407,Villa de Leiva,2020,Caprinos,295
+15407,Villa de Leiva,2020,Ovinos,300
+15407,Villa de Leiva,2020,Bufalos,80
+15425,Macanal,2020,Equinos,370
+15425,Macanal,2020,Caprinos,62
+15425,Macanal,2020,Ovinos,240
+15425,Macanal,2020,Bufalos,5
+15442,Maripí,2020,Equinos,57
+15442,Maripí,2020,Caprinos,4
+15442,Maripí,2020,Ovinos,6
+15455,Miraflores,2020,Equinos,400
+15455,Miraflores,2020,Caprinos,30
+15455,Miraflores,2020,Ovinos,110
+15455,Miraflores,2020,Bufalos,9
+15464,Mongua,2020,Equinos,600
+15464,Mongua,2020,Caprinos,212
+15464,Mongua,2020,Ovinos,4250
+15464,Mongua,2020,Bufalos,2
+15466,Monguí,2020,Equinos,167
+15466,Monguí,2020,Caprinos,23
+15466,Monguí,2020,Ovinos,690
+15466,Monguí,2020,Bufalos,3
+15469,Moniquirá,2020,Equinos,1512
+15469,Moniquirá,2020,Caprinos,230
+15469,Moniquirá,2020,Ovinos,170
+15469,Moniquirá,2020,Bufalos,33
+15476,Motavita,2020,Equinos,300
+15476,Motavita,2020,Caprinos,30
+15476,Motavita,2020,Ovinos,800
+15480,Muzo,2020,Equinos,48
+15480,Muzo,2020,Ovinos,6
+15491,Nobsa,2020,Equinos,55
+15491,Nobsa,2020,Caprinos,148
+15491,Nobsa,2020,Ovinos,450
+15491,Nobsa,2020,Bufalos,3
+15494,Nuevo Colón,2020,Equinos,97
+15494,Nuevo Colón,2020,Caprinos,12
+15494,Nuevo Colón,2020,Ovinos,350
+15500,Oicatá,2020,Equinos,85
+15500,Oicatá,2020,Caprinos,35
+15500,Oicatá,2020,Ovinos,490
+15500,Oicatá,2020,Bufalos,1
+15507,Otanche,2020,Equinos,302
+15507,Otanche,2020,Caprinos,12
+15507,Otanche,2020,Ovinos,102
+15511,Pachavita,2020,Equinos,215
+15511,Pachavita,2020,Caprinos,87
+15511,Pachavita,2020,Ovinos,48
+15514,Páez,2020,Equinos,450
+15514,Páez,2020,Caprinos,14
+15514,Páez,2020,Ovinos,108
+15514,Páez,2020,Bufalos,25
+15516,Paipa,2020,Equinos,367
+15516,Paipa,2020,Caprinos,40
+15516,Paipa,2020,Ovinos,350
+15516,Paipa,2020,Bufalos,16
+15518,Pajarito,2020,Equinos,460
+15518,Pajarito,2020,Caprinos,19
+15518,Pajarito,2020,Ovinos,82
+15518,Pajarito,2020,Bufalos,1
+15522,Panqueba,2020,Equinos,245
+15522,Panqueba,2020,Caprinos,350
+15522,Panqueba,2020,Ovinos,1220
+15522,Panqueba,2020,Bufalos,21
+15531,Pauna,2020,Equinos,425
+15531,Pauna,2020,Caprinos,17
+15531,Pauna,2020,Ovinos,35
+15533,Paya,2020,Equinos,520
+15533,Paya,2020,Caprinos,1
+15533,Paya,2020,Ovinos,215
+15537,Paz de Río,2020,Equinos,386
+15537,Paz de Río,2020,Caprinos,75
+15537,Paz de Río,2020,Ovinos,280
+15537,Paz de Río,2020,Bufalos,7
+15542,Pesca,2020,Equinos,980
+15542,Pesca,2020,Caprinos,460
+15542,Pesca,2020,Ovinos,2200
+15542,Pesca,2020,Bufalos,8
+15550,Pisba,2020,Equinos,560
+15550,Pisba,2020,Caprinos,5
+15550,Pisba,2020,Ovinos,195
+15550,Pisba,2020,Bufalos,4
+15572,Puerto Boyacá,2020,Equinos,6700
+15572,Puerto Boyacá,2020,Caprinos,80
+15572,Puerto Boyacá,2020,Ovinos,2220
+15572,Puerto Boyacá,2020,Bufalos,5155
+15580,Quípama,2020,Equinos,418
+15580,Quípama,2020,Caprinos,9
+15580,Quípama,2020,Ovinos,34
+15599,Ramiriquí,2020,Equinos,182
+15599,Ramiriquí,2020,Caprinos,19
+15599,Ramiriquí,2020,Ovinos,240
+15600,Ráquira,2020,Equinos,165
+15600,Ráquira,2020,Caprinos,120
+15600,Ráquira,2020,Ovinos,220
+15621,Rondón,2020,Equinos,100
+15621,Rondón,2020,Caprinos,23
+15621,Rondón,2020,Ovinos,165
+15632,Saboyá,2020,Equinos,628
+15632,Saboyá,2020,Caprinos,80
+15632,Saboyá,2020,Ovinos,170
+15632,Saboyá,2020,Bufalos,5
+15638,Sáchica,2020,Equinos,29
+15638,Sáchica,2020,Caprinos,40
+15638,Sáchica,2020,Ovinos,480
+15646,Samacá,2020,Equinos,175
+15646,Samacá,2020,Caprinos,16
+15646,Samacá,2020,Ovinos,255
+15660,San Eduardo,2020,Equinos,200
+15660,San Eduardo,2020,Caprinos,20
+15660,San Eduardo,2020,Ovinos,120
+15664,San José de Pare,2020,Equinos,1625
+15664,San José de Pare,2020,Caprinos,17
+15664,San José de Pare,2020,Ovinos,17
+15667,San Luis de Gaceno,2020,Equinos,1985
+15667,San Luis de Gaceno,2020,Caprinos,270
+15667,San Luis de Gaceno,2020,Ovinos,350
+15673,San Mateo,2020,Equinos,320
+15673,San Mateo,2020,Caprinos,2910
+15673,San Mateo,2020,Ovinos,1350
+15673,San Mateo,2020,Bufalos,1
+15676,San Miguel de Sema,2020,Equinos,480
+15676,San Miguel de Sema,2020,Caprinos,42
+15676,San Miguel de Sema,2020,Ovinos,100
+15681,San Pablo de Borbur,2020,Equinos,470
+15681,San Pablo de Borbur,2020,Caprinos,7
+15681,San Pablo de Borbur,2020,Ovinos,45
+15686,Santana,2020,Equinos,2020
+15686,Santana,2020,Caprinos,90
+15686,Santana,2020,Ovinos,110
+15690,Santa María,2020,Equinos,1730
+15690,Santa María,2020,Caprinos,952
+15690,Santa María,2020,Ovinos,258
+15693,Santa Rosa de Viterbo,2020,Equinos,246
+15693,Santa Rosa de Viterbo,2020,Caprinos,98
+15693,Santa Rosa de Viterbo,2020,Ovinos,260
+15693,Santa Rosa de Viterbo,2020,Bufalos,10
+15696,Santa Sofía,2020,Equinos,16
+15696,Santa Sofía,2020,Caprinos,80
+15696,Santa Sofía,2020,Ovinos,305
+15696,Santa Sofía,2020,Bufalos,9
+15720,Sativanorte,2020,Equinos,240
+15720,Sativanorte,2020,Caprinos,2350
+15720,Sativanorte,2020,Ovinos,9000
+15723,Sativasur,2020,Equinos,255
+15723,Sativasur,2020,Caprinos,1100
+15723,Sativasur,2020,Ovinos,2300
+15740,Siachoque,2020,Equinos,485
+15740,Siachoque,2020,Caprinos,50
+15740,Siachoque,2020,Ovinos,385
+15740,Siachoque,2020,Bufalos,1
+15753,Soatá,2020,Equinos,375
+15753,Soatá,2020,Caprinos,3560
+15753,Soatá,2020,Ovinos,2000
+15755,Socotá,2020,Equinos,480
+15755,Socotá,2020,Caprinos,158
+15755,Socotá,2020,Ovinos,510
+15755,Socotá,2020,Bufalos,21
+15757,Socha,2020,Equinos,231
+15757,Socha,2020,Caprinos,22
+15757,Socha,2020,Ovinos,1290
+15759,Sogamoso,2020,Equinos,600
+15759,Sogamoso,2020,Caprinos,580
+15759,Sogamoso,2020,Ovinos,1990
+15759,Sogamoso,2020,Bufalos,23
+15761,Somondoco,2020,Equinos,155
+15761,Somondoco,2020,Caprinos,25
+15761,Somondoco,2020,Ovinos,100
+15761,Somondoco,2020,Bufalos,9
+15762,Sora,2020,Equinos,110
+15762,Sora,2020,Caprinos,40
+15762,Sora,2020,Ovinos,300
+15763,Sotaquirá,2020,Equinos,290
+15763,Sotaquirá,2020,Caprinos,50
+15763,Sotaquirá,2020,Ovinos,260
+15763,Sotaquirá,2020,Bufalos,268
+15764,Soracá,2020,Equinos,330
+15764,Soracá,2020,Caprinos,25
+15764,Soracá,2020,Ovinos,310
+15764,Soracá,2020,Bufalos,37
+15774,Susacón,2020,Equinos,675
+15774,Susacón,2020,Caprinos,3760
+15774,Susacón,2020,Ovinos,2400
+15776,Sutamarchán,2020,Equinos,45
+15776,Sutamarchán,2020,Caprinos,155
+15776,Sutamarchán,2020,Ovinos,20
+15776,Sutamarchán,2020,Bufalos,9
+15778,Sutatenza,2020,Equinos,78
+15778,Sutatenza,2020,Caprinos,75
+15778,Sutatenza,2020,Ovinos,238
+15790,Tasco,2020,Equinos,380
+15790,Tasco,2020,Caprinos,324
+15790,Tasco,2020,Ovinos,1920
+15790,Tasco,2020,Bufalos,13
+15798,Tenza,2020,Equinos,92
+15798,Tenza,2020,Caprinos,50
+15798,Tenza,2020,Ovinos,7
+15798,Tenza,2020,Bufalos,3
+15804,Tibaná,2020,Equinos,160
+15804,Tibaná,2020,Caprinos,40
+15804,Tibaná,2020,Ovinos,350
+15804,Tibaná,2020,Bufalos,19
+15806,Tibasosa,2020,Equinos,140
+15806,Tibasosa,2020,Caprinos,212
+15806,Tibasosa,2020,Ovinos,1200
+15806,Tibasosa,2020,Bufalos,16
+15808,Tinjacá,2020,Equinos,22
+15808,Tinjacá,2020,Caprinos,17
+15808,Tinjacá,2020,Ovinos,22
+15810,Tipacoque,2020,Equinos,165
+15810,Tipacoque,2020,Caprinos,2350
+15810,Tipacoque,2020,Ovinos,650
+15814,Toca,2020,Equinos,325
+15814,Toca,2020,Caprinos,49
+15814,Toca,2020,Ovinos,1150
+15814,Toca,2020,Bufalos,63
+15816,Togüí,2020,Equinos,1408
+15816,Togüí,2020,Caprinos,17
+15816,Togüí,2020,Ovinos,32
+15816,Togüí,2020,Bufalos,8
+15820,Tópaga,2020,Equinos,58
+15820,Tópaga,2020,Caprinos,45
+15820,Tópaga,2020,Ovinos,1200
+15820,Tópaga,2020,Bufalos,2
+15822,Tota,2020,Equinos,580
+15822,Tota,2020,Caprinos,262
+15822,Tota,2020,Ovinos,5150
+15822,Tota,2020,Bufalos,11
+15832,Tununguá,2020,Equinos,215
+15832,Tununguá,2020,Caprinos,5
+15835,Turmequé,2020,Equinos,170
+15835,Turmequé,2020,Caprinos,27
+15835,Turmequé,2020,Ovinos,500
+15835,Turmequé,2020,Bufalos,5
+15837,Tuta,2020,Equinos,350
+15837,Tuta,2020,Caprinos,138
+15837,Tuta,2020,Ovinos,700
+15837,Tuta,2020,Bufalos,57
+15839,Tutazá,2020,Equinos,358
+15839,Tutazá,2020,Caprinos,30
+15839,Tutazá,2020,Ovinos,150
+15839,Tutazá,2020,Bufalos,9
+15842,Úmbita,2020,Equinos,340
+15842,Úmbita,2020,Caprinos,270
+15842,Úmbita,2020,Ovinos,3600
+15842,Úmbita,2020,Bufalos,21
+15861,Ventaquemada,2020,Equinos,205
+15861,Ventaquemada,2020,Caprinos,43
+15861,Ventaquemada,2020,Ovinos,1700
+15861,Ventaquemada,2020,Bufalos,51
+15879,Viracachá,2020,Equinos,80
+15879,Viracachá,2020,Caprinos,17
+15879,Viracachá,2020,Ovinos,1260
+15897,Zetaquirá,2020,Equinos,100
+15897,Zetaquirá,2020,Caprinos,40
+15897,Zetaquirá,2020,Ovinos,25
+15001,Tunja,2021,Equinos,270
+15001,Tunja,2021,Caprinos,88
+15001,Tunja,2021,Ovinos,2500
+15022,Almeida,2021,Equinos,237
+15022,Almeida,2021,Caprinos,75
+15022,Almeida,2021,Ovinos,145
+15047,Aquitania,2021,Bufalos,2
+15047,Aquitania,2021,Equinos,379
+15047,Aquitania,2021,Caprinos,260
+15047,Aquitania,2021,Ovinos,2750
+15051,Arcabuco,2021,Bufalos,25
+15051,Arcabuco,2021,Equinos,370
+15051,Arcabuco,2021,Caprinos,240
+15051,Arcabuco,2021,Ovinos,350
+15087,Belén,2021,Equinos,595
+15087,Belén,2021,Caprinos,90
+15087,Belén,2021,Ovinos,650
+15090,Berbeo,2021,Equinos,315
+15090,Berbeo,2021,Caprinos,20
+15090,Berbeo,2021,Ovinos,120
+15092,Betéitiva,2021,Bufalos,7
+15092,Betéitiva,2021,Equinos,370
+15092,Betéitiva,2021,Caprinos,450
+15092,Betéitiva,2021,Ovinos,2310
+15097,Boavita,2021,Bufalos,6
+15097,Boavita,2021,Equinos,362
+15097,Boavita,2021,Caprinos,3150
+15097,Boavita,2021,Ovinos,1500
+15104,Boyacá,2021,Equinos,310
+15104,Boyacá,2021,Caprinos,48
+15104,Boyacá,2021,Ovinos,250
+15106,Briceño,2021,Bufalos,2
+15106,Briceño,2021,Equinos,279
+15106,Briceño,2021,Caprinos,20
+15109,Buenavista,2021,Bufalos,16
+15109,Buenavista,2021,Equinos,2350
+15109,Buenavista,2021,Caprinos,40
+15109,Buenavista,2021,Ovinos,74
+15114,Busbanzá,2021,Equinos,3400
+15114,Busbanzá,2021,Caprinos,23
+15114,Busbanzá,2021,Ovinos,510
+15131,Caldas,2021,Bufalos,1
+15131,Caldas,2021,Equinos,570
+15131,Caldas,2021,Caprinos,58
+15131,Caldas,2021,Ovinos,450
+15135,Campohermoso,2021,Equinos,850
+15135,Campohermoso,2021,Caprinos,30
+15135,Campohermoso,2021,Ovinos,16
+15162,Cerinza,2021,Equinos,1180
+15162,Cerinza,2021,Caprinos,48
+15162,Cerinza,2021,Ovinos,320
+15172,Chinavita,2021,Bufalos,21
+15172,Chinavita,2021,Equinos,1650
+15172,Chinavita,2021,Caprinos,230
+15172,Chinavita,2021,Ovinos,135
+15176,Chiquinquirá,2021,Bufalos,58
+15176,Chiquinquirá,2021,Equinos,985
+15176,Chiquinquirá,2021,Caprinos,184
+15176,Chiquinquirá,2021,Ovinos,450
+15180,Chiscas,2021,Equinos,540
+15180,Chiscas,2021,Caprinos,2010
+15180,Chiscas,2021,Ovinos,4670
+15183,Chita,2021,Bufalos,3
+15183,Chita,2021,Equinos,720
+15183,Chita,2021,Caprinos,2560
+15183,Chita,2021,Ovinos,11100
+15185,Chitaraque,2021,Equinos,980
+15185,Chitaraque,2021,Caprinos,32
+15185,Chitaraque,2021,Ovinos,40
+15187,Chivatá,2021,Bufalos,3
+15187,Chivatá,2021,Equinos,526
+15187,Chivatá,2021,Caprinos,45
+15187,Chivatá,2021,Ovinos,540
+15189,Ciénega,2021,Bufalos,1
+15189,Ciénega,2021,Equinos,350
+15189,Ciénega,2021,Caprinos,25
+15189,Ciénega,2021,Ovinos,260
+15204,Cómbita,2021,Bufalos,36
+15204,Cómbita,2021,Equinos,610
+15204,Cómbita,2021,Caprinos,244
+15204,Cómbita,2021,Ovinos,980
+15212,Coper,2021,Bufalos,27
+15212,Coper,2021,Equinos,530
+15212,Coper,2021,Caprinos,7
+15215,Corrales,2021,Equinos,1620
+15215,Corrales,2021,Caprinos,145
+15215,Corrales,2021,Ovinos,700
+15218,Covarachía,2021,Equinos,1340
+15218,Covarachía,2021,Caprinos,2820
+15218,Covarachía,2021,Ovinos,360
+15223,Cubará,2021,Bufalos,9
+15223,Cubará,2021,Equinos,783
+15223,Cubará,2021,Caprinos,13
+15223,Cubará,2021,Ovinos,565
+15224,Cucaita,2021,Bufalos,2
+15224,Cucaita,2021,Equinos,530
+15224,Cucaita,2021,Caprinos,120
+15224,Cucaita,2021,Ovinos,340
+15226,Cuítiva,2021,Equinos,385
+15226,Cuítiva,2021,Caprinos,155
+15226,Cuítiva,2021,Ovinos,1230
+15232,Chíquiza,2021,Bufalos,2
+15232,Chíquiza,2021,Equinos,385
+15232,Chíquiza,2021,Caprinos,295
+15232,Chíquiza,2021,Ovinos,883
+15236,Chivor,2021,Equinos,213
+15236,Chivor,2021,Caprinos,35
+15236,Chivor,2021,Ovinos,165
+15238,Duitama,2021,Bufalos,9
+15238,Duitama,2021,Equinos,1178
+15238,Duitama,2021,Caprinos,131
+15238,Duitama,2021,Ovinos,797
+15244,El Cocuy,2021,Equinos,1115
+15244,El Cocuy,2021,Caprinos,1029
+15244,El Cocuy,2021,Ovinos,12000
+15248,El Espino,2021,Equinos,243
+15248,El Espino,2021,Caprinos,503
+15248,El Espino,2021,Ovinos,570
+15272,Firavitoba,2021,Bufalos,5
+15272,Firavitoba,2021,Equinos,1621
+15272,Firavitoba,2021,Caprinos,365
+15272,Firavitoba,2021,Ovinos,723
+15276,Floresta,2021,Equinos,510
+15276,Floresta,2021,Caprinos,645
+15276,Floresta,2021,Ovinos,2230
+15293,Gachantivá,2021,Equinos,506
+15293,Gachantivá,2021,Caprinos,101
+15293,Gachantivá,2021,Ovinos,213
+15296,Gámeza,2021,Equinos,470
+15296,Gámeza,2021,Caprinos,62
+15296,Gámeza,2021,Ovinos,1910
+15299,Garagoa,2021,Bufalos,16
+15299,Garagoa,2021,Equinos,310
+15299,Garagoa,2021,Caprinos,165
+15299,Garagoa,2021,Ovinos,270
+15317,Guacamayas,2021,Equinos,4865
+15317,Guacamayas,2021,Caprinos,1080
+15317,Guacamayas,2021,Ovinos,1260
+15322,Guateque,2021,Bufalos,3
+15322,Guateque,2021,Equinos,1460
+15322,Guateque,2021,Caprinos,95
+15322,Guateque,2021,Ovinos,195
+15325,Guayatá,2021,Equinos,230
+15325,Guayatá,2021,Caprinos,125
+15325,Guayatá,2021,Ovinos,298
+15332,Güicán,2021,Equinos,1382
+15332,Güicán,2021,Caprinos,2303
+15332,Güicán,2021,Ovinos,20875
+15362,Iza,2021,Equinos,675
+15362,Iza,2021,Caprinos,50
+15362,Iza,2021,Ovinos,530
+15367,Jenesano,2021,Bufalos,2
+15367,Jenesano,2021,Equinos,210
+15367,Jenesano,2021,Caprinos,48
+15367,Jenesano,2021,Ovinos,90
+15368,Jericó,2021,Bufalos,1
+15368,Jericó,2021,Equinos,768
+15368,Jericó,2021,Caprinos,2507
+15368,Jericó,2021,Ovinos,2502
+15377,Labranzagrande,2021,Equinos,355
+15377,Labranzagrande,2021,Caprinos,8
+15377,Labranzagrande,2021,Ovinos,230
+15380,La Capilla,2021,Equinos,1124
+15380,La Capilla,2021,Caprinos,70
+15380,La Capilla,2021,Ovinos,279
+15401,La Victoria,2021,Equinos,1180
+15401,La Victoria,2021,Ovinos,10
+15403,La Uvita,2021,Equinos,830
+15403,La Uvita,2021,Caprinos,1682
+15403,La Uvita,2021,Ovinos,2600
+15407,Villa de Leiva,2021,Bufalos,76
+15407,Villa de Leiva,2021,Equinos,950
+15407,Villa de Leiva,2021,Caprinos,330
+15407,Villa de Leiva,2021,Ovinos,290
+15425,Macanal,2021,Bufalos,5
+15425,Macanal,2021,Equinos,370
+15425,Macanal,2021,Caprinos,65
+15425,Macanal,2021,Ovinos,255
+15442,Maripí,2021,Equinos,475
+15442,Maripí,2021,Caprinos,6
+15442,Maripí,2021,Ovinos,9
+15455,Miraflores,2021,Bufalos,6
+15455,Miraflores,2021,Equinos,367
+15455,Miraflores,2021,Caprinos,38
+15455,Miraflores,2021,Ovinos,100
+15464,Mongua,2021,Equinos,1135
+15464,Mongua,2021,Caprinos,220
+15464,Mongua,2021,Ovinos,4400
+15466,Monguí,2021,Bufalos,6
+15466,Monguí,2021,Equinos,1260
+15466,Monguí,2021,Caprinos,26
+15466,Monguí,2021,Ovinos,710
+15469,Moniquirá,2021,Bufalos,22
+15469,Moniquirá,2021,Equinos,238
+15469,Moniquirá,2021,Caprinos,255
+15469,Moniquirá,2021,Ovinos,186
+15476,Motavita,2021,Equinos,1959
+15476,Motavita,2021,Caprinos,37
+15476,Motavita,2021,Ovinos,845
+15480,Muzo,2021,Equinos,460
+15480,Muzo,2021,Caprinos,3
+15480,Muzo,2021,Ovinos,10
+15491,Nobsa,2021,Equinos,158
+15491,Nobsa,2021,Caprinos,154
+15491,Nobsa,2021,Ovinos,467
+15494,Nuevo Colón,2021,Bufalos,1
+15494,Nuevo Colón,2021,Equinos,430
+15494,Nuevo Colón,2021,Caprinos,15
+15494,Nuevo Colón,2021,Ovinos,378
+15500,Oicatá,2021,Equinos,480
+15500,Oicatá,2021,Caprinos,37
+15500,Oicatá,2021,Ovinos,510
+15507,Otanche,2021,Bufalos,5
+15507,Otanche,2021,Equinos,992
+15507,Otanche,2021,Caprinos,16
+15507,Otanche,2021,Ovinos,90
+15511,Pachavita,2021,Bufalos,5
+15511,Pachavita,2021,Equinos,786
+15511,Pachavita,2021,Caprinos,94
+15511,Pachavita,2021,Ovinos,53
+15514,Páez,2021,Bufalos,8
+15514,Páez,2021,Equinos,178
+15514,Páez,2021,Caprinos,17
+15514,Páez,2021,Ovinos,90
+15516,Paipa,2021,Bufalos,9
+15516,Paipa,2021,Equinos,1754
+15516,Paipa,2021,Caprinos,184
+15516,Paipa,2021,Ovinos,646
+15518,Pajarito,2021,Bufalos,1
+15518,Pajarito,2021,Equinos,1350
+15518,Pajarito,2021,Caprinos,21
+15518,Pajarito,2021,Ovinos,78
+15522,Panqueba,2021,Equinos,320
+15522,Panqueba,2021,Caprinos,390
+15522,Panqueba,2021,Ovinos,1250
+15531,Pauna,2021,Bufalos,3
+15531,Pauna,2021,Equinos,2120
+15531,Pauna,2021,Caprinos,20
+15531,Pauna,2021,Ovinos,76
+15533,Paya,2021,Bufalos,15
+15533,Paya,2021,Equinos,345
+15533,Paya,2021,Caprinos,3
+15533,Paya,2021,Ovinos,230
+15537,Paz de Río,2021,Equinos,236
+15537,Paz de Río,2021,Caprinos,639
+15537,Paz de Río,2021,Ovinos,944
+15542,Pesca,2021,Bufalos,10
+15542,Pesca,2021,Equinos,739
+15542,Pesca,2021,Caprinos,455
+15542,Pesca,2021,Ovinos,2300
+15550,Pisba,2021,Equinos,305
+15550,Pisba,2021,Caprinos,7
+15550,Pisba,2021,Ovinos,205
+15572,Puerto Boyacá,2021,Bufalos,5335
+15572,Puerto Boyacá,2021,Equinos,6057
+15572,Puerto Boyacá,2021,Caprinos,102
+15572,Puerto Boyacá,2021,Ovinos,2320
+15580,Quípama,2021,Equinos,230
+15580,Quípama,2021,Caprinos,11
+15580,Quípama,2021,Ovinos,30
+15599,Ramiriquí,2021,Bufalos,3
+15599,Ramiriquí,2021,Equinos,390
+15599,Ramiriquí,2021,Caprinos,23
+15599,Ramiriquí,2021,Ovinos,265
+15600,Ráquira,2021,Equinos,435
+15600,Ráquira,2021,Caprinos,230
+15600,Ráquira,2021,Ovinos,233
+15621,Rondón,2021,Equinos,549
+15621,Rondón,2021,Caprinos,20
+15621,Rondón,2021,Ovinos,150
+15632,Saboyá,2021,Bufalos,9
+15632,Saboyá,2021,Equinos,860
+15632,Saboyá,2021,Caprinos,106
+15632,Saboyá,2021,Ovinos,186
+15638,Sáchica,2021,Bufalos,3
+15638,Sáchica,2021,Equinos,478
+15638,Sáchica,2021,Caprinos,46
+15638,Sáchica,2021,Ovinos,493
+15646,Samacá,2021,Equinos,604
+15646,Samacá,2021,Caprinos,36
+15646,Samacá,2021,Ovinos,267
+15660,San Eduardo,2021,Equinos,968
+15660,San Eduardo,2021,Caprinos,25
+15660,San Eduardo,2021,Ovinos,114
+15664,San José de Pare,2021,Equinos,375
+15664,San José de Pare,2021,Caprinos,22
+15664,San José de Pare,2021,Ovinos,20
+15667,San Luis de Gaceno,2021,Equinos,988
+15667,San Luis de Gaceno,2021,Caprinos,290
+15667,San Luis de Gaceno,2021,Ovinos,370
+15673,San Mateo,2021,Bufalos,1
+15673,San Mateo,2021,Equinos,699
+15673,San Mateo,2021,Caprinos,3010
+15673,San Mateo,2021,Ovinos,1420
+15676,San Miguel de Sema,2021,Bufalos,1
+15676,San Miguel de Sema,2021,Equinos,468
+15676,San Miguel de Sema,2021,Caprinos,48
+15676,San Miguel de Sema,2021,Ovinos,131
+15681,San Pablo de Borbur,2021,Equinos,438
+15681,San Pablo de Borbur,2021,Caprinos,9
+15681,San Pablo de Borbur,2021,Ovinos,50
+15686,Santana,2021,Equinos,1298
+15686,Santana,2021,Caprinos,102
+15686,Santana,2021,Ovinos,124
+15690,Santa María,2021,Equinos,1310
+15690,Santa María,2021,Caprinos,980
+15690,Santa María,2021,Ovinos,270
+15693,Santa Rosa de Viterbo,2021,Bufalos,8
+15693,Santa Rosa de Viterbo,2021,Equinos,120
+15693,Santa Rosa de Viterbo,2021,Caprinos,105
+15693,Santa Rosa de Viterbo,2021,Ovinos,285
+15696,Santa Sofía,2021,Bufalos,12
+15696,Santa Sofía,2021,Equinos,578
+15696,Santa Sofía,2021,Caprinos,90
+15696,Santa Sofía,2021,Ovinos,312
+15720,Sativanorte,2021,Equinos,265
+15720,Sativanorte,2021,Caprinos,3965
+15720,Sativanorte,2021,Ovinos,8890
+15723,Sativasur,2021,Equinos,247
+15723,Sativasur,2021,Caprinos,1141
+15723,Sativasur,2021,Ovinos,2180
+15740,Siachoque,2021,Equinos,2204
+15740,Siachoque,2021,Caprinos,54
+15740,Siachoque,2021,Ovinos,394
+15753,Soatá,2021,Equinos,295
+15753,Soatá,2021,Caprinos,3510
+15753,Soatá,2021,Ovinos,1980
+15755,Socotá,2021,Equinos,557
+15755,Socotá,2021,Caprinos,703
+15755,Socotá,2021,Ovinos,3217
+15757,Socha,2021,Equinos,3225
+15757,Socha,2021,Caprinos,165
+15757,Socha,2021,Ovinos,1320
+15759,Sogamoso,2021,Bufalos,20
+15759,Sogamoso,2021,Equinos,520
+15759,Sogamoso,2021,Caprinos,590
+15759,Sogamoso,2021,Ovinos,2030
+15761,Somondoco,2021,Equinos,296
+15761,Somondoco,2021,Caprinos,28
+15761,Somondoco,2021,Ovinos,112
+15762,Sora,2021,Equinos,670
+15762,Sora,2021,Caprinos,333
+15762,Sora,2021,Ovinos,672
+15763,Sotaquirá,2021,Bufalos,12
+15763,Sotaquirá,2021,Equinos,372
+15763,Sotaquirá,2021,Caprinos,48
+15763,Sotaquirá,2021,Ovinos,280
+15764,Soracá,2021,Bufalos,14
+15764,Soracá,2021,Equinos,1620
+15764,Soracá,2021,Caprinos,31
+15764,Soracá,2021,Ovinos,412
+15774,Susacón,2021,Equinos,2970
+15774,Susacón,2021,Caprinos,3700
+15774,Susacón,2021,Ovinos,2450
+15776,Sutamarchán,2021,Bufalos,9
+15776,Sutamarchán,2021,Equinos,465
+15776,Sutamarchán,2021,Caprinos,167
+15776,Sutamarchán,2021,Ovinos,36
+15778,Sutatenza,2021,Equinos,487
+15778,Sutatenza,2021,Caprinos,80
+15778,Sutatenza,2021,Ovinos,246
+15790,Tasco,2021,Equinos,268
+15790,Tasco,2021,Caprinos,345
+15790,Tasco,2021,Ovinos,2010
+15798,Tenza,2021,Equinos,1532
+15798,Tenza,2021,Caprinos,54
+15798,Tenza,2021,Ovinos,9
+15804,Tibaná,2021,Bufalos,14
+15804,Tibaná,2021,Equinos,1374
+15804,Tibaná,2021,Caprinos,113
+15804,Tibaná,2021,Ovinos,370
+15806,Tibasosa,2021,Bufalos,19
+15806,Tibasosa,2021,Equinos,735
+15806,Tibasosa,2021,Caprinos,226
+15806,Tibasosa,2021,Ovinos,1320
+15808,Tinjacá,2021,Equinos,370
+15808,Tinjacá,2021,Caprinos,22
+15808,Tinjacá,2021,Ovinos,26
+15810,Tipacoque,2021,Equinos,393
+15810,Tipacoque,2021,Caprinos,2430
+15810,Tipacoque,2021,Ovinos,680
+15814,Toca,2021,Bufalos,9
+15814,Toca,2021,Equinos,1950
+15814,Toca,2021,Caprinos,202
+15814,Toca,2021,Ovinos,1230
+15816,Togüí,2021,Equinos,1248
+15816,Togüí,2021,Caprinos,24
+15816,Togüí,2021,Ovinos,40
+15820,Tópaga,2021,Bufalos,4
+15820,Tópaga,2021,Equinos,6290
+15820,Tópaga,2021,Caprinos,53
+15820,Tópaga,2021,Ovinos,1280
+15822,Tota,2021,Bufalos,10
+15822,Tota,2021,Equinos,295
+15822,Tota,2021,Caprinos,250
+15822,Tota,2021,Ovinos,5220
+15832,Tununguá,2021,Equinos,1620
+15832,Tununguá,2021,Caprinos,7
+15835,Turmequé,2021,Equinos,2650
+15835,Turmequé,2021,Caprinos,32
+15835,Turmequé,2021,Ovinos,550
+15837,Tuta,2021,Bufalos,52
+15837,Tuta,2021,Equinos,412
+15837,Tuta,2021,Caprinos,145
+15837,Tuta,2021,Ovinos,740
+15839,Tutazá,2021,Bufalos,1
+15839,Tutazá,2021,Equinos,421
+15839,Tutazá,2021,Caprinos,35
+15839,Tutazá,2021,Ovinos,165
+15842,Úmbita,2021,Bufalos,4
+15842,Úmbita,2021,Equinos,342
+15842,Úmbita,2021,Caprinos,285
+15842,Úmbita,2021,Ovinos,3680
+15861,Ventaquemada,2021,Bufalos,61
+15861,Ventaquemada,2021,Equinos,198
+15861,Ventaquemada,2021,Caprinos,48
+15861,Ventaquemada,2021,Ovinos,1770
+15879,Viracachá,2021,Bufalos,7
+15879,Viracachá,2021,Equinos,84
+15879,Viracachá,2021,Caprinos,20
+15879,Viracachá,2021,Ovinos,1300
+15897,Zetaquirá,2021,Equinos,110
+15897,Zetaquirá,2021,Caprinos,43
+15897,Zetaquirá,2021,Ovinos,29

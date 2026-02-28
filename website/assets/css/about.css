@@ -1,0 +1,159 @@
+header {
+  width: 100%;
+}
+
+.main-body {
+  font-family: "Open Sans", "Arial Narrow", Arial, sans-serif;
+}
+
+.about-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 640px;
+}
+
+.parr-title {
+  color: #205422;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+.parr-title-right {
+  text-align: right;
+}
+
+.parr-title-left {
+  text-align: left;
+}
+
+.parr-title-center {
+  text-align: center;
+}
+
+.parr-text {
+  margin-top: 1rem;
+}
+
+.elementor-fake p {
+  font-size: 1rem;
+  color: #4b4f58;
+}
+
+.parr-container {
+  padding: 0 2rem;
+  width: 100%;
+}
+
+.parr-container .logo-container {
+  text-align: center;
+}
+
+.parr-container .logo-container img {
+  margin: 0 auto;
+  max-width: 320px;
+  width: 75%;
+}
+
+.parr {
+  text-align: justify;
+}
+
+.section-title {
+  color: #47b14b;
+  font-family: "Quicksand", Sans-serif;
+  font-size: 60px;
+  font-weight: bold;
+  padding: 2rem;
+  text-align: center;
+}
+
+h2.section-title {
+  font-size: 48px;
+}
+
+.unibo-divider {
+  display: flex;
+  text-align: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  justify-content: center;
+}
+
+.unibo-divider .unibo-divider-separator {
+  height: 6px;
+  width: 85px;
+  background-color: #47b14b;
+}
+
+.section-about {
+  background-color: #47b14b;
+  color: #fff;
+}
+
+.section-about .section-title {
+  color: #fff;
+  font-size: 46px;
+  font-weight: 800;
+}
+
+.section-about .section-parr p {
+  text-align: center;
+  margin-bottom: 1.25rem;
+  font-size: 1rem;
+}
+
+
+.banner-about {
+  width: 100%;
+  max-width: 1200px !important;
+  margin: 0 auto;
+}
+
+.service-item {
+  width: 100%;
+  max-width: 320px;
+}
+
+.service-icon {
+  height: 160px;
+  width: 131px;
+  border-radius: 100px;
+  overflow: hidden;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+}
+
+.service-icon img {
+  height: auto;
+  width: 100%;
+}
+.service-container {
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.section-about {
+  padding: 2rem;
+}
+
+.section-about-title {
+  font-family: "Quicksand" sans-serif;
+  font-size: 3rem;
+  color: #fff;
+  font-weight: 700;
+  padding: 1rem;
+}
+
+.member-container{
+	text-align: center;
+}
+
+.member{
+  max-height: 200px;
+  max-width: 200px;
+  border: 1px;
+  border-style: solid;
+  border-color: #999999;
+}

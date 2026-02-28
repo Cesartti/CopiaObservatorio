@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Mapa de Boyacá - Red de Prestadores</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+  <style>
+    #map { height: 90vh; width: 100vw; }
+  .leaflet-popup-content {
+    max-height: 300px;   /* Ajusta el alto máximo a tu gusto */
+    overflow-y: auto;
+  }
+</style>
+</head>
+<body>
+    <h2>Mapa de Boyacá: Prestadores Red Primaria</h2>
+    <!-- FILTROS -->
+    <div style="margin-bottom:10px;">
+        <select id="filtroMunicipio">
+        <option value="">-- Filtrar por municipio --</option>
+        </select>
+        <input type="text" id="filtroHorario" placeholder="Buscar por horario...">
+    </div>
+    <div id="map"></div>
+
+  <!-- JS de Leaflet -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <!-- Tus archivos de datos y lógica -->
+  <script src="assets/js/boyaca_low.js"></script>
+  <script src="assets/js/prestadores.js"></script>
+  <script>
+    // --- FUNCIÓN para encontrar la info del prestador ---
+        function showPrestadorInfo(municipioId) {
+        var data = prestadoresData.find(x => x.id === municipioId);
+        if (!data) return "Sin datos de prestador para este municipio";
+        let html = `<b>${data.municipio}</b><br>`;
+
+        if (data.prestadores && Array.isArray(data.prestadores)) {
+            // Si hay muchos, aplicar scroll solo cuando hay más de 6
+            if (data.prestadores.length > 6) {
+            html += `<div style="max-height:220px;overflow-y:auto;">`;
+            } else {
+            html += `<div>`;
+            }
+            data.prestadores.forEach(p => {
+            html += `
+                <div style="margin-bottom:10px;">
+                <b>${p.nombre}</b><br>
+                <b>Dirección:</b> ${p.direccion}<br>
+                <b>Horario:</b> ${p.horario}<br>
+                <b>Días de Atención:</b> ${p.dias_atencion}
+                </div>
+                <hr>
+            `;
+            });
+            html += `</div>`;
+        } else {
+            html += `
+            <b>Prestador:</b> ${data.prestador}<br>
+            <b>Dirección:</b> ${data.direccion}<br>
+            <b>Horario:</b> ${data.horario}<br>
+            <b>Días de Atención:</b> ${data.dias_atencion}
+            `;
+        }
+        return html;
+        }
+
+        window.onload = function() {
+        var municipios = [...new Set(prestadoresData.map(x => x.municipio))];
+        municipios.sort();
+        var sel = document.getElementById('filtroMunicipio');
+        municipios.forEach(m => {
+            var opt = document.createElement('option');
+            opt.value = m;
+            opt.textContent = m;
+            sel.appendChild(opt);
+        });
+        };
+
+    // --- INICIALIZACIÓN DEL MAPA ---
+    var map = L.map('map').setView([5.75, -73.05], 8);
+
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png', {
+    maxZoom: 14, minZoom: 8, attribution: '©OpenStreetMap, ©CartoDB'
+    }).addTo(map);
+
+    // --- SOLO UNA VEZ ---
+    var geojsonLayer = L.geoJson(boyacaData, {
+    onEachFeature: function (feature, layer) {
+        layer.on('click', function () {
+        var content = showPrestadorInfo(feature.properties.id);
+        layer.bindPopup(content).openPopup();
+        });
+        layer.on('mouseover', function () {
+        layer.setStyle({ weight: 3, color: '#7bff00' });
+        });
+        layer.on('mouseout', function () {
+        layer.setStyle({ weight: 1, color: '#750dfd' });
+        });
+    },
+    style: {
+        color: "#750dfd",
+        weight: 1,
+        fillOpacity: 0.3
+    }
+    }).addTo(map);
+
+    // Cargar los municipios y poner el popup al hacer click
+    L.geoJson(boyacaData, {
+      onEachFeature: function (feature, layer) {
+        layer.on('click', function () {
+          var content = showPrestadorInfo(feature.properties.id);
+          layer.bindPopup(content).openPopup();
+        });
+        // (Opcional) Cambiar color al pasar el mouse
+        layer.on('mouseover', function () {
+          layer.setStyle({ weight: 3, color: '#7bff00' });
+        });
+        layer.on('mouseout', function () {
+          layer.setStyle({ weight: 1, color: '#750dfd' });
+        });
+      },
+      style: {
+        color: "#750dfd",
+        weight: 1,
+        fillOpacity: 0.3
+      }
+    }).addTo(map);
+
+    var geojsonLayer = L.geoJson(boyacaData, {
+    onEachFeature: function (feature, layer) {
+        layer.on('click', function () {
+        var content = showPrestadorInfo(feature.properties.id);
+        layer.bindPopup(content).openPopup();
+        });
+        // (Opcional) Cambiar color al pasar el mouse
+        layer.on('mouseover', function () {
+        layer.setStyle({ weight: 3, color: '#7bff00' });
+        });
+        layer.on('mouseout', function () {
+        layer.setStyle({ weight: 1, color: '#750dfd' });
+        });
+    },
+    style: {
+        color: "#750dfd",
+        weight: 1,
+        fillOpacity: 0.3
+    }
+    }).addTo(map);
+
+        document.getElementById('filtroMunicipio').onchange = function() {
+    var muni = this.value;
+    if (muni) {
+        var el = prestadoresData.find(x => x.municipio === muni);
+        if (el && el.id) {
+        geojsonLayer.eachLayer(function(layer) {
+            if (layer.feature.properties.id == el.id) {
+            map.setView(layer.getBounds().getCenter(), 12);
+            layer.fire('click');
+            }
+        });
+        }
+    }
+    }
+
+    document.getElementById('filtroHorario').oninput = function() {
+    var valor = this.value.trim().toLowerCase();
+    if (!valor) return;
+    var results = [];
+    prestadoresData.forEach(mun => {
+        if (mun.prestadores) {
+        mun.prestadores.forEach(p => {
+            if ((p.horario || '').toLowerCase().includes(valor)) {
+            results.push({municipio: mun.municipio, ...p});
+            }
+        });
+        } else if ((mun.horario || '').toLowerCase().includes(valor)) {
+        results.push(mun);
+        }
+    });
+    if (results.length > 0) {
+        let html = "<b>Resultados por horario:</b><br>";
+        results.forEach(r => {
+        html += `<hr><b>${r.municipio}</b><br><b>Prestador:</b> ${r.nombre || r.prestador}<br><b>Dirección:</b> ${r.direccion}<br><b>Horario:</b> ${r.horario}<br><b>Días de Atención:</b> ${r.dias_atencion}<br>`;
+        });
+        L.popup().setLatLng(map.getCenter()).setContent(html).openOn(map);
+    }
+    };
+
+
+
+
+  </script>
+</body>
+</html>

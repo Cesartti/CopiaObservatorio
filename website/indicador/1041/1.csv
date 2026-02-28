@@ -1,0 +1,953 @@
+geo,Municipio,Cultivo,Año,Rendimiento
+15001,Tunja,Avena,2019,3
+15001,Tunja,Avena,2019,3
+15001,Tunja,Cebada,2019,3
+15001,Tunja,Cebada,2019,3
+15001,Tunja,Maíz Tradicional,2019,2
+15022,Almeida,Maíz Tradicional,2019,1
+15051,Arcabuco,Maíz Tradicional,2019,0
+15051,Arcabuco,Maíz Tradicional,2019,0
+15087,Belén,Avena,2019,1
+15087,Belén,Avena,2019,1
+15087,Belén,Cebada,2019,2
+15087,Belén,Maíz Tradicional,2019,1
+15090,Berbeo,Maíz Tradicional,2019,1
+15090,Berbeo,Maíz Tradicional,2019,1
+15092,Betéitiva,Cebada,2019,1
+15092,Betéitiva,Maíz Tradicional,2019,1
+15092,Betéitiva,Trigo,2019,0
+15097,Boavita,Maíz Tradicional,2019,1
+15097,Boavita,Maíz Tradicional,2019,1
+15097,Boavita,Trigo,2019,1
+15097,Boavita,Trigo,2019,1
+15104,Boyacá,Maíz Tradicional,2019,1
+15104,Boyacá,Maíz Tradicional,2019,1
+15106,Briceño,Maíz Tradicional,2019,0
+15106,Briceño,Maíz Tradicional,2019,0
+15114,Busbanzá,Cebada,2019,1
+15114,Busbanzá,Maíz Tradicional,2019,0
+15114,Busbanzá,Trigo,2019,1
+15131,Caldas,Maíz Tradicional,2019,1
+15131,Caldas,Maíz Tradicional,2019,1
+15131,Caldas,Trigo,2019,3
+15135,Campohermoso,Maíz Tradicional,2019,0
+15135,Campohermoso,Maíz Tradicional,2019,0
+15172,Chinavita,Maíz Tradicional,2019,1
+15172,Chinavita,Maíz Tradicional,2019,0
+15176,Chiquinquirá,Maíz Tradicional,2019,0
+15180,Chiscas,Maíz Tradicional,2019,1
+15180,Chiscas,Maíz Tradicional,2019,1
+15183,Chita,Maíz Tradicional,2019,1
+15183,Chita,Maíz Tradicional,2019,1
+15183,Chita,Trigo,2019,2
+15183,Chita,Trigo,2019,2
+15185,Chitaraque,Maíz Tradicional,2019,1
+15185,Chitaraque,Maíz Tradicional,2019,1
+15187,Chivatá,Avena,2019,1
+15187,Chivatá,Avena,2019,0
+15187,Chivatá,Cebada,2019,1
+15187,Chivatá,Cebada,2019,1
+15187,Chivatá,Maíz Tradicional,2019,0
+15187,Chivatá,Quinua,2019,1
+15187,Chivatá,Quinua,2019,0
+15187,Chivatá,Trigo,2019,1
+15204,Cómbita,Avena,2019,1
+15204,Cómbita,Avena,2019,2
+15204,Cómbita,Cebada,2019,2
+15204,Cómbita,Cebada,2019,2
+15204,Cómbita,Maíz Tradicional,2019,1
+15204,Cómbita,Trigo,2019,2
+15204,Cómbita,Trigo,2019,2
+15212,Coper,Maíz Tradicional,2019,1
+15212,Coper,Maíz Tradicional,2019,1
+15215,Corrales,Cebada,2019,2
+15215,Corrales,Maíz Tradicional,2019,1
+15215,Corrales,Trigo,2019,2
+15218,Covarachía,Maíz Tradicional,2019,1
+15218,Covarachía,Maíz Tradicional,2019,1
+15223,Cubará,Maíz Tradicional,2019,1
+15223,Cubará,Maíz Tradicional,2019,1
+15224,Cucaita,Avena,2019,2
+15224,Cucaita,Avena,2019,2
+15224,Cucaita,Cebada,2019,2
+15224,Cucaita,Cebada,2019,1
+15224,Cucaita,Maíz Tradicional,2019,1
+15224,Cucaita,Maíz Tradicional,2019,1
+15232,Chíquiza,Maíz Tradicional,2019,1
+15232,Chíquiza,Maíz Tradicional,2019,1
+15236,Chivor,Maíz Tradicional,2019,0
+15236,Chivor,Maíz Tradicional,2019,0
+15238,Duitama,Maíz Tradicional,2019,1
+15244,El Cocuy,Cebada,2019,0
+15244,El Cocuy,Cebada,2019,1
+15244,El Cocuy,Maíz Tradicional,2019,0
+15244,El Cocuy,Trigo,2019,1
+15244,El Cocuy,Trigo,2019,0
+15248,El Espino,Maíz Tradicional,2019,1
+15248,El Espino,Maíz Tradicional,2019,1
+15248,El Espino,Trigo,2019,2
+15248,El Espino,Trigo,2019,2
+15272,Firavitoba,Cebada,2019,2
+15272,Firavitoba,Maíz Tradicional,2019,0
+15272,Firavitoba,Maíz Tradicional,2019,0
+15272,Firavitoba,Trigo,2019,2
+15276,Floresta,Maíz Tradicional,2019,0
+15276,Floresta,Trigo,2019,1
+15293,Gachantivá,Maíz Tradicional,2019,1
+15293,Gachantivá,Maíz Tradicional,2019,1
+15296,Gámeza,Maíz Tradicional,2019,1
+15299,Garagoa,Maíz Tradicional,2019,1
+15299,Garagoa,Maíz Tradicional,2019,1
+15317,Guacamayas,Maíz Tecnificado,2019,2
+15317,Guacamayas,Trigo,2019,1
+15322,Guateque,Maíz Tradicional,2019,1
+15322,Guateque,Maíz Tradicional,2019,1
+15325,Guayatá,Maíz Tradicional,2019,1
+15332,Güicán,Maíz Tradicional,2019,1
+15332,Güicán,Trigo,2019,1
+15332,Güicán,Trigo,2019,1
+15367,Jenesano,Maíz Tradicional,2019,1
+15368,Jericó,Maíz Tradicional,2019,1
+15368,Jericó,Maíz Tradicional,2019,1
+15368,Jericó,Trigo,2019,1
+15368,Jericó,Trigo,2019,1
+15377,Labranzagrande,Maíz Tradicional,2019,1
+15380,La Capilla,Maíz Tradicional,2019,1
+15380,La Capilla,Maíz Tradicional,2019,1
+15401,La Victoria,Maíz Tradicional,2019,1
+15401,La Victoria,Maíz Tradicional,2019,1
+15403,La Uvita,Cebada,2019,1
+15403,La Uvita,Maíz Tradicional,2019,1
+15403,La Uvita,Maíz Tradicional,2019,0
+15403,La Uvita,Trigo,2019,2
+15403,La Uvita,Trigo,2019,1
+15407,Villa de Leiva,Maíz Tradicional,2019,1
+15407,Villa de Leiva,Maíz Tradicional,2019,0
+15425,Macanal,Maíz Tradicional,2019,1
+15442,Maripí,Maíz Tradicional,2019,1
+15442,Maripí,Maíz Tradicional,2019,1
+15455,Miraflores,Maíz Tradicional,2019,2
+15455,Miraflores,Maíz Tradicional,2019,2
+15464,Mongua,Maíz Tradicional,2019,1
+15466,Monguí,Maíz Tradicional,2019,1
+15466,Monguí,Quinua,2019,1
+15466,Monguí,Quinua,2019,3
+15466,Monguí,Trigo,2019,1
+15469,Moniquirá,Maíz Tradicional,2019,1
+15469,Moniquirá,Maíz Tradicional,2019,2
+15476,Motavita,Maíz Tradicional,2019,1
+15476,Motavita,Trigo,2019,1
+15480,Muzo,Maíz Tradicional,2019,1
+15480,Muzo,Maíz Tradicional,2019,1
+15491,Nobsa,Cebada,2019,4
+15491,Nobsa,Maíz Tradicional,2019,1
+15491,Nobsa,Maíz Tradicional,2019,1
+15494,Nuevo Colón,Maíz Tradicional,2019,1
+15500,Oicatá,Cebada,2019,2
+15500,Oicatá,Cebada,2019,2
+15500,Oicatá,Maíz Tradicional,2019,1
+15500,Oicatá,Maíz Tradicional,2019,1
+15500,Oicatá,Trigo,2019,1
+15500,Oicatá,Trigo,2019,2
+15507,Otanche,Maíz Tradicional,2019,0
+15507,Otanche,Maíz Tradicional,2019,1
+15511,Pachavita,Maíz Tradicional,2019,1
+15511,Pachavita,Maíz Tradicional,2019,1
+15514,Páez,Maíz Tradicional,2019,1
+15516,Paipa,Maíz Tradicional,2019,1
+15518,Pajarito,Maíz Tradicional,2019,1
+15522,Panqueba,Maíz Tradicional,2019,1
+15522,Panqueba,Trigo,2019,0
+15522,Panqueba,Trigo,2019,0
+15531,Pauna,Maíz Tradicional,2019,2
+15531,Pauna,Maíz Tradicional,2019,2
+15533,Paya,Maíz Tradicional,2019,0
+15537,Paz de Río,Cebada,2019,0
+15537,Paz de Río,Cebada,2019,2
+15537,Paz de Río,Maíz Tradicional,2019,1
+15537,Paz de Río,Trigo,2019,1
+15537,Paz de Río,Trigo,2019,1
+15550,Pisba,Maíz Tradicional,2019,1
+15572,Puerto Boyacá,Arroz Secano Manual,2019,3
+15572,Puerto Boyacá,Arroz Secano Manual,2019,3
+15572,Puerto Boyacá,Maíz Tradicional,2019,1
+15572,Puerto Boyacá,Maíz Tradicional,2019,1
+15580,Quípama,Maíz Tradicional,2019,1
+15580,Quípama,Maíz Tradicional,2019,1
+15599,Ramiriquí,Maíz Tradicional,2019,0
+15599,Ramiriquí,Maíz Tradicional,2019,1
+15600,Ráquira,Maíz Tradicional,2019,0
+15600,Ráquira,Maíz Tradicional,2019,1
+15621,Rondón,Maíz Tradicional,2019,1
+15621,Rondón,Maíz Tradicional,2019,1
+15632,Saboyá,Maíz Tradicional,2019,2
+15646,Samacá,Cebada,2019,3
+15646,Samacá,Maíz Tradicional,2019,1
+15646,Samacá,Maíz Tradicional,2019,1
+15660,San Eduardo,Maíz Tecnificado,2019,2
+15660,San Eduardo,Maíz Tecnificado,2019,0
+15660,San Eduardo,Maíz Tradicional,2019,1
+15660,San Eduardo,Maíz Tradicional,2019,0
+15664,San José de Pare,Maíz Tradicional,2019,1
+15664,San José de Pare,Maíz Tradicional,2019,1
+15667,San Luis de Gaceno,Maíz Tradicional,2019,1
+15667,San Luis de Gaceno,Maíz Tradicional,2019,1
+15673,San Mateo,Maíz Tecnificado,2019,2
+15673,San Mateo,Maíz Tecnificado,2019,2
+15673,San Mateo,Maíz Tradicional,2019,1
+15673,San Mateo,Trigo,2019,1
+15676,San Miguel de Sema,Maíz Tradicional,2019,2
+15676,San Miguel de Sema,Maíz Tradicional,2019,2
+15681,San Pablo de Borbur,Maíz Tradicional,2019,1
+15681,San Pablo de Borbur,Maíz Tradicional,2019,1
+15686,Santana,Maíz Tradicional,2019,1
+15686,Santana,Maíz Tradicional,2019,1
+15690,Santa María,Maíz Tradicional,2019,1
+15690,Santa María,Maíz Tradicional,2019,1
+15693,Santa Rosa de Viterbo,Maíz Tradicional,2019,1
+15693,Santa Rosa de Viterbo,Maíz Tradicional,2019,1
+15696,Santa Sofía,Maíz Tradicional,2019,1
+15720,Sativanorte,Cebada,2019,0
+15720,Sativanorte,Cebada,2019,0
+15720,Sativanorte,Maíz Tradicional,2019,0
+15720,Sativanorte,Maíz Tradicional,2019,0
+15720,Sativanorte,Trigo,2019,1
+15720,Sativanorte,Trigo,2019,0
+15723,Sativasur,Cebada,2019,1
+15723,Sativasur,Maíz Tradicional,2019,1
+15723,Sativasur,Trigo,2019,2
+15723,Sativasur,Trigo,2019,2
+15740,Siachoque,Avena,2019,2
+15740,Siachoque,Avena,2019,2
+15740,Siachoque,Cebada,2019,2
+15740,Siachoque,Cebada,2019,2
+15740,Siachoque,Maíz Tradicional,2019,0
+15740,Siachoque,Maíz Tradicional,2019,0
+15740,Siachoque,Quinua,2019,2
+15740,Siachoque,Quinua,2019,2
+15753,Soatá,Cebada,2019,0
+15753,Soatá,Maíz Tradicional,2019,0
+15753,Soatá,Maíz Tradicional,2019,2
+15753,Soatá,Trigo,2019,1
+15753,Soatá,Trigo,2019,2
+15755,Socotá,Maíz Tradicional,2019,1
+15755,Socotá,Trigo,2019,2
+15755,Socotá,Trigo,2019,2
+15757,Socha,Maíz Tradicional,2019,0
+15757,Socha,Maíz Tradicional,2019,0
+15759,Sogamoso,Maíz Tradicional,2019,1
+15761,Somondoco,Maíz Tradicional,2019,1
+15762,Sora,Cebada,2019,4
+15762,Sora,Cebada,2019,4
+15762,Sora,Maíz Tradicional,2019,2
+15762,Sora,Maíz Tradicional,2019,1
+15764,Soracá,Cebada,2019,2
+15764,Soracá,Cebada,2019,2
+15764,Soracá,Maíz Tradicional,2019,1
+15764,Soracá,Maíz Tradicional,2019,1
+15764,Soracá,Quinua,2019,2
+15764,Soracá,Quinua,2019,2
+15764,Soracá,Trigo,2019,3
+15764,Soracá,Trigo,2019,3
+15774,Susacón,Cebada,2019,2
+15774,Susacón,Cebada,2019,1
+15774,Susacón,Maíz Tradicional,2019,0
+15774,Susacón,Maíz Tradicional,2019,1
+15774,Susacón,Trigo,2019,1
+15774,Susacón,Trigo,2019,1
+15776,Sutamarchán,Maíz Tradicional,2019,1
+15776,Sutamarchán,Maíz Tradicional,2019,1
+15778,Sutatenza,Maíz Tradicional,2019,1
+15790,Tasco,Cebada,2019,1
+15790,Tasco,Cebada,2019,1
+15790,Tasco,Maíz Tradicional,2019,1
+15790,Tasco,Trigo,2019,1
+15790,Tasco,Trigo,2019,1
+15798,Tenza,Maíz Tradicional,2019,0
+15798,Tenza,Maíz Tradicional,2019,1
+15804,Tibaná,Maíz Tradicional,2019,0
+15804,Tibaná,Maíz Tradicional,2019,0
+15806,Tibasosa,Maíz Tradicional,2019,1
+15806,Tibasosa,Quinua,2019,2
+15806,Tibasosa,Quinua,2019,2
+15806,Tibasosa,Trigo,2019,2
+15808,Tinjacá,Maíz Tradicional,2019,1
+15808,Tinjacá,Maíz Tradicional,2019,1
+15810,Tipacoque,Maíz Tecnificado,2019,2
+15810,Tipacoque,Maíz Tradicional,2019,1
+15810,Tipacoque,Maíz Tradicional,2019,1
+15814,Toca,Cebada,2019,1
+15814,Toca,Cebada,2019,0
+15814,Toca,Maíz Tradicional,2019,0
+15814,Toca,Maíz Tradicional,2019,0
+15814,Toca,Trigo,2019,1
+15814,Toca,Trigo,2019,1
+15816,Togüí,Maíz Tradicional,2019,1
+15816,Togüí,Maíz Tradicional,2019,1
+15820,Tópaga,Cebada,2019,2
+15820,Tópaga,Maíz Tradicional,2019,1
+15820,Tópaga,Maíz Tradicional,2019,0
+15820,Tópaga,Trigo,2019,2
+15820,Tópaga,Trigo,2019,2
+15832,Tununguá,Maíz Tradicional,2019,2
+15832,Tununguá,Maíz Tradicional,2019,2
+15835,Turmequé,Maíz Tradicional,2019,1
+15835,Turmequé,Maíz Tradicional,2019,1
+15837,Tuta,Avena,2019,2
+15837,Tuta,Avena,2019,2
+15837,Tuta,Cebada,2019,1
+15837,Tuta,Cebada,2019,1
+15837,Tuta,Maíz Tradicional,2019,0
+15837,Tuta,Quinua,2019,1
+15837,Tuta,Quinua,2019,1
+15839,Tutazá,Maíz Tradicional,2019,0
+15839,Tutazá,Maíz Tradicional,2019,0
+15842,Úmbita,Maíz Tradicional,2019,1
+15842,Úmbita,Maíz Tradicional,2019,0
+15842,Úmbita,Quinua,2019,0
+15842,Úmbita,Quinua,2019,0
+15861,Ventaquemada,Maíz Tradicional,2019,1
+15861,Ventaquemada,Maíz Tradicional,2019,1
+15879,Viracachá,Maíz Tradicional,2019,0
+15879,Viracachá,Maíz Tradicional,2019,0
+15001,Tunja,Avena,2020,3
+15001,Tunja,Avena,2020,3
+15001,Tunja,Cebada,2020,3
+15001,Tunja,Cebada,2020,3
+15001,Tunja,Maíz Tradicional,2020,2
+15022,Almeida,Maíz Tradicional,2020,1
+15051,Arcabuco,Maíz Tradicional,2020,1
+15051,Arcabuco,Maíz Tradicional,2020,1
+15087,Belén,Avena,2020,1
+15087,Belén,Avena,2020,1
+15087,Belén,Maíz Tradicional,2020,1
+15090,Berbeo,Maíz Tradicional,2020,1
+15090,Berbeo,Maíz Tradicional,2020,0
+15092,Betéitiva,Cebada,2020,4
+15092,Betéitiva,Maíz Tradicional,2020,2
+15092,Betéitiva,Trigo,2020,4
+15097,Boavita,Maíz Tradicional,2020,1
+15097,Boavita,Maíz Tradicional,2020,1
+15097,Boavita,Trigo,2020,1
+15097,Boavita,Trigo,2020,1
+15104,Boyacá,Maíz Tradicional,2020,0
+15104,Boyacá,Maíz Tradicional,2020,1
+15106,Briceño,Maíz Tradicional,2020,0
+15106,Briceño,Maíz Tradicional,2020,0
+15114,Busbanzá,Cebada,2020,1
+15114,Busbanzá,Maíz Tradicional,2020,0
+15114,Busbanzá,Trigo,2020,1
+15131,Caldas,Maíz Tradicional,2020,1
+15131,Caldas,Maíz Tradicional,2020,1
+15131,Caldas,Trigo,2020,3
+15135,Campohermoso,Maíz Tradicional,2020,0
+15135,Campohermoso,Maíz Tradicional,2020,0
+15172,Chinavita,Maíz Tradicional,2020,0
+15172,Chinavita,Maíz Tradicional,2020,0
+15176,Chiquinquirá,Maíz Tradicional,2020,0
+15180,Chiscas,Maíz Tradicional,2020,1
+15180,Chiscas,Maíz Tradicional,2020,1
+15180,Chiscas,Trigo,2020,2
+15183,Chita,Maíz Tradicional,2020,1
+15183,Chita,Maíz Tradicional,2020,0
+15183,Chita,Trigo,2020,2
+15183,Chita,Trigo,2020,2
+15185,Chitaraque,Maíz Tradicional,2020,0
+15185,Chitaraque,Maíz Tradicional,2020,1
+15187,Chivatá,Avena,2020,1
+15187,Chivatá,Avena,2020,1
+15187,Chivatá,Cebada,2020,1
+15187,Chivatá,Cebada,2020,1
+15187,Chivatá,Maíz Tradicional,2020,0
+15187,Chivatá,Quinua,2020,1
+15187,Chivatá,Quinua,2020,1
+15187,Chivatá,Trigo,2020,1
+15204,Cómbita,Avena,2020,1
+15204,Cómbita,Avena,2020,2
+15204,Cómbita,Cebada,2020,2
+15204,Cómbita,Cebada,2020,2
+15204,Cómbita,Maíz Tradicional,2020,1
+15204,Cómbita,Trigo,2020,2
+15204,Cómbita,Trigo,2020,2
+15212,Coper,Maíz Tradicional,2020,1
+15212,Coper,Maíz Tradicional,2020,1
+15215,Corrales,Maíz Tradicional,2020,0
+15215,Corrales,Trigo,2020,2
+15218,Covarachía,Maíz Tradicional,2020,1
+15218,Covarachía,Maíz Tradicional,2020,1
+15223,Cubará,Maíz Tradicional,2020,1
+15223,Cubará,Maíz Tradicional,2020,1
+15224,Cucaita,Avena,2020,3
+15224,Cucaita,Avena,2020,5
+15224,Cucaita,Cebada,2020,2
+15224,Cucaita,Cebada,2020,2
+15224,Cucaita,Maíz Tradicional,2020,1
+15224,Cucaita,Maíz Tradicional,2020,1
+15232,Chíquiza,Maíz Tradicional,2020,1
+15232,Chíquiza,Maíz Tradicional,2020,1
+15236,Chivor,Maíz Tradicional,2020,1
+15236,Chivor,Maíz Tradicional,2020,1
+15238,Duitama,Maíz Tradicional,2020,0
+15244,El Cocuy,Cebada,2020,0
+15244,El Cocuy,Cebada,2020,0
+15244,El Cocuy,Maíz Tradicional,2020,1
+15244,El Cocuy,Trigo,2020,1
+15244,El Cocuy,Trigo,2020,1
+15248,El Espino,Maíz Tradicional,2020,2
+15248,El Espino,Maíz Tradicional,2020,2
+15248,El Espino,Trigo,2020,1
+15248,El Espino,Trigo,2020,1
+15272,Firavitoba,Cebada,2020,1
+15272,Firavitoba,Maíz Tradicional,2020,1
+15272,Firavitoba,Maíz Tradicional,2020,1
+15272,Firavitoba,Trigo,2020,2
+15276,Floresta,Maíz Tradicional,2020,0
+15276,Floresta,Trigo,2020,0
+15293,Gachantivá,Maíz Tradicional,2020,0
+15293,Gachantivá,Maíz Tradicional,2020,0
+15296,Gámeza,Maíz Tradicional,2020,1
+15299,Garagoa,Maíz Tradicional,2020,1
+15299,Garagoa,Maíz Tradicional,2020,1
+15317,Guacamayas,Maíz Tecnificado,2020,1
+15317,Guacamayas,Trigo,2020,1
+15322,Guateque,Maíz Tradicional,2020,1
+15322,Guateque,Maíz Tradicional,2020,1
+15325,Guayatá,Maíz Tradicional,2020,1
+15332,Güicán,Maíz Tradicional,2020,1
+15332,Güicán,Trigo,2020,1
+15332,Güicán,Trigo,2020,1
+15367,Jenesano,Maíz Tradicional,2020,1
+15368,Jericó,Maíz Tradicional,2020,0
+15368,Jericó,Maíz Tradicional,2020,0
+15368,Jericó,Trigo,2020,0
+15368,Jericó,Trigo,2020,0
+15377,Labranzagrande,Maíz Tradicional,2020,1
+15380,La Capilla,Maíz Tradicional,2020,1
+15380,La Capilla,Maíz Tradicional,2020,0
+15401,La Victoria,Maíz Tradicional,2020,1
+15401,La Victoria,Maíz Tradicional,2020,1
+15401,La Victoria,Sorgo,2020,2
+15403,La Uvita,Cebada,2020,1
+15403,La Uvita,Maíz Tradicional,2020,1
+15403,La Uvita,Maíz Tradicional,2020,0
+15403,La Uvita,Trigo,2020,1
+15403,La Uvita,Trigo,2020,1
+15407,Villa de Leiva,Maíz Tradicional,2020,0
+15407,Villa de Leiva,Maíz Tradicional,2020,0
+15425,Macanal,Maíz Tradicional,2020,1
+15442,Maripí,Maíz Tradicional,2020,3
+15442,Maripí,Maíz Tradicional,2020,0
+15455,Miraflores,Maíz Tradicional,2020,2
+15455,Miraflores,Maíz Tradicional,2020,2
+15464,Mongua,Maíz Tradicional,2020,0
+15466,Monguí,Maíz Tradicional,2020,0
+15466,Monguí,Quinua,2020,2
+15466,Monguí,Quinua,2020,2
+15466,Monguí,Trigo,2020,2
+15469,Moniquirá,Maíz Tradicional,2020,1
+15469,Moniquirá,Maíz Tradicional,2020,1
+15476,Motavita,Maíz Tradicional,2020,1
+15476,Motavita,Trigo,2020,0
+15480,Muzo,Maíz Tradicional,2020,0
+15480,Muzo,Maíz Tradicional,2020,0
+15491,Nobsa,Cebada,2020,2
+15491,Nobsa,Maíz Tradicional,2020,2
+15491,Nobsa,Maíz Tradicional,2020,1
+15494,Nuevo Colón,Maíz Tradicional,2020,0
+15500,Oicatá,Cebada,2020,2
+15500,Oicatá,Cebada,2020,2
+15500,Oicatá,Maíz Tradicional,2020,0
+15500,Oicatá,Maíz Tradicional,2020,0
+15500,Oicatá,Trigo,2020,1
+15500,Oicatá,Trigo,2020,2
+15507,Otanche,Maíz Tradicional,2020,1
+15507,Otanche,Maíz Tradicional,2020,1
+15511,Pachavita,Maíz Tradicional,2020,1
+15511,Pachavita,Maíz Tradicional,2020,1
+15514,Páez,Maíz Tradicional,2020,1
+15516,Paipa,Avena,2020,15
+15516,Paipa,Avena,2020,15
+15516,Paipa,Maíz Tradicional,2020,0
+15516,Paipa,Trigo,2020,2
+15518,Pajarito,Maíz Tradicional,2020,1
+15522,Panqueba,Maíz Tradicional,2020,1
+15522,Panqueba,Trigo,2020,2
+15522,Panqueba,Trigo,2020,2
+15531,Pauna,Maíz Tradicional,2020,3
+15531,Pauna,Maíz Tradicional,2020,3
+15533,Paya,Maíz Tradicional,2020,1
+15537,Paz de Río,Cebada,2020,1
+15537,Paz de Río,Cebada,2020,2
+15537,Paz de Río,Maíz Tradicional,2020,0
+15537,Paz de Río,Trigo,2020,1
+15537,Paz de Río,Trigo,2020,1
+15550,Pisba,Maíz Tradicional,2020,1
+15572,Puerto Boyacá,Arroz Secano Manual,2020,4
+15572,Puerto Boyacá,Arroz Secano Manual,2020,5
+15572,Puerto Boyacá,Maíz Tradicional,2020,1
+15572,Puerto Boyacá,Maíz Tradicional,2020,2
+15580,Quípama,Maíz Tradicional,2020,1
+15580,Quípama,Maíz Tradicional,2020,1
+15599,Ramiriquí,Maíz Tradicional,2020,1
+15599,Ramiriquí,Maíz Tradicional,2020,1
+15600,Ráquira,Maíz Tradicional,2020,1
+15600,Ráquira,Maíz Tradicional,2020,1
+15621,Rondón,Maíz Tradicional,2020,1
+15621,Rondón,Maíz Tradicional,2020,1
+15632,Saboyá,Maíz Tradicional,2020,1
+15646,Samacá,Cebada,2020,3
+15646,Samacá,Maíz Tradicional,2020,1
+15646,Samacá,Maíz Tradicional,2020,1
+15660,San Eduardo,Maíz Tecnificado,2020,0
+15660,San Eduardo,Maíz Tecnificado,2020,0
+15660,San Eduardo,Maíz Tradicional,2020,0
+15660,San Eduardo,Maíz Tradicional,2020,0
+15664,San José de Pare,Maíz Tradicional,2020,1
+15664,San José de Pare,Maíz Tradicional,2020,1
+15667,San Luis de Gaceno,Maíz Tradicional,2020,1
+15667,San Luis de Gaceno,Maíz Tradicional,2020,1
+15673,San Mateo,Maíz Tecnificado,2020,2
+15673,San Mateo,Maíz Tecnificado,2020,2
+15673,San Mateo,Maíz Tradicional,2020,1
+15673,San Mateo,Trigo,2020,1
+15676,San Miguel de Sema,Maíz Tradicional,2020,1
+15676,San Miguel de Sema,Maíz Tradicional,2020,1
+15681,San Pablo de Borbur,Maíz Tradicional,2020,1
+15681,San Pablo de Borbur,Maíz Tradicional,2020,1
+15686,Santana,Maíz Tradicional,2020,1
+15686,Santana,Maíz Tradicional,2020,1
+15690,Santa María,Maíz Tradicional,2020,1
+15690,Santa María,Maíz Tradicional,2020,1
+15693,Santa Rosa de Viterbo,Maíz Tradicional,2020,1
+15696,Santa Sofía,Maíz Tradicional,2020,1
+15720,Sativanorte,Cebada,2020,1
+15720,Sativanorte,Cebada,2020,5
+15720,Sativanorte,Maíz Tradicional,2020,0
+15720,Sativanorte,Maíz Tradicional,2020,0
+15720,Sativanorte,Trigo,2020,1
+15720,Sativanorte,Trigo,2020,1
+15723,Sativasur,Cebada,2020,1
+15723,Sativasur,Maíz Tradicional,2020,1
+15723,Sativasur,Trigo,2020,2
+15723,Sativasur,Trigo,2020,1
+15740,Siachoque,Avena,2020,2
+15740,Siachoque,Avena,2020,2
+15740,Siachoque,Cebada,2020,2
+15740,Siachoque,Cebada,2020,2
+15740,Siachoque,Maíz Tradicional,2020,0
+15740,Siachoque,Maíz Tradicional,2020,1
+15740,Siachoque,Quinua,2020,2
+15740,Siachoque,Quinua,2020,2
+15753,Soatá,Cebada,2020,1
+15753,Soatá,Maíz Tradicional,2020,2
+15753,Soatá,Maíz Tradicional,2020,2
+15753,Soatá,Trigo,2020,2
+15753,Soatá,Trigo,2020,2
+15755,Socotá,Maíz Tradicional,2020,1
+15755,Socotá,Trigo,2020,1
+15755,Socotá,Trigo,2020,1
+15757,Socha,Maíz Tradicional,2020,0
+15757,Socha,Maíz Tradicional,2020,0
+15759,Sogamoso,Maíz Tradicional,2020,1
+15761,Somondoco,Maíz Tradicional,2020,1
+15762,Sora,Cebada,2020,1
+15762,Sora,Cebada,2020,4
+15762,Sora,Maíz Tradicional,2020,1
+15762,Sora,Maíz Tradicional,2020,0
+15764,Soracá,Cebada,2020,2
+15764,Soracá,Cebada,2020,2
+15764,Soracá,Maíz Tradicional,2020,1
+15764,Soracá,Maíz Tradicional,2020,1
+15764,Soracá,Quinua,2020,1
+15764,Soracá,Quinua,2020,1
+15764,Soracá,Trigo,2020,3
+15764,Soracá,Trigo,2020,3
+15774,Susacón,Cebada,2020,1
+15774,Susacón,Cebada,2020,2
+15774,Susacón,Maíz Tradicional,2020,2
+15774,Susacón,Maíz Tradicional,2020,1
+15774,Susacón,Trigo,2020,1
+15774,Susacón,Trigo,2020,1
+15776,Sutamarchán,Maíz Tradicional,2020,1
+15776,Sutamarchán,Maíz Tradicional,2020,1
+15778,Sutatenza,Maíz Tradicional,2020,1
+15790,Tasco,Cebada,2020,1
+15790,Tasco,Cebada,2020,1
+15790,Tasco,Maíz Tradicional,2020,1
+15790,Tasco,Trigo,2020,1
+15790,Tasco,Trigo,2020,1
+15798,Tenza,Maíz Tradicional,2020,1
+15798,Tenza,Maíz Tradicional,2020,1
+15804,Tibaná,Maíz Tradicional,2020,1
+15804,Tibaná,Maíz Tradicional,2020,1
+15806,Tibasosa,Maíz Tradicional,2020,0
+15806,Tibasosa,Quinua,2020,2
+15806,Tibasosa,Quinua,2020,2
+15806,Tibasosa,Trigo,2020,2
+15808,Tinjacá,Maíz Tradicional,2020,2
+15808,Tinjacá,Maíz Tradicional,2020,1
+15810,Tipacoque,Maíz Tecnificado,2020,2
+15810,Tipacoque,Maíz Tradicional,2020,1
+15810,Tipacoque,Maíz Tradicional,2020,1
+15814,Toca,Cebada,2020,0
+15814,Toca,Cebada,2020,1
+15814,Toca,Maíz Tradicional,2020,1
+15814,Toca,Maíz Tradicional,2020,0
+15814,Toca,Quinua,2020,2
+15814,Toca,Trigo,2020,1
+15814,Toca,Trigo,2020,1
+15816,Togüí,Maíz Tradicional,2020,1
+15816,Togüí,Maíz Tradicional,2020,1
+15820,Tópaga,Cebada,2020,2
+15820,Tópaga,Maíz Tradicional,2020,1
+15820,Tópaga,Maíz Tradicional,2020,1
+15820,Tópaga,Trigo,2020,2
+15820,Tópaga,Trigo,2020,2
+15832,Tununguá,Maíz Tradicional,2020,2
+15832,Tununguá,Maíz Tradicional,2020,2
+15835,Turmequé,Maíz Tradicional,2020,1
+15835,Turmequé,Maíz Tradicional,2020,1
+15837,Tuta,Avena,2020,1
+15837,Tuta,Avena,2020,1
+15837,Tuta,Cebada,2020,1
+15837,Tuta,Cebada,2020,1
+15837,Tuta,Maíz Tradicional,2020,0
+15837,Tuta,Quinua,2020,1
+15837,Tuta,Quinua,2020,1
+15839,Tutazá,Cebada,2020,1
+15839,Tutazá,Cebada,2020,1
+15839,Tutazá,Maíz Tradicional,2020,0
+15839,Tutazá,Maíz Tradicional,2020,0
+15839,Tutazá,Trigo,2020,1
+15839,Tutazá,Trigo,2020,1
+15842,Úmbita,Maíz Tradicional,2020,1
+15842,Úmbita,Quinua,2020,0
+15861,Ventaquemada,Maíz Tradicional,2020,0
+15861,Ventaquemada,Maíz Tradicional,2020,1
+15879,Viracachá,Maíz Tradicional,2020,0
+15879,Viracachá,Maíz Tradicional,2020,0
+15001,Tunja,Avena,2021,3
+15001,Tunja,Avena,2021,3
+15001,Tunja,Cebada,2021,3
+15001,Tunja,Cebada,2021,3
+15001,Tunja,Maíz Amarillo Tradicional,2021,1
+15022,Almeida,Maíz Amarillo Tradicional,2021,2
+15051,Arcabuco,Maíz Amarillo Tradicional,2021,0
+15051,Arcabuco,Maíz Amarillo Tradicional,2021,0
+15087,Belén,Avena,2021,2
+15087,Belén,Avena,2021,1
+15087,Belén,Maíz Amarillo Tradicional,2021,1
+15090,Berbeo,Maíz Amarillo Tradicional,2021,1
+15090,Berbeo,Maíz Amarillo Tradicional,2021,1
+15092,Betéitiva,Cebada,2021,2
+15092,Betéitiva,Maíz Amarillo Tradicional,2021,1
+15092,Betéitiva,Trigo,2021,2
+15097,Boavita,Maíz Amarillo Tradicional,2021,1
+15097,Boavita,Maíz Amarillo Tradicional,2021,1
+15097,Boavita,Trigo,2021,1
+15097,Boavita,Trigo,2021,1
+15104,Boyacá,Maíz Amarillo Tradicional,2021,1
+15104,Boyacá,Maíz Amarillo Tradicional,2021,2
+15106,Briceño,Maíz Amarillo Tradicional,2021,1
+15106,Briceño,Maíz Amarillo Tradicional,2021,1
+15114,Busbanzá,Cebada,2021,0
+15114,Busbanzá,Maíz Amarillo Tradicional,2021,0
+15114,Busbanzá,Trigo,2021,0
+15131,Caldas,Avena,2021,1
+15131,Caldas,Maíz Amarillo Tradicional,2021,1
+15131,Caldas,Maíz Amarillo Tradicional,2021,1
+15131,Caldas,Trigo,2021,3
+15135,Campohermoso,Maíz Amarillo Tradicional,2021,1
+15135,Campohermoso,Maíz Amarillo Tradicional,2021,0
+15162,Cerinza,Maíz Amarillo Tradicional,2021,1
+15162,Cerinza,Maíz Amarillo Tradicional,2021,1
+15172,Chinavita,Maíz Amarillo Tradicional,2021,1
+15172,Chinavita,Maíz Amarillo Tradicional,2021,1
+15176,Chiquinquirá,Maíz Amarillo Tradicional,2021,0
+15180,Chiscas,Maíz Amarillo Tradicional,2021,1
+15180,Chiscas,Maíz Amarillo Tradicional,2021,1
+15180,Chiscas,Trigo,2021,3
+15183,Chita,Maíz Amarillo Tradicional,2021,1
+15183,Chita,Maíz Amarillo Tradicional,2021,1
+15183,Chita,Trigo,2021,2
+15183,Chita,Trigo,2021,2
+15185,Chitaraque,Maíz Amarillo Tradicional,2021,0
+15185,Chitaraque,Maíz Amarillo Tradicional,2021,0
+15187,Chivatá,Avena,2021,3
+15187,Chivatá,Avena,2021,2
+15187,Chivatá,Cebada,2021,2
+15187,Chivatá,Cebada,2021,2
+15187,Chivatá,Maíz Amarillo Tradicional,2021,2
+15187,Chivatá,Quinua,2021,2
+15187,Chivatá,Quinua,2021,2
+15187,Chivatá,Trigo,2021,2
+15204,Cómbita,Avena,2021,7
+15204,Cómbita,Avena,2021,7
+15204,Cómbita,Cebada,2021,2
+15204,Cómbita,Cebada,2021,2
+15204,Cómbita,Maíz Amarillo Tradicional,2021,2
+15204,Cómbita,Trigo,2021,3
+15204,Cómbita,Trigo,2021,2
+15212,Coper,Maíz Amarillo Tradicional,2021,1
+15212,Coper,Maíz Amarillo Tradicional,2021,2
+15215,Corrales,Maíz Amarillo Tradicional,2021,2
+15218,Covarachía,Maíz Amarillo Tradicional,2021,1
+15218,Covarachía,Maíz Amarillo Tradicional,2021,1
+15223,Cubará,Maíz Amarillo Tradicional,2021,2
+15223,Cubará,Maíz Amarillo Tradicional,2021,1
+15224,Cucaita,Avena,2021,3
+15224,Cucaita,Avena,2021,3
+15224,Cucaita,Cebada,2021,3
+15224,Cucaita,Cebada,2021,3
+15224,Cucaita,Maíz Amarillo Tradicional,2021,1
+15224,Cucaita,Maíz Amarillo Tradicional,2021,1
+15232,Chíquiza,Maíz Amarillo Tradicional,2021,1
+15232,Chíquiza,Maíz Amarillo Tradicional,2021,1
+15236,Chivor,Maíz Amarillo Tradicional,2021,1
+15236,Chivor,Maíz Amarillo Tradicional,2021,1
+15238,Duitama,Maíz Amarillo Tradicional,2021,1
+15244,El Cocuy,Cebada,2021,0
+15244,El Cocuy,Cebada,2021,1
+15244,El Cocuy,Maíz Amarillo Tradicional,2021,0
+15244,El Cocuy,Trigo,2021,1
+15244,El Cocuy,Trigo,2021,0
+15248,El Espino,Maíz Amarillo Tradicional,2021,1
+15248,El Espino,Maíz Amarillo Tradicional,2021,1
+15248,El Espino,Trigo,2021,1
+15248,El Espino,Trigo,2021,1
+15272,Firavitoba,Cebada,2021,1
+15272,Firavitoba,Maíz Amarillo Tradicional,2021,1
+15272,Firavitoba,Maíz Amarillo Tradicional,2021,1
+15272,Firavitoba,Trigo,2021,2
+15276,Floresta,Maíz Amarillo Tradicional,2021,0
+15276,Floresta,Trigo,2021,0
+15293,Gachantivá,Maíz Amarillo Tradicional,2021,0
+15293,Gachantivá,Maíz Amarillo Tradicional,2021,0
+15296,Gámeza,Maíz Amarillo Tradicional,2021,1
+15299,Garagoa,Maíz Amarillo Tradicional,2021,1
+15299,Garagoa,Maíz Amarillo Tradicional,2021,1
+15317,Guacamayas,Maíz Amarillo Tecnificado,2021,1
+15317,Guacamayas,Maíz Blanco Tecnificado,2021,1
+15317,Guacamayas,Trigo,2021,1
+15322,Guateque,Maíz Amarillo Tradicional,2021,1
+15322,Guateque,Maíz Amarillo Tradicional,2021,1
+15325,Guayatá,Maíz Amarillo Tradicional,2021,1
+15332,Güicán,Maíz Amarillo Tradicional,2021,1
+15332,Güicán,Trigo,2021,1
+15332,Güicán,Trigo,2021,1
+15367,Jenesano,Maíz Amarillo Tradicional,2021,0
+15368,Jericó,Cebada,2021,0
+15368,Jericó,Cebada,2021,0
+15368,Jericó,Maíz Amarillo Tradicional,2021,0
+15368,Jericó,Maíz Amarillo Tradicional,2021,1
+15368,Jericó,Trigo,2021,0
+15368,Jericó,Trigo,2021,0
+15377,Labranzagrande,Maíz Amarillo Tradicional,2021,1
+15380,La Capilla,Maíz Amarillo Tradicional,2021,1
+15380,La Capilla,Maíz Amarillo Tradicional,2021,1
+15401,La Victoria,Maíz Amarillo Tradicional,2021,1
+15401,La Victoria,Maíz Amarillo Tradicional,2021,1
+15403,La Uvita,Cebada,2021,2
+15403,La Uvita,Maíz Amarillo Tradicional,2021,0
+15403,La Uvita,Maíz Amarillo Tradicional,2021,1
+15403,La Uvita,Trigo,2021,1
+15403,La Uvita,Trigo,2021,3
+15407,Villa de Leiva,Maíz Amarillo Tradicional,2021,2
+15407,Villa de Leiva,Maíz Amarillo Tradicional,2021,1
+15425,Macanal,Maíz Amarillo Tradicional,2021,1
+15442,Maripí,Maíz Amarillo Tradicional,2021,1
+15442,Maripí,Maíz Amarillo Tradicional,2021,1
+15455,Miraflores,Maíz Amarillo Tradicional,2021,1
+15455,Miraflores,Maíz Amarillo Tradicional,2021,1
+15464,Mongua,Maíz Amarillo Tradicional,2021,0
+15466,Monguí,Maíz Amarillo Tradicional,2021,0
+15466,Monguí,Quinua,2021,2
+15466,Monguí,Quinua,2021,2
+15466,Monguí,Trigo,2021,2
+15469,Moniquirá,Maíz Amarillo Tradicional,2021,1
+15469,Moniquirá,Maíz Amarillo Tradicional,2021,1
+15476,Motavita,Maíz Amarillo Tradicional,2021,0
+15476,Motavita,Maíz Amarillo Tradicional,2021,1
+15476,Motavita,Trigo,2021,1
+15480,Muzo,Maíz Amarillo Tradicional,2021,1
+15480,Muzo,Maíz Amarillo Tradicional,2021,1
+15491,Nobsa,Cebada,2021,4
+15491,Nobsa,Cebada,2021,3
+15491,Nobsa,Maíz Amarillo Tradicional,2021,2
+15491,Nobsa,Maíz Amarillo Tradicional,2021,2
+15494,Nuevo Colón,Maíz Amarillo Tradicional,2021,3
+15500,Oicatá,Cebada,2021,2
+15500,Oicatá,Cebada,2021,2
+15500,Oicatá,Maíz Amarillo Tradicional,2021,1
+15500,Oicatá,Maíz Amarillo Tradicional,2021,1
+15500,Oicatá,Trigo,2021,2
+15500,Oicatá,Trigo,2021,2
+15507,Otanche,Maíz Amarillo Tradicional,2021,1
+15507,Otanche,Maíz Amarillo Tradicional,2021,1
+15511,Pachavita,Maíz Amarillo Tradicional,2021,1
+15511,Pachavita,Maíz Amarillo Tradicional,2021,1
+15514,Páez,Maíz Amarillo Tradicional,2021,1
+15516,Paipa,Avena,2021,2
+15516,Paipa,Avena,2021,2
+15516,Paipa,Maíz Amarillo Tradicional,2021,0
+15518,Pajarito,Maíz Amarillo Tradicional,2021,1
+15522,Panqueba,Maíz Amarillo Tradicional,2021,1
+15522,Panqueba,Trigo,2021,2
+15522,Panqueba,Trigo,2021,2
+15531,Pauna,Maíz Amarillo Tradicional,2021,1
+15531,Pauna,Maíz Amarillo Tradicional,2021,1
+15533,Paya,Maíz Amarillo Tradicional,2021,0
+15537,Paz de Río,Cebada,2021,1
+15537,Paz de Río,Cebada,2021,1
+15537,Paz de Río,Maíz Amarillo Tradicional,2021,0
+15537,Paz de Río,Trigo,2021,1
+15537,Paz de Río,Trigo,2021,1
+15550,Pisba,Maíz Amarillo Tradicional,2021,0
+15572,Puerto Boyacá,Arroz Secano Manual,2021,5
+15572,Puerto Boyacá,Arroz Secano Manual,2021,3
+15572,Puerto Boyacá,Maíz Amarillo Tradicional,2021,2
+15572,Puerto Boyacá,Maíz Amarillo Tradicional,2021,2
+15580,Quípama,Maíz Amarillo Tradicional,2021,1
+15580,Quípama,Maíz Amarillo Tradicional,2021,1
+15599,Ramiriquí,Maíz Amarillo Tradicional,2021,1
+15599,Ramiriquí,Maíz Amarillo Tradicional,2021,0
+15600,Ráquira,Maíz Amarillo Tradicional,2021,1
+15600,Ráquira,Maíz Amarillo Tradicional,2021,1
+15621,Rondón,Maíz Amarillo Tradicional,2021,0
+15621,Rondón,Maíz Amarillo Tradicional,2021,0
+15632,Saboyá,Maíz Amarillo Tradicional,2021,1
+15646,Samacá,Cebada,2021,2
+15646,Samacá,Maíz Amarillo Tradicional,2021,1
+15646,Samacá,Maíz Amarillo Tradicional,2021,0
+15660,San Eduardo,Maíz Amarillo Tecnificado,2021,0
+15660,San Eduardo,Maíz Amarillo Tradicional,2021,0
+15664,San José de Pare,Maíz Amarillo Tradicional,2021,2
+15664,San José de Pare,Maíz Amarillo Tradicional,2021,1
+15667,San Luis de Gaceno,Maíz Amarillo Tradicional,2021,0
+15667,San Luis de Gaceno,Maíz Amarillo Tradicional,2021,1
+15673,San Mateo,Maíz Amarillo Tecnificado,2021,2
+15673,San Mateo,Maíz Amarillo Tecnificado,2021,2
+15673,San Mateo,Maíz Amarillo Tradicional,2021,1
+15673,San Mateo,Maíz Blanco Tecnificado,2021,1
+15673,San Mateo,Maíz Blanco Tecnificado,2021,2
+15673,San Mateo,Trigo,2021,1
+15676,San Miguel de Sema,Maíz Amarillo Tradicional,2021,1
+15676,San Miguel de Sema,Maíz Amarillo Tradicional,2021,1
+15681,San Pablo de Borbur,Maíz Amarillo Tradicional,2021,1
+15681,San Pablo de Borbur,Maíz Amarillo Tradicional,2021,0
+15686,Santana,Maíz Amarillo Tradicional,2021,1
+15686,Santana,Maíz Amarillo Tradicional,2021,1
+15690,Santa María,Maíz Amarillo Tradicional,2021,0
+15690,Santa María,Maíz Amarillo Tradicional,2021,0
+15693,Santa Rosa de Viterbo,Maíz Amarillo Tradicional,2021,0
+15696,Santa Sofía,Maíz Amarillo Tradicional,2021,1
+15720,Sativanorte,Cebada,2021,1
+15720,Sativanorte,Cebada,2021,1
+15720,Sativanorte,Maíz Amarillo Tradicional,2021,1
+15720,Sativanorte,Maíz Amarillo Tradicional,2021,1
+15720,Sativanorte,Trigo,2021,1
+15720,Sativanorte,Trigo,2021,1
+15723,Sativasur,Cebada,2021,1
+15723,Sativasur,Maíz Amarillo Tradicional,2021,2
+15723,Sativasur,Trigo,2021,1
+15723,Sativasur,Trigo,2021,1
+15740,Siachoque,Avena,2021,2
+15740,Siachoque,Avena,2021,2
+15740,Siachoque,Cebada,2021,2
+15740,Siachoque,Cebada,2021,2
+15740,Siachoque,Maíz Amarillo Tradicional,2021,2
+15740,Siachoque,Maíz Amarillo Tradicional,2021,1
+15740,Siachoque,Quinua,2021,2
+15740,Siachoque,Quinua,2021,2
+15753,Soatá,Cebada,2021,1
+15753,Soatá,Maíz Amarillo Tradicional,2021,2
+15753,Soatá,Maíz Amarillo Tradicional,2021,2
+15753,Soatá,Trigo,2021,1
+15753,Soatá,Trigo,2021,1
+15755,Socotá,Maíz Amarillo Tradicional,2021,2
+15755,Socotá,Trigo,2021,2
+15755,Socotá,Trigo,2021,2
+15757,Socha,Maíz Amarillo Tradicional,2021,1
+15757,Socha,Maíz Amarillo Tradicional,2021,1
+15757,Socha,Trigo,2021,2
+15759,Sogamoso,Maíz Amarillo Tradicional,2021,0
+15761,Somondoco,Maíz Blanco Tradicional,2021,1
+15762,Sora,Cebada,2021,1
+15762,Sora,Cebada,2021,1
+15762,Sora,Maíz Amarillo Tradicional,2021,1
+15762,Sora,Maíz Amarillo Tradicional,2021,1
+15764,Soracá,Cebada,2021,2
+15764,Soracá,Cebada,2021,2
+15764,Soracá,Maíz Amarillo Tradicional,2021,0
+15764,Soracá,Maíz Amarillo Tradicional,2021,0
+15764,Soracá,Quinua,2021,2
+15764,Soracá,Quinua,2021,2
+15764,Soracá,Trigo,2021,3
+15764,Soracá,Trigo,2021,2
+15774,Susacón,Cebada,2021,1
+15774,Susacón,Cebada,2021,1
+15774,Susacón,Maíz Amarillo Tradicional,2021,2
+15774,Susacón,Maíz Amarillo Tradicional,2021,1
+15774,Susacón,Trigo,2021,1
+15774,Susacón,Trigo,2021,1
+15776,Sutamarchán,Maíz Amarillo Tradicional,2021,2
+15776,Sutamarchán,Maíz Amarillo Tradicional,2021,0
+15778,Sutatenza,Maíz Amarillo Tradicional,2021,2
+15778,Sutatenza,Maíz Amarillo Tradicional,2021,2
+15790,Tasco,Cebada,2021,3
+15790,Tasco,Cebada,2021,3
+15790,Tasco,Maíz Amarillo Tradicional,2021,0
+15790,Tasco,Trigo,2021,3
+15790,Tasco,Trigo,2021,3
+15798,Tenza,Maíz Amarillo Tradicional,2021,2
+15798,Tenza,Maíz Amarillo Tradicional,2021,1
+15804,Tibaná,Maíz Amarillo Tradicional,2021,2
+15804,Tibaná,Maíz Amarillo Tradicional,2021,1
+15806,Tibasosa,Maíz Amarillo Tradicional,2021,1
+15806,Tibasosa,Quinua,2021,2
+15806,Tibasosa,Quinua,2021,2
+15806,Tibasosa,Trigo,2021,1
+15808,Tinjacá,Maíz Amarillo Tradicional,2021,1
+15808,Tinjacá,Maíz Amarillo Tradicional,2021,1
+15810,Tipacoque,Maíz Amarillo Tecnificado,2021,2
+15810,Tipacoque,Maíz Amarillo Tradicional,2021,0
+15810,Tipacoque,Maíz Amarillo Tradicional,2021,1
+15810,Tipacoque,Maíz Blanco Tecnificado,2021,2
+15814,Toca,Cebada,2021,2
+15814,Toca,Cebada,2021,2
+15814,Toca,Maíz Amarillo Tradicional,2021,1
+15814,Toca,Maíz Amarillo Tradicional,2021,0
+15814,Toca,Quinua,2021,3
+15814,Toca,Trigo,2021,2
+15814,Toca,Trigo,2021,3
+15816,Togüí,Maíz Amarillo Tradicional,2021,0
+15816,Togüí,Maíz Amarillo Tradicional,2021,0
+15820,Tópaga,Cebada,2021,3
+15820,Tópaga,Maíz Amarillo Tradicional,2021,0
+15820,Tópaga,Maíz Amarillo Tradicional,2021,1
+15820,Tópaga,Trigo,2021,3
+15820,Tópaga,Trigo,2021,2
+15832,Tununguá,Maíz Amarillo Tradicional,2021,2
+15832,Tununguá,Maíz Amarillo Tradicional,2021,2
+15835,Turmequé,Maíz Amarillo Tradicional,2021,0
+15835,Turmequé,Maíz Amarillo Tradicional,2021,0
+15837,Tuta,Avena,2021,2
+15837,Tuta,Avena,2021,2
+15837,Tuta,Cebada,2021,2
+15837,Tuta,Cebada,2021,2
+15837,Tuta,Maíz Amarillo Tradicional,2021,0
+15837,Tuta,Quinua,2021,1
+15837,Tuta,Quinua,2021,2
+15837,Tuta,Trigo,2021,2
+15839,Tutazá,Cebada,2021,1
+15839,Tutazá,Cebada,2021,1
+15839,Tutazá,Maíz Amarillo Tradicional,2021,0
+15839,Tutazá,Maíz Amarillo Tradicional,2021,0
+15839,Tutazá,Trigo,2021,1
+15839,Tutazá,Trigo,2021,1
+15842,Úmbita,Maíz Amarillo Tradicional,2021,0
+15842,Úmbita,Quinua,2021,1
+15861,Ventaquemada,Maíz Amarillo Tradicional,2021,0
+15861,Ventaquemada,Maíz Amarillo Tradicional,2021,1
+15879,Viracachá,Maíz Amarillo Tradicional,2021,0
+15879,Viracachá,Maíz Amarillo Tradicional,2021,0

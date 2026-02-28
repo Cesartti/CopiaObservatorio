@@ -1,0 +1,220 @@
+/* ============================================================
+   BANNER PRINCIPAL — ESTILO UNIFICADO
+   ============================================================ */
+
+.banner-tecnologia {
+    position: relative;
+    width: 100%;
+    height: 430px;
+    background-size: cover !important;
+    background-position: center !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner-tecnologia::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.45);
+    top: 0;
+    left: 0;
+}
+
+.banner-tecnologia-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: #fff;
+    width: 80%;
+    max-width: 1200px;
+}
+
+.banner-tecnologia h1 {
+    font-weight: 800;
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+}
+
+.banner-tecnologia p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+/* ============================================================
+   TABS TECNOLOGÍA
+   ============================================================ */
+
+/* ===== ESPACIADO TABS BAJO EL BANNER ===== */
+.tecno-tabs-wrapper {
+    margin-top: 20px !important;   /* saca las tabs debajo del banner */
+    padding-top: 0 !important;
+}
+
+/* En pantallas pequeñas el banner es más bajo, así que ajustamos */
+@media (max-width: 768px) {
+    .tecno-tabs-wrapper {
+        margin-top: 10px !important;
+    }
+}
+
+
+.nav-tabs {
+    border-bottom: none;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.tecno-tab {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 160px;
+    padding: 1rem 1.2rem;
+    border-radius: 15px 15px 0 0;
+    background: #ffffff;
+    border: none;
+    font-weight: bold;
+    color: #333;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+    transition: all .25s ease;
+}
+
+.tecno-tab:hover {
+    transform: translateY(-3px);
+}
+
+.tecno-tab.active {
+    background: #005BBB; /* azul tecnología */
+    color: white;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.tecno-tab span {
+    margin-top: 4px;
+    font-size: 14px;
+}
+
+/* ============================================================
+   PANEL CONTENIDO
+   ============================================================ */
+
+.tecno-pane {
+    padding: 2rem;
+    background: #fff;
+    border-radius: 0 0 15px 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+    border: 1px solid rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+}
+
+/* ============================================================
+   LISTAS / CATEGORÍAS
+   ============================================================ */
+
+.category-title {
+    font-size: 1.7rem;
+    font-weight: 800;
+    color: #005BBB;
+    text-align: center;
+}
+
+.category-block {
+    background: #ffffff;
+    border-radius: 12px;
+    border: 1px solid rgba(0,0,0,0.08);
+    padding: 22px;
+    margin-bottom: 18px;
+    transition: 0.25s ease;
+}
+
+.category-block:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+.icon-list-items {
+    list-style: none;
+    padding-left: 0;
+}
+
+.icon-list-items li {
+    padding: 8px 0;
+    font-size: 15px;
+}
+
+.icon-list-items a {
+    color: #005BBB;
+    text-decoration: none;
+}
+
+.icon-list-items a:hover {
+    text-decoration: underline;
+}
+
+/* ============================================================
+   DATALAKE
+   ============================================================ */
+
+.datalake-title {
+    color: #005BBB!important;
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+.datalake-block {
+    background: #fff;
+    border-radius: 12px;
+    padding: 25px;
+    border: 1px solid rgba(0,0,0,0.08);
+    margin-bottom: 20px;
+    transition: .25s ease;
+}
+
+.datalake-block:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+.datalake-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 9px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.datalake-item:last-child {
+    border-bottom: none;
+}
+
+.dl-download-btn {
+    padding: 4px 12px;
+    border-radius: 8px;
+    border: 1px solid #333;
+    background: transparent;
+    transition: .3s ease;
+}
+
+.dl-download-btn:hover {
+    background: #333;
+    color: white;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 768px) {
+    .banner-tecnologia {
+        height: 350px;
+    }
+    .banner-tecnologia h1 {
+        font-size: 2rem;
+    }
+    .tecno-tab {
+        min-width: 120px;
+        padding: .8rem;
+    }
+}

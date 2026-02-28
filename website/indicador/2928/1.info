@@ -1,0 +1,4 @@
+Título:Coeficiente de GINI
+Descripción:El coeficiente de Gini mide la distancia entre la curva de Lorenz y la línea de equidistribución, dependiendo la distancia entre estas, el coeficiente de GINI tomara valores entre cero y uno, donde cero representan igualdad absoluta y uno desigualdad absoluta.
+Vertical:Coeficiente de Gini
+Horizontal:Departamento

@@ -1,0 +1,59 @@
+.indicador-bg {
+  background-image: url("../svg/bg-green.svg");
+}
+
+.section-indicador {
+  background-image: url("../svg/bg-banner-ambiental.png");
+}
+
+.indicador-title {
+  color: #67b432;
+}
+
+.indicadores-section-title h2 {
+  color: #67b432;
+}
+
+.indicadores-section-title .indicador-separator {
+  background-color: #67b432;
+}
+
+ul .icon-list-text {
+  color: #67b432;
+}
+
+ul .icon-list-text::before {
+  background: url("../../assets/svg/icono-ambiental.svg") no-repeat;
+}
+
+.mainColor{color: #398512;}
+.oppositeColor{color: #efe6fc;}
+
+.descripcion {
+	background: #398512;
+}
+
+.clasificacion {
+	border: 2px solid #398512;
+}
+
+.titulo {
+	background: #D7E6D1;
+	color: #398512;
+}
+
+.tabButton, button.active {
+	background-color: #D7E6D1;
+}
+
+.tabButton:hover {
+	background-color: #398512;
+}
+
+button.active {
+	color: #398512;
+}
+
+.footer {
+    background-color: #79B844;
+}

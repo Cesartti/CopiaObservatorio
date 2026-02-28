@@ -1,0 +1,66 @@
+.indicador-bg {
+  background-image: url("../svg/bg-purple.svg");
+}
+
+.section-indicador {
+  background-image: url("../svg/bg-banner-genero.jpeg");
+  padding-top: 200px;
+}
+
+.indicador-title {
+  color: #3E2259;
+  font-size: 2.2rem;
+  font-weight: bold;
+  padding-top: 0;
+  margin-bottom: 0.5rem;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.indicadores-section-title h2 {
+  color: #3E2259;
+}
+
+.indicadores-section-title .indicador-separator {
+  background-color: #3E2259;
+}
+
+ul .icon-list-text {
+  color: #3a3a3a;
+}
+
+ul .icon-list-text::before {
+  background: url("../../assets/svg/icono-social.svg") no-repeat;
+}
+
+.mainColor{color: #3E2259;}
+.oppositeColor{color: #fff2de;}
+
+.descripcion {
+	background: #017d98;
+}
+
+.clasificacion {
+	border: 2px solid #3E2259;
+}
+
+.titulo {
+	background: #cde5ea;
+	color: #3E2259;
+}
+
+.tabButton, button.active {
+	background-color: #A63F95;
+}
+
+.tabButton:hover {
+	background-color: #3E2259;
+}
+
+button.active {
+	color: #3E2259;
+}
+
+.footer {
+    background-color: #3E2259;
+}

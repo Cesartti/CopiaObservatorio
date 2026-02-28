@@ -1,0 +1,414 @@
+.indicador-bg {
+  background-image: url("../svg/bg-purple.svg");
+}
+.section-indicador {
+  background-image: url("../svg/bg-banner-genero.png");
+  padding-top: 200px;
+}
+.indicador-title {
+  color: #3E2259;
+  font-size: 2.2rem;
+  font-weight: bold;
+  padding-top: 0;
+  margin-bottom: 0.5rem;
+  display: inline-block;
+  vertical-align: middle;
+}
+.indicadores-section-title h2 { color: #3E2259; }
+.indicadores-section-title .indicador-separator { background-color: #3E2259; }
+ul .icon-list-text { color: #3a3a3a; }
+ul .icon-list-text::before { background: url("../../assets/svg/icono-social.svg") no-repeat; }
+.mainColor{color: #3E2259;}
+.oppositeColor{color: #fff2de;}
+.descripcion {	background: #017d98; }
+.clasificacion {	border: 2px solid #3E2259; }
+.titulo {	background: #cde5ea;	color: #3E2259; }
+.tabButton, button.active {	background-color: #A63F95; }
+.tabButton:hover {	background-color: #3E2259; }
+button.active {	color: #3E2259; }
+.footer { background-color: #3E2259; }
+
+/* --- MODAL PDF LIGHTBOX --- */
+.modal-backdrop.show {
+  background: rgba(62,34,89,0.45);
+  backdrop-filter: blur(3px);
+  z-index: 1040;
+}
+.modal-content {
+  border-radius: 1.2rem;
+  border: none;
+  box-shadow: 0 8px 40px 0 rgba(62,34,89,0.18);
+}
+.modal-header.bg-institucional-soft {
+  background: #f2e8f8;
+  color: #3E2259;
+  border-bottom: 1.5px solid #ede7f6;
+}
+.modal-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #3E2259;
+  letter-spacing: 0.02em;
+}
+.modal-body {
+  background: #f7f8fa;
+  padding: 0;
+  border-radius: 0 0 1.2rem 1.2rem;
+  min-height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#pdfIframe {
+  width: 100%;
+  height: 75vh;
+  min-height: 480px;
+  border: none;
+  border-radius: 0.9em;
+  background: #fff;
+  box-shadow: 0 2px 12px 0 rgba(62,34,89,0.08);
+  margin: 0;
+}
+@media (max-width: 900px) {
+  .modal-dialog.modal-xl { max-width: 98vw !important; }
+  .modal-body { min-height: 55vh !important; }
+  #pdfIframe { min-height: 45vh !important; }
+}
+@media (max-width: 500px) {
+  #pdfIframe { min-height: 36vh !important; }
+  .modal-title { font-size: 1.02rem; }
+}
+
+/* --- Ajustes generales para enlaces PDF en acordeones --- */
+.pdf-link {
+  color: #a63f95;
+  font-weight: 500;
+  text-decoration: none;
+  border-bottom: 1.5px dotted #a63f95;
+  transition: color .12s, border .12s;
+  cursor: pointer;
+}
+.pdf-link:hover, .pdf-link:focus {
+  color: #3E2259;
+  border-bottom: 2px solid #a63f95;
+  text-decoration: underline;
+}
+.pdf-link::before {
+  content: "📄 ";
+  font-size: 1.15em;
+  vertical-align: middle;
+  margin-right: 2px;
+  opacity: 0.7;
+}
+
+/* Seguimiento */
+.accordion-item { border-bottom: 1px solid #ddd; margin-top: 10px; }
+.accordion-button {
+    width: 100%; text-align: left; background-color: #f9f9f9;
+    border: none; outline: none; padding: 10px; font-size: 16px; cursor: pointer; font-weight: bold;
+}
+.accordion-button.active { background-color: #ddd; }
+.accordion-content { display: none; padding: 10px; background-color: #f1f1f1; }
+
+/* --- Estilos visuales para bloques de seguimiento --- */
+.seguimiento-block {
+  background: #fff;
+  border-radius: 1.1em;
+  box-shadow: 0 2px 14px 0 rgba(62,34,89,0.08);
+  padding: 28px 32px 22px 32px;
+  margin-bottom: 2.2rem;
+  border-left: 7px solid #a63f95;
+  transition: box-shadow .18s;
+  position: relative;
+}
+.seguimiento-block:hover { box-shadow: 0 8px 30px 0 rgba(62,34,89,0.13);}
+.seguimiento-title {
+  background: #ede7f6;
+  color: #3E2259;
+  font-size: 1.23rem;
+  font-weight: bold;
+  padding: 14px 22px 14px 48px;
+  border-radius: 0.9em 0.9em 0 0;
+  margin: -28px -32px 22px -32px;
+  border-bottom: 1.5px solid #a63f9533;
+  letter-spacing: 0.01em;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+}
+.seguimiento-title .icon {
+  font-size: 1.55em;
+  color: #a63f95;
+  margin-right: 10px;
+}
+.seguimiento-list,
+.seguimiento-doc-list {
+  margin: 0 0 10px 0;
+  padding-left: 0;
+  list-style: none;
+}
+.seguimiento-list li,
+.seguimiento-doc-list li {
+  margin-bottom: 12px;
+  font-size: 1.07rem;
+  padding-left: 2.3em;
+  position: relative;
+}
+.seguimiento-list li .icon,
+.seguimiento-doc-list li .icon {
+  position: absolute;
+  left: 0;
+  top: 2px;
+  font-size: 1.2em;
+  color: #a63f95;
+  opacity: .82;
+}
+.seguimiento-municipios span {
+  font-weight: 700;
+  font-size: 1.08rem;
+}
+.seguimiento-green { color: #34a853; }
+.seguimiento-yellow { color: #ffb300; }
+.seguimiento-purple { color: #a63f95; }
+.seguimiento-blue { color: #1e88e5; }
+.btn-link {
+  color: #a63f95 !important;
+  font-weight: 600;
+  text-decoration: underline;
+}
+.btn-link:hover { color: #3E2259 !important; }
+@media (max-width: 768px) {
+  .seguimiento-block { padding: 12px 7px 13px 7px; }
+  .seguimiento-title { font-size: 1rem; padding: 10px 7px 10px 36px; margin: -12px -7px 13px -7px;}
+}
+
+/* Timeline para pasos de la Ruta */
+.timeline {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  margin-bottom: 2em;
+  margin-top: 1em;
+}
+.timeline-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 120px;
+  max-width: 150px;
+}
+.timeline-icon {
+  font-size: 2.6rem;
+  background: linear-gradient(135deg, #f3e4f5 75%, #fff 100%);
+  color: #a63f95;
+  border-radius: 50%;
+  width: 58px;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 7px;
+  box-shadow: 0 2px 10px #a63f9524;
+  border: 2px solid #a63f95;
+  margin-bottom: 0.6em;
+  transition: background 0.15s, color 0.15s;
+}
+.timeline-step b {
+  color: #3E2259;
+  font-size: 1.06em;
+  font-weight: 700;
+}
+@media (max-width: 800px) {
+  .timeline { flex-direction: column; gap: 1.2em; align-items: center; }
+  .timeline-step { max-width: none; min-width: 80px;}
+}
+
+/* Lista de PDFs */
+.pdf-list {
+  list-style: none;
+  padding-left: 0;
+}
+.pdf-list li {
+  margin-bottom: 0.7em;
+  font-size: 1.1em;
+}
+.pdf-list .pdf-link {
+  color: #a63f95;
+  text-decoration: underline;
+  font-weight: 500;
+}
+.pdf-list .pdf-link:hover { color: #3E2259; }
+
+/* Alerta informativa institucional */
+.alert-info {
+  background: #e6f4fa;
+  color: #2370a6;
+  border: 1.5px solid #a6d8eb;
+  font-size: 1.09rem;
+  font-weight: 500;
+  border-radius: 0.7em;
+  box-shadow: 0 2px 12px #92b4db24;
+}
+
+/* Acordeón: bloques sectoriales */
+.accordion-item {
+  border: none;
+  margin-bottom: 0.7em;
+  background: transparent;
+}
+.accordion-button {
+  background: #f2f2f2;
+  color: #222;
+  font-weight: bold;
+  font-size: 1.19em;
+  border-radius: 0.5em 0.5em 0 0;
+  border: none;
+  padding: 13px 16px;
+  outline: none;
+  display: flex;
+  align-items: center;
+  transition: background 0.18s;
+  gap: 8px;
+}
+.accordion-button.active, .accordion-button:focus {
+  background: #a63f95;
+  color: #fff;
+}
+.accordion-content {
+  background: #fcfcfc;
+  border-radius: 0 0 0.5em 0.5em;
+  border-top: 1px solid #dedede;
+  padding: 18px 22px 12px 22px;
+  box-shadow: 0 2px 10px #a63f9522;
+}
+
+/* Lista con iconos */
+.icon-list {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 1em;
+}
+.icon-list-text {
+  margin-left: 0.8em;
+  margin-bottom: 0.7em;
+  display: flex;
+  align-items: flex-start;
+  font-size: 1.08em;
+  font-weight: 500;
+  color: #3E2259;
+  position: relative;
+}
+.icon-list-text:before {
+  content: '';
+  display: inline-block;
+  width: 1.6em;
+  height: 1.6em;
+  margin-right: 0.5em;
+  background: url('../../assets/svg/icon-user.svg') no-repeat center center/contain;
+  vertical-align: middle;
+  opacity: 0.72;
+}
+/* Colores distintos según sección */
+.accordion-content.salud .icon-list-text:before { background-image: url('../../assets/svg/icon-health.svg'); }
+.accordion-content.proteccion .icon-list-text:before { background-image: url('../../assets/svg/icon-protection.svg'); }
+.accordion-content.justicia .icon-list-text:before { background-image: url('../../assets/svg/icon-justice.svg'); }
+.accordion-content.salud { border-left: 6px solid #009688; }
+.accordion-content.proteccion { border-left: 6px solid #fbc02d; }
+.accordion-content.justicia { border-left: 6px solid #c62828; }
+
+/* Botones PDF modernos */
+.pdf-link.btn {
+  display: inline-flex;
+  align-items: center;
+  font-weight: 600;
+  border-radius: 0.5em;
+  padding: 8px 18px;
+  margin-right: 9px;
+  margin-bottom: 8px;
+  box-shadow: 0 1px 7px #a63f9515;
+  border: none;
+  background: #a63f95;
+  color: #fff !important;
+  text-decoration: none;
+  transition: background 0.14s, box-shadow 0.14s;
+  font-size: 1em;
+}
+.pdf-link.btn.btn-secondary {
+  background: #3E2259;
+}
+.pdf-link.btn:hover, .pdf-link.btn:focus {
+  background: #872681;
+  color: #fff;
+  text-decoration: underline;
+}
+.pdf-link .fas {
+  margin-left: 0.8em;
+  font-size: 1.13em;
+}
+
+/* Info grid */
+.info-grid {
+  display: grid;
+  grid-template-columns: 230px 1fr;
+  gap: 12px 18px;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+.info-label {
+  font-weight: 600;
+  color: #722472;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  min-width: 170px;
+  font-size: 1.08rem;
+}
+.info-value {
+  color: #232323;
+  font-weight: 700;
+  font-size: 1.07rem;
+  line-height: 1.32;
+  letter-spacing: .01em;
+}
+@media (max-width: 700px) {
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+  .info-label, .info-value {
+    font-size: 1rem;
+    min-width: unset;
+  }
+}
+.btn-institucional {
+  background: #d147b8;
+  color: #fff;
+  border: none;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 8px 22px;
+  margin-right: 8px;
+  margin-bottom: 6px;
+  box-shadow: 0 2px 8px #e4a8e2a8;
+  transition: background .13s;
+}
+.btn-institucional2 {
+  background: #6a2982;
+  color: #fff;
+  border: none;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 8px 22px;
+  margin-right: 8px;
+  margin-bottom: 6px;
+  box-shadow: 0 2px 8px #b8a8e2a8;
+  transition: background .13s;
+}
+.btn-institucional:hover {
+  background: #be349d;
+  color: #fff;
+}
+.btn-institucional2:hover {
+  background: #4a205f;
+  color: #fff;
+}

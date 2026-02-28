@@ -1,0 +1,126 @@
+.main-body {
+  font-family: "Open Sans", "Arial Narrow", Arial, sans-serif;
+  transition: all ease-in-out 300ms;
+}
+
+.home-bg {
+  background-image: url("../pictures/home-bg.jpg");
+  min-height: 90vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.home-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.parr-title {
+  font-family: "Quicksand", sans-serif;
+  font-weight: 700;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.elementor-fake {
+  margin: 0 150px;
+}
+
+.parr {
+  text-align: justify;
+}
+
+.section-text {
+  max-width: 810px;
+  margin: 0 auto;
+}
+
+.section-text .desc .title {
+  font-family: "Quicksand", sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.section-text .desc p {
+  font-family: "Open Sans";
+  font-size: 0.75rem;
+}
+
+.section-text .icon img {
+  width: 100%;
+  max-width: 150px;
+}
+
+.picture-container {
+  /* height: 80vh;
+  max-height: 420px; */
+}
+
+.div-1 {
+  overflow: hidden;
+}
+
+.div-1 img {
+  height: 130%;
+  position: relative;
+  /* top: 0px; */
+  left: -40%;
+  bottom: 30%;
+}
+
+.div-2,
+.div-3 {
+  overflow: hidden;
+  margin-right: -15px;
+}
+
+.div-2 img,
+.div-3 img {
+  width: calc(100% + 15px);
+}
+
+.div-4 {
+  background-image: url("../pictures/Asset\ 5-100.jpg");
+  height: 30vh;
+  min-height: 320px;
+  display: block;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: -159px;
+  margin-top: 1rem;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #67b432;
+}
+
+footer .sponsors {
+  padding: 3rem 2rem;
+  background-color: #47b14b;
+}
+
+footer .sponsors img {
+  height: auto;
+  width: 100%;
+}
+
+footer .footer-social {
+  width: 100%;
+  max-width: 240px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 48px 0;
+}
+
+footer .footer-social .footer-social-item .svg-baseline svg {
+  width: auto;
+  height: 48px;
+  fill: #65af58;
+}

@@ -1,0 +1,328 @@
+/* ==========================================================================
+   OBSERVATORIO DE GÉNERO – ESTILOS OFICIALES
+   Versión ajustada para indic-genero.php
+========================================================================== */
+
+:root {
+    --gen-morado: #6a1b9a;
+    --gen-morado-light: #8e24aa;
+    --gen-morado-bg: #f3e5f5;
+    --gen-blanco: #ffffff;
+    --gen-texto: #2f2f2f;
+    --gen-gris: #999999;
+}
+
+/* ==========================================================================
+   BANNER SUPERIOR
+========================================================================== */
+
+.banner-social-wrapper {
+    position: relative;
+    width: 100%;
+    height: 260px;
+    overflow: hidden;
+}
+
+.banner-genero {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.banner-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 2;
+}
+
+.banner-social-text {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--gen-blanco);
+    z-index: 3;
+    padding: 0 1rem;
+}
+
+.banner-social-text .titulo-banner {
+    font-size: 2.4rem;
+    font-weight: 800;
+    margin: 0;
+}
+
+.banner-social-text .subtitulo-banner {
+    font-size: 1.1rem;
+    margin-top: 8px;
+}
+
+/* Responsive banner */
+@media (max-width: 768px) {
+    .banner-social-wrapper {
+        height: 190px;
+    }
+
+    .banner-genero,
+    .banner-overlay {
+        height: 190px !important;
+    }
+
+    .banner-social-text .titulo-banner {
+        font-size: 1.8rem;
+    }
+
+    .banner-social-text .subtitulo-banner {
+        font-size: 0.95rem;
+    }
+}
+
+/* ==========================================================================
+   CONTENEDOR PRINCIPAL
+========================================================================== */
+
+#main-body.main-body.container {
+    max-width: 1200px;
+}
+
+/* ==========================================================================
+   TABS 9 DIMENSIONES
+========================================================================== */
+
+.genero-tabs {
+    border-bottom: 1px solid #e0e0e0;
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+}
+
+.genero-tabs .nav-item {
+    flex: 1 1 auto;
+    min-width: 180px;
+}
+
+.genero-tabs .nav-link {
+    font-weight: 600;
+    padding: 10px 16px;
+    border-radius: 0 !important;
+    border: none !important;
+    border-bottom: 3px solid transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    transition: all 0.25s ease-in-out;
+    font-size: 0.95rem;
+    white-space: nowrap;
+}
+
+/* Iconos */
+.genero-tabs .tab-icon {
+    font-size: 1.1rem;
+}
+
+
+/* -------------------------------
+   TABS MORADOS (no activos)
+--------------------------------*/
+.tab-purple {
+    background: var(--gen-morado);
+    color: #1a1a1a !important; /* Texto visible cuando NO está activo */
+    transition: all 0.25s ease-in-out;
+}
+
+/* Hover en morados */
+.tab-purple:hover {
+    background: var(--gen-morado-light);
+    color: #ffffff !important;   /* Se vuelve blanco al pasar el mouse */
+}
+
+/* -------------------------------
+   TAB MORADO ACTIVO
+--------------------------------*/
+.nav-link.active.tab-purple {
+    background: var(--gen-morado);
+    color: #ffffff !important;   /* Texto blanco cuando está activo */
+    border-bottom: 3px solid var(--gen-morado-light) !important;
+}
+
+
+/* Tabs blancos */
+.tab-white {
+    background: var(--gen-blanco);
+    color: var(--gen-morado) !important;
+    border-inline: 1px solid #e267de !important;
+}
+.tab-white:hover {
+    background: #9a0b95;
+}
+
+/* ESTADO ACTIVO
+   – Mantiene la alternancia de color:
+   morados siguen morados, blancos siguen blancos.
+   Solo reforzamos el subrayado y el contraste.
+*/
+.genero-tabs .nav-link.active {
+    border-bottom-color: var(--gen-morado-light);
+}
+
+/* Activo morado */
+.genero-tabs .nav-link.active.tab-purple {
+    background: var(--gen-morado);
+    color: var(--gen-blanco) !important;
+}
+
+/* Activo blanco */
+.genero-tabs .nav-link.active.tab-white {
+    background: var(--gen-blanco);
+    color: var(--gen-morado) !important;
+}
+
+/* Línea inferior sutil cuando se pierde el borde del panel */
+.genero-tabs + .genero-content {
+    margin-top: 0;
+}
+
+/* Responsive tabs */
+@media (max-width: 992px) {
+    .genero-tabs .nav-item {
+        min-width: 50%;
+    }
+}
+
+@media (max-width: 576px) {
+    .genero-tabs {
+        overflow-x: auto;
+        flex-wrap: nowrap;
+    }
+
+    .genero-tabs .nav-item {
+        flex: 0 0 auto;
+        min-width: 220px;
+    }
+
+    .genero-tabs .nav-link {
+        justify-content: flex-start;
+        padding-inline: 12px;
+        font-size: 0.9rem;
+    }
+}
+
+/* ==========================================================================
+   PANEL DE CONTENIDO
+========================================================================== */
+
+.genero-content .tab-pane {
+    padding: 24px 22px;
+    border: 1px solid #e0e0e0;
+    border-top: none;
+    min-height: 220px;
+    border-radius: 0 0 12px 12px;
+}
+
+/* Panel morado claro */
+.panel-purple {
+    background: var(--gen-morado-bg);
+}
+
+/* Panel blanco */
+.panel-white {
+    background: var(--gen-blanco);
+}
+
+/* Títulos y texto */
+.genero-content h3 {
+    color: var(--gen-morado);
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.genero-content p {
+    color: var(--gen-texto);
+    margin: 0;
+}
+
+/* Mensaje de espacio vacío */
+.genero-content p::before {
+    /* Deja esto si quieres el ícono de advertencia */
+}
+
+/* Pequeño ajuste de margen superior general */
+.indicador-title {
+    color: var(--gen-morado);
+}
+
+/* ============================================================
+   MODAL INSTITUCIONAL – OBSERVATORIO DE GÉNERO
+============================================================ */
+
+.modal-genero {
+    border-radius: 10px;
+    overflow: hidden;
+    background: #ffffff;
+}
+
+/* HEADER */
+.modal-header-genero {
+    background: var(--gen-morado);
+    color: #fff;
+    border-bottom: none;
+}
+
+.modal-header-genero .modal-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.btn-close-white {
+    filter: invert(1);
+}
+
+/* FOOTER */
+.modal-footer-genero {
+    background: var(--gen-morado-light);
+    border-top: none;
+}
+
+/* IFRAME */
+.iframe-viewer {
+    width: 100%;
+    height: 80vh;
+    display: none; /* oculto hasta que cargue */
+}
+
+/* LOADER */
+.iframe-loader {
+    width: 100%;
+    height: 80vh;
+    background: rgba(0,0,0,0.35);
+    backdrop-filter: blur(2px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+.loader-text {
+    margin-top: 10px;
+    font-size: 1.1rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .iframe-viewer {
+        height: 65vh;
+    }
+    .iframe-loader {
+        height: 65vh;
+    }
+}
+

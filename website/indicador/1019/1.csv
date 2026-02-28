@@ -1,0 +1,845 @@
+geo,Municipio,Desagregación cultivo,Año,Área cosechada(ha)
+15001,Tunja,Arveja,2019,80
+15001,Tunja,Arveja,2019,400
+15022,Almeida,Arveja,2019,3
+15022,Almeida,Arveja,2019,8
+15022,Almeida,Frijol,2019,60
+15047,Aquitania,Arveja,2019,13
+15047,Aquitania,Arveja,2019,12
+15051,Arcabuco,Arveja,2019,8
+15051,Arcabuco,Arveja,2019,6
+15051,Arcabuco,Frijol,2019,4
+15051,Arcabuco,Frijol,2019,4
+15087,Belén,Arveja,2019,13
+15087,Belén,Arveja,2019,15
+15087,Belén,Frijol,2019,9
+15087,Belén,Frijol,2019,3
+15087,Belén,Haba,2019,4
+15087,Belén,Haba,2019,5
+15090,Berbeo,Frijol,2019,15
+15090,Berbeo,Frijol,2019,10
+15092,Betéitiva,Arveja,2019,12
+15092,Betéitiva,Arveja,2019,5
+15092,Betéitiva,Frijol,2019,3
+15092,Betéitiva,Haba,2019,2
+15097,Boavita,Arveja,2019,5
+15097,Boavita,Arveja,2019,10
+15097,Boavita,Frijol,2019,45
+15097,Boavita,Frijol,2019,25
+15104,Boyacá,Arveja,2019,22
+15106,Briceño,Frijol,2019,10
+15106,Briceño,Frijol,2019,20
+15109,Buenavista,Arveja,2019,25
+15109,Buenavista,Arveja,2019,12
+15109,Buenavista,Frijol,2019,40
+15109,Buenavista,Frijol,2019,50
+15109,Buenavista,Habichuela,2019,10
+15109,Buenavista,Habichuela,2019,5
+15114,Busbanzá,Arveja,2019,2
+15114,Busbanzá,Frijol,2019,35
+15131,Caldas,Arveja,2019,35
+15131,Caldas,Arveja,2019,40
+15131,Caldas,Frijol,2019,42
+15131,Caldas,Frijol,2019,40
+15135,Campohermoso,Frijol,2019,15
+15135,Campohermoso,Frijol,2019,64
+15162,Cerinza,Arveja,2019,1
+15162,Cerinza,Arveja,2019,1
+15172,Chinavita,Arveja,2019,2
+15172,Chinavita,Arveja,2019,6
+15172,Chinavita,Frijol,2019,3
+15172,Chinavita,Frijol,2019,17
+15176,Chiquinquirá,Arveja,2019,80
+15176,Chiquinquirá,Arveja,2019,100
+15176,Chiquinquirá,Frijol,2019,60
+15176,Chiquinquirá,Frijol,2019,60
+15176,Chiquinquirá,Haba,2019,10
+15180,Chiscas,Arveja,2019,5
+15180,Chiscas,Arveja,2019,5
+15180,Chiscas,Frijol,2019,32
+15180,Chiscas,Frijol,2019,25
+15180,Chiscas,Haba,2019,5
+15180,Chiscas,Haba,2019,3
+15183,Chita,Arveja,2019,10
+15183,Chita,Arveja,2019,3
+15183,Chita,Frijol,2019,4
+15183,Chita,Haba,2019,4
+15185,Chitaraque,Frijol,2019,58
+15185,Chitaraque,Frijol,2019,55
+15187,Chivatá,Arveja,2019,35
+15187,Chivatá,Arveja,2019,25
+15187,Chivatá,Haba,2019,3
+15189,Ciénega,Arveja,2019,180
+15189,Ciénega,Arveja,2019,180
+15189,Ciénega,Frijol,2019,25
+15189,Ciénega,Frijol,2019,33
+15204,Cómbita,Arveja,2019,30
+15204,Cómbita,Arveja,2019,27
+15204,Cómbita,Frijol,2019,10
+15204,Cómbita,Frijol,2019,7
+15204,Cómbita,Haba,2019,10
+15204,Cómbita,Haba,2019,8
+15212,Coper,Frijol,2019,15
+15212,Coper,Frijol,2019,38
+15215,Corrales,Arveja,2019,4
+15215,Corrales,Arveja,2019,1
+15215,Corrales,Frijol,2019,1
+15215,Corrales,Frijol,2019,0
+15218,Covarachía,Arveja,2019,3
+15218,Covarachía,Arveja,2019,3
+15218,Covarachía,Frijol,2019,250
+15218,Covarachía,Frijol,2019,300
+15224,Cucaita,Arveja,2019,40
+15224,Cucaita,Arveja,2019,55
+15224,Cucaita,Frijol,2019,8
+15224,Cucaita,Frijol,2019,8
+15226,Cuítiva,Arveja,2019,20
+15226,Cuítiva,Arveja,2019,22
+15232,Chíquiza,Arveja,2019,75
+15232,Chíquiza,Arveja,2019,75
+15232,Chíquiza,Frijol,2019,12
+15232,Chíquiza,Frijol,2019,9
+15236,Chivor,Arveja,2019,3
+15236,Chivor,Arveja,2019,2
+15236,Chivor,Frijol,2019,6
+15236,Chivor,Frijol,2019,6
+15238,Duitama,Arveja,2019,2
+15238,Duitama,Arveja,2019,2
+15244,El Cocuy,Frijol,2019,5
+15244,El Cocuy,Haba,2019,5
+15248,El Espino,Arveja,2019,5
+15248,El Espino,Arveja,2019,2
+15248,El Espino,Frijol,2019,10
+15248,El Espino,Frijol,2019,4
+15248,El Espino,Haba,2019,2
+15272,Firavitoba,Arveja,2019,20
+15272,Firavitoba,Arveja,2019,15
+15272,Firavitoba,Frijol,2019,5
+15272,Firavitoba,Frijol,2019,8
+15272,Firavitoba,Haba,2019,1
+15276,Floresta,Arveja,2019,8
+15276,Floresta,Frijol,2019,70
+15293,Gachantivá,Arveja,2019,17
+15293,Gachantivá,Arveja,2019,25
+15296,Gámeza,Arveja,2019,6
+15296,Gámeza,Arveja,2019,12
+15296,Gámeza,Frijol,2019,18
+15296,Gámeza,Haba,2019,10
+15299,Garagoa,Arveja,2019,7
+15299,Garagoa,Arveja,2019,5
+15299,Garagoa,Frijol,2019,34
+15299,Garagoa,Frijol,2019,95
+15299,Garagoa,Habichuela,2019,8
+15299,Garagoa,Habichuela,2019,7
+15317,Guacamayas,Arveja,2019,8
+15317,Guacamayas,Frijol,2019,50
+15322,Guateque,Arveja,2019,9
+15322,Guateque,Arveja,2019,11
+15322,Guateque,Frijol,2019,3
+15322,Guateque,Frijol,2019,26
+15322,Guateque,Garbanzo,2019,1
+15322,Guateque,Habichuela,2019,4
+15325,Guayatá,Frijol,2019,55
+15325,Guayatá,Habichuela,2019,5
+15325,Guayatá,Habichuela,2019,7
+15332,Güicán,Arveja,2019,6
+15332,Güicán,Arveja,2019,6
+15332,Güicán,Frijol,2019,23
+15332,Güicán,Haba,2019,6
+15362,Iza,Arveja,2019,4
+15367,Jenesano,Arveja,2019,20
+15367,Jenesano,Arveja,2019,30
+15367,Jenesano,Frijol,2019,40
+15367,Jenesano,Frijol,2019,20
+15368,Jericó,Arveja,2019,7
+15368,Jericó,Arveja,2019,7
+15368,Jericó,Frijol,2019,7
+15368,Jericó,Frijol,2019,7
+15368,Jericó,Haba,2019,9
+15377,Labranzagrande,Arveja,2019,13
+15377,Labranzagrande,Frijol,2019,19
+15380,La Capilla,Arveja,2019,55
+15380,La Capilla,Arveja,2019,36
+15380,La Capilla,Frijol,2019,17
+15380,La Capilla,Frijol,2019,320
+15380,La Capilla,Habichuela,2019,20
+15380,La Capilla,Habichuela,2019,10
+15401,La Victoria,Frijol,2019,3
+15401,La Victoria,Frijol,2019,1
+15403,La Uvita,Arveja,2019,11
+15403,La Uvita,Arveja,2019,4
+15403,La Uvita,Frijol,2019,25
+15403,La Uvita,Frijol,2019,7
+15403,La Uvita,Haba,2019,8
+15403,La Uvita,Haba,2019,3
+15407,Villa de Leiva,Frijol,2019,9
+15407,Villa de Leiva,Frijol,2019,12
+15425,Macanal,Arveja,2019,11
+15425,Macanal,Arveja,2019,2
+15425,Macanal,Frijol,2019,10
+15425,Macanal,Frijol,2019,350
+15442,Maripí,Arveja,2019,6
+15442,Maripí,Frijol,2019,9
+15455,Miraflores,Arveja,2019,9
+15455,Miraflores,Arveja,2019,9
+15455,Miraflores,Frijol,2019,39
+15455,Miraflores,Frijol,2019,34
+15464,Mongua,Arveja,2019,10
+15464,Mongua,Arveja,2019,17
+15464,Mongua,Haba,2019,42
+15466,Monguí,Arveja,2019,10
+15466,Monguí,Arveja,2019,9
+15466,Monguí,Frijol,2019,1
+15466,Monguí,Haba,2019,5
+15469,Moniquirá,Frijol,2019,82
+15469,Moniquirá,Frijol,2019,40
+15476,Motavita,Arveja,2019,20
+15476,Motavita,Arveja,2019,20
+15476,Motavita,Haba,2019,5
+15480,Muzo,Frijol,2019,34
+15480,Muzo,Frijol,2019,33
+15480,Muzo,Maní,2019,1
+15480,Muzo,Maní,2019,1
+15491,Nobsa,Frijol,2019,10
+15491,Nobsa,Frijol,2019,18
+15491,Nobsa,Haba,2019,2
+15491,Nobsa,Haba,2019,2
+15494,Nuevo Colón,Arveja,2019,20
+15494,Nuevo Colón,Frijol,2019,50
+15494,Nuevo Colón,Haba,2019,6
+15494,Nuevo Colón,Haba,2019,4
+15500,Oicatá,Arveja,2019,5
+15500,Oicatá,Arveja,2019,5
+15507,Otanche,Frijol,2019,7
+15507,Otanche,Frijol,2019,1
+15511,Pachavita,Arveja,2019,16
+15511,Pachavita,Arveja,2019,11
+15511,Pachavita,Frijol,2019,3
+15511,Pachavita,Frijol,2019,130
+15514,Páez,Frijol,2019,14
+15514,Páez,Frijol,2019,14
+15516,Paipa,Arveja,2019,46
+15516,Paipa,Arveja,2019,44
+15516,Paipa,Frijol,2019,8
+15516,Paipa,Frijol,2019,8
+15518,Pajarito,Frijol,2019,12
+15518,Pajarito,Guandul,2019,13
+15522,Panqueba,Frijol,2019,12
+15531,Pauna,Frijol,2019,6
+15531,Pauna,Frijol,2019,2
+15531,Pauna,Habichuela,2019,2
+15531,Pauna,Maní,2019,21
+15531,Pauna,Maní,2019,2
+15533,Paya,Arveja,2019,2
+15533,Paya,Guandul,2019,15
+15537,Paz de Río,Arveja,2019,4
+15537,Paz de Río,Arveja,2019,5
+15537,Paz de Río,Frijol,2019,12
+15542,Pesca,Arveja,2019,120
+15542,Pesca,Arveja,2019,79
+15542,Pesca,Haba,2019,11
+15542,Pesca,Haba,2019,9
+15550,Pisba,Arveja,2019,5
+15550,Pisba,Guandul,2019,4
+15599,Ramiriquí,Arveja,2019,48
+15599,Ramiriquí,Arveja,2019,20
+15599,Ramiriquí,Frijol,2019,18
+15599,Ramiriquí,Haba,2019,0
+15600,Ráquira,Arveja,2019,73
+15600,Ráquira,Arveja,2019,71
+15600,Ráquira,Haba,2019,2
+15600,Ráquira,Haba,2019,2
+15600,Ráquira,Habichuela,2019,11
+15600,Ráquira,Habichuela,2019,11
+15621,Rondón,Arveja,2019,10
+15621,Rondón,Arveja,2019,2
+15621,Rondón,Frijol,2019,5
+15621,Rondón,Frijol,2019,20
+15632,Saboyá,Arveja,2019,370
+15632,Saboyá,Arveja,2019,360
+15646,Samacá,Arveja,2019,198
+15646,Samacá,Arveja,2019,220
+15646,Samacá,Frijol,2019,3
+15660,San Eduardo,Arveja,2019,4
+15660,San Eduardo,Frijol,2019,5
+15660,San Eduardo,Frijol,2019,5
+15664,San José de Pare,Arveja,2019,1
+15664,San José de Pare,Frijol,2019,20
+15664,San José de Pare,Frijol,2019,8
+15664,San José de Pare,Habichuela,2019,1
+15664,San José de Pare,Habichuela,2019,1
+15673,San Mateo,Arveja,2019,10
+15673,San Mateo,Frijol,2019,50
+15673,San Mateo,Frijol,2019,40
+15676,San Miguel de Sema,Arveja,2019,7
+15676,San Miguel de Sema,Arveja,2019,30
+15676,San Miguel de Sema,Frijol,2019,4
+15676,San Miguel de Sema,Frijol,2019,10
+15681,San Pablo de Borbur,Arveja,2019,1
+15681,San Pablo de Borbur,Arveja,2019,1
+15681,San Pablo de Borbur,Frijol,2019,25
+15681,San Pablo de Borbur,Frijol,2019,40
+15681,San Pablo de Borbur,Maní,2019,9
+15681,San Pablo de Borbur,Maní,2019,12
+15686,Santana,Frijol,2019,21
+15686,Santana,Frijol,2019,21
+15690,Santa María,Frijol,2019,5
+15693,Santa Rosa de Viterbo,Arveja,2019,14
+15693,Santa Rosa de Viterbo,Arveja,2019,15
+15696,Santa Sofía,Arveja,2019,4
+15720,Sativanorte,Arveja,2019,10
+15720,Sativanorte,Arveja,2019,11
+15720,Sativanorte,Frijol,2019,3
+15720,Sativanorte,Frijol,2019,4
+15720,Sativanorte,Haba,2019,1
+15720,Sativanorte,Haba,2019,2
+15723,Sativasur,Arveja,2019,7
+15723,Sativasur,Arveja,2019,3
+15723,Sativasur,Frijol,2019,10
+15723,Sativasur,Haba,2019,2
+15740,Siachoque,Arveja,2019,200
+15740,Siachoque,Arveja,2019,200
+15740,Siachoque,Haba,2019,25
+15740,Siachoque,Haba,2019,25
+15753,Soatá,Arveja,2019,11
+15753,Soatá,Arveja,2019,15
+15753,Soatá,Frijol,2019,60
+15753,Soatá,Frijol,2019,60
+15755,Socotá,Arveja,2019,40
+15755,Socotá,Arveja,2019,36
+15755,Socotá,Frijol,2019,38
+15755,Socotá,Frijol,2019,36
+15757,Socha,Arveja,2019,3
+15757,Socha,Arveja,2019,4
+15757,Socha,Frijol,2019,4
+15757,Socha,Frijol,2019,4
+15759,Sogamoso,Arveja,2019,45
+15759,Sogamoso,Arveja,2019,35
+15759,Sogamoso,Frijol,2019,7
+15759,Sogamoso,Frijol,2019,10
+15759,Sogamoso,Haba,2019,5
+15759,Sogamoso,Haba,2019,1
+15761,Somondoco,Frijol,2019,4
+15761,Somondoco,Frijol,2019,14
+15762,Sora,Arveja,2019,11
+15762,Sora,Arveja,2019,16
+15763,Sotaquirá,Arveja,2019,16
+15763,Sotaquirá,Frijol,2019,14
+15763,Sotaquirá,Haba,2019,6
+15764,Soracá,Arveja,2019,70
+15764,Soracá,Arveja,2019,120
+15774,Susacón,Arveja,2019,12
+15774,Susacón,Arveja,2019,7
+15774,Susacón,Frijol,2019,10
+15774,Susacón,Frijol,2019,10
+15776,Sutamarchán,Arveja,2019,10
+15776,Sutamarchán,Arveja,2019,13
+15778,Sutatenza,Arveja,2019,13
+15778,Sutatenza,Frijol,2019,39
+15778,Sutatenza,Frijol,2019,39
+15778,Sutatenza,Habichuela,2019,3
+15778,Sutatenza,Habichuela,2019,2
+15790,Tasco,Arveja,2019,11
+15790,Tasco,Arveja,2019,10
+15790,Tasco,Frijol,2019,18
+15790,Tasco,Frijol,2019,1
+15790,Tasco,Haba,2019,3
+15798,Tenza,Arveja,2019,20
+15798,Tenza,Arveja,2019,10
+15798,Tenza,Frijol,2019,8
+15798,Tenza,Frijol,2019,114
+15798,Tenza,Habichuela,2019,24
+15798,Tenza,Habichuela,2019,18
+15804,Tibaná,Arveja,2019,60
+15804,Tibaná,Arveja,2019,40
+15804,Tibaná,Frijol,2019,25
+15804,Tibaná,Frijol,2019,25
+15806,Tibasosa,Arveja,2019,15
+15808,Tinjacá,Arveja,2019,9
+15808,Tinjacá,Arveja,2019,7
+15808,Tinjacá,Frijol,2019,9
+15808,Tinjacá,Frijol,2019,4
+15808,Tinjacá,Habichuela,2019,12
+15808,Tinjacá,Habichuela,2019,4
+15810,Tipacoque,Frijol,2019,15
+15810,Tipacoque,Frijol,2019,12
+15814,Toca,Arveja,2019,85
+15814,Toca,Arveja,2019,75
+15816,Togüí,Frijol,2019,11
+15816,Togüí,Frijol,2019,5
+15820,Tópaga,Arveja,2019,12
+15820,Tópaga,Arveja,2019,4
+15822,Tota,Arveja,2019,108
+15822,Tota,Arveja,2019,148
+15822,Tota,Haba,2019,15
+15822,Tota,Haba,2019,15
+15832,Tununguá,Frijol,2019,12
+15832,Tununguá,Frijol,2019,5
+15835,Turmequé,Arveja,2019,14
+15835,Turmequé,Arveja,2019,14
+15835,Turmequé,Frijol,2019,30
+15835,Turmequé,Frijol,2019,35
+15837,Tuta,Arveja,2019,4
+15837,Tuta,Arveja,2019,3
+15839,Tutazá,Arveja,2019,13
+15839,Tutazá,Arveja,2019,8
+15839,Tutazá,Frijol,2019,4
+15839,Tutazá,Frijol,2019,2
+15839,Tutazá,Haba,2019,5
+15839,Tutazá,Haba,2019,3
+15842,Úmbita,Arveja,2019,25
+15842,Úmbita,Arveja,2019,36
+15842,Úmbita,Frijol,2019,55
+15842,Úmbita,Frijol,2019,50
+15842,Úmbita,Haba,2019,10
+15861,Ventaquemada,Arveja,2019,5
+15861,Ventaquemada,Arveja,2019,20
+15861,Ventaquemada,Frijol,2019,1
+15861,Ventaquemada,Frijol,2019,6
+15879,Viracachá,Arveja,2019,10
+15879,Viracachá,Arveja,2019,13
+15897,Zetaquirá,Frijol,2019,120
+15837,Tuta,Arveja,2020,10
+15837,Tuta,Arveja,2020,8
+15837,Tuta,Frijol,2020,6
+15839,Tutazá,Arveja,2020,14
+15839,Tutazá,Arveja,2020,8
+15839,Tutazá,Frijol,2020,3
+15839,Tutazá,Frijol,2020,2
+15839,Tutazá,Haba,2020,5
+15839,Tutazá,Haba,2020,3
+15842,Úmbita,Arveja,2020,18
+15842,Úmbita,Arveja,2020,16
+15842,Úmbita,Frijol,2020,51
+15842,Úmbita,Frijol,2020,43
+15842,Úmbita,Haba,2020,10
+15861,Ventaquemada,Arveja,2020,14
+15861,Ventaquemada,Arveja,2020,20
+15861,Ventaquemada,Frijol,2020,2
+15861,Ventaquemada,Frijol,2020,6
+15879,Viracachá,Arveja,2020,10
+15879,Viracachá,Arveja,2020,13
+15897,Zetaquirá,Frijol,2020,132
+15001,Tunja,Arveja,2021,28
+15001,Tunja,Arveja,2021,280
+15022,Almeida,Arveja,2021,5
+15022,Almeida,Arveja,2021,5
+15022,Almeida,Frijol,2021,65
+15047,Aquitania,Arveja,2021,20
+15047,Aquitania,Arveja,2021,17
+15047,Aquitania,Frijol,2021,29
+15047,Aquitania,Frijol,2021,28
+15047,Aquitania,Habichuela,2021,6
+15047,Aquitania,Habichuela,2021,5
+15051,Arcabuco,Arveja,2021,7
+15051,Arcabuco,Arveja,2021,6
+15051,Arcabuco,Frijol,2021,3
+15051,Arcabuco,Frijol,2021,2
+15087,Belén,Arveja,2021,16
+15087,Belén,Arveja,2021,14
+15087,Belén,Frijol,2021,10
+15087,Belén,Frijol,2021,4
+15087,Belén,Haba,2021,4
+15087,Belén,Haba,2021,4
+15090,Berbeo,Frijol,2021,5
+15090,Berbeo,Frijol,2021,5
+15092,Betéitiva,Arveja,2021,13
+15092,Betéitiva,Arveja,2021,3
+15092,Betéitiva,Frijol,2021,12
+15092,Betéitiva,Frijol,2021,2
+15092,Betéitiva,Haba,2021,3
+15097,Boavita,Arveja,2021,15
+15097,Boavita,Arveja,2021,30
+15097,Boavita,Frijol,2021,100
+15097,Boavita,Frijol,2021,30
+15104,Boyacá,Arveja,2021,20
+15106,Briceño,Frijol,2021,2
+15106,Briceño,Frijol,2021,25
+15109,Buenavista,Arveja,2021,14
+15109,Buenavista,Arveja,2021,15
+15109,Buenavista,Frijol,2021,50
+15109,Buenavista,Frijol,2021,53
+15109,Buenavista,Habichuela,2021,10
+15109,Buenavista,Habichuela,2021,6
+15114,Busbanzá,Arveja,2021,2
+15114,Busbanzá,Frijol,2021,35
+15131,Caldas,Arveja,2021,45
+15131,Caldas,Arveja,2021,35
+15131,Caldas,Frijol,2021,25
+15131,Caldas,Frijol,2021,15
+15135,Campohermoso,Frijol,2021,26
+15135,Campohermoso,Frijol,2021,74
+15162,Cerinza,Arveja,2021,23
+15162,Cerinza,Arveja,2021,27
+15162,Cerinza,Frijol,2021,11
+15162,Cerinza,Frijol,2021,4
+15172,Chinavita,Arveja,2021,5
+15172,Chinavita,Arveja,2021,9
+15172,Chinavita,Frijol,2021,4
+15172,Chinavita,Frijol,2021,22
+15172,Chinavita,Habichuela,2021,4
+15172,Chinavita,Habichuela,2021,2
+15176,Chiquinquirá,Arveja,2021,90
+15176,Chiquinquirá,Arveja,2021,120
+15176,Chiquinquirá,Frijol,2021,40
+15176,Chiquinquirá,Frijol,2021,54
+15176,Chiquinquirá,Haba,2021,9
+15180,Chiscas,Arveja,2021,7
+15180,Chiscas,Arveja,2021,7
+15180,Chiscas,Frijol,2021,15
+15180,Chiscas,Frijol,2021,30
+15180,Chiscas,Haba,2021,3
+15180,Chiscas,Haba,2021,4
+15183,Chita,Arveja,2021,6
+15183,Chita,Arveja,2021,4
+15183,Chita,Frijol,2021,24
+15183,Chita,Frijol,2021,2
+15183,Chita,Haba,2021,4
+15185,Chitaraque,Frijol,2021,29
+15185,Chitaraque,Frijol,2021,1
+15187,Chivatá,Arveja,2021,15
+15187,Chivatá,Arveja,2021,18
+15187,Chivatá,Haba,2021,0
+15189,Ciénega,Arveja,2021,158
+15189,Ciénega,Arveja,2021,190
+15189,Ciénega,Frijol,2021,20
+15189,Ciénega,Frijol,2021,25
+15204,Cómbita,Arveja,2021,30
+15204,Cómbita,Arveja,2021,40
+15204,Cómbita,Frijol,2021,8
+15204,Cómbita,Frijol,2021,8
+15204,Cómbita,Haba,2021,10
+15204,Cómbita,Haba,2021,10
+15212,Coper,Frijol,2021,20
+15212,Coper,Frijol,2021,50
+15215,Corrales,Arveja,2021,7
+15218,Covarachía,Arveja,2021,2
+15218,Covarachía,Arveja,2021,3
+15218,Covarachía,Frijol,2021,48
+15218,Covarachía,Frijol,2021,196
+15224,Cucaita,Arveja,2021,17
+15224,Cucaita,Arveja,2021,140
+15224,Cucaita,Frijol,2021,7
+15224,Cucaita,Frijol,2021,5
+15226,Cuítiva,Arveja,2021,15
+15226,Cuítiva,Arveja,2021,20
+15232,Chíquiza,Arveja,2021,85
+15232,Chíquiza,Arveja,2021,73
+15232,Chíquiza,Frijol,2021,10
+15232,Chíquiza,Frijol,2021,7
+15236,Chivor,Arveja,2021,3
+15236,Chivor,Arveja,2021,9
+15236,Chivor,Frijol,2021,3
+15236,Chivor,Frijol,2021,4
+15238,Duitama,Arveja,2021,2
+15238,Duitama,Arveja,2021,4
+15244,El Cocuy,Frijol,2021,3
+15244,El Cocuy,Haba,2021,3
+15248,El Espino,Arveja,2021,3
+15248,El Espino,Arveja,2021,4
+15248,El Espino,Frijol,2021,8
+15248,El Espino,Frijol,2021,4
+15248,El Espino,Haba,2021,1
+15248,El Espino,Haba,2021,1
+15272,Firavitoba,Arveja,2021,15
+15272,Firavitoba,Arveja,2021,6
+15272,Firavitoba,Frijol,2021,3
+15272,Firavitoba,Frijol,2021,3
+15272,Firavitoba,Haba,2021,2
+15276,Floresta,Arveja,2021,4
+15276,Floresta,Frijol,2021,35
+15293,Gachantivá,Arveja,2021,19
+15293,Gachantivá,Arveja,2021,35
+15296,Gámeza,Arveja,2021,6
+15296,Gámeza,Arveja,2021,18
+15296,Gámeza,Frijol,2021,18
+15296,Gámeza,Haba,2021,10
+15299,Garagoa,Arveja,2021,6
+15299,Garagoa,Arveja,2021,5
+15299,Garagoa,Frijol,2021,24
+15299,Garagoa,Frijol,2021,95
+15299,Garagoa,Habichuela,2021,7
+15299,Garagoa,Habichuela,2021,7
+15317,Guacamayas,Arveja,2021,9
+15317,Guacamayas,Frijol,2021,52
+15322,Guateque,Arveja,2021,7
+15322,Guateque,Arveja,2021,12
+15322,Guateque,Frijol,2021,3
+15322,Guateque,Frijol,2021,25
+15322,Guateque,Garbanzo,2021,1
+15322,Guateque,Habichuela,2021,3
+15325,Guayatá,Frijol,2021,91
+15325,Guayatá,Habichuela,2021,3
+15325,Guayatá,Habichuela,2021,5
+15332,Güicán,Arveja,2021,4
+15332,Güicán,Arveja,2021,5
+15332,Güicán,Frijol,2021,30
+15332,Güicán,Haba,2021,5
+15362,Iza,Arveja,2021,6
+15367,Jenesano,Arveja,2021,14
+15367,Jenesano,Arveja,2021,30
+15367,Jenesano,Frijol,2021,35
+15367,Jenesano,Frijol,2021,15
+15368,Jericó,Arveja,2021,9
+15368,Jericó,Arveja,2021,7
+15368,Jericó,Frijol,2021,6
+15368,Jericó,Frijol,2021,5
+15368,Jericó,Haba,2021,8
+15377,Labranzagrande,Arveja,2021,9
+15377,Labranzagrande,Arveja,2021,16
+15377,Labranzagrande,Frijol,2021,25
+15380,La Capilla,Arveja,2021,5
+15380,La Capilla,Arveja,2021,36
+15380,La Capilla,Frijol,2021,12
+15380,La Capilla,Frijol,2021,320
+15380,La Capilla,Habichuela,2021,19
+15380,La Capilla,Habichuela,2021,10
+15401,La Victoria,Frijol,2021,2
+15401,La Victoria,Frijol,2021,1
+15403,La Uvita,Arveja,2021,10
+15403,La Uvita,Arveja,2021,8
+15403,La Uvita,Frijol,2021,10
+15403,La Uvita,Frijol,2021,10
+15403,La Uvita,Haba,2021,4
+15403,La Uvita,Haba,2021,3
+15407,Villa de Leiva,Frijol,2021,13
+15407,Villa de Leiva,Frijol,2021,10
+15425,Macanal,Arveja,2021,13
+15425,Macanal,Arveja,2021,14
+15425,Macanal,Frijol,2021,32
+15425,Macanal,Frijol,2021,458
+15442,Maripí,Arveja,2021,3
+15442,Maripí,Frijol,2021,10
+15455,Miraflores,Arveja,2021,8
+15455,Miraflores,Arveja,2021,10
+15455,Miraflores,Frijol,2021,43
+15455,Miraflores,Frijol,2021,45
+15464,Mongua,Arveja,2021,11
+15464,Mongua,Arveja,2021,16
+15464,Mongua,Haba,2021,40
+15466,Monguí,Arveja,2021,15
+15466,Monguí,Arveja,2021,15
+15466,Monguí,Frijol,2021,1
+15466,Monguí,Haba,2021,5
+15469,Moniquirá,Frijol,2021,87
+15469,Moniquirá,Frijol,2021,25
+15476,Motavita,Arveja,2021,30
+15476,Motavita,Arveja,2021,30
+15476,Motavita,Haba,2021,5
+15480,Muzo,Frijol,2021,7
+15480,Muzo,Frijol,2021,8
+15480,Muzo,Maní,2021,3
+15480,Muzo,Maní,2021,3
+15491,Nobsa,Frijol,2021,20
+15491,Nobsa,Frijol,2021,14
+15491,Nobsa,Haba,2021,2
+15491,Nobsa,Haba,2021,1
+15494,Nuevo Colón,Arveja,2021,22
+15494,Nuevo Colón,Frijol,2021,50
+15494,Nuevo Colón,Haba,2021,7
+15494,Nuevo Colón,Haba,2021,7
+15500,Oicatá,Arveja,2021,5
+15500,Oicatá,Arveja,2021,4
+15507,Otanche,Frijol,2021,1
+15507,Otanche,Frijol,2021,1
+15511,Pachavita,Arveja,2021,16
+15511,Pachavita,Arveja,2021,11
+15511,Pachavita,Frijol,2021,3
+15511,Pachavita,Frijol,2021,140
+15514,Páez,Frijol,2021,10
+15514,Páez,Frijol,2021,10
+15516,Paipa,Arveja,2021,38
+15516,Paipa,Arveja,2021,8
+15516,Paipa,Frijol,2021,6
+15516,Paipa,Frijol,2021,1
+15518,Pajarito,Frijol,2021,8
+15518,Pajarito,Guandul,2021,5
+15522,Panqueba,Frijol,2021,12
+15531,Pauna,Frijol,2021,12
+15531,Pauna,Frijol,2021,5
+15531,Pauna,Habichuela,2021,3
+15531,Pauna,Habichuela,2021,2
+15531,Pauna,Maní,2021,20
+15531,Pauna,Maní,2021,3
+15533,Paya,Arveja,2021,1
+15533,Paya,Frijol,2021,9
+15533,Paya,Guandul,2021,9
+15537,Paz de Río,Arveja,2021,6
+15537,Paz de Río,Arveja,2021,8
+15537,Paz de Río,Frijol,2021,11
+15537,Paz de Río,Frijol,2021,2
+15542,Pesca,Arveja,2021,118
+15542,Pesca,Haba,2021,24
+15550,Pisba,Arveja,2021,6
+15550,Pisba,Frijol,2021,1
+15550,Pisba,Guandul,2021,5
+15599,Ramiriquí,Arveja,2021,34
+15599,Ramiriquí,Arveja,2021,25
+15599,Ramiriquí,Frijol,2021,22
+15599,Ramiriquí,Frijol,2021,23
+15599,Ramiriquí,Haba,2021,0
+15600,Ráquira,Arveja,2021,71
+15600,Ráquira,Arveja,2021,70
+15600,Ráquira,Haba,2021,2
+15600,Ráquira,Haba,2021,2
+15600,Ráquira,Habichuela,2021,7
+15600,Ráquira,Habichuela,2021,10
+15621,Rondón,Arveja,2021,9
+15621,Rondón,Arveja,2021,6
+15621,Rondón,Frijol,2021,11
+15621,Rondón,Frijol,2021,21
+15632,Saboyá,Arveja,2021,180
+15632,Saboyá,Arveja,2021,255
+15646,Samacá,Arveja,2021,103
+15646,Samacá,Arveja,2021,190
+15646,Samacá,Frijol,2021,3
+15660,San Eduardo,Arveja,2021,1
+15660,San Eduardo,Arveja,2021,1
+15660,San Eduardo,Frijol,2021,2
+15660,San Eduardo,Frijol,2021,2
+15664,San José de Pare,Frijol,2021,5
+15664,San José de Pare,Frijol,2021,1
+15664,San José de Pare,Habichuela,2021,1
+15664,San José de Pare,Habichuela,2021,1
+15673,San Mateo,Arveja,2021,3
+15673,San Mateo,Arveja,2021,5
+15673,San Mateo,Frijol,2021,50
+15673,San Mateo,Frijol,2021,70
+15676,San Miguel de Sema,Arveja,2021,8
+15676,San Miguel de Sema,Arveja,2021,16
+15676,San Miguel de Sema,Frijol,2021,10
+15676,San Miguel de Sema,Frijol,2021,10
+15681,San Pablo de Borbur,Arveja,2021,2
+15681,San Pablo de Borbur,Frijol,2021,22
+15681,San Pablo de Borbur,Frijol,2021,40
+15681,San Pablo de Borbur,Maní,2021,13
+15681,San Pablo de Borbur,Maní,2021,30
+15686,Santana,Frijol,2021,22
+15686,Santana,Frijol,2021,23
+15690,Santa María,Frijol,2021,6
+15690,Santa María,Frijol,2021,10
+15693,Santa Rosa de Viterbo,Arveja,2021,21
+15693,Santa Rosa de Viterbo,Arveja,2021,25
+15696,Santa Sofía,Arveja,2021,6
+15720,Sativanorte,Arveja,2021,3
+15720,Sativanorte,Arveja,2021,3
+15720,Sativanorte,Frijol,2021,3
+15720,Sativanorte,Frijol,2021,1
+15720,Sativanorte,Haba,2021,1
+15720,Sativanorte,Haba,2021,1
+15723,Sativasur,Arveja,2021,1
+15723,Sativasur,Arveja,2021,0
+15723,Sativasur,Frijol,2021,1
+15723,Sativasur,Haba,2021,2
+15740,Siachoque,Arveja,2021,220
+15740,Siachoque,Arveja,2021,200
+15740,Siachoque,Haba,2021,25
+15740,Siachoque,Haba,2021,20
+15753,Soatá,Arveja,2021,15
+15753,Soatá,Arveja,2021,15
+15753,Soatá,Frijol,2021,65
+15753,Soatá,Frijol,2021,40
+15755,Socotá,Arveja,2021,35
+15755,Socotá,Arveja,2021,32
+15755,Socotá,Frijol,2021,40
+15755,Socotá,Frijol,2021,32
+15757,Socha,Arveja,2021,2
+15757,Socha,Arveja,2021,3
+15757,Socha,Frijol,2021,3
+15757,Socha,Frijol,2021,5
+15759,Sogamoso,Arveja,2021,45
+15759,Sogamoso,Arveja,2021,30
+15759,Sogamoso,Frijol,2021,4
+15759,Sogamoso,Frijol,2021,5
+15759,Sogamoso,Haba,2021,1
+15761,Somondoco,Arveja,2021,5
+15761,Somondoco,Frijol,2021,6
+15761,Somondoco,Frijol,2021,20
+15762,Sora,Arveja,2021,35
+15762,Sora,Arveja,2021,35
+15763,Sotaquirá,Arveja,2021,16
+15763,Sotaquirá,Arveja,2021,5
+15763,Sotaquirá,Frijol,2021,10
+15763,Sotaquirá,Haba,2021,6
+15764,Soracá,Arveja,2021,20
+15764,Soracá,Arveja,2021,119
+15774,Susacón,Arveja,2021,17
+15774,Susacón,Arveja,2021,12
+15774,Susacón,Frijol,2021,10
+15774,Susacón,Frijol,2021,14
+15776,Sutamarchán,Arveja,2021,4
+15776,Sutamarchán,Arveja,2021,10
+15776,Sutamarchán,Frijol,2021,2
+15776,Sutamarchán,Frijol,2021,5
+15776,Sutamarchán,Habichuela,2021,8
+15776,Sutamarchán,Habichuela,2021,5
+15778,Sutatenza,Arveja,2021,10
+15778,Sutatenza,Arveja,2021,42
+15778,Sutatenza,Frijol,2021,20
+15778,Sutatenza,Frijol,2021,42
+15778,Sutatenza,Garbanzo,2021,5
+15778,Sutatenza,Haba,2021,2
+15778,Sutatenza,Habichuela,2021,3
+15778,Sutatenza,Habichuela,2021,3
+15790,Tasco,Arveja,2021,7
+15790,Tasco,Arveja,2021,19
+15790,Tasco,Frijol,2021,11
+15790,Tasco,Haba,2021,2
+15798,Tenza,Arveja,2021,16
+15798,Tenza,Arveja,2021,16
+15798,Tenza,Frijol,2021,8
+15798,Tenza,Frijol,2021,95
+15798,Tenza,Habichuela,2021,20
+15798,Tenza,Habichuela,2021,20
+15804,Tibaná,Arveja,2021,49
+15804,Tibaná,Arveja,2021,49
+15804,Tibaná,Frijol,2021,18
+15804,Tibaná,Frijol,2021,58
+15806,Tibasosa,Arveja,2021,8
+15808,Tinjacá,Arveja,2021,7
+15808,Tinjacá,Arveja,2021,5
+15808,Tinjacá,Frijol,2021,4
+15808,Tinjacá,Frijol,2021,2
+15808,Tinjacá,Habichuela,2021,7
+15808,Tinjacá,Habichuela,2021,2
+15810,Tipacoque,Frijol,2021,5
+15810,Tipacoque,Frijol,2021,2
+15810,Tipacoque,Habichuela,2021,1
+15814,Toca,Arveja,2021,175
+15814,Toca,Arveja,2021,220
+15816,Togüí,Frijol,2021,22
+15816,Togüí,Frijol,2021,2
+15820,Tópaga,Arveja,2021,10
+15820,Tópaga,Arveja,2021,12
+15822,Tota,Arveja,2021,320
+15822,Tota,Arveja,2021,180
+15822,Tota,Haba,2021,10
+15822,Tota,Haba,2021,16
+15832,Tununguá,Frijol,2021,7
+15832,Tununguá,Frijol,2021,5
+15835,Turmequé,Arveja,2021,5
+15835,Turmequé,Arveja,2021,30
+15835,Turmequé,Frijol,2021,30
+15835,Turmequé,Frijol,2021,40
+15835,Turmequé,Haba,2021,4
+15837,Tuta,Arveja,2021,9
+15837,Tuta,Arveja,2021,5
+15837,Tuta,Frijol,2021,5
+15837,Tuta,Frijol,2021,4
+15839,Tutazá,Arveja,2021,8
+15839,Tutazá,Arveja,2021,12
+15839,Tutazá,Frijol,2021,3
+15839,Tutazá,Haba,2021,3
+15839,Tutazá,Haba,2021,2
+15842,Úmbita,Arveja,2021,18
+15842,Úmbita,Arveja,2021,12
+15842,Úmbita,Frijol,2021,50
+15842,Úmbita,Frijol,2021,48
+15842,Úmbita,Haba,2021,6
+15861,Ventaquemada,Arveja,2021,10
+15861,Ventaquemada,Arveja,2021,25
+15861,Ventaquemada,Frijol,2021,4
+15861,Ventaquemada,Frijol,2021,7
+15879,Viracachá,Arveja,2021,12
+15879,Viracachá,Arveja,2021,14
+15897,Zetaquirá,Frijol,2021,335

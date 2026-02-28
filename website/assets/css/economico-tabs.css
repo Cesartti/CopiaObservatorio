@@ -1,0 +1,29 @@
+  .tab-cards {
+    gap: 20px;
+}
+
+.tab-card {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: 0.3s;
+    border: 3px solid transparent;
+}
+
+.tab-card:hover {
+    transform: translateY(-4px);
+    border-color: #ED9A15;
+}
+
+.tab-card.active {
+    background: #ED9A15;
+    color: #fff;
+    border-color: #c66e00;
+}
+
+.tab-card .icon {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
