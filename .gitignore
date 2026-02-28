@@ -1,1 +1,14 @@
-website
+# Windows / XAMPP / basura
+*.lnk
+*.zip
+.DS_Store
+Thumbs.db
+
+# logs/cache
+storage/
+*.log
+
+# pruebas locales
+test*.php
+tracker.php
+testdb.php
