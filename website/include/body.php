@@ -64,6 +64,11 @@
                             <i class="fa-solid fa-file-lines"></i> Publicaciones
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link <?php if ($current_url === 'estado-observatorio') echo 'active'; ?>" href="estado-observatorio.php">
+                            <i class="fa-solid fa-gauge"></i> Estado de datos
+                        </a>
+                    </li>
                 </ul>
             </div>
             
@@ -93,6 +98,7 @@
                         <li class="<?php if ($current_url === 'indic-tecnologia') echo 'active-link'; ?>"><a href="indic-tecnologia.php">Tecnología e innovación</a></li>
                     </ul>
                 </li>
+                <li class="<?php if ($current_url === 'estado-observatorio') echo 'active-link'; ?>"><a href="estado-observatorio.php">Estado de datos</a></li>
                 <li>
                     <a class="parent-menu collapsed" data-bs-toggle="collapse" href="#collapseMenu2" role="button" aria-expanded="false" aria-controls="collapseMenu2">
                         Boletines
