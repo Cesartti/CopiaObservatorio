@@ -1,0 +1,181 @@
+{
+  "general_news": [
+    {
+      "title": "Lanzamiento del tablero unificado",
+      "summary": "Nueva experiencia para navegar indicadores y contenidos.",
+      "date": "2026-03-01",
+      "url": "#"
+    },
+    {
+      "title": "Boletín trimestral de la Red",
+      "summary": "Publicación con avances por dimensión.",
+      "date": "2026-02-20",
+      "url": "#"
+    }
+  ],
+  "dimension_news": {
+    "economico": [
+      {
+        "title": "Actualización TRM y mercado cambiario",
+        "summary": "Corte diario de variables macro y financieras.",
+        "date": "2026-03-09",
+        "url": "#"
+      },
+      {
+        "title": "Informe de inflación departamental",
+        "summary": "Análisis de IPC y comportamiento sectorial.",
+        "date": "2026-03-03",
+        "url": "#"
+      }
+    ],
+    "social": [
+      {
+        "title": "Panorama social territorial",
+        "summary": "Seguimiento a educación, salud y bienestar.",
+        "date": "2026-03-05",
+        "url": "#"
+      }
+    ],
+    "ambiente": [
+      {
+        "title": "Boletín de calidad del aire",
+        "summary": "Indicadores y evolución mensual por zona.",
+        "date": "2026-03-04",
+        "url": "#"
+      }
+    ],
+    "cti": [
+      {
+        "title": "Mapa de capacidades CTI",
+        "summary": "Actualización de actores y proyectos del ecosistema.",
+        "date": "2026-03-02",
+        "url": "#"
+      }
+    ],
+    "genero": [
+      {
+        "title": "Ruta de atención VBG: actualización",
+        "summary": "Guía de activación y canales de apoyo.",
+        "date": "2026-03-07",
+        "url": "#"
+      }
+    ]
+  },
+  "featured_indicators": {
+    "economico": [
+      "TRM",
+      "IPC",
+      "PIB",
+      "Desempleo"
+    ],
+    "social": [
+      "Pobreza",
+      "Salud",
+      "Educación"
+    ],
+    "ambiente": [
+      "Calidad del aire",
+      "Recurso hídrico"
+    ],
+    "cti": [
+      "Inversión I+D",
+      "Producción científica"
+    ],
+    "genero": [
+      "Violencias",
+      "Autonomía económica",
+      "Participación"
+    ]
+  },
+  "genero_tabs": [
+    {
+      "id": "marco",
+      "label": "Marco institucional",
+      "title": "Marco institucional",
+      "description": "Lineamientos y fundamentos del Observatorio de Género.",
+      "bullets": [
+        "Normativo internacional, nacional y departamental",
+        "Misión y visión institucional",
+        "Propósito y objetivos de seguimiento",
+        "Equipo e integrantes"
+      ]
+    },
+    {
+      "id": "informacion",
+      "label": "Información",
+      "title": "Información",
+      "description": "Bases conceptuales y material de referencia para ciudadanía e instituciones.",
+      "bullets": [
+        "Conceptos clave de género y enfoque diferencial",
+        "Fuentes oficiales y documentos guía",
+        "Glosario ciudadano y términos frecuentes"
+      ]
+    },
+    {
+      "id": "seguimiento",
+      "label": "Seguimiento",
+      "title": "Seguimiento",
+      "description": "Monitoreo permanente de indicadores y evolución territorial.",
+      "bullets": [
+        "Series históricas por tema",
+        "Comparativos territoriales",
+        "Alertas sobre variaciones relevantes"
+      ]
+    },
+    {
+      "id": "ruta",
+      "label": "Ruta de atención",
+      "title": "Ruta de atención",
+      "description": "Articulación intersectorial para atención integral a víctimas.",
+      "bullets": [
+        "Activación salud-protección-justicia",
+        "Canales de atención y orientación",
+        "Material de apoyo para instituciones"
+      ]
+    },
+    {
+      "id": "atencion",
+      "label": "Atención integral",
+      "title": "Atención integral",
+      "description": "Acciones y servicios para respuesta oportuna con enfoque de derechos.",
+      "bullets": [
+        "Acceso sin barreras administrativas",
+        "Acompañamiento psicosocial",
+        "Restablecimiento y garantía de derechos"
+      ]
+    },
+    {
+      "id": "politica",
+      "label": "Política pública",
+      "title": "Política pública",
+      "description": "Marco programático y seguimiento a compromisos de política.",
+      "bullets": [
+        "Planes y programas vigentes",
+        "Metas y resultados por periodo",
+        "Reportes de implementación"
+      ]
+    },
+    {
+      "id": "campanas",
+      "label": "Campañas y publicaciones",
+      "title": "Campañas y publicaciones",
+      "description": "Estrategias de comunicación y contenidos pedagógicos.",
+      "bullets": [
+        "Campañas de prevención",
+        "Boletines temáticos",
+        "Piezas informativas y material pedagógico"
+      ]
+    },
+    {
+      "id": "reportes",
+      "label": "Reportes sociales",
+      "title": "Reportes sociales",
+      "description": "Documentos analíticos construidos desde evidencia y percepción territorial.",
+      "bullets": [
+        "Encuestas de percepción social",
+        "Análisis de barreras institucionales",
+        "Recomendaciones para toma de decisión"
+      ]
+    }
+  ]
+}

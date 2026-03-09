@@ -1,0 +1,17 @@
+:root{--dark:#0f1f32;--bg:#f4f7fc}
+body{font-family:Inter,Segoe UI,sans-serif;background:var(--bg);color:#182433}
+.market-strip{background:#111;color:#fff;overflow:hidden;border-bottom:2px solid #2bd67b}
+.market-strip__track{display:flex;gap:2rem;white-space:nowrap;animation:ticker 28s linear infinite;padding:.45rem 1rem;font-size:.85rem}
+.market-item{display:flex;gap:.6rem}.up{color:#3ddb84}.down{color:#ff5c5c}
+@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.portal-header{background:var(--dark);color:#fff}.portal-nav a{color:#d7e2f5;text-decoration:none;padding:.35rem .65rem;border-radius:999px}.portal-nav a.active,.portal-nav a:hover{background:#ffffff22;color:#fff}
+.hero h2{font-size:2.1rem;font-weight:700}.chip{background:#e8eefb;color:#1d3870;padding:.4rem .8rem;border-radius:999px;font-size:.8rem}
+.quick-panel{background:#fff;padding:1rem;border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,.08)}
+.search-results{max-height:260px;overflow:auto}.search-item{border-top:1px solid #eceff5;padding:.6rem 0}.search-item:first-child{border-top:0}
+.section-head h2{font-weight:700}.section-head p{color:#5d6b80}
+.obs-card{background:#fff;border-radius:14px;padding:1rem;border-top:6px solid var(--obs-color);box-shadow:0 10px 28px rgba(0,0,0,.08);height:100%}
+.obs-card__icon{width:40px;height:40px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;background:var(--obs-accent);color:#fff;margin-bottom:.5rem}
+.news-band{background:linear-gradient(120deg,#0b3f66,#1b7d80)}
+.news-card{background:#ffffff;border-radius:12px;padding:1rem;height:100%}.news-card span{font-size:.75rem;color:#0a4c78;font-weight:700;text-transform:uppercase}
+
+.brand-logo{width:44px;height:44px;object-fit:contain;background:#fff;border-radius:8px;padding:4px}
