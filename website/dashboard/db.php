@@ -5,6 +5,9 @@ $DB_NAME = "observatorio_boyaca";
 $DB_USER = "observa_user";
 $DB_PASS = "Observa2025*";
 
+$pdo = null;
+$db_error = null;
+
 try {
     $pdo = new PDO(
         "mysql:host=$DB_HOST;dbname=$DB_NAME;charset=utf8mb4",
@@ -15,5 +18,5 @@ try {
         ]
     );
 } catch (PDOException $e) {
-    die("Error de conexión a la base de datos");
+    $db_error = "No se pudo conectar a la base de datos del dashboard. Revise credenciales o cree la BD local.";
 }

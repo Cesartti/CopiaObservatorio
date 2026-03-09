@@ -41,7 +41,7 @@ $pretty = json_encode($current, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
 <div class="container py-4">
   <div class="d-flex justify-content-between align-items-center mb-3">
     <h1 class="h4">Administración de contenido (Noticias/Indicadores)</h1>
-    <a class="btn btn-outline-secondary btn-sm" href="/dashboard/index.php">Volver al dashboard</a>
+    <a class="btn btn-outline-secondary btn-sm" href="<?= htmlspecialchars(app_url('website/dashboard/index.php')); ?>">Volver al dashboard</a>
   </div>
   <p class="text-muted">Edite el JSON para actualizar noticias generales, noticias por dimensión e indicadores destacados del nuevo frontend.</p>
 

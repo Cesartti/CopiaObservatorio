@@ -46,6 +46,19 @@ $tableroUrlBySlug = [
     'genero' => 'indic-genero.php',
 ];
 $tableroUrl = $tableroUrlBySlug[$slug] ?? 'estado-observatorio.php';
+
+$contentPath = __DIR__ . '/data/content.json';
+$contentData = [];
+if (file_exists($contentPath)) {
+    $contentData = json_decode(file_get_contents($contentPath), true);
+    if (!is_array($contentData)) {
+        $contentData = [];
+    }
+}
+$genderExtraTabs = [];
+if ($genderMode && isset($contentData['genero_tabs']) && is_array($contentData['genero_tabs'])) {
+    $genderExtraTabs = $contentData['genero_tabs'];
+}
 ?>
 <!doctype html>
 <html lang="es">
@@ -154,6 +167,11 @@ $tableroUrl = $tableroUrlBySlug[$slug] ?? 'estado-observatorio.php';
             <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#p-hojavida" type="button">Hoja de vida</button></li>
             <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#p-categorias" type="button">Categorías</button></li>
             <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#p-descargas" type="button">Descarga de datos</button></li>
+            <?php if ($genderMode): ?>
+                <?php foreach ($genderExtraTabs as $extra): ?>
+                    <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#p-g-<?= htmlspecialchars($extra['id']) ?>" type="button"><?= htmlspecialchars($extra['label']) ?></button></li>
+                <?php endforeach; ?>
+            <?php endif; ?>
         </ul>
 
         <div class="tab-content">
@@ -200,6 +218,23 @@ $tableroUrl = $tableroUrlBySlug[$slug] ?? 'estado-observatorio.php';
                     </ul>
                 </article>
             </div>
+            <?php if ($genderMode): ?>
+                <?php foreach ($genderExtraTabs as $extra): ?>
+                    <div class="tab-pane fade" id="p-g-<?= htmlspecialchars($extra['id']) ?>">
+                        <article class="content-card">
+                            <h3><?= htmlspecialchars($extra['title']) ?></h3>
+                            <p><?= htmlspecialchars($extra['description']) ?></p>
+                            <?php if (!empty($extra['bullets']) && is_array($extra['bullets'])): ?>
+                                <ul class="k-list">
+                                    <?php foreach ($extra['bullets'] as $bullet): ?>
+                                        <li><?= htmlspecialchars($bullet) ?></li>
+                                    <?php endforeach; ?>
+                                </ul>
+                            <?php endif; ?>
+                        </article>
+                    </div>
+                <?php endforeach; ?>
+            <?php endif; ?>
         </div>
     </section>
 
@@ -302,7 +337,6 @@ $tableroUrl = $tableroUrlBySlug[$slug] ?? 'estado-observatorio.php';
         </section>
 
         <div class="mt-3 d-flex flex-wrap gap-2">
-            <a class="btn btn-outline-dark btn-sm" href="indic-genero.php#barreras-quees">Ver versión completa histórica</a>
             <a class="btn btn-dark btn-sm" href="mapa-fondomujer.html">Explorar recursos relacionados</a>
         </div>
     </section>

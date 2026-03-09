@@ -1,31 +1,19 @@
 <?php
-header("Content-Type: application/json");
+header('Content-Type: application/json; charset=utf-8');
+require_once __DIR__ . '/../db.php';
 
-$pdo = new PDO("mysql:host=127.0.0.1;dbname=observatorio_boyaca;charset=utf8mb4",
-               "observa_user", "Observa2025*",
-               [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
+if (!$pdo) {
+    echo json_encode([
+        'paises' => [],
+        'ciudades' => [],
+        'heat' => [],
+        'warning' => $db_error ?? 'Sin conexión a base de datos'
+    ], JSON_UNESCAPED_UNICODE);
+    exit;
+}
 
-// 1. agrupar por país
-$paises = $pdo->query("SELECT pais, COUNT(*) as total 
-                       FROM accesos_observatorio 
-                       WHERE pais <> '' 
-                       GROUP BY pais")->fetchAll(PDO::FETCH_ASSOC);
+$paises = $pdo->query("SELECT pais, COUNT(*) as total FROM accesos_observatorio WHERE pais <> '' GROUP BY pais")->fetchAll(PDO::FETCH_ASSOC);
+$ciudades = $pdo->query("SELECT ciudad, latitud, longitud, COUNT(*) as total FROM accesos_observatorio WHERE ciudad <> '' GROUP BY ciudad, latitud, longitud")->fetchAll(PDO::FETCH_ASSOC);
+$heat = $pdo->query("SELECT latitud, longitud, 1 as intensity FROM accesos_observatorio WHERE latitud <> '' AND longitud <> ''")->fetchAll(PDO::FETCH_ASSOC);
 
-// 2. agrupar por ciudad
-$ciudades = $pdo->query("SELECT ciudad, latitud, longitud, COUNT(*) as total
-                         FROM accesos_observatorio
-                         WHERE ciudad <> '' 
-                         GROUP BY ciudad")->fetchAll(PDO::FETCH_ASSOC);
-
-// 3. heatmap
-$heat = $pdo->query("SELECT latitud, longitud, 1 as intensity
-                     FROM accesos_observatorio
-                     WHERE latitud <> '' AND longitud <> ''")->fetchAll(PDO::FETCH_ASSOC);
-
-// salida
-echo json_encode([
-    "paises"   => $paises,
-    "ciudades" => $ciudades,
-    "heat"     => $heat
-]);
-
+echo json_encode(['paises'=>$paises, 'ciudades'=>$ciudades, 'heat'=>$heat], JSON_UNESCAPED_UNICODE);

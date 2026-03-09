@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if (array_key_exists($email, $demoUsers) && $demoUsers[$email]['password'] === $password) {
         auth_login($email, $demoUsers[$email]['role']);
-        header('Location: /dashboard/index.php');
+        header('Location: ' . app_url('website/dashboard/index.php'));
         exit;
     }
 

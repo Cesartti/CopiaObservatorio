@@ -25,3 +25,5 @@ body{font-family:Inter,Segoe UI,sans-serif;background:#f6f9ff;color:#1b2a40}
 .two-col{display:grid;grid-template-columns:230px 1fr;gap:1rem;align-items:start}
 .gender-img{width:100%;max-width:230px;border-radius:10px;border:1px solid #e6ecf9}
 @media (max-width: 768px){.two-col{grid-template-columns:1fr}.gender-img{max-width:100%}}
+
+.k-list{padding-left:1rem;margin:0}.k-list li{margin:.35rem 0}

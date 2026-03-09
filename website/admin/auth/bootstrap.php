@@ -1,6 +1,33 @@
 <?php
 session_start();
 
+function app_base_url()
+{
+    $script = $_SERVER['SCRIPT_NAME'] ?? '';
+    $pos = strpos($script, '/website/');
+    if ($pos !== false) {
+        return substr($script, 0, $pos);
+    }
+
+    return '';
+}
+
+function app_url($path)
+{
+    $base = rtrim(app_base_url(), '/');
+    $clean = ltrim($path, '/');
+
+    if ($base !== '') {
+        return $base . '/' . $clean;
+    }
+
+    if (str_starts_with($clean, 'website/')) {
+        return '/' . substr($clean, strlen('website/'));
+    }
+
+    return '/' . $clean;
+}
+
 function auth_user()
 {
     return $_SESSION['auth_user'] ?? null;
@@ -28,7 +55,7 @@ function auth_logout()
 function auth_require_login()
 {
     if (!auth_user()) {
-        header('Location: /admin/auth/login.php');
+        header('Location: ' . app_url('website/admin/auth/login.php'));
         exit;
     }
 }
