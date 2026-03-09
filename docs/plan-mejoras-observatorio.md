@@ -1,36 +1,24 @@
-# Plan inicial de mejoras: CopiaObservatorio
+# Plan maestro de modernización · Red de Observatorios de Boyacá
 
-## Diagnóstico rápido del estado actual
+## Resumen ejecutivo
+La modernización se plantea en **dos velocidades**:
+1. **Continuidad operativa**: mantener páginas actuales en PHP sin interrumpir publicación.
+2. **Nueva experiencia unificada**: construir portal madre + micrositios por observatorio + backoffice con roles y trazabilidad.
 
-1. El portal depende de archivos manuales (`indicador/<id>/*.info` y `*.csv`) para construir visualizaciones, lo que ralentiza actualizaciones y aumenta riesgo de inconsistencias.
-2. Existen listados estáticos extensos en páginas de dimensión (por ejemplo, social), difíciles de mantener y de explicar a ciudadanía.
-3. Hay conexión a base de datos en el módulo `dashboard`, pero no está integrada al flujo principal de publicación de indicadores.
-4. El frontend no ofrece una vista-resumen clara del estado de datos por dimensión, como sí ocurre en observatorios más maduros.
+## Entregables construidos en esta iteración
+- Diagnóstico técnico y deuda priorizada (`docs/modernizacion/fase1-diagnostico.md`).
+- Arquitectura objetivo de plataforma, URLs, entidades y flujo editorial (`docs/modernizacion/fase2-arquitectura-objetivo.md`).
+- Sistema UI/UX base (principios, paletas por observatorio, wireframe textual) (`docs/modernizacion/fase3-ui-ux.md`).
+- Nuevo **home institucional**: `website/red-home.php`.
+- Nuevo **micrositio dinámico por observatorio**: `website/observatorio.php?slug=`.
+- Buscador global inicial: `website/api/search.php`.
+- Autenticación base para admin y protección de dashboard: `website/admin/auth/*` + ajuste en `website/dashboard/index.php`.
+- Esquema de base de datos ampliado para usuarios, roles, contenidos, workflow y auditoría (`database/schema.sql`).
 
-## Mejoras propuestas (frontend + datos)
-
-### 1) Capa de datos
-- Migrar de archivos sueltos a un modelo relacional de indicadores + observaciones.
-- Mantener ETL incremental (diario/semanal) desde fuentes oficiales hacia tablas normalizadas.
-- Exponer APIs JSON para frontend (catálogo, series, metadatos, fuentes).
-- Agregar control de calidad: fechas de corte, versionado de cargas y validaciones de duplicados.
-
-### 2) Capa frontend
-- Implementar una vista de “estado del observatorio” con métricas de cobertura por dimensión.
-- Reducir navegación manual por listados largos e incorporar búsqueda/filtros.
-- Estandarizar fichas de indicador con lenguaje ciudadano: qué mide, por qué importa, cómo leer la gráfica.
-- Mejorar accesibilidad: contraste, labels de formularios, estructura semántica y textos legibles.
-
-### 3) Prioridad de implementación sugerida
-1. API de catálogo de indicadores.
-2. API de datos por gráfico/serie.
-3. Nueva vista de resumen y exploración de indicadores.
-4. Migración progresiva de páginas de dimensión para consumir API.
-5. ETL automático hacia base de datos y retiro gradual de CSV manuales.
-
-## Tareas iniciadas en este cambio
-
-- API `api/indicators.php` para listar indicadores de forma automática.
-- API `api/indicator_data.php` para exponer datos tabulares por indicador y gráfico.
-- Pantalla `estado-observatorio.php` con resumen y buscador de indicadores.
-- Esquema base SQL (`database/schema.sql`) para comenzar la automatización de datos.
+## Fases siguientes (ejecución recomendada)
+1. Migrar noticias/documentos/datasets reales a tablas SQL.
+2. Conectar formularios de administración (CRUD + workflow).
+3. Unificar diseño de todas las páginas legadas a componentes del nuevo sistema.
+4. Integrar ETL para actualización automatizada de series.
+5. Habilitar mapas territoriales y filtros avanzados por municipio/provincia.
+6. Fortalecer seguridad (CSRF, rate limit, política de contraseñas, recuperación segura).

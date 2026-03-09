@@ -17,6 +17,11 @@
             <div class="collapse navbar-collapse" id="navbarObservatorio">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
+                        <a class="nav-link <?php if ($current_url === 'red-home') echo 'active'; ?>" href="red-home.php">
+                            <i class="fa-solid fa-layer-group"></i> Nueva Red
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link <?php if ($current_url === 'about') echo 'active'; ?>" href="about.php">
                             <i class="fa-solid fa-users"></i> Nosotros
                         </a>
@@ -84,6 +89,7 @@
         <div class="mySideNav">
             <ul class="side-menu">
                 <li><a href="index.php">Inicio</a></li>
+                <li class="<?php if ($current_url === 'red-home') echo 'active-link'; ?>"><a href="red-home.php">Nueva Red</a></li>
                 <li class="<?php if ($current_url === 'about') echo 'active-link'; ?>">
                     <a href="about.php">Nosotros</a>
                 </li>
