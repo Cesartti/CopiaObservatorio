@@ -29,6 +29,15 @@ switch ($current_url) {
     case 'indic-genero':
         $current_css = 'indic-genero';
         break;
+    case 'estado-observatorio':
+        $current_css = 'estado-observatorio';
+        break;
+    case 'red-home':
+        $current_css = 'home';
+        break;
+    case 'observatorio':
+        $current_css = 'home';
+        break;
 }
 ?>
 

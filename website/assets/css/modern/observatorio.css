@@ -1,0 +1,9 @@
+body { font-family: 'Inter', 'Segoe UI', sans-serif; background: #f8fbff; color: #1c2d3f; }
+.obs-header { background: var(--obs-color); }
+.obs-header .back { color: #fff; text-decoration: none; font-weight: 600; }
+.obs-hero { background: linear-gradient(120deg, var(--obs-color), var(--obs-accent)); color: #fff; border-radius: 16px; }
+.kpi { background: #fff; border-radius: 12px; padding: 1rem; box-shadow: 0 8px 20px rgba(0,0,0,.08); height: 100%; }
+.kpi h2 { font-size: 1rem; color: #445; }
+.kpi p { font-size: 1.8rem; font-weight: 700; margin: 0; color: var(--obs-color); }
+.card-block { background: #fff; border-radius: 12px; padding: 1rem; box-shadow: 0 8px 20px rgba(0,0,0,.08); }
+.card-block h2 { font-size: 1.2rem; color: var(--obs-color); }

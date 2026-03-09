@@ -1,0 +1,77 @@
+.estado-observatorio {
+  background: #f5f7fb;
+}
+
+.estado-hero h1 {
+  font-size: 2rem;
+  color: #1f3c88;
+  margin-bottom: .75rem;
+}
+
+.estado-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  height: 100%;
+}
+
+.estado-card h2 {
+  font-size: 1rem;
+  color: #4f4f4f;
+}
+
+.estado-card p {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1f3c88;
+}
+
+.dimension-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.dimension-column {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+.dimension-column h2 {
+  font-size: 1.2rem;
+  text-transform: capitalize;
+  color: #1f3c88;
+}
+
+.dimension-column ul {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.indicator-item {
+  border-top: 1px solid #ececec;
+  padding-top: .75rem;
+  margin-top: .75rem;
+}
+
+.indicator-link {
+  text-decoration: none;
+  color: #222;
+  display: flex;
+  flex-direction: column;
+  gap: .25rem;
+}
+
+.indicator-link:hover {
+  color: #1f3c88;
+}
+
+.indicator-link span {
+  font-size: .85rem;
+  color: #666;
+}
