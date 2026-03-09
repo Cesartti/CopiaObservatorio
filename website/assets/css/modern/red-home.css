@@ -1,0 +1,11 @@
+body { font-family: 'Inter', 'Segoe UI', sans-serif; background: #f4f7fb; color: #112; }
+.topbar { background: #0f2942; color: #fff; }
+.topbar a { color: #dbe8ff; text-decoration: none; }
+.hero h2 { font-size: 2.1rem; font-weight: 700; color: #0f2942; max-width: 780px; }
+.eyebrow { text-transform: uppercase; letter-spacing: .08em; color: #466; font-size: .8rem; }
+.search-results { background: #fff; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,.08); }
+.search-item { padding: .8rem 1rem; border-top: 1px solid #eef2f8; }
+.search-item:first-child { border-top: 0; }
+.obs-card { background: #fff; border-radius: 14px; padding: 1rem; border-top: 6px solid var(--obs-color); box-shadow: 0 10px 28px rgba(0,0,0,.08); height: 100%; }
+.obs-card h3 { color: var(--obs-color); font-size: 1.05rem; }
+.obs-icon { background: var(--obs-accent); color: #fff; width: 36px; height: 36px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; margin-bottom: .5rem; }
