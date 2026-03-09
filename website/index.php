@@ -13,10 +13,6 @@ $observatories = require __DIR__ . '/config/observatories.php';
     <link rel="stylesheet" href="assets/css/modern/portal-pro.css">
 </head>
 <body>
-<div class="market-strip" aria-label="Cinta de indicadores en vivo">
-    <div class="market-strip__track" id="marketTickerTrack"></div>
-</div>
-
 <header class="portal-header">
     <div class="container d-flex flex-wrap justify-content-between align-items-center py-3 gap-3">
         <div>

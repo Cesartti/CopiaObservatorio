@@ -7,6 +7,45 @@ if (!array_key_exists($slug, $observatories)) {
 }
 $obs = $observatories[$slug];
 $economicMode = $slug === 'economico';
+$genderMode = $slug === 'genero';
+
+$heroSlides = [
+    'economico' => [
+        ['title' => 'Coyuntura económica territorial', 'text' => 'Monitoree TRM, inflación, empleo y variables macro en una sola vista.'],
+        ['title' => 'Indicadores de mercado y finanzas', 'text' => 'Panel ejecutivo para análisis rápido de tendencias y variaciones.'],
+        ['title' => 'Noticias y alertas económicas', 'text' => 'Actualidad, boletines y eventos para toma de decisiones.'],
+    ],
+    'social' => [
+        ['title' => 'Bienestar y desarrollo social', 'text' => 'Siga indicadores de salud, educación, empleo y calidad de vida.'],
+        ['title' => 'Enfoque territorial y poblacional', 'text' => 'Analice brechas por municipio, grupos etarios y poblaciones priorizadas.'],
+        ['title' => 'Información útil para ciudadanía', 'text' => 'Exploración simple con contexto para comprender cada indicador.'],
+    ],
+    'ambiente' => [
+        ['title' => 'Estado ambiental del territorio', 'text' => 'Calidad del aire, agua, residuos y biodiversidad en seguimiento permanente.'],
+        ['title' => 'Datos para acción climática', 'text' => 'Indicadores temáticos y trazabilidad para apoyar gestión ambiental.'],
+        ['title' => 'Visualización pública y transparente', 'text' => 'Tarjetas, categorías y descargas para uso ciudadano e institucional.'],
+    ],
+    'cti' => [
+        ['title' => 'Ciencia, tecnología e innovación', 'text' => 'Mida capacidades, proyectos, inversión y resultados del ecosistema CTI.'],
+        ['title' => 'Monitoreo estratégico de capacidades', 'text' => 'Panel con métricas de investigación, talento y transferencia.'],
+        ['title' => 'Conexión entre academia y territorio', 'text' => 'Información para orientar decisiones de política pública e innovación.'],
+    ],
+    'genero' => [
+        ['title' => 'Asuntos de género con enfoque integral', 'text' => 'Brechas, violencias, participación y autonomía con lectura comprensible.'],
+        ['title' => 'Rutas, servicios y seguimiento', 'text' => 'Contenidos de interés ciudadano con enfoque diferencial y territorial.'],
+        ['title' => 'Información para prevención y decisión', 'text' => 'Datos y recursos para instituciones, organizaciones y comunidad.'],
+    ],
+];
+$slides = $heroSlides[$slug] ?? $heroSlides['social'];
+
+$tableroUrlBySlug = [
+    'economico' => 'indic-economico.php',
+    'social' => 'indic-social.php',
+    'ambiente' => 'indic-ambiental.php',
+    'cti' => 'indic-tecnologia.php',
+    'genero' => 'indic-genero.php',
+];
+$tableroUrl = $tableroUrlBySlug[$slug] ?? 'estado-observatorio.php';
 ?>
 <!doctype html>
 <html lang="es">
@@ -14,39 +53,59 @@ $economicMode = $slug === 'economico';
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?= htmlspecialchars($obs['name']) ?> · Red de Observatorios</title>
-    <meta name="description" content="Micrositio de <?= htmlspecialchars($obs['name']) ?> con indicadores, noticias, documentos y datasets.">
+    <meta name="description" content="Micrositio de <?= htmlspecialchars($obs['name']) ?> con tablero, hoja de vida, categorías, noticias y descargas.">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="assets/css/modern/microsite-pro.css">
 </head>
 <body style="--obs-color: <?= htmlspecialchars($obs['color']) ?>; --obs-accent: <?= htmlspecialchars($obs['accent']) ?>;">
-<div class="market-strip <?= $economicMode ? 'market-strip--active' : '' ?>" aria-label="Cinta superior de indicadores">
+<?php if ($economicMode): ?>
+<div class="market-strip market-strip--active" aria-label="Cinta superior de indicadores económicos">
     <div class="market-strip__track" id="marketTickerTrack"></div>
 </div>
+<?php endif; ?>
 
 <header class="obs-header">
     <div class="container d-flex justify-content-between align-items-center py-3 gap-3 flex-wrap">
         <a href="index.php" class="back-link">← Inicio Red</a>
         <nav class="d-flex gap-2 flex-wrap">
-            <a href="estado-observatorio.php">Estado de datos</a>
-            <a href="<?= htmlspecialchars($obs['legacy_url']) ?>">Vista actual</a>
+            <a href="#inicio">Inicio</a>
+            <a href="#tablero">Tablero</a>
+            <a href="#hojavida">Hoja de vida</a>
+            <a href="#categorias">Categorías</a>
+            <a href="#descargas">Descargas</a>
             <a href="admin/auth/login.php">Administración</a>
         </nav>
     </div>
 </header>
 
-<main class="container py-4">
-    <section class="hero p-4 mb-4">
-        <span class="badge rounded-pill text-bg-light mb-2"><?= htmlspecialchars($obs['name']) ?></span>
-        <h1>Micrositio <?= htmlspecialchars($obs['name']) ?></h1>
-        <p><?= htmlspecialchars($obs['description']) ?></p>
+<main class="container py-4" id="inicio">
+    <section id="heroCarousel" class="carousel slide hero-carousel mb-4" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <?php foreach ($slides as $idx => $slide): ?>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="<?= $idx ?>" class="<?= $idx === 0 ? 'active' : '' ?>"></button>
+            <?php endforeach; ?>
+        </div>
+        <div class="carousel-inner">
+            <?php foreach ($slides as $idx => $slide): ?>
+            <div class="carousel-item <?= $idx === 0 ? 'active' : '' ?>">
+                <section class="hero p-4">
+                    <span class="badge rounded-pill text-bg-light mb-2"><?= htmlspecialchars($obs['name']) ?></span>
+                    <h1><?= htmlspecialchars($slide['title']) ?></h1>
+                    <p><?= htmlspecialchars($slide['text']) ?></p>
+                </section>
+            </div>
+            <?php endforeach; ?>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev"><span class="carousel-control-prev-icon"></span></button>
+        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next"><span class="carousel-control-next-icon"></span></button>
     </section>
 
     <?php if ($economicMode): ?>
     <section class="econ-dashboard mb-4">
         <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
             <h2>Panel de coyuntura económica</h2>
-            <small>Maqueta visual tipo dashboard para TRM, tasas, dólar, macro y commodities</small>
+            <small>Diseño tipo dashboard financiero con variables clave</small>
         </div>
         <div class="row g-3">
             <div class="col-lg-8">
@@ -84,15 +143,71 @@ $economicMode = $slug === 'economico';
 
     <section class="row g-3 mb-4">
         <div class="col-md-4"><article class="base-card"><h2>Indicadores</h2><p id="kpi-total">-</p><small>Disponibles en esta dimensión</small></article></div>
-        <div class="col-md-4"><article class="base-card"><h2>Noticias</h2><p>12</p><small>Con flujo editorial</small></article></div>
-        <div class="col-md-4"><article class="base-card"><h2>Documentos</h2><p>38</p><small>Con descarga y metadatos</small></article></div>
+        <div class="col-md-4"><article class="base-card"><h2>Noticias y eventos</h2><p>12</p><small>Actualizaciones y agenda</small></article></div>
+        <div class="col-md-4"><article class="base-card"><h2>Documentos / Datasets</h2><p>38</p><small>Descargables y abiertos</small></article></div>
     </section>
 
-    <section class="row g-3">
+    <section class="tabs-panel mb-4" id="tablero">
+        <h2>Exploración del observatorio</h2>
+        <ul class="nav nav-pills mb-3" role="tablist">
+            <li class="nav-item"><button class="nav-link active" data-bs-toggle="pill" data-bs-target="#p-tablero" type="button">Tablero</button></li>
+            <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#p-hojavida" type="button">Hoja de vida</button></li>
+            <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#p-categorias" type="button">Categorías</button></li>
+            <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#p-descargas" type="button">Descarga de datos</button></li>
+        </ul>
+
+        <div class="tab-content">
+            <div class="tab-pane fade show active" id="p-tablero">
+                <article class="content-card">
+                    <h3>Tablero principal</h3>
+                    <p>Acceda al tablero completo de esta dimensión y sus visualizaciones activas.</p>
+                    <a class="btn btn-dark btn-sm" href="<?= htmlspecialchars($tableroUrl) ?>">Abrir tablero de la dimensión</a>
+                </article>
+            </div>
+            <div class="tab-pane fade" id="p-hojavida">
+                <article class="content-card" id="hojavida">
+                    <h3>Hoja de vida de indicadores</h3>
+                    <p>Definición, metodología, fórmula, periodicidad, cobertura y fuentes.</p>
+                    <div class="mini-grid">
+                        <div><strong>Definición</strong><small>Descripción clara y contexto del indicador</small></div>
+                        <div><strong>Fórmula</strong><small>Expresión de cálculo y unidad de medida</small></div>
+                        <div><strong>Periodicidad</strong><small>Frecuencia de actualización</small></div>
+                        <div><strong>Fuente</strong><small>Entidad responsable y trazabilidad</small></div>
+                    </div>
+                </article>
+            </div>
+            <div class="tab-pane fade" id="p-categorias">
+                <article class="content-card" id="categorias">
+                    <h3>Categorías temáticas</h3>
+                    <div class="cards-grid">
+                        <div class="mini-card">Salud / Bienestar</div>
+                        <div class="mini-card">Economía / Mercado</div>
+                        <div class="mini-card">Territorio / Ambiente</div>
+                        <div class="mini-card">Innovación / Capacidades</div>
+                        <div class="mini-card">Género / Participación</div>
+                        <div class="mini-card">Violencias / Prevención</div>
+                    </div>
+                </article>
+            </div>
+            <div class="tab-pane fade" id="p-descargas">
+                <article class="content-card" id="descargas">
+                    <h3>Centro de descargas</h3>
+                    <p>Archivos abiertos en formatos CSV/XLSX/PDF para uso institucional y ciudadano.</p>
+                    <ul class="download-list">
+                        <li><a href="estado-observatorio.php">Catálogo general de indicadores</a></li>
+                        <li><a href="<?= htmlspecialchars($obs['legacy_url']) ?>">Repositorio de esta dimensión</a></li>
+                        <li><a href="api/indicators.php">API catálogo JSON</a></li>
+                    </ul>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="row g-3 mb-4">
         <div class="col-lg-7">
             <article class="content-card h-100">
                 <div class="d-flex justify-content-between align-items-center mb-2">
-                    <h2>Noticias importantes</h2>
+                    <h2>Noticias y eventos</h2>
                     <a href="#">Ver todas</a>
                 </div>
                 <div class="news-list">
@@ -113,8 +228,26 @@ $economicMode = $slug === 'economico';
             </article>
         </div>
     </section>
+
+    <?php if ($genderMode): ?>
+    <section class="content-card genero-highlight mb-4">
+        <h2>Módulo ampliado de Asuntos de Género</h2>
+        <p>Se conserva y adapta la riqueza informativa de esta dimensión, con enfoque más interactivo y ciudadano.</p>
+        <div class="cards-grid">
+            <div class="mini-card"><strong>Rutas de atención</strong><small>Acceso claro a mecanismos institucionales</small></div>
+            <div class="mini-card"><strong>Violencias basadas en género</strong><small>Indicadores, alertas y contexto</small></div>
+            <div class="mini-card"><strong>Autonomía económica</strong><small>Seguimiento de brechas y participación</small></div>
+            <div class="mini-card"><strong>Cuidado y corresponsabilidad</strong><small>Lectura territorial y poblacional</small></div>
+        </div>
+        <div class="mt-3 d-flex flex-wrap gap-2">
+            <a class="btn btn-outline-dark btn-sm" href="indic-genero.php">Ir al portal de género actual</a>
+            <a class="btn btn-dark btn-sm" href="mapa-fondomujer.html">Explorar recursos relacionados</a>
+        </div>
+    </section>
+    <?php endif; ?>
 </main>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script>window.OBS_SLUG = <?= json_encode($slug) ?>;</script>
 <script src="assets/js/modern/microsite-pro.js" defer></script>
 </body>
