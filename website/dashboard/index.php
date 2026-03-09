@@ -47,6 +47,7 @@ require_once __DIR__ . '/db.php';
       <div class="container-fluid">
         <h1>Dashboard de Accesos – Observatorio de Boyacá</h1>
         <p>Sesión: <?php echo htmlspecialchars($authUser['email']); ?> · Rol: <?php echo htmlspecialchars($authUser['role']); ?></p>
+        <a class="btn btn-sm btn-primary" href="/admin/content/index.php">Gestionar contenido del portal</a>
       </div>
     </section>
 

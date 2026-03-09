@@ -17,3 +17,11 @@ body{font-family:Inter,Segoe UI,sans-serif;background:#f6f9ff;color:#1b2a40}
 .cards-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:.6rem}.mini-card{background:#f4f7fe;border:1px solid #e6ecf9;border-radius:10px;padding:.8rem}
 .download-list{margin:0;padding-left:1rem}.download-list li{margin:.35rem 0}
 .genero-highlight{border-left:5px solid #a534c6}
+
+.brand-logo{width:36px;height:36px;object-fit:contain;background:#fff;border-radius:8px;padding:4px}
+.chip-group{display:flex;gap:.5rem;flex-wrap:wrap}
+.chip{border:1px solid #d8e0ef;background:#fff;color:#2b3850;padding:.45rem .7rem;border-radius:999px;font-size:.85rem}
+.chip.is-active{background:var(--obs-color);color:#fff;border-color:var(--obs-color)}
+.two-col{display:grid;grid-template-columns:230px 1fr;gap:1rem;align-items:start}
+.gender-img{width:100%;max-width:230px;border-radius:10px;border:1px solid #e6ecf9}
+@media (max-width: 768px){.two-col{grid-template-columns:1fr}.gender-img{max-width:100%}}

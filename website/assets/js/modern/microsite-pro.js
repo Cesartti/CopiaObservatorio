@@ -34,5 +34,35 @@
       if(list) list.innerHTML='<li class="list-group-item">No se pudo cargar el listado.</li>';
     }
   }
+
+  async function loadDimensionNews(){
+    const container=document.querySelector('.news-list');
+    if(!container||!slug) return;
+    try{
+      const response=await fetch('api/content.php?slug='+encodeURIComponent(slug));
+      const data=await response.json();
+      const items=data.dimension_news||[];
+      if(items.length){
+        container.innerHTML=items.slice(0,4).map(n=>`<div><strong>${n.title}</strong><span>${n.date||''}</span></div>`).join('');
+      }
+    }catch(_e){}
+  }
+
+  function initGenderModule(){
+    const chips=[...document.querySelectorAll('.chip-group .chip[data-target]')];
+    const mods=[...document.querySelectorAll('.gender-mod[data-sec]')];
+    if(!chips.length||!mods.length) return;
+    chips.forEach(chip=>{
+      chip.addEventListener('click',()=>{
+        const target=chip.dataset.target;
+        chips.forEach(c=>c.classList.remove('is-active'));
+        chip.classList.add('is-active');
+        mods.forEach(m=>m.classList.toggle('d-none',m.dataset.sec!==target));
+      });
+    });
+  }
+
   loadIndicators();
+  loadDimensionNews();
+  initGenderModule();
 })();

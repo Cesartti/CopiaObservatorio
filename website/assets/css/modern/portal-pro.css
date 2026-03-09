@@ -13,3 +13,5 @@ body{font-family:Inter,Segoe UI,sans-serif;background:var(--bg);color:#182433}
 .obs-card__icon{width:40px;height:40px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;background:var(--obs-accent);color:#fff;margin-bottom:.5rem}
 .news-band{background:linear-gradient(120deg,#0b3f66,#1b7d80)}
 .news-card{background:#ffffff;border-radius:12px;padding:1rem;height:100%}.news-card span{font-size:.75rem;color:#0a4c78;font-weight:700;text-transform:uppercase}
+
+.brand-logo{width:44px;height:44px;object-fit:contain;background:#fff;border-radius:8px;padding:4px}

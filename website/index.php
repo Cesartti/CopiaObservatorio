@@ -15,9 +15,12 @@ $observatories = require __DIR__ . '/config/observatories.php';
 <body>
 <header class="portal-header">
     <div class="container d-flex flex-wrap justify-content-between align-items-center py-3 gap-3">
-        <div>
-            <p class="m-0 small text-uppercase">Gobernación de Boyacá</p>
-            <h1 class="m-0">Red de Observatorios</h1>
+        <div class="d-flex align-items-center gap-2">
+            <img src="assets/svg/logo.svg" alt="Logo Red de Observatorios" class="brand-logo">
+            <div>
+                <p class="m-0 small text-uppercase">Gobernación de Boyacá</p>
+                <h1 class="m-0">Red de Observatorios</h1>
+            </div>
         </div>
         <nav class="portal-nav d-flex flex-wrap gap-2">
             <a href="index.php" class="active">Inicio</a>
@@ -85,11 +88,8 @@ $observatories = require __DIR__ . '/config/observatories.php';
                 <h2>Actualidad y contenidos destacados</h2>
                 <p>Bloques editoriales para informar con claridad a ciudadanía, academia y tomadores de decisión.</p>
             </div>
-            <div class="row g-3">
-                <div class="col-md-6 col-xl-3"><article class="news-card"><span>Boletín</span><h3>Panorama de empleo y formalidad</h3><p>Lectura rápida con cifras territoriales y tendencias.</p></article></div>
-                <div class="col-md-6 col-xl-3"><article class="news-card"><span>Noticia</span><h3>Calidad del aire: corte trimestral</h3><p>Actualización de estaciones y variación anual comparada.</p></article></div>
-                <div class="col-md-6 col-xl-3"><article class="news-card"><span>Informe</span><h3>Brechas de género en participación</h3><p>Reporte para política pública y enfoque diferencial.</p></article></div>
-                <div class="col-md-6 col-xl-3"><article class="news-card"><span>Dataset</span><h3>Series históricas abiertas</h3><p>Descarga CSV/XLSX con metadatos y fuente.</p></article></div>
+            <div class="row g-3" id="generalNewsCards">
+                <div class="col-md-6 col-xl-3"><article class="news-card"><span>Noticia</span><h3>Cargando...</h3><p>Actualizando contenido editorial.</p></article></div>
             </div>
         </div>
     </section>

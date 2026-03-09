@@ -67,7 +67,7 @@ $tableroUrl = $tableroUrlBySlug[$slug] ?? 'estado-observatorio.php';
 
 <header class="obs-header">
     <div class="container d-flex justify-content-between align-items-center py-3 gap-3 flex-wrap">
-        <a href="index.php" class="back-link">← Inicio Red</a>
+        <a href="index.php" class="back-link d-flex align-items-center gap-2"><img src="assets/svg/logo.svg" alt="Logo Red de Observatorios" class="brand-logo"> <span>Inicio Red</span></a>
         <nav class="d-flex gap-2 flex-wrap">
             <a href="#inicio">Inicio</a>
             <a href="#tablero">Tablero</a>
@@ -230,17 +230,79 @@ $tableroUrl = $tableroUrlBySlug[$slug] ?? 'estado-observatorio.php';
     </section>
 
     <?php if ($genderMode): ?>
-    <section class="content-card genero-highlight mb-4">
+    <section class="content-card genero-highlight mb-4" id="barreras-quees">
         <h2>Módulo ampliado de Asuntos de Género</h2>
-        <p>Se conserva y adapta la riqueza informativa de esta dimensión, con enfoque más interactivo y ciudadano.</p>
-        <div class="cards-grid">
-            <div class="mini-card"><strong>Rutas de atención</strong><small>Acceso claro a mecanismos institucionales</small></div>
-            <div class="mini-card"><strong>Violencias basadas en género</strong><small>Indicadores, alertas y contexto</small></div>
-            <div class="mini-card"><strong>Autonomía económica</strong><small>Seguimiento de brechas y participación</small></div>
-            <div class="mini-card"><strong>Cuidado y corresponsabilidad</strong><small>Lectura territorial y poblacional</small></div>
+        <p>Se migra y organiza contenido clave del portal de género actual para conservar identidad y mejorar interacción.</p>
+
+        <div class="chip-group mb-3" role="tablist" aria-label="Secciones de barreras de acceso">
+            <button class="chip is-active" data-target="quees">¿Qué es una barrera?</button>
+            <button class="chip" data-target="leyes">Tus derechos</button>
+            <button class="chip" data-target="ejemplos">Ejemplos</button>
+            <button class="chip" data-target="quehacer">¿Qué hacer?</button>
         </div>
+
+        <section class="gender-mod" data-sec="quees">
+            <div class="two-col">
+                <img src="assets/svg/img-genero/barreras/barreraAcceso.png" alt="¿Qué es barrera de acceso?" class="gender-img">
+                <div>
+                    <h4>¿Qué es una barrera de acceso?</h4>
+                    <ul>
+                        <li>Es un obstáculo que retrasa o impide atención oportuna, eficaz y de calidad.</li>
+                        <li>Puede aparecer en urgencias, citas, exámenes, medicamentos o trámites EPS/IPS.</li>
+                        <li>Si te exigen autorizaciones innecesarias o te remiten sin resolver, hay barrera.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="gender-mod d-none" data-sec="leyes">
+            <div class="two-col">
+                <img src="assets/svg/img-genero/barreras/derechos.png" alt="Tus derechos" class="gender-img">
+                <div>
+                    <h4>Tus derechos (leyes)</h4>
+                    <ul>
+                        <li>Derecho fundamental a la salud: acceso oportuno y con calidad.</li>
+                        <li>Atención prioritaria e inmediata en violencias basadas en género.</li>
+                        <li>Trato digno, sin discriminación y con enfoque diferencial.</li>
+                        <li>Continuidad de ruta: controles, medicamentos y remisiones.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="gender-mod d-none" data-sec="ejemplos">
+            <div class="two-col">
+                <img src="assets/svg/img-genero/barreras/ejemplos.png" alt="Ejemplos de barreras" class="gender-img">
+                <div>
+                    <h4>Ejemplos de barreras</h4>
+                    <div class="cards-grid">
+                        <div class="mini-card"><strong>Demoras excesivas</strong><small>Citas o procedimientos fuera de tiempos razonables.</small></div>
+                        <div class="mini-card"><strong>Trámites innecesarios</strong><small>Autorizaciones que no deberían bloquear la atención.</small></div>
+                        <div class="mini-card"><strong>Sin agenda disponible</strong><small>No asignan cita acorde con urgencia.</small></div>
+                        <div class="mini-card"><strong>Barreras geográficas</strong><small>Distancia, transporte o horarios imposibles.</small></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="gender-mod d-none" data-sec="quehacer">
+            <div class="two-col">
+                <img src="assets/svg/img-genero/barreras/quehacer.png" alt="Qué hacer" class="gender-img">
+                <div>
+                    <h4>¿Qué hacer ante una barrera?</h4>
+                    <ul>
+                        <li>Solicita atención por urgencias y activación de ruta clínica cuando aplique.</li>
+                        <li>Radica PQRD en EPS/IPS y guarda número de radicado.</li>
+                        <li>Escala a SuperSalud: 01 8000 513 700.</li>
+                        <li>Líneas de orientación: 155 (mujeres) y 141 (NNA).</li>
+                    </ul>
+                    <a class="btn btn-secondary btn-sm" href="tel:155">Llamar 155</a>
+                </div>
+            </div>
+        </section>
+
         <div class="mt-3 d-flex flex-wrap gap-2">
-            <a class="btn btn-outline-dark btn-sm" href="indic-genero.php">Ir al portal de género actual</a>
+            <a class="btn btn-outline-dark btn-sm" href="indic-genero.php#barreras-quees">Ver versión completa histórica</a>
             <a class="btn btn-dark btn-sm" href="mapa-fondomujer.html">Explorar recursos relacionados</a>
         </div>
     </section>

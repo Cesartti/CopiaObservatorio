@@ -18,6 +18,19 @@
   const button=document.getElementById('searchButton');
   const results=document.getElementById('searchResults');
 
+
+  async function loadGeneralNews(){
+    const container=document.getElementById('generalNewsCards');
+    if(!container) return;
+    try{
+      const response=await fetch('api/content.php');
+      const data=await response.json();
+      const items=data.general_news||[];
+      if(!items.length) return;
+      container.innerHTML=items.slice(0,4).map(n=>`<div class="col-md-6 col-xl-3"><article class="news-card"><span>Noticia</span><h3>${n.title}</h3><p>${n.summary||''}</p></article></div>`).join('');
+    }catch(_e){}
+  }
+
   async function runSearch(){
     const q=(input.value||'').trim();
     if(!q){results.innerHTML='';return;}
@@ -29,4 +42,5 @@
 
   if(button){button.addEventListener('click',runSearch)}
   if(input){input.addEventListener('keydown',e=>{if(e.key==='Enter')runSearch()})}
+  loadGeneralNews();
 })();

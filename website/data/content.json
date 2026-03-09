@@ -1,0 +1,31 @@
+{
+  "general_news": [
+    {"title": "Lanzamiento del tablero unificado", "summary": "Nueva experiencia para navegar indicadores y contenidos.", "date": "2026-03-01", "url": "#"},
+    {"title": "Boletín trimestral de la Red", "summary": "Publicación con avances por dimensión.", "date": "2026-02-20", "url": "#"}
+  ],
+  "dimension_news": {
+    "economico": [
+      {"title": "Actualización TRM y mercado cambiario", "summary": "Corte diario de variables macro y financieras.", "date": "2026-03-09", "url": "#"},
+      {"title": "Informe de inflación departamental", "summary": "Análisis de IPC y comportamiento sectorial.", "date": "2026-03-03", "url": "#"}
+    ],
+    "social": [
+      {"title": "Panorama social territorial", "summary": "Seguimiento a educación, salud y bienestar.", "date": "2026-03-05", "url": "#"}
+    ],
+    "ambiente": [
+      {"title": "Boletín de calidad del aire", "summary": "Indicadores y evolución mensual por zona.", "date": "2026-03-04", "url": "#"}
+    ],
+    "cti": [
+      {"title": "Mapa de capacidades CTI", "summary": "Actualización de actores y proyectos del ecosistema.", "date": "2026-03-02", "url": "#"}
+    ],
+    "genero": [
+      {"title": "Ruta de atención VBG: actualización", "summary": "Guía de activación y canales de apoyo.", "date": "2026-03-07", "url": "#"}
+    ]
+  },
+  "featured_indicators": {
+    "economico": ["TRM", "IPC", "PIB", "Desempleo"],
+    "social": ["Pobreza", "Salud", "Educación"],
+    "ambiente": ["Calidad del aire", "Recurso hídrico"],
+    "cti": ["Inversión I+D", "Producción científica"],
+    "genero": ["Violencias", "Autonomía económica", "Participación"]
+  }
+}
