@@ -1,12 +1,36 @@
-/* Encuesta opcional: envío del formulario asociando el observatorio de origen.
-   Funciona en el portal y en los micrositios (lee page_context del input oculto). */
+/* Encuesta opcional.
+   - Se abre automáticamente la PRIMERA vez que entra el visitante (una sola vez).
+   - Al enviar, se cierra y NO vuelve a aparecer (se ocultan también los accesos del menú).
+   - Asocia la respuesta al observatorio de origen (page_context oculto). */
 (function () {
-  var form = document.getElementById('portalSurveyForm');
-  var submit = document.getElementById('portalSurveySubmit');
-  if (!form || !submit) return;
+  var DONE = 'obs_survey_done';            // ya respondió -> nunca más
+  var SEEN = 'obs_survey_seen';            // ya se le mostró automáticamente
+  var LEGACY = 'obs_portal_survey_thanks'; // compatibilidad con versión anterior
 
+  function get(k) { try { return localStorage.getItem(k) === '1'; } catch (e) { return false; } }
+  function set(k) { try { localStorage.setItem(k, '1'); } catch (e) {} }
+  function isDone() { return get(DONE) || get(LEGACY); }
+  function triggers() { return document.querySelectorAll('[data-bs-target="#portalSurveyModal"]'); }
+  function hideTriggers() { triggers().forEach(function (t) { t.style.display = 'none'; }); }
+
+  var modalEl = document.getElementById('portalSurveyModal');
+  var form = document.getElementById('portalSurveyForm');
+  if (!modalEl) return;
+
+  // Si ya respondió: ocultar accesos a la encuesta y no hacer nada más.
+  if (isDone()) { hideTriggers(); return; }
+
+  // Abrir automáticamente en la primera visita (una sola vez por navegador).
+  setTimeout(function () {
+    if (!window.bootstrap || get(SEEN)) return;
+    try { bootstrap.Modal.getOrCreateInstance(modalEl).show(); set(SEEN); } catch (e) {}
+  }, 900);
+
+  if (!form) return;
+  var submit = document.getElementById('portalSurveySubmit');
   var err = document.getElementById('portalSurveyError');
   var ok = document.getElementById('portalSurveyOk');
+  if (!submit) return;
 
   form.addEventListener('submit', async function (e) {
     e.preventDefault();
@@ -32,15 +56,20 @@
       });
       var json = await res.json().catch(function () { return {}; });
       if (json && json.ok) {
+        set(DONE);
         if (ok) { ok.textContent = '¡Gracias! Sus respuestas fueron registradas.'; ok.classList.remove('d-none'); }
-        form.reset();
-        try { localStorage.setItem('obs_portal_survey_thanks', '1'); } catch (_e) {}
+        // Cerrar tras un momento y ocultar definitivamente los accesos.
+        setTimeout(function () {
+          try { bootstrap.Modal.getOrCreateInstance(modalEl).hide(); } catch (e) {}
+          hideTriggers();
+        }, 1200);
       } else {
         if (err) { err.textContent = (json && json.error) || 'No se pudo enviar. Intente más tarde.'; err.classList.remove('d-none'); }
+        submit.disabled = false;
       }
     } catch (_e) {
       if (err) { err.textContent = 'Error de red. Intente más tarde.'; err.classList.remove('d-none'); }
+      submit.disabled = false;
     }
-    submit.disabled = false;
   });
 })();
