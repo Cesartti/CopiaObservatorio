@@ -107,6 +107,12 @@ $visitsByPage = est_rows_p($pdo, "SELECT page_key, COUNT(*) AS c FROM cms_unique
 $visitsByDay = est_rows_p($pdo, "SELECT DATE(first_seen_at) AS d, COUNT(*) AS c FROM cms_unique_visitors $vWhere GROUP BY DATE(first_seen_at) ORDER BY d DESC LIMIT 60", $vp);
 $visitsByDay = array_reverse($visitsByDay);
 
+// Geolocalización de los VISITANTES (para el mapa de "de dónde son")
+$vAndGeo = $vWhere ? ($vWhere . ' AND ') : 'WHERE ';
+$visitorGeoKnown = est_scalar_p($pdo, "SELECT COUNT(*) FROM cms_unique_visitors {$vAndGeo}lat IS NOT NULL", $vp);
+$visitorPoints = est_rows_p($pdo, "SELECT country, city, lat, lng, COUNT(*) AS c FROM cms_unique_visitors {$vAndGeo}lat IS NOT NULL GROUP BY country, city, lat, lng ORDER BY c DESC LIMIT 500", $vp);
+$visitorByCountry = est_rows_p($pdo, "SELECT COALESCE(country,'(desconocido)') AS country, COUNT(*) AS c FROM cms_unique_visitors {$vAndGeo}country IS NOT NULL GROUP BY country ORDER BY c DESC LIMIT 30", $vp);
+
 // ---------------- Encuesta (todos los filtros) ----------------
 $totalSurveys = est_scalar_p($pdo, "SELECT COUNT(*) FROM cms_visitor_surveys $sWhere", $sp);
 $surveyByGender = est_rows_p($pdo, "SELECT gender AS k, COUNT(*) AS c FROM cms_visitor_surveys $sWhere GROUP BY gender", $sp);
@@ -189,6 +195,16 @@ $dataFreq = est_chart_data($surveyByFreq, $freqLabels);
 $mapPoints = [];
 foreach ($surveyPoints as $g) {
     $mapPoints[] = [
+        'lat' => (float) $g['lat'],
+        'lng' => (float) $g['lng'],
+        'city' => (string) ($g['city'] ?? ''),
+        'country' => (string) ($g['country'] ?? ''),
+        'c' => (int) $g['c'],
+    ];
+}
+$visitorMapPoints = [];
+foreach ($visitorPoints as $g) {
+    $visitorMapPoints[] = [
         'lat' => (float) $g['lat'],
         'lng' => (float) $g['lng'],
         'city' => (string) ($g['city'] ?? ''),
@@ -291,6 +307,33 @@ require __DIR__ . '/includes/header.php';
     <div class="col-lg-6"><div class="card shadow-sm border-0 h-100"><div class="card-body">
         <h2 class="h6">Visitantes por día</h2>
         <canvas id="chartByDay" height="220"></canvas>
+    </div></div></div>
+</div>
+
+<!-- Mapa de visitantes -->
+<div class="row g-3 mt-1">
+    <div class="col-lg-7"><div class="card shadow-sm border-0 h-100"><div class="card-body">
+        <h2 class="h6">Mapa de visitantes — ¿de dónde son?</h2>
+        <p class="small text-muted mb-2">Ubicación aproximada por IP de los <?= number_format($totalUnique, 0, ',', '.') ?> visitantes únicos. <?= $visitorGeoKnown ? number_format($visitorGeoKnown, 0, ',', '.') . ' ubicados.' : '' ?></p>
+        <?php if ($visitorGeoKnown === 0): ?>
+            <div class="alert alert-info small mb-2">Aún no hay visitantes con ubicación para estas fechas (la red interna no se geolocaliza).</div>
+        <?php endif; ?>
+        <div id="mapVisitantes" style="height:380px;border-radius:12px;"></div>
+    </div></div></div>
+    <div class="col-lg-5"><div class="card shadow-sm border-0 h-100"><div class="card-body">
+        <h2 class="h6">Visitantes por país</h2>
+        <div class="table-responsive" style="max-height:380px;overflow:auto">
+            <table class="table table-sm mb-0">
+                <thead class="table-light"><tr><th>País</th><th class="text-end">Visitantes</th></tr></thead>
+                <tbody>
+                <?php if (empty($visitorByCountry)): ?>
+                    <tr><td colspan="2" class="text-muted text-center py-2">Sin datos de ubicación todavía.</td></tr>
+                <?php else: foreach ($visitorByCountry as $r): ?>
+                    <tr><td><?= htmlspecialchars((string) $r['country']) ?></td><td class="text-end"><?= (int) $r['c'] ?></td></tr>
+                <?php endforeach; endif; ?>
+                </tbody>
+            </table>
+        </div>
     </div></div></div>
 </div>
 
@@ -431,7 +474,8 @@ const EST = {
   sector: <?= json_encode($dataSector, JSON_UNESCAPED_UNICODE) ?>,
   freq: <?= json_encode($dataFreq, JSON_UNESCAPED_UNICODE) ?>,
   obsConsulted: <?= json_encode($dataObsConsulted, JSON_UNESCAPED_UNICODE) ?>,
-  points: <?= json_encode($mapPoints, JSON_UNESCAPED_UNICODE) ?>
+  points: <?= json_encode($mapPoints, JSON_UNESCAPED_UNICODE) ?>,
+  visitorPoints: <?= json_encode($visitorMapPoints, JSON_UNESCAPED_UNICODE) ?>
 };
 const PALETTE = ['#0d6efd','#20c997','#fd7e14','#6f42c1','#dc3545','#0dcaf0','#ffc107','#198754'];
 
@@ -453,18 +497,22 @@ mkDoughnut('chartAge', EST.age);
 mkDoughnut('chartSector', EST.sector);
 mkDoughnut('chartFreq', EST.freq);
 
-(function(){
-  const el=document.getElementById('mapEncuestados'); if(!el||!window.L)return;
-  const map=L.map('mapEncuestados').setView([4.6,-74.1],4);
+function drawMap(elId, pts, color, noun){
+  const el=document.getElementById(elId); if(!el||!window.L)return;
+  const map=L.map(elId).setView([4.6,-74.1],4);
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:18,attribution:'&copy; OpenStreetMap'}).addTo(map);
-  const pts=EST.points||[]; const bounds=[];
-  pts.forEach(p=>{
+  const bounds=[];
+  (pts||[]).forEach(p=>{
     const r=Math.min(28,6+Math.sqrt(p.c)*4);
-    L.circleMarker([p.lat,p.lng],{radius:r,color:'#6f42c1',fillColor:'#6f42c1',fillOpacity:.45,weight:1})
-     .addTo(map).bindPopup('<strong>'+(p.city||'')+(p.city&&p.country?', ':'')+(p.country||'')+'</strong><br>'+p.c+' encuestado(s)');
+    L.circleMarker([p.lat,p.lng],{radius:r,color:color,fillColor:color,fillOpacity:.45,weight:1})
+     .addTo(map).bindPopup('<strong>'+(p.city||'')+(p.city&&p.country?', ':'')+(p.country||'')+'</strong><br>'+p.c+' '+noun);
     bounds.push([p.lat,p.lng]);
   });
   if(bounds.length){ try{ map.fitBounds(bounds,{padding:[30,30],maxZoom:8}); }catch(e){} }
-})();
+  // Si el mapa se crea en un contenedor que cambió de tamaño, recalcular.
+  setTimeout(()=>{ try{ map.invalidateSize(); }catch(e){} }, 200);
+}
+drawMap('mapVisitantes', EST.visitorPoints, '#0d6efd', 'visitante(s)');
+drawMap('mapEncuestados', EST.points, '#6f42c1', 'encuestado(s)');
 </script>
 <?php require __DIR__ . '/includes/footer.php'; ?>
