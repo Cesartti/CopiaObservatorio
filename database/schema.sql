@@ -322,6 +322,7 @@ CREATE TABLE IF NOT EXISTS cms_visitor_surveys (
   id BIGINT AUTO_INCREMENT PRIMARY KEY,
   page_context VARCHAR(64) NOT NULL DEFAULT 'portal',
   age_range VARCHAR(32) NOT NULL,
+  gender VARCHAR(24) NULL,
   sector VARCHAR(64) NOT NULL,
   visit_frequency VARCHAR(40) NOT NULL,
   country VARCHAR(80) NULL,

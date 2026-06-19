@@ -34,7 +34,16 @@ $surveyContext = isset($surveyContext) && $surveyContext !== '' ? $surveyContext
                         </select>
                     </div>
                     <div class="mb-3">
-                        <label class="form-label fw-semibold" for="surveySector">2. ¿A qué sector pertenece?</label>
+                        <label class="form-label fw-semibold" for="surveyGender">2. ¿Con cuál género se identifica?</label>
+                        <select class="form-select" id="surveyGender" name="gender" required>
+                            <option value="" selected disabled>Seleccione…</option>
+                            <?php foreach (cms_survey_genders() as $key => $label): ?>
+                                <option value="<?= htmlspecialchars($key) ?>"><?= htmlspecialchars($label) ?></option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold" for="surveySector">3. ¿A qué sector pertenece?</label>
                         <select class="form-select" id="surveySector" name="sector" required>
                             <option value="" selected disabled>Seleccione…</option>
                             <?php foreach (cms_survey_sectors() as $key => $label): ?>
@@ -43,7 +52,7 @@ $surveyContext = isset($surveyContext) && $surveyContext !== '' ? $surveyContext
                         </select>
                     </div>
                     <div class="mb-3">
-                        <label class="form-label fw-semibold" for="surveyFreq">3. ¿Con qué frecuencia utiliza este portal?</label>
+                        <label class="form-label fw-semibold" for="surveyFreq">4. ¿Con qué frecuencia utiliza este portal?</label>
                         <select class="form-select" id="surveyFreq" name="visit_frequency" required>
                             <option value="" selected disabled>Seleccione…</option>
                             <?php foreach (cms_survey_visit_frequency() as $key => $label): ?>

@@ -39,11 +39,12 @@
 
     var fd = new FormData(form);
     var age = fd.get('age_range');
+    var gender = fd.get('gender');
     var sector = fd.get('sector');
     var freq = fd.get('visit_frequency');
     var ctx = fd.get('page_context') || 'portal';
-    if (!age || !sector || !freq) {
-      if (err) { err.textContent = 'Por favor responda las tres preguntas.'; err.classList.remove('d-none'); }
+    if (!age || !gender || !sector || !freq) {
+      if (err) { err.textContent = 'Por favor responda todas las preguntas.'; err.classList.remove('d-none'); }
       return;
     }
 
@@ -52,7 +53,7 @@
       var res = await fetch('api/survey.php', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ age_range: age, sector: sector, visit_frequency: freq, page_context: ctx })
+        body: JSON.stringify({ age_range: age, gender: gender, sector: sector, visit_frequency: freq, page_context: ctx })
       });
       var json = await res.json().catch(function () { return {}; });
       if (json && json.ok) {

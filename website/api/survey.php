@@ -21,6 +21,7 @@ if (!is_array($data)) {
 }
 
 $age = isset($data['age_range']) ? (string) $data['age_range'] : '';
+$gender = isset($data['gender']) ? (string) $data['gender'] : '';
 $sector = isset($data['sector']) ? (string) $data['sector'] : '';
 $freq = isset($data['visit_frequency']) ? (string) $data['visit_frequency'] : '';
 $ctx = isset($data['page_context']) ? (string) $data['page_context'] : 'portal';
@@ -29,10 +30,11 @@ if (strlen($ctx) > 64) {
 }
 
 $ages = cms_survey_age_ranges();
+$genders = cms_survey_genders();
 $sectors = cms_survey_sectors();
 $freqs = cms_survey_visit_frequency();
 
-if (!isset($ages[$age], $sectors[$sector], $freqs[$freq])) {
+if (!isset($ages[$age], $genders[$gender], $sectors[$sector], $freqs[$freq])) {
     http_response_code(422);
     echo json_encode(['ok' => false, 'error' => 'Respuestas incompletas o no válidas'], JSON_UNESCAPED_UNICODE);
     exit;
@@ -49,11 +51,11 @@ $geo = cms_geo_lookup($pdo, cms_client_ip()) ?: [];
 
 try {
     $stmt = $pdo->prepare(
-        'INSERT INTO cms_visitor_surveys (page_context, age_range, sector, visit_frequency, country, region, city, lat, lng)
-         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)'
+        'INSERT INTO cms_visitor_surveys (page_context, age_range, gender, sector, visit_frequency, country, region, city, lat, lng)
+         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'
     );
     $stmt->execute([
-        $ctx, $age, $sector, $freq,
+        $ctx, $age, $gender, $sector, $freq,
         $geo['country'] ?? null,
         $geo['region'] ?? null,
         $geo['city'] ?? null,

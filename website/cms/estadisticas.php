@@ -22,66 +22,115 @@ function est_page_label(string $key): string
     return $map[$key] ?? $key;
 }
 
-/** Ejecuta una consulta y devuelve filas; [] ante cualquier error (tablas/columnas ausentes). */
-function est_rows(?PDO $pdo, string $sql): array
+function est_rows_p(?PDO $pdo, string $sql, array $p = []): array
 {
     if (!$pdo) {
         return [];
     }
     try {
-        return $pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+        $st = $pdo->prepare($sql);
+        $st->execute($p);
+        return $st->fetchAll(PDO::FETCH_ASSOC);
     } catch (Throwable $e) {
         return [];
     }
 }
 
-function est_scalar(?PDO $pdo, string $sql): int
+function est_scalar_p(?PDO $pdo, string $sql, array $p = []): int
 {
     if (!$pdo) {
         return 0;
     }
     try {
-        return (int) $pdo->query($sql)->fetchColumn();
+        $st = $pdo->prepare($sql);
+        $st->execute($p);
+        return (int) $st->fetchColumn();
     } catch (Throwable $e) {
         return 0;
     }
 }
 
-// ---- Visitas ----
-$totalUnique = est_scalar($pdo, 'SELECT COUNT(DISTINCT visitor_id) FROM cms_unique_visitors');
-$visitsByPage = est_rows($pdo, 'SELECT page_key, COUNT(*) AS c FROM cms_unique_visitors GROUP BY page_key ORDER BY c DESC');
-$visitsByDay = est_rows($pdo, 'SELECT DATE(first_seen_at) AS d, COUNT(*) AS c FROM cms_unique_visitors GROUP BY DATE(first_seen_at) ORDER BY d DESC LIMIT 30');
-$visitsByDay = array_reverse($visitsByDay);
-
-// ---- Geo (para mapa y países) ----
-$geoPoints = est_rows($pdo, "SELECT country, city, lat, lng, COUNT(*) AS c FROM cms_unique_visitors WHERE lat IS NOT NULL AND lng IS NOT NULL GROUP BY country, city, lat, lng ORDER BY c DESC LIMIT 500");
-$byCountry = est_rows($pdo, "SELECT COALESCE(country,'(desconocido)') AS country, COUNT(*) AS c FROM cms_unique_visitors WHERE country IS NOT NULL GROUP BY country ORDER BY c DESC LIMIT 30");
-$geoKnown = est_scalar($pdo, 'SELECT COUNT(*) FROM cms_unique_visitors WHERE lat IS NOT NULL');
-$countriesCount = est_scalar($pdo, 'SELECT COUNT(DISTINCT country) FROM cms_unique_visitors WHERE country IS NOT NULL');
-
-// ---- Encuesta ----
-$totalSurveys = est_scalar($pdo, 'SELECT COUNT(*) FROM cms_visitor_surveys');
-$surveyByAge = est_rows($pdo, 'SELECT age_range AS k, COUNT(*) AS c FROM cms_visitor_surveys GROUP BY age_range');
-$surveyBySector = est_rows($pdo, 'SELECT sector AS k, COUNT(*) AS c FROM cms_visitor_surveys GROUP BY sector');
-$surveyByFreq = est_rows($pdo, 'SELECT visit_frequency AS k, COUNT(*) AS c FROM cms_visitor_surveys GROUP BY visit_frequency');
-$surveyByCtx = est_rows($pdo, 'SELECT page_context AS k, COUNT(*) AS c FROM cms_visitor_surveys GROUP BY page_context ORDER BY c DESC');
-
-$ageLabels = cms_survey_age_ranges();
-$sectorLabels = cms_survey_sectors();
-$freqLabels = cms_survey_visit_frequency();
-
-/** Convierte filas (k,c) a [labels, data] aplicando un diccionario de etiquetas. */
 function est_chart_data(array $rows, array $labels, string $keyField = 'k'): array
 {
     $out = ['labels' => [], 'data' => []];
     foreach ($rows as $r) {
         $k = (string) ($r[$keyField] ?? '');
-        $out['labels'][] = $labels[$k] ?? $k;
+        $out['labels'][] = $labels[$k] ?? ($k !== '' ? $k : 'Sin dato');
         $out['data'][] = (int) ($r['c'] ?? 0);
     }
     return $out;
 }
 
+// ---------------- Filtros (GET) ----------------
+$ageLabels = cms_survey_age_ranges();
+$genderLabels = cms_survey_genders();
+$sectorLabels = cms_survey_sectors();
+$freqLabels = cms_survey_visit_frequency();
+
+$fDesde = trim((string) ($_GET['f_desde'] ?? ''));
+$fHasta = trim((string) ($_GET['f_hasta'] ?? ''));
+$fGenero = (string) ($_GET['f_genero'] ?? '');
+$fEdad = (string) ($_GET['f_edad'] ?? '');
+$fSector = (string) ($_GET['f_sector'] ?? '');
+$fFrec = (string) ($_GET['f_frecuencia'] ?? '');
+
+// Validar (solo se aceptan valores conocidos; las fechas deben ser YYYY-MM-DD)
+$datePat = '/^\d{4}-\d{2}-\d{2}$/';
+if (!preg_match($datePat, $fDesde)) { $fDesde = ''; }
+if (!preg_match($datePat, $fHasta)) { $fHasta = ''; }
+if (!isset($genderLabels[$fGenero])) { $fGenero = ''; }
+if (!isset($ageLabels[$fEdad])) { $fEdad = ''; }
+if (!isset($sectorLabels[$fSector])) { $fSector = ''; }
+if (!isset($freqLabels[$fFrec])) { $fFrec = ''; }
+
+// WHERE encuesta (todos los filtros)
+$sv = []; $sp = [];
+if ($fDesde !== '') { $sv[] = 'created_at >= ?'; $sp[] = $fDesde . ' 00:00:00'; }
+if ($fHasta !== '') { $sv[] = 'created_at <= ?'; $sp[] = $fHasta . ' 23:59:59'; }
+if ($fGenero !== '') { $sv[] = 'gender = ?'; $sp[] = $fGenero; }
+if ($fEdad !== '') { $sv[] = 'age_range = ?'; $sp[] = $fEdad; }
+if ($fSector !== '') { $sv[] = 'sector = ?'; $sp[] = $fSector; }
+if ($fFrec !== '') { $sv[] = 'visit_frequency = ?'; $sp[] = $fFrec; }
+$sWhere = $sv ? ('WHERE ' . implode(' AND ', $sv)) : '';
+
+// WHERE visitas (solo fecha)
+$vv = []; $vp = [];
+if ($fDesde !== '') { $vv[] = 'first_seen_at >= ?'; $vp[] = $fDesde . ' 00:00:00'; }
+if ($fHasta !== '') { $vv[] = 'first_seen_at <= ?'; $vp[] = $fHasta . ' 23:59:59'; }
+$vWhere = $vv ? ('WHERE ' . implode(' AND ', $vv)) : '';
+
+$hasFilters = ($fDesde || $fHasta || $fGenero || $fEdad || $fSector || $fFrec);
+
+// ---------------- Visitas (filtradas por fecha) ----------------
+$totalUnique = est_scalar_p($pdo, "SELECT COUNT(DISTINCT visitor_id) FROM cms_unique_visitors $vWhere", $vp);
+$visitsByPage = est_rows_p($pdo, "SELECT page_key, COUNT(*) AS c FROM cms_unique_visitors $vWhere GROUP BY page_key ORDER BY c DESC", $vp);
+$visitsByDay = est_rows_p($pdo, "SELECT DATE(first_seen_at) AS d, COUNT(*) AS c FROM cms_unique_visitors $vWhere GROUP BY DATE(first_seen_at) ORDER BY d DESC LIMIT 60", $vp);
+$visitsByDay = array_reverse($visitsByDay);
+
+// ---------------- Encuesta (todos los filtros) ----------------
+$totalSurveys = est_scalar_p($pdo, "SELECT COUNT(*) FROM cms_visitor_surveys $sWhere", $sp);
+$surveyByGender = est_rows_p($pdo, "SELECT gender AS k, COUNT(*) AS c FROM cms_visitor_surveys $sWhere GROUP BY gender", $sp);
+$surveyByAge = est_rows_p($pdo, "SELECT age_range AS k, COUNT(*) AS c FROM cms_visitor_surveys $sWhere GROUP BY age_range", $sp);
+$surveyBySector = est_rows_p($pdo, "SELECT sector AS k, COUNT(*) AS c FROM cms_visitor_surveys $sWhere GROUP BY sector", $sp);
+$surveyByFreq = est_rows_p($pdo, "SELECT visit_frequency AS k, COUNT(*) AS c FROM cms_visitor_surveys $sWhere GROUP BY visit_frequency", $sp);
+$surveyByCtx = est_rows_p($pdo, "SELECT page_context AS k, COUNT(*) AS c FROM cms_visitor_surveys $sWhere GROUP BY page_context ORDER BY c DESC", $sp);
+
+// Desglose geográfico de los ENCUESTADOS filtrados (país -> ciudad)
+$surveyGeo = est_rows_p(
+    $pdo,
+    "SELECT COALESCE(country,'(sin ubicación)') AS country, COALESCE(city,'(sin ciudad)') AS city, COUNT(*) AS c
+     FROM cms_visitor_surveys $sWhere GROUP BY country, city ORDER BY c DESC LIMIT 100",
+    $sp
+);
+$sWhereGeo = $sWhere ? ($sWhere . ' AND lat IS NOT NULL') : 'WHERE lat IS NOT NULL';
+$surveyPoints = est_rows_p(
+    $pdo,
+    "SELECT country, city, lat, lng, COUNT(*) AS c FROM cms_visitor_surveys $sWhereGeo GROUP BY country, city, lat, lng ORDER BY c DESC LIMIT 500",
+    $sp
+);
+$surveyGeoKnown = est_scalar_p($pdo, "SELECT COUNT(*) FROM cms_visitor_surveys $sWhereGeo", $sp);
+
+// Datos para gráficos
 $dataVisitsByPage = ['labels' => [], 'data' => []];
 foreach ($visitsByPage as $r) {
     $dataVisitsByPage['labels'][] = est_page_label((string) $r['page_key']);
@@ -92,12 +141,13 @@ foreach ($visitsByDay as $r) {
     $dataVisitsByDay['labels'][] = (string) $r['d'];
     $dataVisitsByDay['data'][] = (int) $r['c'];
 }
+$dataGender = est_chart_data($surveyByGender, $genderLabels);
 $dataAge = est_chart_data($surveyByAge, $ageLabels);
 $dataSector = est_chart_data($surveyBySector, $sectorLabels);
 $dataFreq = est_chart_data($surveyByFreq, $freqLabels);
 
 $mapPoints = [];
-foreach ($geoPoints as $g) {
+foreach ($surveyPoints as $g) {
     $mapPoints[] = [
         'lat' => (float) $g['lat'],
         'lng' => (float) $g['lng'],
@@ -114,122 +164,160 @@ require __DIR__ . '/includes/header.php';
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
 
 <h1 class="h4 mb-1">Estadísticas de visitas y encuesta</h1>
-<p class="small text-muted">Visitantes únicos por navegador (general y por observatorio), resultados de la encuesta opcional y ubicación aproximada de los visitantes.</p>
+<p class="small text-muted">Filtra por fecha y por las respuestas de la encuesta para ver cuántos son, qué respondieron y desde dónde se conectan (país y ciudad).</p>
 
-<!-- Tarjetas resumen -->
+<!-- ===== FILTROS ===== -->
+<form method="get" class="card shadow-sm border-0 mb-4">
+    <div class="card-body">
+        <div class="row g-2 align-items-end">
+            <div class="col-6 col-md-2">
+                <label class="form-label small mb-1">Desde</label>
+                <input type="date" name="f_desde" value="<?= htmlspecialchars($fDesde) ?>" class="form-control form-control-sm">
+            </div>
+            <div class="col-6 col-md-2">
+                <label class="form-label small mb-1">Hasta</label>
+                <input type="date" name="f_hasta" value="<?= htmlspecialchars($fHasta) ?>" class="form-control form-control-sm">
+            </div>
+            <div class="col-6 col-md-2">
+                <label class="form-label small mb-1">Género</label>
+                <select name="f_genero" class="form-select form-select-sm">
+                    <option value="">Todos</option>
+                    <?php foreach ($genderLabels as $k => $v): ?>
+                        <option value="<?= htmlspecialchars($k) ?>" <?= $fGenero === $k ? 'selected' : '' ?>><?= htmlspecialchars($v) ?></option>
+                    <?php endforeach; ?>
+                </select>
+            </div>
+            <div class="col-6 col-md-2">
+                <label class="form-label small mb-1">Edad</label>
+                <select name="f_edad" class="form-select form-select-sm">
+                    <option value="">Todas</option>
+                    <?php foreach ($ageLabels as $k => $v): ?>
+                        <option value="<?= htmlspecialchars($k) ?>" <?= $fEdad === $k ? 'selected' : '' ?>><?= htmlspecialchars($v) ?></option>
+                    <?php endforeach; ?>
+                </select>
+            </div>
+            <div class="col-6 col-md-2">
+                <label class="form-label small mb-1">Sector</label>
+                <select name="f_sector" class="form-select form-select-sm">
+                    <option value="">Todos</option>
+                    <?php foreach ($sectorLabels as $k => $v): ?>
+                        <option value="<?= htmlspecialchars($k) ?>" <?= $fSector === $k ? 'selected' : '' ?>><?= htmlspecialchars($v) ?></option>
+                    <?php endforeach; ?>
+                </select>
+            </div>
+            <div class="col-6 col-md-2">
+                <label class="form-label small mb-1">Frecuencia</label>
+                <select name="f_frecuencia" class="form-select form-select-sm">
+                    <option value="">Todas</option>
+                    <?php foreach ($freqLabels as $k => $v): ?>
+                        <option value="<?= htmlspecialchars($k) ?>" <?= $fFrec === $k ? 'selected' : '' ?>><?= htmlspecialchars($v) ?></option>
+                    <?php endforeach; ?>
+                </select>
+            </div>
+        </div>
+        <div class="mt-3 d-flex gap-2">
+            <button class="btn btn-primary btn-sm"><i class="fa-solid fa-filter me-1"></i>Filtrar</button>
+            <?php if ($hasFilters): ?><a href="estadisticas.php" class="btn btn-outline-secondary btn-sm">Limpiar</a><?php endif; ?>
+        </div>
+    </div>
+</form>
+
+<!-- Tarjetas -->
 <div class="row g-3 mb-4">
-    <div class="col-6 col-lg-3">
-        <div class="card shadow-sm border-0"><div class="card-body">
-            <div class="text-muted small">Visitantes únicos</div>
-            <div class="h3 mb-0"><?= number_format($totalUnique, 0, ',', '.') ?></div>
-        </div></div>
-    </div>
-    <div class="col-6 col-lg-3">
-        <div class="card shadow-sm border-0"><div class="card-body">
-            <div class="text-muted small">Respuestas de encuesta</div>
-            <div class="h3 mb-0"><?= number_format($totalSurveys, 0, ',', '.') ?></div>
-        </div></div>
-    </div>
-    <div class="col-6 col-lg-3">
-        <div class="card shadow-sm border-0"><div class="card-body">
-            <div class="text-muted small">Países distintos</div>
-            <div class="h3 mb-0"><?= number_format($countriesCount, 0, ',', '.') ?></div>
-        </div></div>
-    </div>
-    <div class="col-6 col-lg-3">
-        <div class="card shadow-sm border-0"><div class="card-body">
-            <div class="text-muted small">Visitantes ubicados</div>
-            <div class="h3 mb-0"><?= number_format($geoKnown, 0, ',', '.') ?></div>
-        </div></div>
-    </div>
+    <div class="col-6 col-lg-3"><div class="card shadow-sm border-0"><div class="card-body">
+        <div class="text-muted small">Visitantes únicos<?= $hasFilters && ($fDesde || $fHasta) ? ' (en fechas)' : '' ?></div>
+        <div class="h3 mb-0"><?= number_format($totalUnique, 0, ',', '.') ?></div>
+    </div></div></div>
+    <div class="col-6 col-lg-3"><div class="card shadow-sm border-0"><div class="card-body">
+        <div class="text-muted small">Respuestas de encuesta<?= $hasFilters ? ' (filtradas)' : '' ?></div>
+        <div class="h3 mb-0"><?= number_format($totalSurveys, 0, ',', '.') ?></div>
+    </div></div></div>
+    <div class="col-6 col-lg-3"><div class="card shadow-sm border-0"><div class="card-body">
+        <div class="text-muted small">Encuestados ubicados</div>
+        <div class="h3 mb-0"><?= number_format($surveyGeoKnown, 0, ',', '.') ?></div>
+    </div></div></div>
+    <div class="col-6 col-lg-3"><div class="card shadow-sm border-0"><div class="card-body">
+        <div class="text-muted small">Lugares distintos</div>
+        <div class="h3 mb-0"><?= number_format(count($surveyGeo), 0, ',', '.') ?></div>
+    </div></div></div>
 </div>
 
+<!-- Visitas -->
 <div class="row g-3">
-    <!-- Visitas por observatorio -->
-    <div class="col-lg-6">
-        <div class="card shadow-sm border-0 h-100"><div class="card-body">
-            <h2 class="h6">Visitantes por observatorio</h2>
-            <canvas id="chartByPage" height="220"></canvas>
-        </div></div>
-    </div>
-    <!-- Visitas por día -->
-    <div class="col-lg-6">
-        <div class="card shadow-sm border-0 h-100"><div class="card-body">
-            <h2 class="h6">Visitantes por día (últimos 30)</h2>
-            <canvas id="chartByDay" height="220"></canvas>
-        </div></div>
-    </div>
+    <div class="col-lg-6"><div class="card shadow-sm border-0 h-100"><div class="card-body">
+        <h2 class="h6">Visitantes por observatorio</h2>
+        <canvas id="chartByPage" height="220"></canvas>
+    </div></div></div>
+    <div class="col-lg-6"><div class="card shadow-sm border-0 h-100"><div class="card-body">
+        <h2 class="h6">Visitantes por día</h2>
+        <canvas id="chartByDay" height="220"></canvas>
+    </div></div></div>
 </div>
-
-<!-- Mapa -->
-<div class="card shadow-sm border-0 mt-3"><div class="card-body">
-    <h2 class="h6">Mapa de visitantes (ubicación aproximada por IP)</h2>
-    <?php if ($geoKnown === 0): ?>
-        <div class="alert alert-info small mb-2">Aún no hay ubicaciones registradas. Aparecerán cuando visiten desde Internet (la red interna del gobierno puede no geolocalizarse). Verifique también que el servidor tenga salida a Internet.</div>
-    <?php endif; ?>
-    <div id="mapVisitas" style="height:420px;border-radius:12px;"></div>
-</div></div>
 
 <!-- Encuesta -->
-<h2 class="h5 mt-4 mb-2">Encuesta opcional</h2>
+<h2 class="h5 mt-4 mb-2">Encuesta — perfil de quienes respondieron</h2>
 <div class="row g-3">
-    <div class="col-lg-4">
-        <div class="card shadow-sm border-0 h-100"><div class="card-body">
-            <h3 class="h6">Por rango de edad</h3>
-            <canvas id="chartAge" height="220"></canvas>
-        </div></div>
-    </div>
-    <div class="col-lg-4">
-        <div class="card shadow-sm border-0 h-100"><div class="card-body">
-            <h3 class="h6">Por sector</h3>
-            <canvas id="chartSector" height="220"></canvas>
-        </div></div>
-    </div>
-    <div class="col-lg-4">
-        <div class="card shadow-sm border-0 h-100"><div class="card-body">
-            <h3 class="h6">Por frecuencia de uso</h3>
-            <canvas id="chartFreq" height="220"></canvas>
-        </div></div>
-    </div>
+    <div class="col-lg-3 col-md-6"><div class="card shadow-sm border-0 h-100"><div class="card-body">
+        <h3 class="h6">Por género</h3><canvas id="chartGender" height="220"></canvas>
+    </div></div></div>
+    <div class="col-lg-3 col-md-6"><div class="card shadow-sm border-0 h-100"><div class="card-body">
+        <h3 class="h6">Por rango de edad</h3><canvas id="chartAge" height="220"></canvas>
+    </div></div></div>
+    <div class="col-lg-3 col-md-6"><div class="card shadow-sm border-0 h-100"><div class="card-body">
+        <h3 class="h6">Por sector</h3><canvas id="chartSector" height="220"></canvas>
+    </div></div></div>
+    <div class="col-lg-3 col-md-6"><div class="card shadow-sm border-0 h-100"><div class="card-body">
+        <h3 class="h6">Por frecuencia</h3><canvas id="chartFreq" height="220"></canvas>
+    </div></div></div>
 </div>
 
-<div class="row g-3 mt-1">
-    <div class="col-lg-6">
-        <div class="card shadow-sm border-0 h-100"><div class="card-body">
-            <h3 class="h6">Respuestas por observatorio de origen</h3>
+<!-- Geografía de los encuestados -->
+<h2 class="h5 mt-4 mb-2">¿De dónde son los encuestados?</h2>
+<div class="row g-3">
+    <div class="col-lg-7"><div class="card shadow-sm border-0 h-100"><div class="card-body">
+        <h3 class="h6">Mapa de encuestados (según filtros)</h3>
+        <?php if ($surveyGeoKnown === 0): ?>
+            <div class="alert alert-info small mb-2">No hay encuestados con ubicación para estos filtros. La ubicación se obtiene por IP al responder; las conexiones desde la red interna no se geolocalizan.</div>
+        <?php endif; ?>
+        <div id="mapEncuestados" style="height:380px;border-radius:12px;"></div>
+    </div></div></div>
+    <div class="col-lg-5"><div class="card shadow-sm border-0 h-100"><div class="card-body">
+        <h3 class="h6">País y ciudad</h3>
+        <div class="table-responsive" style="max-height:380px;overflow:auto">
             <table class="table table-sm mb-0">
-                <thead><tr><th>Observatorio / página</th><th class="text-end">Respuestas</th></tr></thead>
+                <thead class="table-light"><tr><th>País</th><th>Ciudad</th><th class="text-end">Encuestados</th></tr></thead>
                 <tbody>
-                <?php if (empty($surveyByCtx)): ?>
-                    <tr><td colspan="2" class="text-muted text-center py-2">Sin respuestas todavía.</td></tr>
-                <?php else: foreach ($surveyByCtx as $r): ?>
-                    <tr><td><?= htmlspecialchars(est_page_label((string) $r['k'])) ?></td><td class="text-end"><?= (int) $r['c'] ?></td></tr>
+                <?php if (empty($surveyGeo)): ?>
+                    <tr><td colspan="3" class="text-muted text-center py-2">Sin respuestas para estos filtros.</td></tr>
+                <?php else: foreach ($surveyGeo as $r): ?>
+                    <tr><td><?= htmlspecialchars((string) $r['country']) ?></td><td><?= htmlspecialchars((string) $r['city']) ?></td><td class="text-end"><?= (int) $r['c'] ?></td></tr>
                 <?php endforeach; endif; ?>
                 </tbody>
             </table>
-        </div></div>
-    </div>
-    <div class="col-lg-6">
-        <div class="card shadow-sm border-0 h-100"><div class="card-body">
-            <h3 class="h6">Visitantes por país</h3>
-            <table class="table table-sm mb-0">
-                <thead><tr><th>País</th><th class="text-end">Visitantes</th></tr></thead>
-                <tbody>
-                <?php if (empty($byCountry)): ?>
-                    <tr><td colspan="2" class="text-muted text-center py-2">Sin datos de ubicación todavía.</td></tr>
-                <?php else: foreach ($byCountry as $r): ?>
-                    <tr><td><?= htmlspecialchars((string) $r['country']) ?></td><td class="text-end"><?= (int) $r['c'] ?></td></tr>
-                <?php endforeach; endif; ?>
-                </tbody>
-            </table>
-        </div></div>
-    </div>
+        </div>
+    </div></div></div>
 </div>
+
+<!-- Encuesta por observatorio de origen -->
+<div class="card shadow-sm border-0 mt-3"><div class="card-body">
+    <h3 class="h6">Respuestas por observatorio de origen</h3>
+    <table class="table table-sm mb-0" style="max-width:520px">
+        <thead><tr><th>Observatorio / página</th><th class="text-end">Respuestas</th></tr></thead>
+        <tbody>
+        <?php if (empty($surveyByCtx)): ?>
+            <tr><td colspan="2" class="text-muted text-center py-2">Sin respuestas para estos filtros.</td></tr>
+        <?php else: foreach ($surveyByCtx as $r): ?>
+            <tr><td><?= htmlspecialchars(est_page_label((string) $r['k'])) ?></td><td class="text-end"><?= (int) $r['c'] ?></td></tr>
+        <?php endforeach; endif; ?>
+        </tbody>
+    </table>
+</div></div>
 
 <script>
 const EST = {
   byPage: <?= json_encode($dataVisitsByPage, JSON_UNESCAPED_UNICODE) ?>,
   byDay: <?= json_encode($dataVisitsByDay, JSON_UNESCAPED_UNICODE) ?>,
+  gender: <?= json_encode($dataGender, JSON_UNESCAPED_UNICODE) ?>,
   age: <?= json_encode($dataAge, JSON_UNESCAPED_UNICODE) ?>,
   sector: <?= json_encode($dataSector, JSON_UNESCAPED_UNICODE) ?>,
   freq: <?= json_encode($dataFreq, JSON_UNESCAPED_UNICODE) ?>,
@@ -237,43 +325,35 @@ const EST = {
 };
 const PALETTE = ['#0d6efd','#20c997','#fd7e14','#6f42c1','#dc3545','#0dcaf0','#ffc107','#198754'];
 
-function mkBar(id, d, label){
-  const el = document.getElementById(id); if(!el) return;
-  new Chart(el, {type:'bar', data:{labels:d.labels, datasets:[{label:label, data:d.data, backgroundColor:'#0d6efd'}]},
-    options:{plugins:{legend:{display:false}}, scales:{y:{beginAtZero:true, ticks:{precision:0}}}}});
-}
-function mkLine(id, d){
-  const el = document.getElementById(id); if(!el) return;
-  new Chart(el, {type:'line', data:{labels:d.labels, datasets:[{data:d.data, borderColor:'#20c997', backgroundColor:'rgba(32,201,151,.15)', fill:true, tension:.3}]},
-    options:{plugins:{legend:{display:false}}, scales:{y:{beginAtZero:true, ticks:{precision:0}}}}});
-}
-function mkDoughnut(id, d){
-  const el = document.getElementById(id); if(!el) return;
-  new Chart(el, {type:'doughnut', data:{labels:d.labels, datasets:[{data:d.data, backgroundColor:PALETTE}]},
-    options:{plugins:{legend:{position:'bottom', labels:{boxWidth:12, font:{size:11}}}}}});
-}
+function mkBar(id, d){ const el=document.getElementById(id); if(!el)return;
+  new Chart(el,{type:'bar',data:{labels:d.labels,datasets:[{data:d.data,backgroundColor:'#0d6efd'}]},
+    options:{plugins:{legend:{display:false}},scales:{y:{beginAtZero:true,ticks:{precision:0}}}}}); }
+function mkLine(id, d){ const el=document.getElementById(id); if(!el)return;
+  new Chart(el,{type:'line',data:{labels:d.labels,datasets:[{data:d.data,borderColor:'#20c997',backgroundColor:'rgba(32,201,151,.15)',fill:true,tension:.3}]},
+    options:{plugins:{legend:{display:false}},scales:{y:{beginAtZero:true,ticks:{precision:0}}}}}); }
+function mkDoughnut(id, d){ const el=document.getElementById(id); if(!el)return;
+  new Chart(el,{type:'doughnut',data:{labels:d.labels,datasets:[{data:d.data,backgroundColor:PALETTE}]},
+    options:{plugins:{legend:{position:'bottom',labels:{boxWidth:12,font:{size:10}}}}}}); }
 
-mkBar('chartByPage', EST.byPage, 'Visitantes');
+mkBar('chartByPage', EST.byPage);
 mkLine('chartByDay', EST.byDay);
+mkDoughnut('chartGender', EST.gender);
 mkDoughnut('chartAge', EST.age);
 mkDoughnut('chartSector', EST.sector);
 mkDoughnut('chartFreq', EST.freq);
 
-// Mapa
 (function(){
-  const el = document.getElementById('mapVisitas'); if(!el || !window.L) return;
-  const map = L.map('mapVisitas').setView([4.6, -74.1], 4);
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {maxZoom:18, attribution:'&copy; OpenStreetMap'}).addTo(map);
-  const pts = EST.points || [];
-  const bounds = [];
+  const el=document.getElementById('mapEncuestados'); if(!el||!window.L)return;
+  const map=L.map('mapEncuestados').setView([4.6,-74.1],4);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:18,attribution:'&copy; OpenStreetMap'}).addTo(map);
+  const pts=EST.points||[]; const bounds=[];
   pts.forEach(p=>{
-    const r = Math.min(28, 6 + Math.sqrt(p.c)*4);
-    L.circleMarker([p.lat, p.lng], {radius:r, color:'#0d6efd', fillColor:'#0d6efd', fillOpacity:.45, weight:1})
-      .addTo(map)
-      .bindPopup('<strong>'+(p.city||'')+(p.city&&p.country?', ':'')+(p.country||'')+'</strong><br>'+p.c+' visitante(s)');
-    bounds.push([p.lat, p.lng]);
+    const r=Math.min(28,6+Math.sqrt(p.c)*4);
+    L.circleMarker([p.lat,p.lng],{radius:r,color:'#6f42c1',fillColor:'#6f42c1',fillOpacity:.45,weight:1})
+     .addTo(map).bindPopup('<strong>'+(p.city||'')+(p.city&&p.country?', ':'')+(p.country||'')+'</strong><br>'+p.c+' encuestado(s)');
+    bounds.push([p.lat,p.lng]);
   });
-  if(bounds.length){ try{ map.fitBounds(bounds, {padding:[30,30], maxZoom:8}); }catch(e){} }
+  if(bounds.length){ try{ map.fitBounds(bounds,{padding:[30,30],maxZoom:8}); }catch(e){} }
 })();
 </script>
 <?php require __DIR__ . '/includes/footer.php'; ?>

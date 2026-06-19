@@ -79,6 +79,17 @@ function cms_survey_visit_frequency(): array
     ];
 }
 
+function cms_survey_genders(): array
+{
+    return [
+        'masculino' => 'Masculino',
+        'femenino' => 'Femenino',
+        'no_binario' => 'No binario',
+        'otro' => 'Otro',
+        'prefiero_no_responder' => 'Prefiero no responder',
+    ];
+}
+
 /**
  * Registra un visitante único para esta página (sin incrementar en recargas del mismo navegador).
  * Devuelve el total de visitantes únicos para page_key o null si falla la BD.
