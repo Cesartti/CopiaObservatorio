@@ -1,4 +1,11 @@
 <?php
+require_once __DIR__ . '/../../admin/auth/bootstrap.php';
+if (!function_exists('auth_user') || auth_user() === null) {
+    http_response_code(401);
+    header('Content-Type: application/json; charset=utf-8');
+    echo json_encode(['error' => 'No autorizado'], JSON_UNESCAPED_UNICODE);
+    exit;
+}
 header('Content-Type: application/json; charset=utf-8');
 require_once __DIR__ . '/../db.php';
 
@@ -12,8 +19,14 @@ if (!$pdo) {
     exit;
 }
 
-$paises = $pdo->query("SELECT pais, COUNT(*) as total FROM accesos_observatorio WHERE pais <> '' GROUP BY pais")->fetchAll(PDO::FETCH_ASSOC);
-$ciudades = $pdo->query("SELECT ciudad, latitud, longitud, COUNT(*) as total FROM accesos_observatorio WHERE ciudad <> '' GROUP BY ciudad, latitud, longitud")->fetchAll(PDO::FETCH_ASSOC);
-$heat = $pdo->query("SELECT latitud, longitud, 1 as intensity FROM accesos_observatorio WHERE latitud <> '' AND longitud <> ''")->fetchAll(PDO::FETCH_ASSOC);
-
-echo json_encode(['paises'=>$paises, 'ciudades'=>$ciudades, 'heat'=>$heat], JSON_UNESCAPED_UNICODE);
+try {
+    $paises = $pdo->query("SELECT pais, COUNT(*) as total FROM accesos_observatorio WHERE pais <> '' GROUP BY pais")->fetchAll(PDO::FETCH_ASSOC);
+    $ciudades = $pdo->query("SELECT ciudad, latitud, longitud, COUNT(*) as total FROM accesos_observatorio WHERE ciudad <> '' GROUP BY ciudad, latitud, longitud")->fetchAll(PDO::FETCH_ASSOC);
+    $heat = $pdo->query("SELECT latitud, longitud, 1 as intensity FROM accesos_observatorio WHERE latitud <> '' AND longitud <> ''")->fetchAll(PDO::FETCH_ASSOC);
+    echo json_encode(['paises'=>$paises, 'ciudades'=>$ciudades, 'heat'=>$heat], JSON_UNESCAPED_UNICODE);
+} catch (Throwable $e) {
+    echo json_encode([
+        'paises' => [], 'ciudades' => [], 'heat' => [],
+        'warning' => 'Sin datos de analítica disponibles (tabla accesos_observatorio ausente; aplique la migración 015).'
+    ], JSON_UNESCAPED_UNICODE);
+}

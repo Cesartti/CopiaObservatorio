@@ -1,0 +1,14 @@
+# Normalizar finales de línea en el repositorio (evita diffs ruidosos LF/CRLF)
+* text=auto
+
+# Binarios
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.pdf binary
+*.zip binary
+*.xlsx binary
+*.woff binary
+*.woff2 binary

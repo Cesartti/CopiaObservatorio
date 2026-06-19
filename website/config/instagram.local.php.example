@@ -1,0 +1,19 @@
+<?php
+
+/**
+ * PLANTILLA. Copie este archivo a 'instagram.local.php' y rellene sus datos.
+ * 'instagram.local.php' está en .gitignore y NO se versiona (contiene el token).
+ *
+ * Cómo obtener estos valores: ver scripts/INSTAGRAM_SETUP.md
+ */
+
+return [
+    'enabled'      => true,
+    // Token de acceso de larga duración (≈60 días; renovar antes de expirar).
+    'access_token' => 'EAAG....................................',
+    // ID numérico de la cuenta Business/Creator de @secplaneacionboyaca.
+    'ig_user_id'   => '178414XXXXXXXXX',
+    // Hashtag a buscar en los textos de las publicaciones (sin #).
+    'hashtag'      => 'RedObservatoriosBoyacá',
+    'max_posts'    => 12,
+];

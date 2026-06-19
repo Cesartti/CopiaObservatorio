@@ -16,6 +16,7 @@ $dimensionMap = [
     '2' => 'social',
     '3' => 'ambiental',
     '4' => 'tecnología',
+    '5' => 'género',
 ];
 
 $indicators = [];

@@ -1,15 +1,5 @@
-<footer class="footer py-3 m-0 border-top">
-    <div class="container">
-		<div class="footer-title">
-			Contacto
-		</div>
-        <div class="footer-text">
-            Palacio de la Torre, Calle 20 No. 9 – 90, Secretaría de Planeación - piso 2 <br>
-            <a href="mailto:rotpp.planeacion@boyaca.gov.co">rotpp.planeacion@boyaca.gov.co</a><br>
-            <a href="tel:57-608-7420150">PBX + (57) 608 7420150</a> 
-        </div>
-    </div>
-</footer>
+<?php /* Pie de página de contacto unificado (mismo bloque que las páginas modernas). */ ?>
+<?php require __DIR__ . '/site-footer.php'; ?>
 
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <!-- ...otros scripts... -->
@@ -88,6 +78,8 @@ if ($current_url === '' || 'index') {
 <!-- Bootstrap 5 JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
+<?php require __DIR__ . '/assistant-widget.php'; ?>
+<?php /* accessibility-widget ya se incluye dentro de site-footer.php */ ?>
 
 </body>
 

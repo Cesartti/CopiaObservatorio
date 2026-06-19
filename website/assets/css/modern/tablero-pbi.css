@@ -1,0 +1,168 @@
+/* Tablero público: estilo cercano a Power BI (canvas + tarjetas) */
+
+:root {
+  --pbi-canvas: #f3f2f1;
+  --pbi-chrome: #252423;
+  --pbi-accent: #0f6cbd;
+  --pbi-tile-bg: #ffffff;
+  --pbi-tile-border: #e1dfdd;
+}
+
+body.tablero-pbi-body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  background: var(--pbi-canvas);
+  color: #323130;
+}
+
+.pbi-chrome {
+  background: var(--pbi-chrome);
+  color: #f3f2f1;
+  padding: 0.85rem 1.25rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.18);
+}
+
+.pbi-chrome__inner {
+  max-width: 1600px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.pbi-chrome h1 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.pbi-chrome__meta {
+  font-size: 0.78rem;
+  color: #c8c6c4;
+}
+
+.pbi-chrome__meta strong {
+  color: #edebe9;
+  font-weight: 600;
+}
+
+.pbi-breadcrumb a {
+  color: #8a8886;
+  text-decoration: none;
+  font-size: 0.8rem;
+}
+
+.pbi-breadcrumb a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.pbi-canvas-wrap {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 1rem 1.25rem 2rem;
+}
+
+.pbi-grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -0.5rem;
+}
+
+.pbi-grid > * {
+  padding: 0.5rem;
+  box-sizing: border-box;
+}
+
+.pbi-tile {
+  background: var(--pbi-tile-bg);
+  border: 1px solid var(--pbi-tile-border);
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.pbi-tile__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.45rem 0.65rem;
+  border-bottom: 1px solid var(--pbi-tile-border);
+  background: linear-gradient(180deg, #faf9f8 0%, #ffffff 100%);
+}
+
+.pbi-tile__title {
+  font-size: 0.82rem;
+  font-weight: 600;
+  margin: 0;
+  color: #323130;
+  line-height: 1.3;
+}
+
+.pbi-tile__badge {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #605e5c;
+  background: #f3f2f1;
+  padding: 0.15rem 0.4rem;
+  border-radius: 2px;
+  white-space: nowrap;
+}
+
+.pbi-tile__body {
+  flex: 1;
+  min-height: 200px;
+  padding: 0.35rem;
+  position: relative;
+}
+
+.pbi-tile__body > div {
+  width: 100% !important;
+  height: 100% !important;
+  min-height: inherit;
+}
+
+.pbi-tile--error .pbi-tile__body {
+  color: #a4262c;
+  font-size: 0.85rem;
+  padding: 1rem;
+}
+
+.pbi-empty {
+  max-width: 560px;
+  margin: 3rem auto;
+  text-align: center;
+  color: #605e5c;
+}
+
+.pbi-accent-bar {
+  height: 3px;
+  background: linear-gradient(90deg, var(--pbi-accent), #107c10);
+  margin: 0;
+}
+
+/* Vista embebida (iframe en observatorio.php) */
+body.tablero-pbi-embed {
+  min-height: auto;
+}
+
+body.tablero-pbi-embed .pbi-chrome {
+  padding: 0.55rem 1rem;
+}
+
+body.tablero-pbi-embed .pbi-chrome__meta .mt-1 {
+  display: none;
+}
+
+body.tablero-pbi-embed .pbi-canvas-wrap {
+  padding: 0.65rem 1rem 1rem;
+}

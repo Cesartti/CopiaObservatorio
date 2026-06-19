@@ -1,22 +1,10 @@
 <?php
-// dashboard/db.php
-$DB_HOST = "127.0.0.1";
-$DB_NAME = "observatorio_boyaca";
-$DB_USER = "observa_user";
-$DB_PASS = "Observa2025*";
 
-$pdo = null;
+require_once __DIR__ . '/../config/database.php';
+
+$pdo = cms_pdo();
 $db_error = null;
 
-try {
-    $pdo = new PDO(
-        "mysql:host=$DB_HOST;dbname=$DB_NAME;charset=utf8mb4",
-        $DB_USER,
-        $DB_PASS,
-        [
-            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
-        ]
-    );
-} catch (PDOException $e) {
-    $db_error = "No se pudo conectar a la base de datos del dashboard. Revise credenciales o cree la BD local.";
+if (!$pdo) {
+    $db_error = 'No se pudo conectar a la base de datos del dashboard. Revise credenciales o cree la BD local.';
 }

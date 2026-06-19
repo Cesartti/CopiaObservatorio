@@ -1,0 +1,9 @@
+<?php
+
+/** Renombrar a rag_sync.local.php si necesita rutas concretas. */
+
+return [
+    'python_binary' => 'C:\\Users\\SU_USUARIO\\AppData\\Local\\Programs\\Python\\Python312\\python.exe',
+    'windows_py_launcher' => false,
+    'inject_mysql_from_cms_config' => true,
+];

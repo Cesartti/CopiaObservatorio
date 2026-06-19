@@ -17,12 +17,12 @@
             <div class="collapse navbar-collapse" id="navbarObservatorio">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link <?php if ($current_url === 'red-home') echo 'active'; ?>" href="red-home.php">
-                            <i class="fa-solid fa-layer-group"></i> Nueva Red
+                        <a class="nav-link" href="index.php">
+                            <i class="fa-solid fa-house"></i> Inicio
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link <?php if ($current_url === 'about') echo 'active'; ?>" href="about.php">
+                        <a class="nav-link <?php if ($current_url === 'nosotros' || $current_url === 'about') echo 'active'; ?>" href="nosotros.php">
                             <i class="fa-solid fa-users"></i> Nosotros
                         </a>
                     </li>
@@ -89,9 +89,8 @@
         <div class="mySideNav">
             <ul class="side-menu">
                 <li><a href="index.php">Inicio</a></li>
-                <li class="<?php if ($current_url === 'red-home') echo 'active-link'; ?>"><a href="red-home.php">Nueva Red</a></li>
-                <li class="<?php if ($current_url === 'about') echo 'active-link'; ?>">
-                    <a href="about.php">Nosotros</a>
+                <li class="<?php if ($current_url === 'nosotros' || $current_url === 'about') echo 'active-link'; ?>">
+                    <a href="nosotros.php">Nosotros</a>
                 </li>
                 <li class="<?php if (in_array($current_url, ['indic-economico', 'indic-social', 'indic-ambiental', 'indic-tecnologia'])) echo 'active-link'; ?>">
                     <a class="parent-menu collapsed" data-bs-toggle="collapse" href="#collapseMenu1" role="button" aria-expanded="false" aria-controls="collapseMenu1">

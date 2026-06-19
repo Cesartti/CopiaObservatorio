@@ -1,0 +1,890 @@
+/* ============================================================================
+   genero-content.css — Estilos para el contenido (body_html) de las pestañas
+   del Observatorio de Género en observatorio.php. Reemplaza los <style> inline
+   del antiguo indic-genero.php; modernizados con la paleta del observatorio
+   (--obs-color / --obs-accent / --obs-color-rgb) y limpiados para integrarse
+   con el sistema CMS.
+
+   Todas las reglas están scopeadas bajo .ms-pane-body / .ms-chip-body /
+   .ms-pane para no contaminar el resto del portal.
+============================================================================ */
+
+.ms-pane-body,
+.ms-chip-body,
+.ms-pane{
+    --gen-brand: var(--obs-color, #be185d);
+    --gen-brand-soft: rgba(var(--obs-color-rgb, 190,24,93), .08);
+    --gen-brand-line: rgba(var(--obs-color-rgb, 190,24,93), .20);
+    --gen-title: #2c3e50;
+    --gen-text: #1f2937;
+    --gen-card-shadow: 0 4px 14px rgba(15,31,50,.06);
+    --gen-card-shadow-hover: 0 10px 24px rgba(15,31,50,.10);
+}
+
+/* ── Cabecera de panel (indicadores-section heredado) ─────────────────── */
+.ms-pane-body .indicadores-section{
+    margin-top: 0 !important;
+}
+/* IMPORTANTE: aplicar SOLO cuando el primer hijo es la cabecera (tiene img+h2),
+   NO cuando es la lista de acordeones (.indicadores-section-list o id="tab").
+   Antes esta regla forzaba display:flex en TODO el primer div, lo que ponía los
+   .accordion-item en línea horizontal en lugar de apilados. */
+.ms-pane-body .indicadores-section > div:first-child:not(.indicadores-section-list):not(.indicadores-section-list-tabs):not([id="tab"]):has(> img){
+    display: flex !important;
+    align-items: center !important;
+    gap: 14px !important;
+    padding: 8px 0 14px;
+    border-bottom: 1px solid var(--gen-brand-line);
+    margin-bottom: 1rem !important;
+}
+.ms-pane-body .indicadores-section > div:first-child:not(.indicadores-section-list):not([id="tab"]) > img{
+    width: 56px !important;
+    height: 56px !important;
+    margin: 0 !important;
+    padding: 8px;
+    background: var(--gen-brand-soft);
+    border-radius: 14px;
+    box-shadow: inset 0 0 0 1px var(--gen-brand-line);
+}
+.ms-pane-body .indicador-title,
+.ms-pane-body h2.indicador-title{
+    color: var(--gen-brand) !important;
+    font-size: 1.45rem !important;
+    font-weight: 800 !important;
+    line-height: 1.2 !important;
+}
+
+/* ── Bloques de seguimiento (cards) ───────────────────────────────────── */
+.ms-pane-body .seguimiento-block{
+    background: #fff;
+    border: 1px solid #eef2f7;
+    border-left: 4px solid var(--gen-brand);
+    border-radius: 12px;
+    padding: 1.1rem 1.25rem;
+    margin: 1rem 0;
+    box-shadow: var(--gen-card-shadow);
+    transition: box-shadow .2s ease, transform .2s ease;
+}
+.ms-pane-body .seguimiento-block:hover{
+    box-shadow: var(--gen-card-shadow-hover);
+    transform: translateY(-1px);
+}
+.ms-pane-body .seguimiento-title{
+    display: flex;
+    align-items: center;
+    gap: .55rem;
+    font-weight: 700;
+    color: var(--gen-brand);
+    font-size: 1.05rem;
+    margin-bottom: .75rem;
+    line-height: 1.35;
+}
+.ms-pane-body .seguimiento-title .icon{
+    font-size: 1.15rem;
+    line-height: 1;
+}
+.ms-pane-body .seguimiento-list,
+.ms-pane-body .seguimiento-doc-list{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: .55rem;
+}
+.ms-pane-body .seguimiento-list li,
+.ms-pane-body .seguimiento-doc-list li{
+    padding-left: 1.45rem;
+    position: relative;
+    line-height: 1.55;
+}
+.ms-pane-body .seguimiento-list li::before,
+.ms-pane-body .seguimiento-doc-list li::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: .55rem;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--gen-brand);
+    box-shadow: 0 0 0 3px var(--gen-brand-soft);
+}
+.ms-pane-body .seguimiento-block p{
+    margin: 0 0 .65rem;
+    line-height: 1.6;
+}
+.ms-pane-body .seguimiento-block h5{
+    color: var(--gen-title);
+    font-weight: 700;
+    font-size: 1rem;
+    margin-top: 1rem;
+    margin-bottom: .55rem;
+}
+
+/* ── Two-col (imagen + texto a 2 columnas) ────────────────────────────── */
+.ms-pane-body .two-col,
+.ms-chip-body .two-col{
+    --media-w: minmax(220px, 360px);
+    display: grid;
+    grid-template-columns: var(--media-w) 1fr;
+    gap: 1.4rem;
+    align-items: start;
+    margin: 1rem 0;
+}
+.ms-pane-body .two-col__media,
+.ms-chip-body .two-col__media{
+    margin: 0;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: var(--gen-card-shadow);
+}
+.ms-pane-body .two-col__media img,
+.ms-chip-body .two-col__media img{
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.ms-pane-body .two-col.two-col--sticky .two-col__media,
+.ms-chip-body .two-col.two-col--sticky .two-col__media{
+    position: sticky;
+    top: 12px;
+}
+.ms-pane-body .two-col__text,
+.ms-chip-body .two-col__text{
+    align-self: start;
+    line-height: 1.6;
+}
+@media (max-width: 900px){
+    .ms-pane-body .two-col,
+    .ms-chip-body .two-col{ grid-template-columns: 1fr; }
+    .ms-pane-body .two-col.two-col--sticky .two-col__media,
+    .ms-chip-body .two-col.two-col--sticky .two-col__media{ position: static; }
+}
+
+/* ── Info grid (etiqueta + valor) ─────────────────────────────────────── */
+.ms-pane-body .info-grid{
+    display: grid;
+    grid-template-columns: clamp(170px, 22%, 230px) 1fr;
+    column-gap: 1.1rem;
+    row-gap: .8rem;
+    margin: 1rem 0;
+}
+@media (max-width: 768px){
+    .ms-pane-body .info-grid{ grid-template-columns: 1fr; }
+}
+.ms-pane-body .info-label{
+    display: grid;
+    grid-template-columns: 24px 1fr;
+    align-items: start;
+    gap: 10px;
+    font-weight: 800;
+    color: var(--gen-title);
+}
+.ms-pane-body .info-label i{ color: var(--gen-brand); margin-top: 2px; }
+.ms-pane-body .info-value{
+    background: #fff;
+    border: 1px solid #edf1f7;
+    border-left: 4px solid var(--gen-brand);
+    border-radius: 10px;
+    padding: .8rem 1rem;
+    color: var(--gen-text);
+    box-shadow: var(--gen-card-shadow);
+    line-height: 1.6;
+}
+
+/* ── Tarjetas (k-cards) ───────────────────────────────────────────────── */
+.ms-pane-body .k-cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: .85rem;
+    margin: 1rem 0 .5rem;
+}
+.ms-pane-body .k-card{
+    background: #fff;
+    border: 1px solid #eef2f7;
+    border-radius: 14px;
+    padding: 1rem;
+    box-shadow: var(--gen-card-shadow);
+    transition: all .15s ease;
+}
+.ms-pane-body .k-card:hover{
+    transform: translateY(-3px);
+    box-shadow: var(--gen-card-shadow-hover);
+    border-color: var(--gen-brand-line);
+}
+.ms-pane-body .k-card h5{
+    margin: 0 0 .35rem;
+    font-size: 1rem;
+    font-weight: 700;
+    display: flex;
+    gap: .55rem;
+    align-items: center;
+    color: var(--gen-title);
+}
+.ms-pane-body .k-card h5 i{ color: var(--gen-brand); }
+.ms-pane-body .k-card p{ margin: 0; line-height: 1.55; color: var(--gen-text); }
+
+/* ── Listas con bullets (k-list, seguimiento-list) ─────────────────────── */
+.ms-pane-body .k-list{
+    margin: .35rem 0 0;
+    padding-left: 1.1rem;
+}
+.ms-pane-body .k-list li{ margin: .35rem 0; line-height: 1.55; }
+
+/* ── Acordeones legacy (details/exp) ──────────────────────────────────── */
+.ms-pane-body details.exp{
+    background: #fff;
+    border: 1px solid #edf1f7;
+    border-radius: 12px;
+    padding: .8rem 1rem;
+    margin: .75rem 0;
+    transition: box-shadow .2s ease, border-color .2s ease;
+}
+.ms-pane-body details.exp[open]{
+    box-shadow: var(--gen-card-shadow);
+    border-color: var(--gen-brand-line);
+}
+.ms-pane-body details.exp summary{
+    list-style: none;
+    cursor: pointer;
+    font-weight: 700;
+    color: var(--gen-title);
+    display: grid;
+    grid-template-columns: 24px 1fr auto;
+    gap: .65rem;
+    align-items: center;
+}
+.ms-pane-body details.exp summary::-webkit-details-marker{ display: none; }
+.ms-pane-body details.exp summary i{ color: var(--gen-brand); }
+.ms-pane-body details.exp summary::after{
+    content: "+";
+    font-size: 1.25rem;
+    color: var(--gen-brand);
+    line-height: 1;
+    transition: transform .2s ease;
+}
+.ms-pane-body details.exp[open] summary::after{ content: "−"; }
+.ms-pane-body details.exp .exp-body{
+    padding: .75rem 0 .25rem;
+    line-height: 1.6;
+}
+
+/* ── Acordeón legacy con clases (.accordion-item/.accordion-button/.accordion-content) ─ */
+/* Estos no son los de Bootstrap (que usan collapse) sino el accordion custom legacy.
+   Se mantiene el cierre/apertura por JS opcional, pero al menos se ve bien. */
+.ms-pane-body > .accordion,
+.ms-pane-body .indicadores-section > .accordion{
+    display: grid;
+    gap: .65rem;
+    margin: 1rem 0;
+}
+.ms-pane-body .accordion-item{
+    background: #fff;
+    border: 1px solid #edf1f7;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all .2s ease;
+}
+.ms-pane-body .accordion-item:hover{
+    border-color: var(--gen-brand-line);
+    box-shadow: var(--gen-card-shadow);
+}
+.ms-pane-body .accordion-button{
+    width: 100%;
+    text-align: left;
+    background: linear-gradient(90deg, var(--gen-brand-soft), transparent);
+    border: 0;
+    padding: .9rem 1.1rem;
+    font-weight: 700;
+    color: var(--gen-title);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: .55rem;
+}
+.ms-pane-body .accordion-button:hover{
+    color: var(--gen-brand);
+}
+.ms-pane-body .accordion-button.active,
+.ms-pane-body .accordion-button[aria-expanded="true"]{
+    background: linear-gradient(135deg, var(--gen-brand-soft), rgba(var(--obs-color-rgb, 190,24,93), .03));
+    color: var(--gen-brand);
+}
+.ms-pane-body .accordion-content{
+    display: none;
+    padding: 1rem 1.1rem 1.2rem;
+    background: #fafbfd;
+    border-top: 1px solid var(--gen-brand-line);
+    line-height: 1.6;
+}
+.ms-pane-body .accordion-content.is-open,
+.ms-pane-body .accordion-item.is-open > .accordion-content{
+    display: block;
+}
+
+/* ── Chips legacy (data-tab / .is-active) ─────────────────────────────── */
+.ms-pane-body .chip-group{
+    display: flex;
+    flex-wrap: wrap;
+    gap: .45rem;
+    margin: .85rem 0 1.1rem;
+}
+.ms-pane-body .chip-group .chip{
+    border: 1.5px solid var(--gen-brand-line);
+    background: #fff;
+    color: var(--gen-title);
+    padding: .45rem .9rem;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: .85rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    transition: all .15s ease;
+}
+.ms-pane-body .chip-group .chip:hover{
+    transform: translateY(-2px);
+    background: var(--gen-brand-soft);
+    color: var(--gen-brand);
+}
+.ms-pane-body .chip-group .chip.is-active,
+.ms-pane-body .chip-group .chip[aria-selected="true"]{
+    background: linear-gradient(135deg, var(--gen-brand), rgba(var(--obs-color-rgb, 190,24,93), .82));
+    color: #fff;
+    border-color: transparent;
+    box-shadow: 0 6px 14px rgba(var(--obs-color-rgb, 190,24,93), .35);
+}
+.ms-pane-body .k-pane,
+.ms-pane-body .k-panes .k-pane{ display: none; }
+.ms-pane-body .k-pane.is-active,
+.ms-pane-body .k-panes .k-pane.is-active{ display: block; }
+.ms-pane-body .is-hidden{ display: none !important; }
+
+/* ── Callouts ──────────────────────────────────────────────────────────── */
+.ms-pane-body .callout{
+    border-radius: 10px;
+    padding: .8rem 1rem;
+    margin: .9rem 0;
+    border-left: 4px solid var(--gen-brand);
+    background: var(--gen-brand-soft);
+    line-height: 1.55;
+}
+.ms-pane-body .callout.ok{
+    background: #ecfdf5;
+    border-left-color: #10b981;
+    color: #065f46;
+}
+.ms-pane-body .callout.is-primary{
+    background: var(--gen-brand-soft);
+    border-left-color: var(--gen-brand);
+    color: var(--gen-brand);
+}
+
+/* ── Mini-tip y rich-block ────────────────────────────────────────────── */
+.ms-pane-body .mini-tip{
+    font-size: .85rem;
+    color: #6b7280;
+    background: #f8fafc;
+    border-radius: 8px;
+    padding: .55rem .75rem;
+    margin: .6rem 0;
+    border-left: 3px solid var(--gen-brand-line);
+}
+.ms-pane-body .rich-block{
+    background: #fafbfd;
+    border-radius: 12px;
+    padding: 1rem 1.1rem;
+    border: 1px solid #edf1f7;
+    margin: 1rem 0;
+    line-height: 1.6;
+}
+
+/* ── Tarjetas Tablero (panel "Información") ───────────────────────────── */
+.ms-pane-body .tablero-card{
+    background: #fff;
+    border: 1px solid #eef2f7;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--gen-card-shadow);
+    transition: all .2s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.ms-pane-body .tablero-card:hover{
+    transform: translateY(-4px);
+    box-shadow: var(--gen-card-shadow-hover);
+    border-color: var(--gen-brand-line);
+}
+.ms-pane-body .tablero-card .card-img-top{
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    background: var(--gen-brand-soft);
+}
+.ms-pane-body .tablero-card .card-body{
+    padding: 1rem 1.1rem 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: .55rem;
+}
+.ms-pane-body .tablero-card .card-title{
+    color: var(--gen-brand);
+    font-weight: 800;
+    margin: 0;
+    font-size: 1.05rem;
+}
+.ms-pane-body .tablero-card .card-text{
+    color: var(--gen-text);
+    line-height: 1.5;
+    flex-grow: 1;
+}
+.ms-pane-body .btn-institucional,
+.ms-pane-body .btn-institucional2{
+    background: linear-gradient(135deg, var(--gen-brand), rgba(var(--obs-color-rgb, 190,24,93), .82));
+    color: #fff !important;
+    border: 0;
+    border-radius: 999px;
+    padding: .5rem 1.15rem;
+    font-weight: 700;
+    text-decoration: none;
+    align-self: flex-start;
+    transition: filter .15s ease, transform .15s ease;
+    box-shadow: 0 6px 14px rgba(var(--obs-color-rgb, 190,24,93), .25);
+}
+.ms-pane-body .btn-institucional:hover,
+.ms-pane-body .btn-institucional2:hover{
+    filter: brightness(1.08);
+    transform: translateY(-1px);
+    color: #fff !important;
+}
+.ms-pane-body .btn-institucional2{
+    background: linear-gradient(135deg, #6366f1, #4f46e5);
+    box-shadow: 0 6px 14px rgba(99,102,241,.25);
+}
+
+/* ── Iconos de lista PDF ──────────────────────────────────────────────── */
+.ms-pane-body .icon-list-items,
+.ms-pane-body .icon-list-item{
+    display: grid;
+    gap: .5rem;
+    list-style: none;
+    padding: 0;
+    margin: .65rem 0;
+}
+.ms-pane-body .icon-list-items > li,
+.ms-pane-body .icon-list-item{
+    display: flex;
+    gap: .65rem;
+    align-items: flex-start;
+    background: #fff;
+    border: 1px solid #edf1f7;
+    border-radius: 10px;
+    padding: .55rem .8rem;
+    line-height: 1.5;
+    transition: all .15s ease;
+}
+.ms-pane-body .icon-list-items > li:hover,
+.ms-pane-body .icon-list-item:hover{
+    border-color: var(--gen-brand-line);
+    box-shadow: var(--gen-card-shadow);
+    transform: translateX(2px);
+}
+.ms-pane-body .icon-list-items i,
+.ms-pane-body .icon-list-item i{
+    color: var(--gen-brand);
+    margin-top: 3px;
+    flex: 0 0 auto;
+}
+.ms-pane-body .icon-list-pdf{ color: #dc2626 !important; }
+.ms-pane-body .pdf-link{
+    color: var(--gen-brand);
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px dashed var(--gen-brand-line);
+}
+.ms-pane-body .pdf-link:hover{ color: var(--gen-brand); border-bottom-style: solid; }
+
+/* ── Logo marquee (banda institucional) ──────────────────────────────── */
+.ms-pane-body .logos-module{
+    margin: 1.2rem 0;
+}
+.ms-pane-body .logos-title{
+    font-weight: 800;
+    color: var(--gen-title);
+    margin-bottom: .65rem;
+    font-size: 1rem;
+}
+.ms-pane-body .logo-marquee{
+    position: relative;
+    overflow: hidden;
+    border-radius: 14px;
+    background: #fff;
+    border: 1px solid #eef2f7;
+    box-shadow: var(--gen-card-shadow);
+    padding: .65rem 0;
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+            mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+}
+.ms-pane-body .logo-track{
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    width: max-content;
+    animation: ms-logo-scroll 45s linear infinite;
+    padding-inline: 16px;
+}
+.ms-pane-body .logo-marquee:hover .logo-track{ animation-play-state: paused; }
+.ms-pane-body .logo-item{
+    flex: 0 0 auto;
+    width: 200px;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #edf1f7;
+    background: #fff;
+    border-radius: 12px;
+    padding: 8px 12px;
+    transition: all .2s ease;
+}
+.ms-pane-body .logo-item:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0,0,0,.10);
+    border-color: var(--gen-brand-line);
+}
+.ms-pane-body .logo-item img{
+    max-height: 48px;
+    max-width: 100%;
+    object-fit: contain;
+    filter: grayscale(25%);
+    transition: filter .2s ease;
+}
+.ms-pane-body .logo-item:hover img{ filter: none; }
+@keyframes ms-logo-scroll{ from{ transform: translateX(0); } to{ transform: translateX(-50%); } }
+@media (max-width: 768px){
+    .ms-pane-body .logo-item{ width: 160px; height: 60px; }
+    .ms-pane-body .logo-item img{ max-height: 38px; }
+}
+
+/* ── Botones genéricos en contenido ───────────────────────────────────── */
+.ms-pane-body .btn-link{
+    color: var(--gen-brand);
+    font-weight: 600;
+}
+.ms-pane-body .ver-tablero-btn{
+    margin-top: auto;
+}
+
+/* ── Backgrounds suaves ───────────────────────────────────────────────── */
+.ms-pane-body .bg-institucional-soft{
+    background: var(--gen-brand-soft);
+    border-radius: 12px;
+    padding: 1rem;
+}
+
+/* ── Section title genérico ───────────────────────────────────────────── */
+.ms-pane-body .section-title{
+    margin: 1rem 0 .5rem;
+    font-weight: 800;
+    color: var(--gen-title);
+    font-size: 1.05rem;
+}
+
+/* ── Limpieza de paddings excesivos del HTML viejo ────────────────────── */
+.ms-pane-body{ padding: 0; }
+.ms-pane-body > .indicadores-section{ padding: 0; }
+.ms-pane-body img{ max-width: 100%; height: auto; }
+.ms-pane-body table{ width: 100%; border-collapse: collapse; }
+.ms-pane-body table th,
+.ms-pane-body table td{ padding: .55rem .75rem; border: 1px solid #e5e7eb; }
+.ms-pane-body table thead th{ background: var(--gen-brand-soft); color: var(--gen-title); }
+
+/* ── Tipografía general ───────────────────────────────────────────────── */
+.ms-pane-body p{ line-height: 1.65; margin: 0 0 .85rem; color: var(--gen-text); }
+.ms-pane-body h2,
+.ms-pane-body h3,
+.ms-pane-body h4,
+.ms-pane-body h5{ color: var(--gen-title); }
+.ms-pane-body h4{ font-size: 1.1rem; font-weight: 700; margin-top: 1rem; }
+.ms-pane-body h5{ font-size: 1rem; font-weight: 700; }
+
+/* ── Tablero-card fila Bootstrap (el HTML viejo usa .row > .col-md-4) ── */
+.ms-pane-body .row{ margin-left: -.5rem; margin-right: -.5rem; }
+.ms-pane-body .row > [class*='col-']{ padding-left: .5rem; padding-right: .5rem; }
+
+/* ── Fixes específicos contra estilos inline excesivos del legacy ─────── */
+
+/* PDFs gigantes en rojo: el HTML viejo usa style="color:red;font-size:..." */
+.ms-pane-body a.pdf-link,
+.ms-pane-body a[class*="pdf"],
+.ms-pane-body .icon-list-text a,
+.ms-pane-body .icon-list-item a,
+.ms-pane-body .icon-list-items a{
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    color: var(--gen-brand) !important;
+    text-decoration: none !important;
+    line-height: 1.4 !important;
+}
+.ms-pane-body a.pdf-link:hover,
+.ms-pane-body a[class*="pdf"]:hover{
+    color: var(--gen-brand) !important;
+    text-decoration: underline !important;
+}
+.ms-pane-body .pdf-icon,
+.ms-pane-body i.fa-file-pdf,
+.ms-pane-body i.icon-list-pdf{
+    color: #dc2626 !important;
+    font-size: 1.1rem !important;
+    margin-right: .35rem;
+}
+/* Resetear cualquier <i>/<span> con style inline que el legacy meta para iconos PDF */
+.ms-pane-body a[href$=".pdf"]{
+    color: var(--gen-brand) !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+}
+.ms-pane-body a[href$=".pdf"]::before{
+    content: "\f1c1"; /* fa-file-pdf */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    color: #dc2626;
+    margin-right: .4rem;
+}
+
+/* Headings inline-styled (color, márgenes raros) del legacy: armonizar */
+.ms-pane-body h2[style],
+.ms-pane-body h3[style],
+.ms-pane-body h4[style],
+.ms-pane-body h5[style]{
+    color: var(--gen-title) !important;
+}
+.ms-pane-body h4[style*="3E2259"],
+.ms-pane-body h3[style*="3E2259"]{
+    color: var(--gen-brand) !important;
+}
+
+/* ── Cabecera duplicada ───────────────────────────────────────────────── */
+/* Si el body_html trae su propia .indicadores-section (con su cabecera-icono),
+   ocultamos el header genérico del nuevo sistema para no duplicar. */
+.ms-pane:has(.ms-pane-body .indicadores-section) > .ms-pane-head{
+    display: none;
+}
+/* Y también el banner gigante porque la indicadores-section ya muestra icono+título. */
+.ms-pane:has(.ms-pane-body .indicadores-section) > .ms-pane-banner{
+    display: none;
+}
+
+/* Este CSS sólo se carga en slug=genero, así que podemos esconder el banner
+   genérico — el .ms-pane-head con icono+título+subtítulo es suficiente. */
+.ms-pane-banner{ display: none; }
+
+/* Iframes embebidos (Reportes sociales, Power BI) ─────────────────────── */
+.ms-pane-body iframe{
+    width: 100%;
+    min-height: 360px;
+    border: 0;
+    border-radius: 12px;
+    margin: .75rem 0;
+    background: #f8fafc;
+    box-shadow: var(--gen-card-shadow);
+}
+
+/* Pequeños spans con emojis grandes inline del legacy ─────────────────── */
+.ms-pane-body span[style*="font-size"][style*="rem"]{
+    font-size: 1.05rem !important;
+}
+
+/* Quitar márgenes extremos heredados del HTML viejo en el primer hijo */
+.ms-pane-body > *:first-child{ margin-top: 0; }
+.ms-pane-body .indicadores-section.mt-4{ margin-top: 0 !important; }
+
+/* ── Limpiar contenedores anidados con backgrounds raros ──────────────── */
+.ms-pane-body div[style*="background"]:not([class]){
+    background: transparent !important;
+}
+.ms-pane-body div[style*="padding"]:not([class]){
+    padding: 0 !important;
+}
+
+/* Cards Bootstrap heredados (.card .card-body) que el legacy abusa ────── */
+.ms-pane-body .card:not(.tablero-card){
+    border: 1px solid #edf1f7;
+    border-radius: 12px;
+    box-shadow: var(--gen-card-shadow);
+    margin-bottom: 1rem;
+    overflow: hidden;
+}
+.ms-pane-body .card:not(.tablero-card) .card-body{
+    padding: 1rem 1.1rem;
+}
+.ms-pane-body .card-img-top{
+    width: 100% !important;
+    height: 180px !important;
+    object-fit: cover;
+}
+
+/* ── Imágenes huérfanas (sin clase) con tamaño excesivo ───────────────── */
+.ms-pane-body img:not([class]){
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+.ms-pane-body img[width][height]{
+    max-width: 100%;
+    height: auto;
+}
+
+/* ── Sub-secciones (.ms-chip-body) heredan los mismos estilos ──────────── */
+.ms-chip-body{ font-size: .97rem; line-height: 1.6; color: var(--gen-text); }
+.ms-chip-body h4{ color: var(--gen-brand); }
+.ms-chip-body ul{ padding-left: 1.1rem; }
+.ms-chip-body ul li{ margin: .35rem 0; }
+.ms-chip-body .mini-tip,
+.ms-chip-body .callout{ margin-top: .65rem; }
+
+/* ── Lightbox modal (PDFs / Power BI / imágenes) ──────────────────────── */
+.gen-lightbox{
+    background: #0f1f32;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 0;
+}
+.gen-lightbox-header{
+    background: linear-gradient(135deg, #7d2d91, #be185d);
+    color: #fff;
+    border-bottom: 0;
+    padding: .85rem 1.15rem;
+}
+.gen-lightbox-header .modal-title{
+    font-weight: 700;
+    color: #fff;
+}
+.gen-lightbox-header .btn-close{
+    filter: invert(1) brightness(1.5);
+    opacity: .85;
+}
+.gen-lightbox .modal-body{
+    background: #0f1f32;
+    min-height: 480px;
+}
+.gen-lightbox-frame{
+    width: 100%;
+    height: 78vh;
+    min-height: 460px;
+    border: 0;
+    background: #fff;
+    display: block;
+}
+.gen-lightbox-img{
+    width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+    background: #0f1f32;
+}
+.gen-lightbox-loader{
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    background: rgba(15,31,50,.92);
+    backdrop-filter: blur(2px);
+    font-size: .9rem;
+}
+.gen-lightbox-footer{
+    background: #0f1f32;
+    border-top: 1px solid rgba(255,255,255,.08);
+    padding: .55rem 1rem;
+}
+.gen-lightbox-footer .btn-outline-light{
+    border-color: rgba(255,255,255,.35);
+}
+.gen-lightbox-footer .btn-light{
+    background: #fff;
+    color: #0f1f32;
+    font-weight: 600;
+}
+
+/* Indicador visual de que algo es clickeable como lightbox */
+.ms-pane-body .tablero-card[data-iframe]{ cursor: pointer; }
+.ms-pane-body a[href$=".pdf"],
+.ms-pane-body a[href$=".PDF"],
+.ms-pane-body a.pdf-link{ cursor: pointer; }
+.ms-pane-body a[href$=".pdf"]:hover,
+.ms-pane-body a.pdf-link:hover{ text-decoration: underline !important; }
+
+/* ──────────────────────────────────────────────────────────────────────── */
+/* FIX ESPACIOS BLANCOS LEGACY: el HTML del CMS trae 400+ <br> que          */
+/* generaban gigantes huecos verticales. Ocultarlos elimina el problema.   */
+/* (Los párrafos siguen separándose con margin natural.)                   */
+/* ──────────────────────────────────────────────────────────────────────── */
+.ms-pane-body br{ display: none !important; }
+
+/* Recortar margin vertical en secciones legacy con margin: 40px auto */
+.ms-pane-body section[style*="margin: 40px auto"],
+.ms-pane-body section[style*="margin:40px auto"]{
+    margin: .5rem 0 1rem !important;
+    max-width: 100% !important;
+    padding: 1rem 1.25rem !important;
+}
+
+/* Iframes legacy con height: 600px — reducir a tamaño razonable */
+.ms-pane-body iframe[style*="height: 600px"],
+.ms-pane-body iframe[style*="height:600px"]{
+    height: 480px !important;
+}
+
+/* Eliminar márgenes excesivos de párrafos vacíos o casi vacíos */
+.ms-pane-body p:empty{ display: none !important; margin: 0 !important; }
+
+/* ════════════════════════════════════════════════════════════════════════ */
+/* FIX DEFINITIVO: tab-panes inactivos ocupando altura (causa raíz del      */
+/* "espacio en blanco" gigante en Asuntos de Género).                      */
+/* Algún CSS heredado fuerza display:block + opacity:0 → invisible pero    */
+/* ocupando todo el espacio vertical. Forzamos display:none cuando no es   */
+/* la pestaña activa.                                                       */
+/* ════════════════════════════════════════════════════════════════════════ */
+.tabs-panel .tab-pane:not(.active):not(.show){
+    display: none !important;
+}
+
+/* ════════════════════════════════════════════════════════════════════════ */
+/* FIX LAYOUT: forzar acordeones apilados verticalmente (no en horizontal)  */
+/* La lista contenedora de los .accordion-item debe ser block stack         */
+/* ════════════════════════════════════════════════════════════════════════ */
+.ms-pane-body .indicadores-section-list,
+.ms-pane-body .indicadores-section > div[id="tab"]{
+    display: block !important;
+    width: 100% !important;
+    margin: 1rem 0 !important;
+}
+.ms-pane-body .indicadores-section-list > .accordion-item,
+.ms-pane-body .indicadores-section > div[id="tab"] > .accordion-item{
+    display: block !important;
+    width: 100% !important;
+    margin: 0 0 .7rem 0 !important;
+    float: none !important;
+    position: static !important;
+}
+/* Contenido del acordeón abierto ocupa todo el ancho */
+.ms-pane-body .accordion-content{
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+/* Las cards .tablero-card deben usar el row de Bootstrap normalmente */
+.ms-pane-body .accordion-content .row{
+    display: flex !important;
+    flex-wrap: wrap !important;
+    margin: 0 -.5rem !important;
+}
+.ms-pane-body .accordion-content .row > [class*="col-"]{
+    padding: 0 .5rem !important;
+    margin-bottom: 1rem !important;
+}

@@ -1,0 +1,9 @@
+<?php
+
+/** Renombrar a assistant.local.php (no versionar) para producción. */
+
+return [
+    'enabled' => true,
+    'iframe_url' => 'http://localhost:8501',
+    'iframe_query' => '',
+];

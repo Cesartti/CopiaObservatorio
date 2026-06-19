@@ -1,0 +1,12 @@
+<?php
+
+/**
+ * Copie este archivo como `database.local.php` en la misma carpeta y ajuste credenciales.
+ * XAMPP por defecto suele ser usuario `root` y contraseña vacía.
+ */
+return [
+    'host' => '127.0.0.1',
+    'name' => 'observatorio_boyaca',
+    'user' => 'root',
+    'pass' => '',
+];

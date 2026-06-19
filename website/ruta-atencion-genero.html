@@ -1,0 +1,2097 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/cropped-cropped-cropped-cropped-Logo-red-de-obdervatorios_Sin-fondo-1-32x32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon/cropped-cropped-cropped-cropped-Logo-red-de-obdervatorios_Sin-fondo-1-192x192.png">
+    <link rel="apple-touch-icon" href="assets/favicon/cropped-cropped-cropped-cropped-Logo-red-de-obdervatorios_Sin-fondo-1-180x180.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ruta vertical · Atención integral a víctimas de violencias</title>
+<style>
+  :root {
+    --morado: #5b2a86;
+    --morado-claro: #7a4ba8;
+    --morado-suave: #b9a3d1;
+    --verde: #4a7c2a;
+    --verde-claro: #8bc34a;
+    --naranja: #e89c3a;
+    --rojo: #d64a4a;
+    --azul: #1565c0;
+    --azul-suave: #cfe7f5;
+    --gris-osc: #2b2d33;
+    --gris-med: #555a66;
+    --crema: #fff8e8;
+    --texto: #1f1933;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    color: var(--texto);
+    background: #1a1d22;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ===== FONDO POR IMAGEN (Mujer/Niños) ===== */
+  .fondo-img-wrap {
+    position: fixed;
+    inset: 0;
+    z-index: -3;
+    pointer-events: none;
+    overflow: hidden;
+    background: linear-gradient(180deg, #1a1d22 0%, #2b3540 100%);
+  }
+  .fondo-img {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center bottom;
+    opacity: 0;
+    transition: opacity 1s ease;
+    filter: brightness(calc(0.6 + var(--p, 0) * 0.4)) saturate(calc(0.55 + var(--p, 0) * 0.85));
+  }
+  .fondo-img.visible { opacity: 0.95; }
+  /* Velo oscuro encima para acentuar oscuro→claro */
+  .fondo-velo {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(180deg,
+        rgba(15, 18, 25, calc(0.65 - var(--p, 0) * 0.6)) 0%,
+        rgba(20, 25, 35, calc(0.45 - var(--p, 0) * 0.45)) 50%,
+        rgba(15, 22, 18, calc(0.25 - var(--p, 0) * 0.25)) 100%);
+    transition: background 0.6s;
+  }
+  /* Sol que aparece y sube con el scroll */
+  .sol-wrap {
+    position: fixed;
+    top: 10%;
+    right: 6%;
+    width: 130px;
+    height: 130px;
+    z-index: -1;
+    opacity: calc(max(0, var(--p, 0) - 0.05) * 1.1);
+    transform: translateY(calc((1 - var(--p, 0)) * 90px));
+    transition: opacity 0.6s, transform 0.6s;
+    pointer-events: none;
+    filter: drop-shadow(0 0 calc(8px + var(--p, 0) * 24px) rgba(255, 210, 80, 0.7));
+  }
+  .sol-wrap img {
+    width: 100%;
+    height: 100%;
+    animation: solGira 60s linear infinite;
+    display: block;
+  }
+  @keyframes solGira { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+  /* ===== HITOS (C1 al inicio, C2 al final del camino) ===== */
+  .hito-img {
+    position: absolute;
+    width: 220px;
+    height: auto;
+    z-index: 4;
+    pointer-events: none;
+    transition: filter 0.6s, transform 0.6s;
+    filter: drop-shadow(0 12px 24px rgba(0,0,0,0.5));
+  }
+  .hito-c1 {
+    /* Casa de inicio: centrada arriba, sobre el arranque del camino,
+       sin tapar la primera tarjeta (el camino tiene padding superior). */
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-4deg);
+    filter: drop-shadow(0 12px 24px rgba(0,0,0,0.6)) grayscale(0.4) brightness(0.85);
+  }
+  .hito-c2 {
+    bottom: 80px;
+    right: 4%;
+    transform: rotate(3deg);
+    filter: drop-shadow(0 12px 30px rgba(0,0,0,0.4)) saturate(1.3) brightness(1.05);
+  }
+  .hito-label {
+    position: absolute;
+    background: rgba(20,22,28,0.92);
+    color: white;
+    padding: 6px 14px;
+    border-radius: 16px;
+    font-size: 0.85em;
+    font-weight: bold;
+    white-space: nowrap;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.5);
+    border: 1px solid rgba(255,255,255,0.15);
+    font-family: 'Segoe UI', sans-serif;
+    z-index: 5;
+    pointer-events: none;
+  }
+  .hito-label-c1 { top: 225px; left: 50%; transform: translateX(-50%); }
+  .hito-label-c2 { bottom: 30px; right: 4%; color: #ffeb3b; }
+  @media (max-width: 700px) {
+    .hito-img { width: 130px; }
+    .hito-label { font-size: 0.75em; padding: 4px 10px; }
+    .hito-label-c1 { top: 145px; }
+    .camino-wrap { padding-top: 195px; }
+  }
+
+  /* ===== CARAS DEL PERSONAJE (TRISTE / FELIZ) ===== */
+  .personaje-viaje .burbuja-pop .cara {
+    position: absolute;
+    inset: 4px;
+    width: calc(100% - 8px);
+    height: calc(100% - 8px);
+    object-fit: contain;
+    border-radius: 50%;
+    transition: opacity 0.6s;
+  }
+  .personaje-viaje .burbuja-pop {
+    padding: 0;
+    overflow: hidden;
+  }
+
+  /* ===== FONDO PARALLAX FIJO (capas decorativas) ===== */
+  .bg-parallax {
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    pointer-events: none;
+    overflow: hidden;
+  }
+  .bg-layer { position: absolute; left: 0; right: 0; transition: opacity 0.6s; }
+  .bg-sky {
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      hsl(calc(220 - var(--p,0)*15), calc(10% + var(--p,0)*70%), calc(12% + var(--p,0)*55%)) 0%,
+      hsl(calc(210 - var(--p,0)*30), calc(15% + var(--p,0)*60%), calc(20% + var(--p,0)*55%)) 40%,
+      hsl(calc(195 - var(--p,0)*20), calc(15% + var(--p,0)*65%), calc(25% + var(--p,0)*55%)) 100%
+    );
+  }
+  /* Sol/luna */
+  .celeste {
+    position: absolute;
+    width: 140px; height: 140px;
+    top: 8%; right: 8%;
+    border-radius: 50%;
+    background: radial-gradient(circle,
+      hsl(calc(50 + var(--p,0)*15), calc(15% + var(--p,0)*80%), calc(60% + var(--p,0)*30%)) 0%,
+      hsl(calc(45 + var(--p,0)*10), calc(20% + var(--p,0)*70%), calc(55% + var(--p,0)*25%)) 60%,
+      transparent 75%);
+    filter: blur(2px);
+    opacity: calc(0.4 + var(--p,0) * 0.6);
+    transform: translateY(calc((1 - var(--p,0)) * 50px));
+    transition: all 0.6s;
+  }
+  /* Niebla / Estrellas en el inicio */
+  .niebla {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 800px 300px at 20% 80%, rgba(60,65,75,0.55), transparent),
+      radial-gradient(ellipse 600px 250px at 80% 60%, rgba(70,75,85,0.45), transparent);
+    opacity: calc(1 - var(--p,0));
+    transition: opacity 0.6s;
+  }
+  /* Cuando la imagen FONDO está activa, ocultamos las capas decorativas duplicadas.
+     IMPORTANTE: incluye .bg-sky — es un degradado opaco con z-index -2 que de lo
+     contrario tapa por completo la imagen FONDO (z-index -3). */
+  body.con-imagen-fondo .bg-sky,
+  body.con-imagen-fondo .montanas-back,
+  body.con-imagen-fondo .montanas-mid,
+  body.con-imagen-fondo .colina-front,
+  body.con-imagen-fondo .estrellas,
+  body.con-imagen-fondo .niebla,
+  body.con-imagen-fondo .celeste {
+    opacity: 0 !important;
+    transition: opacity 1s;
+  }
+  /* Montañas lejanas */
+  .montanas-back {
+    bottom: 40vh;
+    height: 35vh;
+    background:
+      linear-gradient(180deg,
+        transparent 0%,
+        hsl(220, calc(8% + var(--p,0)*30%), calc(20% + var(--p,0)*20%)) 100%);
+    clip-path: polygon(0 100%, 0 60%, 8% 40%, 16% 55%, 24% 30%, 35% 50%, 45% 25%, 58% 45%, 68% 30%, 80% 50%, 92% 28%, 100% 45%, 100% 100%);
+  }
+  .montanas-mid {
+    bottom: 30vh;
+    height: 28vh;
+    background:
+      linear-gradient(180deg,
+        transparent 0%,
+        hsl(140, calc(5% + var(--p,0)*45%), calc(22% + var(--p,0)*25%)) 100%);
+    clip-path: polygon(0 100%, 0 70%, 10% 45%, 20% 60%, 32% 35%, 45% 55%, 58% 40%, 72% 55%, 85% 38%, 100% 55%, 100% 100%);
+  }
+  .colina-front {
+    bottom: 0;
+    height: 35vh;
+    background: linear-gradient(180deg,
+      hsl(100, calc(8% + var(--p,0)*55%), calc(20% + var(--p,0)*30%)) 0%,
+      hsl(95, calc(10% + var(--p,0)*60%), calc(25% + var(--p,0)*25%)) 100%);
+    clip-path: polygon(0 100%, 0 35%, 15% 25%, 30% 35%, 45% 22%, 60% 32%, 75% 25%, 90% 33%, 100% 28%, 100% 100%);
+  }
+  /* Estrellas (visibles solo al inicio) */
+  .estrellas {
+    inset: 0;
+    background-image:
+      radial-gradient(1px 1px at 12% 18%, rgba(255,255,255,0.85), transparent),
+      radial-gradient(1px 1px at 25% 12%, rgba(255,255,255,0.7), transparent),
+      radial-gradient(1px 1px at 38% 22%, rgba(255,255,255,0.9), transparent),
+      radial-gradient(2px 2px at 55% 8%, rgba(255,255,255,0.8), transparent),
+      radial-gradient(1px 1px at 68% 16%, rgba(255,255,255,0.7), transparent),
+      radial-gradient(1px 1px at 82% 25%, rgba(255,255,255,0.85), transparent),
+      radial-gradient(1px 1px at 92% 14%, rgba(255,255,255,0.7), transparent),
+      radial-gradient(1px 1px at 7% 30%, rgba(255,255,255,0.6), transparent),
+      radial-gradient(2px 2px at 45% 18%, rgba(255,255,255,0.9), transparent);
+    opacity: calc(max(0, 0.85 - var(--p,0) * 1.5));
+    transition: opacity 0.6s;
+  }
+  /* Pájaros volando al final */
+  .pajaros {
+    position: absolute;
+    top: 18%;
+    left: 30%;
+    font-size: 22px;
+    opacity: calc(max(0, var(--p,0) - 0.4) * 1.7);
+    transition: opacity 0.6s;
+    animation: volar 18s linear infinite;
+  }
+  @keyframes volar {
+    0% { transform: translateX(-100px); }
+    100% { transform: translateX(120vw); }
+  }
+
+  /* ===== HEADER FIJO ===== */
+  header.top {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 50;
+    background: rgba(20, 22, 28, calc(0.85 - var(--p,0) * 0.2));
+    backdrop-filter: blur(12px);
+    color: white;
+    padding: 12px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  header.top h1 {
+    font-size: 1.1em;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+  header.top .badge {
+    background: var(--morado);
+    padding: 4px 12px;
+    border-radius: 14px;
+    font-size: 0.78em;
+    margin-left: 10px;
+  }
+  header.top button {
+    background: rgba(255,255,255,0.12);
+    color: white;
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 6px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.85em;
+  }
+  header.top button:hover { background: rgba(255,255,255,0.2); }
+
+  /* ===== HERO ===== */
+  .hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+  }
+  .hero h1 {
+    font-size: clamp(2em, 6vw, 4em);
+    margin-bottom: 14px;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.6);
+    color: #d8b4f8;
+    letter-spacing: 1px;
+  }
+  .hero p {
+    font-size: clamp(1em, 2.2vw, 1.4em);
+    max-width: 600px;
+    margin-bottom: 30px;
+    color: #cfd2dc;
+    line-height: 1.6;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.7);
+  }
+  .hero .scroll-hint {
+    position: absolute;
+    bottom: 40px;
+    color: rgba(255,255,255,0.7);
+    animation: bounce 2s infinite;
+    font-size: 0.9em;
+  }
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(10px); }
+  }
+
+  /* ===== SECCIÓN DE SELECCIÓN ===== */
+  .seccion {
+    min-height: 80vh;
+    padding: 60px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+  }
+  .seccion h2 {
+    font-size: clamp(1.4em, 3.5vw, 2.2em);
+    margin-bottom: 28px;
+    color: #e8d5f8;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.6);
+    text-align: center;
+  }
+  .opciones {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 22px;
+    max-width: 1100px;
+    width: 100%;
+  }
+  .opcion-card {
+    background: rgba(12,14,28,0.58);
+    border: 2px solid rgba(255,255,255,0.22);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 8px 26px rgba(0,0,0,0.35);
+    padding: 26px 22px;
+    border-radius: 18px;
+    cursor: pointer;
+    text-align: center;
+    color: white;
+    transition: all 0.3s;
+    animation: fadeUp 0.5s ease both;
+  }
+  .opcion-card:hover {
+    transform: translateY(-6px) scale(1.02);
+    background: rgba(12,14,28,0.72);
+    border-color: var(--morado-suave);
+    box-shadow: 0 12px 32px rgba(91,42,134,0.4);
+  }
+  .opcion-card .icono { font-size: 3em; margin-bottom: 10px; }
+  .opcion-card h3 { font-size: 1.2em; margin-bottom: 6px; color: #e8d5f8; }
+  .opcion-card p { font-size: 0.9em; color: #c8cad6; line-height: 1.5; }
+  .opcion-card.institucional { border-color: rgba(232,156,58,0.4); }
+  .opcion-card.institucional:hover { border-color: var(--naranja); box-shadow: 0 12px 32px rgba(232,156,58,0.3); }
+  .opcion-card.comunitaria { border-color: rgba(139,195,74,0.4); }
+  .opcion-card.comunitaria:hover { border-color: var(--verde-claro); box-shadow: 0 12px 32px rgba(139,195,74,0.3); }
+
+  /* ===== CAMINO VERTICAL (SVG sticky en fondo) ===== */
+  .camino-wrap {
+    position: relative;
+    /* Padding superior amplio: deja espacio a la casa de inicio (hito C1)
+       para que la primera tarjeta no quede debajo de ella. */
+    padding: 280px 0 100px;
+    min-height: 100vh;
+  }
+  .camino-svg {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+  }
+  /* ===== CARRETERA REALISTA (4 capas) ===== */
+  /* Capa 1 (más ancha): bordes blancos continuos */
+  .camino-borde {
+    fill: none;
+    stroke: #ffffff;
+    stroke-width: 64;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    filter: drop-shadow(0 6px 14px rgba(0,0,0,0.55));
+  }
+  /* Capa 2: asfalto negro/gris encima del blanco (deja ver el borde blanco a los lados) */
+  .camino-asfalto {
+    fill: none;
+    stroke: hsl(0, 0%, calc(13% + var(--p,0) * 10%));
+    stroke-width: 56;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: stroke 0.6s;
+  }
+  /* Capa 3: única línea amarilla central */
+  .camino-amarillo {
+    fill: none;
+    stroke: #ffcc00;
+    stroke-width: 4.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    filter: drop-shadow(0 0 3px rgba(255,204,0,0.55));
+  }
+
+  /* ===== PERSONAJE ÚNICO ANIMADO QUE RECORRE LA CARRETERA ===== */
+  .iconos-overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 3;
+  }
+  .personaje-viaje {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    transition: filter 0.4s, left 0.1s linear, top 0.1s linear;
+    z-index: 6;
+    pointer-events: none;
+  }
+  .personaje-viaje .inner {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    animation: personajeBounce 1.3s ease-in-out infinite;
+    transform-origin: center;
+  }
+  @keyframes personajeBounce {
+    0%, 100% { transform: translateY(0) rotate(-2deg); }
+    25% { transform: translateY(-4px) rotate(0deg); }
+    50% { transform: translateY(-7px) rotate(2deg); }
+    75% { transform: translateY(-4px) rotate(0deg); }
+  }
+  .personaje-viaje .burbuja-pop {
+    width: 64px; height: 64px;
+    border-radius: 50%;
+    background: white;
+    border: 3px solid #2b2d33;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 38px;
+    font-family: 'Segoe UI Emoji', 'Apple Color Emoji', sans-serif;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.5);
+    position: relative;
+    line-height: 1;
+  }
+  .personaje-viaje .burbuja-pop::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 8px;
+    background: radial-gradient(ellipse, rgba(0,0,0,0.35), transparent 70%);
+    z-index: -1;
+    animation: sombraPulse 1.3s ease-in-out infinite;
+  }
+  @keyframes sombraPulse {
+    0%, 100% { transform: translateX(-50%) scale(1, 1); opacity: 0.5; }
+    50% { transform: translateX(-50%) scale(0.7, 0.6); opacity: 0.25; }
+  }
+  .personaje-viaje .burbuja-ent {
+    width: 46px; height: 46px;
+    border-radius: 50%;
+    background: white;
+    border: 2.5px solid #2b2d33;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-family: 'Segoe UI Emoji', 'Apple Color Emoji', sans-serif;
+    box-shadow: 0 5px 14px rgba(0,0,0,0.4);
+    margin-left: -8px;
+    margin-top: -22px;
+    animation: entFlotar 2s ease-in-out infinite;
+    position: relative;
+    transition: transform 0.4s;
+    line-height: 1;
+  }
+  .personaje-viaje .burbuja-ent.cambiando {
+    animation: entCambio 0.5s ease;
+  }
+  @keyframes entFlotar {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
+  }
+  @keyframes entCambio {
+    0% { transform: scale(0.4) rotate(-180deg); opacity: 0; }
+    60% { transform: scale(1.2) rotate(20deg); opacity: 1; }
+    100% { transform: scale(1) rotate(0deg); opacity: 1; }
+  }
+  .personaje-viaje .etiqueta {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 14px;
+    background: rgba(20, 22, 28, 0.92);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 14px;
+    font-size: 0.75em;
+    font-weight: bold;
+    white-space: nowrap;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    border: 1px solid rgba(255,255,255,0.15);
+    font-family: 'Segoe UI', sans-serif;
+  }
+  /* Hitos pequeños en la ruta donde están los pasos (puntitos guía) */
+  .hito-paso {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.6);
+    border: 2px solid rgba(0,0,0,0.6);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    z-index: 4;
+    pointer-events: none;
+  }
+  .hito-paso.alcanzado {
+    background: var(--verde-claro);
+    border-color: var(--verde);
+    box-shadow: 0 0 12px rgba(139,195,74,0.7);
+  }
+
+  /* ===== PASOS DE LA RUTA ===== */
+  .paso-ruta {
+    position: relative;
+    z-index: 2;
+    max-width: 460px;
+    margin: 50px auto;
+    background: rgba(255,255,255,0.96);
+    border-radius: 18px;
+    padding: 22px 24px;
+    box-shadow: 0 14px 40px rgba(0,0,0,0.4);
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.7s, transform 0.7s;
+    border-left: 8px solid var(--morado);
+  }
+  .paso-ruta.visible { opacity: 1; transform: translateY(0); }
+  .paso-ruta.izq { margin-left: 4%; margin-right: auto; }
+  .paso-ruta.der { margin-right: 4%; margin-left: auto; }
+  @media (max-width: 900px) {
+    .paso-ruta.izq, .paso-ruta.der { margin: 30px auto; }
+  }
+  .paso-ruta.tipo-medico { border-left-color: var(--rojo); }
+  .paso-ruta.tipo-policia { border-left-color: var(--azul); }
+  .paso-ruta.tipo-comisaria { border-left-color: var(--morado); }
+  .paso-ruta.tipo-fiscalia { border-left-color: var(--naranja); }
+  .paso-ruta.tipo-judicial { border-left-color: var(--verde); }
+  .paso-ruta.tipo-icbf { border-left-color: #00897b; }
+  .paso-ruta.tipo-otro { border-left-color: var(--gris-med); }
+  .paso-ruta.tipo-decision {
+    border-left-color: var(--naranja);
+    background: linear-gradient(135deg, #fff8e6 0%, #fff 100%);
+    border: 3px solid var(--naranja);
+  }
+  .paso-ruta .num {
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: var(--morado);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    border: 3px solid white;
+  }
+  .paso-ruta.tipo-medico .num { background: var(--rojo); }
+  .paso-ruta.tipo-policia .num { background: var(--azul); }
+  .paso-ruta.tipo-fiscalia .num { background: var(--naranja); }
+  .paso-ruta.tipo-judicial .num { background: var(--verde); }
+  .paso-ruta.tipo-icbf .num { background: #00897b; }
+  .paso-ruta.tipo-decision .num { background: var(--naranja); }
+  .paso-ruta h4 {
+    color: var(--morado);
+    margin-bottom: 8px;
+    font-size: 1.15em;
+  }
+  .paso-ruta.tipo-medico h4 { color: var(--rojo); }
+  .paso-ruta.tipo-policia h4 { color: var(--azul); }
+  .paso-ruta.tipo-fiscalia h4 { color: #b66f1c; }
+  .paso-ruta.tipo-judicial h4 { color: var(--verde); }
+  .paso-ruta.tipo-icbf h4 { color: #00695c; }
+  .paso-ruta.tipo-decision h4 { color: #b66f1c; }
+  .paso-ruta p { color: #333; line-height: 1.55; font-size: 0.95em; }
+  .paso-ruta .tags { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 6px; }
+  .paso-ruta .tag {
+    background: var(--morado-suave);
+    color: white;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 0.75em;
+  }
+  .paso-ruta ul {
+    margin: 10px 0 0;
+    padding-left: 20px;
+    color: #444;
+    font-size: 0.88em;
+    line-height: 1.5;
+  }
+  .paso-ruta .normativa {
+    margin-top: 10px;
+    padding: 8px 12px;
+    background: #f3e9ff;
+    border-left: 3px solid var(--morado);
+    border-radius: 6px;
+    font-size: 0.8em;
+    color: #4a2b6e;
+    font-style: italic;
+  }
+  .paso-ruta .normativa::before { content: "⚖ "; font-style: normal; margin-right: 4px; }
+  .paso-ruta .urgencia {
+    margin-top: 10px;
+    padding: 8px 12px;
+    background: #ffe5e5;
+    border-left: 3px solid var(--rojo);
+    border-radius: 6px;
+    font-size: 0.85em;
+    color: #7a1f1f;
+    font-weight: bold;
+  }
+  .paso-ruta .urgencia::before { content: "⚠ "; }
+
+  /* ===== DECISIÓN ===== */
+  .decision-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 14px;
+  }
+  .decision-btn {
+    flex: 1;
+    min-width: 130px;
+    background: white;
+    border: 2px solid var(--naranja);
+    color: var(--naranja);
+    padding: 12px 16px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.95em;
+    transition: all 0.25s;
+  }
+  .decision-btn:hover {
+    background: var(--naranja);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(232,156,58,0.4);
+  }
+  .decision-btn.seleccionado {
+    background: var(--naranja);
+    color: white;
+  }
+  .decision-btn.descartado {
+    opacity: 0.3;
+    pointer-events: none;
+  }
+
+  /* ===== FINAL ===== */
+  .final-celebracion {
+    position: relative;
+    z-index: 2;
+    margin: 80px auto;
+    max-width: 700px;
+    text-align: center;
+    padding: 40px 24px;
+    background: linear-gradient(135deg, rgba(74,124,42,0.95) 0%, rgba(139,195,74,0.95) 100%);
+    color: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.8s, transform 0.8s;
+  }
+  .final-celebracion.visible { opacity: 1; transform: scale(1); }
+  .final-celebracion .icon { font-size: 4em; margin-bottom: 14px; animation: heart 1.5s ease-in-out infinite; }
+  @keyframes heart { 0%,100% { transform: scale(1); } 50% { transform: scale(1.15); } }
+  .final-celebracion h2 { font-size: 2em; margin-bottom: 12px; }
+  .final-celebracion p { font-size: 1.1em; line-height: 1.6; opacity: 0.95; }
+
+  /* ===== BARRA DE PROGRESO ===== */
+  .progress-bar {
+    position: fixed;
+    top: 0; left: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--morado), var(--verde-claro));
+    z-index: 100;
+    transition: width 0.2s;
+  }
+
+  /* ===== ANIMACIONES ===== */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ===== FOOTER ===== */
+  footer {
+    background: rgba(20,22,28,0.9);
+    color: #c0c4d0;
+    text-align: center;
+    padding: 30px 20px;
+    font-size: 0.85em;
+    position: relative;
+    z-index: 5;
+  }
+  footer strong { color: #d8b4f8; }
+
+  /* Modo viaje activo - oculta selección */
+  body.modo-viaje .seccion-seleccion { display: none; }
+  body:not(.modo-viaje) .camino-wrap { display: none; }
+</style>
+</head>
+<body>
+
+<!-- Barra superior fija -->
+<header class="top">
+  <h1>📍 Ruta de Atención <span class="badge" id="badge-modo">Selecciona</span></h1>
+  <button onclick="reiniciar()">↺ Reiniciar</button>
+</header>
+
+<!-- Barra de progreso scroll -->
+<div class="progress-bar" id="progressBar" style="width:0%"></div>
+
+<!-- Fondo imagen dinámica (FONDO + velo + sol) -->
+<div class="fondo-img-wrap" id="fondoImgWrap" style="--p:0">
+  <img class="fondo-img" id="fondoImg" alt="">
+  <div class="fondo-velo"></div>
+</div>
+<div class="sol-wrap" id="solWrap" style="--p:0">
+  <img id="solImg" alt="">
+</div>
+
+<!-- Fondo parallax fijo -->
+<div class="bg-parallax" id="bgParallax" style="--p:0">
+  <div class="bg-layer bg-sky"></div>
+  <div class="bg-layer estrellas"></div>
+  <div class="celeste"></div>
+  <div class="bg-layer niebla"></div>
+  <div class="bg-layer montanas-back"></div>
+  <div class="bg-layer montanas-mid"></div>
+  <div class="bg-layer colina-front"></div>
+  <div class="pajaros">🕊 🕊</div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>Ruta de Atención Integral</h1>
+  <p>A víctimas de violencias basadas en sexo y/o género · Gobernación de Boyacá</p>
+  <p style="font-size: 0.95em; opacity:0.8;">Recorre paso a paso el camino hacia la justicia y la reparación. Inicia eligiendo qué tipo de ruta necesitas conocer.</p>
+  <div class="scroll-hint">▼ Desplázate para iniciar</div>
+</section>
+
+<!-- SECCIÓN: TIPO DE RUTA -->
+<section class="seccion seccion-seleccion" id="sec-tipo">
+  <h2>¿Qué tipo de ruta deseas consultar?</h2>
+  <div class="opciones">
+    <div class="opcion-card comunitaria" onclick="setTipo('comunitaria')">
+      <div class="icono">🏘️</div>
+      <h3>Ruta Comunitaria</h3>
+      <p>Orientación a la víctima desde la comunidad. Pasos prácticos: a dónde acudir, qué hacer primero, qué derechos te asisten.</p>
+    </div>
+    <div class="opcion-card institucional" onclick="setTipo('institucional')">
+      <div class="icono">🏛️</div>
+      <h3>Ruta Institucional</h3>
+      <p>Flujo entre instituciones del Estado: salud, justicia, protección. Incluye competencias, normativa y decisiones formales.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SECCIÓN: VÍCTIMA -->
+<section class="seccion seccion-seleccion" id="sec-victima" style="display:none">
+  <h2>¿Quién es la persona afectada?</h2>
+  <div class="opciones" id="opciones-victima"></div>
+</section>
+
+<!-- SECCIÓN: VIOLENCIA -->
+<section class="seccion seccion-seleccion" id="sec-violencia" style="display:none">
+  <h2>¿Qué tipo de violencia ocurrió?</h2>
+  <div class="opciones" id="opciones-violencia"></div>
+</section>
+
+<!-- SECCIÓN: CONTEXTO -->
+<section class="seccion seccion-seleccion" id="sec-contexto" style="display:none">
+  <h2>¿Dónde ocurrió la agresión?</h2>
+  <div class="opciones" id="opciones-contexto"></div>
+</section>
+
+<!-- CAMINO VERTICAL CON LA RUTA -->
+<div class="camino-wrap" id="camino">
+  <svg class="camino-svg" id="caminoSvg" preserveAspectRatio="none" viewBox="0 0 600 1000">
+    <path class="camino-borde" id="caminoBorde" d="M 300,0 Q 300,200 200,300 T 400,500 T 200,700 T 300,1000"/>
+    <path class="camino-asfalto" id="caminoAsfalto" d="M 300,0 Q 300,200 200,300 T 400,500 T 200,700 T 300,1000"/>
+    <path class="camino-amarillo" id="caminoAmarillo" d="M 300,0 Q 300,200 200,300 T 400,500 T 200,700 T 300,1000"/>
+  </svg>
+  <div class="iconos-overlay" id="caminoIconosHTML"></div>
+  <div id="pasosContainer"></div>
+</div>
+
+<footer>
+  <strong>Gobernación de Boyacá – Secretaría de Salud · Fiscalía General de la Nación</strong><br>
+  Equipo PPTX: Mario Gómez (INMLCF), Laura Tibaduiza (Sesalub), Sonia Cabra (Fiscalía), Constanza Marcela García (Sesalub)<br>
+  Equipo Rutas Institucionales: Mapas oficiales aportados por la Gobernación de Boyacá
+</footer>
+
+<script>
+// ============================ DATOS DE RUTAS ============================
+
+const POBLACIONES = {
+  mujer: { icono: '👩', titulo: 'Mujer', sub: 'Ley 1257 de 2008' },
+  nna: { icono: '🧒', titulo: 'Niño, Niña, Adolescente', sub: 'Ley 2126 de 2021' },
+  lgbtiq: { icono: '🏳️‍🌈', titulo: 'Persona LGBTIQ+ / OSIEGD', sub: 'Orientación sexual o identidad de género diversa' }
+};
+
+const VIOLENCIAS_COMUN = {
+  fisica: { icono: '✊', titulo: 'Física', desc: 'Golpes, lesiones, daño corporal' },
+  sexual: { icono: '⚠', titulo: 'Sexual', desc: 'Acceso carnal, abuso, acoso sexual' },
+  psicologica: { icono: '💬', titulo: 'Verbal, psicológica o económica', desc: 'Insultos, control, amenazas' }
+};
+
+const VIOLENCIAS_INST_MUJER = {
+  fisica: { icono: '✊', titulo: 'Física', desc: 'Golpes, lesiones, daño físico' },
+  sexual: { icono: '⚠', titulo: 'Sexual', desc: 'Activación Código Verde (Res. 459/2012)' },
+  psicologica: { icono: '💬', titulo: 'Verbal / Psicológica', desc: 'Insultos, amenazas, manipulación' },
+  economica: { icono: '💰', titulo: 'Económica / Patrimonial', desc: 'Control de recursos, daño patrimonial' },
+  vicaria: { icono: '👥', titulo: 'Vicaria', desc: 'Daño a hijos/seres queridos para herir a la mujer' },
+  acosoLaboral: { icono: '🏢', titulo: 'Acoso laboral', desc: 'Mobbing, humillación en el trabajo' },
+  acosoSexLaboral: { icono: '🚫', titulo: 'Acoso sexual laboral', desc: 'Insinuaciones, presión sexual en el trabajo' },
+  social: { icono: '🌐', titulo: 'Social / Comunitaria', desc: 'Agresión en espacios públicos' },
+  politica: { icono: '🗳', titulo: 'Política', desc: 'Violencia contra mujeres en política' }
+};
+
+const VIOLENCIAS_INST_NNA = {
+  fisica: { icono: '✊', titulo: 'Física', desc: 'Golpes, maltrato físico' },
+  sexual: { icono: '⚠', titulo: 'Sexual', desc: 'Cualquier acto sexual contra NNA' },
+  psicologica: { icono: '💬', titulo: 'Verbal / Psicológica', desc: 'Humillación, amenazas, intimidación' },
+  economicaLaboral: { icono: '💰', titulo: 'Económica / Laboral', desc: 'Explotación, trabajo infantil' },
+  negligencia: { icono: '🚪', titulo: 'Negligencia / Abandono', desc: 'Omisión de cuidados básicos' },
+  vicaria: { icono: '👥', titulo: 'Vicaria', desc: 'Usar al NNA para dañar al otro progenitor' }
+};
+
+const CONTEXTOS_INST = {
+  familiar: { icono: '🏠', titulo: 'Familiar', desc: 'Padres, madres, hermanos, abuelos, tíos, cuidadores, empleados domésticos' },
+  noFamiliar: { icono: '🏫', titulo: 'No familiar', desc: 'Vecinos, compañeros de clase, docentes, funcionarios, comunidad, virtual' }
+};
+
+const CONTEXTOS_COMUN = {
+  dentro: { icono: '🏠', titulo: 'Dentro del contexto familiar', desc: 'Pareja, ex pareja, familiares, cuidadores' },
+  fuera: { icono: '🌐', titulo: 'Fuera del contexto familiar', desc: 'Comunidad, escuela, trabajo, virtual' }
+};
+
+// ============================ PASOS REUTILIZABLES ============================
+
+const P = {
+  policiaNacional: () => ({
+    tipo: 'policia',
+    titulo: 'Policía Nacional',
+    desc: 'Acude o llama a la Línea 123 para protección y atención inmediata. Activa parámetros EMFAG.',
+    tags: ['Línea 123', 'EMFAG']
+  }),
+  valoracionMedicoLegal: (extra) => ({
+    tipo: 'medico',
+    titulo: 'Valoración Médico Legal',
+    desc: extra || 'Practicada por médico oficial o rural en cualquier sede del INMLCF, hospital regional o centro de salud.',
+    normativa: 'Ley 9 de 1952 · Ley 906 de 1986 · Decreto 2455 de 1986',
+    tags: ['INMLCF', 'Evidencia']
+  }),
+  codigoVerde: () => ({
+    tipo: 'medico',
+    titulo: 'Activación Código Verde',
+    desc: 'Atención inmediata en violencia sexual. La institución de salud activa el protocolo Código Verde y reporta a las autoridades.',
+    urgencia: 'Atención garantizada como urgencia, sin barreras, sin denuncia previa.',
+    normativa: 'Resolución 459 de 2012 (Modelo y Protocolo de Atención Integral en Salud para víctimas de violencia sexual)',
+    tags: ['Código Verde', 'Urgencia', 'Res. 459/2012']
+  }),
+  epsIps: () => ({
+    tipo: 'medico',
+    titulo: 'EPS / IPS - Atención en Salud',
+    desc: 'Atención médica integral. La institución debe reportar el caso (Policía, Fiscalía, Comisaría de Familia, ICBF según corresponda).',
+    tags: ['Salud', 'Reporte obligatorio']
+  }),
+  sivigila: () => ({
+    tipo: 'medico',
+    titulo: 'Reporte SIVIGILA',
+    desc: 'Los hechos de violencia física, psicológica y sexual deben reportarse en la plataforma SIVIGILA (Sistema de Vigilancia en Salud Pública).',
+    tags: ['SIVIGILA', 'Notificación']
+  }),
+  fiscaliaUri: () => ({
+    tipo: 'fiscalia',
+    titulo: 'Fiscalía / URI',
+    desc: 'Unidad de Reacción Inmediata - Sala de Denuncias. Activa la ruta penal: se asigna número único de noticia criminal.',
+    tags: ['URI', 'Denuncia', 'Noticia criminal']
+  }),
+  comisariaFamilia: () => ({
+    tipo: 'comisaria',
+    titulo: 'Comisaría de Familia',
+    desc: 'Recibe la denuncia por violencia intrafamiliar. Evalúa riesgo y otorga Medida de Protección. Articula con la Policía.',
+    normativa: 'Ley 2126 de 2021 · Artículo 16 Ley 1257 de 2008',
+    tags: ['Medida de Protección', 'Ley 2126/2021']
+  }),
+  // Violencia intrafamiliar o de género: evaluación de riesgo para definir si se
+  // otorga medida de ATENCIÓN (sí hay riesgo) o continúa la PROTECCIÓN (no hay riesgo).
+  evaluaRiesgoMedida: (institucional) => [
+    {
+      tipo: 'decision',
+      titulo: institucional ? 'Evaluación del riesgo para otorgar la medida' : 'Evalúa tu riesgo para otorgar la medida',
+      desc: institucional
+        ? 'En violencia intrafamiliar o de género se evalúa si la vida de la mujer o la de su familia se encuentra en riesgo. El municipio y el departamento están obligados a garantizar la atención.'
+        : '¿Como mujer te sientes en estado de riesgo de tu vida y la de tu familia? Recuerda que tu municipio y tu departamento están obligados a brindarte la atención.',
+      normativa: 'Ley 1257 de 2008 · Artículos 18 y 19',
+      decision: {
+        opciones: [
+          { texto: 'Sí, hay riesgo', valor: 'riesgosi' },
+          { texto: 'No hay riesgo', valor: 'riesgono' }
+        ]
+      }
+    },
+    {
+      _ramaSi: ['riesgosi'],
+      tipo: 'comisaria',
+      titulo: 'Medida de atención',
+      desc: institucional
+        ? 'Se otorga la medida de atención: habitación, alimentación y transporte para la mujer víctima, sus hijos e hijas y personas dependientes, en casa de acogida o servicios hoteleros, mientras se garantiza su seguridad.'
+        : 'Recibes la medida de atención: habitación, alimentación y transporte para ti, tus hijos e hijas y personas dependientes, en casa de acogida o servicios hoteleros, mientras se garantiza tu seguridad.',
+      normativa: 'Ley 1257 de 2008 · Artículo 19',
+      tags: ['Medida de atención', 'Casa de acogida']
+    },
+    {
+      _ramaSi: ['riesgono'],
+      tipo: 'comisaria',
+      titulo: 'Medida de protección',
+      desc: institucional
+        ? 'Continúa la medida de protección otorgada por la Comisaría de Familia para prevenir nuevas agresiones, con seguimiento de la autoridad competente.'
+        : 'Continúa tu medida de protección otorgada por la Comisaría de Familia para prevenir nuevas agresiones. Conserva el número de radicado y reporta cualquier incumplimiento.',
+      normativa: 'Ley 1257 de 2008 · Artículo 18',
+      tags: ['Medida de Protección']
+    }
+  ],
+  secFiscaliaBoyaca: () => ({
+    tipo: 'fiscalia',
+    titulo: 'Seccional Fiscalía Boyacá',
+    desc: 'La seccional asume la investigación penal. Se asignan los actos urgentes y se da curso al proceso.',
+    tags: ['Seccional', 'Investigación penal']
+  }),
+  jueces: () => [
+    { tipo: 'judicial', titulo: 'Juez de Control de Garantías', desc: 'Control judicial de las actuaciones y medidas de aseguramiento.', tags: ['Control judicial'] },
+    { tipo: 'judicial', titulo: 'Juez de Conocimiento', desc: 'Adelanta el juicio oral y determina la responsabilidad penal.', tags: ['Juicio'] },
+    { tipo: 'judicial', titulo: 'Sentencia o Preclusión', desc: 'Cierre del proceso penal: condena, absolución o preclusión.', tags: ['Cierre'] }
+  ],
+  inspeccionPolicia: () => ({
+    tipo: 'policia',
+    titulo: 'Inspección de Policía / Convivencia y Paz',
+    desc: 'Recepción de denuncia o queja, investigación y aplicación de medidas correctivas (Caución).',
+    normativa: 'Código Nacional de Seguridad y Convivencia Ciudadana',
+    tags: ['Caución']
+  })
+};
+
+// ============================ RUTAS INSTITUCIONALES (PDFs) ============================
+
+function rutaInstMujerFamiliar(violencia) {
+  const base = [
+    P.policiaNacional(),
+    {
+      tipo: 'otro',
+      titulo: 'Contexto familiar',
+      desc: 'Cualquier acción u omisión dentro del ámbito doméstico o relaciones de parentesco que cause daño físico, sexual, psicológico, patrimonial o económico a la mujer, basado en su género.',
+      normativa: 'Ley 1257 de 2008',
+      tags: ['Contexto familiar']
+    }
+  ];
+
+  if (violencia === 'sexual') {
+    base.push(P.codigoVerde());
+  }
+  base.push(P.epsIps());
+  base.push(P.valoracionMedicoLegal());
+  base.push(P.sivigila());
+  base.push(P.comisariaFamilia());
+  base.push(...P.evaluaRiesgoMedida(true));
+  base.push(P.fiscaliaUri());
+  base.push(P.secFiscaliaBoyaca());
+  base.push(...P.jueces());
+  return base;
+}
+
+function rutaInstMujerNoFamiliar(violencia) {
+  const base = [
+    P.policiaNacional(),
+    {
+      tipo: 'otro',
+      titulo: 'Contexto no familiar',
+      desc: 'Acción u omisión que ocurre en espacios públicos, laborales, educativos o comunitarios (fuera del ámbito doméstico) y causa daño a la mujer por su género.',
+      normativa: 'Ley 1257 de 2008',
+      tags: ['Espacio público', 'Educativo', 'Laboral']
+    }
+  ];
+
+  if (violencia === 'sexual') {
+    base.push(P.codigoVerde());
+    base.push(P.epsIps());
+    base.push(P.valoracionMedicoLegal());
+    base.push(P.fiscaliaUri());
+  } else if (violencia === 'fisica') {
+    base.push(P.epsIps());
+    base.push(P.valoracionMedicoLegal());
+    base.push(P.sivigila());
+    base.push(P.inspeccionPolicia());
+    base.push(P.fiscaliaUri());
+  } else if (violencia === 'acosoLaboral' || violencia === 'acosoSexLaboral') {
+    base.push({
+      tipo: 'decision',
+      titulo: '¿En qué sector ocurrió el acoso?',
+      desc: 'La autoridad competente cambia según el sector.',
+      decision: {
+        opciones: [
+          { texto: 'Sector Privado', valor: 'privado' },
+          { texto: 'Sector Público', valor: 'publico' }
+        ]
+      }
+    });
+    base.push({
+      _ramaSi: ['privado','publico'],
+      tipo: 'otro',
+      titulo: 'Comité de Convivencia Laboral / Procuraduría',
+      desc: 'En sector privado: el Comité Interno de Convivencia Laboral. En sector público: además, la Procuraduría General de la Nación.',
+      tags: ['Comité Convivencia', 'Procuraduría']
+    });
+    base.push({
+      tipo: 'otro',
+      titulo: 'Ministerio del Trabajo',
+      desc: 'Recibe la queja por acoso laboral. Vigila el cumplimiento de la normativa y puede sancionar.',
+      tags: ['Acoso laboral', 'MinTrabajo']
+    });
+    if (violencia === 'acosoSexLaboral') base.push(P.fiscaliaUri());
+  } else if (violencia === 'psicologica' || violencia === 'economica' || violencia === 'vicaria') {
+    base.push(P.epsIps());
+    base.push(P.sivigila());
+    base.push(P.inspeccionPolicia());
+    base.push(P.fiscaliaUri());
+  } else if (violencia === 'social' || violencia === 'politica') {
+    base.push({
+      tipo: 'decision',
+      titulo: '¿El hecho atenta contra la vida o integridad de la víctima?',
+      desc: 'Si hay riesgo vital, se activa la ruta de protección reforzada.',
+      decision: {
+        opciones: [
+          { texto: 'Sí, atenta contra la vida', valor: 'vida' },
+          { texto: 'No atenta contra la vida', valor: 'novida' }
+        ]
+      }
+    });
+    base.push({
+      _ramaSi: ['vida'],
+      tipo: 'otro',
+      titulo: 'Programa de Protección - UNP',
+      desc: 'Unidad Nacional de Protección. Puede ordenar medidas individuales o colectivas. Se evalúa por CERREM-Mujer.',
+      detalles: [
+        'Medidas preventivas no condicionadas (urgentes).',
+        'Medidas condicionadas tras evaluación.',
+        'Comité CERREM-Mujer evalúa el riesgo.'
+      ],
+      normativa: 'Decreto 1066 de 2015 · Resolución 0-1006 de 2016',
+      tags: ['UNP', 'CERREM-Mujer']
+    });
+    base.push({
+      _ramaSi: ['novida'],
+      tipo: 'policia',
+      titulo: 'Policía Nacional - Medidas preventivas',
+      desc: 'Vigilancia, acompañamiento y medidas preventivas no condicionadas.',
+      tags: ['Prevención']
+    });
+    base.push({
+      tipo: 'otro',
+      titulo: 'Mesa Nacional de Casos Urgentes',
+      desc: 'En caso de uso excesivo de fuerza o abuso policial/militar, se activa la mesa nacional escribiendo a denunciaslgbti@mininterior.gov.co',
+      tags: ['Mesa nacional', 'Casos urgentes']
+    });
+    base.push(P.fiscaliaUri());
+  }
+
+  base.push(P.secFiscaliaBoyaca());
+  base.push(...P.jueces());
+  return base;
+}
+
+function rutaInstNNA(violencia, contexto) {
+  const base = [
+    P.policiaNacional(),
+    {
+      tipo: 'otro',
+      titulo: contexto === 'familiar' ? 'Contexto familiar' : 'Contexto no familiar',
+      desc: contexto === 'familiar'
+        ? 'Familiares por consanguinidad, afinidad o adopción: padres, madres, hijos, hermanos, abuelos, tíos, primos, empleados domésticos y cuidadores(as).'
+        : 'Personas sin vínculo familiar: vecinos, compañeros de clase, docentes, personal administrativo o misional, funcionarios públicos. Escenarios: comunitarios, educativos, laborales, institucionales y virtuales.',
+      tags: [contexto === 'familiar' ? 'Familiar' : 'No familiar']
+    }
+  ];
+
+  if (violencia === 'sexual') base.push(P.codigoVerde());
+
+  base.push({
+    tipo: 'medico',
+    titulo: 'Solicitud Valoración Médico Legal',
+    desc: 'Solicitud formal a Medicina Legal para realizar la valoración del NNA.',
+    normativa: 'Resolución 459 de 2012',
+    tags: ['Solicitud', 'INMLCF']
+  });
+
+  base.push(P.valoracionMedicoLegal('Examen médico legal especializado para NNA. Realizado por médico oficial o rural en sede INMLCF, hospital regional o centro de salud.'));
+
+  base.push({
+    tipo: 'icbf',
+    titulo: 'ICBF · Defensoría de Familia',
+    desc: 'El Instituto Colombiano de Bienestar Familiar asume la protección del NNA donde tiene presencia.',
+    detalles: ['En municipios sin ICBF, la Comisaría de Familia ejerce competencia subsidiaria (Parágrafo 3, Ley 2126 de 2021).'],
+    normativa: 'Ley 2126 de 2021 · Parágrafo 3 (Competencia Subsidiaria)',
+    tags: ['ICBF', 'Defensoría de Familia']
+  });
+
+  base.push(P.comisariaFamilia());
+
+  // DECISIÓN 1: Identificación de Vulneración
+  base.push({
+    tipo: 'decision',
+    titulo: '¿Se identifica vulneración de derechos?',
+    desc: 'Esta decisión la toma el ICBF o la Comisaría de Familia tras verificar la situación del NNA.',
+    decision: {
+      opciones: [
+        { texto: '✓ Sí, hay vulneración', valor: 'si' },
+        { texto: '✗ No hay vulneración', valor: 'no' }
+      ]
+    }
+  });
+
+  // Si SÍ → PARD
+  base.push({
+    _ramaSi: ['si'],
+    tipo: 'icbf',
+    titulo: 'Apertura del PARD',
+    desc: 'Proceso Administrativo de Restablecimiento de Derechos. Incluye:',
+    detalles: [
+      'Verificación de Derechos.',
+      'Medida de Restablecimiento de Derechos.',
+      'Seguimiento al cumplimiento.',
+      'Audiencia de Fallo de Vulneración.'
+    ],
+    tags: ['PARD', 'Restablecimiento']
+  });
+
+  base.push({
+    _ramaSi: ['si'],
+    tipo: 'icbf',
+    titulo: 'Imposición de Medida de Protección',
+    desc: 'Tras el fallo de vulneración, se impone la medida de protección al NNA (hogar sustituto, internado, ubicación con familia extensa, etc.).',
+    tags: ['Medida de Protección']
+  });
+
+  // DECISIÓN 2: Incumplimiento
+  base.push({
+    _ramaSi: ['si'],
+    tipo: 'decision',
+    titulo: '¿Existe incumplimiento de la medida?',
+    desc: 'Se vigila el cumplimiento de la medida de protección.',
+    decision: {
+      opciones: [
+        { texto: 'Sí, hay incumplimiento', valor: 'inc' },
+        { texto: 'No, se cumple', valor: 'noinc' }
+      ]
+    }
+  });
+
+  base.push({
+    _ramaSi: ['inc'],
+    tipo: 'icbf',
+    titulo: 'Trámite de Incumplimiento',
+    desc: 'Se inicia el trámite formal por incumplimiento.',
+    detalles: ['Sanción · Multa · Arresto al responsable según corresponda.'],
+    tags: ['Sanción', 'Multa', 'Arresto']
+  });
+
+  base.push({
+    _ramaSi: ['noinc'],
+    tipo: 'icbf',
+    titulo: 'Seguimiento al cumplimiento',
+    desc: 'Acompañamiento periódico del ICBF/Comisaría hasta el restablecimiento total.',
+    tags: ['Seguimiento']
+  });
+
+  // Si NO hubo vulneración
+  base.push({
+    _ramaSi: ['no'],
+    tipo: 'otro',
+    titulo: 'Oferta de Promoción y Prevención',
+    desc: 'Aunque no se identifica vulneración, se ofrecen acciones preventivas:',
+    detalles: [
+      'Campañas de sensibilización municipal.',
+      'Escuelas de padres.',
+      'Programas comunitarios de detección temprana.'
+    ],
+    tags: ['P&P', 'Prevención']
+  });
+
+  // RUTA PENAL (paralela)
+  base.push({
+    tipo: 'fiscalia',
+    titulo: 'Correo / Traslado a Fiscalía',
+    desc: 'Independiente de la ruta administrativa, todo delito contra NNA se traslada a la Fiscalía.',
+    tags: ['Traslado', 'Penal']
+  });
+
+  base.push({
+    tipo: 'fiscalia',
+    titulo: 'Fiscalía · Policía Judicial · Actos Urgentes',
+    desc: 'La Fiscalía con apoyo de la Policía Judicial realiza los actos urgentes para preservar evidencia.',
+    tags: ['Policía Judicial', 'Actos urgentes']
+  });
+
+  base.push(...P.jueces());
+
+  base.push({
+    tipo: 'otro',
+    titulo: 'Seguimiento Integral Post-Judicial',
+    desc: 'Acompañamiento al NNA y su familia después del fallo, garantizando el restablecimiento sostenido de derechos.',
+    tags: ['Post-judicial', 'Integral']
+  });
+
+  return base;
+}
+
+// ============================ RUTAS COMUNITARIAS (existentes) ============================
+
+function rutaComunMujerFisicaDentro() {
+  return [
+    {
+      tipo: 'otro',
+      titulo: 'Orientación y apoyo inicial',
+      desc: 'Tienes derecho a recibir información clara, completa y oportuna sobre tus derechos. Los municipios brindan asesoría a mujeres víctimas.',
+      normativa: 'Artículos 8 y 20 de la Ley 1257 de 2008',
+      tags: ['Derecho a información']
+    },
+    {
+      tipo: 'medico',
+      titulo: 'Atención Médica como urgencia',
+      desc: 'Acude de inmediato a hospital o centro de salud si hay heridas, signos de trauma, miedo por tu vida, o necesidad de certificar lesiones.',
+      urgencia: 'No se necesita denuncia previa. Es un derecho constitucional.',
+      detalles: [
+        'Atención gratuita - sin copagos (Sentencia T-735/2017).',
+        'Reserva de identidad.',
+        'La institución reporta a Policía, Fiscalía, Comisaría, ICBF.'
+      ],
+      tags: ['Salud', 'Gratuita']
+    },
+    P.valoracionMedicoLegal('Se requiere solicitud de entidad competente. Practicado por médico oficial o rural.'),
+    P.policiaNacional(),
+    P.comisariaFamilia(),
+    ...P.evaluaRiesgoMedida(false),
+    {
+      tipo: 'decision',
+      titulo: '¿Hubo persona detenida en flagrancia?',
+      desc: 'Esto determina el canal de investigación.',
+      decision: {
+        opciones: [
+          { texto: 'Sí, flagrancia', valor: 'si' },
+          { texto: 'No', valor: 'no' }
+        ]
+      }
+    },
+    {
+      _ramaSi: ['si'],
+      tipo: 'fiscalia',
+      titulo: 'Investigación Penal · CAIVAS (flagrancia)',
+      desc: 'Centro de Atención e Investigación a Víctimas de delitos sexuales (en algunos contextos).',
+      tags: ['CAIVAS']
+    },
+    {
+      _ramaSi: ['no'],
+      tipo: 'fiscalia',
+      titulo: 'Investigación · Fiscalía CAVIF',
+      desc: 'Centro de Atención a Víctimas de Violencia Intrafamiliar.',
+      tags: ['CAVIF']
+    },
+    ...P.jueces()
+  ];
+}
+
+function rutaComunMujerFisicaFuera() {
+  return [
+    {
+      tipo: 'medico',
+      titulo: 'Atención Médica integral',
+      desc: 'Acude al centro de salud más cercano. Es un derecho como urgencia médica.',
+      tags: ['Salud']
+    },
+    P.valoracionMedicoLegal(),
+    P.policiaNacional(),
+    P.inspeccionPolicia(),
+    P.fiscaliaUri(),
+    ...P.jueces()
+  ];
+}
+
+function rutaComunMujerSexual() {
+  return [
+    {
+      tipo: 'medico',
+      titulo: 'Atención Médica - URGENCIA siempre',
+      desc: 'Todo caso de violencia sexual es una urgencia médica, sin importar el tiempo transcurrido.',
+      urgencia: '¡Siempre te vamos a creer! No se necesita denuncia previa.',
+      tags: ['Código Verde', 'Urgencia']
+    },
+    {
+      tipo: 'decision',
+      titulo: '¿Cuánto tiempo ha pasado desde la agresión?',
+      desc: 'El tiempo determina el tipo de atención y profilaxis.',
+      decision: {
+        opciones: [
+          { texto: '< 72 horas', valor: 't1' },
+          { texto: '72-120 horas', valor: 't2' },
+          { texto: '> 120 horas', valor: 't3' }
+        ]
+      }
+    },
+    {
+      _ramaSi: ['t1'],
+      tipo: 'medico',
+      titulo: 'Triage I · Menos de 72 horas',
+      desc: 'Atención inmediata:',
+      detalles: [
+        'Profilaxis para ITS y VIH.',
+        'Anticoncepción de emergencia.',
+        'Pruebas diagnósticas y toma de muestras.',
+        'Reporte obligatorio a autoridades.'
+      ],
+      tags: ['Triage I']
+    },
+    {
+      _ramaSi: ['t2'],
+      tipo: 'medico',
+      titulo: 'Triage II · Entre 72 y 120 horas',
+      desc: 'Prueba de embarazo, asesoría y prueba rápida VIH, exámenes ITS, profilaxis post-exposición, asesoría IVE.',
+      tags: ['Triage II']
+    },
+    {
+      _ramaSi: ['t3'],
+      tipo: 'medico',
+      titulo: 'Después de 120 horas',
+      desc: 'Valoración integral, derivación a especialistas (IVE, psicoterapia, psiquiatría), atención según condición clínica.',
+      tags: ['>120h']
+    },
+    {
+      tipo: 'medico',
+      titulo: 'Interrupción Voluntaria del Embarazo (IVE)',
+      desc: 'Derecho a asesoría y acceso a IVE en caso de embarazo producto de la violencia.',
+      normativa: 'Sentencias C-355/2006 y C-055/2022 · Resolución 051/2023 MSPS',
+      tags: ['IVE']
+    },
+    P.valoracionMedicoLegal('NO se requiere solicitud previa ni autoridad competente. Derecho a escoger el sexo del profesional.'),
+    P.policiaNacional(),
+    {
+      tipo: 'decision',
+      titulo: '¿La agresión fue dentro o fuera del contexto familiar?',
+      desc: 'Esto define a qué autoridad acudir para la medida de protección.',
+      decision: {
+        opciones: [
+          { texto: 'Dentro (pareja/familia)', valor: 'd' },
+          { texto: 'Fuera', valor: 'f' }
+        ]
+      }
+    },
+    { _ramaSi: ['d'], ...P.comisariaFamilia() },
+    { _ramaSi: ['f'], ...P.inspeccionPolicia() },
+    P.fiscaliaUri(),
+    {
+      tipo: 'fiscalia',
+      titulo: 'CAIVAS · Investigación especializada',
+      desc: 'Centro de Atención e Investigación Integral a Víctimas de Delitos Sexuales.',
+      tags: ['CAIVAS']
+    },
+    ...P.jueces()
+  ];
+}
+
+function rutaComunMujerPsicologicaDentro() {
+  return [
+    P.comisariaFamilia(),
+    P.fiscaliaUri(),
+    {
+      tipo: 'otro',
+      titulo: 'Ministerio Público',
+      desc: 'Personería, Defensoría del Pueblo y Procuraduría como garantes del proceso.',
+      tags: ['Vigilancia']
+    },
+    ...P.jueces()
+  ];
+}
+
+function rutaComunMujerPsicologicaFuera() {
+  return [
+    {
+      tipo: 'decision',
+      titulo: '¿En qué escenario ocurrió?',
+      desc: 'Cada escenario tiene una autoridad responsable.',
+      decision: {
+        opciones: [
+          { texto: 'Laboral', valor: 'lab' },
+          { texto: 'Comunitario / Otro', valor: 'com' }
+        ]
+      }
+    },
+    {
+      _ramaSi: ['lab'],
+      tipo: 'otro',
+      titulo: 'Ministerio del Trabajo',
+      desc: 'Para casos de acoso laboral en sector privado o público.',
+      tags: ['Laboral']
+    },
+    {
+      _ramaSi: ['com'],
+      tipo: 'otro',
+      titulo: 'Personería / Defensoría / Procuraduría',
+      desc: 'Ministerio Público en escenarios institucionales o comunitarios.',
+      tags: ['Ministerio Público']
+    },
+    P.inspeccionPolicia(),
+    P.fiscaliaUri(),
+    ...P.jueces()
+  ];
+}
+
+function rutaComunNNA(violencia, contexto) {
+  // Versión comunitaria simplificada
+  return [
+    {
+      tipo: 'medico',
+      titulo: 'Atención Médica Integral',
+      desc: 'Atención de urgencias. ' + (violencia === 'sexual' ? 'Código Verde en primeras 72h.' : ''),
+      tags: ['Salud']
+    },
+    P.valoracionMedicoLegal(),
+    {
+      tipo: 'policia',
+      titulo: 'Policía de Infancia y Adolescencia',
+      desc: 'Protección y traslado seguro del menor.',
+      tags: ['Protección NNA']
+    },
+    {
+      tipo: 'icbf',
+      titulo: 'Defensoría de Familia · ICBF',
+      desc: 'En municipios con ICBF acude directo. En el resto, Comisaría de Familia por competencia subsidiaria.',
+      municipios: ['Chiquinquirá','Duitama','El Cocuy','Garagoa','Miraflores','Moniquirá','Otanche','Puerto Boyacá','Soatá','Sogamoso','Tunja'],
+      normativa: 'Ley 2126 de 2021',
+      tags: ['ICBF']
+    },
+    P.comisariaFamilia(),
+    ...P.jueces()
+  ];
+}
+
+function rutaComunLGBTIQ(violencia, contexto) {
+  const base = [];
+  if (violencia === 'fisica' || violencia === 'sexual') {
+    base.push({
+      tipo: 'medico',
+      titulo: 'Atención Médica',
+      desc: violencia === 'sexual' ? 'Código Verde en primeras 72h.' : 'Atención de urgencias.',
+      tags: ['Salud']
+    });
+    base.push(P.valoracionMedicoLegal());
+  }
+  base.push(P.policiaNacional());
+  if (contexto === 'dentro') {
+    base.push(P.comisariaFamilia());
+    base.push(P.fiscaliaUri());
+  } else {
+    base.push(P.inspeccionPolicia());
+    base.push(P.fiscaliaUri());
+  }
+  base.push(...P.jueces());
+  return base;
+}
+
+// ============================ OBTENER RUTA ============================
+function obtenerRuta() {
+  const { tipo, victima, violencia, contexto } = estado;
+  if (tipo === 'institucional') {
+    if (victima === 'mujer') {
+      return contexto === 'familiar' ? rutaInstMujerFamiliar(violencia) : rutaInstMujerNoFamiliar(violencia);
+    }
+    if (victima === 'nna') {
+      return rutaInstNNA(violencia, contexto);
+    }
+  } else {
+    if (victima === 'mujer') {
+      if (violencia === 'fisica') return contexto === 'dentro' ? rutaComunMujerFisicaDentro() : rutaComunMujerFisicaFuera();
+      if (violencia === 'sexual') return rutaComunMujerSexual();
+      if (violencia === 'psicologica') return contexto === 'dentro' ? rutaComunMujerPsicologicaDentro() : rutaComunMujerPsicologicaFuera();
+    }
+    if (victima === 'nna') return rutaComunNNA(violencia, contexto);
+    if (victima === 'lgbtiq') return rutaComunLGBTIQ(violencia, contexto);
+  }
+  return [];
+}
+
+// ============================ ESTADO Y FLUJO ============================
+let estado = { tipo: null, victima: null, violencia: null, contexto: null };
+let decisiones = {}; // para los botones de decisión
+
+function setTipo(t) {
+  estado.tipo = t;
+  document.getElementById('badge-modo').textContent = t === 'institucional' ? 'Institucional' : 'Comunitaria';
+  document.getElementById('sec-tipo').style.display = 'none';
+  document.getElementById('sec-victima').style.display = '';
+  // Poblaciones disponibles según tipo
+  const pobs = t === 'institucional' ? ['mujer','nna'] : ['mujer','nna','lgbtiq'];
+  const cont = document.getElementById('opciones-victima');
+  cont.innerHTML = '';
+  pobs.forEach(k => {
+    const p = POBLACIONES[k];
+    const div = document.createElement('div');
+    div.className = 'opcion-card';
+    div.innerHTML = `<div class="icono">${p.icono}</div><h3>${p.titulo}</h3><p>${p.sub}</p>`;
+    div.onclick = () => setVictima(k);
+    cont.appendChild(div);
+  });
+  document.getElementById('sec-victima').scrollIntoView({ behavior: 'smooth' });
+}
+
+function setVictima(v) {
+  estado.victima = v;
+  setFondoPoblacion(v);
+  document.getElementById('sec-victima').style.display = 'none';
+  document.getElementById('sec-violencia').style.display = '';
+
+  let lista;
+  if (estado.tipo === 'institucional') {
+    lista = v === 'mujer' ? VIOLENCIAS_INST_MUJER : VIOLENCIAS_INST_NNA;
+  } else {
+    lista = VIOLENCIAS_COMUN;
+  }
+
+  const cont = document.getElementById('opciones-violencia');
+  cont.innerHTML = '';
+  for (const [k, info] of Object.entries(lista)) {
+    const div = document.createElement('div');
+    div.className = 'opcion-card';
+    div.innerHTML = `<div class="icono">${info.icono}</div><h3>${info.titulo}</h3><p>${info.desc || ''}</p>`;
+    div.onclick = () => setViolencia(k);
+    cont.appendChild(div);
+  }
+  document.getElementById('sec-violencia').scrollIntoView({ behavior: 'smooth' });
+}
+
+function setViolencia(v) {
+  estado.violencia = v;
+  document.getElementById('sec-violencia').style.display = 'none';
+  document.getElementById('sec-contexto').style.display = '';
+
+  const lista = estado.tipo === 'institucional' ? CONTEXTOS_INST : CONTEXTOS_COMUN;
+  const cont = document.getElementById('opciones-contexto');
+  cont.innerHTML = '';
+  for (const [k, info] of Object.entries(lista)) {
+    const div = document.createElement('div');
+    div.className = 'opcion-card';
+    div.innerHTML = `<div class="icono">${info.icono}</div><h3>${info.titulo}</h3><p>${info.desc}</p>`;
+    div.onclick = () => setContexto(k);
+    cont.appendChild(div);
+  }
+  document.getElementById('sec-contexto').scrollIntoView({ behavior: 'smooth' });
+}
+
+function setContexto(c) {
+  estado.contexto = c;
+  document.getElementById('sec-contexto').style.display = 'none';
+  iniciarViaje();
+}
+
+function iniciarViaje() {
+  document.body.classList.add('modo-viaje');
+  // Oculta selecciones
+  document.querySelectorAll('.seccion-seleccion').forEach(s => s.style.display = 'none');
+  // Renderiza pasos
+  renderizarPasos();
+  // Scroll al inicio del camino
+  setTimeout(() => {
+    document.getElementById('camino').scrollIntoView({ behavior: 'smooth' });
+  }, 200);
+}
+
+function renderizarPasos() {
+  decisiones = {};
+  const pasos = obtenerRuta();
+  const cont = document.getElementById('pasosContainer');
+  cont.innerHTML = '';
+
+  // Calcula altura total del camino dinámicamente
+  const espacioPaso = 220;
+  const altoTotal = Math.max(800, pasos.length * espacioPaso + 200);
+  document.getElementById('caminoSvg').setAttribute('viewBox', `0 0 600 ${altoTotal}`);
+
+  // Genera path serpenteante (mismo trazado para las 3 capas de la carretera:
+  // borde blanco, asfalto y línea amarilla central)
+  const path = generarPathSerpenteante(altoTotal, pasos.length);
+  document.getElementById('caminoBorde').setAttribute('d', path);
+  document.getElementById('caminoAsfalto').setAttribute('d', path);
+  document.getElementById('caminoAmarillo').setAttribute('d', path);
+
+  // Pinta los iconos del personaje + entidad acompañante a lo largo del camino
+  renderIconosCamino(pasos, altoTotal);
+
+  // Ajusta altura del wrapper
+  document.getElementById('camino').style.minHeight = (altoTotal + 200) + 'px';
+
+  // Renderiza cada paso
+  pasos.forEach((paso, idx) => {
+    const div = crearPasoElement(paso, idx);
+    cont.appendChild(div);
+  });
+
+  // Botón final placeholder
+  const final = document.createElement('div');
+  final.className = 'final-celebracion';
+  final.id = 'finalCel';
+  final.innerHTML = `
+    <div class="icon">🌟</div>
+    <h2>Ruta completada</h2>
+    <p>Recuerda: el Ministerio Público (Personería, Defensoría, Procuraduría) acompaña todo el proceso. Conserva siempre copia de denuncias, valoraciones y notificaciones.</p>
+    <p style="margin-top:14px; font-size:0.95em;">📞 <strong>Línea Nacional 123</strong> · <strong>Línea Mujer 155</strong></p>
+  `;
+  cont.appendChild(final);
+
+  // Activa observador
+  setTimeout(activarObserver, 100);
+}
+
+function crearPasoElement(paso, idx) {
+  const div = document.createElement('div');
+  div.className = 'paso-ruta tipo-' + paso.tipo + ' ' + (idx % 2 === 0 ? 'izq' : 'der');
+  div.dataset.idx = idx;
+  if (paso._ramaSi) div.dataset.ramaSi = paso._ramaSi.join(',');
+
+  let html = `<div class="num">${idx + 1}</div>
+    <h4>${paso.titulo}</h4>
+    <p>${paso.desc || ''}</p>`;
+
+  if (paso.urgencia) html += `<div class="urgencia">${paso.urgencia}</div>`;
+  if (paso.detalles) html += '<ul>' + paso.detalles.map(d => `<li>${d}</li>`).join('') + '</ul>';
+  if (paso.normativa) html += `<div class="normativa">${paso.normativa}</div>`;
+  if (paso.municipios) {
+    html += '<div class="tags">' + paso.municipios.map(m => `<span class="tag">${m}</span>`).join('') + '</div>';
+  }
+  if (paso.tags) {
+    html += '<div class="tags">' + paso.tags.map(t => `<span class="tag">${t}</span>`).join('') + '</div>';
+  }
+
+  if (paso.tipo === 'decision' && paso.decision) {
+    html += '<div class="decision-buttons">';
+    paso.decision.opciones.forEach(opt => {
+      html += `<button class="decision-btn" onclick="elegirDecision(${idx},'${opt.valor}')" data-valor="${opt.valor}">${opt.texto}</button>`;
+    });
+    html += '</div>';
+  }
+
+  div.innerHTML = html;
+
+  // Visibilidad inicial: si tiene _ramaSi y aún no se ha tomado la decisión correspondiente, oculto
+  if (paso._ramaSi) {
+    div.style.display = 'none';
+  }
+
+  return div;
+}
+
+function elegirDecision(idxDecision, valor) {
+  // Marca el botón seleccionado y descarta los otros
+  const decisionEl = document.querySelector(`.paso-ruta[data-idx="${idxDecision}"]`);
+  decisionEl.querySelectorAll('.decision-btn').forEach(btn => {
+    if (btn.dataset.valor === valor) btn.classList.add('seleccionado');
+    else btn.classList.add('descartado');
+  });
+
+  // Guarda la decisión
+  decisiones[idxDecision] = valor;
+
+  // Recolecta TODOS los valores actualmente elegidos (acumulado)
+  const todosValores = new Set(Object.values(decisiones));
+
+  // Muestra los pasos cuya rama coincide; oculta los que no coinciden con ninguna decisión tomada
+  document.querySelectorAll('.paso-ruta[data-rama-si]').forEach(el => {
+    const ramas = el.dataset.ramaSi.split(',');
+    const visible = ramas.some(r => todosValores.has(r));
+    el.style.display = visible ? '' : 'none';
+    if (visible) {
+      setTimeout(() => el.classList.add('visible'), 50);
+    }
+  });
+
+  // Re-evalúa el observer
+  setTimeout(activarObserver, 100);
+}
+
+// ============================ ICONOS SOBRE EL CAMINO ============================
+
+const ICONO_POBLACION = {
+  mujer: '👩',
+  nna: '🧒',
+  lgbtiq: '🧑‍🎨'
+};
+
+const ICONO_ENTIDAD = {
+  medico: '🏥',
+  policia: '🚓',
+  comisaria: '🏛️',
+  fiscalia: '📋',
+  judicial: '⚖️',
+  icbf: '🧸',
+  otro: '💬',
+  decision: '🔀'
+};
+
+// ===== UN SOLO PERSONAJE + HITOS DE PASOS =====
+let _viajeEstado = {
+  pasos: null,
+  altoTotal: null,
+  posicionesPasos: [], // Posiciones {left, top, longitudAcumulada} de cada paso en el overlay
+  personajeEl: null,
+  hitos: [],
+  ultimoStepIdx: -1
+};
+
+function renderIconosCamino(pasos, altoTotal) {
+  _viajeEstado.pasos = pasos;
+  _viajeEstado.altoTotal = altoTotal;
+  _viajeEstado.ultimoStepIdx = -1;
+  const overlay = document.getElementById('caminoIconosHTML');
+  overlay.innerHTML = '';
+  if (!pasos.length) return;
+
+  requestAnimationFrame(() => {
+    const pathEl = document.getElementById('caminoAsfalto');
+    const totalLen = pathEl.getTotalLength();
+    const svg = document.getElementById('caminoSvg');
+    const svgRect = svg.getBoundingClientRect();
+    const wrapRect = document.getElementById('camino').getBoundingClientRect();
+    const sx = svgRect.width / 600;
+    const sy = svgRect.height / altoTotal;
+    const offsetX = svgRect.left - wrapRect.left;
+    const offsetY = svgRect.top - wrapRect.top;
+
+    // Calcula la posición de cada paso a lo largo del path (uniformemente)
+    _viajeEstado.posicionesPasos = pasos.map((_, idx) => {
+      const margen = 0.05;
+      const rango = 1 - margen * 2;
+      const t = margen + (rango * (pasos.length === 1 ? 0.5 : idx / (pasos.length - 1)));
+      const pt = pathEl.getPointAtLength(t * totalLen);
+      return {
+        t,
+        left: offsetX + pt.x * sx,
+        top: offsetY + pt.y * sy
+      };
+    });
+
+    // Crea los HITOS (puntitos guía) en cada paso
+    _viajeEstado.hitos = [];
+    _viajeEstado.posicionesPasos.forEach((p, idx) => {
+      const hito = document.createElement('div');
+      hito.className = 'hito-paso';
+      hito.style.left = p.left + 'px';
+      hito.style.top = p.top + 'px';
+      hito.dataset.idx = idx;
+      overlay.appendChild(hito);
+      _viajeEstado.hitos.push(hito);
+    });
+
+    // Crea hitos C1 (al inicio - casita rota/sufrida) y C2 (al final - casita restaurada/feliz)
+    const carpeta = carpetaPoblacion(estado.victima);
+    const hitoC1 = document.createElement('img');
+    hitoC1.src = `${carpeta}/C1.png`;
+    hitoC1.className = 'hito-img hito-c1';
+    hitoC1.alt = 'Inicio';
+    overlay.appendChild(hitoC1);
+
+    const labelC1 = document.createElement('div');
+    labelC1.className = 'hito-label hito-label-c1';
+    labelC1.textContent = '🌧 Inicio del camino';
+    overlay.appendChild(labelC1);
+
+    const hitoC2 = document.createElement('img');
+    hitoC2.src = `${carpeta}/C2.png`;
+    hitoC2.className = 'hito-img hito-c2';
+    hitoC2.alt = 'Destino';
+    overlay.appendChild(hitoC2);
+
+    const labelC2 = document.createElement('div');
+    labelC2.className = 'hito-label hito-label-c2';
+    labelC2.textContent = '☀ Justicia y reparación';
+    overlay.appendChild(labelC2);
+
+    // Crea EL PERSONAJE ÚNICO con caras TRISTE/FELIZ que se crozan
+    const popIcon = ICONO_POBLACION[estado.victima] || '🧍';
+    const personaje = document.createElement('div');
+    personaje.className = 'personaje-viaje';
+    // Determina si hay imagen TRISTE (sólo Mujer en componentes)
+    const tieneTriste = estado.victima === 'mujer';
+    const tristeSrc = `${carpeta}/${tieneTriste ? 'TRISTE.png' : 'FELIZ.png'}`;
+    const felizSrc = `${carpeta}/FELIZ.png`;
+    personaje.innerHTML = `
+      <div class="inner">
+        <div class="burbuja-pop" id="personajePop">
+          <img class="cara cara-triste" id="caraTriste" src="${tristeSrc}" style="opacity:1; filter:${tieneTriste ? 'none' : 'grayscale(0.9) brightness(0.7)'};">
+          <img class="cara cara-feliz" id="caraFeliz" src="${felizSrc}" style="opacity:0;">
+        </div>
+        <div class="burbuja-ent" id="personajeEnt">${ICONO_ENTIDAD[pasos[0].tipo] || '📌'}</div>
+      </div>
+      <div class="etiqueta" id="personajeEtiqueta">${pasos[0].titulo}</div>
+    `;
+    // Posición inicial: al inicio del camino
+    personaje.style.left = _viajeEstado.posicionesPasos[0].left + 'px';
+    personaje.style.top = _viajeEstado.posicionesPasos[0].top + 'px';
+    overlay.appendChild(personaje);
+    _viajeEstado.personajeEl = personaje;
+
+    // Posición inicial = scroll actual
+    actualizarPersonajeScroll();
+  });
+}
+
+function actualizarPersonajeScroll() {
+  const st = _viajeEstado;
+  if (!st.personajeEl || !st.pasos || !st.pasos.length) return;
+  const pathEl = document.getElementById('caminoAsfalto');
+  if (!pathEl) return;
+
+  // Calcular progreso a lo largo del camino con base en scroll
+  const camino = document.getElementById('camino');
+  const rectCamino = camino.getBoundingClientRect();
+  // El punto de referencia es ~40% de la altura del viewport (donde estás "leyendo")
+  const referenciaY = window.innerHeight * 0.4;
+  // Distancia desde top del camino hasta la referencia
+  const recorrido = referenciaY - rectCamino.top;
+  const altoCamino = rectCamino.height;
+  let progreso = recorrido / altoCamino;
+  progreso = Math.max(0, Math.min(1, progreso));
+
+  // Punto en el path
+  const totalLen = pathEl.getTotalLength();
+  const pt = pathEl.getPointAtLength(progreso * totalLen);
+  const svg = document.getElementById('caminoSvg');
+  const svgRect = svg.getBoundingClientRect();
+  const wrapRect = camino.getBoundingClientRect();
+  const sx = svgRect.width / 600;
+  const sy = svgRect.height / st.altoTotal;
+  const offsetX = svgRect.left - wrapRect.left;
+  const offsetY = svgRect.top - wrapRect.top;
+  const leftPx = offsetX + pt.x * sx;
+  const topPx = offsetY + pt.y * sy;
+
+  st.personajeEl.style.left = leftPx + 'px';
+  st.personajeEl.style.top = topPx + 'px';
+
+  // Filtro gris→color según progreso (sólo aplicado a la burbuja-ent, no a las caras)
+  const gris = (1 - progreso) * 0.55;
+  const sat = 0.6 + progreso * 1.2;
+  st.personajeEl.style.filter = `grayscale(${gris.toFixed(2)}) saturate(${sat.toFixed(2)})`;
+
+  // Crossfade entre la cara TRISTE (al inicio) y la cara FELIZ (al final)
+  const caraTriste = st.personajeEl.querySelector('#caraTriste');
+  const caraFeliz = st.personajeEl.querySelector('#caraFeliz');
+  if (caraTriste && caraFeliz) {
+    // La feliz aparece a partir del 45% del recorrido y termina dominando al 95%
+    const inicioCambio = 0.45;
+    const finCambio = 0.95;
+    let pCara = (progreso - inicioCambio) / (finCambio - inicioCambio);
+    pCara = Math.max(0, Math.min(1, pCara));
+    caraTriste.style.opacity = (1 - pCara).toFixed(2);
+    caraFeliz.style.opacity = pCara.toFixed(2);
+  }
+
+  // Determinar el paso más cercano (basado en t)
+  let stepIdx = 0;
+  let minDist = Infinity;
+  st.posicionesPasos.forEach((p, idx) => {
+    const dist = Math.abs(p.t - progreso);
+    if (dist < minDist) { minDist = dist; stepIdx = idx; }
+  });
+
+  // Marcar hitos alcanzados (todos los que tienen t <= progreso + un pequeño margen)
+  st.hitos.forEach((h, idx) => {
+    if (st.posicionesPasos[idx].t <= progreso + 0.02) {
+      h.classList.add('alcanzado');
+    } else {
+      h.classList.remove('alcanzado');
+    }
+  });
+
+  // Si cambió el paso actual, actualizar entidad y etiqueta con animación
+  if (stepIdx !== st.ultimoStepIdx) {
+    st.ultimoStepIdx = stepIdx;
+    const paso = st.pasos[stepIdx];
+    const entEl = st.personajeEl.querySelector('#personajeEnt');
+    const labelEl = st.personajeEl.querySelector('#personajeEtiqueta');
+    if (entEl) {
+      entEl.classList.remove('cambiando');
+      // Forzar reflow para reiniciar la animación
+      void entEl.offsetWidth;
+      entEl.textContent = ICONO_ENTIDAD[paso.tipo] || '📌';
+      entEl.classList.add('cambiando');
+    }
+    if (labelEl) labelEl.textContent = paso.titulo;
+  }
+}
+
+// Listener de scroll para mover el personaje
+let _viajeRafPendiente = false;
+function onScrollViaje() {
+  if (!_viajeRafPendiente) {
+    _viajeRafPendiente = true;
+    requestAnimationFrame(() => {
+      _viajeRafPendiente = false;
+      actualizarPersonajeScroll();
+    });
+  }
+}
+window.addEventListener('scroll', onScrollViaje, { passive: true });
+
+// Reposiciona al redimensionar la ventana
+window.addEventListener('resize', () => {
+  if (_viajeEstado.pasos && _viajeEstado.altoTotal) {
+    renderIconosCamino(_viajeEstado.pasos, _viajeEstado.altoTotal);
+  }
+});
+
+function generarPathSerpenteante(altoTotal, nPasos) {
+  // Path SVG en zigzag suave
+  const ancho = 600;
+  const cx = ancho / 2;
+  const amplitud = 160;
+  let d = `M ${cx},0`;
+  const segmentos = Math.max(4, nPasos);
+  for (let i = 1; i <= segmentos; i++) {
+    const y = (altoTotal / segmentos) * i;
+    const x = cx + (i % 2 === 0 ? -amplitud : amplitud) * (i === segmentos ? 0 : 1);
+    const ctrlY = y - altoTotal / segmentos / 2;
+    d += ` Q ${cx + (i % 2 === 0 ? amplitud : -amplitud) * 0.3},${ctrlY} ${x},${y}`;
+  }
+  return d;
+}
+
+// ============================ OBSERVER PARA APARICIÓN ============================
+let observer = null;
+function activarObserver() {
+  if (observer) observer.disconnect();
+  observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) e.target.classList.add('visible');
+    });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.paso-ruta:not([data-rama-si])').forEach(el => observer.observe(el));
+  // Para pasos en ramas activas
+  document.querySelectorAll('.paso-ruta[data-rama-si]').forEach(el => {
+    if (el.style.display !== 'none') observer.observe(el);
+  });
+  const final = document.getElementById('finalCel');
+  if (final) observer.observe(final);
+}
+
+// ============================ PARALLAX SCROLL ============================
+function actualizarParallax() {
+  const total = document.documentElement.scrollHeight - window.innerHeight;
+  const scrollY = window.scrollY;
+  const p = total > 0 ? Math.min(1, Math.max(0, scrollY / total)) : 0;
+  document.getElementById('bgParallax').style.setProperty('--p', p.toFixed(3));
+  document.getElementById('fondoImgWrap').style.setProperty('--p', p.toFixed(3));
+  document.getElementById('solWrap').style.setProperty('--p', p.toFixed(3));
+  document.querySelector('header.top').style.setProperty('--p', p.toFixed(3));
+  document.getElementById('progressBar').style.width = (p * 100) + '%';
+}
+
+// Define qué carpeta de imágenes usar según la población elegida
+function carpetaPoblacion(victima) {
+  if (victima === 'nna') return 'ruta_assets/ninos';
+  // mujer y lgbtiq por ahora usan los recursos de mujer
+  return 'ruta_assets/mujer';
+}
+
+// Carpetas que cuentan con variante vertical del fondo (FONDO-V.png)
+const FONDOS_CON_VERTICAL = ['ruta_assets/mujer'];
+
+// Elige el FONDO según el tipo de dispositivo: pantallas en vertical
+// (celulares/tabletas en retrato) usan FONDO-V.png; el resto FONDO.png.
+function fondoSegunDispositivo(carpeta) {
+  const esVertical = window.matchMedia('(orientation: portrait)').matches;
+  if (esVertical && FONDOS_CON_VERTICAL.includes(carpeta)) {
+    return `${carpeta}/FONDO-V.png`;
+  }
+  return `${carpeta}/FONDO.png`;
+}
+
+function setFondoPoblacion(victima) {
+  const carpeta = carpetaPoblacion(victima);
+  const fondo = document.getElementById('fondoImg');
+  const sol = document.getElementById('solImg');
+  fondo.src = fondoSegunDispositivo(carpeta);
+  sol.src = `${carpeta}/SOL.png`;
+  fondo.onload = () => fondo.classList.add('visible');
+  if (fondo.complete) fondo.classList.add('visible');
+  document.body.classList.add('con-imagen-fondo');
+}
+
+// Si el usuario gira el dispositivo con la ruta activa, cambia al fondo adecuado
+function actualizarFondoDispositivo() {
+  if (!estado.victima || !document.body.classList.contains('con-imagen-fondo')) return;
+  const fondo = document.getElementById('fondoImg');
+  const nuevo = fondoSegunDispositivo(carpetaPoblacion(estado.victima));
+  if (!fondo.getAttribute('src') || fondo.getAttribute('src').indexOf(nuevo) === -1) {
+    fondo.src = nuevo;
+  }
+}
+window.addEventListener('scroll', () => requestAnimationFrame(actualizarParallax), { passive: true });
+window.addEventListener('resize', () => { actualizarParallax(); actualizarFondoDispositivo(); });
+window.addEventListener('orientationchange', actualizarFondoDispositivo);
+// Señal más confiable: cuando el media query de orientación cambia de valor
+try {
+  matchMedia('(orientation: portrait)').addEventListener('change', actualizarFondoDispositivo);
+} catch (e) { /* navegadores antiguos sin addEventListener en MediaQueryList */ }
+
+// ============================ REINICIAR ============================
+function reiniciar() {
+  estado = { tipo: null, victima: null, violencia: null, contexto: null };
+  decisiones = {};
+  document.body.classList.remove('modo-viaje');
+  document.body.classList.remove('con-imagen-fondo');
+  document.querySelectorAll('.seccion-seleccion').forEach(s => s.style.display = 'none');
+  document.getElementById('sec-tipo').style.display = '';
+  document.getElementById('badge-modo').textContent = 'Selecciona';
+  document.getElementById('pasosContainer').innerHTML = '';
+  document.getElementById('caminoIconosHTML').innerHTML = '';
+  // Limpia las imágenes de fondo
+  const fondo = document.getElementById('fondoImg');
+  fondo.classList.remove('visible');
+  fondo.removeAttribute('src');
+  document.getElementById('solImg').removeAttribute('src');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// Inicialización
+actualizarParallax();
+</script>
+</body>
+</html>

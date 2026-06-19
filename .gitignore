@@ -8,6 +8,18 @@ Thumbs.db
 storage/
 *.log
 
+# credenciales locales BD
+website/config/database.local.php
+website/config/assistant.local.php
+website/config/rag_sync.local.php
+website/config/instagram.local.php
+
+# Asistente Python / API keys
+app_asistente/.env
+
+# Flujo ETL (contiene credenciales de correo; usar flow/config.ini.example como plantilla)
+flow/config.ini
+
 # pruebas locales
 test*.php
 tracker.php
@@ -15,3 +27,34 @@ testdb.php
 website/assets/pdf/BOLETIN_SALUD_NOVIEMBRE_2025.pdf
 website/assets/pdf/BOLETIN_SALUD_NOVIEMBRE_2025.pdf
 website/assets/pdf/BOLETIN_SALUD_NOVIEMBRE_2025.pdf
+
+# Indicadores: respaldos automáticos y caché de cargas (se regeneran)
+website/indicador/_backups/
+website/data/cache/ind_upload_*.json
+
+# AIIA (Node / Vite)
+aiia/**/node_modules/
+aiia/frontend/dist/
+
+# Herramientas locales de Claude Code
+.claude/
+
+# Artefactos de despliegue con credenciales (hash de contraseñas del equipo)
+scripts/out/
+
+# Comprimidos/paquetes locales
+*.rar
+
+# Recursos y datos locales pesados que NO son parte del sitio desplegado
+database/seeds/
+AsistenteOllama/
+app_asistente/
+transcripts_youtube/
+previews/
+/PAQUETE GRAFICO/
+/PAQUETE GRAFICO (1)/
+/RUTAS/
+/Infografias/
+
+# Archivo basura de un heredoc fallido (nombre mal formado)
+C:xampphtdocs*

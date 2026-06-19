@@ -1,4 +1,11 @@
 <?php
+require_once __DIR__ . '/../../admin/auth/bootstrap.php';
+if (!function_exists('auth_user') || auth_user() === null) {
+    http_response_code(401);
+    header('Content-Type: application/json; charset=utf-8');
+    echo json_encode(['error' => 'No autorizado'], JSON_UNESCAPED_UNICODE);
+    exit;
+}
 header('Content-Type: application/json; charset=utf-8');
 require_once __DIR__ . '/../db.php';
 
@@ -52,6 +59,7 @@ function runQuery($pdo, $sql, $params) {
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
+try {
 $sqlResumen = "SELECT COUNT(*) AS total_visitas, COUNT(DISTINCT DATE(fecha)) AS dias_registrados, COUNT(DISTINCT pais) AS total_paises, COUNT(DISTINCT pagina) AS total_paginas FROM accesos_observatorio $where";
 $resumenRow = runQuery($pdo, $sqlResumen, $params);
 $resumen = $resumenRow[0] ?? ['total_visitas'=>0,'dias_registrados'=>0,'total_paises'=>0,'total_paginas'=>0];
@@ -79,3 +87,10 @@ echo json_encode([
     'navegadores'  => $navegadores,
     'geo'          => $geo,
 ], JSON_UNESCAPED_UNICODE);
+} catch (Throwable $e) {
+    echo json_encode([
+        'resumen' => ['total_visitas'=>0,'dias_registrados'=>0,'total_paises'=>0,'total_paginas'=>0,'visitas_hoy'=>0],
+        'paises' => [], 'paginas' => [], 'dias' => [], 'dispositivos' => [], 'navegadores' => [], 'geo' => [],
+        'warning' => 'Sin datos de analítica disponibles (tabla accesos_observatorio ausente; aplique la migración 015).'
+    ], JSON_UNESCAPED_UNICODE);
+}

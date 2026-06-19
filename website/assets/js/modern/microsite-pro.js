@@ -25,7 +25,7 @@
       const json=await response.json();
       const all=json.items||[];
       const filtered=prefix?all.filter(item=>String(item.id).startsWith(prefix)):all;
-      if(totalKpi) totalKpi.textContent=filtered.length;
+      if(totalKpi && !totalKpi.dataset.staticKpi) totalKpi.textContent=filtered.length;
       const top=filtered.slice(0,6);
       if(list){
         list.innerHTML=top.length?top.map(item=>`<li class="list-group-item"><a href="${item.url}"><strong>${item.titulo}</strong></a><div>${item.categoria||'Sin categoría'} / ${item.subcategoria||'Sin subcategoría'}</div></li>`).join(''):'<li class="list-group-item">No hay indicadores para mostrar.</li>';
@@ -38,6 +38,7 @@
   async function loadDimensionNews(){
     const container=document.querySelector('.news-list');
     if(!container||!slug) return;
+    if(container.dataset.serverNews==='1') return;
     try{
       const response=await fetch('api/content.php?slug='+encodeURIComponent(slug));
       const data=await response.json();

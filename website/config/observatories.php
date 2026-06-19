@@ -8,6 +8,8 @@ return [
         'icon' => 'fa-chart-line',
         'description' => 'Coyuntura, variables macroeconómicas e indicadores de competitividad territorial.',
         'legacy_url' => 'indic-economico.php',
+        /** Slug en `cms_dashboards` para la pestaña Tablero embebida (ver migración 007). */
+        'cms_tablero_slug' => 'principal',
     ],
     'social' => [
         'name' => 'Observatorio Social',
@@ -16,6 +18,7 @@ return [
         'icon' => 'fa-people-group',
         'description' => 'Dinámicas poblacionales, bienestar, pobreza, salud, educación y cohesión social.',
         'legacy_url' => 'indic-social.php',
+        'cms_tablero_slug' => 'principal',
     ],
     'ambiente' => [
         'name' => 'Observatorio de Medio Ambiente',
@@ -24,6 +27,7 @@ return [
         'icon' => 'fa-leaf',
         'description' => 'Estado del aire, agua, biodiversidad, residuos y presión sobre el territorio.',
         'legacy_url' => 'indic-ambiental.php',
+        'cms_tablero_slug' => 'principal',
     ],
     'cti' => [
         'name' => 'Observatorio de Ciencia, Tecnología e Innovación',
@@ -32,6 +36,7 @@ return [
         'icon' => 'fa-microchip',
         'description' => 'Capacidades de I+D, innovación, talento humano y ecosistema CTI.',
         'legacy_url' => 'indic-tecnologia.php',
+        'cms_tablero_slug' => 'principal',
     ],
     'genero' => [
         'name' => 'Observatorio de Asuntos de Género',
@@ -40,5 +45,6 @@ return [
         'icon' => 'fa-venus-mars',
         'description' => 'Brechas de género, participación, autonomía económica y violencias basadas en género.',
         'legacy_url' => 'indic-genero.php',
+        'cms_tablero_slug' => 'principal',
     ],
 ];

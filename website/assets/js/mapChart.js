@@ -15,6 +15,7 @@ class MapChart {
 	#geoJson;
 	#geoIndex;
 	#valIndex;
+	#selectedLayer=null;
 	
 	#timeIndex;
 	#time=null;
@@ -34,6 +35,7 @@ class MapChart {
 		this.highlightFeature = this.highlightFeature.bind(this);
 		this.resetHighlight = this.resetHighlight.bind(this);
 		this.zoomToFeature = this.zoomToFeature.bind(this);
+		this.selectFeature = this.selectFeature.bind(this);
 	}
 	
 	decodeRGB(rgb){
@@ -56,6 +58,9 @@ class MapChart {
 		this.#data=data;
 		//Construye mapa
 		this.#map=L.map(chart,{zoomControl: false});
+		// Store map reference on DOM element for external resize handling
+		var el=document.getElementById(chart);
+		if(el) el._leafletMapRef=this.#map;
 		this.#map.center=function(){this.setView([5.85,-73],8)};
 		this.#map.center();
 		//Define límites de desplazamiento
@@ -64,7 +69,12 @@ class MapChart {
 		
 		this.addMap();
 
-		L.control.fullscreen().addTo(this.#map);
+		// Botón de pantalla completa (opcional): si el plugin no está cargado,
+		// no debe romper el mapa.
+		try {
+			if (L.control && typeof L.control.fullscreen === 'function')
+				L.control.fullscreen().addTo(this.#map);
+		} catch (e) { console.warn('Fullscreen no disponible:', e); }
 		this.addZoomHome();
 		
 		if(this.#data[0].indexOf(geoColumn)>-1)
@@ -477,23 +487,26 @@ class MapChart {
 	
 	style(feature) {
 		var v=this.getValue(feature.properties.id);
+		// Todos los municipios siempre visibles: borde blanco, gris claro sin
+		// dato, color de la escala con dato. Así el mapa de Boyacá completo se
+		// ve siempre, no solo los municipios con dato.
 		return {
 			weight: 1,
-			opacity: v==null?.1:.5,
-			color: CustomColors.midOpposite,
-			fillOpacity: v==null?.3:.7,
-			fillColor: v==null?'#eeeeee':this.getColor(v)
+			opacity: 1,
+			color: '#ffffff',
+			fillOpacity: v==null?.8:.92,
+			fillColor: v==null?'#e6ebf1':this.getColor(v)
 		};
 	}
-	
+
 	highlightFeature(e) {
 		var layer = e.target;
 		var v=this.getValue(layer.feature.properties.id);
 		layer.setStyle({
-			weight: v==null?2:4,
-			opacity: v==null?.3:.8,
-			color: CustomColors.hardOpposite,
-			fillOpacity: v==null?.4:.8
+			weight: 3,
+			opacity: 1,
+			color: '#16263b',
+			fillOpacity: 1
 		});
 
 		if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge)
@@ -501,18 +514,37 @@ class MapChart {
 
 		this.#popup.update(layer.feature,v);
 	}
-	
+
 	onEachFeature(feature, layer) {
 		layer.on({
 			mouseover: this.highlightFeature,
 			mouseout: this.resetHighlight,
-			click: this.zoomToFeature
+			click: this.selectFeature
 		});
 	}
-	
+
 	resetHighlight(e) {
+		// No quitar el resaltado del municipio seleccionado por clic.
+		if (this.#selectedLayer === e.target) return;
 		this.#geoJson.resetStyle(e.target);
-		this.#popup.update();
+		if (this.#selectedLayer)
+			this.#popup.update(this.#selectedLayer.feature, this.getValue(this.#selectedLayer.feature.properties.id));
+		else
+			this.#popup.update();
+	}
+
+	selectFeature(e) {
+		var layer = e.target;
+		// Quitar selección previa
+		if (this.#selectedLayer && this.#selectedLayer !== layer)
+			this.#geoJson.resetStyle(this.#selectedLayer);
+		this.#selectedLayer = layer;
+		var v=this.getValue(layer.feature.properties.id);
+		layer.setStyle({ weight: 3.5, opacity: 1, color: '#0b1b2e', fillOpacity: 1 });
+		if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge)
+			layer.bringToFront();
+		this.#popup.update(layer.feature, v);
+		this.#map.fitBounds(layer.getBounds(), {maxZoom: 11, padding: [20,20]});
 	}
 
 	zoomToFeature(e) {

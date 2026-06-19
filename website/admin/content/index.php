@@ -43,6 +43,7 @@ $pretty = json_encode($current, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
     <h1 class="h4">Administración de contenido (Noticias/Indicadores)</h1>
     <a class="btn btn-outline-secondary btn-sm" href="<?= htmlspecialchars(app_url('website/dashboard/index.php')); ?>">Volver al dashboard</a>
   </div>
+  <div class="alert alert-info">Preferible usar el <a href="<?= htmlspecialchars(app_url('website/cms/index.php')); ?>">CMS visual</a> (banners, redes, noticias, tableros). Esta pantalla conserva edición directa del JSON.</div>
   <p class="text-muted">Edite el JSON para actualizar noticias generales, noticias por dimensión e indicadores destacados del nuevo frontend.</p>
 
   <?php if ($message): ?><div class="alert alert-success"><?= htmlspecialchars($message) ?></div><?php endif; ?>

@@ -12,7 +12,9 @@
     const all = data.items || [];
     const filtered = prefix ? all.filter((item) => String(item.id).startsWith(prefix)) : all;
 
-    totalKpi.textContent = filtered.length;
+    if (totalKpi && !totalKpi.dataset.staticKpi) {
+      totalKpi.textContent = filtered.length;
+    }
 
     const top = filtered.slice(0, 6);
     list.innerHTML = top.length

@@ -47,7 +47,9 @@ require_once __DIR__ . '/db.php';
       <div class="container-fluid">
         <h1>Dashboard de Accesos – Observatorio de Boyacá</h1>
         <p>Sesión: <?php echo htmlspecialchars($authUser['email']); ?> · Rol: <?php echo htmlspecialchars($authUser['role']); ?></p>
-        <a class="btn btn-sm btn-primary" href="<?php echo htmlspecialchars(app_url('website/admin/content/index.php')); ?>">Gestionar contenido del portal</a>
+        <a class="btn btn-sm btn-primary me-1" href="<?php echo htmlspecialchars(app_url('website/cms/index.php')); ?>">CMS · Contenido y tableros</a>
+        <a class="btn btn-sm btn-outline-primary me-1" href="tablero-datos.php">Tablero exploratorio (Excel/CSV)</a>
+        <a class="btn btn-sm btn-outline-secondary" href="<?php echo htmlspecialchars(app_url('website/admin/content/index.php')); ?>">JSON legacy</a>
         <?php if (!empty($db_error)): ?>
           <div class="alert alert-warning mt-2"><?php echo htmlspecialchars($db_error); ?></div>
         <?php endif; ?>

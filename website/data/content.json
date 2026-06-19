@@ -1,4 +1,96 @@
 {
+  "contact": {
+    "institution": "Gobernación de Boyacá · Secretaría de Planeación",
+    "address": "Palacio de la Torre, Calle 20 No. 9 – 90, Secretaría de Planeación - piso 2",
+    "phone": "PBX + (57) 608 7420150",
+    "email": "rotpp.planeacion@boyaca.gov.co",
+    "hours": "Lunes a viernes, 8:00 a. m. – 5:00 p. m.",
+    "social": {
+      "facebook": "https://www.facebook.com/SecretariaPlaneacionBoyaca/",
+      "instagram": "https://www.instagram.com/secplaneacionboyaca/",
+      "x": "https://x.com/SePlaneacionBoy",
+      "youtube": ""
+    }
+  },
+  "home_banners": [
+    {
+      "title": "Red de Observatorios: datos abiertos y análisis territorial",
+      "subtitle": "Cinco dimensiones especializadas en una sola plataforma para ciudadanía y gestión pública.",
+      "tag": "Destacado"
+    },
+    {
+      "title": "Nuevos tableros y series actualizadas",
+      "subtitle": "Consulte indicadores con trazabilidad de fuentes y periodicidad oficial.",
+      "tag": "Datos"
+    },
+    {
+      "title": "Noticias y agenda institucional",
+      "subtitle": "Boletines, eventos y convocatorias de la Red de Observatorios.",
+      "tag": "Actualidad"
+    }
+  ],
+  "social_feed": [
+    {
+      "network": "instagram",
+      "category": "RED DE OBSERVATORIOS",
+      "title": "Datos para el territorio",
+      "byline": "@secplaneacionboyaca",
+      "excerpt": "Indicadores, tableros y análisis territorial disponibles para ciudadanía y entes públicos. Seguimiento periódico con fuentes oficiales.",
+      "url": "https://www.instagram.com/secplaneacionboyaca/",
+      "date": "2026-03-18",
+      "image": "",
+      "media_tag": "Planeación",
+      "media_caption": "Datos abiertos · Boyacá"
+    },
+    {
+      "network": "instagram",
+      "category": "ACTUALIDAD INSTITUCIONAL",
+      "title": "Participación y gestión pública",
+      "byline": "Secretaría de Planeación",
+      "excerpt": "Socialización de resultados y rutas de participación ciudadana en políticas y planes departamentales.",
+      "url": "https://www.instagram.com/secplaneacionboyaca/",
+      "date": "2026-03-15",
+      "image": "",
+      "media_tag": "Eventos",
+      "media_caption": "Territorio · Boyacá"
+    },
+    {
+      "network": "instagram",
+      "category": "OBSERVATORIO AMBIENTAL",
+      "title": "Sostenibilidad y recursos",
+      "byline": "@secplaneacionboyaca",
+      "excerpt": "Calidad del aire, agua y dinámicas territoriales asociadas al cambio climático en el departamento.",
+      "url": "https://www.instagram.com/secplaneacionboyaca/",
+      "date": "2026-03-10",
+      "image": "",
+      "media_tag": "Ambiente",
+      "media_caption": "Indicadores · Ambiente"
+    },
+    {
+      "network": "instagram",
+      "category": "OBSERVATORIO SOCIAL",
+      "title": "Bienestar y equidad",
+      "byline": "@secplaneacionboyaca",
+      "excerpt": "Líneas de análisis en salud, educación e inclusión con enfoque en políticas públicas departamentales.",
+      "url": "https://www.instagram.com/secplaneacionboyaca/",
+      "date": "2026-03-08",
+      "image": "",
+      "media_tag": "Social",
+      "media_caption": "Indicadores · Social"
+    },
+    {
+      "network": "facebook",
+      "category": "GOBERNACIÓN DE BOYACÁ",
+      "title": "Red de Observatorios",
+      "byline": "Facebook · Gobernación",
+      "excerpt": "Noticias complementarias y conversación con la ciudadanía.",
+      "url": "https://www.facebook.com/GobernacionBoyaca",
+      "date": "2026-03-12",
+      "image": "",
+      "media_tag": "Facebook",
+      "media_caption": "Síganos · Facebook"
+    }
+  ],
   "general_news": [
     {
       "title": "Lanzamiento del tablero unificado",

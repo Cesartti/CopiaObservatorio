@@ -1,4 +1,5 @@
 <!-- dashboard/partials/sidebar.php -->
+<?php $dashboardPage = basename($_SERVER['SCRIPT_NAME'] ?? ''); ?>
 
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
   <a href="#" class="brand-link">
@@ -10,9 +11,23 @@
       <ul class="nav nav-pills nav-sidebar flex-column">
 
         <li class="nav-item">
-          <a href="index.php" class="nav-link active">
+          <a href="index.php" class="nav-link <?= $dashboardPage === 'index.php' ? 'active' : '' ?>">
             <i class="nav-icon fas fa-chart-pie"></i>
             <p>Dashboard General</p>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a href="tablero-datos.php" class="nav-link <?= $dashboardPage === 'tablero-datos.php' ? 'active' : '' ?>">
+            <i class="nav-icon fas fa-table"></i>
+            <p>Tablero exploratorio</p>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a href="../cms/index.php" class="nav-link">
+            <i class="nav-icon fas fa-database"></i>
+            <p>CMS (contenido)</p>
           </a>
         </li>
 

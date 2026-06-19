@@ -1,6 +1,9 @@
 <!doctype html>
 <html lang="es">
 <head>
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/cropped-cropped-cropped-cropped-Logo-red-de-obdervatorios_Sin-fondo-1-32x32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon/cropped-cropped-cropped-cropped-Logo-red-de-obdervatorios_Sin-fondo-1-192x192.png">
+    <link rel="apple-touch-icon" href="assets/favicon/cropped-cropped-cropped-cropped-Logo-red-de-obdervatorios_Sin-fondo-1-180x180.png">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Proyectos Fondo Mujeres Visionarias – Mapa Boyacá</title>
@@ -199,7 +202,12 @@ async function loadGeo(){
   // Resalta por defecto los municipios con proyecto (sin hacer zoom extremo)
   highlightMunicipios(MUNICIPIOS_APOYADOS_INICIALES, false);
 }
-loadGeo();
+// El respaldo window.boyacaData lo define un script defer: hay que esperar a DOMContentLoaded
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', loadGeo);
+} else {
+  loadGeo();
+}
 
 function highlightMunicipios(names=[], zoomToFit=false){
   clearHighlights();

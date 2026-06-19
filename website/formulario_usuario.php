@@ -1,13 +1,13 @@
 <?php
-require_once "../tracker.php"; // Para obtener la IP ya registrada
+require_once __DIR__ . "/tracker.php"; // Para obtener la IP ya registrada
+require_once __DIR__ . "/config/database.php";
 
-$DB_HOST = "127.0.0.1";
-$DB_NAME = "observatorio_boyaca";
-$DB_USER = "observa_user";
-$DB_PASS = "Observa2025*";
-
-$pdo = new PDO("mysql:host=$DB_HOST;dbname=$DB_NAME;charset=utf8mb4",
-               $DB_USER, $DB_PASS, [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
+$pdo = cms_pdo();
+if (!$pdo) {
+    http_response_code(503);
+    echo "ERROR";
+    exit;
+}
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
@@ -22,8 +22,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             WHERE ip=? 
             ORDER BY id DESC LIMIT 1";
 
-    $stmt = $pdo->prepare($sql);
-    $stmt->execute([$profesion, $edad, $otro, $ip]);
+    try {
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute([$profesion, $edad, $otro, $ip]);
+    } catch (PDOException $e) {
+        // La tabla de accesos puede no existir en entornos locales; no romper la respuesta
+        http_response_code(503);
+        echo "ERROR";
+        exit;
+    }
 
     echo "OK";
     exit;

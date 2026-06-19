@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Evaluación: Observatorio Nuevo vs Viejo + CMS</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#f0f2f5;color:#1a1a2e;line-height:1.6}
+.container{max-width:1100px;margin:0 auto;padding:20px}
+header{background:linear-gradient(135deg,#0f3557,#1847b7);color:#fff;padding:40px 20px;text-align:center}
+header h1{font-size:1.8rem;margin-bottom:8px}
+header p{opacity:.85;font-size:.95rem}
+.score-ring{display:inline-flex;align-items:center;justify-content:center;width:100px;height:100px;border-radius:50%;border:6px solid rgba(255,255,255,.3);margin:16px auto;font-size:2rem;font-weight:800;background:rgba(255,255,255,.12)}
+.summary-bar{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin:24px 0}
+.sb-card{background:#fff;border-radius:12px;padding:18px 14px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.sb-card .num{font-size:1.6rem;font-weight:700}
+.sb-card .lbl{font-size:.75rem;color:#666;text-transform:uppercase;letter-spacing:.5px}
+.pass{color:#16a34a}.fail{color:#dc2626}.warn{color:#d97706}.info{color:#2563eb}
+section.block{background:#fff;border-radius:14px;padding:28px;margin-bottom:20px;box-shadow:0 2px 10px rgba(0,0,0,.05)}
+section.block h2{font-size:1.2rem;margin-bottom:14px;padding-bottom:8px;border-bottom:2px solid #e5e7eb;display:flex;align-items:center;gap:8px}
+table{width:100%;border-collapse:collapse;font-size:.88rem}
+th{text-align:left;background:#f8fafc;padding:10px 12px;font-weight:600;border-bottom:2px solid #e2e8f0}
+td{padding:10px 12px;border-bottom:1px solid #f1f5f9;vertical-align:top}
+tr:hover{background:#fafbfd}
+.badge{display:inline-block;padding:2px 10px;border-radius:20px;font-size:.72rem;font-weight:600;text-transform:uppercase}
+.badge-pass{background:#dcfce7;color:#166534}.badge-fail{background:#fee2e2;color:#991b1b}.badge-warn{background:#fef9c3;color:#854d0e}.badge-info{background:#dbeafe;color:#1e40af}.badge-new{background:#f3e8ff;color:#6b21a8}
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.compare-col{padding:16px;border-radius:10px}
+.compare-col.old{background:#fef2f2;border:1px solid #fecaca}
+.compare-col.new{background:#f0fdf4;border:1px solid #bbf7d0}
+.compare-col h3{font-size:.95rem;margin-bottom:10px}
+.compare-col ul{list-style:none;padding:0}
+.compare-col li{padding:4px 0;font-size:.85rem}
+.compare-col li::before{content:'';display:inline-block;width:6px;height:6px;border-radius:50%;margin-right:8px}
+.old li::before{background:#ef4444}
+.new li::before{background:#22c55e}
+.rec-card{background:#fffbeb;border-left:4px solid #f59e0b;padding:14px 18px;border-radius:0 8px 8px 0;margin-bottom:10px}
+.rec-card strong{display:block;margin-bottom:4px}
+.progress-bar{height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden;margin-top:4px}
+.progress-bar .fill{height:100%;border-radius:4px;transition:width .4s}
+.fill-green{background:#16a34a}.fill-yellow{background:#eab308}.fill-red{background:#dc2626}.fill-blue{background:#3b82f6}
+@media(max-width:700px){.compare-grid{grid-template-columns:1fr}.container{padding:12px}}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Evaluación del Observatorio de Boyacá</h1>
+  <p>Portal Nuevo (CMS unificado) vs Portal Viejo (legacy) &mdash; Abril 2026</p>
+  <div class="score-ring">68%</div>
+  <p style="font-size:.8rem;opacity:.7">Cumplimiento general como observatorio funcional con CMS</p>
+</header>
+
+<div class="container">
+
+<div class="summary-bar">
+  <div class="sb-card"><div class="num pass">14</div><div class="lbl">Criterios cumplidos</div></div>
+  <div class="sb-card"><div class="num warn">7</div><div class="lbl">Parciales / Vacíos</div></div>
+  <div class="sb-card"><div class="num fail">4</div><div class="lbl">No cumplidos</div></div>
+  <div class="sb-card"><div class="num info">5</div><div class="lbl">Nuevos vs viejo</div></div>
+</div>
+
+<!-- ============ SECCIÓN 1: ESTRUCTURA ============ -->
+<section class="block">
+  <h2>&#128736; 1. Arquitectura y estructura CMS</h2>
+  <table>
+    <tr><th style="width:35%">Criterio</th><th style="width:12%">Estado</th><th>Detalle</th></tr>
+    <tr>
+      <td>Esquema de BD relacional normalizado</td>
+      <td><span class="badge badge-pass">Cumple</span></td>
+      <td>36 tablas bien normalizadas (observatories, indicators, news, documents, datasets, cms_*, audit_logs, roles, users, etc.). Foreign keys, índices, workflows.</td>
+    </tr>
+    <tr>
+      <td>Multi-observatorio en una sola base</td>
+      <td><span class="badge badge-pass">Cumple</span></td>
+      <td>5 observatorios (económico, social, ambiente, CTI, género) con <code>observatory_id</code> en todas las tablas de contenido. Diseño escalable.</td>
+    </tr>
+    <tr>
+      <td>CMS con panel administrativo web</td>
+      <td><span class="badge badge-pass">Cumple</span></td>
+      <td>Panel en <code>/cms/</code> con módulos: banners, noticias, redes sociales, tableros, gráficos, contacto, usuarios, RAG. Dashboard de resumen funcional.</td>
+    </tr>
+    <tr>
+      <td>Sistema de autenticación y roles</td>
+      <td><span class="badge badge-pass">Cumple</span></td>
+      <td><code>bootstrap.php</code> con sesiones, roles, permisos por módulo (read/write), <code>auth_can()</code>, <code>auth_require_permission()</code>. Tabla <code>role_permissions</code>.</td>
+    </tr>
+    <tr>
+      <td>Workflow de contenido (draft→published)</td>
+      <td><span class="badge badge-pass">Cumple</span></td>
+      <td>Campo <code>content_status</code> en indicators, news, documents, datasets. Tabla <code>content_workflows</code> para auditoría de cambios de estado.</td>
+    </tr>
+    <tr>
+      <td>Auditoría de acciones</td>
+      <td><span class="badge badge-pass">Cumple</span></td>
+      <td>Tabla <code>audit_logs</code> con user_id, action, entity_type, entity_id, payload JSON. Trazabilidad completa.</td>
+    </tr>
+    <tr>
+      <td>Migraciones ordenadas</td>
+      <td><span class="badge badge-pass">Cumple</span></td>
+      <td>9 migraciones numeradas (001–009) que evolucionan el esquema de forma incremental.</td>
+    </tr>
+  </table>
+</section>
+
+<!-- ============ SECCIÓN 2: CONTENIDO ============ -->
+<section class="block">
+  <h2>&#128202; 2. Contenido y datos del observatorio</h2>
+  <table>
+    <tr><th style="width:35%">Criterio</th><th style="width:12%">Estado</th><th>Detalle</th></tr>
+    <tr>
+      <td>Catálogo de indicadores con hoja de vida</td>
+      <td><span class="badge badge-warn">Parcial</span></td>
+      <td><strong>Viejo:</strong> 385 carpetas de indicadores con archivos <code>.info</code> y <code>.csv</code> (datos reales). <strong>Nuevo:</strong> La estructura de BD existe (tabla <code>indicators</code> con campos completos) pero los KPIs muestran <strong>0 indicadores publicados</strong>. Los datos no se han migrado del sistema de archivos al CMS.</td>
+    </tr>
+    <tr>
+      <td>Datos estadísticos reales cargados</td>
+      <td><span class="badge badge-fail">No cumple</span></td>
+      <td>La tabla <code>indicator_observations</code> (series temporales) está vacía. Los 385 indicadores legacy con CSV no se han ingestado. El micrositio muestra "0 indicadores, 0 noticias, 0 documentos".</td>
+    </tr>
+    <tr>
+      <td>Noticias y contenido editorial</td>
+      <td><span class="badge badge-fail">No cumple</span></td>
+      <td>Tabla <code>news</code> existe y el CMS tiene módulo para crearlas, pero está vacía. El front dice "No hay noticias publicadas para este observatorio".</td>
+    </tr>
+    <tr>
+      <td>Documentos y datasets descargables</td>
+      <td><span class="badge badge-fail">No cumple</span></td>
+      <td>Tablas <code>documents</code> y <code>datasets</code> existen con estructura completa (file_path, file_type, downloads_count) pero sin registros. Centro de descargas apunta a enlaces legacy.</td>
+    </tr>
+    <tr>
+      <td>Tableros / dashboards embebidos</td>
+      <td><span class="badge badge-warn">Parcial</span></td>
+      <td>El CMS tiene <code>cms_dashboards</code> + <code>cms_charts</code> con soporte Google Charts y CSV. Pero la migración 007 (dashboards por defecto) parece no ejecutada &mdash; el front muestra mensaje "ejecute la migración" en lugar del tablero. El viejo usa Power BI directamente.</td>
+    </tr>
+    <tr>
+      <td>Publicaciones universitarias / Infografías</td>
+      <td><span class="badge badge-warn">Parcial</span></td>
+      <td>Las pestañas existen en el micrositio pero muestran "Contenido editorial pendiente de carga" y "Próximamente".</td>
+    </tr>
+    <tr>
+      <td>Etiquetas y categorización</td>
+      <td><span class="badge badge-pass">Cumple</span></td>
+      <td>Tablas <code>tags</code> y <code>news_tags</code> con <code>placement_hint</code> para ubicación editorial. Diseño flexible multi-canal.</td>
+    </tr>
+  </table>
+</section>
+
+<!-- ============ SECCIÓN 3: FUNCIONALIDAD ============ -->
+<section class="block">
+  <h2>&#9881; 3. Funcionalidades del portal público</h2>
+  <table>
+    <tr><th style="width:35%">Criterio</th><th style="width:12%">Estado</th><th>Detalle</th></tr>
+    <tr>
+      <td>Búsqueda global de indicadores</td>
+      <td><span class="badge badge-pass">Cumple</span></td>
+      <td>Barra de búsqueda en el portal principal con endpoint <code>/api/search.php</code>. Búsqueda también en <code>estado-observatorio.php</code>.</td>
+    </tr>
+    <tr>
+      <td>API pública JSON</td>
+      <td><span class="badge badge-pass">Cumple</span></td>
+      <td><code>/api/indicators.php</code> expone catálogo JSON con CORS habilitado. También <code>/api/content.php</code>, <code>/api/indicator_data.php</code>, <code>/api/survey.php</code>.</td>
+    </tr>
+    <tr>
+      <td>Contador de visitantes únicos</td>
+      <td><span class="badge badge-pass">Cumple</span></td>
+      <td>Sistema propio en <code>cms_page_visits</code> + <code>cms_unique_visitors</code> (cookie anónima). Se muestra en header del portal y cada micrositio.</td>
+    </tr>
+    <tr>
+      <td>Encuesta de satisfacción</td>
+      <td><span class="badge badge-pass">Cumple</span></td>
+      <td>Modal con 3 preguntas (edad, sector, frecuencia) guardadas en <code>cms_visitor_surveys</code>. Envío vía AJAX a <code>/api/survey.php</code>.</td>
+    </tr>
+    <tr>
+      <td>Micrositios con identidad visual propia</td>
+      <td><span class="badge badge-pass">Cumple</span></td>
+      <td>Cada observatorio tiene color y acento propios vía CSS variables (<code>--obs-color</code>, <code>--obs-accent</code>). Icono y descripción únicos.</td>
+    </tr>
+    <tr>
+      <td>Asistente IA / RAG integrado</td>
+      <td><span class="badge badge-new">Nuevo</span></td>
+      <td>Widget de asistente incluido vía <code>assistant-widget.php</code>. Tabla <code>cms_rag_chunks</code> para conocimiento por observatorio con sincronización a PostgreSQL. No existe en el viejo.</td>
+    </tr>
+    <tr>
+      <td>Redes sociales (Instagram/Facebook)</td>
+      <td><span class="badge badge-pass">Cumple</span></td>
+      <td>Carrusel de posts de Instagram/Facebook en portada, gestionable desde CMS (<code>cms_social_posts</code>). Footer con enlaces sociales dinámicos.</td>
+    </tr>
+    <tr>
+      <td>Responsividad móvil</td>
+      <td><span class="badge badge-warn">Parcial</span></td>
+      <td>Usa Bootstrap 5.3 con clases responsivas. Estructura correcta, pero sin testing real confirmado en dispositivos.</td>
+    </tr>
+  </table>
+</section>
+
+<!-- ============ SECCIÓN 4: COMPARATIVO ============ -->
+<section class="block">
+  <h2>&#128260; 4. Comparativo: Portal viejo vs nuevo</h2>
+  <div class="compare-grid">
+    <div class="compare-col old">
+      <h3>Portal Viejo (legacy)</h3>
+      <ul>
+        <li>PHP plano sin framework ni CMS</li>
+        <li>Cada observatorio = archivo PHP independiente (indic-economico.php, indic-social.php, etc.)</li>
+        <li>CSS/JS específico por dimensión (5 archivos diferentes)</li>
+        <li>Tableros embebidos de Power BI directamente</li>
+        <li>385 indicadores con datos reales en archivos .csv + .info</li>
+        <li>Admin rudimentario: solo upload de archivos CSV por número</li>
+        <li>Sin sistema de usuarios, roles ni permisos</li>
+        <li>Sin workflow de publicación</li>
+        <li>Sin auditoría de cambios</li>
+        <li>Sin API pública</li>
+        <li>Sin contadores ni encuestas</li>
+        <li>Contenido de género rico (barreras, rutas, mapas)</li>
+        <li>HTML con errores (h2 cerrado como h12 en género)</li>
+      </ul>
+    </div>
+    <div class="compare-col new">
+      <h3>Portal Nuevo (CMS unificado)</h3>
+      <ul>
+        <li>Arquitectura CMS con BD relacional completa</li>
+        <li>1 template unificado (<code>observatorio.php?slug=X</code>) para todos</li>
+        <li>CSS unificado con variables por observatorio</li>
+        <li>Tableros propios con Google Charts + opción embeber</li>
+        <li>Estructura de BD lista pero <strong>0 datos migrados</strong></li>
+        <li>Panel CMS completo: banners, noticias, tableros, gráficos, redes, RAG</li>
+        <li>Usuarios con roles, permisos granulares por módulo</li>
+        <li>Workflow draft→published con tabla de auditoría</li>
+        <li>Audit logs completos</li>
+        <li>API REST con CORS</li>
+        <li>Contadores únicos + encuesta de satisfacción</li>
+        <li>Migró contenido de género (barreras) al nuevo template</li>
+        <li>HTML limpio, semántico, accesible</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECCIÓN 5: PROGRESO POR MÓDULO ============ -->
+<section class="block">
+  <h2>&#128200; 5. Progreso por módulo CMS</h2>
+  <table>
+    <tr><th>Módulo</th><th>Estructura</th><th>Backend</th><th>Frontend</th><th>Datos</th><th>%</th></tr>
+    <tr>
+      <td><strong>Banners portal</strong></td><td><span class="badge badge-pass">OK</span></td><td><span class="badge badge-pass">OK</span></td><td><span class="badge badge-pass">OK</span></td><td><span class="badge badge-warn">Vacío</span></td>
+      <td><div class="progress-bar"><div class="fill fill-green" style="width:75%"></div></div></td>
+    </tr>
+    <tr>
+      <td><strong>Redes sociales</strong></td><td><span class="badge badge-pass">OK</span></td><td><span class="badge badge-pass">OK</span></td><td><span class="badge badge-pass">OK</span></td><td><span class="badge badge-warn">Vacío</span></td>
+      <td><div class="progress-bar"><div class="fill fill-green" style="width:75%"></div></div></td>
+    </tr>
+    <tr>
+      <td><strong>Contacto</strong></td><td><span class="badge badge-pass">OK</span></td><td><span class="badge badge-pass">OK</span></td><td><span class="badge badge-pass">OK</span></td><td><span class="badge badge-warn">Vacío</span></td>
+      <td><div class="progress-bar"><div class="fill fill-green" style="width:75%"></div></div></td>
+    </tr>
+    <tr>
+      <td><strong>Noticias</strong></td><td><span class="badge badge-pass">OK</span></td><td><span class="badge badge-pass">OK</span></td><td><span class="badge badge-pass">OK</span></td><td><span class="badge badge-fail">Vacío</span></td>
+      <td><div class="progress-bar"><div class="fill fill-yellow" style="width:75%"></div></div></td>
+    </tr>
+    <tr>
+      <td><strong>Indicadores</strong></td><td><span class="badge badge-pass">OK</span></td><td><span class="badge badge-warn">Parcial</span></td><td><span class="badge badge-warn">Parcial</span></td><td><span class="badge badge-fail">Vacío</span></td>
+      <td><div class="progress-bar"><div class="fill fill-yellow" style="width:45%"></div></div></td>
+    </tr>
+    <tr>
+      <td><strong>Tableros/Gráficos</strong></td><td><span class="badge badge-pass">OK</span></td><td><span class="badge badge-pass">OK</span></td><td><span class="badge badge-warn">Parcial</span></td><td><span class="badge badge-fail">Vacío</span></td>
+      <td><div class="progress-bar"><div class="fill fill-yellow" style="width:55%"></div></div></td>
+    </tr>
+    <tr>
+      <td><strong>Documentos/Datasets</strong></td><td><span class="badge badge-pass">OK</span></td><td><span class="badge badge-warn">Parcial</span></td><td><span class="badge badge-warn">Parcial</span></td><td><span class="badge badge-fail">Vacío</span></td>
+      <td><div class="progress-bar"><div class="fill fill-red" style="width:35%"></div></div></td>
+    </tr>
+    <tr>
+      <td><strong>Usuarios/Roles</strong></td><td><span class="badge badge-pass">OK</span></td><td><span class="badge badge-pass">OK</span></td><td><span class="badge badge-pass">OK</span></td><td><span class="badge badge-warn">Demo</span></td>
+      <td><div class="progress-bar"><div class="fill fill-green" style="width:80%"></div></div></td>
+    </tr>
+    <tr>
+      <td><strong>RAG / Asistente IA</strong></td><td><span class="badge badge-pass">OK</span></td><td><span class="badge badge-pass">OK</span></td><td><span class="badge badge-pass">OK</span></td><td><span class="badge badge-warn">Parcial</span></td>
+      <td><div class="progress-bar"><div class="fill fill-blue" style="width:70%"></div></div></td>
+    </tr>
+    <tr>
+      <td><strong>Encuesta/Contadores</strong></td><td><span class="badge badge-pass">OK</span></td><td><span class="badge badge-pass">OK</span></td><td><span class="badge badge-pass">OK</span></td><td><span class="badge badge-pass">Activo</span></td>
+      <td><div class="progress-bar"><div class="fill fill-green" style="width:95%"></div></div></td>
+    </tr>
+  </table>
+</section>
+
+<!-- ============ SECCIÓN 6: VEREDICTO ============ -->
+<section class="block">
+  <h2>&#9989; 6. Veredicto: ¿Es un observatorio real?</h2>
+  <p style="margin-bottom:16px">Un observatorio territorial funcional debe cumplir con producción de datos, análisis, difusión y gestión. Evaluación por eje:</p>
+  <table>
+    <tr><th>Eje de observatorio</th><th>Cumple</th><th>Nota</th></tr>
+    <tr>
+      <td><strong>Recolección y sistematización de datos</strong></td>
+      <td><span class="badge badge-warn">Parcial</span></td>
+      <td>La infraestructura (BD, API, CMS) está lista para recibir datos. Pero actualmente tiene 0 registros en el nuevo sistema. Los 385 indicadores con datos CSV existen solo en el sistema viejo de archivos planos.</td>
+    </tr>
+    <tr>
+      <td><strong>Análisis y generación de conocimiento</strong></td>
+      <td><span class="badge badge-warn">Parcial</span></td>
+      <td>El sistema de tableros y gráficos existe, las hojas de vida están diseñadas, y hay RAG para IA. Pero sin datos cargados no se genera análisis real.</td>
+    </tr>
+    <tr>
+      <td><strong>Difusión y transparencia</strong></td>
+      <td><span class="badge badge-pass">Cumple</span></td>
+      <td>Portal público accesible, API JSON abierta, descarga de datos planificada, contadores de visitas, redes sociales integradas, encuesta ciudadana.</td>
+    </tr>
+    <tr>
+      <td><strong>Gestión institucional</strong></td>
+      <td><span class="badge badge-pass">Cumple</span></td>
+      <td>CMS con roles, permisos, auditoría, workflow de publicación. Separación editorial por observatorio. Gobernanza de datos implementada.</td>
+    </tr>
+    <tr>
+      <td><strong>Continuidad y sostenibilidad</strong></td>
+      <td><span class="badge badge-warn">Parcial</span></td>
+      <td>El código es mantenible y modular. Pero depende de migración de datos y adopción del CMS por el equipo. Sin datos, el observatorio es una cáscara.</td>
+    </tr>
+  </table>
+</section>
+
+<!-- ============ SECCIÓN 7: RECOMENDACIONES ============ -->
+<section class="block">
+  <h2>&#128161; 7. Recomendaciones prioritarias</h2>
+
+  <div class="rec-card">
+    <strong>1. CRÍTICO: Migrar los 385 indicadores del sistema viejo al CMS</strong>
+    Los archivos <code>indicador/XXXX/indicador.info</code> y <code>*.csv</code> contienen datos reales que deben ingestarse en las tablas <code>indicators</code> e <code>indicator_observations</code>. Sin esto, el observatorio nuevo no tiene razón de ser. Se puede automatizar con un script PHP/Python.
+  </div>
+
+  <div class="rec-card">
+    <strong>2. CRÍTICO: Ejecutar migraciones y seeds de la BD</strong>
+    Las migraciones 007 (dashboards por defecto) y 008 (gráficos demo) necesitan ejecutarse. También <code>run_content_seed.php</code>. El portal muestra mensajes de "ejecute la migración" al público.
+  </div>
+
+  <div class="rec-card">
+    <strong>3. ALTA: Cargar contenido mínimo viable</strong>
+    Al menos 1 banner, datos de contacto, 3-5 noticias por observatorio, y 1 tablero con gráficos por dimensión. Un observatorio vacío transmite abandono.
+  </div>
+
+  <div class="rec-card">
+    <strong>4. ALTA: Resolver la coexistencia viejo/nuevo</strong>
+    El portal nuevo tiene enlaces "Vista actual" que apuntan al viejo. Si el nuevo reemplaza al viejo, los 385 indicadores deben migrar. Si coexisten, definir claramente qué vive dónde.
+  </div>
+
+  <div class="rec-card">
+    <strong>5. MEDIA: Integrar o reemplazar Power BI</strong>
+    El viejo embebe tableros Power BI. El nuevo tiene su sistema de gráficos Google Charts. Definir si se migra a Charts o se mantiene Power BI embebido. Ambos caminos son válidos pero no dejar los tableros vacíos.
+  </div>
+
+  <div class="rec-card">
+    <strong>6. MEDIA: Testing de responsividad y accesibilidad</strong>
+    Probar en dispositivos reales. El HTML es semántico y usa ARIA labels, pero falta validación real en lectores de pantalla y móviles.
+  </div>
+</section>
+
+<!-- ============ RESUMEN FINAL ============ -->
+<section class="block" style="background:linear-gradient(135deg,#f0fdf4,#ecfdf5);border:2px solid #86efac">
+  <h2 style="border-color:#86efac">&#127919; Resumen ejecutivo</h2>
+  <p><strong>El portal nuevo tiene una arquitectura de observatorio profesional y un CMS sólido.</strong> La estructura de base de datos, el sistema de roles, el workflow de publicación, la API, los contadores y la integración con IA/RAG son superiores a la mayoría de observatorios territoriales en Colombia.</p>
+  <p style="margin-top:12px"><strong>El problema principal es que está vacío.</strong> Los 385 indicadores con datos reales que dan vida al observatorio viven solo en el sistema viejo de archivos planos. Hasta que esos datos no se migren y se cargue contenido editorial mínimo, el observatorio nuevo es una estructura sin contenido &mdash; como un edificio terminado pero sin muebles.</p>
+  <p style="margin-top:12px"><strong>Puntuación: 68/100</strong> &mdash; Infraestructura excelente (90/100), contenido cargado insuficiente (20/100). Con la migración de datos y carga de contenido mínimo, podría subir a 85-90 fácilmente.</p>
+</section>
+
+</div>
+
+<footer style="text-align:center;padding:20px;color:#888;font-size:.8rem">
+  Evaluación generada el 13 de abril de 2026 &middot; Basada en análisis de código fuente del proyecto Observatorio2026
+</footer>
+
+</body>
+</html>

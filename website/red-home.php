@@ -4,6 +4,9 @@ $observatories = require __DIR__ . '/config/observatories.php';
 <!doctype html>
 <html lang="es">
 <head>
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/cropped-cropped-cropped-cropped-Logo-red-de-obdervatorios_Sin-fondo-1-32x32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon/cropped-cropped-cropped-cropped-Logo-red-de-obdervatorios_Sin-fondo-1-192x192.png">
+    <link rel="apple-touch-icon" href="assets/favicon/cropped-cropped-cropped-cropped-Logo-red-de-obdervatorios_Sin-fondo-1-180x180.png">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Red de Observatorios · Boyacá</title>
@@ -58,6 +61,9 @@ $observatories = require __DIR__ . '/config/observatories.php';
     </section>
 </main>
 
+<?php require __DIR__ . '/include/site-footer.php'; ?>
+
 <script src="assets/js/modern/red-home.js" defer></script>
+<?php require __DIR__ . '/include/assistant-widget.php'; ?>
 </body>
 </html>

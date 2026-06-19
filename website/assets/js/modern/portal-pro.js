@@ -22,6 +22,8 @@
   async function loadGeneralNews(){
     const container=document.getElementById('generalNewsCards');
     if(!container) return;
+    // Si el servidor ya pintó noticias desde la BD, no sobreescribir con el fallback JSON
+    if(container.querySelector('.news-card-home')) return;
     try{
       const response=await fetch('api/content.php');
       const data=await response.json();
@@ -34,13 +36,27 @@
   async function runSearch(){
     const q=(input.value||'').trim();
     if(!q){results.innerHTML='';return;}
-    const res=await fetch('api/search.php?q='+encodeURIComponent(q));
-    const json=await res.json();
-    const items=json.items||[];
-    results.innerHTML=items.length?items.map(it=>`<div class="search-item"><a href="${it.url}"><strong>${it.title}</strong></a><div>${it.context||''}</div></div>`).join(''):'<div class="search-item">Sin resultados.</div>';
+    results.innerHTML='<div class="search-item text-muted">Buscando…</div>';
+    try{
+      const res=await fetch('api/search.php?q='+encodeURIComponent(q));
+      const json=await res.json();
+      const items=json.items||[];
+      if(items.length){
+        results.innerHTML=items.map(it=>`<div class="search-item"><a href="${it.url}"><strong>${it.title}</strong></a><div>${it.context||''}</div></div>`).join('');
+      }else{
+        results.innerHTML='<div class="search-item">No hay indicadores que coincidan con «'+q.replace(/[<>&]/g,'')+'». Pruebe con términos como <strong>pobreza</strong>, <strong>violencia</strong>, <strong>salud</strong> o <strong>educación</strong>.</div>';
+      }
+    }catch(_e){
+      results.innerHTML='<div class="search-item">No fue posible realizar la búsqueda. Intente de nuevo.</div>';
+    }
   }
 
   if(button){button.addEventListener('click',runSearch)}
   if(input){input.addEventListener('keydown',e=>{if(e.key==='Enter')runSearch()})}
+  // Sugerencias clicables bajo el buscador
+  document.querySelectorAll('.search-hint').forEach(function(b){
+    b.addEventListener('click',function(){ if(input){ input.value=b.textContent.trim(); runSearch(); input.focus(); } });
+  });
   loadGeneralNews();
+  // La encuesta opcional la maneja assets/js/survey-widget.js (compartido con micrositios).
 })();

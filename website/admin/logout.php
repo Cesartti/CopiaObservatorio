@@ -1,14 +1,5 @@
 <?php
-session_start();
-session_destroy();
-clearstatcache();
-header('HTTP/1.1 401 Unauthorized', true, 401);
-?>
-<html>
-  <head>
-    <meta http-equiv="refresh" content="0; url='.'" />
-  </head>
-  <body>
-    Cerrando sesión...
-  </body>
-</html>
+require_once __DIR__ . '/auth/bootstrap.php';
+auth_logout();
+header('Location: ' . app_url('website/admin/auth/login.php'));
+exit;
