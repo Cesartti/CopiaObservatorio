@@ -130,6 +130,46 @@ $surveyPoints = est_rows_p(
 );
 $surveyGeoKnown = est_scalar_p($pdo, "SELECT COUNT(*) FROM cms_visitor_surveys $sWhereGeo", $sp);
 
+// ---------------- Navegación / eventos (filtrado por fecha) ----------------
+$obsCfg = is_file(__DIR__ . '/../config/observatories.php') ? (require __DIR__ . '/../config/observatories.php') : [];
+$obsLabels = ['portal' => 'Portal (inicio)'];
+foreach ($obsCfg as $oslug => $ometa) {
+    $obsLabels[(string) $oslug] = (string) ($ometa['name'] ?? $oslug);
+}
+$evTypeLabels = [
+    'page_view' => 'Vistas de página',
+    'indicator_view' => 'Indicadores vistos',
+    'news_open' => 'Noticias abiertas',
+    'tab_open' => 'Pestañas / categorías',
+    'powerbi_open' => 'Power BI / tableros',
+    'search' => 'Búsquedas',
+];
+
+$ep = [];
+$eWhere = '';
+if ($fDesde !== '' || $fHasta !== '') {
+    $ec = [];
+    if ($fDesde !== '') { $ec[] = 'created_at >= ?'; $ep[] = $fDesde . ' 00:00:00'; }
+    if ($fHasta !== '') { $ec[] = 'created_at <= ?'; $ep[] = $fHasta . ' 23:59:59'; }
+    $eWhere = 'WHERE ' . implode(' AND ', $ec);
+}
+$evAnd = function (string $extra) use ($eWhere): string {
+    return $eWhere ? ($eWhere . ' AND ' . $extra) : ('WHERE ' . $extra);
+};
+
+$totalEvents = est_scalar_p($pdo, "SELECT COUNT(*) FROM cms_events $eWhere", $ep);
+$powerbiOpens = est_scalar_p($pdo, "SELECT COUNT(*) FROM cms_events " . $evAnd("event_type='powerbi_open'"), $ep);
+$eventsByType = est_rows_p($pdo, "SELECT event_type AS k, COUNT(*) AS c FROM cms_events $eWhere GROUP BY event_type ORDER BY c DESC", $ep);
+$obsConsulted = est_rows_p($pdo, "SELECT observatory AS k, COUNT(*) AS c FROM cms_events " . $evAnd("event_type='page_view'") . " GROUP BY observatory ORDER BY c DESC", $ep);
+$topIndicators = est_rows_p($pdo, "SELECT object_id, MAX(label) AS label, observatory, COUNT(*) AS c FROM cms_events " . $evAnd("event_type='indicator_view'") . " GROUP BY object_id, observatory ORDER BY c DESC LIMIT 15", $ep);
+$topNews = est_rows_p($pdo, "SELECT object_id, MAX(label) AS label, COUNT(*) AS c FROM cms_events " . $evAnd("event_type='news_open'") . " GROUP BY object_id ORDER BY c DESC LIMIT 15", $ep);
+
+$dataObsConsulted = ['labels' => [], 'data' => []];
+foreach ($obsConsulted as $r) {
+    $dataObsConsulted['labels'][] = $obsLabels[(string) $r['k']] ?? ((string) $r['k'] !== '' ? (string) $r['k'] : 'Sin dato');
+    $dataObsConsulted['data'][] = (int) $r['c'];
+}
+
 // Datos para gráficos
 $dataVisitsByPage = ['labels' => [], 'data' => []];
 foreach ($visitsByPage as $r) {
@@ -254,6 +294,75 @@ require __DIR__ . '/includes/header.php';
     </div></div></div>
 </div>
 
+<!-- Navegación / comportamiento -->
+<h2 class="h5 mt-4 mb-2">Navegación — ¿qué consultan?</h2>
+<div class="row g-3 mb-1">
+    <div class="col-6 col-lg-3"><div class="card shadow-sm border-0"><div class="card-body">
+        <div class="text-muted small">Interacciones registradas</div>
+        <div class="h3 mb-0"><?= number_format($totalEvents, 0, ',', '.') ?></div>
+    </div></div></div>
+    <div class="col-6 col-lg-3"><div class="card shadow-sm border-0"><div class="card-body">
+        <div class="text-muted small">Aperturas de Power BI / tableros</div>
+        <div class="h3 mb-0"><?= number_format($powerbiOpens, 0, ',', '.') ?></div>
+    </div></div></div>
+</div>
+<div class="row g-3">
+    <div class="col-lg-7"><div class="card shadow-sm border-0 h-100"><div class="card-body">
+        <h3 class="h6">Observatorio más consultado</h3>
+        <p class="small text-muted mb-2">Vistas de página por observatorio (incluye si solo se quedan en el portal).</p>
+        <canvas id="chartObs" height="200"></canvas>
+    </div></div></div>
+    <div class="col-lg-5"><div class="card shadow-sm border-0 h-100"><div class="card-body">
+        <h3 class="h6">Eventos por tipo</h3>
+        <table class="table table-sm mb-0">
+            <thead class="table-light"><tr><th>Tipo de interacción</th><th class="text-end">Cantidad</th></tr></thead>
+            <tbody>
+            <?php if (empty($eventsByType)): ?>
+                <tr><td colspan="2" class="text-muted text-center py-2">Aún no hay interacciones (empiezan a registrarse al navegar el sitio).</td></tr>
+            <?php else: foreach ($eventsByType as $r): ?>
+                <tr><td><?= htmlspecialchars($evTypeLabels[(string) $r['k']] ?? (string) $r['k']) ?></td><td class="text-end"><?= (int) $r['c'] ?></td></tr>
+            <?php endforeach; endif; ?>
+            </tbody>
+        </table>
+    </div></div></div>
+</div>
+<div class="row g-3 mt-1">
+    <div class="col-lg-6"><div class="card shadow-sm border-0 h-100"><div class="card-body">
+        <h3 class="h6">Indicadores más vistos</h3>
+        <div class="table-responsive" style="max-height:320px;overflow:auto">
+            <table class="table table-sm mb-0">
+                <thead class="table-light"><tr><th>Indicador</th><th>Observatorio</th><th class="text-end">Vistas</th></tr></thead>
+                <tbody>
+                <?php if (empty($topIndicators)): ?>
+                    <tr><td colspan="3" class="text-muted text-center py-2">Sin datos para estas fechas.</td></tr>
+                <?php else: foreach ($topIndicators as $r): ?>
+                    <tr>
+                        <td><?= htmlspecialchars(($r['label'] !== null && $r['label'] !== '') ? (string) $r['label'] : ('Indicador ' . (string) $r['object_id'])) ?></td>
+                        <td class="small text-muted"><?= htmlspecialchars($obsLabels[(string) $r['observatory']] ?? (string) $r['observatory']) ?></td>
+                        <td class="text-end"><?= (int) $r['c'] ?></td>
+                    </tr>
+                <?php endforeach; endif; ?>
+                </tbody>
+            </table>
+        </div>
+    </div></div></div>
+    <div class="col-lg-6"><div class="card shadow-sm border-0 h-100"><div class="card-body">
+        <h3 class="h6">Noticias más abiertas</h3>
+        <div class="table-responsive" style="max-height:320px;overflow:auto">
+            <table class="table table-sm mb-0">
+                <thead class="table-light"><tr><th>Noticia</th><th class="text-end">Aperturas</th></tr></thead>
+                <tbody>
+                <?php if (empty($topNews)): ?>
+                    <tr><td colspan="2" class="text-muted text-center py-2">Sin datos para estas fechas.</td></tr>
+                <?php else: foreach ($topNews as $r): ?>
+                    <tr><td><?= htmlspecialchars(($r['label'] !== null && $r['label'] !== '') ? (string) $r['label'] : ('Noticia ' . (string) $r['object_id'])) ?></td><td class="text-end"><?= (int) $r['c'] ?></td></tr>
+                <?php endforeach; endif; ?>
+                </tbody>
+            </table>
+        </div>
+    </div></div></div>
+</div>
+
 <!-- Encuesta -->
 <h2 class="h5 mt-4 mb-2">Encuesta — perfil de quienes respondieron</h2>
 <div class="row g-3">
@@ -321,6 +430,7 @@ const EST = {
   age: <?= json_encode($dataAge, JSON_UNESCAPED_UNICODE) ?>,
   sector: <?= json_encode($dataSector, JSON_UNESCAPED_UNICODE) ?>,
   freq: <?= json_encode($dataFreq, JSON_UNESCAPED_UNICODE) ?>,
+  obsConsulted: <?= json_encode($dataObsConsulted, JSON_UNESCAPED_UNICODE) ?>,
   points: <?= json_encode($mapPoints, JSON_UNESCAPED_UNICODE) ?>
 };
 const PALETTE = ['#0d6efd','#20c997','#fd7e14','#6f42c1','#dc3545','#0dcaf0','#ffc107','#198754'];
@@ -337,6 +447,7 @@ function mkDoughnut(id, d){ const el=document.getElementById(id); if(!el)return;
 
 mkBar('chartByPage', EST.byPage);
 mkLine('chartByDay', EST.byDay);
+mkBar('chartObs', EST.obsConsulted);
 mkDoughnut('chartGender', EST.gender);
 mkDoughnut('chartAge', EST.age);
 mkDoughnut('chartSector', EST.sector);

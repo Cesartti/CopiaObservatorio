@@ -321,6 +321,7 @@ CREATE TABLE IF NOT EXISTS cms_page_visits (
 CREATE TABLE IF NOT EXISTS cms_visitor_surveys (
   id BIGINT AUTO_INCREMENT PRIMARY KEY,
   page_context VARCHAR(64) NOT NULL DEFAULT 'portal',
+  visitor_id CHAR(32) NULL,
   age_range VARCHAR(32) NOT NULL,
   gender VARCHAR(24) NULL,
   sector VARCHAR(64) NOT NULL,
@@ -346,6 +347,28 @@ CREATE TABLE IF NOT EXISTS cms_unique_visitors (
   first_seen_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (page_key, visitor_id),
   INDEX idx_page_seen (page_key, first_seen_at)
+);
+
+-- Eventos de navegación (un evento por interacción; analítica de comportamiento)
+CREATE TABLE IF NOT EXISTS cms_events (
+  id BIGINT AUTO_INCREMENT PRIMARY KEY,
+  visitor_id CHAR(32) NULL,
+  event_type VARCHAR(40) NOT NULL,
+  observatory VARCHAR(40) NULL,
+  object_type VARCHAR(40) NULL,
+  object_id VARCHAR(120) NULL,
+  label VARCHAR(200) NULL,
+  path VARCHAR(255) NULL,
+  country VARCHAR(80) NULL,
+  region VARCHAR(120) NULL,
+  city VARCHAR(120) NULL,
+  lat DECIMAL(9,6) NULL,
+  lng DECIMAL(9,6) NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  INDEX idx_ev_type (event_type),
+  INDEX idx_ev_obs (observatory),
+  INDEX idx_ev_created (created_at),
+  INDEX idx_ev_visitor (visitor_id)
 );
 
 -- Caché de geolocalización por IP (hash, no IP en claro) para la analítica

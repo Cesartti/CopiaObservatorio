@@ -48,14 +48,15 @@ if (!$pdo) {
 }
 
 $geo = cms_geo_lookup($pdo, cms_client_ip()) ?: [];
+$visitorId = cms_ensure_unique_visitor_id();
 
 try {
     $stmt = $pdo->prepare(
-        'INSERT INTO cms_visitor_surveys (page_context, age_range, gender, sector, visit_frequency, country, region, city, lat, lng)
-         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'
+        'INSERT INTO cms_visitor_surveys (page_context, visitor_id, age_range, gender, sector, visit_frequency, country, region, city, lat, lng)
+         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'
     );
     $stmt->execute([
-        $ctx, $age, $gender, $sector, $freq,
+        $ctx, $visitorId, $age, $gender, $sector, $freq,
         $geo['country'] ?? null,
         $geo['region'] ?? null,
         $geo['city'] ?? null,

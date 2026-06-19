@@ -77,3 +77,4 @@ if (!empty($contact)):
 </footer>
 <?php endif; ?>
 <?php require __DIR__ . '/accessibility-widget.php'; ?>
+<script src="assets/js/track.js" defer></script>
