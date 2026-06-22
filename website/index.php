@@ -103,6 +103,7 @@ function ig_embed_url(string $shortcode): string {
                 <a href="nosotros.php">Nosotros</a>
                 <a href="estado-observatorio.php">Estado de datos</a>
                 <a href="noticias.php">Noticias</a>
+                <a href="boletines.php">Boletines</a>
                 <button type="button" class="portal-survey-trigger" data-bs-toggle="modal" data-bs-target="#portalSurveyModal">Encuesta opcional</button>
             </nav>
         </div>

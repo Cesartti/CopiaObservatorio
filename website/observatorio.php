@@ -37,6 +37,8 @@ if ($economicMode) {
 /* ── Indicadores enriquecidos (Hoja de vida / Categorías / Descargas) ── */
 $slugToObsId = ['economico' => 1, 'social' => 2, 'ambiente' => 3, 'cti' => 4, 'genero' => 5];
 $currentObsId = $slugToObsId[$slug] ?? 0;
+require_once __DIR__ . '/lib/bulletins.php';
+$obsBulletins = $currentObsId ? cms_bulletins_fetch($pdoVisit, $currentObsId, true) : [];
 require_once __DIR__ . '/lib/indicator_metadata.php';
 require_once __DIR__ . '/functions.php';
 $imIndicators = [];
@@ -403,6 +405,7 @@ $obsTabActive = $tabActiveByObs[$slug] ?? $obs['color'];
                 <a href="index.php">Red de observatorios</a>
                 <a href="#tablero">Explora el observatorio</a>
                 <a href="noticias.php?obs=<?= urlencode($slug) ?>">Noticias</a>
+                <?php if (!empty($obsBulletins)): ?><a href="#boletines">Boletines</a><?php endif; ?>
                 <a href="#" role="button" data-bs-toggle="modal" data-bs-target="#portalSurveyModal">Encuesta opcional</a>
             </nav>
         </div>
@@ -1660,6 +1663,47 @@ $obsTabActive = $tabActiveByObs[$slug] ?? $obs['color'];
     </section>
     <?php endif; ?>
 </main>
+
+<?php if (!empty($obsBulletins)): ?>
+<section id="boletines" class="container my-4">
+    <h2 class="h4 mb-1" style="color:var(--obs-color)">Boletines del observatorio</h2>
+    <p class="text-muted small mb-3">Documentos y análisis publicados por este observatorio. <a href="boletines.php">Ver todos los boletines de la Red →</a></p>
+    <div class="row g-3">
+    <?php foreach ($obsBulletins as $b):
+        $bpdf = cms_bulletin_href((string) ($b['pdf_url'] ?? ''));
+        $bcover = cms_bulletin_href((string) ($b['cover_url'] ?? ''));
+        $bfecha = !empty($b['published_at']) ? date('d/m/Y', strtotime((string) $b['published_at'])) : '';
+    ?>
+        <div class="col-md-6 col-lg-4">
+            <article class="obs-bol-card h-100">
+                <div class="obs-bol-cover">
+                    <?php if ($bcover !== ''): ?><img src="<?= htmlspecialchars($bcover) ?>" alt="<?= htmlspecialchars($b['title']) ?>" loading="lazy"><?php else: ?><span><i class="fa-solid fa-file-pdf"></i></span><?php endif; ?>
+                </div>
+                <div class="obs-bol-body">
+                    <?php if (!empty($b['category'])): ?><span class="obs-bol-cat"><?= htmlspecialchars($b['category']) ?></span><?php endif; ?>
+                    <h3><?= htmlspecialchars($b['title']) ?></h3>
+                    <?php if (!empty($b['description'])): ?><p><?= htmlspecialchars($b['description']) ?></p><?php endif; ?>
+                    <div class="obs-bol-meta">
+                        <?php if ($bfecha !== ''): ?><span><i class="fa-regular fa-calendar me-1"></i><?= htmlspecialchars($bfecha) ?></span><?php endif; ?>
+                        <?php if ($bpdf !== ''): ?><a href="<?= htmlspecialchars($bpdf) ?>" target="_blank" rel="noopener" class="obs-bol-btn"><i class="fa-solid fa-download me-1"></i>PDF</a><?php endif; ?>
+                    </div>
+                </div>
+            </article>
+        </div>
+    <?php endforeach; ?>
+    </div>
+</section>
+<style>
+    .obs-bol-card{display:flex;flex-direction:column;background:#fff;border:1px solid #e8edf5;border-radius:14px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.05)}
+    .obs-bol-cover{height:140px;background:#f0eef3;display:flex;align-items:center;justify-content:center;overflow:hidden}
+    .obs-bol-cover img{width:100%;height:100%;object-fit:cover}.obs-bol-cover span{font-size:2.6rem;color:var(--obs-color);opacity:.4}
+    .obs-bol-body{padding:.9rem 1rem 1.1rem;display:flex;flex-direction:column;gap:.35rem;flex:1}
+    .obs-bol-cat{align-self:flex-start;background:rgba(var(--obs-color-rgb,13,110,253),.12);color:var(--obs-color);font-size:.68rem;font-weight:700;text-transform:uppercase;padding:.12rem .5rem;border-radius:999px}
+    .obs-bol-body h3{font-size:.98rem;font-weight:700;margin:.1rem 0 0;color:#13243a}.obs-bol-body p{font-size:.84rem;color:#5b6b7f;margin:0;flex:1}
+    .obs-bol-meta{display:flex;align-items:center;justify-content:space-between;margin-top:.3rem;font-size:.8rem;color:#6b7280}
+    .obs-bol-btn{background:var(--obs-color);color:#fff!important;border-radius:999px;padding:.3rem .75rem;font-size:.8rem;font-weight:600;text-decoration:none}
+</style>
+<?php endif; ?>
 
 <?php if ($genderMode) { require __DIR__ . '/include/integrantes-carrusel.php'; } ?>
 

@@ -50,6 +50,7 @@ if (!function_exists('site_hex_to_rgb')) {
             <a href="index.php">Inicio</a>
             <a href="nosotros.php">Nosotros</a>
             <a href="noticias.php">Noticias</a>
+            <a href="boletines.php">Boletines</a>
             <a href="publicaciones.php">Publicaciones</a>
             <a href="estado-observatorio.php">Estado de datos</a>
         </nav>

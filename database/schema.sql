@@ -349,6 +349,23 @@ CREATE TABLE IF NOT EXISTS cms_unique_visitors (
   INDEX idx_page_seen (page_key, first_seen_at)
 );
 
+-- Boletines (general + por observatorio)
+CREATE TABLE IF NOT EXISTS cms_bulletins (
+  id BIGINT AUTO_INCREMENT PRIMARY KEY,
+  observatory_id SMALLINT NULL,
+  category VARCHAR(120) NULL,
+  title VARCHAR(255) NOT NULL,
+  description TEXT NULL,
+  pdf_url VARCHAR(255) NOT NULL,
+  cover_url VARCHAR(255) NULL,
+  published_at DATE NULL,
+  is_active TINYINT(1) NOT NULL DEFAULT 1,
+  sort_order INT NOT NULL DEFAULT 0,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  INDEX idx_bul_obs (observatory_id),
+  INDEX idx_bul_active (is_active)
+);
+
 -- Eventos de navegación (un evento por interacción; analítica de comportamiento)
 CREATE TABLE IF NOT EXISTS cms_events (
   id BIGINT AUTO_INCREMENT PRIMARY KEY,
