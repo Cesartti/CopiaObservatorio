@@ -69,6 +69,10 @@ function boletin_card(array $b): void
     .bol-meta{display:flex;align-items:center;justify-content:space-between;gap:.5rem;margin-top:.4rem;font-size:.8rem;color:#6b7280}
     .bol-btn{background:#0b2744;color:#fff!important;border-radius:999px;padding:.35rem .8rem;font-size:.8rem;font-weight:600;text-decoration:none}
     .bol-btn:hover{background:#16406e}
+    .bol-filter{display:flex;flex-wrap:wrap;gap:.5rem;margin:.4rem 0 .2rem}
+    .bol-filter-btn{border:1px solid #cfdae8;background:#fff;color:#0b2744;border-radius:999px;padding:.4rem 1.05rem;font-size:.85rem;font-weight:600;cursor:pointer;transition:.15s}
+    .bol-filter-btn:hover{background:#eef3fa}
+    .bol-filter-btn.active{background:#0b2744;color:#fff;border-color:#0b2744}
 </style>
 
 <section class="bol-hero">
@@ -78,13 +82,34 @@ function boletin_card(array $b): void
     </div>
 </section>
 
+<?php
+// Dimensiones presentes (para los botones de filtro)
+$presentDims = [];
+if (!empty($groups['general'])) {
+    $presentDims['general'] = 'Generales';
+}
+foreach ($obsById as $oid => $o) {
+    if (!empty($groups[$oid])) {
+        $presentDims[$o['slug']] = $o['name'];
+    }
+}
+?>
 <main class="container py-3">
     <?php if (empty($all)): ?>
         <div class="alert alert-info my-4">Aún no hay boletines publicados.</div>
     <?php endif; ?>
 
+    <?php if (count($presentDims) > 1): ?>
+    <div class="bol-filter" role="tablist" aria-label="Filtrar boletines por dimensión">
+        <button class="bol-filter-btn active" data-dim="all">Todos</button>
+        <?php foreach ($presentDims as $slug => $label): ?>
+            <button class="bol-filter-btn" data-dim="<?= htmlspecialchars($slug) ?>"><?= htmlspecialchars($label) ?></button>
+        <?php endforeach; ?>
+    </div>
+    <?php endif; ?>
+
     <?php if (!empty($groups['general'])): ?>
-        <section class="bol-section">
+        <section class="bol-section" data-dim="general">
             <h2><i class="fa-solid fa-layer-group me-2"></i>Boletines generales</h2>
             <div class="row g-3"><?php foreach ($groups['general'] as $b) { boletin_card($b); } ?></div>
         </section>
@@ -92,7 +117,7 @@ function boletin_card(array $b): void
 
     <?php foreach ($obsById as $oid => $o): ?>
         <?php if (!empty($groups[$oid])): ?>
-            <section class="bol-section" id="obs-<?= htmlspecialchars($o['slug']) ?>">
+            <section class="bol-section" data-dim="<?= htmlspecialchars($o['slug']) ?>" id="obs-<?= htmlspecialchars($o['slug']) ?>">
                 <h2><i class="fa-solid fa-building-columns me-2"></i><?= htmlspecialchars($o['name']) ?></h2>
                 <div class="row g-3"><?php foreach ($groups[$oid] as $b) { boletin_card($b); } ?></div>
             </section>
@@ -102,5 +127,21 @@ function boletin_card(array $b): void
 
 <?php require __DIR__ . '/include/site-footer.php'; ?>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+(function () {
+  var btns = document.querySelectorAll('.bol-filter-btn');
+  var secs = document.querySelectorAll('.bol-section');
+  btns.forEach(function (b) {
+    b.addEventListener('click', function () {
+      btns.forEach(function (x) { x.classList.remove('active'); });
+      b.classList.add('active');
+      var d = b.getAttribute('data-dim');
+      secs.forEach(function (s) {
+        s.style.display = (d === 'all' || s.getAttribute('data-dim') === d) ? '' : 'none';
+      });
+    });
+  });
+})();
+</script>
 </body>
 </html>
