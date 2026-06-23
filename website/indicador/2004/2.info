@@ -1,4 +1,4 @@
-Tipo:Mapa
-Título:Número de casos de homicidios en cada municipio
-Descripción:Número de casos de casos de homicidios por genero, ciclo de vida y municipio
-Vertical:Número de casos
+Titulo:Muerte violenta accidental — por sexo
+Descripción:Desagregación por sexo.
+Vertical:Casos
+Horizontal:Año

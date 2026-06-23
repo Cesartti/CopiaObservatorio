@@ -1,4 +1,4 @@
-Tipo:Mapa
-Título:Número de víctimas de secuestros
-Descripción:El indicador reporta las cifras de víctimas de secuestros por municipios a través del tiempo.
-Vertical:Cantidad secuestros
+Titulo:Casos de Malaria Vivax — serie anual
+Descripción:Evolución anual.
+Vertical:Casos
+Horizontal:Año
