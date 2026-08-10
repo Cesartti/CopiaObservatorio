@@ -28,7 +28,12 @@ return [
     //           allowtransparency="true" class="lightwidget-widget"
     //           style="width:100%;border:0;overflow:hidden;"></iframe>
     //   HTML,
-    'embed_html' => '',
+    // Widget LightWidget de @secplaneacionboyaca filtrado por #RedObservatoriosBoyacá
+    // (grid 4 columnas x 8 posts, se actualiza solo 1 vez al día). Creado 2026-08-10.
+    'embed_html' => <<<HTML
+<script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
+<iframe src="//lightwidget.com/widgets/c9bff49d0b405e5a988d6fd3de6e5e8f.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"></iframe>
+HTML,
 
     // OPCIÓN B (manual): URLs de las publicaciones, de la MÁS RECIENTE a la más
     // antigua. Se muestran las primeras 5 en una fila horizontal. Para "rotar",
