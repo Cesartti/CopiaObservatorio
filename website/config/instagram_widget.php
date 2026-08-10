@@ -28,12 +28,13 @@ return [
     //           allowtransparency="true" class="lightwidget-widget"
     //           style="width:100%;border:0;overflow:hidden;"></iframe>
     //   HTML,
-    // Widget LightWidget de @secplaneacionboyaca filtrado por #RedObservatoriosBoyacá
-    // (grid 4 columnas x 8 posts, se actualiza solo 1 vez al día). Creado 2026-08-10.
-    'embed_html' => <<<HTML
-<script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
-<iframe src="//lightwidget.com/widgets/c9bff49d0b405e5a988d6fd3de6e5e8f.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"></iframe>
-HTML,
+    // NOTA 2026-08-10: LightWidget gratis NO funciona en sitios HTTPS (muestra
+    // "Widget add-on required"). El observatorio es HTTPS, así que el widget
+    // gratis queda descartado. Se dejó vacío para usar la Opción B (lista manual)
+    // mientras se activa el feed automático por la API Graph de Meta
+    // (scripts/sync_instagram.php). El upgrade de LightWidget (US$15) habilitaría
+    // HTTPS; el widget creado era: c9bff49d0b405e5a988d6fd3de6e5e8f
+    'embed_html' => '',
 
     // OPCIÓN B (manual): URLs de las publicaciones, de la MÁS RECIENTE a la más
     // antigua. Se muestran las primeras 5 en una fila horizontal. Para "rotar",
