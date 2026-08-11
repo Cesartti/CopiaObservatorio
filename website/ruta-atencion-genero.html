@@ -752,6 +752,23 @@
     z-index: 5;
   }
   footer strong { color: #d8b4f8; }
+  footer .creditos { max-width: 860px; margin: 0 auto; }
+  footer .cred-titulo { font-size: 1.25em; letter-spacing: 1px; margin-bottom: 6px; }
+  footer .cred-intro { color: #aeb2c0; max-width: 640px; margin: 0 auto 22px; line-height: 1.55; }
+  footer .cred-grupo {
+    margin: 0 auto 18px;
+    max-width: 640px;
+    padding: 14px 18px;
+    background: rgba(255,255,255,0.04);
+    border-left: 3px solid var(--morado-suave);
+    border-radius: 8px;
+    text-align: left;
+  }
+  footer .cred-entidad { color: #e8d5f8; font-weight: 600; margin-bottom: 1px; }
+  footer .cred-sub { color: #b9a3d1; font-style: italic; font-size: 0.92em; margin-bottom: 8px; }
+  footer .cred-grupo p.cred-persona { line-height: 1.6; }
+  footer .cred-grupo p.cred-persona b { color: #eaeaf2; font-weight: 600; }
+  footer .cred-pie { margin-top: 16px; font-size: 0.9em; opacity: 0.75; }
 
   /* Modo viaje activo - oculta selección */
   body.modo-viaje .seccion-seleccion { display: none; }
@@ -845,9 +862,37 @@
 </div>
 
 <footer>
-  <strong>Gobernación de Boyacá – Secretaría de Salud · Fiscalía General de la Nación</strong><br>
-  Equipo PPTX: Mario Gómez (INMLCF), Laura Tibaduiza (Sesalub), Sonia Cabra (Fiscalía), Constanza Marcela García (Sesalub)<br>
-  Equipo Rutas Institucionales: Mapas oficiales aportados por la Gobernación de Boyacá
+  <div class="creditos">
+    <p class="cred-titulo"><strong>Gobernación de Boyacá</strong></p>
+    <p class="cred-intro">Ruta de Atención Integral a víctimas de violencias basadas en sexo y/o género, construida de manera interinstitucional por:</p>
+
+    <div class="cred-grupo">
+      <p class="cred-entidad">Secretaría de Salud de Boyacá · Dirección de Promoción y Prevención</p>
+      <p class="cred-sub">Programa de Salud Sexual y Reproductiva</p>
+      <p class="cred-persona"><b>Candy Samanta Rodríguez</b> — Directora de Promoción y Prevención en Salud</p>
+      <p class="cred-persona"><b>Constanza Marcela García</b> — Referente Departamental de Salud Sexual y Reproductiva</p>
+      <p class="cred-persona"><b>Laura Salud Tibaduisa</b> — Equipo de Salud Sexual y Reproductiva</p>
+    </div>
+
+    <div class="cred-grupo">
+      <p class="cred-entidad">Instituto Nacional de Medicina Legal y Ciencias Forenses · Seccional Boyacá</p>
+      <p class="cred-persona"><b>Mario Gómez</b> — Psicólogo</p>
+    </div>
+
+    <div class="cred-grupo">
+      <p class="cred-entidad">Fiscalía General de la Nación</p>
+      <p class="cred-persona"><b>Sonia Cabra</b></p>
+    </div>
+
+    <div class="cred-grupo">
+      <p class="cred-entidad">Secretaría de Planeación de Boyacá · Dirección de Seguimiento y Planeación Territorial</p>
+      <p class="cred-persona"><b>Giovanna Lobatón Piñeros</b> — Directora de Seguimiento y Planeación Territorial</p>
+      <p class="cred-persona"><b>César Monroy</b> — Desarrollador web</p>
+      <p class="cred-persona"><b>Camilo Mejía</b> — Diseñador gráfico</p>
+    </div>
+
+    <p class="cred-pie">Rutas institucionales basadas en mapas oficiales aportados por la Gobernación de Boyacá.</p>
+  </div>
 </footer>
 
 <script>
