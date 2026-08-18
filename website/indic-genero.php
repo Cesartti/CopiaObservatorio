@@ -2091,6 +2091,18 @@ include 'include/header.php';
                                         </div>
                                     </div>
                                 </div>
+                                <div class="col-md-4 mb-4">
+                                    <div class="card tablero-card" data-iframe="https://app.powerbi.com/view?r=eyJrIjoiNjgxZTA4YTUtZmQ3OS00ZTZhLThhOGQtYmNiNmYzOWIzNjNiIiwidCI6IjYyMDEwNGUyLTEzOTAtNDNjNS1iYTQ1LTg1ZDE4ODNjYzQ4OCJ9&pageName=ea43abdf8da08630844c" data-title="Política Pública LGTBIQ+">
+                                        <img src="assets/svg/img-genero/PoliticaPublica/PP-LGTBIQ.png" class="card-img-top" alt="Tablero LGTBIQ+">
+                                        <div class="card-body text-center">
+                                            <h5 class="card-title">LGTBIQ+</h5>
+                                            <p class="card-text" style="font-size: 0.9rem; color: #555;">
+                                                En esta política podrás ver indicadores seleccionados, únicamente aquellos que están asociados al Observatorio de Asuntos de Género.
+                                            </p>
+                                            <button class="btn btn-institucional2 mt-2 ver-tablero-btn" type="button">Ver tablero</button>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
 
                     </div>

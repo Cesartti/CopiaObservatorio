@@ -791,6 +791,7 @@ $obsTabActive = $tabActiveByObs[$slug] ?? $obs['color'];
                     ['title' => 'Política Pública Mujer Campesina y Rural', 'desc' => 'Indicadores de la política pública de mujer campesina y rural.', 'url' => 'https://app.powerbi.com/view?r=eyJrIjoiZGRjNmJkMzctNjE2ZC00OTg2LTk3ZWMtYTc2YTQ4M2Y5N2U4IiwidCI6IjYyMDEwNGUyLTEzOTAtNDNjNS1iYTQ1LTg1ZDE4ODNjYzQ4OCJ9'],
                     ['title' => 'Política Pública Familia', 'desc' => 'Indicadores seleccionados asociados al observatorio.', 'url' => 'https://app.powerbi.com/view?r=eyJrIjoiMzJhMTZjNTktNDM1Yy00YmRmLWJhMDUtZGRjYzhiZDcyM2E4IiwidCI6IjYyMDEwNGUyLTEzOTAtNDNjNS1iYTQ1LTg1ZDE4ODNjYzQ4OCJ9&pageName=6d7e0fcb4b49936a08d6'],
                     ['title' => 'Política Pública Infancia y Adolescencia', 'desc' => 'Indicadores seleccionados asociados al observatorio.', 'url' => 'https://app.powerbi.com/view?r=eyJrIjoiMzU3NzQwOTktNTI5Mi00NWFlLTk2MzItZTIxYzJiYmQ5MWJmIiwidCI6IjYyMDEwNGUyLTEzOTAtNDNjNS1iYTQ1LTg1ZDE4ODNjYzQ4OCJ9&pageName=ca6a0c64cd07c4268d7e'],
+                    ['title' => 'Política Pública LGTBIQ+', 'desc' => 'Indicadores seleccionados asociados al observatorio.', 'url' => 'https://app.powerbi.com/view?r=eyJrIjoiNjgxZTA4YTUtZmQ3OS00ZTZhLThhOGQtYmNiNmYzOWIzNjNiIiwidCI6IjYyMDEwNGUyLTEzOTAtNDNjNS1iYTQ1LTg1ZDE4ODNjYzQ4OCJ9&pageName=ea43abdf8da08630844c'],
                 ];
                 ?>
                 <article class="content-card mt-3" id="pbiTablerosCard">
