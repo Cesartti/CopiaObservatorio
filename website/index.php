@@ -208,11 +208,26 @@ function ig_embed_url(string $shortcode): string {
         </div>
         <div class="row g-4">
             <?php foreach ($observatories as $slug => $obs): ?>
+                <?php
+                    // rgb del color del observatorio (para el fondo suave de los chips de categorías).
+                    $hex = ltrim((string) ($obs['color'] ?? '#0f3557'), '#');
+                    if (strlen($hex) === 3) { $hex = $hex[0].$hex[0].$hex[1].$hex[1].$hex[2].$hex[2]; }
+                    $obsColorRgb = implode(',', [hexdec(substr($hex, 0, 2)), hexdec(substr($hex, 2, 2)), hexdec(substr($hex, 4, 2))]);
+                    $obsCats = $obs['categories'] ?? [];
+                ?>
                 <div class="col-md-6 col-xl-4">
-                    <article class="obs-card" style="--obs-color: <?= htmlspecialchars($obs['color']) ?>; --obs-accent: <?= htmlspecialchars($obs['accent']) ?>;">
+                    <article class="obs-card" style="--obs-color: <?= htmlspecialchars($obs['color']) ?>; --obs-accent: <?= htmlspecialchars($obs['accent']) ?>; --obs-color-rgb: <?= htmlspecialchars($obsColorRgb) ?>;">
                         <div class="obs-card__icon"><i class="fa-solid <?= htmlspecialchars($obs['icon']) ?>"></i></div>
                         <h3><?= htmlspecialchars($obs['name']) ?></h3>
                         <p><?= htmlspecialchars($obs['description']) ?></p>
+                        <?php if (!empty($obsCats)): ?>
+                        <span class="obs-card__cats-label">Qué encontrarás aquí</span>
+                        <ul class="obs-card__cats">
+                            <?php foreach ($obsCats as $cat): ?>
+                            <li><?= htmlspecialchars($cat) ?></li>
+                            <?php endforeach; ?>
+                        </ul>
+                        <?php endif; ?>
                         <div class="d-flex gap-2 flex-wrap">
                             <a class="btn btn-sm btn-dark" href="observatorio.php?slug=<?= urlencode($slug) ?>">Entrar</a>
                             <a class="btn btn-sm btn-outline-secondary" href="<?= htmlspecialchars($obs['legacy_url']) ?>">Vista actual</a>

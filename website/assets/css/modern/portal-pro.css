@@ -17,6 +17,9 @@ body{font-family:Inter,Segoe UI,sans-serif;background:var(--bg);color:#182433}
 .obs-card:hover::after{transform:scale(1.25);opacity:.14}
 .obs-card>*{position:relative;z-index:1}
 .obs-card__icon{width:46px;height:46px;border-radius:12px;display:inline-flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--obs-color),var(--obs-accent));color:#fff;margin-bottom:.7rem;font-size:1.15rem;box-shadow:0 6px 14px rgba(0,0,0,.18)}
+.obs-card__cats-label{display:block;font-size:.68rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--obs-color);opacity:.75;margin:.15rem 0 .45rem}
+.obs-card__cats{list-style:none;padding:0;margin:0 0 .9rem;display:flex;flex-wrap:wrap;gap:.35rem}
+.obs-card__cats li{font-size:.75rem;line-height:1;font-weight:600;color:#334155;background:rgba(var(--obs-color-rgb,15,53,87),.08);border:1px solid rgba(var(--obs-color-rgb,15,53,87),.16);padding:.32rem .55rem;border-radius:999px;white-space:nowrap}
 .news-band{background:linear-gradient(120deg,#0b3f66,#1b7d80)}
 .news-card{background:#ffffff;border-radius:12px;padding:1rem;height:100%}.news-card span{font-size:.75rem;color:#0a4c78;font-weight:700;text-transform:uppercase}
 
