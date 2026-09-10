@@ -98,6 +98,48 @@ function fen_estado_enso(): array
     ];
 }
 
+/** Lee un ajuste de la tabla app_settings (vacío si no existe o no hay BD). */
+function fen_ajuste(string $clave): string
+{
+    static $cache = [];
+    if (array_key_exists($clave, $cache)) {
+        return $cache[$clave];
+    }
+    $valor = '';
+    try {
+        $pdo = cms_pdo();
+        if ($pdo) {
+            $st = $pdo->prepare('SELECT valor FROM app_settings WHERE clave = ?');
+            $st->execute([$clave]);
+            $valor = trim((string) ($st->fetchColumn() ?: ''));
+        }
+    } catch (Throwable $e) {
+        $valor = '';
+    }
+
+    return $cache[$clave] = $valor;
+}
+
+/**
+ * Clave de NASA FIRMS. Orden de búsqueda: ajuste guardado en el CMS,
+ * archivo config/fenomenos.local.php (no versionado) y variable de entorno.
+ * Así la clave nunca viaja en el repositorio, que es público.
+ */
+function fen_firms_key(): string
+{
+    $key = fen_ajuste('firms_map_key');
+    if ($key !== '') {
+        return $key;
+    }
+    $cfg = @include __DIR__ . '/../config/fenomenos.php';
+    $key = is_array($cfg) ? trim((string) ($cfg['firms_map_key'] ?? '')) : '';
+    if ($key !== '') {
+        return $key;
+    }
+
+    return trim((string) (getenv('OBS_FIRMS_MAP_KEY') ?: ''));
+}
+
 /**
  * Focos de calor activos sobre Boyacá.
  * Con MAP_KEY de NASA FIRMS devuelve detecciones satelitales de los últimos
@@ -105,8 +147,7 @@ function fen_estado_enso(): array
  */
 function fen_focos_calor(int $dias = 3): array
 {
-    $cfg = @include __DIR__ . '/../config/fenomenos.php';
-    $key = is_array($cfg) ? trim((string) ($cfg['firms_map_key'] ?? '')) : '';
+    $key = fen_firms_key();
     $bbox = '-74.85,4.35,-71.85,7.25'; // Boyacá con margen
     $focos = [];
     $fuente = 'NASA EONET';
@@ -143,7 +184,7 @@ function fen_focos_calor(int $dias = 3): array
             $aviso = 'No fue posible consultar NASA FIRMS; se muestran los eventos de NASA EONET.';
         }
     } else {
-        $aviso = 'Sin clave de NASA FIRMS: se muestran únicamente los eventos abiertos de NASA EONET.';
+        $aviso = 'Sin clave de NASA FIRMS: se muestran únicamente los eventos abiertos de NASA EONET. La clave se carga en el CMS, en Fenómenos → Configuración.';
     }
 
     if ($focos === []) {
@@ -277,5 +318,23 @@ function fen_guardar_reporte(?PDO $pdo, array $datos, string $ip): array
         return [true, 'Reporte recibido. Será revisado por el equipo de gestión del riesgo.'];
     } catch (Throwable $e) {
         return [false, 'No fue posible guardar el reporte.'];
+    }
+}
+
+/** Guarda o borra un ajuste. Devuelve true si quedó almacenado. */
+function fen_guardar_ajuste(?PDO $pdo, string $clave, string $valor): bool
+{
+    if (!$pdo) {
+        return false;
+    }
+    try {
+        $st = $pdo->prepare(
+            'INSERT INTO app_settings (clave, valor) VALUES (?, ?)
+             ON DUPLICATE KEY UPDATE valor = VALUES(valor)'
+        );
+
+        return $st->execute([$clave, $valor === '' ? null : $valor]);
+    } catch (Throwable $e) {
+        return false;
     }
 }

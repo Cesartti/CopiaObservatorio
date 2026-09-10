@@ -7,13 +7,15 @@
 require_once __DIR__ . '/../admin/auth/bootstrap.php';
 auth_require_permission('news', true);
 require_once __DIR__ . '/../config/database.php';
+require_once __DIR__ . '/../lib/fenomenos.php';
 
 $cmsTitle = 'Fenómenos · Reportes y bomberos';
 $cmsNav = 'fenomenos';
 $pdo = cms_pdo();
 $message = '';
 $error = '';
-$tab = ($_GET['tab'] ?? 'reportes') === 'bomberos' ? 'bomberos' : 'reportes';
+$tabsValidas = ['reportes', 'bomberos', 'config'];
+$tab = in_array($_GET['tab'] ?? '', $tabsValidas, true) ? (string) $_GET['tab'] : 'reportes';
 
 if ($pdo && $_SERVER['REQUEST_METHOD'] === 'POST') {
     $accion = (string) ($_POST['accion'] ?? '');
@@ -64,6 +66,20 @@ if ($pdo && $_SERVER['REQUEST_METHOD'] === 'POST') {
             $pdo->prepare('DELETE FROM env_bomberos WHERE id = ?')->execute([(int) $_POST['id']]);
             $message = 'Registro eliminado.';
             $tab = 'bomberos';
+        } elseif ($accion === 'guardar_clave') {
+            $clave = trim((string) ($_POST['firms_map_key'] ?? ''));
+            if ($clave !== '' && !preg_match('/^[a-f0-9]{20,64}$/i', $clave)) {
+                throw new RuntimeException('La clave de NASA FIRMS no tiene el formato esperado.');
+            }
+            if (!fen_guardar_ajuste($pdo, 'firms_map_key', $clave)) {
+                throw new RuntimeException('No fue posible guardar la clave.');
+            }
+            // Se limpia la caché para que el mapa consulte de inmediato.
+            foreach (glob(__DIR__ . '/../data/fenomenos/cache/firms_*.csv') ?: [] as $f) {
+                @unlink($f);
+            }
+            $message = $clave === '' ? 'Clave eliminada.' : 'Clave guardada. El mapa ya consulta NASA FIRMS.';
+            $tab = 'config';
         } elseif ($accion === 'importar_bomberos') {
             if (empty($_FILES['csv']['tmp_name'])) {
                 throw new RuntimeException('Seleccione un archivo CSV.');
@@ -140,6 +156,9 @@ require __DIR__ . '/includes/header.php';
     </a>
     <a class="btn btn-sm <?= $tab === 'bomberos' ? 'btn-dark' : 'btn-outline-secondary' ?>" href="?tab=bomberos">
         <i class="fa-solid fa-fire-extinguisher me-1"></i> Directorio de bomberos (<?= count($bomberos) ?>)
+    </a>
+    <a class="btn btn-sm <?= $tab === 'config' ? 'btn-dark' : 'btn-outline-secondary' ?>" href="?tab=config">
+        <i class="fa-solid fa-key me-1"></i> Configuración
     </a>
 </div>
 
@@ -300,6 +319,60 @@ require __DIR__ . '/includes/header.php';
                         </table>
                     </div>
                     <?php endif; ?>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php endif; ?>
+<?php if ($tab === 'config'): ?>
+    <?php
+    $claveActual = fen_ajuste('firms_map_key');
+    $enmascarada = $claveActual !== ''
+        ? substr($claveActual, 0, 4) . str_repeat('•', max(0, strlen($claveActual) - 8)) . substr($claveActual, -4)
+        : '';
+    $focos = fen_focos_calor(3);
+    ?>
+    <div class="row g-3">
+        <div class="col-lg-7">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Clave de NASA FIRMS</h5>
+                    <p class="small text-muted">
+                        Habilita los focos de calor detectados por satélite en el mapa de novedades.
+                        La clave es gratuita y se solicita en
+                        <a href="https://firms.modaps.eosdis.nasa.gov/api/map_key/" target="_blank" rel="noopener">firms.modaps.eosdis.nasa.gov</a>
+                        con un correo institucional. Se guarda en la base de datos, nunca en el repositorio.
+                    </p>
+                    <?php if ($claveActual !== ''): ?>
+                        <p class="small mb-2">Clave configurada: <code><?= htmlspecialchars($enmascarada) ?></code></p>
+                    <?php else: ?>
+                        <p class="small text-warning mb-2">Sin clave: el mapa muestra únicamente los eventos abiertos de NASA EONET.</p>
+                    <?php endif; ?>
+                    <form method="post" class="row g-2 align-items-end">
+                        <input type="hidden" name="accion" value="guardar_clave">
+                        <div class="col-md-8">
+                            <label class="form-label small mb-1" for="fk">Nueva clave (deje vacío para borrarla)</label>
+                            <input id="fk" name="firms_map_key" class="form-control form-control-sm"
+                                   maxlength="64" placeholder="32 caracteres" autocomplete="off">
+                        </div>
+                        <div class="col-md-4">
+                            <button class="btn btn-sm btn-primary w-100">Guardar clave</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-5">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Estado del servicio</h5>
+                    <ul class="list-unstyled small mb-0">
+                        <li><strong>Fuente activa:</strong> <?= htmlspecialchars($focos['fuente']) ?></li>
+                        <li><strong>Focos detectados (3 días):</strong> <?= count($focos['focos']) ?></li>
+                        <?php if ($focos['aviso'] !== ''): ?>
+                            <li class="text-warning mt-1"><?= htmlspecialchars($focos['aviso']) ?></li>
+                        <?php endif; ?>
+                    </ul>
                 </div>
             </div>
         </div>
