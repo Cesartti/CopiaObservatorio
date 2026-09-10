@@ -72,6 +72,9 @@ function inf_list_indicators(): array
             continue;
         }
         $info = @getInfo(INF_BASE_DIR . '/' . $entry . '/indicador.info');
+        if (!empty($info['retirado'])) {
+            continue; // indicador retirado de una estructura anterior
+        }
         $digit = (int) $entry[0];
         $obs = inf_observatories()[$digit] ?? ['slug' => 'otro', 'name' => 'Otro'];
         $out[] = [

@@ -38,6 +38,13 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
 
     if (file_exists('indicador/' . $id . '/indicador.info')) {
         $indicador = getInfo('indicador/' . $id . '/indicador.info');
+        // Indicador retirado en una reestructuración: si tiene equivalente
+        // vigente se redirige de forma permanente; si no, va al micrositio.
+        if (!empty($indicador['retirado'])) {
+            $dest = trim((string) ($indicador['reemplazado'] ?? ''));
+            header('Location: ' . (ctype_digit($dest) ? 'indicador.php?id=' . $dest : $newLink), true, 301);
+            exit;
+        }
         $indicador['id'] = $id;
         $title = ($indicador['titulo'] ?? 'Indicador') . ' · Red de Observatorios';
 

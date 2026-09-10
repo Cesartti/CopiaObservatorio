@@ -67,6 +67,9 @@ if ($currentObsId > 0) {
             continue;
         }
         $inf = @getInfo($dir . '/indicador.info');
+        if (!empty($inf['retirado'])) {
+            continue; // indicador de una estructura anterior (ver 'Reemplazado')
+        }
         $id = (int) $entry;
         $cat = trim((string) ($inf['categoria'] ?? '')) ?: 'Sin categoría';
         if (strcasecmp($cat, 'ND') === 0) {
@@ -276,12 +279,15 @@ if ($dimDigit > 0) {
         if (!is_file($infoPath)) {
             continue;
         }
+        $inf = @getInfo($infoPath);
+        if (!empty($inf['retirado'])) {
+            continue; // no cuenta ni aporta categoría
+        }
         $obsFolderCount++;
         $obsLastUpdated = max($obsLastUpdated, (int) @filemtime($infoPath));
         foreach (@glob($indDir . '/' . $entry . '/*.csv') ?: [] as $csv) {
             $obsLastUpdated = max($obsLastUpdated, (int) @filemtime($csv));
         }
-        $inf = @getInfo($infoPath);
         $cat = trim((string) ($inf['categoria'] ?? ''));
         if ($cat === '' || strcasecmp($cat, 'ND') === 0) {
             $cat = 'Sin categoría';
