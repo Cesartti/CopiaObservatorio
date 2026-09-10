@@ -147,6 +147,12 @@ return [
             'fuentes' => ['MinSalud — SISPRO', 'SIVIGILA', 'Secretaría de Salud de Boyacá'],
             'periodicidad' => 'Mensual / Anual',
         ],
+        'Pueblos indígenas' => [
+            'intro' => 'Situación de las comunidades indígenas del departamento: población, salud, educación, vivienda y acceso a servicios, con enfoque diferencial.',
+            'consulta' => ['Población indígena por municipio y resguardo', 'Salud y aseguramiento', 'Educación y permanencia escolar', 'Vivienda y servicios públicos'],
+            'fuentes' => ['DANE — Censo Nacional de Población y Vivienda', 'Ministerio del Interior — Dirección de Asuntos Indígenas', 'Secretaría de Salud de Boyacá'],
+            'periodicidad' => 'Anual',
+        ],
         'Violencia' => [
             'intro' => 'Hechos victimizantes, violencia intrafamiliar, sexual, conflicto armado, feminicidio, suicidio y atenciones médicas asociadas.',
             'consulta' => ['Atenciones médicas por tipo de violencia', 'Intentos de suicidio', 'Víctimas del conflicto armado', 'Feminicidios', 'Violencias y muertes — Medicina Legal', 'Convivencia escolar'],

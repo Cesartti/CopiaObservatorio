@@ -36,6 +36,28 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
     $link = 'indic-' . $dim['file'] . '.php';
     $newLink = 'observatorio.php?slug=' . $dim['slug'];
 
+    /**
+     * Número de gráficas realmente declaradas en display.js.
+     *
+     * El despliegue copia con rsync sin --delete: si una versión anterior del
+     * indicador tenía más gráficas, sus N.csv/N.info siguen en el servidor y
+     * generaban paneles sin clase que rompían TODAS las gráficas del
+     * indicador. display.js sí se sobrescribe en cada despliegue, así que es
+     * la fuente de verdad. Devuelve null cuando no hay display.js (sin tope).
+     */
+    $chartLimit = static function (string $indId): ?int {
+        $path = 'indicador/' . $indId . '/display.js';
+        if (!is_file($path)) {
+            return null;
+        }
+        $js = (string) @file_get_contents($path);
+        if (preg_match_all('/class\s+Chart(\d+)\s+extends/i', $js, $m)) {
+            return count(array_unique($m[1]));
+        }
+        return null;
+    };
+    $maxCharts = $chartLimit($id);
+
     if (file_exists('indicador/' . $id . '/indicador.info')) {
         $indicador = getInfo('indicador/' . $id . '/indicador.info');
         // Indicador retirado en una reestructuración: si tiene equivalente
@@ -52,6 +74,7 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
             $i = 1;
             $indicador['charts'] = [];
             while (true) {
+                if ($maxCharts !== null && $i > $maxCharts) { break; }
                 if (file_exists('indicador/' . $id . '/' . $i . '.info')) {
                     $chartInfo = getInfo('indicador/' . $id . '/' . $i . '.info');
                     if (count($chartInfo) > 0) {
@@ -163,7 +186,8 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
         info=[]; csv=[];
         <?php
         $ci = 1;
-        while (file_exists('indicador/' . $id . '/' . $ci . '.info')) {
+        while (file_exists('indicador/' . $id . '/' . $ci . '.info')
+               && ($maxCharts === null || $ci <= $maxCharts)) {
             $cInfo = getInfo('indicador/' . $id . '/' . $ci . '.info');
             if (!empty($cInfo)) {
                 $jsInfo = $cInfo;

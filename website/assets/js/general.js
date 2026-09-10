@@ -103,8 +103,23 @@ class AbstractDisplay{
 			});
 		}
 			
-		for (var i=0;i<info.length;i++)
-			this._charts.push(new charts[i](info[i],csv[i],'chart'+(i+1)));
+		// Tolerante: si un panel no tiene clase de gráfica (p. ej. archivos
+		// sobrantes de una versión anterior en el servidor) se guarda null en
+		// su lugar para no romper el resto de las gráficas del indicador.
+		for (var i=0;i<info.length;i++){
+			var C=charts[i];
+			if(typeof C!=='function'){
+				console.warn('Sin clase de gráfica para el panel '+(i+1)+'; se omite.');
+				this._charts.push(null);
+				continue;
+			}
+			try{
+				this._charts.push(new C(info[i],csv[i],'chart'+(i+1)));
+			}catch(e){
+				console.warn('No se pudo construir la gráfica '+(i+1)+':',e);
+				this._charts.push(null);
+			}
+		}
 		
 		if(!_packages)
 			this.drawCharts();
@@ -117,15 +132,17 @@ class AbstractDisplay{
 	}
 
 	drawCharts() {
-		for (var i=0;i<info.length;i++)
-			this._charts[i].draw();
+		for (var i=0;i<info.length;i++){
+			if(!this._charts[i]) continue;
+			try{ this._charts[i].draw(); }catch(e){ console.warn('Error dibujando la gráfica '+(i+1)+':',e); }
+		}
 		this.openTab(document.getElementById("firstButton"),'tab1');
 	}
 
 	redrawChart() {
 		var tabcontents = tab.getElementsByClassName("tabContent");
 		for (var i = 0; i < tabcontents.length; i++){
-			if(info[i]['tipo']!='Mapa' && tabcontents[i].style.display == "block")
+			if(info[i]['tipo']!='Mapa' && tabcontents[i].style.display == "block" && this._charts[i])
 				this._charts[i].draw();
 		}
 	}
