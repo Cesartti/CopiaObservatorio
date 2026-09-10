@@ -6,9 +6,9 @@
  *
  *  - 'obs'   : slugs de observatorios donde aparece; ['*'] = todos.
  *  - 'type'  : Artículo | Informe | Tesis | Boletín | Dataset
- *  - 'line'  : línea temática o categoría del observatorio a la que pertenece
+ *  - 'line'  : categoría o categoría del observatorio a la que pertenece
  *              (las mismas líneas de config/observatory_categories.php); el
- *              filtro "Línea temática" se genera con las líneas presentes.
+ *              filtro "Categoría" se genera con las líneas presentes.
  *  - 'demo'  : true marca el registro como contenido de ejemplo (se muestra
  *              con un aviso). Elimine los demo al cargar publicaciones reales.
  *

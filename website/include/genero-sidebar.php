@@ -1,7 +1,7 @@
 <?php
 /**
  * Barra lateral derecha del microsite (estilo widgets):
- *  - Líneas temáticas del observatorio (tarjetas compactas → abren el modal de detalle)
+ *  - Categorías del observatorio (tarjetas compactas → abren el modal de detalle)
  *  - Líneas o dimensiones de análisis (chips)
  *
  * Variables del scope (observatorio.php): $slug, $obs, $lineKeys, $linesInfo, $lineCounts.

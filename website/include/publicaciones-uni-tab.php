@@ -110,7 +110,7 @@ $puTypeIcons = [
 
     <?php if ($puLines !== []): ?>
     <div class="mb-3">
-        <div class="pu-filter-label">Línea temática del observatorio</div>
+        <div class="pu-filter-label">Categoría del observatorio</div>
         <div class="d-flex flex-wrap gap-2" id="puLineChips">
             <button type="button" class="pu-chip active" data-line="">Todas las líneas</button>
             <?php foreach ($puLines as $l): ?>

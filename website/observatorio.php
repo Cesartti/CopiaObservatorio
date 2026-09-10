@@ -81,7 +81,7 @@ if ($currentObsId > 0) {
             $rec['title'] = (string) ($inf['titulo'] ?? ('Indicador ' . $id));
         }
         $rec['category_1'] = $cat;
-        $rec['category_2'] = $cat; // agrupar por la categoría principal (coincide con las líneas temáticas)
+        $rec['category_2'] = $cat; // agrupar por la categoría principal (coincide con las categorías)
         $imIndicators[] = $rec;
     }
     usort($imIndicators, static function ($a, $b) {
@@ -259,7 +259,7 @@ if ($pdoVisit) {
 
 /* ---------------------------------------------------------------------------
  * Conteo REAL de indicadores desde las carpetas website/indicador/NNNN/
- * (fuente de verdad de lo que se publica), líneas temáticas por categoría y
+ * (fuente de verdad de lo que se publica), categorías por categoría y
  * fecha de última actualización (mtime más reciente de los datos del dim).
  * El primer dígito del ID = observatory_id (1=econ, 2=social, 3=ambiente,
  * 4=cti, 5=género).
@@ -375,9 +375,9 @@ if ($hasMsSections) {
     <meta name="description" content="Micrositio de <?= htmlspecialchars($obs['name']) ?> con tablero, hoja de vida, categorías, noticias y descargas.">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="assets/css/modern/microsite-pro.css">
+    <link rel="stylesheet" href="assets/css/modern/microsite-pro.css?v=<?= @filemtime(__DIR__ . '/assets/css/modern/microsite-pro.css') ?: 1 ?>">
     <?php if ($genderMode): ?>
-    <link rel="stylesheet" href="assets/css/modern/genero-content.css">
+    <link rel="stylesheet" href="assets/css/modern/genero-content.css?v=<?= @filemtime(__DIR__ . '/assets/css/modern/genero-content.css') ?: 1 ?>">
     <?php endif; ?>
     <?php if ($heroPreload !== ''): ?>
     <link rel="preload" as="image" href="<?= htmlspecialchars($heroPreload) ?>">
@@ -454,7 +454,7 @@ $obsTabActive = $tabActiveByObs[$slug] ?? $obs['color'];
     </section>
 
     <?php
-    // Líneas temáticas: datos pre-calculados para que observatory-description.php
+    // Categorías: datos pre-calculados para que observatory-description.php
     // pueda renderizar las tarjetas en el medio (entre Consulta y Fuentes).
     $categoriesByObs = require __DIR__ . '/config/observatory_categories.php';
     $linesInfo = $categoriesByObs[$slug] ?? [];
@@ -493,7 +493,7 @@ $obsTabActive = $tabActiveByObs[$slug] ?? $obs['color'];
        descripción de borde a borde sin la información general (líneas,
        dimensiones y fuentes salen de la tarjeta), y debajo una fila con el
        carrusel de imágenes (CMS: sección widget-carrusel) a la izquierda y
-       las líneas temáticas como widgets verticales a la derecha. */
+       las categorías como widgets verticales a la derecha. */
     $obsDescHideLines = true;
     $obsDescHideExtra = true;
     // En género mostramos las fuentes oficiales dentro de la tarjeta (antes iban en una imagen aparte).
@@ -596,14 +596,14 @@ $obsTabActive = $tabActiveByObs[$slug] ?? $obs['color'];
             .line-modal-footer .btn-primary:hover{background:rgba(var(--c-rgb),.85);border-color:rgba(var(--c-rgb),.85)}
         </style>
 
-        <!-- Modal de línea temática (se llena dinámicamente al click) -->
+        <!-- Modal de categoría (se llena dinámicamente al click) -->
         <div class="modal fade" id="lineModal" tabindex="-1" aria-hidden="true">
             <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
                 <div class="modal-content" id="lineModalContent">
                     <div class="line-modal-header modal-header">
                         <h5 class="modal-title">
                             <span class="line-modal-icon"><i class="fa-solid fa-layer-group" id="lineModalIcon"></i></span>
-                            <span id="lineModalTitle">Línea temática</span>
+                            <span id="lineModalTitle">Categoría</span>
                         </h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
                     </div>
@@ -636,7 +636,7 @@ $obsTabActive = $tabActiveByObs[$slug] ?? $obs['color'];
                     $info = $linesInfo[$cat] ?? [];
                     return [mb_strtolower($cat) => [
                         'title'        => $cat,
-                        'intro'        => $info['intro'] ?? 'Línea temática del observatorio. Explora los indicadores asociados desde la pestaña Categorías.',
+                        'intro'        => $info['intro'] ?? 'Categoría del observatorio. Explora los indicadores asociados desde la pestaña Categorías.',
                         'consulta'     => $info['consulta'] ?? [],
                         'fuentes'      => $info['fuentes'] ?? [],
                         'periodicidad' => $info['periodicidad'] ?? '',

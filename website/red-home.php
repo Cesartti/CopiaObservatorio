@@ -13,7 +13,7 @@ $observatories = require __DIR__ . '/config/observatories.php';
     <meta name="description" content="Plataforma unificada de la Red de Observatorios de Boyacá: económico, social, ambiente, CTI y género.">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="assets/css/modern/red-home.css">
+    <link rel="stylesheet" href="assets/css/modern/red-home.css?v=<?= @filemtime(__DIR__ . '/assets/css/modern/red-home.css') ?: 1 ?>">
 </head>
 <body>
 <header class="topbar">

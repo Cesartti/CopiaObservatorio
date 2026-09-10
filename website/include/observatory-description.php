@@ -9,7 +9,7 @@ if (!$d) {
     return;
 }
 /* Banderas opcionales: permiten mover bloques a otros lugares del layout
-   (p. ej. líneas temáticas a la barra lateral, fuentes al carrusel de
+   (p. ej. categorías a la barra lateral, fuentes al carrusel de
    integrantes) sin duplicar este componente. */
 $obsDescHideLines = $obsDescHideLines ?? false;
 $obsDescHideExtra = $obsDescHideExtra ?? false;

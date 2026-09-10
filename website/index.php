@@ -77,7 +77,7 @@ function ig_embed_url(string $shortcode): string {
     <meta name="description" content="Portal oficial de la Red de Observatorios de Boyacá con indicadores, noticias, documentos y datasets.">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="assets/css/modern/portal-pro.css">
+    <link rel="stylesheet" href="assets/css/modern/portal-pro.css?v=<?= @filemtime(__DIR__ . '/assets/css/modern/portal-pro.css') ?: 1 ?>">
     <?php
     $firstBannerImg = '';
     if (!empty($homeBanners) && !empty($homeBanners[0]['image_url'] ?? '')) {
@@ -134,24 +134,26 @@ function ig_embed_url(string $shortcode): string {
                 <?php if (!empty($homeVideo['youtube_id']) || $homeManualExists): ?>
                 <!-- Ayuda: video institucional y manual de usuario (se abren en lightbox) -->
                 <div class="home-help" role="group" aria-label="Material de ayuda del portal">
-                    <span class="home-help__label">¿Primera vez aquí?</span>
+                    <span class="home-help__label"><i class="fa-regular fa-circle-question" aria-hidden="true"></i> ¿Primera vez aquí?</span>
                     <div class="home-help__items">
                         <?php if (!empty($homeVideo['youtube_id'])): ?>
-                        <button type="button" class="home-help__item" data-bs-toggle="modal" data-bs-target="#homeVideoModal">
-                            <span class="home-help__icon home-help__icon--video"><i class="fa-solid fa-play" aria-hidden="true"></i></span>
+                        <button type="button" class="home-help__item home-help__item--video" data-bs-toggle="modal" data-bs-target="#homeVideoModal">
+                            <span class="home-help__icon"><i class="fa-solid fa-play" aria-hidden="true"></i></span>
                             <span class="home-help__text">
                                 <strong><?= htmlspecialchars($homeVideo['boton'] ?? 'Ver el video') ?></strong>
                                 <small><?= htmlspecialchars($homeVideo['texto'] ?? '') ?></small>
                             </span>
+                            <i class="fa-solid fa-chevron-right home-help__go" aria-hidden="true"></i>
                         </button>
                         <?php endif; ?>
                         <?php if ($homeManualExists): ?>
-                        <button type="button" class="home-help__item" data-bs-toggle="modal" data-bs-target="#homeManualModal">
-                            <span class="home-help__icon home-help__icon--manual"><i class="fa-solid fa-book-open" aria-hidden="true"></i></span>
+                        <button type="button" class="home-help__item home-help__item--manual" data-bs-toggle="modal" data-bs-target="#homeManualModal">
+                            <span class="home-help__icon"><i class="fa-solid fa-book-open" aria-hidden="true"></i></span>
                             <span class="home-help__text">
                                 <strong><?= htmlspecialchars($homeManual['boton'] ?? 'Ver el manual') ?></strong>
                                 <small><?= htmlspecialchars($homeManual['texto'] ?? '') ?></small>
                             </span>
+                            <i class="fa-solid fa-chevron-right home-help__go" aria-hidden="true"></i>
                         </button>
                         <?php endif; ?>
                     </div>

@@ -11,7 +11,7 @@ if (defined('OBS_A11Y_WIDGET_RENDERED')) {
 }
 define('OBS_A11Y_WIDGET_RENDERED', true);
 ?>
-<link rel="stylesheet" href="assets/css/modern/accessibility-widget.css">
+<link rel="stylesheet" href="assets/css/modern/accessibility-widget.css?v=<?= @filemtime(__DIR__ . '/../assets/css/modern/accessibility-widget.css') ?: 1 ?>">
 <button type="button" id="a11yFab" class="a11y-fab" aria-expanded="false" aria-controls="a11yPanel" title="Opciones de accesibilidad" aria-label="Abrir opciones de accesibilidad">
     <i class="fa-solid fa-universal-access" aria-hidden="true"></i>
 </button>

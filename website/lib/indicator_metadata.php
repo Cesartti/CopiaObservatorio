@@ -22,7 +22,7 @@ function im_field_labels(): array
         'title' => 'Nombre del indicador',
         'category_1' => 'Categoría primer orden',
         'category_2' => 'Categoría segundo orden',
-        'tags' => 'Etiquetas / líneas temáticas',
+        'tags' => 'Etiquetas / categorías',
         'unit' => 'Unidad de medida',
         'thematic_breakdown' => 'Desagregación temática',
         'geographic_breakdown' => 'Desagregación geográfica',
