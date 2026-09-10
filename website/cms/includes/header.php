@@ -42,6 +42,7 @@ $role = htmlspecialchars($u['role'] ?? '');
             <?php if (auth_can('news', false)): ?>
                 <a href="<?= htmlspecialchars(app_url('website/cms/news.php')) ?>" class="<?= ($cmsNav ?? '') === 'news' ? 'active' : '' ?>"><i class="fa-solid fa-newspaper me-2"></i>Noticias</a>
                 <a href="<?= htmlspecialchars(app_url('website/cms/boletines.php')) ?>" class="<?= ($cmsNav ?? '') === 'boletines' ? 'active' : '' ?>"><i class="fa-solid fa-file-pdf me-2"></i>Boletines</a>
+                <a href="<?= htmlspecialchars(app_url('website/cms/fenomenos.php')) ?>" class="<?= ($cmsNav ?? '') === 'fenomenos' ? 'active' : '' ?>"><i class="fa-solid fa-cloud-sun-rain me-2"></i>Fenómenos · reportes y bomberos</a>
             <?php endif; ?>
             <?php if (auth_can('charts', false)): ?>
                 <a href="<?= htmlspecialchars(app_url('website/cms/tableros.php')) ?>" class="<?= ($cmsNav ?? '') === 'charts' ? 'active' : '' ?>"><i class="fa-solid fa-chart-column me-2"></i>Tableros y gráficos</a>

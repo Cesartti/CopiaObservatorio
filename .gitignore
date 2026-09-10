@@ -58,3 +58,7 @@ previews/
 
 # Archivo basura de un heredoc fallido (nombre mal formado)
 C:xampphtdocs*
+
+# Clave de NASA FIRMS (no versionada)
+website/config/fenomenos.local.php
+website/data/fenomenos/cache/

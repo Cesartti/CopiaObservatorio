@@ -96,6 +96,7 @@ foreach ($imIndicators as $row) {
 }
 $imDataFiles = im_list_data_files_for_observatory($currentObsId, __DIR__);
 $genderMode = $slug === 'genero';
+$ambienteMode = $slug === 'ambiente';
 
 /**
  * Devuelve un icono FontAwesome representativo para una categoría de 2° orden.
@@ -751,6 +752,9 @@ $obsTabActive = $tabActiveByObs[$slug] ?? $obs['color'];
             <?php if ($genderMode): ?>
             <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#p-ruta-atencion" type="button">Ruta de atención</button></li>
             <?php endif; ?>
+            <?php if ($ambienteMode): ?>
+            <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#p-fenomenos" type="button"><i class="fa-solid fa-cloud-sun-rain me-1" aria-hidden="true"></i> Fenómenos en Boyacá</button></li>
+            <?php endif; ?>
             <?php foreach ($msTabsFirst as $msRoot):
                 $msPaneId = cms_section_pane_id($slug, $msRoot);
             ?>
@@ -884,6 +888,12 @@ $obsTabActive = $tabActiveByObs[$slug] ?? $obs['color'];
                 </article>
                 <?php endif; ?>
             </div>
+                        <?php if ($ambienteMode): ?>
+            <div class="tab-pane fade" id="p-fenomenos">
+                <?php require __DIR__ . '/include/fenomenos-tab.php'; ?>
+            </div>
+            <?php endif; ?>
+
             <div class="tab-pane fade" id="p-hojavida">
                 <article class="content-card" id="hojavida">
                     <h3>Hoja de vida de indicadores</h3>
