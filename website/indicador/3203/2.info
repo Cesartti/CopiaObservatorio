@@ -1,5 +1,4 @@
-Tipo:Gráfico
-Titulo:Cobertura promedio departamental por año
-Descripción:Promedio simple de la cobertura de los municipios con reporte.
+Tipo:Mapa
+Titulo:Cobertura por municipio · rural (%)
+Descripción:Cobertura reportada por municipio y año en la zona rural (use la línea de tiempo).
 Vertical:Porcentaje
-Horizontal:Año

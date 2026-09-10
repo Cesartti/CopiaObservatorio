@@ -1,5 +1,5 @@
 Tipo:Gráfico
-Titulo:Material particulado PM10: promedio anual por estación
-Descripción:Concentración media anual (µg/m³) en cada estación con medición continua.
+Titulo:Promedio anual de material particulado PM10
+Descripción:Concentración media anual (µg/m³) registrada en cada estación de monitoreo.
 Vertical:µg/m³
 Horizontal:Año

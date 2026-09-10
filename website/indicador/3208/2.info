@@ -1,5 +1,4 @@
-Tipo:Gráfico
-Titulo:IRCA promedio departamental
-Descripción:Promedio del IRCA de los municipios con reporte.
+Tipo:Mapa
+Titulo:IRCA por municipio · zona rural nucleada (%)
+Descripción:Índice por municipio y año (0 = sin riesgo; más de 80 = inviable sanitariamente).
 Vertical:IRCA (%)
-Horizontal:Año

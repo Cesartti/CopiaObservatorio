@@ -1,9 +1,7 @@
-Estación,µg/m³
-Sogamoso – Sena,39
-Sogamoso – Uptc,30.5
-Sogamoso – Recreo,26.1
-Nobsa – Nazaret,25.1
-Nobsa – Bomberos Nobsa,19.9
-Sogamoso – Movil Koica Paipa,17.9
-Paipa – Paipa Gensa,15.7
-Tunja – Volcán Paipa,13.2
+Año,Nobsa – Bomberos Nobsa,Nobsa – Nazaret,Paipa – Paipa Gensa,Sogamoso – Movil Koica,Sogamoso – Movil Koica Paipa,Sogamoso – Movil Koica Sogamoso,Sogamoso – Recreo,Tunja – Uptc Tunja,Tunja – Volcán Paipa
+2020,21.6,14,,17.9,,,15,11,
+2021,29.8,13.5,,,,16,14,7.3,
+2022,18.5,13.3,,,,,15,11.8,
+2023,16,12.1,,,,,14.9,,8.8
+2024,11.4,12.7,,,,,14.6,,10
+2025,11.6,10.9,5.8,,7.8,,13.1,,7.4

@@ -1,5 +1,5 @@
 Tipo:Gráfico
-Titulo:Promedio anual de material particulado PM2.5
+Titulo:Promedio anual de dióxido de nitrógeno (NO₂)
 Descripción:Concentración media anual (µg/m³) registrada en cada estación de monitoreo.
 Vertical:µg/m³
 Horizontal:Año

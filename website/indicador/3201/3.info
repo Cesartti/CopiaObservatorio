@@ -1,5 +1,5 @@
 Tipo:Gráfico
-Titulo:Municipios por nivel de cobertura y año
-Descripción:Número de municipios en cada rango de cobertura.
-Vertical:Municipios
+Titulo:Cobertura promedio departamental por año
+Descripción:Promedio simple de la cobertura de los municipios con reporte, por zona.
+Vertical:Porcentaje
 Horizontal:Año

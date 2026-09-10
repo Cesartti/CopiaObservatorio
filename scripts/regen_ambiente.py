@@ -229,27 +229,45 @@ i.chart('column', 'Áreas forestales por provincia y tipo', 'Área (ha) por prov
 # =====================================================================
 # 2. RECURSO HÍDRICO Y SANEAMIENTO AMBIENTAL
 # =====================================================================
-def coverage_ind(code, cat, title, desc, src, sh, zona_col, zona_val, clas_col, sub):
-    df = sheet(sh); df = with_year(df, col(df, exact='Año') or col(df, 'año', 'ano')); df = with_geo(df, code_col=col(df, 'dane'))
-    if zona_col: df = df[df[zona_col].astype(str).str.strip().str.lower() == zona_val].copy()
-    df['_v'] = pd.to_numeric(df['Valor'], errors='coerce') * 100
-    d = df.dropna(subset=['_v'])
+def coverage_ind(code, cat, title, desc, src, sh, zona_col, clas_col, sub, zonas):
+    """Un indicador por hoja del Excel, con las zonas como gráficas separadas."""
+    df0 = sheet(sh); df0 = with_year(df0, col(df0, exact='Año') or col(df0, 'año', 'ano'))
+    df0 = with_geo(df0, code_col=col(df0, 'dane'))
+    df0['_v'] = pd.to_numeric(df0['Valor'], errors='coerce') * 100
     ind = add(Ind(code, cat, title, desc, src, sub))
-    ind.map('Cobertura por municipio (%)', 'Cobertura reportada por municipio y año (use la línea de tiempo).', 'Porcentaje', 'Porcentaje', map_rows(d, '_v', 'mean', ycol='_y'))
-    ind.chart('line', 'Cobertura promedio departamental por año', 'Promedio simple de la cobertura de los municipios con reporte.', 'Porcentaje', 'Año', ['Año', 'Cobertura promedio (%)'], rows_year(d.groupby('_y')['_v'].mean().round(1)), yearx=True)
+
+    series = {}
+    for etiqueta, valor in zonas:
+        df = df0[df0[zona_col].astype(str).str.strip().str.lower() == valor].copy() if zona_col else df0.copy()
+        d = df.dropna(subset=['_v'])
+        if d.empty:
+            continue
+        ind.map('Cobertura por municipio · %s (%%)' % etiqueta.lower(),
+                'Cobertura reportada por municipio y año en la zona %s (use la línea de tiempo).' % etiqueta.lower(),
+                'Porcentaje', 'Porcentaje', map_rows(d, '_v', 'mean', ycol='_y'))
+        series[etiqueta] = d.groupby('_y')['_v'].mean().round(1)
+
+    if series:
+        anios = sorted({a for s_ in series.values() for a in s_.index})
+        cols = list(series.keys())
+        filas = [[str(a)] + [fmt(series[c].get(a)) if a in series[c].index else '' for c in cols] for a in anios]
+        ind.chart('line', 'Cobertura promedio departamental por año',
+                  'Promedio simple de la cobertura de los municipios con reporte, por zona.',
+                  'Porcentaje', 'Año', ['Año'] + cols, filas, yearx=True)
     if clas_col:
-        tab = df.groupby(['_y', clas_col]).size().unstack(fill_value=0)
-        ind.chart('column', 'Municipios por nivel de cobertura y año', 'Número de municipios en cada rango de cobertura.', 'Municipios', 'Año', ['Año'] + list(tab.columns), rows_pivot(tab), yearx=True, single=False, stacked=True)
+        tab = df0.groupby(['_y', clas_col]).size().unstack(fill_value=0)
+        ind.chart('column', 'Municipios por nivel de cobertura y año',
+                  'Número de municipios en cada rango de cobertura (todas las zonas).',
+                  'Municipios', 'Año', ['Año'] + list(tab.columns), rows_pivot(tab),
+                  yearx=True, single=False, stacked=True)
     return ind
 
-coverage_ind(3201, 2, 'Cobertura del servicio de acueducto en zona urbana',
-    'Porcentaje de viviendas de la zona urbana con servicio de acueducto (cobertura REC reportada al SUI y consolidada por el Ministerio de Vivienda en el monitoreo del SGP-APSB), por municipio y año.', SRC_MINVIV, 'COB ACUEDUCTO', 'Zona', 'urbana', 'Cobertura', 'Acueducto')
-coverage_ind(3202, 2, 'Cobertura del servicio de acueducto en zona rural',
-    'Porcentaje de viviendas de la zona rural con servicio de acueducto (cobertura REC), por municipio y año, según el monitoreo del SGP-APSB.', SRC_MINVIV, 'COB ACUEDUCTO', 'Zona', 'rural', 'Cobertura', 'Acueducto')
-coverage_ind(3203, 2, 'Cobertura del servicio de alcantarillado en zona urbana',
-    'Porcentaje de viviendas de la zona urbana con servicio de alcantarillado (cobertura REC), por municipio y año. El rango RI/RII/RIII corresponde a la clasificación del monitoreo SGP-APSB.', SRC_MINVIV, 'COB ALCANTARILLADO', 'Zona', 'urbano', 'Rango', 'Alcantarillado')
-coverage_ind(3204, 2, 'Cobertura del servicio de alcantarillado en zona rural',
-    'Porcentaje de viviendas de la zona rural con servicio de alcantarillado (cobertura REC), por municipio y año.', SRC_MINVIV, 'COB ALCANTARILLADO', 'Zona', 'rural', 'Rango', 'Alcantarillado')
+coverage_ind(3201, 2, 'Cobertura del servicio de acueducto',
+    'Porcentaje de viviendas con servicio de acueducto (cobertura REC reportada al SUI y consolidada por el Ministerio de Vivienda en el monitoreo del SGP-APSB), por municipio, zona y año.',
+    SRC_MINVIV, 'COB ACUEDUCTO', 'Zona', 'Cobertura', 'Acueducto', [('Urbana', 'urbana'), ('Rural', 'rural')])
+coverage_ind(3203, 2, 'Cobertura del servicio de alcantarillado',
+    'Porcentaje de viviendas con servicio de alcantarillado (cobertura REC), por municipio, zona y año. El rango RI/RII/RIII corresponde a la clasificación del monitoreo SGP-APSB.',
+    SRC_MINVIV, 'COB ALCANTARILLADO', 'Zona', 'Rango', 'Alcantarillado', [('Urbana', 'urbano'), ('Rural', 'rural')])
 
 cont = sheet('CONTINUIDAD HORAS AGUA'); cont = with_year(cont, 'AÑO'); cont = with_geo(cont, code_col='DANE')
 cont['_v'] = pd.to_numeric(cont['VALOR'], errors='coerce'); cd = cont.dropna(subset=['_v'])
@@ -280,21 +298,32 @@ f1 = int(ar['CAMARA DE COMERCIO'].astype(str).str.strip().str.lower().eq('si').s
 i.chart('column', 'Formalización de acueductos rurales', 'Acueductos con registro en cámara de comercio y con concesión de aguas frente al total inventariado.', 'Acueductos', 'Condición', ['Condición', 'Sí', 'No'], [['Cámara de comercio', fmt(f1), fmt(n - f1)], ['Concesión de aguas', fmt(f2), fmt(n - f2)]], single=False, stacked=True)
 i.chart('column', 'Acueductos rurales por corporación autónoma', 'Distribución por autoridad ambiental de jurisdicción.', 'Acueductos', 'Corporación', ['Corporación', 'Acueductos'], rows_cat(ar.groupby('CORPORACIÓN').size()))
 
-def irca_ind(code, zona_key, title, desc, sub):
-    df = sheet('IRCA MUNICIPIO'); df = df[df['ZONA'].astype(str).str.lower().str.contains(zona_key)]
-    df = with_year(df, 'AÑO'); df = with_geo(df, code_col='DANE'); df['_v'] = pd.to_numeric(df['IRCA'], errors='coerce') * 100
-    d = df.dropna(subset=['_v'])
-    ind = add(Ind(code, 2, title, desc, SRC_MINVIV, sub))
-    ind.map('IRCA por municipio (%)', 'Índice de Riesgo de la Calidad del Agua por municipio y año (0 = sin riesgo; >80 = inviable sanitariamente).', 'IRCA (%)', 'IRCA', map_rows(d, '_v', 'mean', ycol='_y'))
-    ind.chart('line', 'IRCA promedio departamental', 'Promedio del IRCA de los municipios con reporte.', 'IRCA (%)', 'Año', ['Año', 'IRCA promedio'], rows_year(d.groupby('_y')['_v'].mean().round(1)), yearx=True)
-    tab = df.groupby(['_y', 'NIVEL DE RIESGO']).size().unstack(fill_value=0)
-    order = [c for c in ['Sin riesgo', 'Bajo', 'Medio', 'Alto', 'Inviable sanitariamente', 'Sin información'] if c in tab.columns]
-    tab = tab[order]
-    ind.chart('column', 'Municipios por nivel de riesgo', 'Número de municipios en cada nivel de riesgo del IRCA por año.', 'Municipios', 'Año', ['Año'] + order, rows_pivot(tab), yearx=True, single=False, stacked=True)
-irca_ind(3208, 'urbano', 'Índice de Riesgo de la Calidad del Agua (IRCA) – zona urbana',
-    'IRCA del agua para consumo humano en la zona urbana de cada municipio (Resolución 2115 de 2007). Mide el grado de riesgo de ocurrencia de enfermedades por las características del agua: sin riesgo (0–5), bajo (5,1–14), medio (14,1–35), alto (35,1–80) e inviable sanitariamente (80,1–100).', 'Calidad del agua')
-irca_ind(3209, 'rural', 'Índice de Riesgo de la Calidad del Agua (IRCA) – zona rural nucleada',
-    'IRCA del agua para consumo humano en la zona rural nucleada de cada municipio, con su nivel de riesgo según la Resolución 2115 de 2007.', 'Calidad del agua')
+irca = sheet('IRCA MUNICIPIO'); irca = with_year(irca, 'AÑO'); irca = with_geo(irca, code_col='DANE')
+irca['_v'] = pd.to_numeric(irca['IRCA'], errors='coerce') * 100
+i = add(Ind(3208, 2, 'Índice de Riesgo de la Calidad del Agua para el Consumo Humano (IRCA)',
+    'IRCA del agua para consumo humano por municipio, zona y año (Resolución 2115 de 2007). Mide el grado de riesgo de ocurrencia de enfermedades por las características del agua: sin riesgo (0–5), bajo (5,1–14), medio (14,1–35), alto (35,1–80) e inviable sanitariamente (80,1–100).',
+    SRC_MINVIV, 'Calidad del agua'))
+series_irca = {}
+for etiqueta, clave in [('Urbana', 'urbano'), ('Rural nucleada', 'rural')]:
+    d = irca[irca['ZONA'].astype(str).str.lower().str.contains(clave)].dropna(subset=['_v'])
+    if d.empty:
+        continue
+    i.map('IRCA por municipio · zona %s (%%)' % etiqueta.lower(),
+          'Índice por municipio y año (0 = sin riesgo; más de 80 = inviable sanitariamente).',
+          'IRCA (%)', 'IRCA', map_rows(d, '_v', 'mean', ycol='_y'))
+    series_irca[etiqueta] = d.groupby('_y')['_v'].mean().round(1)
+if series_irca:
+    anios = sorted({a for s_ in series_irca.values() for a in s_.index})
+    cols = list(series_irca.keys())
+    i.chart('line', 'IRCA promedio departamental por zona',
+            'Promedio del IRCA de los municipios con reporte.', 'IRCA (%)', 'Año',
+            ['Año'] + cols,
+            [[str(a)] + [fmt(series_irca[c].get(a)) if a in series_irca[c].index else '' for c in cols] for a in anios],
+            yearx=True)
+tab = irca.groupby(['_y', 'NIVEL DE RIESGO']).size().unstack(fill_value=0)
+order = [c for c in ['Sin riesgo', 'Bajo', 'Medio', 'Alto', 'Inviable sanitariamente', 'Sin información'] if c in tab.columns]
+i.chart('column', 'Municipios por nivel de riesgo', 'Número de municipios en cada nivel de riesgo del IRCA por año.',
+        'Municipios', 'Año', ['Año'] + order, rows_pivot(tab[order]), yearx=True, single=False, stacked=True)
 
 pda = sheet('VINCULADO PDA'); pda = with_year(pda, 'AÑO'); pda = with_geo(pda, code_col='DANE')
 pda['_v'] = (pda['VALOR'].astype(str).str.strip().str.upper() == 'SI').astype(int)
@@ -357,40 +386,10 @@ i.chart('column', 'Hectáreas afectadas por incendios', 'Hectáreas afectadas po
 tab = em.groupby('_y')[['MUERTOS', 'HERIDOS', 'PERSONAS', 'FAMILIAS']].sum()
 i.chart('column', 'Afectaciones por año', 'Fallecidos, heridos, personas y familias afectadas por año.', 'Personas / familias', 'Año', ['Año', 'Fallecidos', 'Heridos', 'Personas afectadas', 'Familias afectadas'], rows_pivot(tab), yearx=True, single=False)
 
-# Posconsumo (Respuesta.xlsx)
-pc = pd.read_excel(RESP, sheet_name='Posconsumo', header=1); pc.columns = [str(c).strip() for c in pc.columns]
-pc['VIGENCIA'] = pd.to_numeric(pc['VIGENCIA'], errors='coerce').ffill()
-pc['_kg'] = pd.to_numeric(pc['CANTIDAD (KG)'], errors='coerce').fillna(0); pc['_n'] = pd.to_numeric(pc['# CAMPAÑAS'], errors='coerce').fillna(0)
-pc = pc.dropna(subset=['VIGENCIA']).copy(); pc['VIGENCIA'] = pc['VIGENCIA'].astype(int)
-i = add(Ind(3306, 3, 'Campañas de recolección de envases de agroquímicos (posconsumo)',
-    'Campañas de recolección de residuos posconsumo de envases, empaques y embalajes de agroquímicos realizadas por la Secretaría de Ambiente en los municipios, y kilogramos recolectados por vigencia (meta del Plan de Desarrollo).', SRC_SEC, 'Residuos posconsumo'))
-i.chart('column', 'Kilogramos recolectados por vigencia', 'Kilogramos de envases de agroquímicos recolectados.', 'Kilogramos', 'Año', ['Año', 'Kilogramos'], rows_year(pc.groupby('VIGENCIA')['_kg'].sum()), yearx=True)
-i.chart('column', 'Campañas realizadas por vigencia', 'Número de campañas de recolección.', 'Campañas', 'Año', ['Año', 'Campañas'], rows_year(pc.groupby('VIGENCIA')['_n'].sum()), yearx=True)
-mun = pc[pc['MUNICIPIO(S)'].notna()].assign(_m=lambda d: d['MUNICIPIO(S)'].astype(str).str.strip().str.title())
-i.chart('bar', 'Kilogramos recolectados por municipio', 'Municipios con mayor cantidad recolectada (acumulado).', 'Kilogramos', 'Municipio', ['Municipio', 'Kilogramos'], rows_cat(mun.groupby('_m')['_kg'].sum(), 15))
-
-# PRAES / PROCEDAS / CIDEAS
-pr = pd.read_excel(RESP, sheet_name='PRAES,PROCEDAS Y CIDEAS', header=None)
-periods = pr.iloc[0].ffill().tolist(); kinds = pr.iloc[1].tolist(); body = pr.iloc[2:]
-cnt = collections.OrderedDict()
-for j in range(pr.shape[1]):
-    p, k = str(periods[j]).strip(), str(kinds[j]).strip().upper()
-    if p in ('nan', '') or k in ('NAN', ''): continue
-    cnt.setdefault(p, collections.Counter())[k] += int(body.iloc[:, j].notna().sum())
-kind_order = ['PRAES', 'PROCEDAS', 'CIDEAS']
-i = add(Ind(3307, 3, 'Educación ambiental: PRAES, PROCEDAS y CIDEAS acompañados',
-    'Proyectos Ambientales Escolares (PRAES), Proyectos Ciudadanos de Educación Ambiental (PROCEDAS) y Comités Interinstitucionales de Educación Ambiental (CIDEAS) municipales acompañados por la Secretaría de Ambiente, por periodo.', SRC_SEC, 'Educación ambiental'))
-i.chart('column', 'Instrumentos de educación ambiental por periodo', 'Número de PRAES, PROCEDAS y CIDEAS acompañados en cada periodo.', 'Cantidad', 'Periodo', ['Periodo'] + kind_order, [[p] + [fmt(cnt[p].get(k, 0)) for k in kind_order] for p in cnt], single=False)
-i.chart('column', 'Total por tipo de instrumento', 'Acumulado 2020–2026 por tipo.', 'Cantidad', 'Instrumento', ['Instrumento', 'Cantidad'], [[k, fmt(sum(cnt[p].get(k, 0) for p in cnt))] for k in kind_order])
-
-inc_all = em[em['EVENTO'].astype(str).str.contains('INCENDIO', na=False)]
-i = add(Ind(3308, 3, 'Reporte de incendios de la cobertura vegetal',
-    'Incendios forestales y de cobertura vegetal reportados en Boyacá, con el número de eventos y las hectáreas afectadas por año y municipio. Es el evento de emergencia más frecuente del departamento y presiona directamente los ecosistemas estratégicos.', SRC_UNGRD, 'Incendios de cobertura vegetal'))
-i.chart('line', 'Incendios reportados por año', 'Número de incendios forestales y de cobertura vegetal por año.', 'Eventos', 'Año', ['Año', 'Incendios'], rows_year(inc_all.groupby('_y').size()), yearx=True)
-i.chart('column', 'Hectáreas afectadas por año', 'Superficie (ha) comprometida por incendios cada año.', 'Hectáreas', 'Año', ['Año', 'Hectáreas'], rows_year(inc_all.groupby('_y')['HECTAREAS'].sum()), yearx=True)
-i.map('Incendios por municipio', 'Número de incendios por municipio y año.', 'Incendios', 'Incendios', map_rows(inc_all, ycol='_y'))
-i.map('Hectáreas afectadas por municipio', 'Hectáreas afectadas por incendios en cada municipio (acumulado 2020–2025).', 'Hectáreas', 'Hectareas', map_rows(inc_all, 'HECTAREAS'), time=False)
-i.chart('bar', 'Municipios con más incendios', 'Municipios con mayor número de eventos (acumulado).', 'Incendios', 'Municipio', ['Municipio', 'Incendios'], rows_cat(inc_all.groupby(inc_all['MUNICIPIO'].astype(str).str.strip().str.title()).size(), 15))
+# NOTA: el catálogo se ciñe al Excel «BD DX OBS AMBIENTAL.xlsx»: un indicador
+# por hoja con datos. Las campañas de posconsumo y los PRAES venían del archivo
+# Respuesta.xlsx, y los incendios de cobertura vegetal de datos.gov.co, así que
+# quedan fuera de este catálogo.
 
 # =====================================================================
 # 4. SALUD AMBIENTAL (SIVIGILA)
@@ -423,7 +422,7 @@ sivigila_ind(3403, 'Accidente otros', 'Accidentes por otros animales venenosos',
 # 5. CALIDAD AMBIENTAL Y SERVICIOS PÚBLICOS
 # =====================================================================
 coverage_ind(3501, 5, 'Cobertura del servicio de aseo en zona urbana',
-    'Porcentaje de viviendas de la zona urbana con servicio de recolección de residuos sólidos (cobertura REC), por municipio y año, según el monitoreo del SGP-APSB.', SRC_MINVIV, 'COB ASEO', None, None, 'Clasificación', 'Aseo')
+    'Porcentaje de viviendas de la zona urbana con servicio de recolección de residuos sólidos (cobertura REC), por municipio y año, según el monitoreo del SGP-APSB.', SRC_MINVIV, 'COB ASEO', None, 'Clasificación', 'Aseo', [('Urbana', '')])
 
 pdir = sheet('PRESTADOR DIR'); pdir = with_year(pdir, 'Año'); pdir = with_geo(pdir, code_col='Código DANE')
 pdir['_v'] = (pdir['Valor'].astype(str).str.strip().str.lower() == 'si').astype(int)
@@ -474,30 +473,73 @@ tabz = tabz[[c for c in tabz.columns if 'Total' not in str(c)]]
 i.chart('column', 'Viviendas sin servicio por zona', 'Viviendas sin energía eléctrica en zona urbana y rural por año.', 'Viviendas', 'Año', ['Año'] + list(tabz.columns), rows_pivot(tabz), yearx=True, single=False)
 
 ica = sheet('ICA'); ica = with_year(ica, 'AÑO'); ica['_e'] = (ica['MUNICIPIO'].astype(str).str.strip().str.title() + ' – ' + ica['ESTACIÓN'].astype(str).str.strip().str.title())
-POLL = [(3506, 'PM-10', 'Material particulado PM10', 'PM-10', 'Partículas de diámetro menor a 10 micras (µg/m³). Límite anual de la Resolución 2254 de 2017: 50 µg/m³ (2018) y 30 µg/m³ (meta 2030).'),
-        (3507, 'PM-2.5', 'Material particulado PM2.5', 'PM-2.5', 'Partículas finas de diámetro menor a 2,5 micras (µg/m³). Límite anual de la Resolución 2254 de 2017: 25 µg/m³.'),
-        (3508, 'SO2', 'Dióxido de azufre (SO₂)', 'SO2', 'Concentración media anual de dióxido de azufre (µg/m³), asociado a la quema de carbón y procesos industriales.'),
-        (3509, 'NO2', 'Dióxido de nitrógeno (NO₂)', 'NO2', 'Concentración media anual de dióxido de nitrógeno (µg/m³), asociado al tráfico vehicular y la combustión. Límite anual: 60 µg/m³.'),
-        (3510, 'CO', 'Monóxido de carbono (CO)', 'CO (', 'Concentración media anual de monóxido de carbono (µg/m³), producto de la combustión incompleta.'),
-        (3511, 'O3', 'Ozono troposférico (O₃)', 'O3', 'Concentración media anual de ozono troposférico (µg/m³), contaminante secundario formado por la radiación solar sobre otros gases.')]
-for code, key, name, ckey, extra in POLL:
+POLL = [('PM-10', 'material particulado PM10'),
+        ('PM-2.5', 'material particulado PM2.5'),
+        ('SO2', 'dióxido de azufre (SO₂)'),
+        ('NO2', 'dióxido de nitrógeno (NO₂)'),
+        ('CO (', 'monóxido de carbono (CO)'),
+        ('O3', 'ozono troposférico (O₃)')]
+i = add(Ind(3506, 5, 'Calidad del aire por estación de monitoreo',
+    'Promedio anual de los contaminantes medidos en las estaciones de monitoreo del corredor industrial de Boyacá (Sogamoso, Nobsa, Paipa y Tunja): material particulado PM10 y PM2.5, dióxido de azufre, dióxido de nitrógeno, monóxido de carbono y ozono troposférico. Los límites anuales están definidos en la Resolución 2254 de 2017.',
+    SRC_AIRE, 'Calidad del aire'))
+for ckey, nombre in POLL:
     c = next((cc for cc in ica.columns if norm(ckey) in norm(cc) and 'promedio' in norm(cc)), None)
+    if c is None:
+        continue
     d = ica.assign(_v=pd.to_numeric(ica[c], errors='coerce')).dropna(subset=['_v'])
-    if d.empty: continue
-    ind = add(Ind(code, 5, f'Calidad del aire: {name} por estación de monitoreo',
-        f'Promedio anual de {name} registrado en las estaciones de monitoreo de calidad del aire del corredor industrial de Boyacá (Sogamoso, Nobsa, Paipa y Tunja). {extra}', SRC_AIRE, 'Calidad del aire'))
+    if d.empty:
+        continue
     tab = d.pivot_table(index='_y', columns='_e', values='_v', aggfunc='mean').round(1)
-    # Serie de tiempo solo con estaciones fijas (>=3 años medidos); las móviles
-    # de campaña puntual quedan en la gráfica de barras del último año.
-    keep = [s for s in tab.columns if tab[s].notna().sum() >= 3]
-    tabl = tab[keep] if keep else tab
-    ind.chart('line', f'{name}: promedio anual por estación', 'Concentración media anual (µg/m³) en cada estación con medición continua.', 'µg/m³', 'Año', ['Año'] + list(tabl.columns), [[str(int(y))] + [('' if pd.isna(tabl.loc[y, s]) else fmt(tabl.loc[y, s])) for s in tabl.columns] for y in sorted(tabl.index)], yearx=True)
-    lasty = d['_y'].max(); dl_ = d[d['_y'] == lasty]
-    ind.chart('column', f'{name}: estaciones en {int(lasty)}', f'Promedio anual por estación en {int(lasty)}.', 'µg/m³', 'Estación', ['Estación', 'µg/m³'], rows_cat(dl_.groupby('_e')['_v'].mean().round(1)))
+    i.chart('line', 'Promedio anual de ' + nombre,
+            'Concentración media anual (µg/m³) registrada en cada estación de monitoreo.',
+            'µg/m³', 'Año', ['Año'] + list(tab.columns),
+            [[str(int(y))] + [('' if pd.isna(tab.loc[y, st]) else fmt(tab.loc[y, st])) for st in tab.columns]
+             for y in sorted(tab.index)], yearx=True)
 
 # =====================================================================
-# Hoja de vida (tabla `indicators`): migración idempotente + seed CSV
+# Nombres oficiales del tablero Power BI del Observatorio Ambiental
+# (kit gráfico remitido por la Secretaría de Ambiente el 31/08/2026).
+# El texto descriptivo se conserva en la Descripción de cada indicador.
 # =====================================================================
+OFICIAL = {
+    3101: 'Humedales', 3102: 'Acuíferos', 3103: 'Rondas hídricas', 3104: 'Páramos',
+    3105: 'Bosques', 3106: 'Áreas forestales',
+    3201: 'Porcentaje de cobertura de acueducto',
+    3203: 'Porcentaje de cobertura de alcantarillado',
+    3205: 'Continuidad del servicio de acueducto urbano (promedio horas/día)',
+    3206: 'Municipios con tratamiento de aguas residuales en zona urbana',
+    3207: 'Acueductos rurales',
+    3208: 'Índice de Riesgo de la Calidad del Agua para el Consumo Humano – IRCA',
+    3210: 'Municipio vinculado al Plan Departamental de Aguas',
+    3211: 'Concesión de aguas superficiales', 3212: 'Concesión de agua subterránea',
+    3213: 'Permisos de vertimientos',
+    3301: 'Aprovechamiento forestal de árboles aislados', 3302: 'Licencias ambientales',
+    3303: 'Registro de plantaciones forestales protectoras y productoras',
+    3304: 'Delitos ambientales reportados a Policía Nacional',
+    3401: 'Agresiones por animales potencialmente transmisores de rabia',
+    3402: 'Accidentes ofídicos', 3403: 'Accidentes por otros animales venenosos',
+    3501: 'Porcentaje de cobertura de aseo – zona urbana',
+    3502: 'Municipios que cuentan con prestador directo de aseo, alcantarillado y acueducto',
+    3503: 'Disposición final adecuada de residuos (toneladas/día)',
+    3504: 'Índice de cobertura de energía eléctrica',
+    3505: 'Porcentaje de viviendas con energía eléctrica',
+    3506: 'Índice de Calidad del Aire – ICA',
+}
+for _i in INDS:
+    if _i.code in OFICIAL:
+        if _i.title not in _i.desc:
+            _i.desc = _i.desc  # la descripción ya es autoexplicativa
+        _i.title = OFICIAL[_i.code]
+
+# ---------- escritura ----------
+os.makedirs(OUT, exist_ok=True)
+import shutil, glob as _glob
+summary = []
+for ind in INDS:
+    write_ind(ind)
+    summary.append({'code': ind.code, 'cat': CAT[ind.cat], 'title': ind.title, 'sub': ind.sub, 'source': ind.source, 'desc': ind.desc,
+                    'charts': [(c[0], c[1], len(c[6])) for c in ind.charts]})
+json.dump(summary, open(os.path.join(OUT, '_resumen.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
 LINKS = {
     SRC_CORPO: 'https://www.datos.gov.co/browse?q=CORPOBOYACA',
     SRC_MINVIV: 'https://minvivienda.gov.co/monitoreo-los-recursos-del-sgp-apsb/informes-de-monitoreo-sgp',
@@ -534,6 +576,8 @@ FORMULA = {
     'Cantidad': 'Conteo de instrumentos de educación ambiental acompañados',
     'Suscriptores': 'Suma de suscriptores registrados en los acueductos del municipio',
 }
+
+
 def meta_row(ind):
     unit = ind.charts[0][3] if ind.charts else 'Número'
     has_map = any(c[0] == 'map' for c in ind.charts)
@@ -568,9 +612,11 @@ def sql_val(v):
     return "'" + str(v).replace('\\', '\\\\').replace("'", "''") + "'"
 
 def write_metadata(rows, retired):
-    mig = os.path.join(BASE, 'database', 'migrations', '024_indicadores_ambientales_2026.sql')
-    out = ["-- 024: Hoja de vida de los indicadores del Observatorio Ambiental (categorías oficiales",
-           "-- del tablero Power BI, agosto de 2026). Idempotente: reemplaza por id.",
+    mig = os.path.join(BASE, 'database', 'migrations', '028_indicadores_ambientales_30.sql')
+    out = ["-- 028: Hoja de vida del Observatorio Ambiental ajustada al Excel oficial",
+           "-- «BD DX OBS AMBIENTAL.xlsx»: un indicador por hoja con datos (30 en total).",
+           "-- Reemplaza la 024, que publicaba 42 al desagregar hojas y sumar fuentes externas.",
+           "-- Idempotente: reemplaza por id.",
            'SET NAMES utf8mb4;', '']
     if retired:
         out.append('-- Indicadores reemplazados por la nueva estructura (sus carpetas ya no existen).')
@@ -593,92 +639,7 @@ def write_metadata(rows, retired):
     out_df.to_csv(seed, index=False, encoding='utf-8')
     return mig
 
-# =====================================================================
-# Nombres oficiales del tablero Power BI del Observatorio Ambiental
-# (kit gráfico remitido por la Secretaría de Ambiente el 31/08/2026).
-# El texto descriptivo se conserva en la Descripción de cada indicador.
-# =====================================================================
-OFICIAL = {
-    3101: 'Humedales', 3102: 'Acuíferos', 3103: 'Rondas hídricas', 3104: 'Páramos',
-    3105: 'Bosques', 3106: 'Áreas forestales',
-    3201: 'Porcentaje de cobertura de acueducto – zona urbana',
-    3202: 'Porcentaje de cobertura de acueducto – zona rural',
-    3203: 'Porcentaje de cobertura de alcantarillado – zona urbana',
-    3204: 'Porcentaje de cobertura de alcantarillado – zona rural',
-    3205: 'Continuidad del servicio de acueducto urbano (promedio horas/día)',
-    3206: 'Municipios con tratamiento de aguas residuales en zona urbana',
-    3207: 'Acueductos rurales',
-    3208: 'Índice de Riesgo de la Calidad del Agua para el Consumo Humano – IRCA (zona urbana)',
-    3209: 'Índice de Riesgo de la Calidad del Agua para el Consumo Humano – IRCA (zona rural nucleada)',
-    3210: 'Municipio vinculado al Plan Departamental de Aguas',
-    3211: 'Concesión de aguas superficiales', 3212: 'Concesión de agua subterránea',
-    3213: 'Permisos de vertimientos',
-    3301: 'Aprovechamiento forestal de árboles aislados', 3302: 'Licencias ambientales',
-    3303: 'Registro de plantaciones forestales protectoras y productoras',
-    3304: 'Delitos ambientales reportados a Policía Nacional',
-    3401: 'Agresiones por animales potencialmente transmisores de rabia',
-    3402: 'Accidentes ofídicos', 3403: 'Accidentes por otros animales venenosos',
-    3501: 'Porcentaje de cobertura de aseo – zona urbana',
-    3502: 'Municipios que cuentan con prestador directo de aseo, alcantarillado y acueducto',
-    3503: 'Disposición final adecuada de residuos (toneladas/día)',
-    3504: 'Índice de cobertura de energía eléctrica',
-    3505: 'Porcentaje de viviendas con energía eléctrica',
-    3506: 'Índice de Calidad del Aire – ICA: material particulado PM10',
-    3507: 'Índice de Calidad del Aire – ICA: material particulado PM2.5',
-    3508: 'Índice de Calidad del Aire – ICA: dióxido de azufre (SO₂)',
-    3509: 'Índice de Calidad del Aire – ICA: dióxido de nitrógeno (NO₂)',
-    3510: 'Índice de Calidad del Aire – ICA: monóxido de carbono (CO)',
-    3511: 'Índice de Calidad del Aire – ICA: ozono troposférico (O₃)',
-}
-for _i in INDS:
-    if _i.code in OFICIAL:
-        if _i.title not in _i.desc:
-            _i.desc = _i.desc  # la descripción ya es autoexplicativa
-        _i.title = OFICIAL[_i.code]
 
-# ---------- indicador heredado que se conserva (DANE, economía circular) ----------
-class CarriedInd(Ind):
-    """Indicador ya publicado cuya carpeta se conserva tal cual; solo se
-    reubica en la nueva estructura de categorías."""
-    def __init__(self, code, cat, title, desc, source, sub, src_dir):
-        super().__init__(code, cat, title, desc, source, sub)
-        self.src_dir = src_dir
-CARRIED = [CarriedInd(3512, 5, 'Prácticas de ahorro de energía y agua en edificaciones culminadas',
-    'Porcentaje de edificaciones culminadas que implementaron algún sistema de ahorro de energía o agua (bombillas de bajo consumo, reutilización de agua, clasificación de residuos, entre otras prácticas), según el reporte de economía circular del DANE.',
-    'DANE – Reportes de economía circular', 'Economía circular',
-    next((p for p in (os.path.join(BASE, 'website', 'indicador', '3512'),
-                      os.path.join(BASE, 'reportes', 'ambiental_2026', 'backup_indicadores_3xxx', '3001'),
-                      os.path.join(BASE, 'website', 'indicador', '3001'))
-          if os.path.isdir(p)), ''))]
-
-# ---------- escritura ----------
-os.makedirs(OUT, exist_ok=True)
-import shutil, glob as _glob
-summary = []
-for ind in INDS:
-    write_ind(ind)
-    summary.append({'code': ind.code, 'cat': CAT[ind.cat], 'title': ind.title, 'sub': ind.sub, 'source': ind.source, 'desc': ind.desc,
-                    'charts': [(c[0], c[1], len(c[6])) for c in ind.charts]})
-# Indicadores heredados: se copia la carpeta tal cual y solo se reubica su ficha.
-for c in CARRIED:
-    if not os.path.isdir(c.src_dir): continue
-    dst = os.path.join(OUT, str(c.code))
-    if os.path.isdir(dst): shutil.rmtree(dst)
-    shutil.copytree(c.src_dir, dst)
-    w(os.path.join(dst, 'indicador.info'), info([
-        ('Categoría', CAT[c.cat]), ('Descripción', c.desc), ('Titulo', c.title),
-        ('Subcategoría', c.sub), ('Etiquetas', 'Observatorio Ambiental'), ('Fuentes', c.source)]))
-    for f in sorted(_glob.glob(os.path.join(dst, '[0-9].info'))):
-        ci = {k.strip().lower(): v.strip() for k, v in
-              (ln.split(':', 1) for ln in open(f, encoding='utf-8') if ':' in ln)}
-        kind = 'map' if ci.get('tipo', '').lower() == 'mapa' else 'column'
-        hdr = open(f.replace('.info', '.csv'), encoding='utf-8').readline().strip().split(',')
-        c.charts.append((kind, ci.get('titulo', ''), ci.get('descripcion', ''), ci.get('vertical', 'Porcentaje'), ci.get('horizontal', ''), hdr, [[]], {}))
-    INDS.append(c)
-    summary.append({'code': c.code, 'cat': CAT[c.cat], 'title': c.title, 'sub': c.sub, 'source': c.source, 'desc': c.desc,
-                    'charts': [(x[0], x[1], 0) for x in c.charts]})
-
-json.dump(summary, open(os.path.join(OUT, '_resumen.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
 IND_DIR = os.path.join(BASE, 'website', 'indicador')
 BK_DIR = os.path.join(BASE, 'reportes', 'ambiental_2026', 'backup_indicadores_3xxx')
 old_codes = {int(e) for e in os.listdir(IND_DIR) if e.isdigit() and len(e) == 4 and e[0] == '3'}
