@@ -14,6 +14,6 @@
 return [
     'economico' => 'https://app.powerbi.com/view?r=eyJrIjoiNTAyNjgyNTYtMWQyNC00Njc3LWJkMzgtMzRiNTBjNTUyODYwIiwidCI6IjYyMDEwNGUyLTEzOTAtNDNjNS1iYTQ1LTg1ZDE4ODNjYzQ4OCJ9&pageName=07fb08234b68b1d828a7',
     'social'    => 'https://app.powerbi.com/view?r=eyJrIjoiNGNhNWM1MDEtNzM0Ny00OWRlLWFmNzUtY2RkYzBhMDNjZGQ0IiwidCI6IjYyMDEwNGUyLTEzOTAtNDNjNS1iYTQ1LTg1ZDE4ODNjYzQ4OCJ9&pageName=808e68650d47116cd8ee',
-    'ambiente'  => '',
+    'ambiente'  => 'https://app.powerbi.com/view?r=eyJrIjoiNmEyMDcxMTMtZjg4ZC00NGZjLTlkMjMtMjUyYzgxMjE2YTNhIiwidCI6IjYyMDEwNGUyLTEzOTAtNDNjNS1iYTQ1LTg1ZDE4ODNjYzQ4OCJ9',
     'cti'       => '',
 ];
