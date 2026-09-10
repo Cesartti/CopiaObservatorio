@@ -556,7 +556,7 @@ $obsTabActive = $tabActiveByObs[$slug] ?? $obs['color'];
     <?php if (!$genderMode): /* en género estos datos ya están en la tarjeta de descripción */ ?>
     <section class="row g-3 mb-4">
         <div class="col-md-6 col-lg-3"><article class="base-card"><h2>Indicadores</h2><p id="kpi-total" data-static-kpi="1"><?= $kpiIndicators ?></p><small>Indicadores disponibles en esta dimensión<?php if ($obsLastUpdatedLabel !== ''): ?><br><span class="kpi-updated"><i class="fa-regular fa-clock" aria-hidden="true"></i> Última actualización: <strong><?= htmlspecialchars($obsLastUpdatedLabel) ?></strong></span><?php endif; ?></small></article></div>
-        <div class="col-md-6 col-lg-3"><article class="base-card"><h2>Líneas temáticas</h2><p><?= count($lineKeys ?? $folderLineCounts) ?: count($folderLineCounts) ?></p><small>Categorías de análisis en esta dimensión</small></article></div>
+        <div class="col-md-6 col-lg-3"><article class="base-card"><h2>Categorías</h2><p><?= count($lineKeys ?? $folderLineCounts) ?: count($folderLineCounts) ?></p><small>Categorías temáticas de este observatorio</small></article></div>
         <div class="col-md-6 col-lg-3"><article class="base-card"><h2>Noticias y eventos</h2><p><?= $kpiNews ?></p><small>Noticias con estado publicado</small></article></div>
         <div class="col-md-6 col-lg-3"><article class="base-card"><h2>Visitas</h2><p><?= number_format((int) $micrositeVisitCount, 0, ',', '.') ?></p><small>Visitantes únicos de este micrositio</small></article></div>
     </section>

@@ -23,13 +23,13 @@ $gsD = $gsDetailsMap[$slug] ?? [];
 </style>
 <?php if (empty($lineKeys ?? []) && empty($gsD['extra'])): ?>
 <div class="obs-side-widget">
-    <h3><i class="fa-solid fa-layer-group" aria-hidden="true"></i> Líneas temáticas</h3>
-    <p class="text-muted small mb-0">Las líneas temáticas de este observatorio se mostrarán aquí cuando se cargue el catálogo de indicadores en el CMS.</p>
+    <h3><i class="fa-solid fa-layer-group" aria-hidden="true"></i> Categorías</h3>
+    <p class="text-muted small mb-0">Las categorías de este observatorio se mostrarán aquí cuando se cargue el catálogo de indicadores en el CMS.</p>
 </div>
 <?php endif; ?>
 <?php if (!empty($lineKeys ?? []) && function_exists('obs_category_color')): ?>
 <div class="obs-side-widget">
-    <h3><i class="fa-solid fa-layer-group" aria-hidden="true"></i> Líneas temáticas</h3>
+    <h3><i class="fa-solid fa-layer-group" aria-hidden="true"></i> Categorías</h3>
     <?php foreach ($lineKeys as $cat):
         $count = $lineCounts[$cat] ?? 0;
         $cColor = obs_category_color($cat);

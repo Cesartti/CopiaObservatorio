@@ -128,7 +128,7 @@ function obs_source_icon(string $name): string {
             <span class="obs-kpi__icon"><i class="fa-solid fa-layer-group"></i></span>
             <div>
                 <div class="obs-kpi__val"><?= $totalLineas ?></div>
-                <div class="obs-kpi__lbl">Líneas temáticas</div>
+                <div class="obs-kpi__lbl">Categorías</div>
             </div>
         </div>
         <?php endif; ?>
@@ -167,10 +167,10 @@ function obs_source_icon(string $name): string {
     </div>
     <?php endif; ?>
 
-    <!-- Líneas temáticas (tarjetas clickeables) — entre "Consulta" y "Fuentes" -->
+    <!-- Categorías (tarjetas clickeables) — entre "Consulta" y "Fuentes" -->
     <?php if (!$obsDescHideLines && !empty($lineKeys ?? []) && function_exists('obs_category_color')): ?>
     <div class="obs-section-block">
-        <h3><i class="fa-solid fa-layer-group"></i> Líneas temáticas del observatorio
+        <h3><i class="fa-solid fa-layer-group"></i> Categorías del observatorio
             <span class="text-muted fw-normal" style="text-transform:none;letter-spacing:0;font-size:.85rem;margin-left:auto">
                 <i class="fa-solid fa-hand-pointer"></i> Haz clic en una tarjeta para ver el detalle
             </span>
