@@ -19,6 +19,11 @@ if (!empty($contact['social']['instagram'])) {
 }
 // Configuración del feed de Instagram (widget externo por hashtag).
 $igWidget = is_file(__DIR__ . '/config/instagram_widget.php') ? (require __DIR__ . '/config/instagram_widget.php') : [];
+// Video institucional y manual de usuario que se abren en lightbox desde el inicio.
+$homeMedia = is_file(__DIR__ . '/config/home_media.php') ? (require __DIR__ . '/config/home_media.php') : [];
+$homeVideo = $homeMedia['video'] ?? [];
+$homeManual = $homeMedia['manual'] ?? [];
+$homeManualExists = !empty($homeManual['archivo']) && is_file(__DIR__ . '/' . ltrim((string) $homeManual['archivo'], '/'));
 $igHashtag = trim((string) ($igWidget['hashtag'] ?? ''));
 $igWidgetHtml = trim((string) ($igWidget['embed_html'] ?? ''));
 $igHashtagUrl = $igHashtag !== '' ? 'https://www.instagram.com/explore/tags/' . rawurlencode($igHashtag) . '/' : '';
@@ -125,6 +130,33 @@ function ig_embed_url(string $shortcode): string {
                     <a class="btn btn-dark" href="#observatorios"><i class="fa-solid fa-arrow-down me-1" aria-hidden="true"></i> Explorar los 5 observatorios</a>
                     <a class="btn btn-outline-dark" href="nosotros.php">Conócenos</a>
                 </div>
+
+                <?php if (!empty($homeVideo['youtube_id']) || $homeManualExists): ?>
+                <!-- Ayuda: video institucional y manual de usuario (se abren en lightbox) -->
+                <div class="home-help" role="group" aria-label="Material de ayuda del portal">
+                    <span class="home-help__label">¿Primera vez aquí?</span>
+                    <div class="home-help__items">
+                        <?php if (!empty($homeVideo['youtube_id'])): ?>
+                        <button type="button" class="home-help__item" data-bs-toggle="modal" data-bs-target="#homeVideoModal">
+                            <span class="home-help__icon home-help__icon--video"><i class="fa-solid fa-play" aria-hidden="true"></i></span>
+                            <span class="home-help__text">
+                                <strong><?= htmlspecialchars($homeVideo['boton'] ?? 'Ver el video') ?></strong>
+                                <small><?= htmlspecialchars($homeVideo['texto'] ?? '') ?></small>
+                            </span>
+                        </button>
+                        <?php endif; ?>
+                        <?php if ($homeManualExists): ?>
+                        <button type="button" class="home-help__item" data-bs-toggle="modal" data-bs-target="#homeManualModal">
+                            <span class="home-help__icon home-help__icon--manual"><i class="fa-solid fa-book-open" aria-hidden="true"></i></span>
+                            <span class="home-help__text">
+                                <strong><?= htmlspecialchars($homeManual['boton'] ?? 'Ver el manual') ?></strong>
+                                <small><?= htmlspecialchars($homeManual['texto'] ?? '') ?></small>
+                            </span>
+                        </button>
+                        <?php endif; ?>
+                    </div>
+                </div>
+                <?php endif; ?>
             </div>
             <div class="col-lg-5">
                 <article class="quick-panel">
@@ -541,6 +573,103 @@ function ig_embed_url(string $shortcode): string {
 
     <?php require __DIR__ . '/include/site-footer.php'; ?>
 </main>
+
+<?php if (!empty($homeVideo['youtube_id'])): ?>
+<!-- Lightbox: video institucional (el iframe se carga solo al abrir) -->
+<div class="modal fade" id="homeVideoModal" tabindex="-1" aria-hidden="true" aria-labelledby="homeVideoTitle">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content" style="border-radius:18px;overflow:hidden">
+            <div class="modal-header" style="background:linear-gradient(135deg,#0f1f32,#1b7d80);color:#fff;border-bottom:none">
+                <h5 class="modal-title d-flex align-items-center gap-2" id="homeVideoTitle">
+                    <i class="fa-solid fa-circle-play" aria-hidden="true"></i>
+                    <span><?= htmlspecialchars($homeVideo['titulo'] ?? 'Video') ?></span>
+                </h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            </div>
+            <div class="modal-body p-0 bg-dark">
+                <div class="ratio ratio-16x9">
+                    <iframe id="homeVideoFrame" src="about:blank" title="<?= htmlspecialchars($homeVideo['titulo'] ?? 'Video') ?>"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="border:0"></iframe>
+                </div>
+            </div>
+            <div class="modal-footer justify-content-between">
+                <a href="https://www.youtube.com/watch?v=<?= htmlspecialchars($homeVideo['youtube_id']) ?>" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-dark">
+                    <i class="fa-brands fa-youtube me-1" aria-hidden="true"></i> Ver en YouTube
+                </a>
+                <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+(function(){
+    var m = document.getElementById('homeVideoModal');
+    if (!m) return;
+    var f = document.getElementById('homeVideoFrame');
+    var id = <?= json_encode($homeVideo['youtube_id']) ?>;
+    m.addEventListener('show.bs.modal', function(){
+        f.src = 'https://www.youtube-nocookie.com/embed/' + id + '?rel=0&autoplay=1';
+    });
+    m.addEventListener('hidden.bs.modal', function(){ f.src = 'about:blank'; });
+})();
+</script>
+<?php endif; ?>
+
+<?php if ($homeManualExists): $manualUrl = htmlspecialchars($homeManual['archivo']); ?>
+<!-- Lightbox: manual de usuario en PDF -->
+<div class="modal fade" id="homeManualModal" tabindex="-1" aria-hidden="true" aria-labelledby="homeManualTitle">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content" style="border-radius:18px;overflow:hidden">
+            <div class="modal-header" style="background:linear-gradient(135deg,#0f3557,#2563eb);color:#fff;border-bottom:none">
+                <h5 class="modal-title d-flex align-items-center gap-2" id="homeManualTitle">
+                    <i class="fa-solid fa-book-open" aria-hidden="true"></i>
+                    <span><?= htmlspecialchars($homeManual['titulo'] ?? 'Manual de usuario') ?></span>
+                </h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            </div>
+            <div class="modal-body p-0" style="background:#eef2f7">
+                <div id="homeManualHint" class="text-center text-muted py-5 px-3">
+                    <i class="fa-solid fa-spinner fa-spin fa-2x" aria-hidden="true"></i>
+                    <p class="mt-2 small mb-0">Cargando el manual… si no se ve, ábrelo en una pestaña nueva o descárgalo.</p>
+                </div>
+                <iframe id="homeManualFrame" src="about:blank" title="<?= htmlspecialchars($homeManual['titulo'] ?? 'Manual de usuario') ?>"
+                        style="display:none;width:100%;height:78vh;border:0"></iframe>
+            </div>
+            <div class="modal-footer justify-content-between flex-wrap gap-2">
+                <div class="d-flex gap-2 flex-wrap">
+                    <a href="<?= $manualUrl ?>" target="_blank" rel="noopener" class="btn btn-sm btn-outline-dark">
+                        <i class="fa-solid fa-up-right-from-square me-1" aria-hidden="true"></i> Abrir en pestaña nueva
+                    </a>
+                    <a href="<?= $manualUrl ?>" download class="btn btn-sm btn-primary">
+                        <i class="fa-solid fa-download me-1" aria-hidden="true"></i> Descargar PDF
+                    </a>
+                </div>
+                <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+(function(){
+    var m = document.getElementById('homeManualModal');
+    if (!m) return;
+    var f = document.getElementById('homeManualFrame');
+    var hint = document.getElementById('homeManualHint');
+    var url = <?= json_encode($homeManual['archivo']) ?>;
+    f.addEventListener('load', function(){
+        if (!f.src || f.src.indexOf('about:blank') !== -1) return;
+        hint.style.display = 'none';
+        f.style.display = 'block';
+    });
+    m.addEventListener('show.bs.modal', function(){
+        if (f.dataset.loaded) return;
+        f.src = url + '#view=FitH';
+        f.dataset.loaded = '1';
+    });
+})();
+</script>
+<?php endif; ?>
 
 <!-- Modal global para embed de Instagram -->
 <div class="modal fade" id="igEmbedModal" tabindex="-1" aria-hidden="true">
