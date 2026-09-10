@@ -1,4 +1,5 @@
-Tipo:Mapa
-Titulo:Viviendas sin servicio de energía por municipio
-Descripción:Viviendas sin servicio (total municipal) por municipio y año.
+Tipo:Gráfico
+Titulo:Viviendas con y sin servicio en el departamento
+Descripción:Suma departamental por año (total municipal).
 Vertical:Viviendas
+Horizontal:Año

@@ -1,5 +1,4 @@
-Tipo:Gráfico
-Titulo:Viviendas con y sin servicio en el departamento
-Descripción:Suma departamental por año (total municipal).
-Vertical:Viviendas
-Horizontal:Año
+Tipo:Mapa
+Titulo:Porcentaje de viviendas con energía eléctrica por municipio
+Descripción:Participación (%) de viviendas con servicio sobre el total, por municipio y año.
+Vertical:Porcentaje

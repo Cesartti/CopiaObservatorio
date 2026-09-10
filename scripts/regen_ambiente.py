@@ -383,6 +383,15 @@ i = add(Ind(3307, 3, 'Educación ambiental: PRAES, PROCEDAS y CIDEAS acompañado
 i.chart('column', 'Instrumentos de educación ambiental por periodo', 'Número de PRAES, PROCEDAS y CIDEAS acompañados en cada periodo.', 'Cantidad', 'Periodo', ['Periodo'] + kind_order, [[p] + [fmt(cnt[p].get(k, 0)) for k in kind_order] for p in cnt], single=False)
 i.chart('column', 'Total por tipo de instrumento', 'Acumulado 2020–2026 por tipo.', 'Cantidad', 'Instrumento', ['Instrumento', 'Cantidad'], [[k, fmt(sum(cnt[p].get(k, 0) for p in cnt))] for k in kind_order])
 
+inc_all = em[em['EVENTO'].astype(str).str.contains('INCENDIO', na=False)]
+i = add(Ind(3308, 3, 'Reporte de incendios de la cobertura vegetal',
+    'Incendios forestales y de cobertura vegetal reportados en Boyacá, con el número de eventos y las hectáreas afectadas por año y municipio. Es el evento de emergencia más frecuente del departamento y presiona directamente los ecosistemas estratégicos.', SRC_UNGRD, 'Incendios de cobertura vegetal'))
+i.chart('line', 'Incendios reportados por año', 'Número de incendios forestales y de cobertura vegetal por año.', 'Eventos', 'Año', ['Año', 'Incendios'], rows_year(inc_all.groupby('_y').size()), yearx=True)
+i.chart('column', 'Hectáreas afectadas por año', 'Superficie (ha) comprometida por incendios cada año.', 'Hectáreas', 'Año', ['Año', 'Hectáreas'], rows_year(inc_all.groupby('_y')['HECTAREAS'].sum()), yearx=True)
+i.map('Incendios por municipio', 'Número de incendios por municipio y año.', 'Incendios', 'Incendios', map_rows(inc_all, ycol='_y'))
+i.map('Hectáreas afectadas por municipio', 'Hectáreas afectadas por incendios en cada municipio (acumulado 2020–2025).', 'Hectáreas', 'Hectareas', map_rows(inc_all, 'HECTAREAS'), time=False)
+i.chart('bar', 'Municipios con más incendios', 'Municipios con mayor número de eventos (acumulado).', 'Incendios', 'Municipio', ['Municipio', 'Incendios'], rows_cat(inc_all.groupby(inc_all['MUNICIPIO'].astype(str).str.strip().str.title()).size(), 15))
+
 # =====================================================================
 # 4. SALUD AMBIENTAL (SIVIGILA)
 # =====================================================================
@@ -454,6 +463,9 @@ for c in ['Vic Con Servicio', 'Viv Sin Servicio', 'Viv Totales']: vcs[c] = pd.to
 tz = vcs[vcs['Zona'].astype(str).str.contains('Total')]
 i = add(Ind(3505, 5, 'Viviendas con y sin servicio de energía eléctrica',
     'Número de viviendas con servicio (VCS), sin servicio (VSS) y totales (VT) de energía eléctrica por municipio, zona y año, según el sistema de información de la UPME.', SRC_UPME, 'Energía eléctrica'))
+vcs['_p'] = pd.to_numeric(vcs['% Viv con servicio'], errors='coerce') * 100
+tzp = vcs[vcs['Zona'].astype(str).str.contains('Total')].dropna(subset=['_p'])
+i.map('Porcentaje de viviendas con energía eléctrica por municipio', 'Participación (%) de viviendas con servicio sobre el total, por municipio y año.', 'Porcentaje', 'Porcentaje', map_rows(tzp, '_p', 'mean', ycol='_y'))
 tab = tz.groupby('_y')[['Vic Con Servicio', 'Viv Sin Servicio']].sum()
 i.chart('column', 'Viviendas con y sin servicio en el departamento', 'Suma departamental por año (total municipal).', 'Viviendas', 'Año', ['Año', 'Con servicio', 'Sin servicio'], rows_pivot(tab), yearx=True, single=False, stacked=True)
 i.map('Viviendas sin servicio de energía por municipio', 'Viviendas sin servicio (total municipal) por municipio y año.', 'Viviendas', 'Viviendas', map_rows(tz, 'Viv Sin Servicio', ycol='_y'))
@@ -581,6 +593,49 @@ def write_metadata(rows, retired):
     out_df.to_csv(seed, index=False, encoding='utf-8')
     return mig
 
+# =====================================================================
+# Nombres oficiales del tablero Power BI del Observatorio Ambiental
+# (kit gráfico remitido por la Secretaría de Ambiente el 31/08/2026).
+# El texto descriptivo se conserva en la Descripción de cada indicador.
+# =====================================================================
+OFICIAL = {
+    3101: 'Humedales', 3102: 'Acuíferos', 3103: 'Rondas hídricas', 3104: 'Páramos',
+    3105: 'Bosques', 3106: 'Áreas forestales',
+    3201: 'Porcentaje de cobertura de acueducto – zona urbana',
+    3202: 'Porcentaje de cobertura de acueducto – zona rural',
+    3203: 'Porcentaje de cobertura de alcantarillado – zona urbana',
+    3204: 'Porcentaje de cobertura de alcantarillado – zona rural',
+    3205: 'Continuidad del servicio de acueducto urbano (promedio horas/día)',
+    3206: 'Municipios con tratamiento de aguas residuales en zona urbana',
+    3207: 'Acueductos rurales',
+    3208: 'Índice de Riesgo de la Calidad del Agua para el Consumo Humano – IRCA (zona urbana)',
+    3209: 'Índice de Riesgo de la Calidad del Agua para el Consumo Humano – IRCA (zona rural nucleada)',
+    3210: 'Municipio vinculado al Plan Departamental de Aguas',
+    3211: 'Concesión de aguas superficiales', 3212: 'Concesión de agua subterránea',
+    3213: 'Permisos de vertimientos',
+    3301: 'Aprovechamiento forestal de árboles aislados', 3302: 'Licencias ambientales',
+    3303: 'Registro de plantaciones forestales protectoras y productoras',
+    3304: 'Delitos ambientales reportados a Policía Nacional',
+    3401: 'Agresiones por animales potencialmente transmisores de rabia',
+    3402: 'Accidentes ofídicos', 3403: 'Accidentes por otros animales venenosos',
+    3501: 'Porcentaje de cobertura de aseo – zona urbana',
+    3502: 'Municipios que cuentan con prestador directo de aseo, alcantarillado y acueducto',
+    3503: 'Disposición final adecuada de residuos (toneladas/día)',
+    3504: 'Índice de cobertura de energía eléctrica',
+    3505: 'Porcentaje de viviendas con energía eléctrica',
+    3506: 'Índice de Calidad del Aire – ICA: material particulado PM10',
+    3507: 'Índice de Calidad del Aire – ICA: material particulado PM2.5',
+    3508: 'Índice de Calidad del Aire – ICA: dióxido de azufre (SO₂)',
+    3509: 'Índice de Calidad del Aire – ICA: dióxido de nitrógeno (NO₂)',
+    3510: 'Índice de Calidad del Aire – ICA: monóxido de carbono (CO)',
+    3511: 'Índice de Calidad del Aire – ICA: ozono troposférico (O₃)',
+}
+for _i in INDS:
+    if _i.code in OFICIAL:
+        if _i.title not in _i.desc:
+            _i.desc = _i.desc  # la descripción ya es autoexplicativa
+        _i.title = OFICIAL[_i.code]
+
 # ---------- indicador heredado que se conserva (DANE, economía circular) ----------
 class CarriedInd(Ind):
     """Indicador ya publicado cuya carpeta se conserva tal cual; solo se
@@ -591,7 +646,10 @@ class CarriedInd(Ind):
 CARRIED = [CarriedInd(3512, 5, 'Prácticas de ahorro de energía y agua en edificaciones culminadas',
     'Porcentaje de edificaciones culminadas que implementaron algún sistema de ahorro de energía o agua (bombillas de bajo consumo, reutilización de agua, clasificación de residuos, entre otras prácticas), según el reporte de economía circular del DANE.',
     'DANE – Reportes de economía circular', 'Economía circular',
-    os.path.join(BASE, 'website', 'indicador', '3001'))]
+    next((p for p in (os.path.join(BASE, 'website', 'indicador', '3512'),
+                      os.path.join(BASE, 'reportes', 'ambiental_2026', 'backup_indicadores_3xxx', '3001'),
+                      os.path.join(BASE, 'website', 'indicador', '3001'))
+          if os.path.isdir(p)), ''))]
 
 # ---------- escritura ----------
 os.makedirs(OUT, exist_ok=True)
@@ -622,7 +680,10 @@ for c in CARRIED:
 
 json.dump(summary, open(os.path.join(OUT, '_resumen.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
 IND_DIR = os.path.join(BASE, 'website', 'indicador')
+BK_DIR = os.path.join(BASE, 'reportes', 'ambiental_2026', 'backup_indicadores_3xxx')
 old_codes = {int(e) for e in os.listdir(IND_DIR) if e.isdigit() and len(e) == 4 and e[0] == '3'}
+if os.path.isdir(BK_DIR):   # códigos de la estructura anterior (respaldada)
+    old_codes |= {int(e) for e in os.listdir(BK_DIR) if e.isdigit() and len(e) == 4 and e[0] == '3'}
 new_codes = {i.code for i in INDS}
 mig = write_metadata([meta_row(i) for i in INDS], sorted(old_codes - new_codes))
 print('Migración:', mig, '| retirados:', sorted(old_codes - new_codes))
