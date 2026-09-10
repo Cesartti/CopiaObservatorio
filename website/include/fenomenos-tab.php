@@ -326,7 +326,12 @@ $fenFaseActual = (string) ($fenEnso['fase'] ?? 'neutral');
             b.classList.add('active');
             var pane = document.getElementById('fen-' + b.dataset.fen);
             if (pane) { pane.classList.add('active'); }
-            if (b.dataset.fen === 'mapa') { iniciarMapa(); }
+            if (b.dataset.fen === 'mapa') {
+                iniciarMapa();
+                if (estado.mapa) {
+                    setTimeout(function () { estado.mapa.invalidateSize(); pintarCalor(); }, 180);
+                }
+            }
             if (b.dataset.fen === 'bomberos') { cargarBomberos(); }
         });
     });
@@ -352,7 +357,16 @@ $fenFaseActual = (string) ($fenEnso['fase'] ?? 'neutral');
         }
     }
 
-    function construirMapa() {
+    function construirMapa(intento) {
+        // Leaflet y la capa de calor necesitan que el contenedor ya tenga tamaño:
+        // si la subpestaña acaba de mostrarse, se espera un instante.
+        var cont = document.getElementById('fenMapa');
+        if (!cont || cont.clientWidth === 0) {
+            intento = (intento || 0) + 1;
+            if (intento <= 20) { setTimeout(function () { construirMapa(intento); }, 120); }
+            return;
+        }
+        if (estado.mapa) { estado.mapa.invalidateSize(); return; }
         estado.mapa = L.map('fenMapa', { scrollWheelZoom: false }).setView([5.62, -73.35], 8);
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 17, attribution: '&copy; OpenStreetMap'
@@ -367,11 +381,11 @@ $fenFaseActual = (string) ($fenEnso['fase'] ?? 'neutral');
         }, { collapsed: false }).addTo(estado.mapa);
 
         estado.mapa.on('click', function (e) { fijarPunto(e.latlng.lat, e.latlng.lng); });
+        setTimeout(function () { estado.mapa.invalidateSize(); }, 200);
 
         fetch(API + '?recurso=todo').then(function (r) { return r.json(); }).then(function (d) {
             estado.historico = d.historico || {};
             llenarAnios();
-            pintarCalor();
 
             var CONF = { h: 'alta', n: 'nominal', l: 'baja' };
             (d.focos || []).forEach(function (f) {
@@ -416,6 +430,16 @@ $fenFaseActual = (string) ($fenEnso['fase'] ?? 'neutral');
             }
             f.textContent = resumen + ' Histórico: ' + fuentes + '.' +
                 ((d.avisos && d.avisos.length) ? ' ' + d.avisos.join(' ') : '');
+
+            // El mapa de calor va al final: si el lienzo aún no está listo no debe
+            // impedir que se vean los focos, los reportes ni los bomberos.
+            pintarCalor();
+        }).catch(function (err) {
+            var f = document.getElementById('fenFuentes');
+            if (f) {
+                f.textContent = 'No fue posible cargar los datos del mapa. Intente recargar la página.';
+            }
+            if (window.console) { console.error('Fenómenos:', err); }
         });
     }
 
@@ -450,11 +474,21 @@ $fenFaseActual = (string) ($fenEnso['fase'] ?? 'neutral');
             if (peso > 0) { puntos.push([m.lat, m.lon, peso]); if (peso > max) { max = peso; } }
         });
         var datos = puntos.map(function (p) { return [p[0], p[1], Math.min(1, p[2] / max)]; });
-        if (estado.capaCalor) { estado.mapa.removeLayer(estado.capaCalor); }
-        estado.capaCalor = L.heatLayer(datos, {
-            radius: 28, blur: 22, maxZoom: 11,
-            gradient: { 0.2: '#22c55e', 0.5: '#eab308', 0.8: '#f97316', 1: '#ef4444' }
-        }).addTo(estado.mapa);
+        if (estado.capaCalor) { estado.mapa.removeLayer(estado.capaCalor); estado.capaCalor = null; }
+        var cont = document.getElementById('fenMapa');
+        if (!cont || cont.clientWidth === 0) {
+            // Lienzo sin tamaño (subpestaña oculta): se reintenta al mostrarse.
+            setTimeout(pintarCalor, 200);
+            return;
+        }
+        try {
+            estado.capaCalor = L.heatLayer(datos, {
+                radius: 28, blur: 22, maxZoom: 11,
+                gradient: { 0.2: '#22c55e', 0.5: '#eab308', 0.8: '#f97316', 1: '#ef4444' }
+            }).addTo(estado.mapa);
+        } catch (e) {
+            if (window.console) { console.warn('Capa de calor no disponible:', e); }
+        }
     }
 
     /* ---- reporte ciudadano ---- */
