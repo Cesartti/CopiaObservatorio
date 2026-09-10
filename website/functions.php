@@ -65,7 +65,7 @@
 	function displayFoot($id,$arr,$count){
 		echo '<div class="d-flex foot-container">';
 		displayFuentes($arr);
-		echo('<a href="indicador/'.$id.'/'.$count.'.csv" title="Descargar datos"><button type="button" class="btn btn-ligh btn-fuente">Descarga datos <i class="fa fa-download" aria-hidden="true"></i></button></a>');
+		echo('<a href="descargar-csv.php?id='.$id.'&amp;n='.$count.'" title="Descargar datos"><button type="button" class="btn btn-ligh btn-fuente">Descarga datos <i class="fa fa-download" aria-hidden="true"></i></button></a>');
 		echo '</div>';
 	}
 	

@@ -264,27 +264,27 @@ include 'include/header.php';
                     <ul class="datalake-ul">
                         <li class="datalake-item">
                             <span>Humedales</span>
-                            <a href="indicador/3101/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                            <a href="descargar-csv.php?id=3101&amp;n=1" class="btn btn-sm btn-outline-primary">Descargar</a>
                         </li>
                         <li class="datalake-item">
                             <span>Acuíferos</span>
-                            <a href="indicador/3102/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                            <a href="descargar-csv.php?id=3102&amp;n=1" class="btn btn-sm btn-outline-primary">Descargar</a>
                         </li>
                         <li class="datalake-item">
                             <span>Rondas hídricas</span>
-                            <a href="indicador/3103/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                            <a href="descargar-csv.php?id=3103&amp;n=1" class="btn btn-sm btn-outline-primary">Descargar</a>
                         </li>
                         <li class="datalake-item">
                             <span>Páramos</span>
-                            <a href="indicador/3104/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                            <a href="descargar-csv.php?id=3104&amp;n=1" class="btn btn-sm btn-outline-primary">Descargar</a>
                         </li>
                         <li class="datalake-item">
                             <span>Bosques</span>
-                            <a href="indicador/3105/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                            <a href="descargar-csv.php?id=3105&amp;n=1" class="btn btn-sm btn-outline-primary">Descargar</a>
                         </li>
                         <li class="datalake-item">
                             <span>Áreas forestales</span>
-                            <a href="indicador/3106/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                            <a href="descargar-csv.php?id=3106&amp;n=1" class="btn btn-sm btn-outline-primary">Descargar</a>
                         </li>
                     </ul>
                 </div>
@@ -293,55 +293,55 @@ include 'include/header.php';
                     <ul class="datalake-ul">
                         <li class="datalake-item">
                             <span>Porcentaje de cobertura de acueducto – zona urbana</span>
-                            <a href="indicador/3201/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                            <a href="descargar-csv.php?id=3201&amp;n=1" class="btn btn-sm btn-outline-primary">Descargar</a>
                         </li>
                         <li class="datalake-item">
                             <span>Porcentaje de cobertura de acueducto – zona rural</span>
-                            <a href="indicador/3202/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                            <a href="descargar-csv.php?id=3202&amp;n=1" class="btn btn-sm btn-outline-primary">Descargar</a>
                         </li>
                         <li class="datalake-item">
                             <span>Porcentaje de cobertura de alcantarillado – zona urbana</span>
-                            <a href="indicador/3203/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                            <a href="descargar-csv.php?id=3203&amp;n=1" class="btn btn-sm btn-outline-primary">Descargar</a>
                         </li>
                         <li class="datalake-item">
                             <span>Porcentaje de cobertura de alcantarillado – zona rural</span>
-                            <a href="indicador/3204/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                            <a href="descargar-csv.php?id=3204&amp;n=1" class="btn btn-sm btn-outline-primary">Descargar</a>
                         </li>
                         <li class="datalake-item">
                             <span>Continuidad del servicio de acueducto urbano (promedio horas/día)</span>
-                            <a href="indicador/3205/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                            <a href="descargar-csv.php?id=3205&amp;n=1" class="btn btn-sm btn-outline-primary">Descargar</a>
                         </li>
                         <li class="datalake-item">
                             <span>Municipios con tratamiento de aguas residuales en zona urbana</span>
-                            <a href="indicador/3206/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                            <a href="descargar-csv.php?id=3206&amp;n=1" class="btn btn-sm btn-outline-primary">Descargar</a>
                         </li>
                         <li class="datalake-item">
                             <span>Acueductos rurales</span>
-                            <a href="indicador/3207/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                            <a href="descargar-csv.php?id=3207&amp;n=1" class="btn btn-sm btn-outline-primary">Descargar</a>
                         </li>
                         <li class="datalake-item">
                             <span>Índice de Riesgo de la Calidad del Agua para el Consumo Humano – IRCA (zona urbana)</span>
-                            <a href="indicador/3208/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                            <a href="descargar-csv.php?id=3208&amp;n=1" class="btn btn-sm btn-outline-primary">Descargar</a>
                         </li>
                         <li class="datalake-item">
                             <span>Índice de Riesgo de la Calidad del Agua para el Consumo Humano – IRCA (zona rural nucleada)</span>
-                            <a href="indicador/3209/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                            <a href="descargar-csv.php?id=3209&amp;n=1" class="btn btn-sm btn-outline-primary">Descargar</a>
                         </li>
                         <li class="datalake-item">
                             <span>Municipio vinculado al Plan Departamental de Aguas</span>
-                            <a href="indicador/3210/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                            <a href="descargar-csv.php?id=3210&amp;n=1" class="btn btn-sm btn-outline-primary">Descargar</a>
                         </li>
                         <li class="datalake-item">
                             <span>Concesión de aguas superficiales</span>
-                            <a href="indicador/3211/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                            <a href="descargar-csv.php?id=3211&amp;n=1" class="btn btn-sm btn-outline-primary">Descargar</a>
                         </li>
                         <li class="datalake-item">
                             <span>Concesión de agua subterránea</span>
-                            <a href="indicador/3212/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                            <a href="descargar-csv.php?id=3212&amp;n=1" class="btn btn-sm btn-outline-primary">Descargar</a>
                         </li>
                         <li class="datalake-item">
                             <span>Permisos de vertimientos</span>
-                            <a href="indicador/3213/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                            <a href="descargar-csv.php?id=3213&amp;n=1" class="btn btn-sm btn-outline-primary">Descargar</a>
                         </li>
                     </ul>
                 </div>
@@ -350,35 +350,35 @@ include 'include/header.php';
                     <ul class="datalake-ul">
                         <li class="datalake-item">
                             <span>Aprovechamiento forestal de árboles aislados</span>
-                            <a href="indicador/3301/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                            <a href="descargar-csv.php?id=3301&amp;n=1" class="btn btn-sm btn-outline-primary">Descargar</a>
                         </li>
                         <li class="datalake-item">
                             <span>Licencias ambientales</span>
-                            <a href="indicador/3302/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                            <a href="descargar-csv.php?id=3302&amp;n=1" class="btn btn-sm btn-outline-primary">Descargar</a>
                         </li>
                         <li class="datalake-item">
                             <span>Registro de plantaciones forestales protectoras y productoras</span>
-                            <a href="indicador/3303/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                            <a href="descargar-csv.php?id=3303&amp;n=1" class="btn btn-sm btn-outline-primary">Descargar</a>
                         </li>
                         <li class="datalake-item">
                             <span>Delitos ambientales reportados a Policía Nacional</span>
-                            <a href="indicador/3304/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                            <a href="descargar-csv.php?id=3304&amp;n=1" class="btn btn-sm btn-outline-primary">Descargar</a>
                         </li>
                         <li class="datalake-item">
                             <span>Emergencias ambientales y de origen natural atendidas</span>
-                            <a href="indicador/3305/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                            <a href="descargar-csv.php?id=3305&amp;n=1" class="btn btn-sm btn-outline-primary">Descargar</a>
                         </li>
                         <li class="datalake-item">
                             <span>Campañas de recolección de envases de agroquímicos (posconsumo)</span>
-                            <a href="indicador/3306/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                            <a href="descargar-csv.php?id=3306&amp;n=1" class="btn btn-sm btn-outline-primary">Descargar</a>
                         </li>
                         <li class="datalake-item">
                             <span>Educación ambiental: PRAES, PROCEDAS y CIDEAS acompañados</span>
-                            <a href="indicador/3307/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                            <a href="descargar-csv.php?id=3307&amp;n=1" class="btn btn-sm btn-outline-primary">Descargar</a>
                         </li>
                         <li class="datalake-item">
                             <span>Reporte de incendios de la cobertura vegetal</span>
-                            <a href="indicador/3308/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                            <a href="descargar-csv.php?id=3308&amp;n=1" class="btn btn-sm btn-outline-primary">Descargar</a>
                         </li>
                     </ul>
                 </div>
@@ -387,15 +387,15 @@ include 'include/header.php';
                     <ul class="datalake-ul">
                         <li class="datalake-item">
                             <span>Agresiones por animales potencialmente transmisores de rabia</span>
-                            <a href="indicador/3401/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                            <a href="descargar-csv.php?id=3401&amp;n=1" class="btn btn-sm btn-outline-primary">Descargar</a>
                         </li>
                         <li class="datalake-item">
                             <span>Accidentes ofídicos</span>
-                            <a href="indicador/3402/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                            <a href="descargar-csv.php?id=3402&amp;n=1" class="btn btn-sm btn-outline-primary">Descargar</a>
                         </li>
                         <li class="datalake-item">
                             <span>Accidentes por otros animales venenosos</span>
-                            <a href="indicador/3403/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                            <a href="descargar-csv.php?id=3403&amp;n=1" class="btn btn-sm btn-outline-primary">Descargar</a>
                         </li>
                     </ul>
                 </div>
@@ -404,51 +404,51 @@ include 'include/header.php';
                     <ul class="datalake-ul">
                         <li class="datalake-item">
                             <span>Porcentaje de cobertura de aseo – zona urbana</span>
-                            <a href="indicador/3501/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                            <a href="descargar-csv.php?id=3501&amp;n=1" class="btn btn-sm btn-outline-primary">Descargar</a>
                         </li>
                         <li class="datalake-item">
                             <span>Municipios que cuentan con prestador directo de aseo, alcantarillado y acueducto</span>
-                            <a href="indicador/3502/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                            <a href="descargar-csv.php?id=3502&amp;n=1" class="btn btn-sm btn-outline-primary">Descargar</a>
                         </li>
                         <li class="datalake-item">
                             <span>Disposición final adecuada de residuos (toneladas/día)</span>
-                            <a href="indicador/3503/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                            <a href="descargar-csv.php?id=3503&amp;n=1" class="btn btn-sm btn-outline-primary">Descargar</a>
                         </li>
                         <li class="datalake-item">
                             <span>Índice de cobertura de energía eléctrica</span>
-                            <a href="indicador/3504/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                            <a href="descargar-csv.php?id=3504&amp;n=1" class="btn btn-sm btn-outline-primary">Descargar</a>
                         </li>
                         <li class="datalake-item">
                             <span>Porcentaje de viviendas con energía eléctrica</span>
-                            <a href="indicador/3505/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                            <a href="descargar-csv.php?id=3505&amp;n=1" class="btn btn-sm btn-outline-primary">Descargar</a>
                         </li>
                         <li class="datalake-item">
                             <span>Índice de Calidad del Aire – ICA: material particulado PM10</span>
-                            <a href="indicador/3506/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                            <a href="descargar-csv.php?id=3506&amp;n=1" class="btn btn-sm btn-outline-primary">Descargar</a>
                         </li>
                         <li class="datalake-item">
                             <span>Índice de Calidad del Aire – ICA: material particulado PM2.5</span>
-                            <a href="indicador/3507/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                            <a href="descargar-csv.php?id=3507&amp;n=1" class="btn btn-sm btn-outline-primary">Descargar</a>
                         </li>
                         <li class="datalake-item">
                             <span>Índice de Calidad del Aire – ICA: dióxido de azufre (SO₂)</span>
-                            <a href="indicador/3508/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                            <a href="descargar-csv.php?id=3508&amp;n=1" class="btn btn-sm btn-outline-primary">Descargar</a>
                         </li>
                         <li class="datalake-item">
                             <span>Índice de Calidad del Aire – ICA: dióxido de nitrógeno (NO₂)</span>
-                            <a href="indicador/3509/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                            <a href="descargar-csv.php?id=3509&amp;n=1" class="btn btn-sm btn-outline-primary">Descargar</a>
                         </li>
                         <li class="datalake-item">
                             <span>Índice de Calidad del Aire – ICA: monóxido de carbono (CO)</span>
-                            <a href="indicador/3510/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                            <a href="descargar-csv.php?id=3510&amp;n=1" class="btn btn-sm btn-outline-primary">Descargar</a>
                         </li>
                         <li class="datalake-item">
                             <span>Índice de Calidad del Aire – ICA: ozono troposférico (O₃)</span>
-                            <a href="indicador/3511/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                            <a href="descargar-csv.php?id=3511&amp;n=1" class="btn btn-sm btn-outline-primary">Descargar</a>
                         </li>
                         <li class="datalake-item">
                             <span>Prácticas de ahorro de energía y agua en edificaciones culminadas</span>
-                            <a href="indicador/3512/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                            <a href="descargar-csv.php?id=3512&amp;n=1" class="btn btn-sm btn-outline-primary">Descargar</a>
                         </li>
                     </ul>
                 </div>
@@ -458,55 +458,55 @@ include 'include/header.php';
                     <ul class="datalake-ul">
                         <li class="datalake-item">
                             <span>Cobertura del servicio de acueducto en zona urbana</span>
-                            <a href="indicador/3201/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                            <a href="descargar-csv.php?id=3201&amp;n=1" class="btn btn-sm btn-outline-primary">Descargar</a>
                         </li>
                         <li class="datalake-item">
                             <span>Cobertura del servicio de acueducto en zona rural</span>
-                            <a href="indicador/3202/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                            <a href="descargar-csv.php?id=3202&amp;n=1" class="btn btn-sm btn-outline-primary">Descargar</a>
                         </li>
                         <li class="datalake-item">
                             <span>Cobertura del servicio de alcantarillado en zona urbana</span>
-                            <a href="indicador/3203/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                            <a href="descargar-csv.php?id=3203&amp;n=1" class="btn btn-sm btn-outline-primary">Descargar</a>
                         </li>
                         <li class="datalake-item">
                             <span>Cobertura del servicio de alcantarillado en zona rural</span>
-                            <a href="indicador/3204/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                            <a href="descargar-csv.php?id=3204&amp;n=1" class="btn btn-sm btn-outline-primary">Descargar</a>
                         </li>
                         <li class="datalake-item">
                             <span>Continuidad del servicio de acueducto (horas/día)</span>
-                            <a href="indicador/3205/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                            <a href="descargar-csv.php?id=3205&amp;n=1" class="btn btn-sm btn-outline-primary">Descargar</a>
                         </li>
                         <li class="datalake-item">
                             <span>Municipios con sistema de tratamiento de aguas residuales (STAR) reportado</span>
-                            <a href="indicador/3206/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                            <a href="descargar-csv.php?id=3206&amp;n=1" class="btn btn-sm btn-outline-primary">Descargar</a>
                         </li>
                         <li class="datalake-item">
                             <span>Acueductos rurales y suscriptores por municipio</span>
-                            <a href="indicador/3207/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                            <a href="descargar-csv.php?id=3207&amp;n=1" class="btn btn-sm btn-outline-primary">Descargar</a>
                         </li>
                         <li class="datalake-item">
                             <span>Índice de Riesgo de la Calidad del Agua (IRCA) – zona urbana</span>
-                            <a href="indicador/3208/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                            <a href="descargar-csv.php?id=3208&amp;n=1" class="btn btn-sm btn-outline-primary">Descargar</a>
                         </li>
                         <li class="datalake-item">
                             <span>Índice de Riesgo de la Calidad del Agua (IRCA) – zona rural nucleada</span>
-                            <a href="indicador/3209/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                            <a href="descargar-csv.php?id=3209&amp;n=1" class="btn btn-sm btn-outline-primary">Descargar</a>
                         </li>
                         <li class="datalake-item">
                             <span>Municipios vinculados al Plan Departamental de Aguas (PDA)</span>
-                            <a href="indicador/3210/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                            <a href="descargar-csv.php?id=3210&amp;n=1" class="btn btn-sm btn-outline-primary">Descargar</a>
                         </li>
                         <li class="datalake-item">
                             <span>Concesiones de aguas superficiales (expedientes CORPOBOYACÁ)</span>
-                            <a href="indicador/3211/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                            <a href="descargar-csv.php?id=3211&amp;n=1" class="btn btn-sm btn-outline-primary">Descargar</a>
                         </li>
                         <li class="datalake-item">
                             <span>Concesiones de aguas subterráneas (expedientes CORPOBOYACÁ)</span>
-                            <a href="indicador/3212/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                            <a href="descargar-csv.php?id=3212&amp;n=1" class="btn btn-sm btn-outline-primary">Descargar</a>
                         </li>
                         <li class="datalake-item">
                             <span>Permisos de vertimientos (expedientes CORPOBOYACÁ)</span>
-                            <a href="indicador/3213/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                            <a href="descargar-csv.php?id=3213&amp;n=1" class="btn btn-sm btn-outline-primary">Descargar</a>
                         </li>
                     </ul>
                 </div>
@@ -515,31 +515,31 @@ include 'include/header.php';
                     <ul class="datalake-ul">
                         <li class="datalake-item">
                             <span>Permisos de aprovechamiento forestal (expedientes CORPOBOYACÁ)</span>
-                            <a href="indicador/3301/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                            <a href="descargar-csv.php?id=3301&amp;n=1" class="btn btn-sm btn-outline-primary">Descargar</a>
                         </li>
                         <li class="datalake-item">
                             <span>Licencias ambientales (expedientes CORPOBOYACÁ)</span>
-                            <a href="indicador/3302/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                            <a href="descargar-csv.php?id=3302&amp;n=1" class="btn btn-sm btn-outline-primary">Descargar</a>
                         </li>
                         <li class="datalake-item">
                             <span>Registro de plantaciones forestales protectoras-productoras</span>
-                            <a href="indicador/3303/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                            <a href="descargar-csv.php?id=3303&amp;n=1" class="btn btn-sm btn-outline-primary">Descargar</a>
                         </li>
                         <li class="datalake-item">
                             <span>Delitos contra los recursos naturales y el medio ambiente</span>
-                            <a href="indicador/3304/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                            <a href="descargar-csv.php?id=3304&amp;n=1" class="btn btn-sm btn-outline-primary">Descargar</a>
                         </li>
                         <li class="datalake-item">
                             <span>Emergencias ambientales y de origen natural atendidas</span>
-                            <a href="indicador/3305/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                            <a href="descargar-csv.php?id=3305&amp;n=1" class="btn btn-sm btn-outline-primary">Descargar</a>
                         </li>
                         <li class="datalake-item">
                             <span>Campañas de recolección de envases de agroquímicos (posconsumo)</span>
-                            <a href="indicador/3306/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                            <a href="descargar-csv.php?id=3306&amp;n=1" class="btn btn-sm btn-outline-primary">Descargar</a>
                         </li>
                         <li class="datalake-item">
                             <span>Educación ambiental: PRAES, PROCEDAS y CIDEAS acompañados</span>
-                            <a href="indicador/3307/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                            <a href="descargar-csv.php?id=3307&amp;n=1" class="btn btn-sm btn-outline-primary">Descargar</a>
                         </li>
                     </ul>
                 </div>
@@ -548,15 +548,15 @@ include 'include/header.php';
                     <ul class="datalake-ul">
                         <li class="datalake-item">
                             <span>Agresiones por animales potencialmente transmisores de rabia</span>
-                            <a href="indicador/3401/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                            <a href="descargar-csv.php?id=3401&amp;n=1" class="btn btn-sm btn-outline-primary">Descargar</a>
                         </li>
                         <li class="datalake-item">
                             <span>Accidente ofídico (mordedura de serpiente)</span>
-                            <a href="indicador/3402/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                            <a href="descargar-csv.php?id=3402&amp;n=1" class="btn btn-sm btn-outline-primary">Descargar</a>
                         </li>
                         <li class="datalake-item">
                             <span>Accidentes por otros animales venenosos</span>
-                            <a href="indicador/3403/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                            <a href="descargar-csv.php?id=3403&amp;n=1" class="btn btn-sm btn-outline-primary">Descargar</a>
                         </li>
                     </ul>
                 </div>
@@ -565,51 +565,51 @@ include 'include/header.php';
                     <ul class="datalake-ul">
                         <li class="datalake-item">
                             <span>Cobertura del servicio de aseo en zona urbana</span>
-                            <a href="indicador/3501/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                            <a href="descargar-csv.php?id=3501&amp;n=1" class="btn btn-sm btn-outline-primary">Descargar</a>
                         </li>
                         <li class="datalake-item">
                             <span>Municipios prestadores directos de acueducto, alcantarillado y aseo</span>
-                            <a href="indicador/3502/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                            <a href="descargar-csv.php?id=3502&amp;n=1" class="btn btn-sm btn-outline-primary">Descargar</a>
                         </li>
                         <li class="datalake-item">
                             <span>Disposición final de residuos sólidos (toneladas/día y tipo de sitio)</span>
-                            <a href="indicador/3503/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                            <a href="descargar-csv.php?id=3503&amp;n=1" class="btn btn-sm btn-outline-primary">Descargar</a>
                         </li>
                         <li class="datalake-item">
                             <span>Índice de Cobertura de Energía Eléctrica (ICEE)</span>
-                            <a href="indicador/3504/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                            <a href="descargar-csv.php?id=3504&amp;n=1" class="btn btn-sm btn-outline-primary">Descargar</a>
                         </li>
                         <li class="datalake-item">
                             <span>Viviendas con y sin servicio de energía eléctrica</span>
-                            <a href="indicador/3505/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                            <a href="descargar-csv.php?id=3505&amp;n=1" class="btn btn-sm btn-outline-primary">Descargar</a>
                         </li>
                         <li class="datalake-item">
                             <span>Calidad del aire: Material particulado PM10 por estación de monitoreo</span>
-                            <a href="indicador/3506/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                            <a href="descargar-csv.php?id=3506&amp;n=1" class="btn btn-sm btn-outline-primary">Descargar</a>
                         </li>
                         <li class="datalake-item">
                             <span>Calidad del aire: Material particulado PM2.5 por estación de monitoreo</span>
-                            <a href="indicador/3507/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                            <a href="descargar-csv.php?id=3507&amp;n=1" class="btn btn-sm btn-outline-primary">Descargar</a>
                         </li>
                         <li class="datalake-item">
                             <span>Calidad del aire: Dióxido de azufre (SO₂) por estación de monitoreo</span>
-                            <a href="indicador/3508/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                            <a href="descargar-csv.php?id=3508&amp;n=1" class="btn btn-sm btn-outline-primary">Descargar</a>
                         </li>
                         <li class="datalake-item">
                             <span>Calidad del aire: Dióxido de nitrógeno (NO₂) por estación de monitoreo</span>
-                            <a href="indicador/3509/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                            <a href="descargar-csv.php?id=3509&amp;n=1" class="btn btn-sm btn-outline-primary">Descargar</a>
                         </li>
                         <li class="datalake-item">
                             <span>Calidad del aire: Monóxido de carbono (CO) por estación de monitoreo</span>
-                            <a href="indicador/3510/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                            <a href="descargar-csv.php?id=3510&amp;n=1" class="btn btn-sm btn-outline-primary">Descargar</a>
                         </li>
                         <li class="datalake-item">
                             <span>Calidad del aire: Ozono troposférico (O₃) por estación de monitoreo</span>
-                            <a href="indicador/3511/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                            <a href="descargar-csv.php?id=3511&amp;n=1" class="btn btn-sm btn-outline-primary">Descargar</a>
                         </li>
                         <li class="datalake-item">
                             <span>Prácticas de ahorro de energía y agua en edificaciones culminadas</span>
-                            <a href="indicador/3512/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                            <a href="descargar-csv.php?id=3512&amp;n=1" class="btn btn-sm btn-outline-primary">Descargar</a>
                         </li>
                     </ul>
                 </div>

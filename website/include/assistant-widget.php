@@ -11,6 +11,21 @@ if (empty($assistantCfg['enabled']) || empty($assistantCfg['iframe_url'])) {
 }
 
 $baseUrl = rtrim((string) $assistantCfg['iframe_url'], '/');
+
+/*
+ * El asistente corre en un Streamlit local (AsistenteOllama). Si la URL apunta
+ * a localhost pero la página se sirve desde otro host, el iframe nunca carga
+ * para el visitante — y sobre HTTPS el navegador lo bloquea por contenido
+ * mixto. En ese caso el widget no se muestra, en vez de ofrecer un asistente
+ * que no responde. (Reportado en la revisión de QA de agosto de 2026.)
+ */
+$awHostAsistente = strtolower((string) parse_url($baseUrl, PHP_URL_HOST));
+$awEsLocal = in_array($awHostAsistente, ['localhost', '127.0.0.1', '::1', '0.0.0.0'], true);
+$awHostSitio = strtolower((string) ($_SERVER['HTTP_HOST'] ?? ''));
+$awSitioLocal = $awHostSitio === '' || preg_match('/^(localhost|127\.0\.0\.1|\[::1\])(:\d+)?$/', $awHostSitio);
+if ($awEsLocal && !$awSitioLocal) {
+    return;
+}
 $query = isset($assistantCfg['iframe_query']) ? trim((string) $assistantCfg['iframe_query']) : '';
 $iframeSrc = $baseUrl;
 if ($query !== '') {

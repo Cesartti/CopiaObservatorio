@@ -348,7 +348,7 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
                 </div>
 
                 <div class="chart-footer">
-                    <a href="indicador/<?= htmlspecialchars($id) ?>/<?= $ci + 1 ?>.csv" download>
+                    <a href="descargar-csv.php?id=<?= htmlspecialchars($id) ?>&amp;n=<?= $ci + 1 ?>">
                         <i class="fa-solid fa-download"></i> Descargar datos CSV
                     </a>
                     <?php

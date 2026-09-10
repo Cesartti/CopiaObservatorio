@@ -1091,8 +1091,22 @@ $obsTabActive = $tabActiveByObs[$slug] ?? $obs['color'];
                                                 if ($val === null || trim((string) $val) === '') continue; ?>
                                                 <div class="col-md-6"><strong><?= $lbl ?>:</strong><br><span class="text-muted"><?= nl2br(htmlspecialchars((string) $val)) ?></span></div>
                                             <?php endforeach; ?>
-                                            <?php if (!empty($r['source_link'])): ?>
-                                                <div class="col-md-12"><strong>Enlace fuente:</strong> <a href="<?= htmlspecialchars($r['source_link']) ?>" target="_blank" rel="noopener"><?= htmlspecialchars($r['source_link']) ?></a></div>
+                                            <?php if (!empty($r['source_link'])):
+                                                /* Muchas fichas traen el NOMBRE del archivo base (p. ej.
+                                                   "BASE DX OBS SOCIAL - SALUD.xlsx"), no una URL. Enlazarlo
+                                                   producía un 404; solo se enlaza cuando es una dirección web. */
+                                                $srcLink = trim((string) $r['source_link']);
+                                                $esUrl = (bool) preg_match('~^https?://~i', $srcLink);
+                                            ?>
+                                                <div class="col-md-12">
+                                                    <strong><?= $esUrl ? 'Enlace fuente' : 'Archivo fuente' ?>:</strong>
+                                                    <?php if ($esUrl): ?>
+                                                        <a href="<?= htmlspecialchars($srcLink) ?>" target="_blank" rel="noopener"><?= htmlspecialchars($srcLink) ?></a>
+                                                    <?php else: ?>
+                                                        <span class="text-muted"><?= htmlspecialchars($srcLink) ?></span>
+                                                        <small class="d-block text-muted">Base de datos institucional; se solicita a la Secretaría de Planeación.</small>
+                                                    <?php endif; ?>
+                                                </div>
                                             <?php endif; ?>
                                             <div class="col-md-12 mt-2">
                                                 <a class="btn btn-sm btn-outline-primary" href="indicador.php?id=<?= $nid ?>"><i class="fa-solid fa-chart-column"></i> Ver gráficos del indicador</a>

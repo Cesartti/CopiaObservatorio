@@ -6,6 +6,15 @@ body{font-family:Inter,Segoe UI,sans-serif;background:#f6f9ff;color:#1b2a40}
 .obs-header{background:var(--obs-color)}.obs-header a{color:#fff;text-decoration:none}.back-link{font-weight:700}
 .obs-visit-pill{display:inline-flex;align-items:center;gap:.35rem;font-size:.78rem;font-weight:600;color:#fff;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.28);padding:.3rem .55rem;border-radius:999px;white-space:nowrap}
 .hero-carousel .carousel-indicators [data-bs-target]{width:9px;height:9px;border-radius:50%}
+/* Controles del carrusel: en QA se reportó que las flechas quedaban sobre la
+   imagen sin contraste y encima del texto. Se les da un fondo circular y se
+   reserva el espacio lateral del texto para que no se solapen. */
+.hero-carousel .carousel-control-prev,.hero-carousel .carousel-control-next{width:68px;opacity:1}
+.hero-carousel .carousel-control-prev-icon,.hero-carousel .carousel-control-next-icon{width:44px;height:44px;border-radius:50%;background-color:rgba(15,23,42,.5);border:1px solid rgba(255,255,255,.45);background-size:42% 42%;background-position:center;transition:background-color .2s ease,transform .2s ease}
+.hero-carousel .carousel-control-prev:hover .carousel-control-prev-icon,.hero-carousel .carousel-control-next:hover .carousel-control-next-icon{background-color:rgba(15,23,42,.78);transform:scale(1.06)}
+.hero-carousel .carousel-control-prev:focus-visible .carousel-control-prev-icon,.hero-carousel .carousel-control-next:focus-visible .carousel-control-next-icon{outline:3px solid #fff;outline-offset:2px}
+.hero-carousel .carousel-indicators{margin-bottom:.6rem}
+@media (min-width:577px){.hero-slide-copy{padding-left:4.5rem;padding-right:4.5rem}}
 .hero{background:linear-gradient(120deg,var(--obs-color),var(--obs-accent));color:#fff;border-radius:16px;min-height:300px;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden}
 .hero-slide-with-media{position:relative;min-height:300px;display:flex;align-items:center;justify-content:center}
 .hero-slide-media{position:absolute;inset:0;z-index:0}
