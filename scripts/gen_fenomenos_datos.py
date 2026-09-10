@@ -205,6 +205,13 @@ for d, m in por_mun.items():
 
 tipos_glob = collections.Counter(ev for _, _, ev, _, _, _ in registros)
 anios_glob = collections.Counter(a for _, a, _, _, _, _ in registros)
+# Serie anual separada por fenómeno, para las gráficas de cada subpestaña.
+anios_fen = {'nino': collections.Counter(), 'nina': collections.Counter()}
+for _, anio, _, fen, _, _ in registros:
+    if fen in anios_fen:
+        anios_fen[fen][anio] += 1
+# Fuente de cada registro, para poder citar cuánto aporta cada entidad.
+fuentes_glob = collections.Counter(f for _, _, _, _, _, f in registros)
 
 salida = {
     'generado': __import__('datetime').date.today().isoformat(),
@@ -222,6 +229,9 @@ salida = {
     'totales': {'eventos': len(registros),
                 'municipios': len(municipios),
                 'anios': {str(k): v for k, v in sorted(anios_glob.items())},
+                'anios_fenomeno': {f: {str(k): v for k, v in sorted(c.items())}
+                                   for f, c in anios_fen.items()},
+                'por_fuente': dict(fuentes_glob.most_common()),
                 'tipos': dict(tipos_glob.most_common(20))},
     'municipios': municipios,
 }

@@ -68,6 +68,16 @@ function fen_estado_enso(): array
             $serie[] = ['periodo' => $p[0] . ' ' . $p[1], 'anio' => (int) $p[1], 'oni' => (float) $p[3]];
         }
     }
+    // Promedio anual del ONI (para relacionar cada año con su fenómeno).
+    $anual = [];
+    foreach ($serie as $r) {
+        $anual[$r['anio']][] = $r['oni'];
+    }
+    foreach ($anual as $a => $vals) {
+        $anual[$a] = round(array_sum($vals) / max(1, count($vals)), 2);
+    }
+    $anual = array_slice($anual, -12, null, true);
+
     $serie = array_slice($serie, -36); // tres años
     $ultimo = $serie ? end($serie) : null;
     $oni = $ultimo['oni'] ?? null;
@@ -92,6 +102,7 @@ function fen_estado_enso(): array
         'oni' => $oni,
         'periodo' => $ultimo['periodo'] ?? null,
         'serie' => $serie,
+        'anual' => $anual,
         'fuente' => 'NOAA · Climate Prediction Center, índice ONI (región Niño 3.4)',
         'url' => 'https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/ensostuff/ONI_v5.php',
         'actualizado' => $txt ? date('c', (int) @filemtime(FEN_CACHE_DIR . '/oni.txt')) : null,

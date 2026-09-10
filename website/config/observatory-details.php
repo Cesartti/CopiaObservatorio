@@ -59,10 +59,15 @@ return [
         'footnote' => '* Según disponibilidad de series oficiales y sistemas de información.',
         'fuentes_heading' => 'Fuentes de información',
         'fuentes' => [
-            'Corporaciones Autónomas Regionales',
-            'IDEAM',
-            'Ministerio de Ambiente y Desarrollo Sostenible',
-            'Sistemas de información ambiental nacionales y regionales',
+            // Entidades que efectivamente entregan los datos publicados. La lista
+            // corresponde al inventario de la Red con corte del 18/06/2026.
+            'CORPOBOYACÁ',
+            'Empresa de Servicios Públicos de Boyacá',
+            'Ministerio de Vivienda, Ciudad y Territorio',
+            'Unidad Nacional para la Gestión del Riesgo de Desastres (UNGRD)',
+            'UPME – Unidad de Planeación Minero Energética',
+            'SIVIGILA – Instituto Nacional de Salud',
+            'Policía Nacional',
         ],
         'periodicidad' => 'Actualización anual, según la disponibilidad de información ambiental oficial.',
     ],

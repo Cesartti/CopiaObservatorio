@@ -46,6 +46,69 @@ foreach (['nino', 'nina'] as $f) {
     }
 }
 $fenFaseActual = (string) ($fenEnso['fase'] ?? 'neutral');
+$fenAniosFen = $fenTot['anios_fenomeno'] ?? [];
+$fenPorFuente = $fenTot['por_fuente'] ?? [];
+$fenOniAnual = $fenEnso['anual'] ?? [];
+
+/**
+ * Gráfica de barras en SVG: eventos por año, con una franja inferior que
+ * indica la fase del ENSO de cada año según el promedio anual del ONI.
+ * Se dibuja en el servidor para que no dependa de JavaScript.
+ */
+function fen_grafica(array $serie, string $color, array $oniAnual, string $titulo): string
+{
+    $serie = array_filter($serie, static fn ($v) => $v > 0);
+    if ($serie === []) {
+        return '';
+    }
+    $anios = array_keys($serie);
+    $max = max($serie);
+    $n = count($serie);
+    $w = 640; $h = 240; $pl = 46; $pr = 12; $pt = 18; $pb = 54;
+    $gw = $w - $pl - $pr; $gh = $h - $pt - $pb;
+    $bw = min(58, ($gw / $n) * 0.62);
+    $paso = $gw / $n;
+
+    $svg = '<svg viewBox="0 0 ' . $w . ' ' . $h . '" role="img" class="fen-svg" '
+         . 'aria-label="' . htmlspecialchars($titulo) . '">';
+    // rejilla y eje Y
+    for ($i = 0; $i <= 4; $i++) {
+        $v = $max * $i / 4;
+        $y = $pt + $gh - ($gh * $i / 4);
+        $svg .= '<line x1="' . $pl . '" y1="' . round($y, 1) . '" x2="' . ($w - $pr) . '" y2="' . round($y, 1)
+              . '" stroke="#e6ecf6" stroke-width="1"/>'
+              . '<text x="' . ($pl - 8) . '" y="' . round($y + 4, 1) . '" text-anchor="end" font-size="11" fill="#6b7280">'
+              . number_format($v, 0, ',', '.') . '</text>';
+    }
+    $i = 0;
+    foreach ($serie as $anio => $val) {
+        $x = $pl + $paso * $i + ($paso - $bw) / 2;
+        $bh = $max > 0 ? ($gh * $val / $max) : 0;
+        $y = $pt + $gh - $bh;
+        $svg .= '<rect x="' . round($x, 1) . '" y="' . round($y, 1) . '" width="' . round($bw, 1)
+              . '" height="' . round($bh, 1) . '" rx="4" fill="' . $color . '">'
+              . '<title>' . htmlspecialchars((string) $anio) . ': ' . number_format($val, 0, ',', '.') . ' eventos</title></rect>'
+              . '<text x="' . round($x + $bw / 2, 1) . '" y="' . round($y - 5, 1) . '" text-anchor="middle" '
+              . 'font-size="11" font-weight="700" fill="#374151">' . number_format($val, 0, ',', '.') . '</text>'
+              . '<text x="' . round($x + $bw / 2, 1) . '" y="' . ($pt + $gh + 16) . '" text-anchor="middle" '
+              . 'font-size="11" fill="#4b5768">' . htmlspecialchars((string) $anio) . '</text>';
+        // franja del ENSO
+        $oni = $oniAnual[(int) $anio] ?? null;
+        if ($oni !== null) {
+            $c = $oni >= 0.5 ? '#ea580c' : ($oni <= -0.5 ? '#0891b2' : '#cbd5e1');
+            $et = $oni >= 0.5 ? 'Niño' : ($oni <= -0.5 ? 'Niña' : 'neutral');
+            $svg .= '<rect x="' . round($pl + $paso * $i + 3, 1) . '" y="' . ($pt + $gh + 24) . '" '
+                  . 'width="' . round($paso - 6, 1) . '" height="9" rx="4" fill="' . $c . '">'
+                  . '<title>ONI ' . number_format($oni, 2, ',', '.') . ' · ' . $et . '</title></rect>'
+                  . '<text x="' . round($pl + $paso * $i + $paso / 2, 1) . '" y="' . ($pt + $gh + 46) . '" '
+                  . 'text-anchor="middle" font-size="10" fill="#6b7280">' . $et . '</text>';
+        }
+        $i++;
+    }
+    $svg .= '</svg>';
+
+    return $svg;
+}
 ?>
 <style>
     .fen-estado{border-radius:16px;padding:1.1rem 1.25rem;color:#fff;display:flex;flex-wrap:wrap;gap:1rem;align-items:center;justify-content:space-between;margin-bottom:1rem}
@@ -82,6 +145,16 @@ $fenFaseActual = (string) ($fenEnso['fase'] ?? 'neutral');
     .fen-bomberos-item{display:flex;gap:.75rem;align-items:flex-start;padding:.7rem .2rem;border-bottom:1px solid #eef2f7}
     .fen-bomberos-item:last-child{border-bottom:none}
     .fen-bomberos-item .fb-ico{width:38px;height:38px;border-radius:10px;background:rgba(220,38,38,.1);color:#dc2626;display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto}
+    .fen-figura{margin:1.1rem 0 0;background:#fff;border:1px solid #e6ecf6;border-radius:14px;padding:.9rem 1rem}
+    .fen-figura figcaption{margin-bottom:.5rem}
+    .fen-figura figcaption strong{display:block;font-size:.9rem;color:#1f2937}
+    .fen-figura figcaption span{font-size:.78rem;color:#6b7280}
+    .fen-svg{width:100%;height:auto;display:block}
+    .fen-fuente{margin-top:1.1rem;background:#f8fafc;border:1px solid #e6ecf6;border-left:4px solid var(--obs-color,#1f6b45);border-radius:12px;padding:.9rem 1.05rem}
+    .fen-fuente h5{font-size:.85rem;font-weight:700;color:#1f2937;margin:0 0 .5rem}
+    .fen-fuente p{font-size:.82rem;color:#4b5768;margin-bottom:.5rem}
+    .fen-fuente ul{margin:0 0 .6rem;padding-left:1.1rem}
+    .fen-fuente li{font-size:.82rem;color:#4b5768;margin-bottom:.3rem}
     .fen-aviso{background:#fff7ed;border:1px solid #fed7aa;color:#9a3412;border-radius:12px;padding:.7rem .9rem;font-size:.84rem}
     @media (max-width:575.98px){#fenMapa{height:420px}}
 </style>
@@ -161,6 +234,51 @@ $fenFaseActual = (string) ($fenEnso['fase'] ?? 'neutral');
                 </ul>
             </div>
         </div>
+        <?php $g = fen_grafica($fenAniosFen['nino'] ?? [], '#ea580c', $fenOniAnual, 'Emergencias asociadas a condiciones secas por año'); ?>
+        <?php if ($g !== ''): ?>
+        <figure class="fen-figura">
+            <figcaption>
+                <strong>Emergencias asociadas a condiciones secas, por año</strong>
+                <span>La franja inferior indica la fase del ENSO de cada año, según el promedio anual del índice ONI.</span>
+            </figcaption>
+            <?= $g ?>
+        </figure>
+        <?php endif; ?>
+        <div class="fen-fuente">
+            <h5><i class="fa-solid fa-database me-1" aria-hidden="true"></i> De dónde salen estos datos</h5>
+            <p>
+                Las cifras de esta sección no son estimaciones: son el conteo de los eventos
+                efectivamente registrados por las entidades oficiales entre 2019 y 2025, descargados
+                de sus portales de datos abiertos y clasificados por tipo de evento.
+            </p>
+            <ul>
+                <?php foreach (($fenHist['fuentes'] ?? []) as $fu):
+                    $clave = strpos($fu['nombre'], 'UNGRD') !== false ? 'UNGRD'
+                           : (strpos($fu['nombre'], 'CORPOBOYAC') !== false ? 'CORPOBOYACÁ' : 'CDGRD Boyacá');
+                    $n = (int) ($fenPorFuente[$clave] ?? 0);
+                ?>
+                    <li>
+                        <a href="<?= htmlspecialchars((string) $fu['url']) ?>" target="_blank" rel="noopener"><?= htmlspecialchars((string) $fu['nombre']) ?></a>
+                        — <?= htmlspecialchars((string) $fu['detalle']) ?><?php if ($n > 0): ?>
+                            · <strong><?= number_format($n, 0, ',', '.') ?></strong> eventos<?php endif; ?>
+                    </li>
+                <?php endforeach; ?>
+                <li>
+                    <a href="<?= htmlspecialchars((string) $fenEnso['url']) ?>" target="_blank" rel="noopener">NOAA · Climate Prediction Center</a>
+                    — índice ONI, usado para clasificar la fase del ENSO de cada año.
+                </li>
+            </ul>
+            <p class="mb-0">
+                La asignación de cada evento a El Niño o a La Niña se hace por el <em>tipo</em> de evento
+                (los incendios, la sequía, el desabastecimiento y las heladas se asocian a condiciones secas;
+                las inundaciones, los movimientos en masa, los vendavales y las crecientes, al exceso de lluvia),
+                no por la fecha. Es una clasificación temática, no una atribución causal:
+                un incendio puede ocurrir en un año de La Niña.
+                <?php if (!empty($fenHist['generado'])): ?>
+                    Datos descargados el <?= htmlspecialchars((string) $fenHist['generado']) ?>.
+                <?php endif; ?>
+            </p>
+        </div>
         <p class="small text-muted mt-3 mb-0">
             <i class="fa-solid fa-circle-info me-1" aria-hidden="true"></i>
             Qué hacer: evitar quemas abiertas, reportar cualquier conato en el mapa de novedades o
@@ -205,6 +323,51 @@ $fenFaseActual = (string) ($fenEnso['fase'] ?? 'neutral');
                     <?php endforeach; ?>
                 </ul>
             </div>
+        </div>
+        <?php $g = fen_grafica($fenAniosFen['nina'] ?? [], '#0891b2', $fenOniAnual, 'Emergencias asociadas a lluvias por año'); ?>
+        <?php if ($g !== ''): ?>
+        <figure class="fen-figura">
+            <figcaption>
+                <strong>Emergencias asociadas a exceso de lluvias, por año</strong>
+                <span>La franja inferior indica la fase del ENSO de cada año, según el promedio anual del índice ONI.</span>
+            </figcaption>
+            <?= $g ?>
+        </figure>
+        <?php endif; ?>
+        <div class="fen-fuente">
+            <h5><i class="fa-solid fa-database me-1" aria-hidden="true"></i> De dónde salen estos datos</h5>
+            <p>
+                Las cifras de esta sección no son estimaciones: son el conteo de los eventos
+                efectivamente registrados por las entidades oficiales entre 2019 y 2025, descargados
+                de sus portales de datos abiertos y clasificados por tipo de evento.
+            </p>
+            <ul>
+                <?php foreach (($fenHist['fuentes'] ?? []) as $fu):
+                    $clave = strpos($fu['nombre'], 'UNGRD') !== false ? 'UNGRD'
+                           : (strpos($fu['nombre'], 'CORPOBOYAC') !== false ? 'CORPOBOYACÁ' : 'CDGRD Boyacá');
+                    $n = (int) ($fenPorFuente[$clave] ?? 0);
+                ?>
+                    <li>
+                        <a href="<?= htmlspecialchars((string) $fu['url']) ?>" target="_blank" rel="noopener"><?= htmlspecialchars((string) $fu['nombre']) ?></a>
+                        — <?= htmlspecialchars((string) $fu['detalle']) ?><?php if ($n > 0): ?>
+                            · <strong><?= number_format($n, 0, ',', '.') ?></strong> eventos<?php endif; ?>
+                    </li>
+                <?php endforeach; ?>
+                <li>
+                    <a href="<?= htmlspecialchars((string) $fenEnso['url']) ?>" target="_blank" rel="noopener">NOAA · Climate Prediction Center</a>
+                    — índice ONI, usado para clasificar la fase del ENSO de cada año.
+                </li>
+            </ul>
+            <p class="mb-0">
+                La asignación de cada evento a El Niño o a La Niña se hace por el <em>tipo</em> de evento
+                (los incendios, la sequía, el desabastecimiento y las heladas se asocian a condiciones secas;
+                las inundaciones, los movimientos en masa, los vendavales y las crecientes, al exceso de lluvia),
+                no por la fecha. Es una clasificación temática, no una atribución causal:
+                un incendio puede ocurrir en un año de La Niña.
+                <?php if (!empty($fenHist['generado'])): ?>
+                    Datos descargados el <?= htmlspecialchars((string) $fenHist['generado']) ?>.
+                <?php endif; ?>
+            </p>
         </div>
         <p class="small text-muted mt-3 mb-0">
             <i class="fa-solid fa-circle-info me-1" aria-hidden="true"></i>
