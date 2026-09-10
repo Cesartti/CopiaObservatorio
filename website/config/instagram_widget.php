@@ -37,13 +37,27 @@ return [
     'embed_html' => '',
 
     // OPCIÓN B (manual): URLs de las publicaciones, de la MÁS RECIENTE a la más
-    // antigua. Se muestran las primeras 5 en una fila horizontal. Para "rotar",
-    // agregue la nueva arriba y quite la última. (Sin auto-actualización: para eso
-    // use el widget de la Opción A.)
+    // antigua. El inicio muestra las primeras 4. Para rotar, agregue la nueva
+    // arriba. (Sin auto-actualización: para eso hace falta la Opción A o la API
+    // Graph de Meta, scripts/sync_instagram.php.)
+    //
+    // Revisión del perfil @secplaneacionboyaca del 10/09/2026: se recorrieron
+    // las publicaciones recientes y se dejaron las de la Red de Observatorios,
+    // sea por el hashtag #RedObservatoriosBoyacá o porque remiten al portal.
+    // El perfil público solo deja ver las últimas ~12 publicaciones sin iniciar
+    // sesión, así que la revisión abarcó ese tramo.
     'posts' => [
+        // 3 indicadores de calidad de vida de la juventud → remite al portal
+        'https://www.instagram.com/p/Dclk6Y2EVYi/',
+        // «5 datos que hacen grande a Boyacá» → #RedObservatoriosBoyacá
+        'https://www.instagram.com/p/DbzG517gHIX/',
+        // Embarazo adolescente 2025 → #RedObservatoriosBoyacá
         'https://www.instagram.com/p/DZN8z65IPai/',
+        // Observatorio de Asuntos de Género → #RedObservatoriosBoyacá
         'https://www.instagram.com/p/DYCrMhRRm-I/',
+        // Estudios y análisis del Observatorio de Género → #RedObservatoriosBoyacá
         'https://www.instagram.com/p/DYAPxmCEfCV/',
+        // Jornada Nacional de Vacunación → #RedObservatoriosBoyacá
         'https://www.instagram.com/p/DXr7MQpkdeI/',
     ],
 ];
