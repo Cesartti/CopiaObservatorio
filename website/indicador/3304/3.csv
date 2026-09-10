@@ -1,0 +1,717 @@
+geo,Municipio,Casos,Año
+15001,Tunja,1,2010
+15001,Tunja,1,2011
+15001,Tunja,3,2012
+15001,Tunja,22,2013
+15001,Tunja,5,2014
+15001,Tunja,4,2015
+15001,Tunja,31,2016
+15001,Tunja,16,2017
+15001,Tunja,7,2018
+15001,Tunja,4,2019
+15001,Tunja,3,2020
+15001,Tunja,4,2021
+15001,Tunja,6,2022
+15001,Tunja,3,2023
+15001,Tunja,2,2024
+15001,Tunja,2,2025
+15001,Tunja,1,2026
+15022,Almeida,1,2016
+15047,Aquitania,1,2010
+15047,Aquitania,1,2011
+15047,Aquitania,3,2012
+15047,Aquitania,1,2017
+15047,Aquitania,7,2018
+15047,Aquitania,1,2019
+15047,Aquitania,1,2020
+15051,Arcabuco,1,2012
+15051,Arcabuco,1,2016
+15051,Arcabuco,2,2017
+15051,Arcabuco,1,2018
+15051,Arcabuco,2,2020
+15051,Arcabuco,2,2021
+15051,Arcabuco,2,2022
+15051,Arcabuco,1,2026
+15087,Belén,3,2014
+15087,Belén,1,2017
+15087,Belén,3,2019
+15090,Berbeo,1,2010
+15090,Berbeo,1,2012
+15090,Berbeo,1,2021
+15090,Berbeo,1,2026
+15092,Betéitiva,1,2010
+15092,Betéitiva,4,2015
+15092,Betéitiva,1,2019
+15092,Betéitiva,2,2020
+15092,Betéitiva,2,2022
+15097,Boavita,1,2011
+15097,Boavita,7,2012
+15097,Boavita,2,2013
+15097,Boavita,3,2014
+15097,Boavita,3,2017
+15097,Boavita,2,2018
+15097,Boavita,2,2019
+15097,Boavita,3,2020
+15097,Boavita,2,2021
+15097,Boavita,7,2022
+15097,Boavita,2,2023
+15097,Boavita,1,2025
+15097,Boavita,1,2026
+15104,Boyacá,3,2015
+15104,Boyacá,1,2017
+15104,Boyacá,1,2022
+15106,Briceño,2,2011
+15106,Briceño,1,2024
+15109,Buenavista,1,2014
+15109,Buenavista,1,2015
+15109,Buenavista,2,2017
+15114,Busbanzá,1,2021
+15131,Caldas,1,2012
+15131,Caldas,2,2013
+15131,Caldas,1,2017
+15135,Campohermoso,2,2017
+15162,Cerinza,1,2015
+15162,Cerinza,1,2018
+15162,Cerinza,1,2019
+15172,Chinavita,1,2010
+15172,Chinavita,1,2012
+15172,Chinavita,1,2019
+15176,Chiquinquirá,3,2012
+15176,Chiquinquirá,2,2013
+15176,Chiquinquirá,3,2014
+15176,Chiquinquirá,1,2016
+15176,Chiquinquirá,4,2017
+15176,Chiquinquirá,1,2018
+15176,Chiquinquirá,3,2020
+15176,Chiquinquirá,1,2021
+15176,Chiquinquirá,6,2025
+15176,Chiquinquirá,3,2026
+15180,Chiscas,1,2012
+15180,Chiscas,1,2019
+15180,Chiscas,1,2024
+15183,Chita,1,2010
+15183,Chita,2,2019
+15183,Chita,1,2021
+15183,Chita,1,2023
+15185,Chitaraque,1,2018
+15185,Chitaraque,1,2026
+15187,Chivatá,2,2014
+15187,Chivatá,4,2015
+15187,Chivatá,7,2016
+15187,Chivatá,1,2020
+15187,Chivatá,1,2023
+15189,Ciénega,1,2013
+15189,Ciénega,5,2014
+15189,Ciénega,2,2015
+15189,Ciénega,1,2016
+15189,Ciénega,3,2018
+15204,Combita,2,2012
+15204,Combita,3,2013
+15204,Combita,4,2014
+15204,Combita,3,2015
+15204,Combita,3,2016
+15204,Combita,1,2017
+15204,Combita,3,2018
+15204,Combita,1,2019
+15204,Combita,1,2020
+15204,Combita,2,2021
+15204,Combita,1,2023
+15204,Combita,1,2024
+15204,Combita,1,2025
+15212,Coper,1,2010
+15212,Coper,2,2017
+15212,Coper,3,2018
+15212,Coper,1,2019
+15215,Corrales,1,2014
+15215,Corrales,1,2017
+15215,Corrales,4,2018
+15215,Corrales,1,2020
+15215,Corrales,1,2021
+15218,Covarachia,2,2018
+15218,Covarachia,1,2022
+15223,Cubará,1,2012
+15223,Cubará,3,2017
+15223,Cubará,2,2019
+15224,Cucaita,1,2012
+15224,Cucaita,2,2014
+15224,Cucaita,4,2015
+15224,Cucaita,2,2017
+15224,Cucaita,2,2019
+15224,Cucaita,3,2020
+15224,Cucaita,1,2021
+15226,Cuìtiva,1,2010
+15226,Cuìtiva,1,2016
+15226,Cuìtiva,4,2017
+15226,Cuìtiva,3,2018
+15226,Cuìtiva,2,2019
+15226,Cuìtiva,3,2020
+15226,Cuìtiva,1,2022
+15226,Cuìtiva,1,2025
+15232,Chíquiza,1,2011
+15232,Chíquiza,4,2015
+15232,Chíquiza,1,2018
+15232,Chíquiza,2,2019
+15236,Chivor,1,2013
+15236,Chivor,2,2014
+15236,Chivor,3,2015
+15236,Chivor,2,2016
+15236,Chivor,3,2017
+15236,Chivor,2,2018
+15236,Chivor,1,2019
+15236,Chivor,1,2020
+15236,Chivor,2,2022
+15236,Chivor,1,2024
+15236,Chivor,1,2025
+15238,Duitama,3,2010
+15238,Duitama,2,2011
+15238,Duitama,1,2012
+15238,Duitama,8,2013
+15238,Duitama,2,2014
+15238,Duitama,2,2015
+15238,Duitama,2,2016
+15238,Duitama,3,2017
+15238,Duitama,9,2018
+15238,Duitama,3,2019
+15238,Duitama,4,2020
+15238,Duitama,2,2021
+15238,Duitama,4,2022
+15238,Duitama,2,2023
+15238,Duitama,2,2024
+15238,Duitama,1,2026
+15244,El Cocuy,1,2012
+15244,El Cocuy,1,2013
+15244,El Cocuy,2,2016
+15244,El Cocuy,1,2017
+15244,El Cocuy,1,2018
+15244,El Cocuy,2,2019
+15244,El Cocuy,1,2023
+15272,Firavitoba,2,2013
+15272,Firavitoba,2,2016
+15272,Firavitoba,6,2018
+15272,Firavitoba,1,2019
+15272,Firavitoba,1,2020
+15272,Firavitoba,1,2022
+15276,Floresta,1,2017
+15276,Floresta,2,2019
+15276,Floresta,2,2023
+15293,Gachantivá,1,2014
+15293,Gachantivá,1,2015
+15293,Gachantivá,1,2018
+15293,Gachantivá,1,2022
+15296,Gameza,1,2010
+15296,Gameza,1,2014
+15296,Gameza,6,2016
+15296,Gameza,5,2017
+15296,Gameza,4,2018
+15296,Gameza,3,2020
+15296,Gameza,5,2022
+15296,Gameza,8,2023
+15296,Gameza,1,2024
+15299,Garagoa,2,2015
+15299,Garagoa,3,2016
+15299,Garagoa,2,2021
+15299,Garagoa,1,2022
+15299,Garagoa,2,2023
+15322,Guateque,1,2017
+15325,Guayatá,1,2017
+15325,Guayatá,1,2019
+15325,Guayatá,1,2022
+15332,Güicán,1,2012
+15332,Güicán,1,2015
+15362,Iza,1,2013
+15362,Iza,1,2015
+15362,Iza,6,2018
+15362,Iza,1,2019
+15362,Iza,7,2020
+15362,Iza,2,2021
+15362,Iza,1,2022
+15367,Jenesano,3,2013
+15367,Jenesano,7,2014
+15367,Jenesano,1,2015
+15367,Jenesano,2,2016
+15367,Jenesano,1,2017
+15367,Jenesano,1,2021
+15368,Jericó,2,2012
+15368,Jericó,17,2016
+15368,Jericó,7,2017
+15368,Jericó,3,2018
+15368,Jericó,4,2019
+15368,Jericó,5,2020
+15368,Jericó,3,2021
+15377,Labranza Grande,1,2016
+15377,Labranza Grande,1,2018
+15377,Labranza Grande,3,2021
+15403,La Uvita,3,2013
+15403,La Uvita,2,2014
+15403,La Uvita,1,2018
+15403,La Uvita,3,2019
+15403,La Uvita,2,2020
+15403,La Uvita,1,2022
+15407,Villa De Leyva,2,2010
+15407,Villa De Leyva,1,2013
+15407,Villa De Leyva,3,2015
+15407,Villa De Leyva,3,2016
+15407,Villa De Leyva,1,2017
+15407,Villa De Leyva,2,2018
+15407,Villa De Leyva,1,2020
+15407,Villa De Leyva,1,2022
+15407,Villa De Leyva,3,2025
+15407,Villa De Leyva,1,2026
+15425,Macanal,2,2012
+15425,Macanal,1,2019
+15425,Macanal,3,2020
+15442,Maripí,3,2014
+15442,Maripí,1,2016
+15442,Maripí,3,2018
+15442,Maripí,1,2020
+15442,Maripí,1,2021
+15442,Maripí,2,2022
+15442,Maripí,1,2026
+15455,Miraflores,9,2010
+15455,Miraflores,4,2011
+15455,Miraflores,3,2012
+15455,Miraflores,1,2013
+15455,Miraflores,1,2014
+15455,Miraflores,1,2016
+15455,Miraflores,1,2017
+15455,Miraflores,1,2020
+15464,Mongua,2,2012
+15464,Mongua,2,2015
+15464,Mongua,3,2017
+15464,Mongua,5,2018
+15464,Mongua,8,2020
+15464,Mongua,1,2022
+15464,Mongua,1,2023
+15466,Monguì,1,2011
+15466,Monguì,1,2016
+15466,Monguì,2,2017
+15466,Monguì,5,2018
+15466,Monguì,1,2019
+15466,Monguì,5,2020
+15466,Monguì,3,2022
+15466,Monguì,1,2025
+15466,Monguì,1,2026
+15469,Moniquira,2,2012
+15469,Moniquira,3,2013
+15469,Moniquira,7,2016
+15469,Moniquira,4,2017
+15469,Moniquira,4,2018
+15469,Moniquira,2,2020
+15469,Moniquira,1,2021
+15469,Moniquira,2,2022
+15476,Motavita,1,2015
+15476,Motavita,1,2017
+15476,Motavita,3,2018
+15480,Muzo,1,2011
+15480,Muzo,2,2015
+15480,Muzo,6,2016
+15480,Muzo,1,2017
+15480,Muzo,2,2018
+15480,Muzo,1,2020
+15480,Muzo,2,2021
+15480,Muzo,3,2023
+15480,Muzo,1,2024
+15480,Muzo,1,2025
+15491,Nobsa,4,2013
+15491,Nobsa,2,2015
+15491,Nobsa,1,2017
+15491,Nobsa,8,2018
+15491,Nobsa,1,2019
+15491,Nobsa,4,2020
+15494,Nuevo Colón,3,2015
+15494,Nuevo Colón,1,2017
+15500,Oicata,1,2013
+15500,Oicata,1,2016
+15500,Oicata,1,2020
+15500,Oicata,1,2022
+15507,Otanche,1,2010
+15507,Otanche,3,2011
+15507,Otanche,2,2012
+15507,Otanche,11,2013
+15507,Otanche,1,2014
+15507,Otanche,1,2015
+15507,Otanche,1,2016
+15507,Otanche,1,2017
+15507,Otanche,1,2018
+15507,Otanche,5,2019
+15507,Otanche,2,2020
+15507,Otanche,2,2021
+15507,Otanche,1,2022
+15507,Otanche,2,2023
+15507,Otanche,3,2024
+15507,Otanche,1,2026
+15511,Pachavita,1,2012
+15511,Pachavita,1,2013
+15511,Pachavita,1,2021
+15514,Páez,1,2012
+15514,Páez,1,2014
+15514,Páez,1,2015
+15514,Páez,1,2021
+15516,Paipa,3,2013
+15516,Paipa,1,2015
+15516,Paipa,2,2016
+15516,Paipa,4,2017
+15516,Paipa,11,2018
+15516,Paipa,6,2019
+15516,Paipa,5,2020
+15516,Paipa,6,2021
+15516,Paipa,3,2022
+15516,Paipa,12,2023
+15516,Paipa,4,2024
+15516,Paipa,1,2025
+15518,Pajarito,1,2016
+15518,Pajarito,2,2018
+15518,Pajarito,1,2019
+15518,Pajarito,1,2021
+15522,Panqueba,1,2018
+15531,Pauna,1,2011
+15531,Pauna,2,2012
+15531,Pauna,1,2014
+15531,Pauna,2,2015
+15531,Pauna,1,2017
+15531,Pauna,2,2018
+15531,Pauna,3,2019
+15531,Pauna,5,2020
+15531,Pauna,2,2025
+15533,Paya,2,2011
+15533,Paya,1,2016
+15537,Paz De Río,1,2017
+15537,Paz De Río,1,2018
+15537,Paz De Río,1,2020
+15542,Pesca,2,2013
+15542,Pesca,1,2016
+15542,Pesca,4,2017
+15542,Pesca,12,2018
+15542,Pesca,1,2019
+15542,Pesca,1,2020
+15542,Pesca,1,2021
+15542,Pesca,1,2022
+15550,Pisba,1,2017
+15550,Pisba,1,2021
+15572,Puerto Boyacá,4,2010
+15572,Puerto Boyacá,1,2011
+15572,Puerto Boyacá,16,2012
+15572,Puerto Boyacá,22,2013
+15572,Puerto Boyacá,13,2014
+15572,Puerto Boyacá,20,2015
+15572,Puerto Boyacá,13,2016
+15572,Puerto Boyacá,28,2017
+15572,Puerto Boyacá,15,2018
+15572,Puerto Boyacá,13,2019
+15572,Puerto Boyacá,26,2020
+15572,Puerto Boyacá,17,2021
+15572,Puerto Boyacá,8,2022
+15572,Puerto Boyacá,18,2023
+15572,Puerto Boyacá,7,2024
+15572,Puerto Boyacá,10,2025
+15572,Puerto Boyacá,3,2026
+15580,Quípama,1,2012
+15580,Quípama,3,2014
+15580,Quípama,1,2015
+15580,Quípama,2,2016
+15580,Quípama,2,2017
+15580,Quípama,2,2018
+15580,Quípama,3,2019
+15580,Quípama,3,2020
+15580,Quípama,2,2021
+15580,Quípama,2,2022
+15599,Ramiriquí,1,2011
+15599,Ramiriquí,1,2012
+15599,Ramiriquí,2,2013
+15599,Ramiriquí,3,2014
+15599,Ramiriquí,1,2015
+15599,Ramiriquí,1,2016
+15599,Ramiriquí,2,2018
+15599,Ramiriquí,2,2019
+15599,Ramiriquí,2,2022
+15600,Ráquira,2,2010
+15600,Ráquira,1,2012
+15600,Ráquira,6,2013
+15600,Ráquira,1,2014
+15600,Ráquira,1,2015
+15600,Ráquira,7,2016
+15600,Ráquira,1,2017
+15600,Ráquira,4,2018
+15600,Ráquira,2,2019
+15600,Ráquira,2,2020
+15600,Ráquira,1,2022
+15600,Ráquira,4,2023
+15600,Ráquira,3,2025
+15600,Ráquira,1,2026
+15621,Rondón,2,2016
+15621,Rondón,1,2017
+15632,Saboyá,1,2012
+15632,Saboyá,2,2013
+15632,Saboyá,2,2014
+15632,Saboyá,1,2015
+15632,Saboyá,3,2016
+15632,Saboyá,5,2017
+15632,Saboyá,7,2018
+15632,Saboyá,3,2019
+15632,Saboyá,1,2026
+15638,Sáchica,1,2012
+15638,Sáchica,1,2017
+15638,Sáchica,1,2018
+15638,Sáchica,1,2019
+15638,Sáchica,1,2020
+15646,Samacá,3,2010
+15646,Samacá,1,2011
+15646,Samacá,1,2012
+15646,Samacá,9,2013
+15646,Samacá,1,2014
+15646,Samacá,2,2015
+15646,Samacá,6,2016
+15646,Samacá,2,2017
+15646,Samacá,9,2018
+15646,Samacá,7,2019
+15646,Samacá,4,2020
+15646,Samacá,4,2021
+15646,Samacá,9,2022
+15646,Samacá,2,2023
+15646,Samacá,2,2024
+15646,Samacá,1,2025
+15660,San Eduardo,1,2010
+15660,San Eduardo,2,2014
+15660,San Eduardo,1,2019
+15660,San Eduardo,1,2025
+15664,San José De Pare,4,2017
+15664,San José De Pare,1,2019
+15664,San José De Pare,1,2021
+15667,San Luis De Gaceno,1,2016
+15667,San Luis De Gaceno,2,2017
+15667,San Luis De Gaceno,1,2020
+15673,San Mateo,1,2013
+15673,San Mateo,1,2014
+15673,San Mateo,2,2015
+15673,San Mateo,1,2017
+15673,San Mateo,1,2018
+15673,San Mateo,1,2019
+15673,San Mateo,2,2020
+15673,San Mateo,3,2021
+15676,San Miguel De Sema,1,2016
+15676,San Miguel De Sema,1,2017
+15676,San Miguel De Sema,1,2018
+15681,San Pablo De Borbur,2,2013
+15681,San Pablo De Borbur,1,2014
+15681,San Pablo De Borbur,1,2015
+15681,San Pablo De Borbur,2,2016
+15681,San Pablo De Borbur,8,2017
+15681,San Pablo De Borbur,2,2018
+15681,San Pablo De Borbur,1,2019
+15681,San Pablo De Borbur,4,2021
+15681,San Pablo De Borbur,2,2022
+15681,San Pablo De Borbur,7,2023
+15681,San Pablo De Borbur,44,2024
+15681,San Pablo De Borbur,1,2025
+15686,Santana,1,2015
+15686,Santana,2,2016
+15686,Santana,1,2025
+15686,Santana,1,2026
+15690,Santa María,2,2016
+15690,Santa María,2,2017
+15690,Santa María,2,2022
+15693,Santa Rosa De Viterbo,1,2010
+15693,Santa Rosa De Viterbo,1,2011
+15693,Santa Rosa De Viterbo,2,2015
+15693,Santa Rosa De Viterbo,1,2016
+15693,Santa Rosa De Viterbo,2,2018
+15693,Santa Rosa De Viterbo,1,2020
+15696,Santa Sofía,1,2017
+15696,Santa Sofía,1,2021
+15696,Santa Sofía,1,2025
+15720,Sativanorte,4,2019
+15720,Sativanorte,1,2020
+15720,Sativanorte,1,2023
+15723,Sativasur,1,2012
+15723,Sativasur,2,2016
+15723,Sativasur,4,2017
+15723,Sativasur,2,2018
+15723,Sativasur,2,2019
+15723,Sativasur,5,2020
+15723,Sativasur,1,2021
+15740,Siachoque,1,2014
+15740,Siachoque,1,2015
+15740,Siachoque,1,2018
+15753,Soatá,1,2011
+15753,Soatá,2,2013
+15753,Soatá,4,2014
+15753,Soatá,4,2015
+15753,Soatá,3,2016
+15753,Soatá,1,2019
+15753,Soatá,1,2023
+15755,Socotá,1,2010
+15755,Socotá,5,2011
+15755,Socotá,1,2013
+15755,Socotá,1,2016
+15755,Socotá,9,2017
+15755,Socotá,7,2018
+15755,Socotá,6,2019
+15755,Socotá,8,2020
+15755,Socotá,6,2021
+15755,Socotá,2,2022
+15755,Socotá,3,2023
+15755,Socotá,2,2026
+15757,Socha,1,2011
+15757,Socha,2,2012
+15757,Socha,2,2013
+15757,Socha,3,2014
+15757,Socha,4,2015
+15757,Socha,2,2016
+15757,Socha,4,2017
+15757,Socha,3,2018
+15757,Socha,2,2019
+15757,Socha,9,2020
+15757,Socha,5,2021
+15757,Socha,5,2022
+15757,Socha,16,2023
+15757,Socha,2,2026
+15759,Sogamoso,1,2010
+15759,Sogamoso,11,2013
+15759,Sogamoso,15,2014
+15759,Sogamoso,2,2015
+15759,Sogamoso,9,2016
+15759,Sogamoso,5,2017
+15759,Sogamoso,14,2018
+15759,Sogamoso,6,2019
+15759,Sogamoso,11,2020
+15759,Sogamoso,12,2021
+15759,Sogamoso,1,2022
+15759,Sogamoso,1,2023
+15759,Sogamoso,1,2025
+15759,Sogamoso,1,2026
+15761,Somondoco,1,2015
+15761,Somondoco,1,2018
+15762,Sora,1,2020
+15762,Sora,1,2021
+15763,Sotaquirá,1,2014
+15763,Sotaquirá,1,2016
+15763,Sotaquirá,3,2018
+15763,Sotaquirá,1,2019
+15763,Sotaquirá,7,2020
+15763,Sotaquirá,1,2021
+15763,Sotaquirá,1,2024
+15763,Sotaquirá,2,2025
+15764,Soracá,1,2010
+15764,Soracá,1,2013
+15764,Soracá,1,2016
+15764,Soracá,2,2017
+15764,Soracá,1,2024
+15774,Susacón,3,2013
+15774,Susacón,1,2014
+15774,Susacón,1,2015
+15776,Sutamarchàn,1,2016
+15776,Sutamarchàn,3,2017
+15778,Sutatenza,2,2018
+15778,Sutatenza,1,2021
+15790,Tasco,1,2011
+15790,Tasco,1,2013
+15790,Tasco,1,2016
+15790,Tasco,1,2017
+15790,Tasco,3,2018
+15790,Tasco,1,2019
+15790,Tasco,6,2020
+15790,Tasco,5,2021
+15790,Tasco,1,2022
+15790,Tasco,8,2023
+15790,Tasco,1,2025
+15798,Tenza,1,2014
+15804,Tibana,1,2012
+15804,Tibana,2,2013
+15804,Tibana,1,2014
+15804,Tibana,1,2015
+15804,Tibana,1,2017
+15804,Tibana,2,2018
+15804,Tibana,2,2021
+15804,Tibana,1,2022
+15806,Tibasosa,1,2012
+15806,Tibasosa,1,2014
+15806,Tibasosa,4,2015
+15806,Tibasosa,2,2016
+15806,Tibasosa,3,2018
+15806,Tibasosa,1,2020
+15808,Tinjacá,1,2011
+15808,Tinjacá,1,2012
+15808,Tinjacá,1,2013
+15808,Tinjacá,1,2015
+15808,Tinjacá,1,2016
+15808,Tinjacá,1,2017
+15808,Tinjacá,2,2021
+15810,Tipacoque,1,2012
+15810,Tipacoque,1,2014
+15810,Tipacoque,1,2015
+15810,Tipacoque,2,2016
+15814,Toca,2,2011
+15814,Toca,1,2012
+15814,Toca,3,2018
+15814,Toca,1,2019
+15814,Toca,1,2022
+15814,Toca,1,2024
+15816,Togüí,1,2011
+15816,Togüí,1,2012
+15816,Togüí,4,2016
+15816,Togüí,1,2019
+15820,Tópaga,1,2010
+15820,Tópaga,1,2013
+15820,Tópaga,1,2014
+15820,Tópaga,3,2016
+15820,Tópaga,1,2017
+15820,Tópaga,6,2018
+15820,Tópaga,6,2019
+15820,Tópaga,12,2020
+15820,Tópaga,12,2021
+15820,Tópaga,5,2022
+15820,Tópaga,1,2025
+15822,Tota,1,2014
+15822,Tota,1,2015
+15822,Tota,1,2016
+15822,Tota,4,2018
+15822,Tota,3,2019
+15822,Tota,3,2020
+15822,Tota,2,2021
+15822,Tota,1,2022
+15822,Tota,2,2023
+15832,Tununguá,1,2018
+15832,Tununguá,1,2025
+15835,Turmequé,1,2014
+15835,Turmequé,1,2018
+15837,Tuta,1,2013
+15837,Tuta,1,2014
+15837,Tuta,1,2016
+15837,Tuta,1,2018
+15837,Tuta,1,2019
+15837,Tuta,3,2020
+15837,Tuta,3,2021
+15837,Tuta,3,2023
+15839,Tutazá,1,2020
+15839,Tutazá,1,2021
+15842,Umbita,1,2012
+15842,Umbita,7,2013
+15842,Umbita,8,2014
+15842,Umbita,1,2017
+15842,Umbita,2,2018
+15842,Umbita,1,2022
+15861,Ventaquemada,1,2013
+15861,Ventaquemada,5,2014
+15861,Ventaquemada,8,2015
+15861,Ventaquemada,6,2016
+15861,Ventaquemada,5,2017
+15861,Ventaquemada,1,2018
+15861,Ventaquemada,8,2019
+15861,Ventaquemada,7,2020
+15861,Ventaquemada,1,2021
+15861,Ventaquemada,2,2022
+15861,Ventaquemada,1,2023
+15861,Ventaquemada,1,2024
+15861,Ventaquemada,1,2025
+15879,Viracachá,1,2014
+15879,Viracachá,1,2017
+15879,Viracachá,3,2018
+15879,Viracachá,1,2019
+15879,Viracachá,1,2020
+15897,Zetaquirá,3,2010
+15897,Zetaquirá,1,2012
+15897,Zetaquirá,2,2015
+15897,Zetaquirá,5,2016
+15897,Zetaquirá,2,2017
+15897,Zetaquirá,1,2018
+15897,Zetaquirá,1,2022

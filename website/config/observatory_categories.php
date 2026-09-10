@@ -91,7 +91,7 @@ return [
             'fuentes' => ['Secretaría de Turismo de Boyacá — SITUR'],
             'periodicidad' => 'Mensual',
         ],
-        'Variables Macroecónomicas' => [
+        'Variables macroeconómicas' => [
             'intro' => 'Indicadores macroeconómicos territoriales como Producto Interno Bruto y el Índice Departamental de Competitividad (IDC).',
             'consulta' => [
                 'PIB departamental a precios corrientes y constantes',
@@ -152,6 +152,68 @@ return [
             'consulta' => ['Atenciones médicas por tipo de violencia', 'Intentos de suicidio', 'Víctimas del conflicto armado', 'Feminicidios', 'Violencias y muertes — Medicina Legal', 'Convivencia escolar'],
             'fuentes' => ['Medicina Legal — Forensis', 'UARIV', 'Policía Nacional', 'Sistema de Convivencia Escolar (SIUCE)'],
             'periodicidad' => 'Mensual / Anual',
+        ],
+    ],
+
+    'ambiente' => [
+        'Ecosistemas estratégicos y biodiversidad' => [
+            'intro' => 'Delimitación y estado de los ecosistemas que sostienen la oferta hídrica y la biodiversidad del departamento: páramos, humedales, bosques, rondas hídricas, acuíferos y áreas forestales.',
+            'consulta' => [
+                'Área de páramos por municipio y complejo de páramos',
+                'Área de humedales y de rondas hídricas acotadas',
+                'Área de acuíferos (sistema acuífero de Tunja)',
+                'Cobertura de bosque estable y su participación en el área municipal',
+                'Áreas forestales de protección y de producción',
+            ],
+            'fuentes' => ['CORPOBOYACÁ — Sistema de Información Geográfica', 'Secretaría de Ambiente y Desarrollo Sostenible'],
+            'periodicidad' => 'Anual',
+        ],
+        'Recurso hídrico y saneamiento ambiental' => [
+            'intro' => 'Acceso, calidad y continuidad del agua para consumo humano, saneamiento de aguas residuales y trámites de uso del recurso hídrico en el departamento.',
+            'consulta' => [
+                'Cobertura de acueducto y alcantarillado (urbana y rural)',
+                'Continuidad del servicio de acueducto (horas/día)',
+                'Índice de Riesgo de la Calidad del Agua (IRCA) urbano y rural nucleado',
+                'Municipios con sistema de tratamiento de aguas residuales y vinculados al PDA',
+                'Acueductos rurales, concesiones de agua y permisos de vertimiento',
+            ],
+            'fuentes' => ['Ministerio de Vivienda, Ciudad y Territorio — Monitoreo SGP-APSB', 'CORPOBOYACÁ', 'Empresa de Servicios Públicos de Boyacá', 'Secretaría de Ambiente y Desarrollo Sostenible'],
+            'periodicidad' => 'Anual',
+        ],
+        'Gobernanza, control y gestión ambiental' => [
+            'intro' => 'Autoridad ambiental, control al uso de los recursos naturales, atención de emergencias y procesos de educación y cultura ambiental.',
+            'consulta' => [
+                'Permisos de aprovechamiento forestal, licencias ambientales y registro de plantaciones',
+                'Delitos contra los recursos naturales y el medio ambiente',
+                'Emergencias ambientales atendidas y hectáreas afectadas por incendios',
+                'Campañas de recolección de envases de agroquímicos (posconsumo)',
+                'PRAES, PROCEDAS y CIDEAS acompañados',
+            ],
+            'fuentes' => ['CORPOBOYACÁ', 'Policía Nacional — SIEDCO', 'UNGRD', 'Secretaría de Ambiente y Desarrollo Sostenible'],
+            'periodicidad' => 'Anual',
+        ],
+        'Salud ambiental' => [
+            'intro' => 'Eventos de interés en salud pública asociados a la interacción entre las personas, los animales y el ambiente, notificados al SIVIGILA.',
+            'consulta' => [
+                'Agresiones por animales potencialmente transmisores de rabia',
+                'Accidente ofídico (mordedura de serpiente)',
+                'Accidentes por otros animales venenosos',
+                'Desagregación por sexo, ciclo de vida, provincia y municipio de ocurrencia',
+            ],
+            'fuentes' => ['Instituto Nacional de Salud — SIVIGILA', 'Secretaría de Salud de Boyacá'],
+            'periodicidad' => 'Semanal / Anual',
+        ],
+        'Calidad ambiental y servicios públicos' => [
+            'intro' => 'Calidad del aire, manejo de residuos sólidos y cobertura de los servicios públicos domiciliarios asociados al desempeño ambiental del territorio.',
+            'consulta' => [
+                'Calidad del aire: PM10, PM2.5, SO₂, NO₂, CO y ozono por estación de monitoreo',
+                'Disposición final de residuos sólidos (toneladas/día y tipo de sitio)',
+                'Cobertura del servicio de aseo y municipios prestadores directos',
+                'Índice de Cobertura de Energía Eléctrica (ICEE) y viviendas sin servicio',
+                'Prácticas de ahorro de energía y agua en edificaciones',
+            ],
+            'fuentes' => ['CORPOBOYACÁ — Red de monitoreo de calidad del aire', 'Ministerio de Vivienda, Ciudad y Territorio', 'UPME — SIMEC', 'DANE — Economía circular'],
+            'periodicidad' => 'Anual',
         ],
     ],
 

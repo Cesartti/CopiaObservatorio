@@ -67,7 +67,7 @@ include 'include/header.php';
         <div class="tab-pane fade show active ambiental-pane" id="tablero">
             <iframe 
                 class="iframe-full"
-                src="#"
+                src="https://app.powerbi.com/view?r=eyJrIjoiNmEyMDcxMTMtZjg4ZC00NGZjLTlkMjMtMjUyYzgxMjE2YTNhIiwidCI6IjYyMDEwNGUyLTEzOTAtNDNjNS1iYTQ1LTg1ZDE4ODNjYzQ4OCJ9"
                 allowfullscreen>
             </iframe>
         </div>
@@ -80,45 +80,57 @@ include 'include/header.php';
             <select id="indicatorSelect" class="form-select mb-3" onchange="showIndicatorInfo()">
                 <option value="">Seleccione un indicador</option>
 
-                <option value="3002">Servicio de acueducto urbano</option>
-                <option value="3003">Sistema de alcantarillado zona urbana</option>
-                <option value="3004">Aseo en la zona urbana</option>
-                <option value="3001">Edificaciones con ahorro energético</option>
-                <option value="3008">Tratamiento de aguas residuales urbano</option>
-                <option value="3005">Continuidad del servicio de acueducto (horas)</option>
-                <option value="3007">Continuidad del servicio (días por semana)</option>
-                <option value="3006">Índice de riesgo de calidad del agua</option>
-                <option value="3017">Calidad del aire PM10 Nobsa</option>
-                <option value="3018">Calidad del aire PM2.5 Nobsa</option>
-                <option value="3019">SO2 Nobsa</option>
-                <option value="3020">Ozono O3 Nobsa</option>
-                <option value="3021">PM10 Nazareth</option>
-                <option value="3022">PM2.5 Nazareth</option>
-                <option value="3023">SO2 Nazareth</option>
-                <option value="3024">O3 Nazareth</option>
-                <option value="3025">PM10 Paipa</option>
-                <option value="3026">SO2 Paipa</option>
-                <option value="3027">PM10 Ráquira</option>
-                <option value="3028">PM2.5 Ráquira</option>
-                <option value="3029">PM10 urbano Ráquira</option>
-                <option value="3030">PM2.5 urbano Ráquira</option>
-                <option value="3031">SO2 urbano Ráquira</option>
-                <option value="3032">PM10 Sogamoso Koika</option>
-                <option value="3033">PM2.5 Sogamoso Koika</option>
-                <option value="3034">SO2 Sogamoso Koika</option>
-                <option value="3035">O3 Sogamoso Koika</option>
-                <option value="3036">NO2 Sogamoso Koika</option>
-                <option value="3037">CO Sogamoso Koika</option>
-                <option value="3038">PM10 Sogamoso Recreo</option>
-                <option value="3039">PM2.5 Sogamoso Recreo</option>
-                <option value="3040">SO2 Sogamoso Recreo</option>
-                <option value="3041">O3 Sogamoso Recreo</option>
-                <option value="3042">NO2 Sogamoso Recreo</option>
-                <option value="3043">CO Sogamoso Recreo</option>
-                <option value="3044">PM10 Sogamoso SENA</option>
-                <option value="3045">SO2 Sogamoso SENA</option>
-                <option value="3046">O3 Sogamoso SENA</option>
-                <option value="3047">PM10 UPTC</option>
+                <optgroup label="Ecosistemas estratégicos y biodiversidad">
+                    <option value="3101">Área de humedales por municipio</option>
+                    <option value="3102">Área de acuíferos (sistema acuífero de Tunja) por municipio</option>
+                    <option value="3103">Área de rondas hídricas acotadas por municipio</option>
+                    <option value="3104">Área de páramos por municipio y complejo de páramos</option>
+                    <option value="3105">Cobertura de bosque estable por municipio</option>
+                    <option value="3106">Áreas forestales de protección y producción por municipio</option>
+                </optgroup>
+                <optgroup label="Recurso hídrico y saneamiento ambiental">
+                    <option value="3201">Cobertura del servicio de acueducto en zona urbana</option>
+                    <option value="3202">Cobertura del servicio de acueducto en zona rural</option>
+                    <option value="3203">Cobertura del servicio de alcantarillado en zona urbana</option>
+                    <option value="3204">Cobertura del servicio de alcantarillado en zona rural</option>
+                    <option value="3205">Continuidad del servicio de acueducto (horas/día)</option>
+                    <option value="3206">Municipios con sistema de tratamiento de aguas residuales (STAR) reportado</option>
+                    <option value="3207">Acueductos rurales y suscriptores por municipio</option>
+                    <option value="3208">Índice de Riesgo de la Calidad del Agua (IRCA) – zona urbana</option>
+                    <option value="3209">Índice de Riesgo de la Calidad del Agua (IRCA) – zona rural nucleada</option>
+                    <option value="3210">Municipios vinculados al Plan Departamental de Aguas (PDA)</option>
+                    <option value="3211">Concesiones de aguas superficiales (expedientes CORPOBOYACÁ)</option>
+                    <option value="3212">Concesiones de aguas subterráneas (expedientes CORPOBOYACÁ)</option>
+                    <option value="3213">Permisos de vertimientos (expedientes CORPOBOYACÁ)</option>
+                </optgroup>
+                <optgroup label="Gobernanza, control y gestión ambiental">
+                    <option value="3301">Permisos de aprovechamiento forestal (expedientes CORPOBOYACÁ)</option>
+                    <option value="3302">Licencias ambientales (expedientes CORPOBOYACÁ)</option>
+                    <option value="3303">Registro de plantaciones forestales protectoras-productoras</option>
+                    <option value="3304">Delitos contra los recursos naturales y el medio ambiente</option>
+                    <option value="3305">Emergencias ambientales y de origen natural atendidas</option>
+                    <option value="3306">Campañas de recolección de envases de agroquímicos (posconsumo)</option>
+                    <option value="3307">Educación ambiental: PRAES, PROCEDAS y CIDEAS acompañados</option>
+                </optgroup>
+                <optgroup label="Salud ambiental">
+                    <option value="3401">Agresiones por animales potencialmente transmisores de rabia</option>
+                    <option value="3402">Accidente ofídico (mordedura de serpiente)</option>
+                    <option value="3403">Accidentes por otros animales venenosos</option>
+                </optgroup>
+                <optgroup label="Calidad ambiental y servicios públicos">
+                    <option value="3501">Cobertura del servicio de aseo en zona urbana</option>
+                    <option value="3502">Municipios prestadores directos de acueducto, alcantarillado y aseo</option>
+                    <option value="3503">Disposición final de residuos sólidos (toneladas/día y tipo de sitio)</option>
+                    <option value="3504">Índice de Cobertura de Energía Eléctrica (ICEE)</option>
+                    <option value="3505">Viviendas con y sin servicio de energía eléctrica</option>
+                    <option value="3506">Calidad del aire: Material particulado PM10 por estación de monitoreo</option>
+                    <option value="3507">Calidad del aire: Material particulado PM2.5 por estación de monitoreo</option>
+                    <option value="3508">Calidad del aire: Dióxido de azufre (SO₂) por estación de monitoreo</option>
+                    <option value="3509">Calidad del aire: Dióxido de nitrógeno (NO₂) por estación de monitoreo</option>
+                    <option value="3510">Calidad del aire: Monóxido de carbono (CO) por estación de monitoreo</option>
+                    <option value="3511">Calidad del aire: Ozono troposférico (O₃) por estación de monitoreo</option>
+                    <option value="3512">Prácticas de ahorro de energía y agua en edificaciones culminadas</option>
+                </optgroup>
             </select>
 
             <div id="indicatorInfo" class="hv-data-box">
@@ -130,54 +142,107 @@ include 'include/header.php';
         <!-- ================= TAB 3 — CATEGORÍAS ================= -->
         <div class="tab-pane fade ambiental-pane" id="categorias">
 
-            <h2 class="cat-title">Categorías Ambientales</h2>
+            <h2 class="cat-title">Categorías del Observatorio Ambiental</h2>
 
             <!-- ACORDEÓN -->
             <div class="accordion-container">
 
-                <!-- 1. Servicios Públicos -->
-                <button class="accordion-button" onclick="toggleAccordion(this)">Servicios Públicos</button>
+                <button class="accordion-button" onclick="toggleAccordion(this)">Ecosistemas estratégicos y biodiversidad</button>
+                <div class="accordion-content">
+                    <ul class="icon-list-items">
+                        <li class="indicador-subtitle">Humedales</li>
+                        <li><a href="./indicador.php?id=3101">Área de humedales por municipio</a></li>
+                        <li class="indicador-subtitle">Acuíferos</li>
+                        <li><a href="./indicador.php?id=3102">Área de acuíferos (sistema acuífero de Tunja) por municipio</a></li>
+                        <li class="indicador-subtitle">Rondas hídricas</li>
+                        <li><a href="./indicador.php?id=3103">Área de rondas hídricas acotadas por municipio</a></li>
+                        <li class="indicador-subtitle">Páramos</li>
+                        <li><a href="./indicador.php?id=3104">Área de páramos por municipio y complejo de páramos</a></li>
+                        <li class="indicador-subtitle">Bosques</li>
+                        <li><a href="./indicador.php?id=3105">Cobertura de bosque estable por municipio</a></li>
+                        <li class="indicador-subtitle">Áreas forestales</li>
+                        <li><a href="./indicador.php?id=3106">Áreas forestales de protección y producción por municipio</a></li>
+                    </ul>
+                </div>
+                <button class="accordion-button" onclick="toggleAccordion(this)">Recurso hídrico y saneamiento ambiental</button>
                 <div class="accordion-content">
                     <ul class="icon-list-items">
                         <li class="indicador-subtitle">Acueducto</li>
-                        <li><a href="./indicador.php?id=3002">Servicio de acueducto urbano</a></li>
-
+                        <li><a href="./indicador.php?id=3201">Cobertura del servicio de acueducto en zona urbana</a></li>
+                        <li><a href="./indicador.php?id=3202">Cobertura del servicio de acueducto en zona rural</a></li>
                         <li class="indicador-subtitle">Alcantarillado</li>
-                        <li><a href="./indicador.php?id=3003">Sistema de alcantarillado urbano</a></li>
-
+                        <li><a href="./indicador.php?id=3203">Cobertura del servicio de alcantarillado en zona urbana</a></li>
+                        <li><a href="./indicador.php?id=3204">Cobertura del servicio de alcantarillado en zona rural</a></li>
+                        <li class="indicador-subtitle">Acueducto</li>
+                        <li><a href="./indicador.php?id=3205">Continuidad del servicio de acueducto (horas/día)</a></li>
+                        <li class="indicador-subtitle">Saneamiento</li>
+                        <li><a href="./indicador.php?id=3206">Municipios con sistema de tratamiento de aguas residuales (STAR) reportado</a></li>
+                        <li class="indicador-subtitle">Acueductos rurales</li>
+                        <li><a href="./indicador.php?id=3207">Acueductos rurales y suscriptores por municipio</a></li>
+                        <li class="indicador-subtitle">Calidad del agua</li>
+                        <li><a href="./indicador.php?id=3208">Índice de Riesgo de la Calidad del Agua (IRCA) – zona urbana</a></li>
+                        <li><a href="./indicador.php?id=3209">Índice de Riesgo de la Calidad del Agua (IRCA) – zona rural nucleada</a></li>
+                        <li class="indicador-subtitle">Plan Departamental de Aguas</li>
+                        <li><a href="./indicador.php?id=3210">Municipios vinculados al Plan Departamental de Aguas (PDA)</a></li>
+                        <li class="indicador-subtitle">Concesiones de agua</li>
+                        <li><a href="./indicador.php?id=3211">Concesiones de aguas superficiales (expedientes CORPOBOYACÁ)</a></li>
+                        <li><a href="./indicador.php?id=3212">Concesiones de aguas subterráneas (expedientes CORPOBOYACÁ)</a></li>
+                        <li class="indicador-subtitle">Vertimientos</li>
+                        <li><a href="./indicador.php?id=3213">Permisos de vertimientos (expedientes CORPOBOYACÁ)</a></li>
+                    </ul>
+                </div>
+                <button class="accordion-button" onclick="toggleAccordion(this)">Gobernanza, control y gestión ambiental</button>
+                <div class="accordion-content">
+                    <ul class="icon-list-items">
+                        <li class="indicador-subtitle">Control forestal</li>
+                        <li><a href="./indicador.php?id=3301">Permisos de aprovechamiento forestal (expedientes CORPOBOYACÁ)</a></li>
+                        <li class="indicador-subtitle">Licenciamiento</li>
+                        <li><a href="./indicador.php?id=3302">Licencias ambientales (expedientes CORPOBOYACÁ)</a></li>
+                        <li class="indicador-subtitle">Control forestal</li>
+                        <li><a href="./indicador.php?id=3303">Registro de plantaciones forestales protectoras-productoras</a></li>
+                        <li class="indicador-subtitle">Delitos ambientales</li>
+                        <li><a href="./indicador.php?id=3304">Delitos contra los recursos naturales y el medio ambiente</a></li>
+                        <li class="indicador-subtitle">Gestión del riesgo</li>
+                        <li><a href="./indicador.php?id=3305">Emergencias ambientales y de origen natural atendidas</a></li>
+                        <li class="indicador-subtitle">Residuos posconsumo</li>
+                        <li><a href="./indicador.php?id=3306">Campañas de recolección de envases de agroquímicos (posconsumo)</a></li>
+                        <li class="indicador-subtitle">Educación ambiental</li>
+                        <li><a href="./indicador.php?id=3307">Educación ambiental: PRAES, PROCEDAS y CIDEAS acompañados</a></li>
+                    </ul>
+                </div>
+                <button class="accordion-button" onclick="toggleAccordion(this)">Salud ambiental</button>
+                <div class="accordion-content">
+                    <ul class="icon-list-items">
+                        <li class="indicador-subtitle">Zoonosis</li>
+                        <li><a href="./indicador.php?id=3401">Agresiones por animales potencialmente transmisores de rabia</a></li>
+                        <li><a href="./indicador.php?id=3402">Accidente ofídico (mordedura de serpiente)</a></li>
+                        <li><a href="./indicador.php?id=3403">Accidentes por otros animales venenosos</a></li>
+                    </ul>
+                </div>
+                <button class="accordion-button" onclick="toggleAccordion(this)">Calidad ambiental y servicios públicos</button>
+                <div class="accordion-content">
+                    <ul class="icon-list-items">
                         <li class="indicador-subtitle">Aseo</li>
-                        <li><a href="./indicador.php?id=3004">Aseo en la zona urbana</a></li>
+                        <li><a href="./indicador.php?id=3501">Cobertura del servicio de aseo en zona urbana</a></li>
+                        <li class="indicador-subtitle">Prestación de servicios</li>
+                        <li><a href="./indicador.php?id=3502">Municipios prestadores directos de acueducto, alcantarillado y aseo</a></li>
+                        <li class="indicador-subtitle">Residuos sólidos</li>
+                        <li><a href="./indicador.php?id=3503">Disposición final de residuos sólidos (toneladas/día y tipo de sitio)</a></li>
+                        <li class="indicador-subtitle">Energía eléctrica</li>
+                        <li><a href="./indicador.php?id=3504">Índice de Cobertura de Energía Eléctrica (ICEE)</a></li>
+                        <li><a href="./indicador.php?id=3505">Viviendas con y sin servicio de energía eléctrica</a></li>
+                        <li class="indicador-subtitle">Calidad del aire</li>
+                        <li><a href="./indicador.php?id=3506">Calidad del aire: Material particulado PM10 por estación de monitoreo</a></li>
+                        <li><a href="./indicador.php?id=3507">Calidad del aire: Material particulado PM2.5 por estación de monitoreo</a></li>
+                        <li><a href="./indicador.php?id=3508">Calidad del aire: Dióxido de azufre (SO₂) por estación de monitoreo</a></li>
+                        <li><a href="./indicador.php?id=3509">Calidad del aire: Dióxido de nitrógeno (NO₂) por estación de monitoreo</a></li>
+                        <li><a href="./indicador.php?id=3510">Calidad del aire: Monóxido de carbono (CO) por estación de monitoreo</a></li>
+                        <li><a href="./indicador.php?id=3511">Calidad del aire: Ozono troposférico (O₃) por estación de monitoreo</a></li>
+                        <li class="indicador-subtitle">Economía circular</li>
+                        <li><a href="./indicador.php?id=3512">Prácticas de ahorro de energía y agua en edificaciones culminadas</a></li>
                     </ul>
                 </div>
-
-                <!-- 2. Recursos Naturales -->
-                <button class="accordion-button" onclick="toggleAccordion(this)">Recursos Naturales</button>
-                <div class="accordion-content">
-                    <ul class="icon-list-items">
-                        <li class="indicador-subtitle">Agua</li>
-                        <li><a href="./indicador.php?id=3005">Continuidad del servicio (horas)</a></li>
-                        <li><a href="./indicador.php?id=3007">Continuidad del servicio (días)</a></li>
-                        <li><a href="./indicador.php?id=3006">Índice de riesgo del agua</a></li>
-
-                        <li class="indicador-subtitle">Aire</li>
-                        <li><a href="./indicador.php?id=3017">PM10 Nobsa</a></li>
-                        <li><a href="./indicador.php?id=3018">PM2.5 Nobsa</a></li>
-                        <li><a href="./indicador.php?id=3019">SO2 Nobsa</a></li>
-                        <li><a href="./indicador.php?id=3020">O3 Nobsa</a></li>
-                        <li><a href="./indicador.php?id=3047">PM10 UPTC</a></li>
-                    </ul>
-                </div>
-
-                <!-- 3. Categoría Especial -->
-                <button class="accordion-button" onclick="toggleAccordion(this)">Categoría Especial</button>
-                <div class="accordion-content">
-                    <ul class="icon-list-items">
-                        <li><a href="./indicador.php?id=3002">Servicio de acueducto urbano</a></li>
-                        <li><a href="./indicador.php?id=3003">Sistema de alcantarillado</a></li>
-                        <li><a href="./indicador.php?id=3004">Aseo urbano</a></li>
-                        <li><a href="./indicador.php?id=3005">Continuidad del servicio (horas)</a></li>
-                    </ul>
-                </div>
+            
             </div>
 
         </div>
@@ -191,17 +256,194 @@ include 'include/header.php';
             <div class="datalake-list">
 
                 <div class="datalake-block mb-3">
-                    <h4>Servicios Públicos</h4>
+                    <h4>Ecosistemas estratégicos y biodiversidad</h4>
                     <ul class="datalake-ul">
                         <li class="datalake-item">
-                            <span>Servicio de acueducto urbano</span>
-                            <a href="datalake/ambiental/3002.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                            <span>Área de humedales por municipio</span>
+                            <a href="indicador/3101/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
                         </li>
                         <li class="datalake-item">
-                            <span>Sistema de alcantarillado urbano</span>
-                            <a href="datalake/ambiental/3003.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                            <span>Área de acuíferos (sistema acuífero de Tunja) por municipio</span>
+                            <a href="indicador/3102/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                        </li>
+                        <li class="datalake-item">
+                            <span>Área de rondas hídricas acotadas por municipio</span>
+                            <a href="indicador/3103/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                        </li>
+                        <li class="datalake-item">
+                            <span>Área de páramos por municipio y complejo de páramos</span>
+                            <a href="indicador/3104/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                        </li>
+                        <li class="datalake-item">
+                            <span>Cobertura de bosque estable por municipio</span>
+                            <a href="indicador/3105/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                        </li>
+                        <li class="datalake-item">
+                            <span>Áreas forestales de protección y producción por municipio</span>
+                            <a href="indicador/3106/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
                         </li>
                     </ul>
+                </div>
+                <div class="datalake-block mb-3">
+                    <h4>Recurso hídrico y saneamiento ambiental</h4>
+                    <ul class="datalake-ul">
+                        <li class="datalake-item">
+                            <span>Cobertura del servicio de acueducto en zona urbana</span>
+                            <a href="indicador/3201/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                        </li>
+                        <li class="datalake-item">
+                            <span>Cobertura del servicio de acueducto en zona rural</span>
+                            <a href="indicador/3202/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                        </li>
+                        <li class="datalake-item">
+                            <span>Cobertura del servicio de alcantarillado en zona urbana</span>
+                            <a href="indicador/3203/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                        </li>
+                        <li class="datalake-item">
+                            <span>Cobertura del servicio de alcantarillado en zona rural</span>
+                            <a href="indicador/3204/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                        </li>
+                        <li class="datalake-item">
+                            <span>Continuidad del servicio de acueducto (horas/día)</span>
+                            <a href="indicador/3205/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                        </li>
+                        <li class="datalake-item">
+                            <span>Municipios con sistema de tratamiento de aguas residuales (STAR) reportado</span>
+                            <a href="indicador/3206/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                        </li>
+                        <li class="datalake-item">
+                            <span>Acueductos rurales y suscriptores por municipio</span>
+                            <a href="indicador/3207/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                        </li>
+                        <li class="datalake-item">
+                            <span>Índice de Riesgo de la Calidad del Agua (IRCA) – zona urbana</span>
+                            <a href="indicador/3208/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                        </li>
+                        <li class="datalake-item">
+                            <span>Índice de Riesgo de la Calidad del Agua (IRCA) – zona rural nucleada</span>
+                            <a href="indicador/3209/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                        </li>
+                        <li class="datalake-item">
+                            <span>Municipios vinculados al Plan Departamental de Aguas (PDA)</span>
+                            <a href="indicador/3210/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                        </li>
+                        <li class="datalake-item">
+                            <span>Concesiones de aguas superficiales (expedientes CORPOBOYACÁ)</span>
+                            <a href="indicador/3211/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                        </li>
+                        <li class="datalake-item">
+                            <span>Concesiones de aguas subterráneas (expedientes CORPOBOYACÁ)</span>
+                            <a href="indicador/3212/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                        </li>
+                        <li class="datalake-item">
+                            <span>Permisos de vertimientos (expedientes CORPOBOYACÁ)</span>
+                            <a href="indicador/3213/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="datalake-block mb-3">
+                    <h4>Gobernanza, control y gestión ambiental</h4>
+                    <ul class="datalake-ul">
+                        <li class="datalake-item">
+                            <span>Permisos de aprovechamiento forestal (expedientes CORPOBOYACÁ)</span>
+                            <a href="indicador/3301/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                        </li>
+                        <li class="datalake-item">
+                            <span>Licencias ambientales (expedientes CORPOBOYACÁ)</span>
+                            <a href="indicador/3302/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                        </li>
+                        <li class="datalake-item">
+                            <span>Registro de plantaciones forestales protectoras-productoras</span>
+                            <a href="indicador/3303/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                        </li>
+                        <li class="datalake-item">
+                            <span>Delitos contra los recursos naturales y el medio ambiente</span>
+                            <a href="indicador/3304/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                        </li>
+                        <li class="datalake-item">
+                            <span>Emergencias ambientales y de origen natural atendidas</span>
+                            <a href="indicador/3305/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                        </li>
+                        <li class="datalake-item">
+                            <span>Campañas de recolección de envases de agroquímicos (posconsumo)</span>
+                            <a href="indicador/3306/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                        </li>
+                        <li class="datalake-item">
+                            <span>Educación ambiental: PRAES, PROCEDAS y CIDEAS acompañados</span>
+                            <a href="indicador/3307/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="datalake-block mb-3">
+                    <h4>Salud ambiental</h4>
+                    <ul class="datalake-ul">
+                        <li class="datalake-item">
+                            <span>Agresiones por animales potencialmente transmisores de rabia</span>
+                            <a href="indicador/3401/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                        </li>
+                        <li class="datalake-item">
+                            <span>Accidente ofídico (mordedura de serpiente)</span>
+                            <a href="indicador/3402/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                        </li>
+                        <li class="datalake-item">
+                            <span>Accidentes por otros animales venenosos</span>
+                            <a href="indicador/3403/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="datalake-block mb-3">
+                    <h4>Calidad ambiental y servicios públicos</h4>
+                    <ul class="datalake-ul">
+                        <li class="datalake-item">
+                            <span>Cobertura del servicio de aseo en zona urbana</span>
+                            <a href="indicador/3501/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                        </li>
+                        <li class="datalake-item">
+                            <span>Municipios prestadores directos de acueducto, alcantarillado y aseo</span>
+                            <a href="indicador/3502/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                        </li>
+                        <li class="datalake-item">
+                            <span>Disposición final de residuos sólidos (toneladas/día y tipo de sitio)</span>
+                            <a href="indicador/3503/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                        </li>
+                        <li class="datalake-item">
+                            <span>Índice de Cobertura de Energía Eléctrica (ICEE)</span>
+                            <a href="indicador/3504/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                        </li>
+                        <li class="datalake-item">
+                            <span>Viviendas con y sin servicio de energía eléctrica</span>
+                            <a href="indicador/3505/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                        </li>
+                        <li class="datalake-item">
+                            <span>Calidad del aire: Material particulado PM10 por estación de monitoreo</span>
+                            <a href="indicador/3506/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                        </li>
+                        <li class="datalake-item">
+                            <span>Calidad del aire: Material particulado PM2.5 por estación de monitoreo</span>
+                            <a href="indicador/3507/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                        </li>
+                        <li class="datalake-item">
+                            <span>Calidad del aire: Dióxido de azufre (SO₂) por estación de monitoreo</span>
+                            <a href="indicador/3508/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                        </li>
+                        <li class="datalake-item">
+                            <span>Calidad del aire: Dióxido de nitrógeno (NO₂) por estación de monitoreo</span>
+                            <a href="indicador/3509/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                        </li>
+                        <li class="datalake-item">
+                            <span>Calidad del aire: Monóxido de carbono (CO) por estación de monitoreo</span>
+                            <a href="indicador/3510/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                        </li>
+                        <li class="datalake-item">
+                            <span>Calidad del aire: Ozono troposférico (O₃) por estación de monitoreo</span>
+                            <a href="indicador/3511/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                        </li>
+                        <li class="datalake-item">
+                            <span>Prácticas de ahorro de energía y agua en edificaciones culminadas</span>
+                            <a href="indicador/3512/1.csv" download class="btn btn-sm btn-outline-primary">Descargar</a>
+                        </li>
+                    </ul>
+                </div>
                 </div>
 
             </div>

@@ -167,6 +167,16 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
             }
             if (file_exists('indicador/' . $id . '/' . $ci . '.csv')) {
                 $csvArr = array_map('str_getcsv', file('indicador/' . $id . '/' . $ci . '.csv'));
+                // Las celdas vacías (series sin dato en un año) deben viajar como null:
+                // Google Charts rompe la columna si recibe "" donde espera un número.
+                foreach ($csvArr as $ri => $row) {
+                    if ($ri === 0 || !is_array($row)) continue;
+                    foreach ($row as $cj => $cell) {
+                        if ($cj > 0 && is_string($cell) && trim($cell) === '') {
+                            $csvArr[$ri][$cj] = null;
+                        }
+                    }
+                }
                 $csvJson = json_encode($csvArr, JSON_NUMERIC_CHECK);
                 echo 'csv.push(' . str_replace('\u00ac', ',', $csvJson) . ');';
             }

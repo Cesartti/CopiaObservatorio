@@ -1,0 +1,358 @@
+geo,Municipio,Expedientes,Año
+15001,Tunja,10,2020
+15001,Tunja,2,2021
+15001,Tunja,4,2022
+15001,Tunja,16,2023
+15001,Tunja,8,2024
+15001,Tunja,18,2025
+15047,Aquitania,14,2020
+15047,Aquitania,26,2021
+15047,Aquitania,8,2022
+15047,Aquitania,26,2023
+15047,Aquitania,20,2024
+15047,Aquitania,2,2025
+15051,Arcabuco,8,2020
+15051,Arcabuco,2,2021
+15051,Arcabuco,2,2022
+15051,Arcabuco,6,2023
+15051,Arcabuco,6,2024
+15051,Arcabuco,12,2025
+15087,Belén,4,2020
+15087,Belén,2,2021
+15087,Belén,2,2024
+15087,Belén,6,2025
+15090,Berbeo,2,2020
+15090,Berbeo,4,2023
+15092,Betéitiva,4,2020
+15092,Betéitiva,2,2021
+15092,Betéitiva,2,2022
+15092,Betéitiva,10,2023
+15092,Betéitiva,4,2024
+15097,Boavita,10,2020
+15097,Boavita,10,2021
+15097,Boavita,20,2022
+15097,Boavita,76,2023
+15097,Boavita,20,2024
+15097,Boavita,16,2025
+15106,Briceño,2,2021
+15106,Briceño,2,2024
+15114,Busbanzá,2,2022
+15162,Cerinza,4,2020
+15162,Cerinza,2,2023
+15162,Cerinza,6,2024
+15162,Cerinza,10,2025
+15180,Chiscas,2,2020
+15180,Chiscas,6,2021
+15180,Chiscas,8,2022
+15180,Chiscas,22,2023
+15180,Chiscas,6,2024
+15183,Chita,2,2021
+15183,Chita,2,2022
+15183,Chita,12,2023
+15183,Chita,8,2024
+15185,Chitaraque,4,2020
+15185,Chitaraque,4,2023
+15185,Chitaraque,2,2025
+15187,Chivatá,2,2020
+15187,Chivatá,4,2023
+15187,Chivatá,2,2024
+15187,Chivatá,2,2025
+15204,Combita,8,2020
+15204,Combita,4,2021
+15204,Combita,8,2024
+15204,Combita,6,2025
+15212,Coper,2,2022
+15215,Corrales,2,2020
+15215,Corrales,2,2021
+15215,Corrales,2,2022
+15215,Corrales,10,2025
+15218,Covarachia,8,2020
+15218,Covarachia,8,2021
+15218,Covarachia,6,2022
+15218,Covarachia,24,2023
+15218,Covarachia,16,2024
+15224,Cucaita,2,2020
+15224,Cucaita,2,2022
+15224,Cucaita,2,2024
+15224,Cucaita,14,2025
+15226,Cuìtiva,2,2020
+15226,Cuìtiva,2,2021
+15226,Cuìtiva,2,2022
+15226,Cuìtiva,2,2023
+15226,Cuìtiva,2,2024
+15232,Chíquiza,6,2020
+15232,Chíquiza,2,2021
+15232,Chíquiza,4,2025
+15238,Duitama,8,2020
+15238,Duitama,6,2021
+15238,Duitama,2,2022
+15238,Duitama,4,2023
+15238,Duitama,8,2024
+15238,Duitama,12,2025
+15244,El Cocuy,2,2020
+15244,El Cocuy,4,2021
+15244,El Cocuy,16,2023
+15244,El Cocuy,6,2024
+15248,El Espino,4,2020
+15248,El Espino,2,2022
+15248,El Espino,26,2023
+15248,El Espino,6,2024
+15248,El Espino,4,2025
+15272,Firavitoba,4,2020
+15272,Firavitoba,12,2021
+15272,Firavitoba,4,2022
+15272,Firavitoba,10,2023
+15272,Firavitoba,4,2024
+15272,Firavitoba,12,2025
+15276,Floresta,2,2020
+15276,Floresta,2,2023
+15276,Floresta,6,2025
+15293,Gachantivá,6,2020
+15293,Gachantivá,2,2021
+15293,Gachantivá,6,2023
+15293,Gachantivá,6,2024
+15293,Gachantivá,6,2025
+15296,Gameza,6,2021
+15296,Gameza,4,2023
+15296,Gameza,2,2024
+15296,Gameza,14,2025
+15317,Guacamayas,2,2020
+15317,Guacamayas,20,2023
+15317,Guacamayas,4,2024
+15362,Iza,8,2025
+15368,Jericó,2,2020
+15368,Jericó,8,2023
+15403,La Uvita,2,2020
+15403,La Uvita,2,2021
+15403,La Uvita,8,2022
+15403,La Uvita,58,2023
+15403,La Uvita,4,2024
+15403,La Uvita,4,2025
+15407,Villa De Leyva,50,2020
+15407,Villa De Leyva,10,2021
+15407,Villa De Leyva,8,2022
+15407,Villa De Leyva,8,2023
+15407,Villa De Leyva,10,2024
+15407,Villa De Leyva,16,2025
+15442,Maripí,4,2023
+15455,Miraflores,12,2020
+15455,Miraflores,22,2021
+15455,Miraflores,20,2022
+15455,Miraflores,18,2023
+15455,Miraflores,8,2024
+15455,Miraflores,8,2025
+15464,Mongua,2,2021
+15464,Mongua,6,2025
+15466,Monguì,2,2020
+15466,Monguì,2,2022
+15466,Monguì,2,2023
+15466,Monguì,4,2024
+15466,Monguì,10,2025
+15469,Moniquira,12,2020
+15469,Moniquira,4,2021
+15469,Moniquira,2,2022
+15469,Moniquira,8,2023
+15469,Moniquira,14,2024
+15469,Moniquira,14,2025
+15476,Motavita,2,2021
+15476,Motavita,2,2022
+15476,Motavita,2,2025
+15480,Muzo,2,2020
+15480,Muzo,10,2022
+15480,Muzo,4,2023
+15491,Nobsa,2,2020
+15491,Nobsa,2,2021
+15491,Nobsa,10,2023
+15491,Nobsa,2,2024
+15500,Oicata,4,2020
+15500,Oicata,2,2023
+15500,Oicata,4,2024
+15500,Oicata,4,2025
+15507,Otanche,4,2021
+15507,Otanche,4,2022
+15507,Otanche,4,2023
+15514,Páez,10,2020
+15514,Páez,4,2021
+15514,Páez,6,2022
+15514,Páez,8,2023
+15514,Páez,2,2025
+15516,Paipa,16,2020
+15516,Paipa,14,2021
+15516,Paipa,4,2022
+15516,Paipa,26,2023
+15516,Paipa,8,2024
+15516,Paipa,32,2025
+15522,Panqueba,2,2020
+15522,Panqueba,2,2021
+15522,Panqueba,16,2023
+15522,Panqueba,2,2024
+15531,Pauna,2,2021
+15531,Pauna,4,2022
+15531,Pauna,4,2023
+15531,Pauna,4,2024
+15537,Paz De Río,2,2020
+15537,Paz De Río,6,2021
+15537,Paz De Río,14,2023
+15537,Paz De Río,16,2024
+15542,Pesca,6,2020
+15542,Pesca,2,2021
+15542,Pesca,2,2022
+15542,Pesca,6,2023
+15542,Pesca,10,2024
+15542,Pesca,8,2025
+15572,Puerto Boyacá,2,2020
+15572,Puerto Boyacá,4,2021
+15572,Puerto Boyacá,4,2022
+15572,Puerto Boyacá,10,2023
+15572,Puerto Boyacá,6,2024
+15572,Puerto Boyacá,2,2025
+15580,Quípama,2,2020
+15580,Quípama,2,2022
+15580,Quípama,2,2023
+15621,Rondón,2,2020
+15621,Rondón,4,2021
+15621,Rondón,2,2022
+15621,Rondón,12,2023
+15621,Rondón,2,2024
+15621,Rondón,2,2025
+15638,Sáchica,6,2020
+15638,Sáchica,4,2021
+15638,Sáchica,2,2022
+15638,Sáchica,4,2023
+15638,Sáchica,8,2024
+15638,Sáchica,10,2025
+15646,Samacá,16,2020
+15646,Samacá,10,2021
+15646,Samacá,6,2022
+15646,Samacá,20,2023
+15646,Samacá,4,2024
+15646,Samacá,34,2025
+15660,San Eduardo,2,2020
+15660,San Eduardo,4,2022
+15660,San Eduardo,4,2023
+15664,San José De Pare,8,2025
+15673,San Mateo,8,2020
+15673,San Mateo,2,2021
+15673,San Mateo,4,2022
+15673,San Mateo,6,2023
+15673,San Mateo,4,2024
+15681,San Pablo De Borbur,2,2022
+15681,San Pablo De Borbur,4,2023
+15686,Santana,4,2023
+15686,Santana,2,2024
+15686,Santana,6,2025
+15693,Santa Rosa De Viterbo,2,2020
+15693,Santa Rosa De Viterbo,2,2023
+15693,Santa Rosa De Viterbo,4,2024
+15693,Santa Rosa De Viterbo,18,2025
+15696,Santa Sofía,2,2020
+15696,Santa Sofía,2,2021
+15696,Santa Sofía,6,2022
+15696,Santa Sofía,2,2023
+15696,Santa Sofía,6,2024
+15696,Santa Sofía,2,2025
+15720,Sativanorte,6,2022
+15720,Sativanorte,6,2023
+15720,Sativanorte,10,2024
+15723,Sativasur,2,2022
+15723,Sativasur,4,2023
+15740,Siachoque,2,2020
+15740,Siachoque,8,2025
+15753,Soatá,12,2020
+15753,Soatá,8,2021
+15753,Soatá,12,2022
+15753,Soatá,40,2023
+15753,Soatá,20,2024
+15753,Soatá,4,2025
+15755,Socotá,2,2020
+15755,Socotá,2,2021
+15755,Socotá,4,2022
+15755,Socotá,18,2023
+15755,Socotá,24,2024
+15757,Socha,4,2020
+15757,Socha,6,2021
+15757,Socha,20,2022
+15757,Socha,44,2023
+15757,Socha,28,2024
+15757,Socha,4,2025
+15759,Sogamoso,1,2018
+15759,Sogamoso,18,2020
+15759,Sogamoso,8,2021
+15759,Sogamoso,4,2022
+15759,Sogamoso,14,2023
+15759,Sogamoso,14,2025
+15762,Sora,4,2020
+15762,Sora,2,2023
+15762,Sora,2,2024
+15763,Sotaquirá,12,2020
+15763,Sotaquirá,8,2021
+15763,Sotaquirá,4,2022
+15763,Sotaquirá,2,2023
+15763,Sotaquirá,8,2024
+15763,Sotaquirá,26,2025
+15764,Soracá,2,2020
+15764,Soracá,2,2021
+15764,Soracá,2,2022
+15764,Soracá,4,2023
+15764,Soracá,4,2024
+15764,Soracá,12,2025
+15774,Susacón,4,2020
+15774,Susacón,2,2021
+15774,Susacón,14,2023
+15774,Susacón,10,2024
+15774,Susacón,2,2025
+15776,Sutamarchàn,2,2020
+15776,Sutamarchàn,2,2021
+15776,Sutamarchàn,8,2023
+15776,Sutamarchàn,6,2024
+15776,Sutamarchàn,6,2025
+15790,Tasco,6,2020
+15790,Tasco,4,2021
+15790,Tasco,16,2023
+15790,Tasco,16,2024
+15790,Tasco,4,2025
+15806,Tibasosa,2,2020
+15806,Tibasosa,12,2021
+15806,Tibasosa,2,2022
+15806,Tibasosa,6,2023
+15806,Tibasosa,4,2024
+15806,Tibasosa,8,2025
+15808,Tinjacá,8,2020
+15808,Tinjacá,4,2023
+15808,Tinjacá,2,2025
+15810,Tipacoque,12,2020
+15810,Tipacoque,10,2021
+15810,Tipacoque,4,2022
+15810,Tipacoque,26,2023
+15810,Tipacoque,6,2024
+15810,Tipacoque,2,2025
+15814,Toca,8,2020
+15814,Toca,4,2021
+15814,Toca,6,2022
+15814,Toca,4,2023
+15814,Toca,6,2024
+15814,Toca,16,2025
+15820,Tópaga,2,2020
+15820,Tópaga,6,2022
+15820,Tópaga,2,2023
+15820,Tópaga,2,2024
+15820,Tópaga,8,2025
+15822,Tota,10,2020
+15822,Tota,4,2021
+15822,Tota,2,2022
+15822,Tota,10,2023
+15822,Tota,10,2024
+15837,Tuta,10,2020
+15837,Tuta,2,2022
+15837,Tuta,4,2023
+15837,Tuta,2,2024
+15837,Tuta,6,2025
+15839,Tutazá,2,2020
+15839,Tutazá,2,2024
+15839,Tutazá,10,2025
+15897,Zetaquirá,8,2020
+15897,Zetaquirá,4,2021
+15897,Zetaquirá,6,2022
+15897,Zetaquirá,6,2023
+15897,Zetaquirá,6,2024
+15897,Zetaquirá,2,2025

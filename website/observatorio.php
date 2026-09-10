@@ -464,6 +464,22 @@ $obsTabActive = $tabActiveByObs[$slug] ?? $obs['color'];
             $lineCounts[$c2] = ($lineCounts[$c2] ?? 0) + 1;
         }
     }
+    // Unificar claves del catálogo con las categorías de las carpetas sin
+    // distinguir mayúsculas/tildes (evita tarjetas duplicadas como
+    // "Variables Macroecónomicas" vs "Variables macroeconómicas").
+    $normKey = static function (string $k): string {
+        $k = mb_strtolower(trim($k), 'UTF-8');
+        $k = strtr($k, ['á' => 'a', 'é' => 'e', 'í' => 'i', 'ó' => 'o', 'ú' => 'u', 'ü' => 'u', 'ñ' => 'n']);
+        return preg_replace('/\s+/', ' ', $k);
+    };
+    $canon = [];
+    foreach (array_keys($linesInfo) as $k0) { $canon[$normKey($k0)] = $k0; }
+    $merged = [];
+    foreach ($lineCounts as $k0 => $n0) {
+        $ck = $canon[$normKey($k0)] ?? ($canon[$normKey($k0)] = $k0);
+        $merged[$ck] = ($merged[$ck] ?? 0) + (int) $n0;
+    }
+    $lineCounts = $merged;
     $lineKeys = array_unique(array_merge(array_keys($linesInfo), array_keys($lineCounts)));
     ?>
     <?php

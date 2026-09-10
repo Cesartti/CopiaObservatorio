@@ -1,0 +1,5 @@
+Tipo:Gráfico
+Titulo:Expedientes por estado
+Descripción:Distribución de los expedientes según su estado.
+Vertical:Expedientes
+Horizontal:Estado

@@ -1,0 +1,5 @@
+Tipo:Gráfico
+Titulo:Municipios por nivel de riesgo
+Descripción:Número de municipios en cada nivel de riesgo del IRCA por año.
+Vertical:Municipios
+Horizontal:Año
