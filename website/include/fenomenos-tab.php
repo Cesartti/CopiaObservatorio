@@ -236,7 +236,8 @@ $fenFaseActual = (string) ($fenEnso['fase'] ?? 'neutral');
 
         <div class="fen-leyenda">
             <span><i style="background:linear-gradient(90deg,#22c55e,#eab308,#ef4444)"></i> Intensidad de emergencias históricas</span>
-            <span><i style="background:#dc2626"></i> Foco de calor activo (satélite)</span>
+            <span><i style="background:#dc2626"></i> Foco de calor en Boyacá (satélite)</span>
+            <span><i style="background:#d1d5db"></i> Foco en departamento vecino</span>
             <span><i style="background:#7c3aed"></i> Reporte ciudadano</span>
             <span><i style="background:#0ea5e9"></i> Cuerpo de bomberos</span>
         </div>
@@ -372,12 +373,20 @@ $fenFaseActual = (string) ($fenEnso['fase'] ?? 'neutral');
             llenarAnios();
             pintarCalor();
 
+            var CONF = { h: 'alta', n: 'nominal', l: 'baja' };
             (d.focos || []).forEach(function (f) {
+                var propio = f.en_boyaca !== false;
                 L.circleMarker([f.lat, f.lon], {
-                    radius: 7, color: '#7f1d1d', weight: 1, fillColor: '#dc2626', fillOpacity: .85
-                }).bindPopup('<strong>Foco de calor</strong><br>' + (f.fecha || '') +
-                    (f.confianza ? '<br>Confianza: ' + f.confianza : '') +
-                    (f.potencia ? '<br>Potencia radiativa: ' + f.potencia + ' MW' : '')
+                    radius: propio ? 8 : 5,
+                    color: propio ? '#7f1d1d' : '#9ca3af',
+                    weight: 1,
+                    fillColor: propio ? '#dc2626' : '#d1d5db',
+                    fillOpacity: propio ? .9 : .5
+                }).bindPopup('<strong>Foco de calor' + (propio ? '' : ' (fuera de Boyacá)') + '</strong><br>' +
+                    (f.fecha || '') +
+                    (f.confianza ? '<br>Confianza de la detección: ' + (CONF[f.confianza] || f.confianza) : '') +
+                    (f.potencia ? '<br>Potencia radiativa: ' + f.potencia + ' MW' : '') +
+                    '<br><em class="text-muted">Detección térmica satelital, no es un incendio confirmado.</em>'
                 ).addTo(estado.capaFocos);
             });
             (d.reportes || []).forEach(function (r) {
@@ -399,8 +408,13 @@ $fenFaseActual = (string) ($fenEnso['fase'] ?? 'neutral');
 
             var f = document.getElementById('fenFuentes');
             var fuentes = ((estado.historico.fuentes) || []).map(function (x) { return x.nombre; }).join(' · ');
-            f.textContent = 'Focos activos: ' + (d.focos_fuente || '—') +
-                '. Histórico: ' + fuentes + '.' +
+            var resumen = 'Focos activos: ' + (d.focos_fuente || '—');
+            if (typeof d.focos_en_boyaca === 'number') {
+                resumen += ' — ' + d.focos_en_boyaca + ' en Boyacá y ' + (d.focos_vecinos || 0) +
+                    ' en el área circundante (en gris). Un foco es una detección térmica del satélite, ' +
+                    'no un incendio confirmado.';
+            }
+            f.textContent = resumen + ' Histórico: ' + fuentes + '.' +
                 ((d.avisos && d.avisos.length) ? ' ' + d.avisos.join(' ') : '');
         });
     }

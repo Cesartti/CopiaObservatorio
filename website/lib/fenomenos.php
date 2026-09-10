@@ -98,6 +98,42 @@ function fen_estado_enso(): array
     ];
 }
 
+
+/** Anillos exteriores de los municipios de Boyacá (archivo compacto generado). */
+function fen_poligonos_boyaca(): array
+{
+    static $polis = null;
+    if ($polis !== null) {
+        return $polis;
+    }
+    $p = __DIR__ . '/../data/fenomenos/boyaca_poligonos.json';
+    $d = is_file($p) ? json_decode((string) @file_get_contents($p), true) : null;
+
+    return $polis = is_array($d) ? $d : [];
+}
+
+/** ¿El punto cae dentro de Boyacá? (ray casting sobre los anillos). */
+function fen_en_boyaca(float $lon, float $lat): bool
+{
+    foreach (fen_poligonos_boyaca() as $anillo) {
+        $dentro = false;
+        $n = count($anillo);
+        for ($i = 0, $j = $n - 1; $i < $n; $j = $i++) {
+            $xi = $anillo[$i][0]; $yi = $anillo[$i][1];
+            $xj = $anillo[$j][0]; $yj = $anillo[$j][1];
+            if ((($yi > $lat) !== ($yj > $lat))
+                && ($lon < ($xj - $xi) * ($lat - $yi) / (($yj - $yi) ?: 1e-12) + $xi)) {
+                $dentro = !$dentro;
+            }
+        }
+        if ($dentro) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
 /** Lee un ajuste de la tabla app_settings (vacío si no existe o no hay BD). */
 function fen_ajuste(string $clave): string
 {
@@ -170,16 +206,21 @@ function fen_focos_calor(int $dias = 3): array
                     continue;
                 }
                 $c = str_getcsv($l);
+                $la = (float) ($c[$ix['latitude']] ?? 0);
+                $lo = (float) ($c[$ix['longitude']] ?? 0);
                 $focos[] = [
-                    'lat' => (float) ($c[$ix['latitude']] ?? 0),
-                    'lon' => (float) ($c[$ix['longitude']] ?? 0),
+                    'lat' => $la,
+                    'lon' => $lo,
                     'fecha' => (string) ($c[$ix['acq_date']] ?? ''),
                     'hora' => (string) ($c[$ix['acq_time']] ?? ''),
                     'confianza' => (string) ($c[$ix['confidence']] ?? ''),
                     'potencia' => (float) ($c[$ix['frp']] ?? 0),
+                    'en_boyaca' => fen_en_boyaca($lo, $la),
                 ];
             }
             $fuente = 'NASA FIRMS · VIIRS NOAA-20 (tiempo casi real)';
+            $enBoyaca = count(array_filter($focos, static fn ($f) => !empty($f['en_boyaca'])));
+            $vecinos = count($focos) - $enBoyaca;
         } else {
             $aviso = 'No fue posible consultar NASA FIRMS; se muestran los eventos de NASA EONET.';
         }
@@ -207,11 +248,16 @@ function fen_focos_calor(int $dias = 3): array
                 'confianza' => 'evento EONET',
                 'potencia' => 0,
                 'titulo' => (string) ($f['properties']['title'] ?? ''),
+                'en_boyaca' => fen_en_boyaca((float) $coord[0], (float) $coord[1]),
             ];
         }
     }
 
-    return ['focos' => $focos, 'fuente' => $fuente, 'aviso' => $aviso, 'dias' => $dias];
+    $enBoyaca = $enBoyaca ?? count(array_filter($focos, static fn ($f) => !empty($f['en_boyaca'])));
+    $vecinos = $vecinos ?? (count($focos) - $enBoyaca);
+
+    return ['focos' => $focos, 'fuente' => $fuente, 'aviso' => $aviso, 'dias' => $dias,
+            'en_boyaca' => $enBoyaca, 'vecinos' => $vecinos];
 }
 
 /** Reportes ciudadanos publicables (verificados y pendientes recientes). */

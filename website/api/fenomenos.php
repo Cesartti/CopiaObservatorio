@@ -60,6 +60,8 @@ if ($recurso === 'focos' || $recurso === 'todo') {
     $f = fen_focos_calor((int) ($_GET['dias'] ?? 3));
     $salida['focos'] = $f['focos'];
     $salida['focos_fuente'] = $f['fuente'];
+    $salida['focos_en_boyaca'] = $f['en_boyaca'] ?? null;
+    $salida['focos_vecinos'] = $f['vecinos'] ?? null;
     if ($f['aviso'] !== '') {
         $salida['avisos'][] = $f['aviso'];
     }
