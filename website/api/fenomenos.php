@@ -71,6 +71,7 @@ if ($recurso === 'reportes' || $recurso === 'todo') {
 }
 if ($recurso === 'bomberos' || $recurso === 'todo') {
     $salida['bomberos'] = fen_bomberos($pdo);
+    $salida['cobertura'] = fen_bomberos_cobertura($pdo);
 }
 if ($recurso === 'historico' || $recurso === 'todo') {
     $salida['historico'] = fen_historico();

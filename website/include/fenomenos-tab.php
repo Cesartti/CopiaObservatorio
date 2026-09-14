@@ -142,6 +142,26 @@ function fen_grafica(array $serie, string $color, array $oniAnual, string $titul
     .fen-form{background:#f8fafc;border:1px solid #e6ecf6;border-radius:14px;padding:1rem}
     .fen-form label{font-size:.8rem;font-weight:600;color:#3b4759;margin-bottom:.2rem;display:block}
     .fen-form .form-control,.fen-form .form-select{font-size:.88rem}
+    .fen-dir-tools{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-bottom:.5rem}
+    .fen-dir-busca{position:relative;flex:1 1 320px;max-width:440px}
+    .fen-dir-busca i{position:absolute;left:.75rem;top:50%;transform:translateY(-50%);color:#9ca3af;font-size:.85rem}
+    .fen-dir-busca input{padding-left:2.1rem;font-size:.9rem}
+    .fen-dir-tools .form-select{width:auto;min-width:190px;font-size:.88rem}
+    .fen-dir-lista{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:.75rem}
+    .fen-dir-card{background:#fff;border:1px solid #e6ecf6;border-radius:14px;padding:.9rem 1rem;box-shadow:0 3px 12px rgba(2,6,23,.05)}
+    .fen-dir-card h6{font-size:1rem;font-weight:800;color:#132033;margin:0 0 .15rem;display:flex;align-items:center;gap:.45rem;flex-wrap:wrap}
+    .fen-dir-prov{font-size:.76rem;color:#5d6b80;margin-bottom:.6rem}
+    .fen-badge{font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;border-radius:999px;padding:.15rem .5rem}
+    .fen-badge--propia{background:#dcfce7;color:#166534}
+    .fen-badge--apoyo{background:#fef3c7;color:#92400e}
+    .fen-op{display:flex;gap:.6rem;align-items:flex-start;padding:.45rem 0;border-top:1px dashed #eef2f7}
+    .fen-op:first-of-type{border-top:none}
+    .fen-op__n{width:22px;height:22px;border-radius:50%;background:rgba(220,38,38,.12);color:#b91c1c;font-size:.72rem;font-weight:800;display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto;margin-top:.1rem}
+    .fen-op__cuerpo{font-weight:600;font-size:.88rem;color:#1f2937;line-height:1.25}
+    .fen-op__sede{font-size:.76rem;color:#6b7280}
+    .fen-op__tel{display:inline-flex;flex-wrap:wrap;gap:.35rem;margin-top:.15rem}
+    .fen-op__tel a{font-size:.82rem;font-weight:700;color:#b91c1c;text-decoration:none;background:rgba(220,38,38,.08);border-radius:8px;padding:.1rem .45rem}
+    .fen-op__tel a:hover{background:rgba(220,38,38,.16)}
     .fen-bomberos-item{display:flex;gap:.75rem;align-items:flex-start;padding:.7rem .2rem;border-bottom:1px solid #eef2f7}
     .fen-bomberos-item:last-child{border-bottom:none}
     .fen-bomberos-item .fb-ico{width:38px;height:38px;border-radius:10px;background:rgba(220,38,38,.1);color:#dc2626;display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto}
@@ -463,15 +483,46 @@ function fen_grafica(array $serie, string $color, array $oniAnual, string $titul
     <?php /* ------------------------------------------------- Directorio bomberos */ ?>
     <section class="fen-pane" id="fen-bomberos">
         <div class="fen-aviso mb-3">
-            <strong>Ante una emergencia en curso llame primero.</strong>
-            Línea única de emergencias <strong>123</strong> · Línea nacional de bomberos <strong>119</strong>.
-            El directorio municipal lo administra la entidad competente y se muestra a continuación.
+            <strong>Ante una emergencia en curso, llame primero.</strong>
+            Línea única de emergencias <a href="tel:123">123</a> ·
+            Línea nacional de bomberos <a href="tel:119">119</a>.
+            Busque abajo el cuerpo de bomberos que atiende su municipio.
         </div>
-        <div class="fen-map-tools">
-            <label class="mb-0 small fw-semibold" for="fenBuscaBomberos">Buscar por municipio</label>
-            <input type="search" id="fenBuscaBomberos" class="form-control form-control-sm" style="max-width:280px" placeholder="Escriba el nombre del municipio">
+
+        <div class="fen-dir-tools">
+            <div class="fen-dir-busca">
+                <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                <input type="search" id="fenBuscaBomberos" class="form-control"
+                       placeholder="Escriba su municipio (por ejemplo: Almeida, Tunja, Chiquinquirá)"
+                       aria-label="Buscar municipio o cuerpo de bomberos" autocomplete="off">
+            </div>
+            <select id="fenFiltroProv" class="form-select" aria-label="Filtrar por provincia">
+                <option value="">Todas las provincias</option>
+            </select>
+            <select id="fenFiltroPropia" class="form-select" aria-label="Filtrar por estación propia">
+                <option value="">Con y sin estación propia</option>
+                <option value="si">Solo con estación propia</option>
+                <option value="no">Solo sin estación propia</option>
+            </select>
+            <button type="button" id="fenLimpiaDir" class="btn btn-sm btn-outline-secondary">
+                <i class="fa-solid fa-rotate-left me-1" aria-hidden="true"></i> Limpiar
+            </button>
         </div>
-        <div id="fenBomberosLista" class="mt-2"><p class="text-muted small">Cargando directorio…</p></div>
+        <p class="small text-muted mb-2" id="fenDirResumen" aria-live="polite"></p>
+
+        <div id="fenBomberosLista" class="fen-dir-lista"><p class="text-muted small">Cargando directorio…</p></div>
+
+        <div class="fen-fuente mt-3">
+            <h5><i class="fa-solid fa-database me-1" aria-hidden="true"></i> Sobre este directorio</h5>
+            <p class="mb-0">
+                Boyacá tiene <strong>51 cuerpos de bomberos</strong> que cubren los 123 municipios:
+                50 municipios cuentan con estación propia y los demás son atendidos por el cuerpo más
+                cercano, en el orden de respuesta definido por la Secretaría de Planeación.
+                Fuente: <a href="https://dnbc.gov.co/directorio-nacional-de-bomberos/" target="_blank" rel="noopener">Directorio Nacional de Bomberos</a>
+                y <a href="https://bomberos.boyaca.gov.co/estaciones/" target="_blank" rel="noopener">Cuerpos de Bomberos de Boyacá</a>.
+                Si detecta un dato desactualizado, escríbanos para corregirlo.
+            </p>
+        </div>
     </section>
 </article>
 
@@ -479,7 +530,8 @@ function fen_grafica(array $serie, string $color, array $oniAnual, string $titul
 (function () {
     var API = 'api/fenomenos.php';
     var estado = { mapa: null, capaCalor: null, capaFocos: null, capaReportes: null,
-                   capaBomberos: null, marcadorReporte: null, historico: null, bomberos: [] };
+                   capaBomberos: null, marcadorReporte: null, historico: null, bomberos: [],
+                   cobertura: [], porCuerpo: {} };
 
     /* ---- subpestañas ---- */
     document.querySelectorAll('.fen-subnav button').forEach(function (b) {
@@ -739,35 +791,107 @@ function fen_grafica(array $serie, string $color, array $oniAnual, string $titul
         bomberosCargados = true;
         fetch(API + '?recurso=bomberos').then(function (r) { return r.json(); }).then(function (d) {
             estado.bomberos = d.bomberos || [];
-            pintarBomberos('');
+            estado.cobertura = d.cobertura || [];
+            // Índice de estaciones por nombre del cuerpo, para mostrar sede y dirección.
+            estado.porCuerpo = {};
+            estado.bomberos.forEach(function (b) {
+                estado.porCuerpo[clave(b.nombre.replace(/^Cuerpo de Bomberos de\s*/i, ''))] = b;
+            });
+            llenarProvincias();
+            pintarBomberos();
+        }).catch(function () {
+            document.getElementById('fenBomberosLista').innerHTML =
+                '<p class="text-muted small mb-0">No fue posible cargar el directorio. ' +
+                'Use las líneas <a href="tel:123">123</a> y <a href="tel:119">119</a>.</p>';
         });
     }
-    function pintarBomberos(filtro) {
-        var cont = document.getElementById('fenBomberosLista');
-        var f = (filtro || '').toLowerCase().trim();
-        var lista = estado.bomberos.filter(function (b) {
-            return !f || (b.municipio || '').toLowerCase().indexOf(f) >= 0 || (b.nombre || '').toLowerCase().indexOf(f) >= 0;
+
+    function clave(t) {
+        return (t || '').toString().toLowerCase()
+            .normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]/g, '');
+    }
+
+    function llenarProvincias() {
+        var sel = document.getElementById('fenFiltroProv');
+        var provs = {};
+        estado.cobertura.forEach(function (m) { if (m.provincia) { provs[m.provincia] = 1; } });
+        Object.keys(provs).sort().forEach(function (p) {
+            var o = document.createElement('option'); o.value = p; o.textContent = p; sel.appendChild(o);
         });
+    }
+
+    function telefonosHtml(tel) {
+        if (!tel) { return ''; }
+        return '<span class="fen-op__tel">' + tel.split('/').map(function (t) {
+            var n = t.trim(); if (!n) { return ''; }
+            return '<a href="tel:' + n.replace(/\s/g, '') + '"><i class="fa-solid fa-phone me-1"></i>' + n + '</a>';
+        }).join('') + '</span>';
+    }
+
+    function pintarBomberos() {
+        var cont = document.getElementById('fenBomberosLista');
+        var resumen = document.getElementById('fenDirResumen');
+        var q = clave(document.getElementById('fenBuscaBomberos').value);
+        var prov = document.getElementById('fenFiltroProv').value;
+        var propia = document.getElementById('fenFiltroPropia').value;
+
+        var lista = estado.cobertura.filter(function (m) {
+            if (prov && m.provincia !== prov) { return false; }
+            if (propia === 'si' && !m.propia) { return false; }
+            if (propia === 'no' && m.propia) { return false; }
+            if (!q) { return true; }
+            if (clave(m.municipio).indexOf(q) >= 0) { return true; }
+            // también encuentra por el nombre del cuerpo que lo atiende
+            return (m.opciones || []).some(function (o) { return clave(o.cuerpo).indexOf(q) >= 0; });
+        });
+
+        resumen.textContent = lista.length === 0
+            ? 'Sin resultados. Pruebe con otro nombre o quite los filtros.'
+            : lista.length + (lista.length === 1 ? ' municipio' : ' municipios') +
+              ' · ' + lista.filter(function (m) { return m.propia; }).length + ' con estación propia';
+
         if (!lista.length) {
             cont.innerHTML = '<p class="text-muted small mb-0">' +
-                (estado.bomberos.length ? 'No hay resultados para esa búsqueda.' :
-                'El directorio municipal aún no ha sido cargado. Use las líneas 123 y 119.') + '</p>';
+                (estado.cobertura.length ? 'No hay resultados para esa búsqueda.' :
+                 'El directorio aún no ha sido cargado. Use las líneas <a href="tel:123">123</a> y <a href="tel:119">119</a>.') +
+                '</p>';
             return;
         }
-        cont.innerHTML = lista.map(function (b) {
-            var contacto = [b.telefono, b.celular].filter(Boolean).join(' · ');
-            return '<div class="fen-bomberos-item">' +
-                '<span class="fb-ico"><i class="fa-solid fa-fire-extinguisher"></i></span>' +
-                '<div><strong>' + (b.nombre || '') + '</strong>' +
-                '<div class="small text-muted">' + (b.municipio || '') +
-                (b.provincia ? ' · ' + b.provincia : '') + (b.tipo ? ' · ' + b.tipo : '') + '</div>' +
-                (contacto ? '<div class="small"><i class="fa-solid fa-phone me-1"></i>' + contacto + '</div>' : '') +
-                (b.direccion ? '<div class="small text-muted">' + b.direccion + '</div>' : '') +
-                '</div></div>';
+
+        cont.innerHTML = lista.map(function (m) {
+            var ops = (m.opciones || []).map(function (o) {
+                var est = estado.porCuerpo[clave(o.cuerpo)];
+                var sede = [];
+                // «en X» solo aporta cuando el cuerpo no se llama igual que su municipio sede.
+                if (est && est.municipio && clave(est.municipio) !== clave(m.municipio)
+                    && clave(est.municipio) !== clave(o.cuerpo)) {
+                    sede.push('en ' + est.municipio);
+                }
+                if (est && est.direccion) { sede.push(est.direccion); }
+                return '<div class="fen-op">' +
+                    '<span class="fen-op__n">' + o.orden + '</span>' +
+                    '<div><span class="fen-op__cuerpo">' + o.cuerpo + '</span>' +
+                    (sede.length ? '<div class="fen-op__sede">' + sede.join(' · ') + '</div>' : '') +
+                    telefonosHtml(o.telefono) + '</div></div>';
+            }).join('');
+            return '<article class="fen-dir-card">' +
+                '<h6>' + m.municipio +
+                '<span class="fen-badge ' + (m.propia ? 'fen-badge--propia">Estación propia' : 'fen-badge--apoyo">Acude a otro municipio') +
+                '</span></h6>' +
+                '<div class="fen-dir-prov">Provincia de ' + (m.provincia || '—') + '</div>' +
+                ops + '</article>';
         }).join('');
     }
-    document.getElementById('fenBuscaBomberos').addEventListener('input', function (e) {
-        pintarBomberos(e.target.value);
+
+    ['fenBuscaBomberos', 'fenFiltroProv', 'fenFiltroPropia'].forEach(function (id) {
+        var el = document.getElementById(id);
+        el.addEventListener(el.tagName === 'SELECT' ? 'change' : 'input', pintarBomberos);
+    });
+    document.getElementById('fenLimpiaDir').addEventListener('click', function () {
+        document.getElementById('fenBuscaBomberos').value = '';
+        document.getElementById('fenFiltroProv').value = '';
+        document.getElementById('fenFiltroPropia').value = '';
+        pintarBomberos();
     });
 })();
 </script>

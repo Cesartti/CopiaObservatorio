@@ -315,6 +315,46 @@ function fen_bomberos(?PDO $pdo): array
     }
 }
 
+/**
+ * Para cada municipio, si tiene estación propia y a qué cuerpos de bomberos
+ * acude, en el orden de respuesta definido por la Secretaría.
+ */
+function fen_bomberos_cobertura(?PDO $pdo): array
+{
+    if (!$pdo) {
+        return [];
+    }
+    try {
+        $st = $pdo->query(
+            'SELECT municipio, municipio_dane, provincia, estacion_propia, orden, cuerpo, telefono
+               FROM env_bomberos_cobertura
+              ORDER BY municipio ASC, orden ASC'
+        );
+        $out = [];
+        foreach ($st->fetchAll(PDO::FETCH_ASSOC) ?: [] as $r) {
+            $m = (string) $r['municipio'];
+            if (!isset($out[$m])) {
+                $out[$m] = [
+                    'municipio' => $m,
+                    'dane' => $r['municipio_dane'] ?: null,
+                    'provincia' => (string) ($r['provincia'] ?? ''),
+                    'propia' => (bool) $r['estacion_propia'],
+                    'opciones' => [],
+                ];
+            }
+            $out[$m]['opciones'][] = [
+                'orden' => (int) $r['orden'],
+                'cuerpo' => (string) $r['cuerpo'],
+                'telefono' => (string) ($r['telefono'] ?? ''),
+            ];
+        }
+
+        return array_values($out);
+    } catch (Throwable $e) {
+        return [];
+    }
+}
+
 /** Datos históricos de emergencias por municipio (archivo generado por script). */
 function fen_historico(): array
 {
