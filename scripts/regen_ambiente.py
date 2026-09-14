@@ -104,7 +104,7 @@ def display_js(charts):
             body = ("\tgetOptions(info){ return { hAxis:{title:info['horizontal']%s}, vAxis:{title:info['vertical']}, curveType:'function', pointSize:5 }; }\n"
                     "\tgetType(div){ return new google.visualization.LineChart(div); }") % hfmt
         elif kind == 'bar':
-            body = ("\tgetOptions(info){ return { hAxis:{title:info['vertical']}, vAxis:{title:info['horizontal']}, legend:{position:'none'}, chartArea:{left:230,top:20,width:'62%%',height:'85%%'} }; }\n"
+            body = ("\tgetOptions(info){ return { hAxis:{title:info['vertical']}, vAxis:{title:info['horizontal']}, legend:{position:'none'}, chartArea:{left:230,top:20,width:'62%',height:'85%'} }; }\n"
                     "\tgetType(div){ return new google.visualization.BarChart(div); }")
         else:  # column
             stacked = ", isStacked:true" if opts.get('stacked') else ''

@@ -146,13 +146,24 @@ function im_list_data_files_for_observatory(int $obsId, string $websiteRoot): ar
         if (!is_dir($folder)) continue;
         $infoFile = $folder . '/indicador.info';
         $title = $f;
+        $retirado = false;
         if (is_readable($infoFile)) {
             foreach (file($infoFile) as $line) {
-                if (stripos(trim($line), 'título:') === 0 || stripos(trim($line), 'titulo:') === 0) {
-                    $title = trim(substr(trim($line), strpos($line, ':') + 1));
-                    break;
+                $l = trim($line);
+                if (stripos($l, 'retirado:') === 0) {
+                    // Indicador de una estructura anterior: su carpeta sigue en el
+                    // servidor porque el despliegue no borra archivos, pero no debe
+                    // aparecer en las descargas.
+                    $retirado = trim(substr($l, strpos($l, ':') + 1)) !== '';
+                    continue;
+                }
+                if (stripos($l, 'título:') === 0 || stripos($l, 'titulo:') === 0) {
+                    $title = trim(substr($l, strpos($l, ':') + 1));
                 }
             }
+        }
+        if ($retirado) {
+            continue;
         }
         $csvs = [];
         foreach (glob($folder . '/*.csv') ?: [] as $cf) {

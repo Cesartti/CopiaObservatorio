@@ -175,6 +175,7 @@ function fen_grafica(array $serie, string $color, array $oniAnual, string $titul
     .fen-fuente p{font-size:.82rem;color:#4b5768;margin-bottom:.5rem}
     .fen-fuente ul{margin:0 0 .6rem;padding-left:1.1rem}
     .fen-fuente li{font-size:.82rem;color:#4b5768;margin-bottom:.3rem}
+    .fen-sin-focos{background:#ecfdf5;border:1px solid #a7f3d0;color:#065f46;border-radius:10px;padding:.55rem .8rem;font-size:.84rem;margin-bottom:.6rem}
     .fen-aviso{background:#fff7ed;border:1px solid #fed7aa;color:#9a3412;border-radius:12px;padding:.7rem .9rem;font-size:.84rem}
     @media (max-width:575.98px){#fenMapa{height:420px}}
 </style>
@@ -415,6 +416,12 @@ function fen_grafica(array $serie, string $color, array $oniAnual, string $titul
             </button>
         </div>
 
+        <p class="fen-sin-focos" id="fenSinFocos" style="display:none">
+            <i class="fa-solid fa-circle-check me-1" aria-hidden="true"></i>
+            Hoy el satélite no detecta focos de calor activos dentro de Boyacá.
+            El mapa sigue mostrando el histórico de emergencias y, en gris, los focos
+            detectados en departamentos vecinos.
+        </p>
         <div id="fenMapa" role="application" aria-label="Mapa de novedades ambientales de Boyacá"></div>
 
         <div class="fen-leyenda">
@@ -639,10 +646,16 @@ function fen_grafica(array $serie, string $color, array $oniAnual, string $titul
             var fuentes = ((estado.historico.fuentes) || []).map(function (x) { return x.nombre; }).join(' · ');
             var resumen = 'Focos activos: ' + (d.focos_fuente || '—');
             if (typeof d.focos_en_boyaca === 'number') {
-                resumen += ' — ' + d.focos_en_boyaca + ' en Boyacá y ' + (d.focos_vecinos || 0) +
-                    ' en el área circundante (en gris). Un foco es una detección térmica del satélite, ' +
-                    'no un incendio confirmado.';
+                resumen += d.focos_en_boyaca === 0
+                    ? ' — hoy el satélite no detecta focos dentro de Boyacá' +
+                      (d.focos_vecinos ? ', y sí ' + d.focos_vecinos + ' en el área circundante (en gris)' : '') +
+                      '. El número cambia cada día.'
+                    : ' — ' + d.focos_en_boyaca + ' en Boyacá y ' + (d.focos_vecinos || 0) +
+                      ' en el área circundante (en gris).';
+                resumen += ' Un foco es una detección térmica del satélite, no un incendio confirmado.';
             }
+            var avSin = document.getElementById('fenSinFocos');
+            if (avSin) { avSin.style.display = (d.focos_en_boyaca === 0) ? '' : 'none'; }
             f.textContent = resumen + ' Histórico: ' + fuentes + '.' +
                 ((d.avisos && d.avisos.length) ? ' ' + d.avisos.join(' ') : '');
 

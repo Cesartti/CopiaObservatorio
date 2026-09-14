@@ -4,7 +4,7 @@ class Chart1 extends AbstractChart{
 }
 
 class Chart2 extends AbstractChart{
-	getOptions(info){ return { hAxis:{title:info['vertical']}, vAxis:{title:info['horizontal']}, legend:{position:'none'}, chartArea:{left:230,top:20,width:'62%%',height:'85%%'} }; }
+	getOptions(info){ return { hAxis:{title:info['vertical']}, vAxis:{title:info['horizontal']}, legend:{position:'none'}, chartArea:{left:230,top:20,width:'62%',height:'85%'} }; }
 	getType(div){ return new google.visualization.BarChart(div); }
 }
 
