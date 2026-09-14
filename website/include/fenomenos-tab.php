@@ -515,8 +515,8 @@ function fen_grafica(array $serie, string $color, array $oniAnual, string $titul
         <div class="fen-fuente mt-3">
             <h5><i class="fa-solid fa-database me-1" aria-hidden="true"></i> Sobre este directorio</h5>
             <p class="mb-0">
-                Boyacá tiene <strong>51 cuerpos de bomberos</strong> que cubren los 123 municipios:
-                50 municipios cuentan con estación propia y los demás son atendidos por el cuerpo más
+                Boyacá tiene <strong>51 cuerpos de bomberos</strong> que cubren los <strong>123 municipios</strong>:
+                50 cuentan con estación propia y los 73 restantes son atendidos por el cuerpo más
                 cercano, en el orden de respuesta definido por la Secretaría de Planeación.
                 Fuente: <a href="https://dnbc.gov.co/directorio-nacional-de-bomberos/" target="_blank" rel="noopener">Directorio Nacional de Bomberos</a>
                 y <a href="https://bomberos.boyaca.gov.co/estaciones/" target="_blank" rel="noopener">Cuerpos de Bomberos de Boyacá</a>.

@@ -14,10 +14,12 @@ import os, re, json, unicodedata
 import pandas as pd
 
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-XLS = r'C:\Users\cesar\Downloads\Directorio de Bomberos Boyacá.xlsx'
+# Archivo remitido por la Secretaría. Al llegar una versión nueva se cambia
+# esta ruta y el número de migración, y se vuelve a ejecutar el script.
+XLS = r'C:\Users\cesar\Downloads\Directorio de Bomberos Boyacá (1).xlsx'
 GEO = os.path.join(BASE, 'website', 'assets', 'js', 'boyaca_low.js')
 EMG = os.path.join(BASE, 'website', 'data', 'fenomenos', 'emergencias.json')
-MIG = os.path.join(BASE, 'database', 'migrations', '029_directorio_bomberos.sql')
+MIG = os.path.join(BASE, 'database', 'migrations', '030_directorio_bomberos_raquira.sql')
 FUENTE = ('Dirección Nacional de Bomberos de Colombia y Cuerpos de Bomberos de Boyacá '
           '(bomberos.boyaca.gov.co), consolidado por la Secretaría de Planeación, 2026')
 
@@ -124,7 +126,8 @@ for _, r in asig.iterrows():
 
 # ---------------------------------------------------------------- migración
 out = [
-    '-- 029: Directorio de bomberos de Boyacá (estaciones y municipios que atienden).',
+    '-- 030: Directorio de bomberos de Boyacá, versión con Ráquira incluida.',
+    '-- Reemplaza el contenido cargado por la 029, que traía 122 municipios.',
     '-- Fuente: archivo «Directorio de Bomberos Boyacá.xlsx» remitido por la Secretaría',
     '-- de Planeación, construido con el Directorio Nacional de Bomberos y el portal',
     '-- bomberos.boyaca.gov.co. Idempotente: se puede volver a aplicar sin duplicar.',
