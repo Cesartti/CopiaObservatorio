@@ -49,7 +49,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 1) INICIALIZA MAPA
   const map = L.map('map').setView([5.5, -73], 8);
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  // Sin subdominios: OpenStreetMap dejó de recomendar a.tile / b.tile / c.tile.
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution:'&copy; OpenStreetMap'
   }).addTo(map);
 

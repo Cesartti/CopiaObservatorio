@@ -590,8 +590,23 @@ function fen_grafica(array $serie, string $color, array $oniAnual, string $titul
         }
         if (estado.mapa) { estado.mapa.invalidateSize(); return; }
         estado.mapa = L.map('fenMapa', { scrollWheelZoom: false }).setView([5.62, -73.35], 8);
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            maxZoom: 17, attribution: '&copy; OpenStreetMap'
+        // Fondo gris claro sin clave de API, para que resalten los focos y el calor.
+        var ESRI = 'https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/';
+        var fondo = L.tileLayer(ESRI + 'World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
+            maxZoom: 16, attribution: 'Esri, HERE, Garmin, &copy; OpenStreetMap'
+        });
+        var respaldo = false;
+        fondo.on('tileerror', function () {
+            if (respaldo) { return; }
+            respaldo = true;
+            estado.mapa.removeLayer(fondo);
+            L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 17, attribution: '&copy; OpenStreetMap'
+            }).addTo(estado.mapa);
+        });
+        fondo.addTo(estado.mapa);
+        L.tileLayer(ESRI + 'World_Light_Gray_Reference/MapServer/tile/{z}/{y}/{x}', {
+            maxZoom: 16, attribution: 'Esri, HERE, Garmin, &copy; OpenStreetMap'
         }).addTo(estado.mapa);
         estado.capaFocos = L.layerGroup().addTo(estado.mapa);
         estado.capaReportes = L.layerGroup().addTo(estado.mapa);

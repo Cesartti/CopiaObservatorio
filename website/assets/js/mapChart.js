@@ -106,11 +106,28 @@ class MapChart {
 	}
 	
 	addMap(){
-		//Mapa simple y limpio
-		L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png',
-			{maxZoom: 14, minZoom: 8, attribution: '©OpenStreetMap, ©CartoDB'}).addTo(this.#map);
-		L.tileLayer('https://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}.png',
-			{maxZoom: 14, minZoom: 8, attribution: '©OpenStreetMap, ©CartoDB'}).addTo(this.#map);
+		/* Fondo gris claro, que deja resaltar el color de los municipios.
+		   Se usa Esri World Light Gray porque no exige clave de API: CartoDB
+		   empezó a estamparle "API KEY REQUIRED" a las teselas gratuitas.
+		   Si Esri llegara a fallar, se cae a OpenStreetMap automáticamente. */
+		const ESRI = 'https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/';
+		const attrib = 'Esri, HERE, Garmin, &copy; OpenStreetMap';
+		const base = L.tileLayer(ESRI + 'World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}',
+			{maxZoom: 14, minZoom: 8, attribution: attrib});
+		const etiquetas = L.tileLayer(ESRI + 'World_Light_Gray_Reference/MapServer/tile/{z}/{y}/{x}',
+			{maxZoom: 14, minZoom: 8, attribution: attrib, pane: 'shadowPane'});
+
+		let respaldoPuesto = false;
+		base.on('tileerror', () => {
+			if (respaldoPuesto) return;
+			respaldoPuesto = true;
+			this.#map.removeLayer(base);
+			if (this.#map.hasLayer(etiquetas)) this.#map.removeLayer(etiquetas);
+			L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+				{maxZoom: 14, minZoom: 8, attribution: '&copy; OpenStreetMap'}).addTo(this.#map);
+		});
+		base.addTo(this.#map);
+		etiquetas.addTo(this.#map);
 	}
 	
 	addZoomHome(){
