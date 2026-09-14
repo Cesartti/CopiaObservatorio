@@ -165,22 +165,22 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
     </style>
     <?php if (!is_null($error)): ?>
     <?php else: ?>
-    <script type="text/javascript" src="assets/js/colors.js"></script>
-    <script type="text/javascript" src="assets/js/general.js"></script>
+    <script type="text/javascript" src="assets/js/colors.js?v=<?= @filemtime(__DIR__ . '/assets/js/colors.js') ?: 1 ?>"></script>
+    <script type="text/javascript" src="assets/js/general.js?v=<?= @filemtime(__DIR__ . '/assets/js/general.js') ?: 1 ?>"></script>
     <script type="text/javascript" src="assets/js/<?= htmlspecialchars($filename) ?>.js"></script>
     <?php if ($charts): ?>
-    <link rel="stylesheet" href="assets/css/charts.css">
+    <link rel="stylesheet" href="assets/css/charts.css?v=<?= @filemtime(__DIR__ . '/assets/css/charts.css') ?: 1 ?>">
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
     <?php endif; ?>
     <?php if ($maps): ?>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" crossorigin="">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@1.6.0/Control.FullScreen.css">
-    <link rel="stylesheet" href="assets/css/maps.css">
+    <link rel="stylesheet" href="assets/css/maps.css?v=<?= @filemtime(__DIR__ . '/assets/css/maps.css') ?: 1 ?>">
     <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" crossorigin=""></script>
     <script src="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@1.6.0/Control.FullScreen.js"></script>
-    <script type="text/javascript" src="assets/js/boyaca.js"></script>
-    <script type="text/javascript" src="assets/js/mapChart.js"></script>
+    <script type="text/javascript" src="assets/js/boyaca.js?v=<?= @filemtime(__DIR__ . '/assets/js/boyaca.js') ?: 1 ?>"></script>
+    <script type="text/javascript" src="assets/js/mapChart.js?v=<?= @filemtime(__DIR__ . '/assets/js/mapChart.js') ?: 1 ?>"></script>
     <?php endif; ?>
     <script type="text/javascript">
         info=[]; csv=[];

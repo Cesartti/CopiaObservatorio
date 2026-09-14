@@ -37,7 +37,7 @@
 <div id="legend" class="legend" style="position:absolute; top:100px; right:10px; z-index:1000;"></div>
 
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-<script src="assets/js/boyaca_low.js"></script>
+<script src="assets/js/boyaca_low.js?v=<?= @filemtime(__DIR__ . '/assets/js/boyaca_low.js') ?: 1 ?>"></script>
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
