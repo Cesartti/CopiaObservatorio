@@ -1,0 +1,873 @@
+{
+ "fuente": "NOAA STAR · Blended Vegetation Health Product (VHI), 4 km, semanal",
+ "url": "https://www.star.nesdis.noaa.gov/smcd/emb/vci/VH/index.php",
+ "archivo": "VHP.G04.C07.j01.P2026037.VH.VHI.tif",
+ "anio": 2026,
+ "semana": 37,
+ "corte": "2026-09-16",
+ "generado": "2026-09-24",
+ "nota": "El VHI combina estrés hídrico y térmico frente a la serie histórica. Por debajo de 20 indica sequía severa; entre 20 y 40, estrés moderado; por encima de 40, condición favorable.",
+ "municipios": {
+  "15001": {
+   "nombre": "TUNJA",
+   "vhi": 44.76,
+   "severidad": "Condición favorable",
+   "celdas": 8,
+   "aproximado": false
+  },
+  "15022": {
+   "nombre": "ALMEIDA",
+   "vhi": 48.18,
+   "severidad": "Condición favorable",
+   "celdas": 3,
+   "aproximado": false
+  },
+  "15047": {
+   "nombre": "AQUITANIA",
+   "vhi": 44.71,
+   "severidad": "Condición favorable",
+   "celdas": 57,
+   "aproximado": false
+  },
+  "15051": {
+   "nombre": "ARCABUCO",
+   "vhi": 40.55,
+   "severidad": "Condición favorable",
+   "celdas": 10,
+   "aproximado": false
+  },
+  "15087": {
+   "nombre": "BELÉN",
+   "vhi": 48.79,
+   "severidad": "Condición favorable",
+   "celdas": 11,
+   "aproximado": false
+  },
+  "15090": {
+   "nombre": "BERBEO",
+   "vhi": 38.25,
+   "severidad": "Estrés moderado",
+   "celdas": 3,
+   "aproximado": false
+  },
+  "15092": {
+   "nombre": "BETÉITIVA",
+   "vhi": 54.0,
+   "severidad": "Condición favorable",
+   "celdas": 6,
+   "aproximado": false
+  },
+  "15097": {
+   "nombre": "BOAVITA",
+   "vhi": 31.34,
+   "severidad": "Estrés moderado",
+   "celdas": 9,
+   "aproximado": false
+  },
+  "15104": {
+   "nombre": "BOYACÁ",
+   "vhi": 47.6,
+   "severidad": "Condición favorable",
+   "celdas": 4,
+   "aproximado": false
+  },
+  "15106": {
+   "nombre": "BRICEÑO",
+   "vhi": 46.37,
+   "severidad": "Condición favorable",
+   "celdas": 4,
+   "aproximado": false
+  },
+  "15109": {
+   "nombre": "BUENAVISTA",
+   "vhi": 38.55,
+   "severidad": "Estrés moderado",
+   "celdas": 6,
+   "aproximado": false
+  },
+  "15114": {
+   "nombre": "BUSBANZÁ",
+   "vhi": 72.7,
+   "severidad": "Condición favorable",
+   "celdas": 1,
+   "aproximado": false
+  },
+  "15131": {
+   "nombre": "CALDAS",
+   "vhi": 41.2,
+   "severidad": "Condición favorable",
+   "celdas": 5,
+   "aproximado": false
+  },
+  "15135": {
+   "nombre": "CAMPOHERMOSO",
+   "vhi": 49.31,
+   "severidad": "Condición favorable",
+   "celdas": 18,
+   "aproximado": false
+  },
+  "15162": {
+   "nombre": "CERINZA",
+   "vhi": 43.26,
+   "severidad": "Condición favorable",
+   "celdas": 3,
+   "aproximado": false
+  },
+  "15172": {
+   "nombre": "CHINAVITA",
+   "vhi": 29.46,
+   "severidad": "Estrés moderado",
+   "celdas": 8,
+   "aproximado": false
+  },
+  "15176": {
+   "nombre": "CHIQUINQUIRÁ",
+   "vhi": 38.04,
+   "severidad": "Estrés moderado",
+   "celdas": 11,
+   "aproximado": false
+  },
+  "15180": {
+   "nombre": "CHISCAS",
+   "vhi": 32.55,
+   "severidad": "Estrés moderado",
+   "celdas": 40,
+   "aproximado": false
+  },
+  "15183": {
+   "nombre": "CHITA",
+   "vhi": 43.38,
+   "severidad": "Condición favorable",
+   "celdas": 45,
+   "aproximado": false
+  },
+  "15185": {
+   "nombre": "CHITARAQUE",
+   "vhi": 46.03,
+   "severidad": "Condición favorable",
+   "celdas": 10,
+   "aproximado": false
+  },
+  "15187": {
+   "nombre": "CHIVATÁ",
+   "vhi": 45.7,
+   "severidad": "Condición favorable",
+   "celdas": 4,
+   "aproximado": false
+  },
+  "15189": {
+   "nombre": "CIÉNEGA",
+   "vhi": 45.43,
+   "severidad": "Condición favorable",
+   "celdas": 3,
+   "aproximado": false
+  },
+  "15204": {
+   "nombre": "COMBITA",
+   "vhi": 59.59,
+   "severidad": "Condición favorable",
+   "celdas": 8,
+   "aproximado": false
+  },
+  "15212": {
+   "nombre": "COPER",
+   "vhi": 35.32,
+   "severidad": "Estrés moderado",
+   "celdas": 11,
+   "aproximado": false
+  },
+  "15215": {
+   "nombre": "CORRALES",
+   "vhi": 63.19,
+   "severidad": "Condición favorable",
+   "celdas": 4,
+   "aproximado": false
+  },
+  "15218": {
+   "nombre": "COVARACHIA",
+   "vhi": 34.25,
+   "severidad": "Estrés moderado",
+   "celdas": 6,
+   "aproximado": false
+  },
+  "15223": {
+   "nombre": "CUBARÁ",
+   "vhi": 42.82,
+   "severidad": "Condición favorable",
+   "celdas": 76,
+   "aproximado": false
+  },
+  "15224": {
+   "nombre": "CUCAITA",
+   "vhi": 55.98,
+   "severidad": "Condición favorable",
+   "celdas": 2,
+   "aproximado": false
+  },
+  "15226": {
+   "nombre": "CUÌTIVA",
+   "vhi": 55.81,
+   "severidad": "Condición favorable",
+   "celdas": 3,
+   "aproximado": false
+  },
+  "15232": {
+   "nombre": "CHÍQUIZA",
+   "vhi": 52.09,
+   "severidad": "Condición favorable",
+   "celdas": 7,
+   "aproximado": false
+  },
+  "15236": {
+   "nombre": "CHIVOR",
+   "vhi": 56.23,
+   "severidad": "Condición favorable",
+   "celdas": 6,
+   "aproximado": false
+  },
+  "15238": {
+   "nombre": "DUITAMA",
+   "vhi": 41.65,
+   "severidad": "Condición favorable",
+   "celdas": 16,
+   "aproximado": false
+  },
+  "15244": {
+   "nombre": "EL COCUY",
+   "vhi": 40.53,
+   "severidad": "Condición favorable",
+   "celdas": 14,
+   "aproximado": false
+  },
+  "15248": {
+   "nombre": "EL ESPINO",
+   "vhi": 44.62,
+   "severidad": "Condición favorable",
+   "celdas": 5,
+   "aproximado": false
+  },
+  "15272": {
+   "nombre": "FIRAVITOBA",
+   "vhi": 46.46,
+   "severidad": "Condición favorable",
+   "celdas": 7,
+   "aproximado": false
+  },
+  "15276": {
+   "nombre": "FLORESTA",
+   "vhi": 50.26,
+   "severidad": "Condición favorable",
+   "celdas": 6,
+   "aproximado": false
+  },
+  "15293": {
+   "nombre": "GACHANTIVÁ",
+   "vhi": 44.31,
+   "severidad": "Condición favorable",
+   "celdas": 6,
+   "aproximado": false
+  },
+  "15296": {
+   "nombre": "GAMEZA",
+   "vhi": 53.29,
+   "severidad": "Condición favorable",
+   "celdas": 8,
+   "aproximado": false
+  },
+  "15299": {
+   "nombre": "GARAGOA",
+   "vhi": 47.35,
+   "severidad": "Condición favorable",
+   "celdas": 12,
+   "aproximado": false
+  },
+  "15317": {
+   "nombre": "GUACAMAYAS",
+   "vhi": 42.39,
+   "severidad": "Condición favorable",
+   "celdas": 3,
+   "aproximado": false
+  },
+  "15322": {
+   "nombre": "GUATEQUE",
+   "vhi": 50.67,
+   "severidad": "Condición favorable",
+   "celdas": 1,
+   "aproximado": false
+  },
+  "15325": {
+   "nombre": "GUAYATÁ",
+   "vhi": 56.48,
+   "severidad": "Condición favorable",
+   "celdas": 6,
+   "aproximado": false
+  },
+  "15332": {
+   "nombre": "GÜICÁN",
+   "vhi": 38.58,
+   "severidad": "Estrés moderado",
+   "celdas": 57,
+   "aproximado": false
+  },
+  "15362": {
+   "nombre": "IZA",
+   "vhi": 40.29,
+   "severidad": "Condición favorable",
+   "celdas": 3,
+   "aproximado": false
+  },
+  "15367": {
+   "nombre": "JENESANO",
+   "vhi": 54.91,
+   "severidad": "Condición favorable",
+   "celdas": 3,
+   "aproximado": false
+  },
+  "15368": {
+   "nombre": "JERICÓ",
+   "vhi": 46.19,
+   "severidad": "Condición favorable",
+   "celdas": 8,
+   "aproximado": false
+  },
+  "15377": {
+   "nombre": "LABRANZA GRANDE",
+   "vhi": 45.96,
+   "severidad": "Condición favorable",
+   "celdas": 35,
+   "aproximado": false
+  },
+  "15380": {
+   "nombre": "LA CAPILLA",
+   "vhi": 41.67,
+   "severidad": "Condición favorable",
+   "celdas": 2,
+   "aproximado": false
+  },
+  "15401": {
+   "nombre": "LA VICTORIA",
+   "vhi": 48.99,
+   "severidad": "Condición favorable",
+   "celdas": 2,
+   "aproximado": false
+  },
+  "15403": {
+   "nombre": "LA UVITA",
+   "vhi": 41.7,
+   "severidad": "Condición favorable",
+   "celdas": 10,
+   "aproximado": false
+  },
+  "15407": {
+   "nombre": "VILLA DE LEYVA",
+   "vhi": 50.19,
+   "severidad": "Condición favorable",
+   "celdas": 8,
+   "aproximado": false
+  },
+  "15425": {
+   "nombre": "MACANAL",
+   "vhi": 57.96,
+   "severidad": "Condición favorable",
+   "celdas": 13,
+   "aproximado": false
+  },
+  "15442": {
+   "nombre": "MARIPÍ",
+   "vhi": 30.64,
+   "severidad": "Estrés moderado",
+   "celdas": 10,
+   "aproximado": false
+  },
+  "15455": {
+   "nombre": "MIRAFLORES",
+   "vhi": 41.95,
+   "severidad": "Condición favorable",
+   "celdas": 16,
+   "aproximado": false
+  },
+  "15464": {
+   "nombre": "MONGUA",
+   "vhi": 43.59,
+   "severidad": "Condición favorable",
+   "celdas": 22,
+   "aproximado": false
+  },
+  "15466": {
+   "nombre": "MONGUÌ",
+   "vhi": 57.21,
+   "severidad": "Condición favorable",
+   "celdas": 4,
+   "aproximado": false
+  },
+  "15469": {
+   "nombre": "MONIQUIRA",
+   "vhi": 46.69,
+   "severidad": "Condición favorable",
+   "celdas": 13,
+   "aproximado": false
+  },
+  "15476": {
+   "nombre": "MOTAVITA",
+   "vhi": 54.63,
+   "severidad": "Condición favorable",
+   "celdas": 4,
+   "aproximado": false
+  },
+  "15480": {
+   "nombre": "MUZO",
+   "vhi": 46.04,
+   "severidad": "Condición favorable",
+   "celdas": 8,
+   "aproximado": false
+  },
+  "15491": {
+   "nombre": "NOBSA",
+   "vhi": 46.83,
+   "severidad": "Condición favorable",
+   "celdas": 3,
+   "aproximado": false
+  },
+  "15494": {
+   "nombre": "NUEVO COLÓN",
+   "vhi": 65.82,
+   "severidad": "Condición favorable",
+   "celdas": 3,
+   "aproximado": false
+  },
+  "15500": {
+   "nombre": "OICATA",
+   "vhi": 48.39,
+   "severidad": "Condición favorable",
+   "celdas": 3,
+   "aproximado": false
+  },
+  "15507": {
+   "nombre": "OTANCHE",
+   "vhi": 45.13,
+   "severidad": "Condición favorable",
+   "celdas": 31,
+   "aproximado": false
+  },
+  "15511": {
+   "nombre": "PACHAVITA",
+   "vhi": 49.28,
+   "severidad": "Condición favorable",
+   "celdas": 6,
+   "aproximado": false
+  },
+  "15514": {
+   "nombre": "PÁEZ",
+   "vhi": 44.02,
+   "severidad": "Condición favorable",
+   "celdas": 22,
+   "aproximado": false
+  },
+  "15516": {
+   "nombre": "PAIPA",
+   "vhi": 41.83,
+   "severidad": "Condición favorable",
+   "celdas": 17,
+   "aproximado": false
+  },
+  "15518": {
+   "nombre": "PAJARITO",
+   "vhi": 46.39,
+   "severidad": "Condición favorable",
+   "celdas": 19,
+   "aproximado": false
+  },
+  "15522": {
+   "nombre": "PANQUEBA",
+   "vhi": 41.22,
+   "severidad": "Condición favorable",
+   "celdas": 3,
+   "aproximado": false
+  },
+  "15531": {
+   "nombre": "PAUNA",
+   "vhi": 44.21,
+   "severidad": "Condición favorable",
+   "celdas": 16,
+   "aproximado": false
+  },
+  "15533": {
+   "nombre": "PAYA",
+   "vhi": 47.77,
+   "severidad": "Condición favorable",
+   "celdas": 27,
+   "aproximado": false
+  },
+  "15537": {
+   "nombre": "PAZ DE RÍO",
+   "vhi": 59.07,
+   "severidad": "Condición favorable",
+   "celdas": 8,
+   "aproximado": false
+  },
+  "15542": {
+   "nombre": "PESCA",
+   "vhi": 48.77,
+   "severidad": "Condición favorable",
+   "celdas": 17,
+   "aproximado": false
+  },
+  "15550": {
+   "nombre": "PISBA",
+   "vhi": 41.93,
+   "severidad": "Condición favorable",
+   "celdas": 31,
+   "aproximado": false
+  },
+  "15572": {
+   "nombre": "PUERTO BOYACÁ",
+   "vhi": 42.76,
+   "severidad": "Condición favorable",
+   "celdas": 93,
+   "aproximado": false
+  },
+  "15580": {
+   "nombre": "QUÍPAMA",
+   "vhi": 44.72,
+   "severidad": "Condición favorable",
+   "celdas": 9,
+   "aproximado": false
+  },
+  "15599": {
+   "nombre": "RAMIRIQUÍ",
+   "vhi": 43.29,
+   "severidad": "Condición favorable",
+   "celdas": 7,
+   "aproximado": false
+  },
+  "15600": {
+   "nombre": "RÁQUIRA",
+   "vhi": 48.92,
+   "severidad": "Condición favorable",
+   "celdas": 15,
+   "aproximado": false
+  },
+  "15621": {
+   "nombre": "RONDÓN",
+   "vhi": 36.76,
+   "severidad": "Estrés moderado",
+   "celdas": 13,
+   "aproximado": false
+  },
+  "15632": {
+   "nombre": "SABOYÁ",
+   "vhi": 42.59,
+   "severidad": "Condición favorable",
+   "celdas": 15,
+   "aproximado": false
+  },
+  "15638": {
+   "nombre": "SÁCHICA",
+   "vhi": 29.24,
+   "severidad": "Estrés moderado",
+   "celdas": 4,
+   "aproximado": false
+  },
+  "15646": {
+   "nombre": "SAMACÁ",
+   "vhi": 41.19,
+   "severidad": "Condición favorable",
+   "celdas": 10,
+   "aproximado": false
+  },
+  "15660": {
+   "nombre": "SAN EDUARDO",
+   "vhi": 44.32,
+   "severidad": "Condición favorable",
+   "celdas": 8,
+   "aproximado": false
+  },
+  "15664": {
+   "nombre": "SAN JOSÉ DE PARE",
+   "vhi": 47.31,
+   "severidad": "Condición favorable",
+   "celdas": 5,
+   "aproximado": false
+  },
+  "15667": {
+   "nombre": "SAN LUIS DE GACENO",
+   "vhi": 45.94,
+   "severidad": "Condición favorable",
+   "celdas": 29,
+   "aproximado": false
+  },
+  "15673": {
+   "nombre": "SAN MATEO",
+   "vhi": 41.41,
+   "severidad": "Condición favorable",
+   "celdas": 9,
+   "aproximado": false
+  },
+  "15676": {
+   "nombre": "SAN MIGUEL DE SEMA",
+   "vhi": 47.94,
+   "severidad": "Condición favorable",
+   "celdas": 6,
+   "aproximado": false
+  },
+  "15681": {
+   "nombre": "SAN PABLO DE BORBUR",
+   "vhi": 49.33,
+   "severidad": "Condición favorable",
+   "celdas": 12,
+   "aproximado": false
+  },
+  "15686": {
+   "nombre": "SANTANA",
+   "vhi": 45.11,
+   "severidad": "Condición favorable",
+   "celdas": 4,
+   "aproximado": false
+  },
+  "15690": {
+   "nombre": "SANTA MARÍA",
+   "vhi": 53.3,
+   "severidad": "Condición favorable",
+   "celdas": 18,
+   "aproximado": false
+  },
+  "15693": {
+   "nombre": "SANTA ROSA DE VITERBO",
+   "vhi": 37.43,
+   "severidad": "Estrés moderado",
+   "celdas": 8,
+   "aproximado": false
+  },
+  "15696": {
+   "nombre": "SANTA SOFÍA",
+   "vhi": 43.38,
+   "severidad": "Condición favorable",
+   "celdas": 4,
+   "aproximado": false
+  },
+  "15720": {
+   "nombre": "SATIVANORTE",
+   "vhi": 48.73,
+   "severidad": "Condición favorable",
+   "celdas": 10,
+   "aproximado": false
+  },
+  "15723": {
+   "nombre": "SATIVASUR",
+   "vhi": 46.71,
+   "severidad": "Condición favorable",
+   "celdas": 4,
+   "aproximado": false
+  },
+  "15740": {
+   "nombre": "SIACHOQUE",
+   "vhi": 49.38,
+   "severidad": "Condición favorable",
+   "celdas": 6,
+   "aproximado": false
+  },
+  "15753": {
+   "nombre": "SOATÁ",
+   "vhi": 42.95,
+   "severidad": "Condición favorable",
+   "celdas": 8,
+   "aproximado": false
+  },
+  "15755": {
+   "nombre": "SOCOTÁ",
+   "vhi": 47.45,
+   "severidad": "Condición favorable",
+   "celdas": 36,
+   "aproximado": false
+  },
+  "15757": {
+   "nombre": "SOCHA",
+   "vhi": 49.05,
+   "severidad": "Condición favorable",
+   "celdas": 9,
+   "aproximado": false
+  },
+  "15759": {
+   "nombre": "SOGAMOSO",
+   "vhi": 48.93,
+   "severidad": "Condición favorable",
+   "celdas": 13,
+   "aproximado": false
+  },
+  "15761": {
+   "nombre": "SOMONDOCO",
+   "vhi": 58.64,
+   "severidad": "Condición favorable",
+   "celdas": 4,
+   "aproximado": false
+  },
+  "15762": {
+   "nombre": "SORA",
+   "vhi": 53.87,
+   "severidad": "Condición favorable",
+   "celdas": 4,
+   "aproximado": false
+  },
+  "15763": {
+   "nombre": "SOTAQUIRÁ",
+   "vhi": 44.37,
+   "severidad": "Condición favorable",
+   "celdas": 20,
+   "aproximado": false
+  },
+  "15764": {
+   "nombre": "SORACÁ",
+   "vhi": 57.05,
+   "severidad": "Condición favorable",
+   "celdas": 3,
+   "aproximado": false
+  },
+  "15774": {
+   "nombre": "SUSACÓN",
+   "vhi": 52.99,
+   "severidad": "Condición favorable",
+   "celdas": 11,
+   "aproximado": false
+  },
+  "15776": {
+   "nombre": "SUTAMARCHÀN",
+   "vhi": 42.88,
+   "severidad": "Condición favorable",
+   "celdas": 6,
+   "aproximado": false
+  },
+  "15778": {
+   "nombre": "SUTATENZA",
+   "vhi": 68.56,
+   "severidad": "Condición favorable",
+   "celdas": 2,
+   "aproximado": false
+  },
+  "15790": {
+   "nombre": "TASCO",
+   "vhi": 48.14,
+   "severidad": "Condición favorable",
+   "celdas": 14,
+   "aproximado": false
+  },
+  "15798": {
+   "nombre": "TENZA",
+   "vhi": 40.42,
+   "severidad": "Condición favorable",
+   "celdas": 3,
+   "aproximado": false
+  },
+  "15804": {
+   "nombre": "TIBANA",
+   "vhi": 51.04,
+   "severidad": "Condición favorable",
+   "celdas": 8,
+   "aproximado": false
+  },
+  "15806": {
+   "nombre": "TIBASOSA",
+   "vhi": 43.97,
+   "severidad": "Condición favorable",
+   "celdas": 7,
+   "aproximado": false
+  },
+  "15808": {
+   "nombre": "TINJACÁ",
+   "vhi": 28.85,
+   "severidad": "Estrés moderado",
+   "celdas": 6,
+   "aproximado": false
+  },
+  "15810": {
+   "nombre": "TIPACOQUE",
+   "vhi": 36.38,
+   "severidad": "Estrés moderado",
+   "celdas": 4,
+   "aproximado": false
+  },
+  "15814": {
+   "nombre": "TOCA",
+   "vhi": 49.15,
+   "severidad": "Condición favorable",
+   "celdas": 9,
+   "aproximado": false
+  },
+  "15816": {
+   "nombre": "TOGÜÍ",
+   "vhi": 50.88,
+   "severidad": "Condición favorable",
+   "celdas": 6,
+   "aproximado": false
+  },
+  "15820": {
+   "nombre": "TÓPAGA",
+   "vhi": 60.14,
+   "severidad": "Condición favorable",
+   "celdas": 3,
+   "aproximado": false
+  },
+  "15822": {
+   "nombre": "TOTA",
+   "vhi": 52.28,
+   "severidad": "Condición favorable",
+   "celdas": 10,
+   "aproximado": false
+  },
+  "15832": {
+   "nombre": "TUNUNGUÁ",
+   "vhi": 43.4,
+   "severidad": "Condición favorable",
+   "celdas": 2,
+   "aproximado": false
+  },
+  "15835": {
+   "nombre": "TURMEQUÉ",
+   "vhi": 52.94,
+   "severidad": "Condición favorable",
+   "celdas": 5,
+   "aproximado": false
+  },
+  "15837": {
+   "nombre": "TUTA",
+   "vhi": 35.6,
+   "severidad": "Estrés moderado",
+   "celdas": 11,
+   "aproximado": false
+  },
+  "15839": {
+   "nombre": "TUTAZÁ",
+   "vhi": 44.38,
+   "severidad": "Condición favorable",
+   "celdas": 7,
+   "aproximado": false
+  },
+  "15842": {
+   "nombre": "UMBITA",
+   "vhi": 42.07,
+   "severidad": "Condición favorable",
+   "celdas": 9,
+   "aproximado": false
+  },
+  "15861": {
+   "nombre": "VENTAQUEMADA",
+   "vhi": 43.89,
+   "severidad": "Condición favorable",
+   "celdas": 10,
+   "aproximado": false
+  },
+  "15879": {
+   "nombre": "VIRACACHÁ",
+   "vhi": 41.64,
+   "severidad": "Condición favorable",
+   "celdas": 4,
+   "aproximado": false
+  },
+  "15897": {
+   "nombre": "ZETAQUIRÁ",
+   "vhi": 41.51,
+   "severidad": "Condición favorable",
+   "celdas": 17,
+   "aproximado": false
+  }
+ }
+}

@@ -546,6 +546,23 @@ function fen_grafica(array $serie, string $color, array $oniAnual, string $titul
                 <span>Municipios con riesgo de desabastecimiento en temporada seca,
                     de <?= (int) $agua['municipios_total'] ?></span>
             </div>
+            <?php if ($agua['vhi']['municipios']): ?>
+                <div class="fen-kpi">
+                    <b><?= (int) $agua['vhi_estres'] ?></b>
+                    <span>Municipios con estrés de la vegetación por sequía (índice VHI
+                        de la NOAA, semana del <?= htmlspecialchars($agua['vhi']['corte']) ?>)</span>
+                </div>
+            <?php endif; ?>
+        </div>
+
+        <div class="fen-map-tools">
+            <label class="mb-0 small fw-semibold" for="aguaCapa">Ver en el mapa</label>
+            <select id="aguaCapa" class="form-select form-select-sm" style="width:auto">
+                <option value="desabastecimiento">Riesgo de desabastecimiento de agua</option>
+                <?php if ($agua['vhi']['municipios']): ?>
+                    <option value="vhi">Sequía agrícola · índice VHI (satélite)</option>
+                <?php endif; ?>
+            </select>
         </div>
 
         <div id="fenMapaAgua" role="application"
@@ -554,9 +571,10 @@ function fen_grafica(array $serie, string $color, array $oniAnual, string $titul
                  'estaciones' => $agua['estaciones_nivel'],
                  'embalses' => $agua['embalses']['boyaca'],
                  'municipios' => $agua['desabastecimiento'],
+                 'vhi' => $agua['vhi']['municipios'],
              ], JSON_UNESCAPED_UNICODE), ENT_QUOTES) ?>"></div>
 
-        <div class="fen-leyenda">
+        <div class="fen-leyenda" id="aguaLeyDes">
             <span><i style="background:#b45309"></i> Riesgo en temporada seca y húmeda</span>
             <span><i style="background:#f59e0b"></i> Riesgo en temporada seca</span>
             <span><i style="background:#60a5fa"></i> Riesgo en temporada húmeda</span>
@@ -565,7 +583,13 @@ function fen_grafica(array $serie, string $color, array $oniAnual, string $titul
             <span><i style="background:#dc2626;border-radius:50%"></i> Estación en alerta</span>
             <span><i style="background:#0ea5e9;border-radius:50%"></i> Embalse</span>
         </div>
-        <p class="small text-muted mt-2">
+        <div class="fen-leyenda" id="aguaLeyVhi" style="display:none">
+            <span><i style="background:#b91c1c"></i> VHI menor que 20 · sequía severa</span>
+            <span><i style="background:#f59e0b"></i> 20 a 40 · estrés moderado</span>
+            <span><i style="background:#86efac"></i> 40 a 60 · condición favorable</span>
+            <span><i style="background:#15803d"></i> Mayor que 60 · vegetación vigorosa</span>
+        </div>
+        <p class="small text-muted mt-2" id="aguaPie">
             El color del municipio indica en qué temporada el IDEAM identificó riesgo de
             desabastecimiento; los puntos son estaciones hidrológicas con su última lectura.
         </p>
@@ -736,6 +760,15 @@ function fen_grafica(array $serie, string $color, array $oniAnual, string $titul
         return '#d1fae5';
     }
 
+    // Escala del índice VHI, con los mismos cortes que usa la NOAA.
+    function aguaColorVhi(v) {
+        if (v === null || v === undefined) { return '#e5e7eb'; }
+        if (v < 20) { return '#b91c1c'; }
+        if (v < 40) { return '#f59e0b'; }
+        if (v < 60) { return '#86efac'; }
+        return '#15803d';
+    }
+
     function iniciarMapaAgua() {
         if (agua.mapa) { setTimeout(function () { agua.mapa.invalidateSize(); }, 60); return; }
         if (typeof L === 'undefined') {
@@ -786,21 +819,51 @@ function fen_grafica(array $serie, string $color, array $oniAnual, string $titul
         });
         fondo.addTo(agua.mapa);
 
+        var vhi = datos.vhi || {};
+        agua.vista = 'desabastecimiento';
+
         if (typeof boyacaData !== 'undefined') {
-            L.geoJSON(boyacaData, {
-                style: function (f) {
-                    var m = municipios[f.properties.id];
-                    return {
-                        fillColor: aguaColor(m ? m.categoria : ''),
-                        fillOpacity: 0.75, color: '#ffffff', weight: 1
-                    };
-                },
+            agua.capaMun = L.geoJSON(boyacaData, {
+                style: estiloMunicipio,
                 onEachFeature: function (f, capa) {
                     var m = municipios[f.properties.id];
-                    capa.bindPopup('<strong>' + f.properties.name + '</strong><br>'
-                        + (m ? m.categoria : 'Sin información'));
+                    var v = vhi[f.properties.id];
+                    // El popup muestra siempre las dos lecturas: sirve para
+                    // cruzar sequía con disponibilidad de agua sin cambiar de capa.
+                    var html = '<strong>' + f.properties.name + '</strong>'
+                        + '<br>Agua: ' + (m ? m.categoria : 'sin información');
+                    if (v) {
+                        html += '<br>Vegetación: VHI ' + v.vhi + ' · ' + v.severidad;
+                    }
+                    capa.bindPopup(html);
                 }
             }).addTo(agua.mapa);
+        }
+
+        function estiloMunicipio(f) {
+            var color;
+            if (agua.vista === 'vhi') {
+                var v = vhi[f.properties.id];
+                color = aguaColorVhi(v ? v.vhi : null);
+            } else {
+                var m = municipios[f.properties.id];
+                color = aguaColor(m ? m.categoria : '');
+            }
+            return { fillColor: color, fillOpacity: 0.78, color: '#ffffff', weight: 1 };
+        }
+
+        var sel = document.getElementById('aguaCapa');
+        if (sel) {
+            sel.addEventListener('change', function () {
+                agua.vista = sel.value;
+                if (agua.capaMun) { agua.capaMun.setStyle(estiloMunicipio); }
+                var esVhi = (agua.vista === 'vhi');
+                document.getElementById('aguaLeyDes').style.display = esVhi ? 'none' : '';
+                document.getElementById('aguaLeyVhi').style.display = esVhi ? '' : 'none';
+                document.getElementById('aguaPie').textContent = esVhi
+                    ? 'El índice VHI combina el estrés hídrico y el térmico de la vegetación frente a su serie histórica: por debajo de 40 el cultivo está sufriendo. Se calcula con el producto satelital semanal de la NOAA.'
+                    : 'El color del municipio indica en qué temporada el IDEAM identificó riesgo de desabastecimiento; los puntos son estaciones hidrológicas con su última lectura.';
+            });
         }
 
         (datos.estaciones || []).forEach(function (e) {

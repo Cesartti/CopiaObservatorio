@@ -47,6 +47,12 @@ function agua_fuentes(): array
                 . 'Es la fuente que el propio visor del IDEAM acredita para esta capa.',
             'url' => 'https://www.xm.com.co/',
         ],
+        [
+            'nombre' => 'NOAA STAR · Vegetation Health Product',
+            'detalle' => 'Índice VHI de sequía agrícola, producto satelital semanal de 4 km. '
+                . 'El portal descarga el mosaico global y promedia las celdas de cada municipio.',
+            'url' => 'https://www.star.nesdis.noaa.gov/smcd/emb/vci/VH/index.php',
+        ],
     ];
 }
 
@@ -314,6 +320,37 @@ function agua_desabastecimiento(): array
 }
 
 /**
+ * Índice de Salud de la Vegetación (VHI) por municipio: el indicador de sequía
+ * agrícola de la NOAA, que combina estrés hídrico y térmico frente a la serie
+ * histórica. Lo calcula scripts/gen_vhi_boyaca.py a partir del producto
+ * semanal de 4 km; aquí solo se lee el archivo resultante.
+ *
+ * @return array{municipios:array,corte:string,semana:?int,anio:?int,url:string,archivo:string}
+ */
+function agua_vhi(): array
+{
+    static $cache = null;
+    if ($cache !== null) {
+        return $cache;
+    }
+    $p = __DIR__ . '/../data/fenomenos/vhi_boyaca.json';
+    $d = is_file($p) ? json_decode((string) @file_get_contents($p), true) : null;
+    if (!is_array($d) || empty($d['municipios'])) {
+        return $cache = ['municipios' => [], 'corte' => '', 'semana' => null,
+                         'anio' => null, 'url' => '', 'archivo' => ''];
+    }
+
+    return $cache = [
+        'municipios' => $d['municipios'],
+        'corte' => (string) ($d['corte'] ?? ''),
+        'semana' => isset($d['semana']) ? (int) $d['semana'] : null,
+        'anio' => isset($d['anio']) ? (int) $d['anio'] : null,
+        'url' => (string) ($d['url'] ?? ''),
+        'archivo' => (string) ($d['archivo'] ?? ''),
+    ];
+}
+
+/**
  * Resumen para las fichas de la subpestaña: embalse, estaciones en alerta y
  * municipios con riesgo de desabastecimiento en temporada seca.
  */
@@ -342,7 +379,17 @@ function agua_resumen(): array
         }
     }
 
+    $vhi = agua_vhi();
+    $vhiEstres = 0;
+    foreach ($vhi['municipios'] as $m) {
+        if ((float) ($m['vhi'] ?? 100) < 40) {
+            $vhiEstres++;
+        }
+    }
+
     return [
+        'vhi' => $vhi,
+        'vhi_estres' => $vhiEstres,
         'embalses' => $emb,
         'estaciones_nivel' => $niv,
         'estaciones_total' => count($niv),
@@ -351,6 +398,6 @@ function agua_resumen(): array
         'desabastecimiento' => $des,
         'municipios_seco' => $seco,
         'municipios_total' => count($des),
-        'hay_datos' => ($emb['boyaca'] || $niv || $des),
+        'hay_datos' => ($emb['boyaca'] || $niv || $des || $vhi['municipios']),
     ];
 }
