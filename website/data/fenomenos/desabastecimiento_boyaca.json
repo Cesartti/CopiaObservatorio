@@ -1,0 +1,745 @@
+{
+ "fuente": "IDEAM · Visor FEWS Colombia, capa «Desabastecimiento por municipio (1998-2021)»",
+ "url": "https://fews.ideam.gov.co/visorfews/nacional",
+ "generado": "2026-09-24",
+ "municipios": {
+  "15001": {
+   "nombre": "TUNJA",
+   "categoria": "Cond Seca - Húmeda",
+   "seco": true,
+   "humedo": true
+  },
+  "15022": {
+   "nombre": "ALMEIDA",
+   "categoria": "Cond Seca - Húmeda",
+   "seco": true,
+   "humedo": true
+  },
+  "15047": {
+   "nombre": "AQUITANIA",
+   "categoria": "Condición Seca",
+   "seco": true,
+   "humedo": false
+  },
+  "15051": {
+   "nombre": "ARCABUCO",
+   "categoria": "Condición Húmeda",
+   "seco": false,
+   "humedo": true
+  },
+  "15087": {
+   "nombre": "BELÉN",
+   "categoria": "Condición Húmeda",
+   "seco": false,
+   "humedo": true
+  },
+  "15090": {
+   "nombre": "BERBEO",
+   "categoria": "Sin afectación",
+   "seco": false,
+   "humedo": false
+  },
+  "15092": {
+   "nombre": "BETÉITIVA",
+   "categoria": "Condición Seca",
+   "seco": true,
+   "humedo": false
+  },
+  "15097": {
+   "nombre": "BOAVITA",
+   "categoria": "Condición Húmeda",
+   "seco": false,
+   "humedo": true
+  },
+  "15104": {
+   "nombre": "BOYACÁ",
+   "categoria": "Condición Húmeda",
+   "seco": false,
+   "humedo": true
+  },
+  "15106": {
+   "nombre": "BRICEÑO",
+   "categoria": "Sin afectación",
+   "seco": false,
+   "humedo": false
+  },
+  "15109": {
+   "nombre": "BUENAVISTA",
+   "categoria": "Condición Seca",
+   "seco": true,
+   "humedo": false
+  },
+  "15114": {
+   "nombre": "BUSBANZÁ",
+   "categoria": "Sin afectación",
+   "seco": false,
+   "humedo": false
+  },
+  "15131": {
+   "nombre": "CALDAS",
+   "categoria": "Cond Seca - Húmeda",
+   "seco": true,
+   "humedo": true
+  },
+  "15135": {
+   "nombre": "CAMPOHERMOSO",
+   "categoria": "Sin afectación",
+   "seco": false,
+   "humedo": false
+  },
+  "15162": {
+   "nombre": "CERINZA",
+   "categoria": "Sin afectación",
+   "seco": false,
+   "humedo": false
+  },
+  "15172": {
+   "nombre": "CHINAVITA",
+   "categoria": "Cond Seca - Húmeda",
+   "seco": true,
+   "humedo": true
+  },
+  "15176": {
+   "nombre": "CHIQUINQUIRÁ",
+   "categoria": "Cond Seca - Húmeda",
+   "seco": true,
+   "humedo": true
+  },
+  "15180": {
+   "nombre": "CHISCAS",
+   "categoria": "Cond Seca - Húmeda",
+   "seco": true,
+   "humedo": true
+  },
+  "15183": {
+   "nombre": "CHITA",
+   "categoria": "Condición Húmeda",
+   "seco": false,
+   "humedo": true
+  },
+  "15185": {
+   "nombre": "CHITARAQUE",
+   "categoria": "Condición Húmeda",
+   "seco": false,
+   "humedo": true
+  },
+  "15187": {
+   "nombre": "CHIVATÁ",
+   "categoria": "Cond Seca - Húmeda",
+   "seco": true,
+   "humedo": true
+  },
+  "15189": {
+   "nombre": "CIÉNEGA",
+   "categoria": "Condición Seca",
+   "seco": true,
+   "humedo": false
+  },
+  "15204": {
+   "nombre": "CÓMBITA",
+   "categoria": "Condición Seca",
+   "seco": true,
+   "humedo": false
+  },
+  "15212": {
+   "nombre": "COPER",
+   "categoria": "Cond Seca - Húmeda",
+   "seco": true,
+   "humedo": true
+  },
+  "15215": {
+   "nombre": "CORRALES",
+   "categoria": "Cond Seca - Húmeda",
+   "seco": true,
+   "humedo": true
+  },
+  "15218": {
+   "nombre": "COVARACHÍA",
+   "categoria": "Cond Seca - Húmeda",
+   "seco": true,
+   "humedo": true
+  },
+  "15223": {
+   "nombre": "CUBARÁ",
+   "categoria": "Condición Húmeda",
+   "seco": false,
+   "humedo": true
+  },
+  "15224": {
+   "nombre": "CUCAITA",
+   "categoria": "Condición Seca",
+   "seco": true,
+   "humedo": false
+  },
+  "15226": {
+   "nombre": "CUÍTIVA",
+   "categoria": "Condición Seca",
+   "seco": true,
+   "humedo": false
+  },
+  "15232": {
+   "nombre": "CHÍQUIZA",
+   "categoria": "Condición Húmeda",
+   "seco": false,
+   "humedo": true
+  },
+  "15236": {
+   "nombre": "CHIVOR",
+   "categoria": "Condición Húmeda",
+   "seco": false,
+   "humedo": true
+  },
+  "15238": {
+   "nombre": "DUITAMA",
+   "categoria": "Cond Seca - Húmeda",
+   "seco": true,
+   "humedo": true
+  },
+  "15244": {
+   "nombre": "EL COCUY",
+   "categoria": "Sin afectación",
+   "seco": false,
+   "humedo": false
+  },
+  "15248": {
+   "nombre": "EL ESPINO",
+   "categoria": "Cond Seca - Húmeda",
+   "seco": true,
+   "humedo": true
+  },
+  "15272": {
+   "nombre": "FIRAVITOBA",
+   "categoria": "Cond Seca - Húmeda",
+   "seco": true,
+   "humedo": true
+  },
+  "15276": {
+   "nombre": "FLORESTA",
+   "categoria": "Cond Seca - Húmeda",
+   "seco": true,
+   "humedo": true
+  },
+  "15293": {
+   "nombre": "GACHANTIVÁ",
+   "categoria": "Condición Seca",
+   "seco": true,
+   "humedo": false
+  },
+  "15296": {
+   "nombre": "GÁMEZA",
+   "categoria": "Condición Húmeda",
+   "seco": false,
+   "humedo": true
+  },
+  "15299": {
+   "nombre": "GARAGOA",
+   "categoria": "Cond Seca - Húmeda",
+   "seco": true,
+   "humedo": true
+  },
+  "15317": {
+   "nombre": "GUACAMAYAS",
+   "categoria": "Condición Seca",
+   "seco": true,
+   "humedo": false
+  },
+  "15322": {
+   "nombre": "GUATEQUE",
+   "categoria": "Cond Seca - Húmeda",
+   "seco": true,
+   "humedo": true
+  },
+  "15325": {
+   "nombre": "GUAYATÁ",
+   "categoria": "Condición Húmeda",
+   "seco": false,
+   "humedo": true
+  },
+  "15332": {
+   "nombre": "GUICÁN",
+   "categoria": "Condición Húmeda",
+   "seco": false,
+   "humedo": true
+  },
+  "15362": {
+   "nombre": "IZA",
+   "categoria": "Condición Húmeda",
+   "seco": false,
+   "humedo": true
+  },
+  "15367": {
+   "nombre": "JENESANO",
+   "categoria": "Condición Húmeda",
+   "seco": false,
+   "humedo": true
+  },
+  "15368": {
+   "nombre": "JERICÓ",
+   "categoria": "Condición Seca",
+   "seco": true,
+   "humedo": false
+  },
+  "15377": {
+   "nombre": "LABRANZAGRANDE",
+   "categoria": "Condición Húmeda",
+   "seco": false,
+   "humedo": true
+  },
+  "15380": {
+   "nombre": "LA CAPILLA",
+   "categoria": "Cond Seca - Húmeda",
+   "seco": true,
+   "humedo": true
+  },
+  "15401": {
+   "nombre": "LA VICTORIA",
+   "categoria": "Condición Seca",
+   "seco": true,
+   "humedo": false
+  },
+  "15403": {
+   "nombre": "LA UVITA",
+   "categoria": "Condición Seca",
+   "seco": true,
+   "humedo": false
+  },
+  "15407": {
+   "nombre": "VILLA DE LEIVA",
+   "categoria": "Cond Seca - Húmeda",
+   "seco": true,
+   "humedo": true
+  },
+  "15425": {
+   "nombre": "MACANAL",
+   "categoria": "Sin afectación",
+   "seco": false,
+   "humedo": false
+  },
+  "15442": {
+   "nombre": "MARIPÍ",
+   "categoria": "Cond Seca - Húmeda",
+   "seco": true,
+   "humedo": true
+  },
+  "15455": {
+   "nombre": "MIRAFLORES",
+   "categoria": "Condición Seca",
+   "seco": true,
+   "humedo": false
+  },
+  "15464": {
+   "nombre": "MONGUA",
+   "categoria": "Cond Seca - Húmeda",
+   "seco": true,
+   "humedo": true
+  },
+  "15466": {
+   "nombre": "MONGUÍ",
+   "categoria": "Cond Seca - Húmeda",
+   "seco": true,
+   "humedo": true
+  },
+  "15469": {
+   "nombre": "MONIQUIRÁ",
+   "categoria": "Cond Seca - Húmeda",
+   "seco": true,
+   "humedo": true
+  },
+  "15476": {
+   "nombre": "MOTAVITA",
+   "categoria": "Cond Seca - Húmeda",
+   "seco": true,
+   "humedo": true
+  },
+  "15480": {
+   "nombre": "MUZO",
+   "categoria": "Cond Seca - Húmeda",
+   "seco": true,
+   "humedo": true
+  },
+  "15491": {
+   "nombre": "NOBSA",
+   "categoria": "Condición Seca",
+   "seco": true,
+   "humedo": false
+  },
+  "15494": {
+   "nombre": "NUEVO COLÓN",
+   "categoria": "Condición Húmeda",
+   "seco": false,
+   "humedo": true
+  },
+  "15500": {
+   "nombre": "OICATÁ",
+   "categoria": "Condición Seca",
+   "seco": true,
+   "humedo": false
+  },
+  "15507": {
+   "nombre": "OTANCHE",
+   "categoria": "Condición Húmeda",
+   "seco": false,
+   "humedo": true
+  },
+  "15511": {
+   "nombre": "PACHAVITA",
+   "categoria": "Sin afectación",
+   "seco": false,
+   "humedo": false
+  },
+  "15514": {
+   "nombre": "PÁEZ",
+   "categoria": "Cond Seca - Húmeda",
+   "seco": true,
+   "humedo": true
+  },
+  "15516": {
+   "nombre": "PAIPA",
+   "categoria": "Cond Seca - Húmeda",
+   "seco": true,
+   "humedo": true
+  },
+  "15518": {
+   "nombre": "PAJARITO",
+   "categoria": "Condición Húmeda",
+   "seco": false,
+   "humedo": true
+  },
+  "15522": {
+   "nombre": "PANQUEBA",
+   "categoria": "Cond Seca - Húmeda",
+   "seco": true,
+   "humedo": true
+  },
+  "15531": {
+   "nombre": "PAUNA",
+   "categoria": "Sin afectación",
+   "seco": false,
+   "humedo": false
+  },
+  "15533": {
+   "nombre": "PAYA",
+   "categoria": "Condición Húmeda",
+   "seco": false,
+   "humedo": true
+  },
+  "15537": {
+   "nombre": "PAZ DE RÍO",
+   "categoria": "Cond Seca - Húmeda",
+   "seco": true,
+   "humedo": true
+  },
+  "15542": {
+   "nombre": "PESCA",
+   "categoria": "Cond Seca - Húmeda",
+   "seco": true,
+   "humedo": true
+  },
+  "15550": {
+   "nombre": "PISBA",
+   "categoria": "Sin afectación",
+   "seco": false,
+   "humedo": false
+  },
+  "15572": {
+   "nombre": "PUERTO BOYACÁ",
+   "categoria": "Condición Seca",
+   "seco": true,
+   "humedo": false
+  },
+  "15580": {
+   "nombre": "QUÍPAMA",
+   "categoria": "Cond Seca - Húmeda",
+   "seco": true,
+   "humedo": true
+  },
+  "15599": {
+   "nombre": "RAMIRIQUÍ",
+   "categoria": "Sin afectación",
+   "seco": false,
+   "humedo": false
+  },
+  "15600": {
+   "nombre": "RÁQUIRA",
+   "categoria": "Condición Húmeda",
+   "seco": false,
+   "humedo": true
+  },
+  "15621": {
+   "nombre": "RONDÓN",
+   "categoria": "Sin afectación",
+   "seco": false,
+   "humedo": false
+  },
+  "15632": {
+   "nombre": "SABOYÁ",
+   "categoria": "Cond Seca - Húmeda",
+   "seco": true,
+   "humedo": true
+  },
+  "15638": {
+   "nombre": "SÁCHICA",
+   "categoria": "Sin afectación",
+   "seco": false,
+   "humedo": false
+  },
+  "15646": {
+   "nombre": "SAMACÁ",
+   "categoria": "Condición Seca",
+   "seco": true,
+   "humedo": false
+  },
+  "15660": {
+   "nombre": "SAN EDUARDO",
+   "categoria": "Condición Húmeda",
+   "seco": false,
+   "humedo": true
+  },
+  "15664": {
+   "nombre": "SAN JOSÉ DE PARE",
+   "categoria": "Sin afectación",
+   "seco": false,
+   "humedo": false
+  },
+  "15667": {
+   "nombre": "SAN LUIS DE GACENO",
+   "categoria": "Condición Húmeda",
+   "seco": false,
+   "humedo": true
+  },
+  "15673": {
+   "nombre": "SAN MATEO",
+   "categoria": "Condición Húmeda",
+   "seco": false,
+   "humedo": true
+  },
+  "15676": {
+   "nombre": "SAN MIGUEL DE SEMA",
+   "categoria": "Cond Seca - Húmeda",
+   "seco": true,
+   "humedo": true
+  },
+  "15681": {
+   "nombre": "SAN PABLO DE BORBUR",
+   "categoria": "Cond Seca - Húmeda",
+   "seco": true,
+   "humedo": true
+  },
+  "15686": {
+   "nombre": "SANTANA",
+   "categoria": "Cond Seca - Húmeda",
+   "seco": true,
+   "humedo": true
+  },
+  "15690": {
+   "nombre": "SANTA MARÍA",
+   "categoria": "Condición Húmeda",
+   "seco": false,
+   "humedo": true
+  },
+  "15693": {
+   "nombre": "SANTA ROSA DE VITERBO",
+   "categoria": "Condición Seca",
+   "seco": true,
+   "humedo": false
+  },
+  "15696": {
+   "nombre": "SANTA SOFÍA",
+   "categoria": "Condición Seca",
+   "seco": true,
+   "humedo": false
+  },
+  "15720": {
+   "nombre": "SATIVANORTE",
+   "categoria": "Cond Seca - Húmeda",
+   "seco": true,
+   "humedo": true
+  },
+  "15723": {
+   "nombre": "SATIVASUR",
+   "categoria": "Sin afectación",
+   "seco": false,
+   "humedo": false
+  },
+  "15740": {
+   "nombre": "SIACHOQUE",
+   "categoria": "Condición Húmeda",
+   "seco": false,
+   "humedo": true
+  },
+  "15753": {
+   "nombre": "SOATÁ",
+   "categoria": "Condición Húmeda",
+   "seco": false,
+   "humedo": true
+  },
+  "15755": {
+   "nombre": "SOCOTÁ",
+   "categoria": "Condición Húmeda",
+   "seco": false,
+   "humedo": true
+  },
+  "15757": {
+   "nombre": "SOCHA",
+   "categoria": "Sin afectación",
+   "seco": false,
+   "humedo": false
+  },
+  "15759": {
+   "nombre": "SOGAMOSO",
+   "categoria": "Cond Seca - Húmeda",
+   "seco": true,
+   "humedo": true
+  },
+  "15761": {
+   "nombre": "SOMONDOCO",
+   "categoria": "Sin afectación",
+   "seco": false,
+   "humedo": false
+  },
+  "15762": {
+   "nombre": "SORA",
+   "categoria": "Condición Seca",
+   "seco": true,
+   "humedo": false
+  },
+  "15763": {
+   "nombre": "SOTAQUIRÁ",
+   "categoria": "Condición Húmeda",
+   "seco": false,
+   "humedo": true
+  },
+  "15764": {
+   "nombre": "SORACÁ",
+   "categoria": "Condición Seca",
+   "seco": true,
+   "humedo": false
+  },
+  "15774": {
+   "nombre": "SUSACÓN",
+   "categoria": "Sin afectación",
+   "seco": false,
+   "humedo": false
+  },
+  "15776": {
+   "nombre": "SUTAMARCHÁN",
+   "categoria": "Cond Seca - Húmeda",
+   "seco": true,
+   "humedo": true
+  },
+  "15778": {
+   "nombre": "SUTATENZA",
+   "categoria": "Cond Seca - Húmeda",
+   "seco": true,
+   "humedo": true
+  },
+  "15790": {
+   "nombre": "TASCO",
+   "categoria": "Condición Seca",
+   "seco": true,
+   "humedo": false
+  },
+  "15798": {
+   "nombre": "TENZA",
+   "categoria": "Cond Seca - Húmeda",
+   "seco": true,
+   "humedo": true
+  },
+  "15804": {
+   "nombre": "TIBANÁ",
+   "categoria": "Sin afectación",
+   "seco": false,
+   "humedo": false
+  },
+  "15806": {
+   "nombre": "TIBASOSA",
+   "categoria": "Condición Seca",
+   "seco": true,
+   "humedo": false
+  },
+  "15808": {
+   "nombre": "TINJACÁ",
+   "categoria": "Condición Seca",
+   "seco": true,
+   "humedo": false
+  },
+  "15810": {
+   "nombre": "TIPACOQUE",
+   "categoria": "Cond Seca - Húmeda",
+   "seco": true,
+   "humedo": true
+  },
+  "15814": {
+   "nombre": "TOCA",
+   "categoria": "Cond Seca - Húmeda",
+   "seco": true,
+   "humedo": true
+  },
+  "15816": {
+   "nombre": "TOGÜÍ",
+   "categoria": "Condición Húmeda",
+   "seco": false,
+   "humedo": true
+  },
+  "15820": {
+   "nombre": "TÓPAGA",
+   "categoria": "Condición Seca",
+   "seco": true,
+   "humedo": false
+  },
+  "15822": {
+   "nombre": "TOTA",
+   "categoria": "Condición Seca",
+   "seco": true,
+   "humedo": false
+  },
+  "15832": {
+   "nombre": "TUNUNGUÁ",
+   "categoria": "Sin afectación",
+   "seco": false,
+   "humedo": false
+  },
+  "15835": {
+   "nombre": "TURMEQUÉ",
+   "categoria": "Sin afectación",
+   "seco": false,
+   "humedo": false
+  },
+  "15837": {
+   "nombre": "TUTA",
+   "categoria": "Condición Seca",
+   "seco": true,
+   "humedo": false
+  },
+  "15839": {
+   "nombre": "TUTAZÁ",
+   "categoria": "Sin afectación",
+   "seco": false,
+   "humedo": false
+  },
+  "15842": {
+   "nombre": "ÚMBITA",
+   "categoria": "Sin afectación",
+   "seco": false,
+   "humedo": false
+  },
+  "15861": {
+   "nombre": "VENTAQUEMADA",
+   "categoria": "Condición Húmeda",
+   "seco": false,
+   "humedo": true
+  },
+  "15879": {
+   "nombre": "VIRACACHÁ",
+   "categoria": "Condición Seca",
+   "seco": true,
+   "humedo": false
+  },
+  "15897": {
+   "nombre": "ZETAQUIRÁ",
+   "categoria": "Sin afectación",
+   "seco": false,
+   "humedo": false
+  }
+ }
+}

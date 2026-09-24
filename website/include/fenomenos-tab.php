@@ -3,11 +3,13 @@
  * Pestaña "Fenómenos en Boyacá" del Observatorio Ambiental.
  *
  * Subpestañas: El Niño · La Niña · Mapa de novedades (con reporte ciudadano)
- * · Directorio de bomberos. Los datos vienen de api/fenomenos.php.
+ * · Estado del agua · Directorio de bomberos. Los datos vienen de
+ * api/fenomenos.php y, para el agua, del visor FEWS del IDEAM.
  *
  * Variables del scope (observatorio.php): $obs, $slug.
  */
 require_once __DIR__ . '/../lib/fenomenos.php';
+require_once __DIR__ . '/../lib/agua.php';
 
 $fenEnso = fen_estado_enso();
 $fenHist = fen_historico();
@@ -45,6 +47,21 @@ foreach (['nino', 'nina'] as $f) {
         }
     }
 }
+// Estado del agua: embalse, estaciones hidrológicas y riesgo de
+// desabastecimiento. Si las fuentes externas no responden, $agua queda con los
+// arreglos vacíos y la subpestaña muestra un aviso en vez de romperse.
+$agua = agua_resumen();
+$aguaEmbalse = $agua['embalses']['boyaca'][0] ?? null;
+$aguaPorEstado = [];
+foreach ($agua['estaciones_nivel'] as $e) {
+    $aguaPorEstado[$e['estado']] = ($aguaPorEstado[$e['estado']] ?? 0) + 1;
+}
+$aguaCategorias = [];
+foreach ($agua['desabastecimiento'] as $d) {
+    $aguaCategorias[$d['categoria']] = ($aguaCategorias[$d['categoria']] ?? 0) + 1;
+}
+arsort($aguaCategorias);
+
 $fenFaseActual = (string) ($fenEnso['fase'] ?? 'neutral');
 $fenAniosFen = $fenTot['anios_fenomeno'] ?? [];
 $fenPorFuente = $fenTot['por_fuente'] ?? [];
@@ -134,7 +151,7 @@ function fen_grafica(array $serie, string $color, array $oniAnual, string $titul
     .fen-lista li{display:flex;justify-content:space-between;gap:.75rem;padding:.35rem 0;border-bottom:1px dashed #e6ecf6;font-size:.87rem}
     .fen-lista li:last-child{border-bottom:none}
     .fen-lista li b{color:var(--obs-color,#1f6b45)}
-    #fenMapa{width:100%;height:540px;border-radius:14px;border:1px solid #e6ecf6;background:#eef2f7;z-index:0}
+    #fenMapa,#fenMapaAgua{width:100%;height:540px;border-radius:14px;border:1px solid #e6ecf6;background:#eef2f7;z-index:0}
     .fen-map-tools{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-bottom:.6rem}
     .fen-map-tools select,.fen-map-tools input{font-size:.85rem;padding:.35rem .55rem;border:1px solid #dce4f2;border-radius:9px}
     .fen-leyenda{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:.6rem;font-size:.8rem;color:#4b5768}
@@ -177,7 +194,7 @@ function fen_grafica(array $serie, string $color, array $oniAnual, string $titul
     .fen-fuente li{font-size:.82rem;color:#4b5768;margin-bottom:.3rem}
     .fen-sin-focos{background:#ecfdf5;border:1px solid #a7f3d0;color:#065f46;border-radius:10px;padding:.55rem .8rem;font-size:.84rem;margin-bottom:.6rem}
     .fen-aviso{background:#fff7ed;border:1px solid #fed7aa;color:#9a3412;border-radius:12px;padding:.7rem .9rem;font-size:.84rem}
-    @media (max-width:575.98px){#fenMapa{height:420px}}
+    @media (max-width:575.98px){#fenMapa,#fenMapaAgua{height:420px}}
 </style>
 
 <article class="content-card">
@@ -214,6 +231,7 @@ function fen_grafica(array $serie, string $color, array $oniAnual, string $titul
         <button type="button" class="active" data-fen="nino"><i class="fa-solid fa-sun me-1" aria-hidden="true"></i> Fenómeno de El Niño</button>
         <button type="button" data-fen="nina"><i class="fa-solid fa-cloud-showers-heavy me-1" aria-hidden="true"></i> Fenómeno de La Niña</button>
         <button type="button" data-fen="mapa"><i class="fa-solid fa-fire me-1" aria-hidden="true"></i> Mapa de novedades</button>
+        <button type="button" data-fen="agua"><i class="fa-solid fa-droplet me-1" aria-hidden="true"></i> Estado del agua</button>
         <button type="button" data-fen="bomberos"><i class="fa-solid fa-truck-medical me-1" aria-hidden="true"></i> Directorio de bomberos</button>
     </div>
 
@@ -487,6 +505,150 @@ function fen_grafica(array $serie, string $color, array $oniAnual, string $titul
         </div>
     </section>
 
+    <?php /* ----------------------------------------------------- Estado del agua */ ?>
+    <section class="fen-pane" id="fen-agua">
+        <h4 class="h6 fw-bold">¿Cuánta agua tiene hoy Boyacá?</h4>
+        <p class="small">
+            El agua es el termómetro de El Niño y de La Niña: cuando el fenómeno cálido se
+            instala bajan los caudales y los acueductos rurales empiezan a racionar, y cuando
+            llega La Niña los ríos suben y se desbordan. Esta sección toma en tiempo real el
+            <strong>volumen del embalse</strong>, el <strong>nivel de los ríos</strong> y el
+            <strong>riesgo de desabastecimiento de cada municipio</strong>, para saber dónde hay
+            capacidad de agua y dónde conviene anticipar medidas.
+        </p>
+
+        <?php if (!$agua['hay_datos']): ?>
+            <div class="fen-aviso mb-3">
+                <strong>Las fuentes del IDEAM no respondieron.</strong>
+                La sección vuelve a mostrar los datos apenas se restablezca la conexión con el
+                visor FEWS. Consulte mientras tanto
+                <a href="<?= htmlspecialchars(AGUA_VISOR) ?>" target="_blank" rel="noopener">el visor oficial</a>.
+            </div>
+        <?php else: ?>
+
+        <div class="fen-grid">
+            <?php if ($aguaEmbalse !== null && $aguaEmbalse['pct'] !== null): ?>
+                <div class="fen-kpi">
+                    <b><?= number_format((float) $aguaEmbalse['pct'], 1, ',', '.') ?>&nbsp;%</b>
+                    <span>Volumen útil del embalse La Esmeralda (Chivor), el único de Boyacá
+                        en el sistema nacional<?= $agua['embalses']['promedio_pais'] !== null
+                            ? '. El promedio del país está en ' . number_format((float) $agua['embalses']['promedio_pais'], 1, ',', '.') . ' %'
+                            : '' ?></span>
+                </div>
+            <?php endif; ?>
+            <div class="fen-kpi">
+                <b><?= (int) $agua['estaciones_alerta'] ?></b>
+                <span>Estaciones de nivel en alerta, de
+                    <?= (int) $agua['estaciones_con_dato'] ?> con lectura reciente en Boyacá</span>
+            </div>
+            <div class="fen-kpi">
+                <b><?= (int) $agua['municipios_seco'] ?></b>
+                <span>Municipios con riesgo de desabastecimiento en temporada seca,
+                    de <?= (int) $agua['municipios_total'] ?></span>
+            </div>
+        </div>
+
+        <div id="fenMapaAgua" role="application"
+             aria-label="Mapa del estado del agua en Boyacá"
+             data-agua="<?= htmlspecialchars(json_encode([
+                 'estaciones' => $agua['estaciones_nivel'],
+                 'embalses' => $agua['embalses']['boyaca'],
+                 'municipios' => $agua['desabastecimiento'],
+             ], JSON_UNESCAPED_UNICODE), ENT_QUOTES) ?>"></div>
+
+        <div class="fen-leyenda">
+            <span><i style="background:#b45309"></i> Riesgo en temporada seca y húmeda</span>
+            <span><i style="background:#f59e0b"></i> Riesgo en temporada seca</span>
+            <span><i style="background:#60a5fa"></i> Riesgo en temporada húmeda</span>
+            <span><i style="background:#d1fae5"></i> Sin afectación</span>
+            <span><i style="background:#16a34a;border-radius:50%"></i> Estación con nivel normal</span>
+            <span><i style="background:#dc2626;border-radius:50%"></i> Estación en alerta</span>
+            <span><i style="background:#0ea5e9;border-radius:50%"></i> Embalse</span>
+        </div>
+        <p class="small text-muted mt-2">
+            El color del municipio indica en qué temporada el IDEAM identificó riesgo de
+            desabastecimiento; los puntos son estaciones hidrológicas con su última lectura.
+        </p>
+
+        <?php
+        $aguaAlertas = array_values(array_filter(
+            $agua['estaciones_nivel'],
+            static fn ($e) => in_array($e['estado'], ['roja', 'naranja', 'amarilla'], true)
+        ));
+        ?>
+        <?php if ($aguaAlertas): ?>
+            <h5 class="h6 fw-bold mt-4">Estaciones con alerta hoy</h5>
+            <div class="table-responsive">
+                <table class="table table-sm align-middle">
+                    <thead>
+                        <tr>
+                            <th scope="col">Estación</th>
+                            <th scope="col">Municipio</th>
+                            <th scope="col">Corriente</th>
+                            <th scope="col" class="text-end">Último nivel</th>
+                            <th scope="col">Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($aguaAlertas as $e): ?>
+                            <tr>
+                                <td><?= htmlspecialchars($e['nombre']) ?></td>
+                                <td><?= htmlspecialchars($e['municipio']) ?></td>
+                                <td><?= htmlspecialchars($e['corriente']) ?></td>
+                                <td class="text-end">
+                                    <?= $e['valor'] === null ? '—'
+                                        : number_format((float) $e['valor'], 2, ',', '.') . ' ' . $e['unidad'] ?>
+                                </td>
+                                <td><?= htmlspecialchars(agua_etiqueta_estado($e['estado'])) ?></td>
+                            </tr>
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
+            </div>
+        <?php else: ?>
+            <p class="small mt-3">
+                <i class="fa-solid fa-circle-check me-1" aria-hidden="true"></i>
+                Ninguna estación de Boyacá reporta alerta en este momento.
+            </p>
+        <?php endif; ?>
+
+        <?php if ($aguaCategorias): ?>
+            <h5 class="h6 fw-bold mt-4">Municipios según el riesgo de desabastecimiento</h5>
+            <ul class="fen-lista">
+                <?php foreach ($aguaCategorias as $cat => $n): ?>
+                    <li><span><?= htmlspecialchars($cat) ?></span><b><?= (int) $n ?></b></li>
+                <?php endforeach; ?>
+            </ul>
+        <?php endif; ?>
+
+        <?php endif; ?>
+
+        <div class="fen-fuente">
+            <h5><i class="fa-solid fa-database me-1" aria-hidden="true"></i> De dónde salen estos datos</h5>
+            <p>
+                Esta sección no calcula nada por su cuenta: consulta directamente las capas que
+                el IDEAM publica en su visor FEWS y las presenta recortadas a Boyacá.
+                <?php if ($aguaEmbalse !== null && $aguaEmbalse['fecha'] !== ''): ?>
+                    Último corte del embalse: <strong><?= htmlspecialchars($aguaEmbalse['fecha']) ?></strong>.
+                <?php endif; ?>
+            </p>
+            <ul>
+                <?php foreach (agua_fuentes() as $fu): ?>
+                    <li>
+                        <a href="<?= htmlspecialchars($fu['url']) ?>" target="_blank" rel="noopener"><?= htmlspecialchars($fu['nombre']) ?></a>
+                        — <?= htmlspecialchars($fu['detalle']) ?>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+            <p class="small mb-0">
+                Boyacá tiene un solo embalse dentro del sistema eléctrico nacional, que es el que
+                se reporta a diario. Los embalses administrados por CORPOBOYACÁ —La Copa, Sochagota,
+                Teatinos y Gachaneca, entre otros— no se publican por API todavía, así que no
+                aparecen aquí.
+            </p>
+        </div>
+    </section>
+
     <?php /* ------------------------------------------------- Directorio bomberos */ ?>
     <section class="fen-pane" id="fen-bomberos">
         <div class="fen-aviso mb-3">
@@ -554,12 +716,112 @@ function fen_grafica(array $serie, string $color, array $oniAnual, string $titul
                     setTimeout(function () { estado.mapa.invalidateSize(); pintarCalor(); }, 180);
                 }
             }
+            if (b.dataset.fen === 'agua') { iniciarMapaAgua(); }
             if (b.dataset.fen === 'bomberos') { cargarBomberos(); }
         });
     });
 
     function cargarScript(src, cb) {
         var s = document.createElement('script'); s.src = src; s.onload = cb; document.head.appendChild(s);
+    }
+
+    /* ---- mapa del estado del agua ---- */
+    var agua = { mapa: null };
+
+    // Color del municipio según la temporada en que el IDEAM identificó riesgo.
+    function aguaColor(categoria) {
+        if (/seca\s*-\s*h/i.test(categoria)) { return '#b45309'; }
+        if (/seca/i.test(categoria)) { return '#f59e0b'; }
+        if (/h[uú]meda/i.test(categoria)) { return '#60a5fa'; }
+        return '#d1fae5';
+    }
+
+    function iniciarMapaAgua() {
+        if (agua.mapa) { setTimeout(function () { agua.mapa.invalidateSize(); }, 60); return; }
+        if (typeof L === 'undefined') {
+            var css = document.createElement('link');
+            css.rel = 'stylesheet'; css.href = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
+            document.head.appendChild(css);
+            cargarScript('https://unpkg.com/leaflet@1.9.4/dist/leaflet.js', cargarLimites);
+        } else {
+            cargarLimites();
+        }
+    }
+
+    // Los límites municipales ya existen en el sitio: se cargan solo cuando
+    // se abre esta subpestaña, porque pesan medio mega.
+    function cargarLimites() {
+        if (typeof boyacaData !== 'undefined') { construirMapaAgua(); return; }
+        cargarScript('assets/js/boyaca_low.js', construirMapaAgua);
+    }
+
+    function construirMapaAgua(intento) {
+        var cont = document.getElementById('fenMapaAgua');
+        if (!cont) { return; }
+        // Leaflet necesita que el contenedor ya tenga ancho.
+        if (cont.clientWidth === 0) {
+            intento = (intento || 0) + 1;
+            if (intento <= 20) { setTimeout(function () { construirMapaAgua(intento); }, 120); }
+            return;
+        }
+        if (agua.mapa) { agua.mapa.invalidateSize(); return; }
+
+        var datos;
+        try { datos = JSON.parse(cont.dataset.agua || '{}'); } catch (e) { datos = {}; }
+        var municipios = datos.municipios || {};
+
+        agua.mapa = L.map('fenMapaAgua', { scrollWheelZoom: false }).setView([5.62, -73.35], 8);
+        var ESRI = 'https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/';
+        var fondo = L.tileLayer(ESRI + 'World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
+            maxZoom: 16, attribution: 'Esri, HERE, Garmin, &copy; OpenStreetMap'
+        });
+        var respaldo = false;
+        fondo.on('tileerror', function () {
+            if (respaldo) { return; }
+            respaldo = true;
+            agua.mapa.removeLayer(fondo);
+            L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 18, attribution: '&copy; OpenStreetMap'
+            }).addTo(agua.mapa);
+        });
+        fondo.addTo(agua.mapa);
+
+        if (typeof boyacaData !== 'undefined') {
+            L.geoJSON(boyacaData, {
+                style: function (f) {
+                    var m = municipios[f.properties.id];
+                    return {
+                        fillColor: aguaColor(m ? m.categoria : ''),
+                        fillOpacity: 0.75, color: '#ffffff', weight: 1
+                    };
+                },
+                onEachFeature: function (f, capa) {
+                    var m = municipios[f.properties.id];
+                    capa.bindPopup('<strong>' + f.properties.name + '</strong><br>'
+                        + (m ? m.categoria : 'Sin información'));
+                }
+            }).addTo(agua.mapa);
+        }
+
+        (datos.estaciones || []).forEach(function (e) {
+            var alerta = (e.estado === 'roja' || e.estado === 'naranja' || e.estado === 'amarilla');
+            L.circleMarker([e.lat, e.lon], {
+                radius: alerta ? 7 : 5,
+                fillColor: alerta ? '#dc2626' : (e.estado === 'sin_dato' ? '#9ca3af' : '#16a34a'),
+                color: '#ffffff', weight: 1.5, fillOpacity: 0.95
+            }).bindPopup('<strong>' + e.nombre + '</strong><br>'
+                + (e.municipio || '') + (e.corriente ? ' · río ' + e.corriente : '') + '<br>'
+                + (e.valor === null ? 'Sin lectura reciente'
+                    : 'Nivel ' + e.valor + ' ' + e.unidad)).addTo(agua.mapa);
+        });
+
+        (datos.embalses || []).forEach(function (b) {
+            L.circleMarker([b.lat, b.lon], {
+                radius: 11, fillColor: '#0ea5e9', color: '#ffffff', weight: 2, fillOpacity: 0.95
+            }).bindPopup('<strong>' + b.nombre + '</strong><br>Volumen útil: '
+                + (b.pct === null ? 'sin dato' : b.pct + ' %')
+                + (b.fecha ? '<br>Corte: ' + b.fecha : '')).addTo(agua.mapa);
+        });
     }
 
     /* ---- mapa ---- */
