@@ -351,6 +351,47 @@ function agua_vhi(): array
 }
 
 /**
+ * Serie diaria del volumen del embalse, del archivo de histórico.
+ * Devuelve las últimas $dias lecturas para dibujar la evolución.
+ *
+ * @return array{fechas:array,valores:array,min:?float,max:?float}
+ */
+function agua_serie_embalse(int $dias = 730): array
+{
+    $p = __DIR__ . '/../data/fenomenos/historico_agua.json';
+    $d = is_file($p) ? json_decode((string) @file_get_contents($p), true) : null;
+    $e = is_array($d) ? ($d['embalse'] ?? []) : [];
+    $f = $e['fechas'] ?? [];
+    $v = $e['valores'] ?? [];
+    if (!$f || count($f) !== count($v)) {
+        return ['fechas' => [], 'valores' => [], 'min' => null, 'max' => null];
+    }
+    if (count($f) > $dias) {
+        $f = array_slice($f, -$dias);
+        $v = array_slice($v, -$dias);
+    }
+
+    return ['fechas' => $f, 'valores' => $v, 'min' => min($v), 'max' => max($v)];
+}
+
+/**
+ * Municipio → provincia, para los filtros de los mapas. Lo genera
+ * scripts/gen_provincias_boyaca.py a partir del directorio de bomberos.
+ */
+function agua_provincias(): array
+{
+    static $cache = null;
+    if ($cache !== null) {
+        return $cache;
+    }
+    $p = __DIR__ . '/../data/fenomenos/provincias_boyaca.json';
+    $d = is_file($p) ? json_decode((string) @file_get_contents($p), true) : null;
+    $m = is_array($d) ? ($d['municipios'] ?? []) : [];
+
+    return $cache = is_array($m) ? $m : [];
+}
+
+/**
  * Resumen para las fichas de la subpestaña: embalse, estaciones en alerta y
  * municipios con riesgo de desabastecimiento en temporada seca.
  */

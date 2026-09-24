@@ -1,0 +1,498 @@
+{
+ "fuente": "Directorio de cuerpos de bomberos de Boyacá, consolidado por la Secretaría de Planeación (migraciones 029 y 030)",
+ "generado": "2026-09-24",
+ "municipios": {
+  "15001": {
+   "municipio": "Tunja",
+   "provincia": "Centro"
+  },
+  "15022": {
+   "municipio": "Almeida",
+   "provincia": "Oriente"
+  },
+  "15047": {
+   "municipio": "Aquitania",
+   "provincia": "Sugamuxi"
+  },
+  "15051": {
+   "municipio": "Arcabuco",
+   "provincia": "Ricaurte"
+  },
+  "15087": {
+   "municipio": "Belén",
+   "provincia": "Tundama"
+  },
+  "15090": {
+   "municipio": "Berbeo",
+   "provincia": "Lengupá"
+  },
+  "15092": {
+   "municipio": "Betéitiva",
+   "provincia": "Valderrama"
+  },
+  "15097": {
+   "municipio": "Boavita",
+   "provincia": "Norte"
+  },
+  "15104": {
+   "municipio": "Boyacá",
+   "provincia": "Márquez"
+  },
+  "15106": {
+   "municipio": "Briceño",
+   "provincia": "Occidente"
+  },
+  "15109": {
+   "municipio": "Buenavista",
+   "provincia": "Occidente"
+  },
+  "15114": {
+   "municipio": "Busbanzá",
+   "provincia": "Tundama"
+  },
+  "15131": {
+   "municipio": "Caldas",
+   "provincia": "Occidente"
+  },
+  "15135": {
+   "municipio": "Campohermoso",
+   "provincia": "Lengupá"
+  },
+  "15162": {
+   "municipio": "Cerinza",
+   "provincia": "Tundama"
+  },
+  "15172": {
+   "municipio": "Chinavita",
+   "provincia": "Neira"
+  },
+  "15176": {
+   "municipio": "Chiquinquirá",
+   "provincia": "Occidente"
+  },
+  "15180": {
+   "municipio": "Chiscas",
+   "provincia": "Gutiérrez"
+  },
+  "15183": {
+   "municipio": "Chita",
+   "provincia": "Valderrama"
+  },
+  "15185": {
+   "municipio": "Chitaraque",
+   "provincia": "Ricaurte"
+  },
+  "15187": {
+   "municipio": "Chivatá",
+   "provincia": "Centro"
+  },
+  "15189": {
+   "municipio": "Ciénega",
+   "provincia": "Márquez"
+  },
+  "15204": {
+   "municipio": "Combita",
+   "provincia": "Centro"
+  },
+  "15212": {
+   "municipio": "Coper",
+   "provincia": "Occidente"
+  },
+  "15215": {
+   "municipio": "Corrales",
+   "provincia": "Tundama"
+  },
+  "15218": {
+   "municipio": "Covarachia",
+   "provincia": "Norte"
+  },
+  "15223": {
+   "municipio": "Cubará",
+   "provincia": "Distrito Fronterizo"
+  },
+  "15224": {
+   "municipio": "Cucaita",
+   "provincia": "Centro"
+  },
+  "15226": {
+   "municipio": "Cuìtiva",
+   "provincia": "Sugamuxi"
+  },
+  "15232": {
+   "municipio": "Chíquiza",
+   "provincia": "Centro"
+  },
+  "15236": {
+   "municipio": "Chivor",
+   "provincia": "Oriente"
+  },
+  "15238": {
+   "municipio": "Duitama",
+   "provincia": "Tundama"
+  },
+  "15244": {
+   "municipio": "El Cocuy",
+   "provincia": "Gutiérrez"
+  },
+  "15248": {
+   "municipio": "El Espino",
+   "provincia": "Gutiérrez"
+  },
+  "15272": {
+   "municipio": "Firavitoba",
+   "provincia": "Sugamuxi"
+  },
+  "15276": {
+   "municipio": "Floresta",
+   "provincia": "Tundama"
+  },
+  "15293": {
+   "municipio": "Gachantivá",
+   "provincia": "Ricaurte"
+  },
+  "15296": {
+   "municipio": "Gameza",
+   "provincia": "Sugamuxi"
+  },
+  "15299": {
+   "municipio": "Garagoa",
+   "provincia": "Neira"
+  },
+  "15317": {
+   "municipio": "Guacamayas",
+   "provincia": "Gutiérrez"
+  },
+  "15322": {
+   "municipio": "Guateque",
+   "provincia": "Oriente"
+  },
+  "15325": {
+   "municipio": "Guayatá",
+   "provincia": "Oriente"
+  },
+  "15332": {
+   "municipio": "Güicán",
+   "provincia": "Gutiérrez"
+  },
+  "15362": {
+   "municipio": "Iza",
+   "provincia": "Sugamuxi"
+  },
+  "15367": {
+   "municipio": "Jenesano",
+   "provincia": "Márquez"
+  },
+  "15368": {
+   "municipio": "Jericó",
+   "provincia": "Valderrama"
+  },
+  "15377": {
+   "municipio": "Labranza Grande",
+   "provincia": "La Libertad"
+  },
+  "15380": {
+   "municipio": "La Capilla",
+   "provincia": "Oriente"
+  },
+  "15401": {
+   "municipio": "La Victoria",
+   "provincia": "Occidente"
+  },
+  "15403": {
+   "municipio": "La Uvita",
+   "provincia": "Norte"
+  },
+  "15407": {
+   "municipio": "Villa De Leyva",
+   "provincia": "Ricaurte"
+  },
+  "15425": {
+   "municipio": "Macanal",
+   "provincia": "Neira"
+  },
+  "15442": {
+   "municipio": "Maripí",
+   "provincia": "Occidente"
+  },
+  "15455": {
+   "municipio": "Miraflores",
+   "provincia": "Lengupá"
+  },
+  "15464": {
+   "municipio": "Mongua",
+   "provincia": "Sugamuxi"
+  },
+  "15466": {
+   "municipio": "Monguì",
+   "provincia": "Sugamuxi"
+  },
+  "15469": {
+   "municipio": "Moniquira",
+   "provincia": "Ricaurte"
+  },
+  "15476": {
+   "municipio": "Motavita",
+   "provincia": "Centro"
+  },
+  "15480": {
+   "municipio": "Muzo",
+   "provincia": "Occidente"
+  },
+  "15491": {
+   "municipio": "Nobsa",
+   "provincia": "Sugamuxi"
+  },
+  "15494": {
+   "municipio": "Nuevo Colón",
+   "provincia": "Márquez"
+  },
+  "15500": {
+   "municipio": "Oicata",
+   "provincia": "Centro"
+  },
+  "15507": {
+   "municipio": "Otanche",
+   "provincia": "Occidente"
+  },
+  "15511": {
+   "municipio": "Pachavita",
+   "provincia": "Neira"
+  },
+  "15514": {
+   "municipio": "Páez",
+   "provincia": "Lengupá"
+  },
+  "15516": {
+   "municipio": "Paipa",
+   "provincia": "Tundama"
+  },
+  "15518": {
+   "municipio": "Pajarito",
+   "provincia": "La Libertad"
+  },
+  "15522": {
+   "municipio": "Panqueba",
+   "provincia": "Gutiérrez"
+  },
+  "15531": {
+   "municipio": "Pauna",
+   "provincia": "Occidente"
+  },
+  "15533": {
+   "municipio": "Paya",
+   "provincia": "La Libertad"
+  },
+  "15537": {
+   "municipio": "Paz De Río",
+   "provincia": "Valderrama"
+  },
+  "15542": {
+   "municipio": "Pesca",
+   "provincia": "Sugamuxi"
+  },
+  "15550": {
+   "municipio": "Pisba",
+   "provincia": "La Libertad"
+  },
+  "15572": {
+   "municipio": "Puerto Boyacá",
+   "provincia": "Zona de Manejo Especial"
+  },
+  "15580": {
+   "municipio": "Quípama",
+   "provincia": "Occidente"
+  },
+  "15599": {
+   "municipio": "Ramiriquí",
+   "provincia": "Márquez"
+  },
+  "15600": {
+   "municipio": "Ráquira",
+   "provincia": "Ricaurte"
+  },
+  "15621": {
+   "municipio": "Rondón",
+   "provincia": "Márquez"
+  },
+  "15632": {
+   "municipio": "Saboyá",
+   "provincia": "Occidente"
+  },
+  "15638": {
+   "municipio": "Sáchica",
+   "provincia": "Ricaurte"
+  },
+  "15646": {
+   "municipio": "Samacá",
+   "provincia": "Centro"
+  },
+  "15660": {
+   "municipio": "San Eduardo",
+   "provincia": "Lengupá"
+  },
+  "15664": {
+   "municipio": "San José De Pare",
+   "provincia": "Ricaurte"
+  },
+  "15667": {
+   "municipio": "San Luis De Gaceno",
+   "provincia": "Neira"
+  },
+  "15673": {
+   "municipio": "San Mateo",
+   "provincia": "Norte"
+  },
+  "15676": {
+   "municipio": "San Miguel De Sema",
+   "provincia": "Occidente"
+  },
+  "15681": {
+   "municipio": "San Pablo De Borbur",
+   "provincia": "Occidente"
+  },
+  "15686": {
+   "municipio": "Santana",
+   "provincia": "Ricaurte"
+  },
+  "15690": {
+   "municipio": "Santa María",
+   "provincia": "Neira"
+  },
+  "15693": {
+   "municipio": "Santa Rosa De Viterbo",
+   "provincia": "Tundama"
+  },
+  "15696": {
+   "municipio": "Santa Sofía",
+   "provincia": "Ricaurte"
+  },
+  "15720": {
+   "municipio": "Sativanorte",
+   "provincia": "Norte"
+  },
+  "15723": {
+   "municipio": "Sativasur",
+   "provincia": "Norte"
+  },
+  "15740": {
+   "municipio": "Siachoque",
+   "provincia": "Centro"
+  },
+  "15753": {
+   "municipio": "Soatá",
+   "provincia": "Norte"
+  },
+  "15755": {
+   "municipio": "Socotá",
+   "provincia": "Valderrama"
+  },
+  "15757": {
+   "municipio": "Socha",
+   "provincia": "Valderrama"
+  },
+  "15759": {
+   "municipio": "Sogamoso",
+   "provincia": "Sugamuxi"
+  },
+  "15761": {
+   "municipio": "Somondoco",
+   "provincia": "Oriente"
+  },
+  "15762": {
+   "municipio": "Sora",
+   "provincia": "Centro"
+  },
+  "15763": {
+   "municipio": "Sotaquirá",
+   "provincia": "Centro"
+  },
+  "15764": {
+   "municipio": "Soracá",
+   "provincia": "Centro"
+  },
+  "15774": {
+   "municipio": "Susacón",
+   "provincia": "Norte"
+  },
+  "15776": {
+   "municipio": "Sutamarchàn",
+   "provincia": "Ricaurte"
+  },
+  "15778": {
+   "municipio": "Sutatenza",
+   "provincia": "Oriente"
+  },
+  "15790": {
+   "municipio": "Tasco",
+   "provincia": "Valderrama"
+  },
+  "15798": {
+   "municipio": "Tenza",
+   "provincia": "Oriente"
+  },
+  "15804": {
+   "municipio": "Tibana",
+   "provincia": "Márquez"
+  },
+  "15806": {
+   "municipio": "Tibasosa",
+   "provincia": "Sugamuxi"
+  },
+  "15808": {
+   "municipio": "Tinjacá",
+   "provincia": "Ricaurte"
+  },
+  "15810": {
+   "municipio": "Tipacoque",
+   "provincia": "Norte"
+  },
+  "15814": {
+   "municipio": "Toca",
+   "provincia": "Centro"
+  },
+  "15816": {
+   "municipio": "Togüí",
+   "provincia": "Ricaurte"
+  },
+  "15820": {
+   "municipio": "Tópaga",
+   "provincia": "Sugamuxi"
+  },
+  "15822": {
+   "municipio": "Tota",
+   "provincia": "Sugamuxi"
+  },
+  "15832": {
+   "municipio": "Tununguá",
+   "provincia": "Occidente"
+  },
+  "15835": {
+   "municipio": "Turmequé",
+   "provincia": "Márquez"
+  },
+  "15837": {
+   "municipio": "Tuta",
+   "provincia": "Centro"
+  },
+  "15839": {
+   "municipio": "Tutazá",
+   "provincia": "Tundama"
+  },
+  "15842": {
+   "municipio": "Umbita",
+   "provincia": "Márquez"
+  },
+  "15861": {
+   "municipio": "Ventaquemada",
+   "provincia": "Centro"
+  },
+  "15879": {
+   "municipio": "Viracachá",
+   "provincia": "Márquez"
+  },
+  "15897": {
+   "municipio": "Zetaquirá",
+   "provincia": "Lengupá"
+  }
+ }
+}

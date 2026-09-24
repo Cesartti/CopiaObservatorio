@@ -563,7 +563,39 @@ function fen_grafica(array $serie, string $color, array $oniAnual, string $titul
                     <option value="vhi">Sequía agrícola · índice VHI (satélite)</option>
                 <?php endif; ?>
             </select>
+
+            <label class="mb-0 small fw-semibold" for="aguaProvincia">Provincia</label>
+            <select id="aguaProvincia" class="form-select form-select-sm" style="width:auto">
+                <option value="">Todas</option>
+            </select>
+
+            <label class="mb-0 small fw-semibold" for="aguaSeveridad">Mostrar</label>
+            <select id="aguaSeveridad" class="form-select form-select-sm" style="width:auto">
+                <option value="">Todos los municipios</option>
+                <option value="alerta">Solo los que están en alerta</option>
+            </select>
+
+            <div class="form-check form-switch mb-0 ms-1">
+                <input class="form-check-input" type="checkbox" id="aguaVerEstaciones" checked>
+                <label class="form-check-label small" for="aguaVerEstaciones">Estaciones</label>
+            </div>
         </div>
+
+        <div class="fen-map-tools" id="aguaTiempoWrap" hidden>
+            <button type="button" class="btn btn-sm btn-outline-secondary" id="aguaPlay"
+                    aria-label="Reproducir la secuencia en el tiempo">
+                <i class="fa-solid fa-play" aria-hidden="true"></i>
+            </button>
+            <input type="range" class="form-range flex-grow-1" id="aguaTiempo"
+                   min="0" max="0" value="0" style="min-width:180px"
+                   aria-label="Semana que se muestra en el mapa">
+            <span class="small fw-semibold" id="aguaFecha" style="min-width:9rem"></span>
+            <button type="button" class="btn btn-sm btn-outline-secondary" id="aguaHoy">Hoy</button>
+        </div>
+        <p class="small text-muted mb-2" id="aguaCargando" hidden>
+            <i class="fa-solid fa-circle-notch fa-spin me-1" aria-hidden="true"></i>
+            Cargando el histórico…
+        </p>
 
         <div id="fenMapaAgua" role="application"
              aria-label="Mapa del estado del agua en Boyacá"
@@ -572,6 +604,7 @@ function fen_grafica(array $serie, string $color, array $oniAnual, string $titul
                  'embalses' => $agua['embalses']['boyaca'],
                  'municipios' => $agua['desabastecimiento'],
                  'vhi' => $agua['vhi']['municipios'],
+                 'provincias' => agua_provincias(),
              ], JSON_UNESCAPED_UNICODE), ENT_QUOTES) ?>"></div>
 
         <div class="fen-leyenda" id="aguaLeyDes">
@@ -593,6 +626,60 @@ function fen_grafica(array $serie, string $color, array $oniAnual, string $titul
             El color del municipio indica en qué temporada el IDEAM identificó riesgo de
             desabastecimiento; los puntos son estaciones hidrológicas con su última lectura.
         </p>
+
+        <?php
+        // Evolución del embalse: se dibuja en el servidor, como las demás
+        // gráficas de la pestaña, para que no dependa de JavaScript.
+        $aguaSerie = agua_serie_embalse();
+        if (count($aguaSerie['valores']) > 30):
+            $sv = $aguaSerie['valores'];
+            $sf = $aguaSerie['fechas'];
+            $n = count($sv);
+            $w = 720;
+            $h = 170;
+            $mi = max(0.0, floor(((float) $aguaSerie['min'] - 5) / 10) * 10);
+            $ma = min(100.0, ceil(((float) $aguaSerie['max'] + 5) / 10) * 10);
+            $rango = max($ma - $mi, 1);
+            $x = static fn ($i) => round(40 + ($i / max($n - 1, 1)) * ($w - 55), 1);
+            $y = static fn ($val) => round($h - 26 - (($val - $mi) / $rango) * ($h - 46), 1);
+            $linea = '';
+            foreach ($sv as $i => $val) {
+                $linea .= ($i ? ' L' : 'M') . $x($i) . ' ' . $y((float) $val);
+            }
+        ?>
+            <figure class="fen-figura mt-4">
+                <figcaption class="h6 fw-bold">
+                    Cómo ha cambiado el embalse La Esmeralda
+                    <span class="text-muted fw-normal small">
+                        (<?= htmlspecialchars($sf[0]) ?> a <?= htmlspecialchars($sf[$n - 1]) ?>)
+                    </span>
+                </figcaption>
+                <svg viewBox="0 0 <?= $w ?> <?= $h ?>" class="fen-svg" role="img"
+                     aria-label="Volumen útil diario del embalse La Esmeralda entre <?= htmlspecialchars($sf[0]) ?> y <?= htmlspecialchars($sf[$n - 1]) ?>">
+                    <?php for ($g = 0; $g <= 4; $g++):
+                        $val = $mi + $rango * $g / 4; ?>
+                        <line x1="40" x2="<?= $w - 15 ?>" y1="<?= $y($val) ?>" y2="<?= $y($val) ?>"
+                              stroke="#e6ecf6" stroke-width="1"/>
+                        <text x="34" y="<?= $y($val) + 4 ?>" text-anchor="end"
+                              font-size="10" fill="#6b7280"><?= (int) round($val) ?>%</text>
+                    <?php endfor; ?>
+                    <path d="<?= $linea ?>" fill="none" stroke="#0ea5e9" stroke-width="2"
+                          stroke-linejoin="round"/>
+                    <circle cx="<?= $x($n - 1) ?>" cy="<?= $y((float) $sv[$n - 1]) ?>" r="4" fill="#0ea5e9"/>
+                    <?php foreach ([0, intdiv($n - 1, 2), $n - 1] as $i): ?>
+                        <text x="<?= $x($i) ?>" y="<?= $h - 6 ?>"
+                              text-anchor="<?= $i === 0 ? 'start' : ($i === $n - 1 ? 'end' : 'middle') ?>"
+                              font-size="10" fill="#6b7280"><?= htmlspecialchars(substr($sf[$i], 0, 7)) ?></text>
+                    <?php endforeach; ?>
+                </svg>
+                <p class="small text-muted mb-0">
+                    Volumen útil diario. En el periodo el embalse se movió entre
+                    <strong><?= number_format((float) $aguaSerie['min'], 1, ',', '.') ?>&nbsp;%</strong> y
+                    <strong><?= number_format((float) $aguaSerie['max'], 1, ',', '.') ?>&nbsp;%</strong>.
+                    Fuente: XM.
+                </p>
+            </figure>
+        <?php endif; ?>
 
         <?php
         $aguaAlertas = array_values(array_filter(
@@ -820,63 +907,238 @@ function fen_grafica(array $serie, string $color, array $oniAnual, string $titul
         fondo.addTo(agua.mapa);
 
         var vhi = datos.vhi || {};
+        var provincias = datos.provincias || {};
         agua.vista = 'desabastecimiento';
+        agua.provincia = '';
+        agua.soloAlerta = false;
+        agua.semana = null;   // índice en el histórico; null = la foto de hoy
 
-        if (typeof boyacaData !== 'undefined') {
-            agua.capaMun = L.geoJSON(boyacaData, {
-                style: estiloMunicipio,
-                onEachFeature: function (f, capa) {
-                    var m = municipios[f.properties.id];
-                    var v = vhi[f.properties.id];
-                    // El popup muestra siempre las dos lecturas: sirve para
-                    // cruzar sequía con disponibilidad de agua sin cambiar de capa.
-                    var html = '<strong>' + f.properties.name + '</strong>'
-                        + '<br>Agua: ' + (m ? m.categoria : 'sin información');
-                    if (v) {
-                        html += '<br>Vegetación: VHI ' + v.vhi + ' · ' + v.severidad;
-                    }
-                    capa.bindPopup(html);
+        // Valor del VHI que debe pintarse: el de hoy o el de la semana elegida.
+        function vhiDe(dane) {
+            if (agua.semana !== null && agua.hist && agua.hist.vhi) {
+                var s = agua.hist.vhi.municipios[dane];
+                return (s && s[agua.semana] !== undefined) ? s[agua.semana] : null;
+            }
+            var v = vhi[dane];
+            return v ? v.vhi : null;
+        }
+
+        function visible(dane) {
+            if (agua.provincia) {
+                var p = provincias[dane];
+                if (!p || p.provincia !== agua.provincia) { return false; }
+            }
+            if (agua.soloAlerta) {
+                if (agua.vista === 'vhi') {
+                    var v = vhiDe(dane);
+                    if (v === null || v >= 40) { return false; }
+                } else {
+                    var m = municipios[dane];
+                    if (!m || !m.seco) { return false; }
                 }
-            }).addTo(agua.mapa);
+            }
+            return true;
         }
 
         function estiloMunicipio(f) {
+            var dane = f.properties.id;
+            if (!visible(dane)) {
+                // Se atenúa en vez de ocultarse, para no perder la silueta del mapa.
+                return { fillColor: '#f1f5f9', fillOpacity: 0.35, color: '#ffffff', weight: 0.6 };
+            }
             var color;
             if (agua.vista === 'vhi') {
-                var v = vhi[f.properties.id];
-                color = aguaColorVhi(v ? v.vhi : null);
+                color = aguaColorVhi(vhiDe(dane));
             } else {
-                var m = municipios[f.properties.id];
+                var m = municipios[dane];
                 color = aguaColor(m ? m.categoria : '');
             }
             return { fillColor: color, fillOpacity: 0.78, color: '#ffffff', weight: 1 };
         }
 
+        if (typeof boyacaData !== 'undefined') {
+            agua.capaMun = L.geoJSON(boyacaData, {
+                style: estiloMunicipio,
+                onEachFeature: function (f, capa) {
+                    capa.on('popupopen', function () { capa.setPopupContent(ficha(f)); });
+                    capa.bindPopup(ficha(f));
+                }
+            }).addTo(agua.mapa);
+        }
+
+        function ficha(f) {
+            var m = municipios[f.properties.id];
+            var v = vhiDe(f.properties.id);
+            var p = provincias[f.properties.id];
+            // La ficha muestra siempre las dos lecturas: sirve para cruzar
+            // sequía con disponibilidad de agua sin cambiar de capa.
+            var html = '<strong>' + f.properties.name + '</strong>';
+            if (p) { html += '<br><span class="text-muted">Provincia de ' + p.provincia + '</span>'; }
+            html += '<br>Agua: ' + (m ? m.categoria : 'sin información');
+            if (v !== null && v !== undefined) {
+                html += '<br>Vegetación: VHI ' + v
+                    + (v < 20 ? ' · sequía severa' : (v < 40 ? ' · estrés moderado' : ' · favorable'));
+                if (agua.semana !== null && agua.hist) {
+                    html += '<br><span class="text-muted">Semana del '
+                        + agua.hist.vhi.fechas[agua.semana] + '</span>';
+                }
+            }
+            return html;
+        }
+
+        function repintar() {
+            if (agua.capaMun) { agua.capaMun.setStyle(estiloMunicipio); }
+            if (agua.capaEst) {
+                agua.capaEst.eachLayer(function (c) {
+                    var dentro = (!agua.provincia || c.options.provincia === agua.provincia);
+                    c.setStyle({ opacity: dentro ? 1 : 0.15, fillOpacity: dentro ? 0.95 : 0.15 });
+                });
+            }
+        }
+
+        /* ---- filtros ---- */
+        var listaProv = [];
+        Object.keys(provincias).forEach(function (d) {
+            if (listaProv.indexOf(provincias[d].provincia) === -1) {
+                listaProv.push(provincias[d].provincia);
+            }
+        });
+        var selProv = document.getElementById('aguaProvincia');
+        listaProv.sort().forEach(function (p) {
+            var o = document.createElement('option');
+            o.value = p; o.textContent = p;
+            selProv.appendChild(o);
+        });
+        selProv.addEventListener('change', function () {
+            agua.provincia = selProv.value;
+            repintar();
+        });
+
+        document.getElementById('aguaSeveridad').addEventListener('change', function () {
+            agua.soloAlerta = (this.value === 'alerta');
+            repintar();
+        });
+
+        document.getElementById('aguaVerEstaciones').addEventListener('change', function () {
+            if (!agua.capaEst) { return; }
+            if (this.checked) { agua.capaEst.addTo(agua.mapa); }
+            else { agua.mapa.removeLayer(agua.capaEst); }
+        });
+
         var sel = document.getElementById('aguaCapa');
         if (sel) {
             sel.addEventListener('change', function () {
                 agua.vista = sel.value;
-                if (agua.capaMun) { agua.capaMun.setStyle(estiloMunicipio); }
                 var esVhi = (agua.vista === 'vhi');
                 document.getElementById('aguaLeyDes').style.display = esVhi ? 'none' : '';
                 document.getElementById('aguaLeyVhi').style.display = esVhi ? '' : 'none';
                 document.getElementById('aguaPie').textContent = esVhi
                     ? 'El índice VHI combina el estrés hídrico y el térmico de la vegetación frente a su serie histórica: por debajo de 40 el cultivo está sufriendo. Se calcula con el producto satelital semanal de la NOAA.'
                     : 'El color del municipio indica en qué temporada el IDEAM identificó riesgo de desabastecimiento; los puntos son estaciones hidrológicas con su última lectura.';
+                // El riesgo de desabastecimiento es un estudio fijo: no tiene
+                // línea de tiempo, así que el control solo aparece con el VHI.
+                document.getElementById('aguaTiempoWrap').hidden = !esVhi;
+                if (esVhi) { cargarHistorico(); } else { detenerReproduccion(); agua.semana = null; }
+                repintar();
             });
         }
 
+        /* ---- línea de tiempo ---- */
+        function cargarHistorico() {
+            if (agua.hist || agua.cargando) { prepararTiempo(); return; }
+            agua.cargando = true;
+            document.getElementById('aguaCargando').hidden = false;
+            fetch('api/agua.php?recurso=historico')
+                .then(function (r) { return r.json(); })
+                .then(function (j) {
+                    agua.hist = (j && j.vhi && j.vhi.fechas && j.vhi.fechas.length) ? j : null;
+                    prepararTiempo();
+                })
+                .catch(function () { agua.hist = null; })
+                .finally(function () {
+                    agua.cargando = false;
+                    document.getElementById('aguaCargando').hidden = true;
+                });
+        }
+
+        function prepararTiempo() {
+            var wrap = document.getElementById('aguaTiempoWrap');
+            if (!agua.hist) { wrap.hidden = true; return; }
+            var r = document.getElementById('aguaTiempo');
+            r.max = agua.hist.vhi.fechas.length - 1;
+            r.value = r.max;
+            agua.semana = null;           // al abrir se muestra la foto de hoy
+            document.getElementById('aguaFecha').textContent =
+                'Hoy · ' + agua.hist.vhi.fechas[r.max];
+            wrap.hidden = false;
+        }
+
+        document.getElementById('aguaTiempo').addEventListener('input', function () {
+            if (!agua.hist) { return; }
+            agua.semana = parseInt(this.value, 10);
+            document.getElementById('aguaFecha').textContent =
+                'Semana del ' + agua.hist.vhi.fechas[agua.semana];
+            repintar();
+        });
+
+        document.getElementById('aguaHoy').addEventListener('click', function () {
+            detenerReproduccion();
+            agua.semana = null;
+            if (agua.hist) {
+                var r = document.getElementById('aguaTiempo');
+                r.value = r.max;
+                document.getElementById('aguaFecha').textContent =
+                    'Hoy · ' + agua.hist.vhi.fechas[r.max];
+            }
+            repintar();
+        });
+
+        function detenerReproduccion() {
+            if (agua.timer) { clearInterval(agua.timer); agua.timer = null; }
+            var b = document.getElementById('aguaPlay');
+            if (b) { b.innerHTML = '<i class="fa-solid fa-play" aria-hidden="true"></i>'; }
+        }
+
+        document.getElementById('aguaPlay').addEventListener('click', function () {
+            if (!agua.hist) { return; }
+            if (agua.timer) { detenerReproduccion(); return; }
+            var r = document.getElementById('aguaTiempo');
+            this.innerHTML = '<i class="fa-solid fa-pause" aria-hidden="true"></i>';
+            agua.semana = 0;
+            r.value = 0;
+            agua.timer = setInterval(function () {
+                agua.semana++;
+                if (agua.semana > parseInt(r.max, 10)) { detenerReproduccion(); return; }
+                r.value = agua.semana;
+                document.getElementById('aguaFecha').textContent =
+                    'Semana del ' + agua.hist.vhi.fechas[agua.semana];
+                repintar();
+            }, 550);
+        });
+
+        // Las estaciones van en su propia capa para poder filtrarlas y ocultarlas.
+        agua.capaEst = L.layerGroup();
         (datos.estaciones || []).forEach(function (e) {
             var alerta = (e.estado === 'roja' || e.estado === 'naranja' || e.estado === 'amarilla');
+            // El nombre del municipio viene del IDEAM, así que se busca la
+            // provincia por coincidencia de nombre, no por código.
+            var prov = '';
+            Object.keys(provincias).forEach(function (d) {
+                if (!prov && provincias[d].municipio
+                    && provincias[d].municipio.toUpperCase() === (e.municipio || '').toUpperCase()) {
+                    prov = provincias[d].provincia;
+                }
+            });
             L.circleMarker([e.lat, e.lon], {
                 radius: alerta ? 7 : 5,
                 fillColor: alerta ? '#dc2626' : (e.estado === 'sin_dato' ? '#9ca3af' : '#16a34a'),
-                color: '#ffffff', weight: 1.5, fillOpacity: 0.95
+                color: '#ffffff', weight: 1.5, fillOpacity: 0.95, provincia: prov
             }).bindPopup('<strong>' + e.nombre + '</strong><br>'
                 + (e.municipio || '') + (e.corriente ? ' · río ' + e.corriente : '') + '<br>'
                 + (e.valor === null ? 'Sin lectura reciente'
-                    : 'Nivel ' + e.valor + ' ' + e.unidad)).addTo(agua.mapa);
+                    : 'Nivel ' + e.valor + ' ' + e.unidad)).addTo(agua.capaEst);
         });
+        agua.capaEst.addTo(agua.mapa);
 
         (datos.embalses || []).forEach(function (b) {
             L.circleMarker([b.lat, b.lon], {
