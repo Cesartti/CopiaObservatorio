@@ -151,7 +151,7 @@ function fen_grafica(array $serie, string $color, array $oniAnual, string $titul
     .fen-lista li{display:flex;justify-content:space-between;gap:.75rem;padding:.35rem 0;border-bottom:1px dashed #e6ecf6;font-size:.87rem}
     .fen-lista li:last-child{border-bottom:none}
     .fen-lista li b{color:var(--obs-color,#1f6b45)}
-    #fenMapa,#fenMapaAgua{width:100%;height:540px;border-radius:14px;border:1px solid #e6ecf6;background:#eef2f7;z-index:0}
+    #fenMapaAgua{width:100%;height:540px;border-radius:14px;border:1px solid #e6ecf6;background:#eef2f7;z-index:0}
     .fen-map-tools{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-bottom:.6rem}
     .fen-map-tools select,.fen-map-tools input{font-size:.85rem;padding:.35rem .55rem;border:1px solid #dce4f2;border-radius:9px}
     .fen-leyenda{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:.6rem;font-size:.8rem;color:#4b5768}
@@ -194,7 +194,7 @@ function fen_grafica(array $serie, string $color, array $oniAnual, string $titul
     .fen-fuente li{font-size:.82rem;color:#4b5768;margin-bottom:.3rem}
     .fen-sin-focos{background:#ecfdf5;border:1px solid #a7f3d0;color:#065f46;border-radius:10px;padding:.55rem .8rem;font-size:.84rem;margin-bottom:.6rem}
     .fen-aviso{background:#fff7ed;border:1px solid #fed7aa;color:#9a3412;border-radius:12px;padding:.7rem .9rem;font-size:.84rem}
-    @media (max-width:575.98px){#fenMapa,#fenMapaAgua{height:420px}}
+    @media (max-width:575.98px){#fenMapaAgua{height:420px}}
 </style>
 
 <article class="content-card">
@@ -230,8 +230,7 @@ function fen_grafica(array $serie, string $color, array $oniAnual, string $titul
     <div class="fen-subnav" role="tablist">
         <button type="button" class="active" data-fen="nino"><i class="fa-solid fa-sun me-1" aria-hidden="true"></i> Fenómeno de El Niño</button>
         <button type="button" data-fen="nina"><i class="fa-solid fa-cloud-showers-heavy me-1" aria-hidden="true"></i> Fenómeno de La Niña</button>
-        <button type="button" data-fen="mapa"><i class="fa-solid fa-fire me-1" aria-hidden="true"></i> Mapa de novedades</button>
-        <button type="button" data-fen="agua"><i class="fa-solid fa-droplet me-1" aria-hidden="true"></i> Estado del agua</button>
+        <button type="button" data-fen="agua"><i class="fa-solid fa-layer-group me-1" aria-hidden="true"></i> Mapa integrado</button>
         <button type="button" data-fen="bomberos"><i class="fa-solid fa-truck-medical me-1" aria-hidden="true"></i> Directorio de bomberos</button>
     </div>
 
@@ -417,98 +416,6 @@ function fen_grafica(array $serie, string $color, array $oniAnual, string $titul
     </section>
 
     <?php /* ------------------------------------------------------ Mapa de calor */ ?>
-    <section class="fen-pane" id="fen-mapa">
-        <div class="fen-map-tools">
-            <label class="mb-0 small fw-semibold" for="fenFiltroFen">Fenómeno</label>
-            <select id="fenFiltroFen" class="form-select form-select-sm" style="width:auto">
-                <option value="todos">Todos</option>
-                <option value="nino">El Niño (sequía e incendios)</option>
-                <option value="nina">La Niña (lluvias e inundaciones)</option>
-            </select>
-            <label class="mb-0 small fw-semibold" for="fenFiltroAnio">Año</label>
-            <select id="fenFiltroAnio" class="form-select form-select-sm" style="width:auto">
-                <option value="todos">Todos</option>
-            </select>
-            <label class="mb-0 small fw-semibold" for="fenFiltroProvincia">Provincia</label>
-            <select id="fenFiltroProvincia" class="form-select form-select-sm" style="width:auto">
-                <option value="">Todas</option>
-            </select>
-            <button type="button" class="btn btn-sm btn-danger" id="fenBtnReportar">
-                <i class="fa-solid fa-triangle-exclamation me-1" aria-hidden="true"></i> Reportar una alerta
-            </button>
-        </div>
-
-        <p class="fen-sin-focos" id="fenSinFocos" style="display:none">
-            <i class="fa-solid fa-circle-check me-1" aria-hidden="true"></i>
-            Hoy el satélite no detecta focos de calor activos dentro de Boyacá.
-            El mapa sigue mostrando el histórico de emergencias y, en gris, los focos
-            detectados en departamentos vecinos.
-        </p>
-        <div id="fenMapa" role="application" aria-label="Mapa de novedades ambientales de Boyacá"></div>
-
-        <div class="fen-leyenda">
-            <span><i style="background:linear-gradient(90deg,#22c55e,#eab308,#ef4444)"></i> Intensidad de emergencias históricas</span>
-            <span><i style="background:#dc2626"></i> Foco de calor en Boyacá (satélite)</span>
-            <span><i style="background:#d1d5db"></i> Foco en departamento vecino</span>
-            <span><i style="background:#7c3aed"></i> Reporte ciudadano</span>
-            <span><i style="background:#0ea5e9"></i> Cuerpo de bomberos</span>
-        </div>
-        <p class="small text-muted mt-2 mb-0" id="fenFuentes"></p>
-
-        <div class="mt-3" id="fenFormWrap" hidden>
-            <div class="fen-form">
-                <h5 class="h6 fw-bold mb-2"><i class="fa-solid fa-location-dot me-1" aria-hidden="true"></i> Reportar una alerta ambiental</h5>
-                <p class="small text-muted">
-                    Marque el punto en el mapa o use su ubicación. El reporte llega al equipo de
-                    gestión del riesgo para verificación; <strong>no reemplaza la llamada a la línea
-                    de emergencias</strong>. Si hay riesgo para la vida llame al <strong>123</strong>
-                    o al <strong>119</strong>.
-                </p>
-                <form id="fenForm" class="row g-2">
-                    <div class="col-md-4">
-                        <label for="fenTipo">Tipo de alerta</label>
-                        <select id="fenTipo" name="tipo" class="form-select form-select-sm" required>
-                            <option value="incendio">Incendio de cobertura vegetal</option>
-                            <option value="inundacion">Inundación</option>
-                            <option value="deslizamiento">Deslizamiento o movimiento en masa</option>
-                            <option value="vendaval">Vendaval</option>
-                            <option value="desabastecimiento">Desabastecimiento de agua</option>
-                            <option value="otro">Otra novedad ambiental</option>
-                        </select>
-                    </div>
-                    <div class="col-md-4">
-                        <label for="fenMunicipio">Municipio</label>
-                        <input type="text" id="fenMunicipio" name="municipio" class="form-control form-control-sm" placeholder="Se completa al marcar el punto" readonly>
-                        <input type="hidden" id="fenDane" name="municipio_dane">
-                        <input type="hidden" id="fenLat" name="lat">
-                        <input type="hidden" id="fenLon" name="lon">
-                    </div>
-                    <div class="col-md-4">
-                        <label for="fenReferencia">Vereda o punto de referencia</label>
-                        <input type="text" id="fenReferencia" name="referencia" class="form-control form-control-sm" maxlength="200" placeholder="Ej: vereda El Salitre, km 3 vía Tunja">
-                    </div>
-                    <div class="col-md-8">
-                        <label for="fenDescripcion">¿Qué está ocurriendo?</label>
-                        <textarea id="fenDescripcion" name="descripcion" class="form-control form-control-sm" rows="2" maxlength="800" required placeholder="Describa lo que observa: extensión aproximada, si hay viviendas cerca, hace cuánto empezó…"></textarea>
-                    </div>
-                    <div class="col-md-4">
-                        <label for="fenContacto">Contacto (opcional)</label>
-                        <input type="text" id="fenContacto" name="contacto" class="form-control form-control-sm" maxlength="120" placeholder="Teléfono o correo">
-                    </div>
-                    <div class="col-12 d-flex flex-wrap gap-2 align-items-center">
-                        <button type="button" class="btn btn-sm btn-outline-secondary" id="fenBtnUbicacion">
-                            <i class="fa-solid fa-crosshairs me-1" aria-hidden="true"></i> Usar mi ubicación
-                        </button>
-                        <button type="submit" class="btn btn-sm btn-danger">
-                            <i class="fa-solid fa-paper-plane me-1" aria-hidden="true"></i> Enviar reporte
-                        </button>
-                        <span class="small text-muted" id="fenFormMsg"></span>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </section>
-
     <?php /* ----------------------------------------------------- Estado del agua */ ?>
     <section class="fen-pane" id="fen-agua">
         <h4 class="h6 fw-bold">¿Cuánta agua tiene hoy Boyacá?</h4>
@@ -566,6 +473,7 @@ function fen_grafica(array $serie, string $color, array $oniAnual, string $titul
                 <?php if ($agua['vhi']['municipios']): ?>
                     <option value="vhi">Sequía agrícola · índice VHI (satélite)</option>
                 <?php endif; ?>
+                <option value="emergencias">Emergencias registradas 2019-2025</option>
             </select>
 
             <label class="mb-0 small fw-semibold" for="aguaProvincia">Provincia</label>
@@ -587,7 +495,30 @@ function fen_grafica(array $serie, string $color, array $oniAnual, string $titul
                 <input class="form-check-input" type="checkbox" id="aguaVerCalor" checked>
                 <label class="form-check-label small" for="aguaVerCalor">Focos de calor</label>
             </div>
+            <button type="button" class="btn btn-sm btn-danger ms-auto" id="fenBtnReportar">
+                <i class="fa-solid fa-triangle-exclamation me-1" aria-hidden="true"></i> Reportar una alerta
+            </button>
         </div>
+
+        <div class="fen-map-tools" id="aguaFiltrosEmergencia" hidden>
+            <label class="mb-0 small fw-semibold" for="fenFiltroFen">Fenómeno</label>
+            <select id="fenFiltroFen" class="form-select form-select-sm" style="width:auto">
+                <option value="todos">Todos</option>
+                <option value="nino">El Niño (sequía e incendios)</option>
+                <option value="nina">La Niña (lluvias e inundaciones)</option>
+            </select>
+            <label class="mb-0 small fw-semibold" for="fenFiltroAnio">Año</label>
+            <select id="fenFiltroAnio" class="form-select form-select-sm" style="width:auto">
+                <option value="todos">Todos</option>
+            </select>
+        </div>
+
+        <p class="fen-sin-focos" id="fenSinFocos" style="display:none">
+            <i class="fa-solid fa-circle-check me-1" aria-hidden="true"></i>
+            Hoy el satélite no detecta focos de calor activos dentro de Boyacá.
+            El mapa sigue mostrando el resto de capas y, en gris, los focos
+            detectados en departamentos vecinos.
+        </p>
 
         <div class="fen-map-tools" id="aguaTiempoWrap" hidden>
             <label class="mb-0 small fw-semibold" for="aguaPaso">Recorrer por</label>
@@ -638,7 +569,68 @@ function fen_grafica(array $serie, string $color, array $oniAnual, string $titul
             <span><i style="background:#15803d"></i> Mayor que 60 · vegetación vigorosa</span>
             <span><i style="background:#ea580c;border-radius:50%"></i> Focos de calor</span>
         </div>
+        <div class="fen-leyenda" id="aguaLeyEmerg" style="display:none">
+            <span><i style="background:linear-gradient(90deg,#22c55e,#eab308,#ef4444)"></i> Intensidad de emergencias registradas</span>
+            <span><i style="background:#dc2626;border-radius:50%"></i> Foco de calor activo hoy</span>
+            <span><i style="background:#d1d5db;border-radius:50%"></i> Foco en departamento vecino</span>
+            <span><i style="background:#7c3aed;border-radius:50%"></i> Reporte ciudadano</span>
+            <span><i style="background:#0ea5e9;border-radius:50%"></i> Cuerpo de bomberos</span>
+        </div>
         <p class="small fw-semibold mb-0 mt-1" id="aguaCalorTotal"></p>
+        <p class="small text-muted mt-2 mb-0" id="fenFuentes"></p>
+
+        <div class="mt-3" id="fenFormWrap" hidden>
+            <div class="fen-form">
+                <h5 class="h6 fw-bold mb-2"><i class="fa-solid fa-location-dot me-1" aria-hidden="true"></i> Reportar una alerta ambiental</h5>
+                <p class="small text-muted">
+                    Marque el punto en el mapa o use su ubicación. El reporte llega al equipo de
+                    gestión del riesgo para verificación; <strong>no reemplaza la llamada a la línea
+                    de emergencias</strong>. Si hay riesgo para la vida llame al <strong>123</strong>
+                    o al <strong>119</strong>.
+                </p>
+                <form id="fenForm" class="row g-2">
+                    <div class="col-md-4">
+                        <label for="fenTipo">Tipo de alerta</label>
+                        <select id="fenTipo" name="tipo" class="form-select form-select-sm" required>
+                            <option value="incendio">Incendio de cobertura vegetal</option>
+                            <option value="inundacion">Inundación</option>
+                            <option value="deslizamiento">Deslizamiento o movimiento en masa</option>
+                            <option value="vendaval">Vendaval</option>
+                            <option value="desabastecimiento">Desabastecimiento de agua</option>
+                            <option value="otro">Otra novedad ambiental</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="fenMunicipio">Municipio</label>
+                        <input type="text" id="fenMunicipio" name="municipio" class="form-control form-control-sm" placeholder="Se completa al marcar el punto" readonly>
+                        <input type="hidden" id="fenDane" name="municipio_dane">
+                        <input type="hidden" id="fenLat" name="lat">
+                        <input type="hidden" id="fenLon" name="lon">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="fenReferencia">Vereda o punto de referencia</label>
+                        <input type="text" id="fenReferencia" name="referencia" class="form-control form-control-sm" maxlength="200" placeholder="Ej: vereda El Salitre, km 3 vía Tunja">
+                    </div>
+                    <div class="col-md-8">
+                        <label for="fenDescripcion">¿Qué está ocurriendo?</label>
+                        <textarea id="fenDescripcion" name="descripcion" class="form-control form-control-sm" rows="2" maxlength="800" required placeholder="Describa lo que observa: extensión aproximada, si hay viviendas cerca, hace cuánto empezó…"></textarea>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="fenContacto">Contacto (opcional)</label>
+                        <input type="text" id="fenContacto" name="contacto" class="form-control form-control-sm" maxlength="120" placeholder="Teléfono o correo">
+                    </div>
+                    <div class="col-12 d-flex flex-wrap gap-2 align-items-center">
+                        <button type="button" class="btn btn-sm btn-outline-secondary" id="fenBtnUbicacion">
+                            <i class="fa-solid fa-crosshairs me-1" aria-hidden="true"></i> Usar mi ubicación
+                        </button>
+                        <button type="submit" class="btn btn-sm btn-danger">
+                            <i class="fa-solid fa-paper-plane me-1" aria-hidden="true"></i> Enviar reporte
+                        </button>
+                        <span class="small text-muted" id="fenFormMsg"></span>
+                    </div>
+                </form>
+            </div>
+        </div>
         <p class="small text-muted mt-2" id="aguaPie">
             El color del municipio indica en qué temporada el IDEAM identificó riesgo de
             desabastecimiento; los puntos son estaciones hidrológicas con su última lectura.
@@ -838,13 +830,11 @@ function fen_grafica(array $serie, string $color, array $oniAnual, string $titul
             b.classList.add('active');
             var pane = document.getElementById('fen-' + b.dataset.fen);
             if (pane) { pane.classList.add('active'); }
-            if (b.dataset.fen === 'mapa') {
-                iniciarMapa();
-                if (estado.mapa) {
-                    setTimeout(function () { estado.mapa.invalidateSize(); pintarCalor(); }, 180);
-                }
+            if (b.dataset.fen === 'agua') {
+                // Un solo mapa: al terminar de construirse encadena las capas
+                // de novedades sobre el mismo lienzo.
+                iniciarMapaAgua();
             }
-            if (b.dataset.fen === 'agua') { iniciarMapaAgua(); }
             if (b.dataset.fen === 'bomberos') { cargarBomberos(); }
         });
     });
@@ -962,6 +952,10 @@ function fen_grafica(array $serie, string $color, array $oniAnual, string $titul
             if (!visible(dane)) {
                 // Se atenúa en vez de ocultarse, para no perder la silueta del mapa.
                 return { fillColor: '#f1f5f9', fillOpacity: 0.35, color: '#ffffff', weight: 0.6 };
+            }
+            if (agua.vista === 'emergencias') {
+                // Fondo neutro: la mancha de emergencias necesita el mapa limpio.
+                return { fillColor: '#e2e8f0', fillOpacity: 0.45, color: '#ffffff', weight: 0.8 };
             }
             var color;
             if (agua.vista === 'vhi') {
@@ -1098,6 +1092,7 @@ function fen_grafica(array $serie, string $color, array $oniAnual, string $titul
         selProv.addEventListener('change', function () {
             agua.provincia = selProv.value;
             repintar();
+            if (typeof pintarCalor === 'function' && estado.historico) { pintarCalor(); }
         });
 
         document.getElementById('aguaSeveridad').addEventListener('change', function () {
@@ -1116,15 +1111,22 @@ function fen_grafica(array $serie, string $color, array $oniAnual, string $titul
             sel.addEventListener('change', function () {
                 agua.vista = sel.value;
                 var esVhi = (agua.vista === 'vhi');
-                document.getElementById('aguaLeyDes').style.display = esVhi ? 'none' : '';
+                var esEmerg = (agua.vista === 'emergencias');
+                document.getElementById('aguaLeyDes').style.display =
+                    (esVhi || esEmerg) ? 'none' : '';
                 document.getElementById('aguaLeyVhi').style.display = esVhi ? '' : 'none';
-                document.getElementById('aguaPie').textContent = esVhi
-                    ? 'El índice VHI combina el estrés hídrico y el térmico de la vegetación frente a su serie histórica: por debajo de 40 el cultivo está sufriendo. Se calcula con el producto satelital semanal de la NOAA.'
-                    : 'El color del municipio indica en qué temporada el IDEAM identificó riesgo de desabastecimiento; los puntos son estaciones hidrológicas con su última lectura.';
-                // La línea de tiempo sirve en las dos capas: mueve el VHI y
+                document.getElementById('aguaLeyEmerg').style.display = esEmerg ? '' : 'none';
+                document.getElementById('aguaFiltrosEmergencia').hidden = !esEmerg;
+                document.getElementById('aguaPie').textContent = esEmerg
+                    ? 'La mancha de color muestra dónde se concentran las emergencias registradas por la UNGRD, CORPOBOYACÁ y el CDGRD entre 2019 y 2025. Los puntos son los focos, reportes y cuerpos de bomberos.'
+                    : (esVhi
+                        ? 'El índice VHI combina el estrés hídrico y el térmico de la vegetación frente a su serie histórica: por debajo de 40 el cultivo está sufriendo. Se calcula con el producto satelital semanal de la NOAA.'
+                        : 'El color del municipio indica en qué temporada el IDEAM identificó riesgo de desabastecimiento; los puntos son estaciones hidrológicas con su última lectura.');
+                // La línea de tiempo sirve en todas las capas: mueve el VHI y
                 // también los focos de calor, que son diarios.
                 cargarHistorico();
                 repintar();
+                if (typeof pintarCalor === 'function' && estado.historico) { pintarCalor(); }
             });
         }
 
@@ -1317,6 +1319,11 @@ function fen_grafica(array $serie, string $color, array $oniAnual, string $titul
         // de sequía, así que se pide apenas se abre el mapa.
         cargarHistorico();
 
+        // Con el lienzo ya construido se montan encima las capas de novedades.
+        // Se encadena aquí en vez de esperar por reintentos: así no depende de
+        // cuánto tarden Leaflet y los límites municipales en llegar.
+        iniciarMapa();
+
         (datos.embalses || []).forEach(function (b) {
             L.circleMarker([b.lat, b.lon], {
                 radius: 11, fillColor: '#0ea5e9', color: '#ffffff', weight: 2, fillOpacity: 0.95
@@ -1344,34 +1351,16 @@ function fen_grafica(array $serie, string $color, array $oniAnual, string $titul
     }
 
     function construirMapa(intento) {
-        // Leaflet y la capa de calor necesitan que el contenedor ya tenga tamaño:
-        // si la subpestaña acaba de mostrarse, se espera un instante.
-        var cont = document.getElementById('fenMapa');
-        if (!cont || cont.clientWidth === 0) {
+        // Ya no hay dos mapas: las capas de novedades se montan sobre el mismo
+        // lienzo del panel integrado, así que se espera a que esté listo.
+        if (!agua.mapa) {
             intento = (intento || 0) + 1;
-            if (intento <= 20) { setTimeout(function () { construirMapa(intento); }, 120); }
+            if (intento <= 60) { setTimeout(function () { construirMapa(intento); }, 150); }
             return;
         }
-        if (estado.mapa) { estado.mapa.invalidateSize(); return; }
-        estado.mapa = L.map('fenMapa', { scrollWheelZoom: false }).setView([5.62, -73.35], 8);
-        // Fondo gris claro sin clave de API, para que resalten los focos y el calor.
-        var ESRI = 'https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/';
-        var fondo = L.tileLayer(ESRI + 'World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
-            maxZoom: 16, attribution: 'Esri, HERE, Garmin, &copy; OpenStreetMap'
-        });
-        var respaldo = false;
-        fondo.on('tileerror', function () {
-            if (respaldo) { return; }
-            respaldo = true;
-            estado.mapa.removeLayer(fondo);
-            L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                maxZoom: 17, attribution: '&copy; OpenStreetMap'
-            }).addTo(estado.mapa);
-        });
-        fondo.addTo(estado.mapa);
-        L.tileLayer(ESRI + 'World_Light_Gray_Reference/MapServer/tile/{z}/{y}/{x}', {
-            maxZoom: 16, attribution: 'Esri, HERE, Garmin, &copy; OpenStreetMap'
-        }).addTo(estado.mapa);
+        if (estado.mapa) { return; }
+        estado.mapa = agua.mapa;
+
         estado.capaFocos = L.layerGroup().addTo(estado.mapa);
         estado.capaReportes = L.layerGroup().addTo(estado.mapa);
         estado.capaBomberos = L.layerGroup();
@@ -1379,12 +1368,26 @@ function fen_grafica(array $serie, string $color, array $oniAnual, string $titul
             'Focos de calor activos': estado.capaFocos,
             'Reportes ciudadanos': estado.capaReportes,
             'Cuerpos de bomberos': estado.capaBomberos
-        }, { collapsed: false }).addTo(estado.mapa);
+        }, { collapsed: true }).addTo(estado.mapa);
 
-        estado.mapa.on('click', function (e) { fijarPunto(e.latlng.lat, e.latlng.lng); });
-        setTimeout(function () { estado.mapa.invalidateSize(); }, 200);
+        estado.mapa.on('click', function (e) {
+            // Solo se fija un punto cuando el formulario de reporte está abierto.
+            if (!document.getElementById('fenFormWrap').hidden) {
+                fijarPunto(e.latlng.lat, e.latlng.lng);
+            }
+        });
 
-        fetch(API + '?recurso=todo').then(function (r) { return r.json(); }).then(function (d) {
+        cargarDatosNovedades();
+    }
+
+    // Datos de emergencias, focos activos, reportes y bomberos. Se separa en
+    // su propia funcion para poder reintentarla si la red falla.
+    function cargarDatosNovedades() {
+        if (!estado.mapa) { return; }
+        fetch(API + '?recurso=todo').then(function (r) {
+            if (!r.ok) { throw new Error('HTTP ' + r.status); }
+            return r.json();
+        }).then(function (d) {
             estado.historico = d.historico || {};
             llenarAnios();
 
@@ -1442,11 +1445,19 @@ function fen_grafica(array $serie, string $color, array $oniAnual, string $titul
             // impedir que se vean los focos, los reportes ni los bomberos.
             pintarCalor();
         }).catch(function (err) {
+            // Si la consulta falla, la capa de emergencias quedaría muda para
+            // siempre: se reintenta un par de veces antes de darse por vencido.
+            estado.intentosDatos = (estado.intentosDatos || 0) + 1;
+            if (window.console) { console.warn('Fenómenos, intento ' + estado.intentosDatos + ':', err); }
+            if (estado.intentosDatos <= 3) {
+                setTimeout(cargarDatosNovedades, 1200 * estado.intentosDatos);
+                return;
+            }
             var f = document.getElementById('fenFuentes');
             if (f) {
-                f.textContent = 'No fue posible cargar los datos del mapa. Intente recargar la página.';
+                f.textContent = 'No fue posible cargar las emergencias registradas. '
+                    + 'El resto del mapa funciona; recargue la página para reintentar.';
             }
-            if (window.console) { console.error('Fenómenos:', err); }
         });
     }
 
@@ -1458,22 +1469,6 @@ function fen_grafica(array $serie, string $color, array $oniAnual, string $titul
         });
         sel.addEventListener('change', pintarCalor);
         document.getElementById('fenFiltroFen').addEventListener('change', pintarCalor);
-
-        // Se llena el filtro de provincias con el mismo listado del mapa del agua.
-        var tabla = provinciasDeLaPagina();
-        var selProvNov = document.getElementById('fenFiltroProvincia');
-        if (selProvNov && selProvNov.options.length <= 1) {
-            var nombres = [];
-            Object.keys(tabla).forEach(function (d) {
-                if (nombres.indexOf(tabla[d].provincia) === -1) { nombres.push(tabla[d].provincia); }
-            });
-            nombres.sort().forEach(function (p) {
-                var o = document.createElement('option');
-                o.value = p; o.textContent = p;
-                selProvNov.appendChild(o);
-            });
-            selProvNov.addEventListener('change', pintarCalor);
-        }
     }
 
     // Municipio → provincia: se reutiliza el mismo listado que alimenta los
@@ -1493,7 +1488,9 @@ function fen_grafica(array $serie, string $color, array $oniAnual, string $titul
         if (!estado.mapa) { return; }
         var fen = document.getElementById('fenFiltroFen').value;
         var anio = document.getElementById('fenFiltroAnio').value;
-        var prov = document.getElementById('fenFiltroProvincia').value;
+        // El filtro de provincia es uno solo para todo el mapa integrado.
+        var selP = document.getElementById('aguaProvincia');
+        var prov = selP ? selP.value : '';
         var tablaProv = provinciasDeLaPagina();
         var puntos = [], max = 1;
         var municipios = estado.historico.municipios || {};
@@ -1517,7 +1514,11 @@ function fen_grafica(array $serie, string $color, array $oniAnual, string $titul
         });
         var datos = puntos.map(function (p) { return [p[0], p[1], Math.min(1, p[2] / max)]; });
         if (estado.capaCalor) { estado.mapa.removeLayer(estado.capaCalor); estado.capaCalor = null; }
-        var cont = document.getElementById('fenMapa');
+        // La mancha de emergencias solo se dibuja cuando es la capa elegida:
+        // encima de la coropleta del agua taparía los colores.
+        var selCapa = document.getElementById('aguaCapa');
+        if (selCapa && selCapa.value !== 'emergencias') { return; }
+        var cont = document.getElementById('fenMapaAgua');
         if (!cont || cont.clientWidth === 0) {
             // Lienzo sin tamaño (subpestaña oculta): se reintenta al mostrarse.
             setTimeout(pintarCalor, 200);
@@ -1550,8 +1551,45 @@ function fen_grafica(array $serie, string $color, array $oniAnual, string $titul
         return mejor;
     }
 
+    /**
+     * ¿El punto cae dentro de algún municipio de Boyacá? Se comprueba contra
+     * los polígonos reales, que el mapa ya tiene cargados. Antes se asignaba
+     * siempre el municipio más cercano, así que un clic en un departamento
+     * vecino quedaba registrado como si fuera de Boyacá.
+     */
+    function dentroDeBoyaca(lat, lon) {
+        if (typeof boyacaData === 'undefined') { return true; }
+        for (var k = 0; k < boyacaData.features.length; k++) {
+            var g = boyacaData.features[k].geometry;
+            var partes = (g.type === 'MultiPolygon') ? g.coordinates : [g.coordinates];
+            for (var q = 0; q < partes.length; q++) {
+                var anillo = partes[q][0] || [];
+                var dentro = false;
+                for (var i = 0, j = anillo.length - 1; i < anillo.length; j = i++) {
+                    var xi = anillo[i][0], yi = anillo[i][1];
+                    var xj = anillo[j][0], yj = anillo[j][1];
+                    if (((yi > lat) !== (yj > lat))
+                        && (lon < (xj - xi) * (lat - yi) / ((yj - yi) || 1e-12) + xi)) {
+                        dentro = !dentro;
+                    }
+                }
+                if (dentro) { return true; }
+            }
+        }
+        return false;
+    }
+
     function fijarPunto(lat, lon) {
         if (!estado.mapa) { return; }
+        var aviso = document.getElementById('fenFormMsg');
+        if (!dentroDeBoyaca(lat, lon)) {
+            if (aviso) {
+                aviso.textContent = 'Ese punto está fuera de Boyacá. '
+                    + 'Marque un lugar dentro del departamento.';
+            }
+            return;
+        }
+        if (aviso && /fuera de Boyacá/.test(aviso.textContent)) { aviso.textContent = ''; }
         document.getElementById('fenLat').value = lat.toFixed(6);
         document.getElementById('fenLon').value = lon.toFixed(6);
         var mun = municipioMasCercano(lat, lon);
