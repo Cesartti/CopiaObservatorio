@@ -429,6 +429,10 @@ function fen_grafica(array $serie, string $color, array $oniAnual, string $titul
             <select id="fenFiltroAnio" class="form-select form-select-sm" style="width:auto">
                 <option value="todos">Todos</option>
             </select>
+            <label class="mb-0 small fw-semibold" for="fenFiltroProvincia">Provincia</label>
+            <select id="fenFiltroProvincia" class="form-select form-select-sm" style="width:auto">
+                <option value="">Todas</option>
+            </select>
             <button type="button" class="btn btn-sm btn-danger" id="fenBtnReportar">
                 <i class="fa-solid fa-triangle-exclamation me-1" aria-hidden="true"></i> Reportar una alerta
             </button>
@@ -579,17 +583,27 @@ function fen_grafica(array $serie, string $color, array $oniAnual, string $titul
                 <input class="form-check-input" type="checkbox" id="aguaVerEstaciones" checked>
                 <label class="form-check-label small" for="aguaVerEstaciones">Estaciones</label>
             </div>
+            <div class="form-check form-switch mb-0 ms-1">
+                <input class="form-check-input" type="checkbox" id="aguaVerCalor" checked>
+                <label class="form-check-label small" for="aguaVerCalor">Focos de calor</label>
+            </div>
         </div>
 
         <div class="fen-map-tools" id="aguaTiempoWrap" hidden>
+            <label class="mb-0 small fw-semibold" for="aguaPaso">Recorrer por</label>
+            <select id="aguaPaso" class="form-select form-select-sm" style="width:auto">
+                <option value="dia">Día · últimos 30</option>
+                <option value="semana" selected>Semana · últimos 2 años</option>
+                <option value="mes">Mes · últimos 2 años</option>
+            </select>
             <button type="button" class="btn btn-sm btn-outline-secondary" id="aguaPlay"
                     aria-label="Reproducir la secuencia en el tiempo">
                 <i class="fa-solid fa-play" aria-hidden="true"></i>
             </button>
             <input type="range" class="form-range flex-grow-1" id="aguaTiempo"
-                   min="0" max="0" value="0" style="min-width:180px"
-                   aria-label="Semana que se muestra en el mapa">
-            <span class="small fw-semibold" id="aguaFecha" style="min-width:9rem"></span>
+                   min="0" max="0" value="0" style="min-width:160px"
+                   aria-label="Periodo que se muestra en el mapa">
+            <span class="small fw-semibold" id="aguaFecha" style="min-width:10rem"></span>
             <button type="button" class="btn btn-sm btn-outline-secondary" id="aguaHoy">Hoy</button>
         </div>
         <p class="small text-muted mb-2" id="aguaCargando" hidden>
@@ -615,13 +629,16 @@ function fen_grafica(array $serie, string $color, array $oniAnual, string $titul
             <span><i style="background:#16a34a;border-radius:50%"></i> Estación con nivel normal</span>
             <span><i style="background:#dc2626;border-radius:50%"></i> Estación en alerta</span>
             <span><i style="background:#0ea5e9;border-radius:50%"></i> Embalse</span>
+            <span><i style="background:#ea580c;border-radius:50%"></i> Focos de calor</span>
         </div>
         <div class="fen-leyenda" id="aguaLeyVhi" style="display:none">
             <span><i style="background:#b91c1c"></i> VHI menor que 20 · sequía severa</span>
             <span><i style="background:#f59e0b"></i> 20 a 40 · estrés moderado</span>
             <span><i style="background:#86efac"></i> 40 a 60 · condición favorable</span>
             <span><i style="background:#15803d"></i> Mayor que 60 · vegetación vigorosa</span>
+            <span><i style="background:#ea580c;border-radius:50%"></i> Focos de calor</span>
         </div>
+        <p class="small fw-semibold mb-0 mt-1" id="aguaCalorTotal"></p>
         <p class="small text-muted mt-2" id="aguaPie">
             El color del municipio indica en qué temporada el IDEAM identificó riesgo de
             desabastecimiento; los puntos son estaciones hidrológicas con su última lectura.
@@ -986,6 +1003,74 @@ function fen_grafica(array $serie, string $color, array $oniAnual, string $titul
             return html;
         }
 
+        // Centro aproximado de cada municipio, para ubicar los focos agregados.
+        var centros = {};
+        if (typeof boyacaData !== 'undefined') {
+            boyacaData.features.forEach(function (f) {
+                var g = f.geometry;
+                var partes = (g.type === 'MultiPolygon') ? g.coordinates : [g.coordinates];
+                var sx = 0, sy = 0, n = 0;
+                partes.forEach(function (p) {
+                    (p[0] || []).forEach(function (c) { sx += c[0]; sy += c[1]; n++; });
+                });
+                if (n) { centros[f.properties.id] = [sy / n, sx / n]; }
+            });
+        }
+
+        // Focos de calor del periodo elegido, sumados por municipio. Cuando no
+        // hay periodo (vista de hoy) se usan los últimos siete días.
+        function focosDelPeriodo() {
+            if (!agua.calor || !agua.calor.dias) { return {}; }
+            var dias;
+            if (agua.paso !== null && agua.pasos && agua.pasos[agua.paso]) {
+                dias = agua.pasos[agua.paso].dias;
+            } else {
+                dias = Object.keys(agua.calor.dias).sort().slice(-7);
+            }
+            var suma = {};
+            dias.forEach(function (d) {
+                var m = agua.calor.dias[d];
+                if (!m) { return; }
+                Object.keys(m).forEach(function (dane) {
+                    suma[dane] = (suma[dane] || 0) + m[dane];
+                });
+            });
+            return suma;
+        }
+
+        function pintarCalorAgua() {
+            if (!agua.capaCalor) { return; }
+            agua.capaCalor.clearLayers();
+            if (!document.getElementById('aguaVerCalor').checked) { return; }
+            var suma = focosDelPeriodo();
+            var total = 0;
+            Object.keys(suma).forEach(function (dane) {
+                if (agua.provincia) {
+                    var p = provincias[dane];
+                    if (!p || p.provincia !== agua.provincia) { return; }
+                }
+                var c = centros[dane];
+                if (!c) { return; }
+                var n = suma[dane];
+                total += n;
+                L.circleMarker(c, {
+                    radius: Math.min(6 + Math.sqrt(n) * 2.6, 22),
+                    fillColor: '#ea580c', color: '#7c2d12', weight: 1, fillOpacity: 0.55
+                }).bindPopup('<strong>' + (provincias[dane] ? provincias[dane].municipio : dane)
+                    + '</strong><br>' + n + (n === 1 ? ' foco de calor' : ' focos de calor')
+                    + '<br><span class="text-muted">'
+                    + (agua.paso !== null && agua.pasos[agua.paso]
+                        ? agua.pasos[agua.paso].etiqueta : 'últimos 7 días')
+                    + '</span>').addTo(agua.capaCalor);
+            });
+            var pie = document.getElementById('aguaCalorTotal');
+            if (pie) {
+                pie.textContent = total
+                    ? (total + (total === 1 ? ' foco de calor detectado' : ' focos de calor detectados'))
+                    : 'Sin focos de calor en el periodo';
+            }
+        }
+
         function repintar() {
             if (agua.capaMun) { agua.capaMun.setStyle(estiloMunicipio); }
             if (agua.capaEst) {
@@ -994,6 +1079,7 @@ function fen_grafica(array $serie, string $color, array $oniAnual, string $titul
                     c.setStyle({ opacity: dentro ? 1 : 0.15, fillOpacity: dentro ? 0.95 : 0.15 });
                 });
             }
+            pintarCalorAgua();
         }
 
         /* ---- filtros ---- */
@@ -1035,61 +1121,146 @@ function fen_grafica(array $serie, string $color, array $oniAnual, string $titul
                 document.getElementById('aguaPie').textContent = esVhi
                     ? 'El índice VHI combina el estrés hídrico y el térmico de la vegetación frente a su serie histórica: por debajo de 40 el cultivo está sufriendo. Se calcula con el producto satelital semanal de la NOAA.'
                     : 'El color del municipio indica en qué temporada el IDEAM identificó riesgo de desabastecimiento; los puntos son estaciones hidrológicas con su última lectura.';
-                // El riesgo de desabastecimiento es un estudio fijo: no tiene
-                // línea de tiempo, así que el control solo aparece con el VHI.
-                document.getElementById('aguaTiempoWrap').hidden = !esVhi;
-                if (esVhi) { cargarHistorico(); } else { detenerReproduccion(); agua.semana = null; }
+                // La línea de tiempo sirve en las dos capas: mueve el VHI y
+                // también los focos de calor, que son diarios.
+                cargarHistorico();
                 repintar();
             });
         }
 
         /* ---- línea de tiempo ---- */
+        var MESES = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio',
+                     'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
+
         function cargarHistorico() {
             if (agua.hist || agua.cargando) { prepararTiempo(); return; }
             agua.cargando = true;
             document.getElementById('aguaCargando').hidden = false;
-            fetch('api/agua.php?recurso=historico')
-                .then(function (r) { return r.json(); })
-                .then(function (j) {
-                    agua.hist = (j && j.vhi && j.vhi.fechas && j.vhi.fechas.length) ? j : null;
-                    prepararTiempo();
-                })
-                .catch(function () { agua.hist = null; })
-                .finally(function () {
-                    agua.cargando = false;
-                    document.getElementById('aguaCargando').hidden = true;
+            // Las dos series viajan aparte: el agua es semanal y el calor diario.
+            Promise.all([
+                fetch('api/agua.php?recurso=historico').then(function (r) { return r.json(); }),
+                fetch('api/agua.php?recurso=calor').then(function (r) { return r.json(); })
+                    .catch(function () { return null; })
+            ]).then(function (res) {
+                var h = res[0];
+                agua.hist = (h && h.vhi && h.vhi.fechas && h.vhi.fechas.length) ? h : null;
+                agua.calor = (res[1] && res[1].dias) ? res[1] : null;
+                prepararTiempo();
+            }).catch(function () {
+                agua.hist = null;
+            }).finally(function () {
+                agua.cargando = false;
+                document.getElementById('aguaCargando').hidden = true;
+            });
+        }
+
+        // Arma la lista de periodos según la granularidad elegida. Cada periodo
+        // sabe qué semana de VHI le corresponde y qué días de calor abarca.
+        function construirPasos(granularidad) {
+            var pasos = [];
+            var fechas = agua.hist ? agua.hist.vhi.fechas : [];
+            if (!fechas.length) { return pasos; }
+
+            function semanaDe(iso) {
+                // Última semana publicada que no sea posterior al día pedido.
+                var idx = 0;
+                for (var i = 0; i < fechas.length; i++) {
+                    if (fechas[i] <= iso) { idx = i; } else { break; }
+                }
+                return idx;
+            }
+
+            if (granularidad === 'dia') {
+                var fin = new Date(fechas[fechas.length - 1] + 'T12:00:00');
+                var hoyISO = new Date().toISOString().slice(0, 10);
+                var tope = new Date(hoyISO + 'T12:00:00');
+                if (tope > fin) { fin = tope; }
+                for (var d = 29; d >= 0; d--) {
+                    var f = new Date(fin.getTime() - d * 86400000);
+                    var iso = f.toISOString().slice(0, 10);
+                    pasos.push({
+                        clave: iso, dias: [iso], vhiIdx: semanaDe(iso),
+                        etiqueta: f.getDate() + ' ' + MESES[f.getMonth()].slice(0, 3)
+                                  + ' ' + f.getFullYear()
+                    });
+                }
+            } else if (granularidad === 'mes') {
+                var meses = {};
+                fechas.forEach(function (iso, i) {
+                    var m = iso.slice(0, 7);
+                    if (!meses[m]) { meses[m] = { semanas: [], dias: [] }; }
+                    meses[m].semanas.push(i);
                 });
+                Object.keys(meses).sort().forEach(function (m) {
+                    var y = parseInt(m.slice(0, 4), 10), mm = parseInt(m.slice(5, 7), 10);
+                    var ultimo = new Date(y, mm, 0).getDate();
+                    var dias = [];
+                    for (var k = 1; k <= ultimo; k++) {
+                        dias.push(m + '-' + (k < 10 ? '0' + k : k));
+                    }
+                    pasos.push({
+                        clave: m, dias: dias,
+                        // Se pinta la última semana del mes, que es la que lo cierra.
+                        vhiIdx: meses[m].semanas[meses[m].semanas.length - 1],
+                        etiqueta: MESES[mm - 1] + ' de ' + y
+                    });
+                });
+            } else {
+                fechas.forEach(function (iso, i) {
+                    var f = new Date(iso + 'T12:00:00');
+                    var dias = [];
+                    for (var k = 6; k >= 0; k--) {
+                        dias.push(new Date(f.getTime() - k * 86400000).toISOString().slice(0, 10));
+                    }
+                    pasos.push({
+                        clave: iso, dias: dias, vhiIdx: i,
+                        etiqueta: 'Semana del ' + f.getDate() + ' ' + MESES[f.getMonth()].slice(0, 3)
+                                  + ' ' + f.getFullYear()
+                    });
+                });
+            }
+            return pasos;
         }
 
         function prepararTiempo() {
             var wrap = document.getElementById('aguaTiempoWrap');
             if (!agua.hist) { wrap.hidden = true; return; }
+            agua.pasos = construirPasos(document.getElementById('aguaPaso').value);
             var r = document.getElementById('aguaTiempo');
-            r.max = agua.hist.vhi.fechas.length - 1;
+            r.max = Math.max(agua.pasos.length - 1, 0);
             r.value = r.max;
-            agua.semana = null;           // al abrir se muestra la foto de hoy
-            document.getElementById('aguaFecha').textContent =
-                'Hoy · ' + agua.hist.vhi.fechas[r.max];
+            agua.paso = null;             // al abrir se muestra la foto de hoy
+            agua.semana = null;
+            document.getElementById('aguaFecha').textContent = 'Hoy';
             wrap.hidden = false;
+            repintar();
         }
 
-        document.getElementById('aguaTiempo').addEventListener('input', function () {
-            if (!agua.hist) { return; }
-            agua.semana = parseInt(this.value, 10);
-            document.getElementById('aguaFecha').textContent =
-                'Semana del ' + agua.hist.vhi.fechas[agua.semana];
+        function aplicarPaso(i) {
+            agua.paso = i;
+            var p = agua.pasos[i];
+            agua.semana = p ? p.vhiIdx : null;
+            document.getElementById('aguaFecha').textContent = p ? p.etiqueta : 'Hoy';
             repintar();
+        }
+
+        document.getElementById('aguaPaso').addEventListener('change', function () {
+            detenerReproduccion();
+            prepararTiempo();
+        });
+
+        document.getElementById('aguaTiempo').addEventListener('input', function () {
+            if (!agua.pasos || !agua.pasos.length) { return; }
+            aplicarPaso(parseInt(this.value, 10));
         });
 
         document.getElementById('aguaHoy').addEventListener('click', function () {
             detenerReproduccion();
+            agua.paso = null;
             agua.semana = null;
-            if (agua.hist) {
-                var r = document.getElementById('aguaTiempo');
-                r.value = r.max;
-                document.getElementById('aguaFecha').textContent =
-                    'Hoy · ' + agua.hist.vhi.fechas[r.max];
-            }
+            var r = document.getElementById('aguaTiempo');
+            r.value = r.max;
+            document.getElementById('aguaFecha').textContent = 'Hoy';
             repintar();
         });
 
@@ -1100,20 +1271,19 @@ function fen_grafica(array $serie, string $color, array $oniAnual, string $titul
         }
 
         document.getElementById('aguaPlay').addEventListener('click', function () {
-            if (!agua.hist) { return; }
+            if (!agua.pasos || !agua.pasos.length) { return; }
             if (agua.timer) { detenerReproduccion(); return; }
             var r = document.getElementById('aguaTiempo');
             this.innerHTML = '<i class="fa-solid fa-pause" aria-hidden="true"></i>';
-            agua.semana = 0;
+            var i = 0;
             r.value = 0;
+            aplicarPaso(0);
             agua.timer = setInterval(function () {
-                agua.semana++;
-                if (agua.semana > parseInt(r.max, 10)) { detenerReproduccion(); return; }
-                r.value = agua.semana;
-                document.getElementById('aguaFecha').textContent =
-                    'Semana del ' + agua.hist.vhi.fechas[agua.semana];
-                repintar();
-            }, 550);
+                i++;
+                if (i > parseInt(r.max, 10)) { detenerReproduccion(); return; }
+                r.value = i;
+                aplicarPaso(i);
+            }, 480);
         });
 
         // Las estaciones van en su propia capa para poder filtrarlas y ocultarlas.
@@ -1139,6 +1309,13 @@ function fen_grafica(array $serie, string $color, array $oniAnual, string $titul
                     : 'Nivel ' + e.valor + ' ' + e.unidad)).addTo(agua.capaEst);
         });
         agua.capaEst.addTo(agua.mapa);
+
+        agua.capaCalor = L.layerGroup().addTo(agua.mapa);
+        document.getElementById('aguaVerCalor').addEventListener('change', pintarCalorAgua);
+
+        // El histórico del calor se necesita en cualquier capa, no solo en la
+        // de sequía, así que se pide apenas se abre el mapa.
+        cargarHistorico();
 
         (datos.embalses || []).forEach(function (b) {
             L.circleMarker([b.lat, b.lon], {
@@ -1281,15 +1458,50 @@ function fen_grafica(array $serie, string $color, array $oniAnual, string $titul
         });
         sel.addEventListener('change', pintarCalor);
         document.getElementById('fenFiltroFen').addEventListener('change', pintarCalor);
+
+        // Se llena el filtro de provincias con el mismo listado del mapa del agua.
+        var tabla = provinciasDeLaPagina();
+        var selProvNov = document.getElementById('fenFiltroProvincia');
+        if (selProvNov && selProvNov.options.length <= 1) {
+            var nombres = [];
+            Object.keys(tabla).forEach(function (d) {
+                if (nombres.indexOf(tabla[d].provincia) === -1) { nombres.push(tabla[d].provincia); }
+            });
+            nombres.sort().forEach(function (p) {
+                var o = document.createElement('option');
+                o.value = p; o.textContent = p;
+                selProvNov.appendChild(o);
+            });
+            selProvNov.addEventListener('change', pintarCalor);
+        }
+    }
+
+    // Municipio → provincia: se reutiliza el mismo listado que alimenta los
+    // filtros del mapa del agua, que ya viaja en la página.
+    function provinciasDeLaPagina() {
+        if (estado.provincias) { return estado.provincias; }
+        estado.provincias = {};
+        var cont = document.getElementById('fenMapaAgua');
+        if (cont && cont.dataset.agua) {
+            try { estado.provincias = JSON.parse(cont.dataset.agua).provincias || {}; }
+            catch (e) { estado.provincias = {}; }
+        }
+        return estado.provincias;
     }
 
     function pintarCalor() {
         if (!estado.mapa) { return; }
         var fen = document.getElementById('fenFiltroFen').value;
         var anio = document.getElementById('fenFiltroAnio').value;
+        var prov = document.getElementById('fenFiltroProvincia').value;
+        var tablaProv = provinciasDeLaPagina();
         var puntos = [], max = 1;
         var municipios = estado.historico.municipios || {};
         Object.keys(municipios).forEach(function (dane) {
+            if (prov) {
+                var p = tablaProv[dane];
+                if (!p || p.provincia !== prov) { return; }
+            }
             var m = municipios[dane], peso;
             if (anio !== 'todos') {
                 peso = (m.anios && m.anios[anio]) ? m.anios[anio] : 0;

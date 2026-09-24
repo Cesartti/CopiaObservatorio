@@ -20,16 +20,19 @@ header('X-Content-Type-Options: nosniff');
 
 $recurso = isset($_GET['recurso']) ? (string) $_GET['recurso'] : 'historico';
 
-if ($recurso !== 'historico') {
+$archivos = [
+    'historico' => 'historico_agua.json',   // VHI semanal + embalse diario
+    'calor' => 'historico_calor.json',      // focos de calor diarios
+];
+if (!isset($archivos[$recurso])) {
     http_response_code(400);
     echo json_encode(['error' => 'Recurso no reconocido'], JSON_UNESCAPED_UNICODE);
     exit;
 }
 
-$archivo = __DIR__ . '/../data/fenomenos/historico_agua.json';
+$archivo = __DIR__ . '/../data/fenomenos/' . $archivos[$recurso];
 if (!is_file($archivo)) {
-    echo json_encode(['vhi' => null, 'embalse' => null,
-                      'aviso' => 'Todavía no se ha construido el histórico.'],
+    echo json_encode(['aviso' => 'Todavía no se ha construido esta serie.'],
                      JSON_UNESCAPED_UNICODE);
     exit;
 }
