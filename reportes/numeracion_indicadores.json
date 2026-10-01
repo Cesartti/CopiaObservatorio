@@ -1,0 +1,1988 @@
+{
+ "2": {
+  "observatorio": "Social",
+  "coinciden": [],
+  "difieren": [
+   {
+    "ficha": {
+     "id": "2202",
+     "titulo": "Partos atendidos por personal calificado",
+     "categoria": "Social",
+     "fuente_ficha": "indicators_social_dynamic_import.csv"
+    },
+    "carpeta": {
+     "id": "2121",
+     "titulo": "Partos atendidos por personal calificado",
+     "categoria": "Salud",
+     "graficas": 1
+    },
+    "parecido": 1.0
+   },
+   {
+    "ficha": {
+     "id": "2300",
+     "titulo": "Intentos de suicidio",
+     "categoria": "Social",
+     "fuente_ficha": "indicators_social_dynamic_import.csv"
+    },
+    "carpeta": {
+     "id": "2016",
+     "titulo": "Intentos de suicidio",
+     "categoria": "Violencia",
+     "graficas": 2
+    },
+    "parecido": 1.0
+   },
+   {
+    "ficha": {
+     "id": "2413",
+     "titulo": "Adolescentes aprehendidos",
+     "categoria": "Social",
+     "fuente_ficha": "indicators_social_dynamic_import.csv"
+    },
+    "carpeta": {
+     "id": "2300",
+     "titulo": "Adolecentes aprehendidos",
+     "categoria": "Responsabilidad Penal",
+     "graficas": 0
+    },
+    "parecido": 0.98
+   },
+   {
+    "ficha": {
+     "id": "2415",
+     "titulo": "Ejecución de sanciones ICBF",
+     "categoria": "Social",
+     "fuente_ficha": "indicators_social_dynamic_import.csv"
+    },
+    "carpeta": {
+     "id": "2302",
+     "titulo": "Ejecición de sanciones ICBF",
+     "categoria": "Responsabilidad Penal",
+     "graficas": 1
+    },
+    "parecido": 0.963
+   },
+   {
+    "ficha": {
+     "id": "2405",
+     "titulo": "Intentos de suicidio",
+     "categoria": "Social",
+     "fuente_ficha": "indicators_social_dynamic_import.csv"
+    },
+    "carpeta": {
+     "id": "2801",
+     "titulo": "Intento de suicidios",
+     "categoria": "Salud",
+     "graficas": 2
+    },
+    "parecido": 0.95
+   },
+   {
+    "ficha": {
+     "id": "2101",
+     "titulo": "Resultados Pruebas Saber",
+     "categoria": "Social",
+     "fuente_ficha": "indicators_social_dynamic_import.csv"
+    },
+    "carpeta": {
+     "id": "2212",
+     "titulo": "Resultados Pruebas Saber 11",
+     "categoria": "Educación",
+     "graficas": 1
+    },
+    "parecido": 0.941
+   },
+   {
+    "ficha": {
+     "id": "2102",
+     "titulo": "Infraestructura educativa",
+     "categoria": "Social",
+     "fuente_ficha": "indicators_social_dynamic_import.csv"
+    },
+    "carpeta": {
+     "id": "2213",
+     "titulo": "infraestructura educativa del departamento",
+     "categoria": "Educación",
+     "graficas": 1
+    },
+    "parecido": 0.9
+   },
+   {
+    "ficha": {
+     "id": "2107",
+     "titulo": "Tasa de repitencia escolar",
+     "categoria": "Social",
+     "fuente_ficha": "indicators_social_dynamic_import.csv"
+    },
+    "carpeta": {
+     "id": "2209",
+     "titulo": "Tasa de repitencia escolar en todos los niveles",
+     "categoria": "Educación",
+     "graficas": 2
+    },
+    "parecido": 0.9
+   },
+   {
+    "ficha": {
+     "id": "2108",
+     "titulo": "Tasa de aprobación escolar",
+     "categoria": "Social",
+     "fuente_ficha": "indicators_social_dynamic_import.csv"
+    },
+    "carpeta": {
+     "id": "2207",
+     "titulo": "Tasa de aprobacion escolar en todos los niveles",
+     "categoria": "Educación",
+     "graficas": 1
+    },
+    "parecido": 0.9
+   },
+   {
+    "ficha": {
+     "id": "2109",
+     "titulo": "Tasa de reprobación escolar",
+     "categoria": "Social",
+     "fuente_ficha": "indicators_social_dynamic_import.csv"
+    },
+    "carpeta": {
+     "id": "2208",
+     "titulo": "Tasa de reprobacion escolar en todos los niveles",
+     "categoria": "Educación",
+     "graficas": 1
+    },
+    "parecido": 0.9
+   },
+   {
+    "ficha": {
+     "id": "2203",
+     "titulo": "Mortalidad por desnutrición",
+     "categoria": "Social",
+     "fuente_ficha": "indicators_social_dynamic_import.csv"
+    },
+    "carpeta": {
+     "id": "2131",
+     "titulo": "Casos de mortalidad por desnutrición en menores de 5 años",
+     "categoria": "Salud",
+     "graficas": 1
+    },
+    "parecido": 0.9
+   },
+   {
+    "ficha": {
+     "id": "2206",
+     "titulo": "Mortalidad prematura",
+     "categoria": "Social",
+     "fuente_ficha": "indicators_social_dynamic_import.csv"
+    },
+    "carpeta": {
+     "id": "2140",
+     "titulo": "Casos de mortalidad prematura de las enfermedades crónicas de las vías respiratorias inferiores",
+     "categoria": "Salud",
+     "graficas": 1
+    },
+    "parecido": 0.9
+   },
+   {
+    "ficha": {
+     "id": "2207",
+     "titulo": "Mortalidad perinatal y neonatal",
+     "categoria": "Social",
+     "fuente_ficha": "indicators_social_dynamic_import.csv"
+    },
+    "carpeta": {
+     "id": "2914",
+     "titulo": "Mortalidad perinatal y neonatal en población indígena",
+     "categoria": "Pueblos indígenas",
+     "graficas": 1
+    },
+    "parecido": 0.9
+   },
+   {
+    "ficha": {
+     "id": "2209",
+     "titulo": "Mortalidad en menores de 5 años",
+     "categoria": "Social",
+     "fuente_ficha": "indicators_social_dynamic_import.csv"
+    },
+    "carpeta": {
+     "id": "2132",
+     "titulo": "Casos de mortalidad en menores de 5 años",
+     "categoria": "Salud",
+     "graficas": 1
+    },
+    "parecido": 0.9
+   },
+   {
+    "ficha": {
+     "id": "2215",
+     "titulo": "Cáncer infantil",
+     "categoria": "Social",
+     "fuente_ficha": "indicators_social_dynamic_import.csv"
+    },
+    "carpeta": {
+     "id": "2104",
+     "titulo": "Número de casos de cáncer infantil",
+     "categoria": "Salud",
+     "graficas": 1
+    },
+    "parecido": 0.9
+   },
+   {
+    "ficha": {
+     "id": "2216",
+     "titulo": "Casos de leucemia",
+     "categoria": "Social",
+     "fuente_ficha": "indicators_social_dynamic_import.csv"
+    },
+    "carpeta": {
+     "id": "2105",
+     "titulo": "Número de casos de Leucemia Linfoide Aguda en Boyacá",
+     "categoria": "Salud",
+     "graficas": 1
+    },
+    "parecido": 0.9
+   },
+   {
+    "ficha": {
+     "id": "2502",
+     "titulo": "Pobreza multidimensional por sexo",
+     "categoria": "Social",
+     "fuente_ficha": "indicators_social_dynamic_import.csv"
+    },
+    "carpeta": {
+     "id": "2712",
+     "titulo": "Pobreza Multidimensional",
+     "categoria": "Familia",
+     "graficas": 2
+    },
+    "parecido": 0.9
+   },
+   {
+    "ficha": {
+     "id": "2600",
+     "titulo": "Ejecución de sanciones ICBF",
+     "categoria": "Social",
+     "fuente_ficha": "indicators_social_dynamic_import.csv"
+    },
+    "carpeta": {
+     "id": "2533",
+     "titulo": "Ejecución de sanciones ICBF en población de 14 a 28 años",
+     "categoria": "Juventud",
+     "graficas": 1
+    },
+    "parecido": 0.9
+   },
+   {
+    "ficha": {
+     "id": "2602",
+     "titulo": "Adolescentes aprehendidos",
+     "categoria": "Social",
+     "fuente_ficha": "indicators_social_dynamic_import.csv"
+    },
+    "carpeta": {
+     "id": "2531",
+     "titulo": "Adolescentes aprehendidos de 14 a 17 años",
+     "categoria": "Juventud",
+     "graficas": 1
+    },
+    "parecido": 0.9
+   },
+   {
+    "ficha": {
+     "id": "2701",
+     "titulo": "Atenciones médicas por tipos de violencia",
+     "categoria": "Social",
+     "fuente_ficha": "indicators_social_dynamic_import.csv"
+    },
+    "carpeta": {
+     "id": "2015",
+     "titulo": "Atenciones médicas por violencia",
+     "categoria": "Violencia",
+     "graficas": 2
+    },
+    "parecido": 0.877
+   },
+   {
+    "ficha": {
+     "id": "2104",
+     "titulo": "Matriculados por discapacidad y etnia",
+     "categoria": "Social",
+     "fuente_ficha": "indicators_social_dynamic_import.csv"
+    },
+    "carpeta": {
+     "id": "2206",
+     "titulo": "Matriculados por discapacidad y clasificación étnica",
+     "categoria": "Educación",
+     "graficas": 1
+    },
+    "parecido": 0.831
+   },
+   {
+    "ficha": {
+     "id": "2214",
+     "titulo": "Cobertura de afiliación al SGSSS",
+     "categoria": "Social",
+     "fuente_ficha": "indicators_social_dynamic_import.csv"
+    },
+    "carpeta": {
+     "id": "2100",
+     "titulo": "Cobertura de afiliación en salud",
+     "categoria": "Salud",
+     "graficas": 2
+    },
+    "parecido": 0.812
+   },
+   {
+    "ficha": {
+     "id": "2106",
+     "titulo": "Repitencia por discapacidad y etnia",
+     "categoria": "Social",
+     "fuente_ficha": "indicators_social_dynamic_import.csv"
+    },
+    "carpeta": {
+     "id": "2210",
+     "titulo": "Tasa de repitencia por discapacidad y clasificación étnica",
+     "categoria": "Educación",
+     "graficas": 2
+    },
+    "parecido": 0.753
+   },
+   {
+    "ficha": {
+     "id": "2501",
+     "titulo": "Encuesta de Calidad de Vida (ECV)",
+     "categoria": "Social",
+     "fuente_ficha": "indicators_social_dynamic_import.csv"
+    },
+    "carpeta": {
+     "id": "2704",
+     "titulo": "Encuesta de calidad de vida por tenencia de servicios",
+     "categoria": "Familia",
+     "graficas": 1
+    },
+    "parecido": 0.738
+   },
+   {
+    "ficha": {
+     "id": "2400",
+     "titulo": "Fecundidad en adolescentes de 14 a 19 años",
+     "categoria": "Social",
+     "fuente_ficha": "indicators_social_dynamic_import.csv"
+    },
+    "carpeta": {
+     "id": "2528",
+     "titulo": "Fecundidad específica en mujeres de 14 a 19 años",
+     "categoria": "Juventud",
+     "graficas": 1
+    },
+    "parecido": 0.733
+   },
+   {
+    "ficha": {
+     "id": "2403",
+     "titulo": "Muertes violentas – Medicina Legal",
+     "categoria": "Social",
+     "fuente_ficha": "indicators_social_dynamic_import.csv"
+    },
+    "carpeta": {
+     "id": "2004",
+     "titulo": "Muerte violenta accidental",
+     "categoria": "Violencia",
+     "graficas": 2
+    },
+    "parecido": 0.724
+   },
+   {
+    "ficha": {
+     "id": "2205",
+     "titulo": "Mortalidad por VIH/SIDA",
+     "categoria": "Social",
+     "fuente_ficha": "indicators_social_dynamic_import.csv"
+    },
+    "carpeta": {
+     "id": "2139",
+     "titulo": "Casos de mortalidad por VIH",
+     "categoria": "Salud",
+     "graficas": 1
+    },
+    "parecido": 0.72
+   },
+   {
+    "ficha": {
+     "id": "2200",
+     "titulo": "Morbilidad Materna Extrema (MME)",
+     "categoria": "Social",
+     "fuente_ficha": "indicators_social_dynamic_import.csv"
+    },
+    "carpeta": {
+     "id": "2907",
+     "titulo": "Morbilidad materna extrema en población indígena",
+     "categoria": "Pueblos indígenas",
+     "graficas": 2
+    },
+    "parecido": 0.718
+   },
+   {
+    "ficha": {
+     "id": "2412",
+     "titulo": "Morbilidad Materna Extrema (MME)",
+     "categoria": "Social",
+     "fuente_ficha": "indicators_social_dynamic_import.csv"
+    },
+    "carpeta": {
+     "id": "2529",
+     "titulo": "Morbilidad materna extrema en mujeres de 14 a 28 años",
+     "categoria": "Juventud",
+     "graficas": 2
+    },
+    "parecido": 0.699
+   },
+   {
+    "ficha": {
+     "id": "2500",
+     "titulo": "Encuesta de Calidad de Vida – Hogares campesinos",
+     "categoria": "Social",
+     "fuente_ficha": "indicators_social_dynamic_import.csv"
+    },
+    "carpeta": {
+     "id": "2702",
+     "titulo": "Encuesta de calidad de vida por conformación de hogares",
+     "categoria": "Familia",
+     "graficas": 1
+    },
+    "parecido": 0.693
+   },
+   {
+    "ficha": {
+     "id": "2301",
+     "titulo": "Deportistas con discapacidad",
+     "categoria": "Social",
+     "fuente_ficha": "indicators_social_dynamic_import.csv"
+    },
+    "carpeta": {
+     "id": "2604",
+     "titulo": "Dengue en población con discapacidad",
+     "categoria": "Discapacidad",
+     "graficas": 2
+    },
+    "parecido": 0.688
+   },
+   {
+    "ficha": {
+     "id": "2404",
+     "titulo": "Casos de feminicidio",
+     "categoria": "Social",
+     "fuente_ficha": "indicators_social_dynamic_import.csv"
+    },
+    "carpeta": {
+     "id": "2001",
+     "titulo": "Feminicidios",
+     "categoria": "Violencia",
+     "graficas": 1
+    },
+    "parecido": 0.688
+   },
+   {
+    "ficha": {
+     "id": "2103",
+     "titulo": "Tasa de deserción escolar",
+     "categoria": "Social",
+     "fuente_ficha": "indicators_social_dynamic_import.csv"
+    },
+    "carpeta": {
+     "id": "2215",
+     "titulo": "Plan de alimentación escolar",
+     "categoria": "Educación",
+     "graficas": 1
+    },
+    "parecido": 0.679
+   },
+   {
+    "ficha": {
+     "id": "2705",
+     "titulo": "Muertes violentas – Medicina Legal",
+     "categoria": "Social",
+     "fuente_ficha": "indicators_social_dynamic_import.csv"
+    },
+    "carpeta": {
+     "id": "2006",
+     "titulo": "Muerte violenta sin determinar",
+     "categoria": "Violencia",
+     "graficas": 2
+    },
+    "parecido": 0.677
+   },
+   {
+    "ficha": {
+     "id": "2410",
+     "titulo": "Cobertura de afiliación al SGSSS",
+     "categoria": "Social",
+     "fuente_ficha": "indicators_social_dynamic_import.csv"
+    },
+    "carpeta": {
+     "id": "2101",
+     "titulo": "Personas Afiliadas Al Sgsss",
+     "categoria": "Salud",
+     "graficas": 2
+    },
+    "parecido": 0.644
+   },
+   {
+    "ficha": {
+     "id": "2307",
+     "titulo": "Matriculados por discapacidad y etnia",
+     "categoria": "Social",
+     "fuente_ficha": "indicators_social_dynamic_import.csv"
+    },
+    "carpeta": {
+     "id": "2601",
+     "titulo": "Población matriculada con discapacidad",
+     "categoria": "Discapacidad",
+     "graficas": 1
+    },
+    "parecido": 0.64
+   },
+   {
+    "ficha": {
+     "id": "2208",
+     "titulo": "Mortalidad reportada en SIVIGILA",
+     "categoria": "Social",
+     "fuente_ficha": "indicators_social_dynamic_import.csv"
+    },
+    "carpeta": {
+     "id": "2915",
+     "titulo": "Mortalidad por IRA en población indígena",
+     "categoria": "Pueblos indígenas",
+     "graficas": 1
+    },
+    "parecido": 0.639
+   },
+   {
+    "ficha": {
+     "id": "2305",
+     "titulo": "Repitencia por discapacidad y etnia",
+     "categoria": "Social",
+     "fuente_ficha": "indicators_social_dynamic_import.csv"
+    },
+    "carpeta": {
+     "id": "2603",
+     "titulo": "Tasa de repitencia en población discapacitada",
+     "categoria": "Discapacidad",
+     "graficas": 2
+    },
+    "parecido": 0.625
+   },
+   {
+    "ficha": {
+     "id": "2111",
+     "titulo": "Cobertura educativa por etnia y discapacidad",
+     "categoria": "Social",
+     "fuente_ficha": "indicators_social_dynamic_import.csv"
+    },
+    "carpeta": {
+     "id": "2602",
+     "titulo": "Tasa de cobertura en población discapacitada",
+     "categoria": "Discapacidad",
+     "graficas": 2
+    },
+    "parecido": 0.614
+   },
+   {
+    "ficha": {
+     "id": "2700",
+     "titulo": "Intentos de suicidio",
+     "categoria": "Social",
+     "fuente_ficha": "indicators_social_dynamic_import.csv"
+    },
+    "carpeta": {
+     "id": "2916",
+     "titulo": "Intento de suicidios en población indígena",
+     "categoria": "Pueblos indígenas",
+     "graficas": 2
+    },
+    "parecido": 0.613
+   },
+   {
+    "ficha": {
+     "id": "2704",
+     "titulo": "Casos de feminicidio",
+     "categoria": "Social",
+     "fuente_ficha": "indicators_social_dynamic_import.csv"
+    },
+    "carpeta": {
+     "id": "2111",
+     "titulo": "Casos de Malaria Complicada",
+     "categoria": "Salud",
+     "graficas": 2
+    },
+    "parecido": 0.596
+   },
+   {
+    "ficha": {
+     "id": "2212",
+     "titulo": "Indicadores de salud materno-infantil",
+     "categoria": "Social",
+     "fuente_ficha": "indicators_social_dynamic_import.csv"
+    },
+    "carpeta": {
+     "id": "2136",
+     "titulo": "Casos de mortalidad materna",
+     "categoria": "Salud",
+     "graficas": 1
+    },
+    "parecido": 0.594
+   },
+   {
+    "ficha": {
+     "id": "2414",
+     "titulo": "Consejo de adolescentes",
+     "categoria": "Social",
+     "fuente_ficha": "indicators_social_dynamic_import.csv"
+    },
+    "carpeta": {
+     "id": "2008",
+     "titulo": "Violencia a niños, niñas y adolescentes",
+     "categoria": "Violencia",
+     "graficas": 2
+    },
+    "parecido": 0.59
+   },
+   {
+    "ficha": {
+     "id": "2601",
+     "titulo": "Consejo de adolescentes",
+     "categoria": "Social",
+     "fuente_ficha": "indicators_social_dynamic_import.csv"
+    },
+    "carpeta": {
+     "id": "2713",
+     "titulo": "Violencia a niños, niñas y adolescentes",
+     "categoria": "Familia",
+     "graficas": 2
+    },
+    "parecido": 0.59
+   },
+   {
+    "ficha": {
+     "id": "2302",
+     "titulo": "Certificados de discapacidad emitidos",
+     "categoria": "Social",
+     "fuente_ficha": "indicators_social_dynamic_import.csv"
+    },
+    "carpeta": {
+     "id": "2607",
+     "titulo": "Certificados de discapacidad generados por Secretaria de Salud Departamental",
+     "categoria": "Discapacidad",
+     "graficas": 1
+    },
+    "parecido": 0.584
+   },
+   {
+    "ficha": {
+     "id": "2703",
+     "titulo": "Convivencia escolar",
+     "categoria": "Social",
+     "fuente_ficha": "indicators_social_dynamic_import.csv"
+    },
+    "carpeta": {
+     "id": "2011",
+     "titulo": "Violencia de pareja",
+     "categoria": "Violencia",
+     "graficas": 2
+    },
+    "parecido": 0.579
+   },
+   {
+    "ficha": {
+     "id": "2407",
+     "titulo": "Mortalidad por VIH/SIDA",
+     "categoria": "Social",
+     "fuente_ficha": "indicators_social_dynamic_import.csv"
+    },
+    "carpeta": {
+     "id": "2527",
+     "titulo": "Mortalidad por VIH en población de 14 a 28 años",
+     "categoria": "Juventud",
+     "graficas": 1
+    },
+    "parecido": 0.571
+   },
+   {
+    "ficha": {
+     "id": "2408",
+     "titulo": "Indicadores de salud materno-infantil",
+     "categoria": "Social",
+     "fuente_ficha": "indicators_social_dynamic_import.csv"
+    },
+    "carpeta": {
+     "id": "2807",
+     "titulo": "Atenciones médicas por Otros Dx de salud mental",
+     "categoria": "Salud",
+     "graficas": 0
+    },
+    "parecido": 0.571
+   },
+   {
+    "ficha": {
+     "id": "2105",
+     "titulo": "Matriculados por nivel educativo",
+     "categoria": "Social",
+     "fuente_ficha": "indicators_social_dynamic_import.csv"
+    },
+    "carpeta": {
+     "id": "2014",
+     "titulo": "Violencia por convivencia educativa",
+     "categoria": "Violencia",
+     "graficas": 1
+    },
+    "parecido": 0.567
+   },
+   {
+    "ficha": {
+     "id": "2306",
+     "titulo": "Cobertura educativa por etnia y discapacidad",
+     "categoria": "Social",
+     "fuente_ficha": "indicators_social_dynamic_import.csv"
+    },
+    "carpeta": {
+     "id": "2203",
+     "titulo": "Tasa de cobertura neta por discapacidad y clasificación étnica",
+     "categoria": "Educación",
+     "graficas": 2
+    },
+    "parecido": 0.566
+   },
+   {
+    "ficha": {
+     "id": "2217",
+     "titulo": "Afiliados al SGSSS por edad",
+     "categoria": "Social",
+     "fuente_ficha": "indicators_social_dynamic_import.csv"
+    },
+    "carpeta": {
+     "id": "2803",
+     "titulo": "Atenciones médicas por Ansiedad",
+     "categoria": "Salud",
+     "graficas": 0
+    },
+    "parecido": 0.552
+   }
+  ],
+  "fichas_sin_carpeta": [
+   {
+    "id": "2000",
+    "titulo": "Estadísticas y proyecciones demográficas",
+    "categoria": "Social",
+    "fuente_ficha": "indicators_social_dynamic_import.csv"
+   },
+   {
+    "id": "2100",
+    "titulo": "Cobertura del Programa de Alimentación Escolar (PAE)",
+    "categoria": "Social",
+    "fuente_ficha": "indicators_social_dynamic_import.csv"
+   },
+   {
+    "id": "2110",
+    "titulo": "Cobertura educativa",
+    "categoria": "Social",
+    "fuente_ficha": "indicators_social_dynamic_import.csv"
+   },
+   {
+    "id": "2201",
+    "titulo": "Cobertura de vacunación",
+    "categoria": "Social",
+    "fuente_ficha": "indicators_social_dynamic_import.csv"
+   },
+   {
+    "id": "2204",
+    "titulo": "Mortalidad por Enfermedad Respiratoria Aguda (ERA)",
+    "categoria": "Social",
+    "fuente_ficha": "indicators_social_dynamic_import.csv"
+   },
+   {
+    "id": "2210",
+    "titulo": "Enfermedades transmitidas por vector",
+    "categoria": "Social",
+    "fuente_ficha": "indicators_social_dynamic_import.csv"
+   },
+   {
+    "id": "2211",
+    "titulo": "Enfermedades infecciosas",
+    "categoria": "Social",
+    "fuente_ficha": "indicators_social_dynamic_import.csv"
+   },
+   {
+    "id": "2213",
+    "titulo": "Tasa de fecundidad",
+    "categoria": "Social",
+    "fuente_ficha": "indicators_social_dynamic_import.csv"
+   },
+   {
+    "id": "2303",
+    "titulo": "Enfermedades infecciosas",
+    "categoria": "Social",
+    "fuente_ficha": "indicators_social_dynamic_import.csv"
+   },
+   {
+    "id": "2304",
+    "titulo": "Enfermedades transmitidas por vector",
+    "categoria": "Social",
+    "fuente_ficha": "indicators_social_dynamic_import.csv"
+   },
+   {
+    "id": "2401",
+    "titulo": "Lesiones no fatales – Medicina Legal",
+    "categoria": "Social",
+    "fuente_ficha": "indicators_social_dynamic_import.csv"
+   },
+   {
+    "id": "2402",
+    "titulo": "Víctimas del conflicto armado",
+    "categoria": "Social",
+    "fuente_ficha": "indicators_social_dynamic_import.csv"
+   },
+   {
+    "id": "2406",
+    "titulo": "Enfermedades transmitidas por vector",
+    "categoria": "Social",
+    "fuente_ficha": "indicators_social_dynamic_import.csv"
+   },
+   {
+    "id": "2409",
+    "titulo": "Enfermedades infecciosas",
+    "categoria": "Social",
+    "fuente_ficha": "indicators_social_dynamic_import.csv"
+   },
+   {
+    "id": "2411",
+    "titulo": "Afiliados al SGSSS por edad",
+    "categoria": "Social",
+    "fuente_ficha": "indicators_social_dynamic_import.csv"
+   },
+   {
+    "id": "2416",
+    "titulo": "Estadísticas y proyecciones demográficas",
+    "categoria": "Social",
+    "fuente_ficha": "indicators_social_dynamic_import.csv"
+   },
+   {
+    "id": "2702",
+    "titulo": "Víctimas del conflicto armado",
+    "categoria": "Social",
+    "fuente_ficha": "indicators_social_dynamic_import.csv"
+   },
+   {
+    "id": "2706",
+    "titulo": "Lesiones no fatales – Medicina Legal",
+    "categoria": "Social",
+    "fuente_ficha": "indicators_social_dynamic_import.csv"
+   }
+  ],
+  "carpetas_sin_ficha": [
+   {
+    "id": "2002",
+    "titulo": "Muertes en accidente de tránsito",
+    "categoria": "Violencia",
+    "graficas": 2
+   },
+   {
+    "id": "2003",
+    "titulo": "Presuntos homicidios",
+    "categoria": "Violencia",
+    "graficas": 2
+   },
+   {
+    "id": "2005",
+    "titulo": "Suicidios",
+    "categoria": "Violencia",
+    "graficas": 2
+   },
+   {
+    "id": "2007",
+    "titulo": "Muerte indeterminada",
+    "categoria": "Violencia",
+    "graficas": 2
+   },
+   {
+    "id": "2009",
+    "titulo": "Violencia intrafamiliar",
+    "categoria": "Violencia",
+    "graficas": 2
+   },
+   {
+    "id": "2010",
+    "titulo": "Presunto delito sexual",
+    "categoria": "Violencia",
+    "graficas": 2
+   },
+   {
+    "id": "2012",
+    "titulo": "Violencia interpersonal",
+    "categoria": "Violencia",
+    "graficas": 2
+   },
+   {
+    "id": "2013",
+    "titulo": "Violencia a adulto mayor",
+    "categoria": "Violencia",
+    "graficas": 2
+   },
+   {
+    "id": "2017",
+    "titulo": "Delitos contra la libertad e integridad sexual",
+    "categoria": "Violencia",
+    "graficas": 1
+   },
+   {
+    "id": "2018",
+    "titulo": "Desaparición Forzada",
+    "categoria": "Violencia",
+    "graficas": 1
+   },
+   {
+    "id": "2019",
+    "titulo": "Minas antipersonal",
+    "categoria": "Violencia",
+    "graficas": 1
+   },
+   {
+    "id": "2020",
+    "titulo": "Secuestro",
+    "categoria": "Violencia",
+    "graficas": 1
+   },
+   {
+    "id": "2102",
+    "titulo": "Número de casos de Morbilidad Materna Extrema",
+    "categoria": "Salud",
+    "graficas": 2
+   },
+   {
+    "id": "2103",
+    "titulo": "Casos Desnutrición Aguda En Menores De 5 Años",
+    "categoria": "Salud",
+    "graficas": 1
+   },
+   {
+    "id": "2106",
+    "titulo": "Número de casos de Leucemia Mieloide Aguda en Boyacá",
+    "categoria": "Salud",
+    "graficas": 1
+   },
+   {
+    "id": "2107",
+    "titulo": "Casos De La Enfermedad De Chagas",
+    "categoria": "Salud",
+    "graficas": 2
+   },
+   {
+    "id": "2108",
+    "titulo": "Número de casos de chikunguña en los municipios de Boyacá",
+    "categoria": "Salud",
+    "graficas": 2
+   },
+   {
+    "id": "2109",
+    "titulo": "Número De Casos De Morbilidad Por Dengue",
+    "categoria": "Salud",
+    "graficas": 2
+   },
+   {
+    "id": "2110",
+    "titulo": "Casos de Malaria Asociada (Formas Mixtas)",
+    "categoria": "Salud",
+    "graficas": 2
+   },
+   {
+    "id": "2112",
+    "titulo": "Casos de Malaria Falciparum",
+    "categoria": "Salud",
+    "graficas": 2
+   },
+   {
+    "id": "2113",
+    "titulo": "Casos de Malaria Vivax",
+    "categoria": "Salud",
+    "graficas": 2
+   },
+   {
+    "id": "2114",
+    "titulo": "Casos de tuberculosis extra pulmonar",
+    "categoria": "Salud",
+    "graficas": 2
+   },
+   {
+    "id": "2115",
+    "titulo": "Casos de tuberculosis pulmonar",
+    "categoria": "Salud",
+    "graficas": 2
+   },
+   {
+    "id": "2116",
+    "titulo": "Número de casos de Varicela Individual en el departamento de Boyacá",
+    "categoria": "Salud",
+    "graficas": 2
+   },
+   {
+    "id": "2117",
+    "titulo": "Número de mujeres de 10 a 14 años que han sido madres o estan embarazadas",
+    "categoria": "Salud",
+    "graficas": 1
+   },
+   {
+    "id": "2118",
+    "titulo": "Casos de Fecundidad específica en mujeres de 15 a 19 años en el departamento de Boyacá",
+    "categoria": "Salud",
+    "graficas": 1
+   },
+   {
+    "id": "2119",
+    "titulo": "Número de casos de Nacidos Vivos en Boyacá",
+    "categoria": "Salud",
+    "graficas": 1
+   },
+   {
+    "id": "2120",
+    "titulo": "Número De Casos De Niños Con Bajo Peso Al Nacer",
+    "categoria": "Salud",
+    "graficas": 1
+   },
+   {
+    "id": "2122",
+    "titulo": "Total nacidos vivos con 4 o más controles prenatales",
+    "categoria": "Salud",
+    "graficas": 1
+   },
+   {
+    "id": "2123",
+    "titulo": "Casos de niños y niñas menores de 1 año con vacunación antipolio en Boyacá",
+    "categoria": "Salud",
+    "graficas": 1
+   },
+   {
+    "id": "2124",
+    "titulo": "Casos de Vacunación Con Bcg En Nacidos Vivos",
+    "categoria": "Salud",
+    "graficas": 1
+   },
+   {
+    "id": "2125",
+    "titulo": "Casos de niños y niñas menores de 1 año con vacunación (Fiebre Amarilla) en Boyacá",
+    "categoria": "Salud",
+    "graficas": 1
+   },
+   {
+    "id": "2126",
+    "titulo": "Casos de niños y niñas menores de 1 año con vacunación (Neumococo) en Boyacá",
+    "categoria": "Salud",
+    "graficas": 1
+   },
+   {
+    "id": "2127",
+    "titulo": "Casos de niños y niñas menores de 1 año con vacunación (Pentavalente) en Boyacá",
+    "categoria": "Salud",
+    "graficas": 1
+   },
+   {
+    "id": "2129",
+    "titulo": "Casos de niños y niñas menores de 1 año con vacunación (Triple viral) en Boyacá",
+    "categoria": "Salud",
+    "graficas": 1
+   },
+   {
+    "id": "2130",
+    "titulo": "Vacunación Con Dpt Acelular En Gestantes A Partir De La Semana De Gestación 14",
+    "categoria": "Salud",
+    "graficas": 1
+   },
+   {
+    "id": "2133",
+    "titulo": "Casos de mortalidad en menores de 1 año",
+    "categoria": "Salud",
+    "graficas": 1
+   },
+   {
+    "id": "2134",
+    "titulo": "Número de casos Mortalidad Neonatal en los municipios de Boyacá",
+    "categoria": "Salud",
+    "graficas": 1
+   },
+   {
+    "id": "2135",
+    "titulo": "Número de casos Mortalidad Perinatal en los municipios de Boyacá",
+    "categoria": "Salud",
+    "graficas": 1
+   },
+   {
+    "id": "2137",
+    "titulo": "Número De Casos Por Mortalidad Por Era En Niños Y Niñas Menores De 5 Años",
+    "categoria": "Salud",
+    "graficas": 1
+   },
+   {
+    "id": "2138",
+    "titulo": "Casos De Mortalidad Por Eda En Niños Y Niñas Menores De 5 Años",
+    "categoria": "Salud",
+    "graficas": 2
+   },
+   {
+    "id": "2201",
+    "titulo": "Tasa de cobertura bruta escolar en todos los niveles",
+    "categoria": "Educación",
+    "graficas": 2
+   },
+   {
+    "id": "2202",
+    "titulo": "Tasa de cobertura neta escolar en todos los niveles",
+    "categoria": "Educación",
+    "graficas": 2
+   },
+   {
+    "id": "2204",
+    "titulo": "Tasa de cobertura bruta por discapacidad y clasificación étnica",
+    "categoria": "Educación",
+    "graficas": 2
+   },
+   {
+    "id": "2205",
+    "titulo": "Numero de alumnos matriculados en todos los niveles",
+    "categoria": "Educación",
+    "graficas": 2
+   },
+   {
+    "id": "2211",
+    "titulo": "Tasa de desercion intra-anual en todos los niveles",
+    "categoria": "Educación",
+    "graficas": 2
+   },
+   {
+    "id": "2214",
+    "titulo": "Tasas educativas centro oriente",
+    "categoria": "Educación",
+    "graficas": 0
+   },
+   {
+    "id": "2301",
+    "titulo": "Casos en juzgados consejo superior",
+    "categoria": "Responsabilidad Penal",
+    "graficas": 1
+   },
+   {
+    "id": "2400",
+    "titulo": "Población proyectada DANE del departamento",
+    "categoria": "Demografía",
+    "graficas": 2
+   },
+   {
+    "id": "2501",
+    "titulo": "Feminicidios en población de 14 a 28 años",
+    "categoria": "Juventud",
+    "graficas": 1
+   },
+   {
+    "id": "2502",
+    "titulo": "Homicidios en población de 14 a 28 años",
+    "categoria": "Juventud",
+    "graficas": 2
+   },
+   {
+    "id": "2503",
+    "titulo": "Muerte violenta por accidente de transporte en población de 14 a 28 años",
+    "categoria": "Juventud",
+    "graficas": 2
+   },
+   {
+    "id": "2504",
+    "titulo": "Muerte violenta indeterminada en población de 14 a 28 años",
+    "categoria": "Juventud",
+    "graficas": 2
+   },
+   {
+    "id": "2505",
+    "titulo": "Muerte violenta accidental en población de 14 a 28 años",
+    "categoria": "Juventud",
+    "graficas": 2
+   },
+   {
+    "id": "2506",
+    "titulo": "Muerte violenta sin determinar en población de 14 a 28 años",
+    "categoria": "Juventud",
+    "graficas": 2
+   },
+   {
+    "id": "2507",
+    "titulo": "Suicidios en población de 14 a 28 años",
+    "categoria": "Juventud",
+    "graficas": 2
+   },
+   {
+    "id": "2508",
+    "titulo": "Violencia de pareja en población de 14 a 28 años",
+    "categoria": "Juventud",
+    "graficas": 2
+   },
+   {
+    "id": "2509",
+    "titulo": "Violencia interpersonal en población de 14 a 28 años",
+    "categoria": "Juventud",
+    "graficas": 2
+   },
+   {
+    "id": "2510",
+    "titulo": "Violencia por presunto delito sexual en población de 14 a 28 años",
+    "categoria": "Juventud",
+    "graficas": 2
+   },
+   {
+    "id": "2511",
+    "titulo": "Violencia intrafamiliar en población de 14 a 28 años",
+    "categoria": "Juventud",
+    "graficas": 2
+   },
+   {
+    "id": "2512",
+    "titulo": "Atenciones médicas por violencia en población de 14 a 28 años",
+    "categoria": "Juventud",
+    "graficas": 2
+   },
+   {
+    "id": "2513",
+    "titulo": "Intento de suicidios en población de 14 a 28 años",
+    "categoria": "Juventud",
+    "graficas": 2
+   },
+   {
+    "id": "2514",
+    "titulo": "Delitos contral la libertad e integridad sexual en desarrollo del conflicto armada en población de 14 a 28 años",
+    "categoria": "Juventud",
+    "graficas": 1
+   },
+   {
+    "id": "2515",
+    "titulo": "Desaparición forzada en población de 14 a 28 años",
+    "categoria": "Juventud",
+    "graficas": 1
+   },
+   {
+    "id": "2516",
+    "titulo": "Secuestros en población de 14 a 28 años",
+    "categoria": "Juventud",
+    "graficas": 1
+   },
+   {
+    "id": "2517",
+    "titulo": "Minas antipersonal, munición sin explotar y artefacto explosivo improvisado en población de 14 a 28 años",
+    "categoria": "Juventud",
+    "graficas": 1
+   },
+   {
+    "id": "2518",
+    "titulo": "Proyección de población DANE en población de 14 a 28 años",
+    "categoria": "Juventud",
+    "graficas": 2
+   },
+   {
+    "id": "2519",
+    "titulo": "Cobertura de afiliación en salud en población de 14 a 28 años",
+    "categoria": "Juventud",
+    "graficas": 2
+   },
+   {
+    "id": "2520",
+    "titulo": "Población asegurada en el SGSSS en población de 14 a 28 años",
+    "categoria": "Juventud",
+    "graficas": 2
+   },
+   {
+    "id": "2521",
+    "titulo": "Enfermedad por Chagas en población de 14 a 28 años",
+    "categoria": "Juventud",
+    "graficas": 2
+   },
+   {
+    "id": "2522",
+    "titulo": "Enfermedad por Dengue en población de 14 a 28 años",
+    "categoria": "Juventud",
+    "graficas": 2
+   },
+   {
+    "id": "2523",
+    "titulo": "Enfermedad por Malaria en población de 14 a 28 años",
+    "categoria": "Juventud",
+    "graficas": 2
+   },
+   {
+    "id": "2524",
+    "titulo": "Tuberculosis extra pulmonar en población de 14 a 28 años",
+    "categoria": "Juventud",
+    "graficas": 2
+   },
+   {
+    "id": "2525",
+    "titulo": "Tuberculosis pulmonar en población de 14 a 28 años",
+    "categoria": "Juventud",
+    "graficas": 2
+   },
+   {
+    "id": "2526",
+    "titulo": "Varicela en población de 14 a 28 años",
+    "categoria": "Juventud",
+    "graficas": 2
+   },
+   {
+    "id": "2530",
+    "titulo": "Mortalidad materna en mujeres de 14 a 28 años",
+    "categoria": "Juventud",
+    "graficas": 1
+   },
+   {
+    "id": "2532",
+    "titulo": "Casos en juzgados Consejo superior",
+    "categoria": "Juventud",
+    "graficas": 1
+   },
+   {
+    "id": "2534",
+    "titulo": "Consejos municipales de juventud",
+    "categoria": "Juventud",
+    "graficas": 0
+   },
+   {
+    "id": "2605",
+    "titulo": "Desnutrición aguda en menores de 5 años con discapacidad",
+    "categoria": "Discapacidad",
+    "graficas": 1
+   },
+   {
+    "id": "2606",
+    "titulo": "Tuberculosis en población con discapacidad",
+    "categoria": "Discapacidad",
+    "graficas": 2
+   },
+   {
+    "id": "2608",
+    "titulo": "Intento de suicidios en población con discapacidad",
+    "categoria": "Discapacidad",
+    "graficas": 2
+   },
+   {
+    "id": "2609",
+    "titulo": "Programas indeportes",
+    "categoria": "Discapacidad",
+    "graficas": 1
+   },
+   {
+    "id": "2701",
+    "titulo": "Incidencia de Pobreza Multidimensional según sexo del jefe de hogar",
+    "categoria": "Familia",
+    "graficas": 2
+   },
+   {
+    "id": "2703",
+    "titulo": "Encuesta de calidad de vida por servicios del hogar",
+    "categoria": "Familia",
+    "graficas": 1
+   },
+   {
+    "id": "2705",
+    "titulo": "Encuesta de calidad de vida por Déficit habitacional",
+    "categoria": "Familia",
+    "graficas": 1
+   },
+   {
+    "id": "2706",
+    "titulo": "Encuesta de calidad de vida por Percepción de ingresos, pobreza, entorno y seguridad",
+    "categoria": "Familia",
+    "graficas": 1
+   },
+   {
+    "id": "2708",
+    "titulo": "Encuesta de calidad de vida en población campesina Viviendas, hogares campesinos y personas en hogares campesino",
+    "categoria": "Familia",
+    "graficas": 2
+   },
+   {
+    "id": "2709",
+    "titulo": "Encuesta de calidad de vida en población campesina Hogares por tenencia de vivienda",
+    "categoria": "Familia",
+    "graficas": 2
+   },
+   {
+    "id": "2710",
+    "titulo": "Encuesta de calidad de vida en población campesina Hogares por tipo de servicio sanitario",
+    "categoria": "Familia",
+    "graficas": 2
+   },
+   {
+    "id": "2711",
+    "titulo": "Encuesta de calidad de vida en población campesina Hogares por acceso a servicios públicos, privados o comunales",
+    "categoria": "Familia",
+    "graficas": 2
+   },
+   {
+    "id": "2714",
+    "titulo": "Violencia de pareja",
+    "categoria": "Familia",
+    "graficas": 2
+   },
+   {
+    "id": "2715",
+    "titulo": "Presunto delito sexual a niños, niñas y adolescentes",
+    "categoria": "Familia",
+    "graficas": 2
+   },
+   {
+    "id": "2716",
+    "titulo": "Violencia a adulto mayor",
+    "categoria": "Familia",
+    "graficas": 2
+   },
+   {
+    "id": "2717",
+    "titulo": "Violencia intrafamiliar",
+    "categoria": "Familia",
+    "graficas": 2
+   },
+   {
+    "id": "2802",
+    "titulo": "Suicidios",
+    "categoria": "Salud",
+    "graficas": 2
+   },
+   {
+    "id": "2804",
+    "titulo": "Atenciones médicas por Consumo de SPA",
+    "categoria": "Salud",
+    "graficas": 0
+   },
+   {
+    "id": "2805",
+    "titulo": "Atenciones médicas por Depresión",
+    "categoria": "Salud",
+    "graficas": 0
+   },
+   {
+    "id": "2806",
+    "titulo": "Atenciones médicas por Epilepsia",
+    "categoria": "Salud",
+    "graficas": 0
+   },
+   {
+    "id": "2900",
+    "titulo": "Desnutrición aguda en menores de 5 años en población indígena",
+    "categoria": "Pueblos indígenas",
+    "graficas": 1
+   },
+   {
+    "id": "2901",
+    "titulo": "Enfermedad de chagas en población indígena",
+    "categoria": "Pueblos indígenas",
+    "graficas": 2
+   },
+   {
+    "id": "2902",
+    "titulo": "Dengue en población indígena",
+    "categoria": "Pueblos indígenas",
+    "graficas": 2
+   },
+   {
+    "id": "2903",
+    "titulo": "Malaria en población indígena",
+    "categoria": "Pueblos indígenas",
+    "graficas": 2
+   },
+   {
+    "id": "2904",
+    "titulo": "Tuberculosis en población indígena",
+    "categoria": "Pueblos indígenas",
+    "graficas": 2
+   },
+   {
+    "id": "2905",
+    "titulo": "Varicela en población indígena",
+    "categoria": "Pueblos indígenas",
+    "graficas": 2
+   },
+   {
+    "id": "2906",
+    "titulo": "Mujeres de 10 a 14 años embarazadas o que han sido madres en población indígena",
+    "categoria": "Pueblos indígenas",
+    "graficas": 1
+   },
+   {
+    "id": "2908",
+    "titulo": "Partos atendidos por personal calificado en población indígena",
+    "categoria": "Pueblos indígenas",
+    "graficas": 1
+   },
+   {
+    "id": "2909",
+    "titulo": "Bajo peso al nacer en población indígena",
+    "categoria": "Pueblos indígenas",
+    "graficas": 1
+   },
+   {
+    "id": "2910",
+    "titulo": "Nacidos vivos en población indígena",
+    "categoria": "Pueblos indígenas",
+    "graficas": 1
+   },
+   {
+    "id": "2911",
+    "titulo": "Nacidos vivos con 4 o más controles prenatales en población indígena",
+    "categoria": "Pueblos indígenas",
+    "graficas": 1
+   },
+   {
+    "id": "2912",
+    "titulo": "Mortalidad por desnutrición en población indígena",
+    "categoria": "Pueblos indígenas",
+    "graficas": 1
+   },
+   {
+    "id": "2913",
+    "titulo": "Mortalidad en menores de 5 años en población indígena",
+    "categoria": "Pueblos indígenas",
+    "graficas": 1
+   }
+  ],
+  "dudosos": [
+   {
+    "ficha": {
+     "id": "2106",
+     "titulo": "Repitencia por discapacidad y etnia",
+     "categoria": "Social",
+     "fuente_ficha": "indicators_social_dynamic_import.csv"
+    },
+    "carpeta": {
+     "id": "2210",
+     "titulo": "Tasa de repitencia por discapacidad y clasificación étnica",
+     "categoria": "Educación",
+     "graficas": 2
+    },
+    "parecido": 0.753
+   },
+   {
+    "ficha": {
+     "id": "2501",
+     "titulo": "Encuesta de Calidad de Vida (ECV)",
+     "categoria": "Social",
+     "fuente_ficha": "indicators_social_dynamic_import.csv"
+    },
+    "carpeta": {
+     "id": "2704",
+     "titulo": "Encuesta de calidad de vida por tenencia de servicios",
+     "categoria": "Familia",
+     "graficas": 1
+    },
+    "parecido": 0.738
+   },
+   {
+    "ficha": {
+     "id": "2400",
+     "titulo": "Fecundidad en adolescentes de 14 a 19 años",
+     "categoria": "Social",
+     "fuente_ficha": "indicators_social_dynamic_import.csv"
+    },
+    "carpeta": {
+     "id": "2528",
+     "titulo": "Fecundidad específica en mujeres de 14 a 19 años",
+     "categoria": "Juventud",
+     "graficas": 1
+    },
+    "parecido": 0.733
+   },
+   {
+    "ficha": {
+     "id": "2403",
+     "titulo": "Muertes violentas – Medicina Legal",
+     "categoria": "Social",
+     "fuente_ficha": "indicators_social_dynamic_import.csv"
+    },
+    "carpeta": {
+     "id": "2004",
+     "titulo": "Muerte violenta accidental",
+     "categoria": "Violencia",
+     "graficas": 2
+    },
+    "parecido": 0.724
+   },
+   {
+    "ficha": {
+     "id": "2205",
+     "titulo": "Mortalidad por VIH/SIDA",
+     "categoria": "Social",
+     "fuente_ficha": "indicators_social_dynamic_import.csv"
+    },
+    "carpeta": {
+     "id": "2139",
+     "titulo": "Casos de mortalidad por VIH",
+     "categoria": "Salud",
+     "graficas": 1
+    },
+    "parecido": 0.72
+   },
+   {
+    "ficha": {
+     "id": "2200",
+     "titulo": "Morbilidad Materna Extrema (MME)",
+     "categoria": "Social",
+     "fuente_ficha": "indicators_social_dynamic_import.csv"
+    },
+    "carpeta": {
+     "id": "2907",
+     "titulo": "Morbilidad materna extrema en población indígena",
+     "categoria": "Pueblos indígenas",
+     "graficas": 2
+    },
+    "parecido": 0.718
+   },
+   {
+    "ficha": {
+     "id": "2412",
+     "titulo": "Morbilidad Materna Extrema (MME)",
+     "categoria": "Social",
+     "fuente_ficha": "indicators_social_dynamic_import.csv"
+    },
+    "carpeta": {
+     "id": "2529",
+     "titulo": "Morbilidad materna extrema en mujeres de 14 a 28 años",
+     "categoria": "Juventud",
+     "graficas": 2
+    },
+    "parecido": 0.699
+   },
+   {
+    "ficha": {
+     "id": "2500",
+     "titulo": "Encuesta de Calidad de Vida – Hogares campesinos",
+     "categoria": "Social",
+     "fuente_ficha": "indicators_social_dynamic_import.csv"
+    },
+    "carpeta": {
+     "id": "2702",
+     "titulo": "Encuesta de calidad de vida por conformación de hogares",
+     "categoria": "Familia",
+     "graficas": 1
+    },
+    "parecido": 0.693
+   },
+   {
+    "ficha": {
+     "id": "2301",
+     "titulo": "Deportistas con discapacidad",
+     "categoria": "Social",
+     "fuente_ficha": "indicators_social_dynamic_import.csv"
+    },
+    "carpeta": {
+     "id": "2604",
+     "titulo": "Dengue en población con discapacidad",
+     "categoria": "Discapacidad",
+     "graficas": 2
+    },
+    "parecido": 0.688
+   },
+   {
+    "ficha": {
+     "id": "2404",
+     "titulo": "Casos de feminicidio",
+     "categoria": "Social",
+     "fuente_ficha": "indicators_social_dynamic_import.csv"
+    },
+    "carpeta": {
+     "id": "2001",
+     "titulo": "Feminicidios",
+     "categoria": "Violencia",
+     "graficas": 1
+    },
+    "parecido": 0.688
+   },
+   {
+    "ficha": {
+     "id": "2103",
+     "titulo": "Tasa de deserción escolar",
+     "categoria": "Social",
+     "fuente_ficha": "indicators_social_dynamic_import.csv"
+    },
+    "carpeta": {
+     "id": "2215",
+     "titulo": "Plan de alimentación escolar",
+     "categoria": "Educación",
+     "graficas": 1
+    },
+    "parecido": 0.679
+   },
+   {
+    "ficha": {
+     "id": "2705",
+     "titulo": "Muertes violentas – Medicina Legal",
+     "categoria": "Social",
+     "fuente_ficha": "indicators_social_dynamic_import.csv"
+    },
+    "carpeta": {
+     "id": "2006",
+     "titulo": "Muerte violenta sin determinar",
+     "categoria": "Violencia",
+     "graficas": 2
+    },
+    "parecido": 0.677
+   },
+   {
+    "ficha": {
+     "id": "2410",
+     "titulo": "Cobertura de afiliación al SGSSS",
+     "categoria": "Social",
+     "fuente_ficha": "indicators_social_dynamic_import.csv"
+    },
+    "carpeta": {
+     "id": "2101",
+     "titulo": "Personas Afiliadas Al Sgsss",
+     "categoria": "Salud",
+     "graficas": 2
+    },
+    "parecido": 0.644
+   },
+   {
+    "ficha": {
+     "id": "2307",
+     "titulo": "Matriculados por discapacidad y etnia",
+     "categoria": "Social",
+     "fuente_ficha": "indicators_social_dynamic_import.csv"
+    },
+    "carpeta": {
+     "id": "2601",
+     "titulo": "Población matriculada con discapacidad",
+     "categoria": "Discapacidad",
+     "graficas": 1
+    },
+    "parecido": 0.64
+   },
+   {
+    "ficha": {
+     "id": "2208",
+     "titulo": "Mortalidad reportada en SIVIGILA",
+     "categoria": "Social",
+     "fuente_ficha": "indicators_social_dynamic_import.csv"
+    },
+    "carpeta": {
+     "id": "2915",
+     "titulo": "Mortalidad por IRA en población indígena",
+     "categoria": "Pueblos indígenas",
+     "graficas": 1
+    },
+    "parecido": 0.639
+   },
+   {
+    "ficha": {
+     "id": "2305",
+     "titulo": "Repitencia por discapacidad y etnia",
+     "categoria": "Social",
+     "fuente_ficha": "indicators_social_dynamic_import.csv"
+    },
+    "carpeta": {
+     "id": "2603",
+     "titulo": "Tasa de repitencia en población discapacitada",
+     "categoria": "Discapacidad",
+     "graficas": 2
+    },
+    "parecido": 0.625
+   },
+   {
+    "ficha": {
+     "id": "2111",
+     "titulo": "Cobertura educativa por etnia y discapacidad",
+     "categoria": "Social",
+     "fuente_ficha": "indicators_social_dynamic_import.csv"
+    },
+    "carpeta": {
+     "id": "2602",
+     "titulo": "Tasa de cobertura en población discapacitada",
+     "categoria": "Discapacidad",
+     "graficas": 2
+    },
+    "parecido": 0.614
+   },
+   {
+    "ficha": {
+     "id": "2700",
+     "titulo": "Intentos de suicidio",
+     "categoria": "Social",
+     "fuente_ficha": "indicators_social_dynamic_import.csv"
+    },
+    "carpeta": {
+     "id": "2916",
+     "titulo": "Intento de suicidios en población indígena",
+     "categoria": "Pueblos indígenas",
+     "graficas": 2
+    },
+    "parecido": 0.613
+   },
+   {
+    "ficha": {
+     "id": "2704",
+     "titulo": "Casos de feminicidio",
+     "categoria": "Social",
+     "fuente_ficha": "indicators_social_dynamic_import.csv"
+    },
+    "carpeta": {
+     "id": "2111",
+     "titulo": "Casos de Malaria Complicada",
+     "categoria": "Salud",
+     "graficas": 2
+    },
+    "parecido": 0.596
+   },
+   {
+    "ficha": {
+     "id": "2212",
+     "titulo": "Indicadores de salud materno-infantil",
+     "categoria": "Social",
+     "fuente_ficha": "indicators_social_dynamic_import.csv"
+    },
+    "carpeta": {
+     "id": "2136",
+     "titulo": "Casos de mortalidad materna",
+     "categoria": "Salud",
+     "graficas": 1
+    },
+    "parecido": 0.594
+   },
+   {
+    "ficha": {
+     "id": "2414",
+     "titulo": "Consejo de adolescentes",
+     "categoria": "Social",
+     "fuente_ficha": "indicators_social_dynamic_import.csv"
+    },
+    "carpeta": {
+     "id": "2008",
+     "titulo": "Violencia a niños, niñas y adolescentes",
+     "categoria": "Violencia",
+     "graficas": 2
+    },
+    "parecido": 0.59
+   },
+   {
+    "ficha": {
+     "id": "2601",
+     "titulo": "Consejo de adolescentes",
+     "categoria": "Social",
+     "fuente_ficha": "indicators_social_dynamic_import.csv"
+    },
+    "carpeta": {
+     "id": "2713",
+     "titulo": "Violencia a niños, niñas y adolescentes",
+     "categoria": "Familia",
+     "graficas": 2
+    },
+    "parecido": 0.59
+   },
+   {
+    "ficha": {
+     "id": "2302",
+     "titulo": "Certificados de discapacidad emitidos",
+     "categoria": "Social",
+     "fuente_ficha": "indicators_social_dynamic_import.csv"
+    },
+    "carpeta": {
+     "id": "2607",
+     "titulo": "Certificados de discapacidad generados por Secretaria de Salud Departamental",
+     "categoria": "Discapacidad",
+     "graficas": 1
+    },
+    "parecido": 0.584
+   },
+   {
+    "ficha": {
+     "id": "2703",
+     "titulo": "Convivencia escolar",
+     "categoria": "Social",
+     "fuente_ficha": "indicators_social_dynamic_import.csv"
+    },
+    "carpeta": {
+     "id": "2011",
+     "titulo": "Violencia de pareja",
+     "categoria": "Violencia",
+     "graficas": 2
+    },
+    "parecido": 0.579
+   },
+   {
+    "ficha": {
+     "id": "2407",
+     "titulo": "Mortalidad por VIH/SIDA",
+     "categoria": "Social",
+     "fuente_ficha": "indicators_social_dynamic_import.csv"
+    },
+    "carpeta": {
+     "id": "2527",
+     "titulo": "Mortalidad por VIH en población de 14 a 28 años",
+     "categoria": "Juventud",
+     "graficas": 1
+    },
+    "parecido": 0.571
+   },
+   {
+    "ficha": {
+     "id": "2408",
+     "titulo": "Indicadores de salud materno-infantil",
+     "categoria": "Social",
+     "fuente_ficha": "indicators_social_dynamic_import.csv"
+    },
+    "carpeta": {
+     "id": "2807",
+     "titulo": "Atenciones médicas por Otros Dx de salud mental",
+     "categoria": "Salud",
+     "graficas": 0
+    },
+    "parecido": 0.571
+   },
+   {
+    "ficha": {
+     "id": "2105",
+     "titulo": "Matriculados por nivel educativo",
+     "categoria": "Social",
+     "fuente_ficha": "indicators_social_dynamic_import.csv"
+    },
+    "carpeta": {
+     "id": "2014",
+     "titulo": "Violencia por convivencia educativa",
+     "categoria": "Violencia",
+     "graficas": 1
+    },
+    "parecido": 0.567
+   },
+   {
+    "ficha": {
+     "id": "2306",
+     "titulo": "Cobertura educativa por etnia y discapacidad",
+     "categoria": "Social",
+     "fuente_ficha": "indicators_social_dynamic_import.csv"
+    },
+    "carpeta": {
+     "id": "2203",
+     "titulo": "Tasa de cobertura neta por discapacidad y clasificación étnica",
+     "categoria": "Educación",
+     "graficas": 2
+    },
+    "parecido": 0.566
+   },
+   {
+    "ficha": {
+     "id": "2217",
+     "titulo": "Afiliados al SGSSS por edad",
+     "categoria": "Social",
+     "fuente_ficha": "indicators_social_dynamic_import.csv"
+    },
+    "carpeta": {
+     "id": "2803",
+     "titulo": "Atenciones médicas por Ansiedad",
+     "categoria": "Salud",
+     "graficas": 0
+    },
+    "parecido": 0.552
+   }
+  ]
+ }
+}

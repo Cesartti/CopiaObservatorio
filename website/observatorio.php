@@ -43,6 +43,8 @@ require_once __DIR__ . '/lib/indicator_metadata.php';
 require_once __DIR__ . '/functions.php';
 $imIndicators = [];
 $imByCategory = [];
+// Fichas que venían con el código de la carpeta pero describían otro indicador.
+$imFichasDescartadas = [];
 // Metadatos de BD indexados por id (para enriquecer; pueden faltar para algunas carpetas).
 $dbMetaById = [];
 if ($pdoVisit && $currentObsId > 0) {
@@ -75,10 +77,19 @@ if ($currentObsId > 0) {
         if (strcasecmp($cat, 'ND') === 0) {
             $cat = 'Sin categoría';
         }
-        $rec = $dbMetaById[$id] ?? [];
+        $tituloCarpeta = (string) ($inf['titulo'] ?? ('Indicador ' . $id));
+        // La ficha solo se usa si describe a ESTE indicador. Mismo código no
+        // siempre es mismo indicador: ver im_ficha_corresponde().
+        $ficha = $dbMetaById[$id] ?? [];
+        if ($ficha && !im_ficha_corresponde($tituloCarpeta, (string) ($ficha['title'] ?? ''))) {
+            $imFichasDescartadas[] = ['id' => $id, 'carpeta' => $tituloCarpeta,
+                                      'ficha' => (string) ($ficha['title'] ?? '')];
+            $ficha = [];
+        }
+        $rec = $ficha;
         $rec['id'] = $id;
         if (empty($rec['title'])) {
-            $rec['title'] = (string) ($inf['titulo'] ?? ('Indicador ' . $id));
+            $rec['title'] = $tituloCarpeta;
         }
         $rec['category_1'] = $cat;
         $rec['category_2'] = $cat; // agrupar por la categoría principal (coincide con las categorías)

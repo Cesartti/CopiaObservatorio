@@ -1,0 +1,1852 @@
+{
+ "1": {
+  "observatorio": "economico",
+  "ya_correctas": [
+   "1000",
+   "1001",
+   "1002",
+   "1003",
+   "1004",
+   "1005",
+   "1006",
+   "1007",
+   "1008",
+   "1009",
+   "1010",
+   "1011",
+   "1012",
+   "1013",
+   "1014",
+   "1028",
+   "1029",
+   "1030",
+   "1031",
+   "1032",
+   "1033",
+   "1034",
+   "1035",
+   "1036",
+   "1038",
+   "1039",
+   "1040",
+   "1055",
+   "1057",
+   "1058",
+   "1079",
+   "1080",
+   "1081",
+   "1085",
+   "1089",
+   "1101",
+   "1102",
+   "1103",
+   "1104",
+   "1105",
+   "1106",
+   "1107",
+   "1108",
+   "1109",
+   "1110",
+   "1111",
+   "1115",
+   "1117",
+   "1118",
+   "1121",
+   "1122",
+   "1123",
+   "1124",
+   "1129",
+   "1130",
+   "1131",
+   "1132",
+   "1133",
+   "1134",
+   "1135",
+   "1136",
+   "1137",
+   "1138",
+   "1139",
+   "1140",
+   "1141",
+   "1142",
+   "1143",
+   "1144",
+   "1147",
+   "1148",
+   "1149",
+   "1150",
+   "1151",
+   "1152",
+   "1153",
+   "1154",
+   "1155",
+   "1156",
+   "1157",
+   "1158",
+   "1159",
+   "1160",
+   "1161",
+   "1162",
+   "1164",
+   "1165",
+   "1300",
+   "1301",
+   "1302",
+   "1303",
+   "1304",
+   "1500",
+   "1501",
+   "1502",
+   "1503",
+   "1504",
+   "1505",
+   "1506",
+   "1601"
+  ],
+  "movidas": {
+   "1166": {
+    "desde": "1112",
+    "titulo": "Personas de 15 años y más que usan internet por frecuencia de uso",
+    "parecido": 1.0
+   },
+   "1167": {
+    "desde": "1113",
+    "titulo": "Promedio de años de educación de las personas de 15 años y más",
+    "parecido": 1.0
+   },
+   "1168": {
+    "desde": "1114",
+    "titulo": "Calificación promedio de satisfacción con la vida en general y otros aspectos",
+    "parecido": 1.0
+   },
+   "1169": {
+    "desde": "1116",
+    "titulo": "Población de 15 años y más por sexo, según actividad principal la semana anterior a la aplicación de la encuesta",
+    "parecido": 1.0
+   },
+   "1145": {
+    "desde": "1119",
+    "titulo": "Viviendas, hogares y personas",
+    "parecido": 1.0
+   },
+   "1146": {
+    "desde": "1120",
+    "titulo": "Hogares por número de personas",
+    "parecido": 1.0
+   },
+   "1172": {
+    "desde": "1125",
+    "titulo": "Hogares por tipo de tenencia de la vivienda",
+    "parecido": 1.0
+   },
+   "1163": {
+    "desde": "1126",
+    "titulo": "Hogares por los bienes y servicios que poseen",
+    "parecido": 1.0
+   },
+   "1174": {
+    "desde": "1127",
+    "titulo": "Hogares con servicio de internet, por tipo de conexión",
+    "parecido": 1.0
+   },
+   "1175": {
+    "desde": "1128",
+    "titulo": "Hogares por opinión del jefe/a o del cónyuge sobre los ingresos de su hogar",
+    "parecido": 1.0
+   },
+   "1170": {
+    "desde": "1145",
+    "titulo": "Viviendas, hogares y personas",
+    "parecido": 1.0
+   },
+   "1171": {
+    "desde": "1146",
+    "titulo": "Hogares por número de personas",
+    "parecido": 1.0
+   },
+   "1173": {
+    "desde": "1163",
+    "titulo": "Hogares por los bienes y servicios que poseen",
+    "parecido": 1.0
+   },
+   "1998": {
+    "desde": "1200",
+    "titulo": "Volumen de producción agrícola total del departamento",
+    "parecido": 1.0
+   },
+   "1112": {
+    "desde": "1204",
+    "titulo": "Inventario avicola en el departamento",
+    "parecido": 0.944
+   },
+   "1113": {
+    "desde": "1202",
+    "titulo": "Inventario bovino en el departamento",
+    "parecido": 0.943
+   }
+  },
+  "fichas_sin_carpeta": [
+   {
+    "id": "1015",
+    "titulo": "Incidencia de Pobreza Multidimensional según sexo del jefe de hogar"
+   },
+   {
+    "id": "1016",
+    "titulo": "Incidencia de Pobreza Multidimensional según sexo de la persona"
+   },
+   {
+    "id": "1017",
+    "titulo": "Línea de Pobreza"
+   },
+   {
+    "id": "1018",
+    "titulo": "Líneas de Pobreza Monetaria Extrema"
+   },
+   {
+    "id": "1019",
+    "titulo": "Coeficiente de Gini"
+   },
+   {
+    "id": "1020",
+    "titulo": "Incidencia de la Pobreza Monetaria Segun Sexo De La Persona"
+   },
+   {
+    "id": "1021",
+    "titulo": "Incidencia de la Pobreza Monetaria Extrema segun sexo de la persona"
+   },
+   {
+    "id": "1022",
+    "titulo": "Promedio del Ingreso per cápita de la unidad de gasto de la población"
+   },
+   {
+    "id": "1023",
+    "titulo": "Brecha de la Pobreza Monetaria"
+   },
+   {
+    "id": "1024",
+    "titulo": "Brecha de la Pobreza Monetaria Extrema"
+   },
+   {
+    "id": "1025",
+    "titulo": "Incidencia de la pobreza monetaria"
+   },
+   {
+    "id": "1026",
+    "titulo": "Personas en situación de pobreza"
+   },
+   {
+    "id": "1201",
+    "titulo": "Sacrificio porcino"
+   },
+   {
+    "id": "1203",
+    "titulo": "Inventario bufalino en el departamento"
+   },
+   {
+    "id": "1205",
+    "titulo": "Inventario caprino, ovino y equino del departamento"
+   },
+   {
+    "id": "1206",
+    "titulo": "Inventario porcino en el departamento"
+   },
+   {
+    "id": "1207",
+    "titulo": "Finca con bovinos"
+   },
+   {
+    "id": "1208",
+    "titulo": "Granjas tecnificadas porcinos"
+   },
+   {
+    "id": "1209",
+    "titulo": "Predios búfalos"
+   },
+   {
+    "id": "1210",
+    "titulo": "Predios aves carne"
+   },
+   {
+    "id": "1211",
+    "titulo": "Predios aves postura"
+   },
+   {
+    "id": "1212",
+    "titulo": "Predios aver reproductoras"
+   },
+   {
+    "id": "1213",
+    "titulo": "Predios aves traspatio"
+   },
+   {
+    "id": "1214",
+    "titulo": "Predios porcinos comercial familiar"
+   },
+   {
+    "id": "1215",
+    "titulo": "Predios porcinos comercial industrial"
+   },
+   {
+    "id": "1216",
+    "titulo": "Predios traspatio porcinos"
+   },
+   {
+    "id": "1400",
+    "titulo": "Índice departamental de competitividad (IDC)"
+   },
+   {
+    "id": "1401",
+    "titulo": "Producto Interno Bruto PIB a precios corrientes"
+   },
+   {
+    "id": "1402",
+    "titulo": "Producto Interno Bruto PIB a precios constantes"
+   },
+   {
+    "id": "1403",
+    "titulo": "Producto Interno Bruto PIB por habitante"
+   },
+   {
+    "id": "1404",
+    "titulo": "Producto Interno Bruto PIB por actividad económica"
+   },
+   {
+    "id": "1041",
+    "titulo": "Rendimiento De Cereales"
+   },
+   {
+    "id": "1042",
+    "titulo": "Rendimiento De Fibras"
+   },
+   {
+    "id": "1043",
+    "titulo": "Rendimiento De Flores Y Follajes"
+   },
+   {
+    "id": "1044",
+    "titulo": "Rendimiento De Tubérculos Y Plátanos"
+   },
+   {
+    "id": "1045",
+    "titulo": "Rendimiento De Leguminosas"
+   },
+   {
+    "id": "1046",
+    "titulo": "Rendimiento De Otros Cultivos Transitorios"
+   },
+   {
+    "id": "1047",
+    "titulo": "Rendimiento De Plantas Medicinales"
+   },
+   {
+    "id": "1059",
+    "titulo": "Índice Departamental De Competitividad Pilar 1 Instituciones"
+   },
+   {
+    "id": "1061",
+    "titulo": "Índice Departamental De Competitividad Pilar 2 Infraestructura"
+   },
+   {
+    "id": "1062",
+    "titulo": "Índice Departamental De Competitividad Pilar 3 Tic"
+   },
+   {
+    "id": "1063",
+    "titulo": "Índice Departamental De Competitividad Pilar 4 Sostenibilidad Ambiental"
+   },
+   {
+    "id": "1064",
+    "titulo": "Índice Departamental De Competitividad Pilar 5 Salud"
+   },
+   {
+    "id": "1065",
+    "titulo": "Índice Departamental De Competitividad Pilar 6 educación básica y media"
+   },
+   {
+    "id": "1066",
+    "titulo": "Índice Departamental De Competitividad Pilar 7 Educación Superior Y Capacitación"
+   },
+   {
+    "id": "1067",
+    "titulo": "Índice Departamental De Competitividad Pilar 8 Eficiencia De Los Mercados"
+   },
+   {
+    "id": "1068",
+    "titulo": "Índice Departamental De Competitividad Pilar 9 Mercado Laboral"
+   },
+   {
+    "id": "1069",
+    "titulo": "Índice Departamental De Competitividad Pilar 10 Sistema Financiero"
+   },
+   {
+    "id": "1070",
+    "titulo": "Índice Departamental De Competitividad Pilar 11 Tamaño Del Mercado"
+   },
+   {
+    "id": "1071",
+    "titulo": "Índice Departamental De Competitividad Pilar 12 Diversificación Y Sofisticación"
+   },
+   {
+    "id": "1072",
+    "titulo": "Índice Departamental De Competitividad Pilar 13 Innovación"
+   },
+   {
+    "id": "1077",
+    "titulo": "Total De Inversión Según Destinación Especifica Compromisos Y Gastos Fut"
+   },
+   {
+    "id": "1082",
+    "titulo": "Ejecución De Gastos - Sistema General De Regalías"
+   },
+   {
+    "id": "1083",
+    "titulo": "Ejecución De Ingresos - Sistema General De Regalías"
+   },
+   {
+    "id": "1084",
+    "titulo": "Deudas Por Pagar Fut"
+   },
+   {
+    "id": "1086",
+    "titulo": "Puesto De Grupo De Capacidades"
+   },
+   {
+    "id": "1087",
+    "titulo": "Puntaje Componente de Gestión"
+   },
+   {
+    "id": "1088",
+    "titulo": "Puntaje Componente de Resultados"
+   },
+   {
+    "id": "1096",
+    "titulo": "Total De Inversión Según Destinación Especifica Fut"
+   }
+  ],
+  "carpetas_sin_ficha": [
+   {
+    "id": "1015",
+    "titulo": "Producción de otros cultivos transitorios"
+   },
+   {
+    "id": "1016",
+    "titulo": "Producción de hortalizas"
+   },
+   {
+    "id": "1017",
+    "titulo": "Distribución de las áreas cosechadas"
+   },
+   {
+    "id": "1018",
+    "titulo": "Número de hectareas cosechada de cultivos de fibras"
+   },
+   {
+    "id": "1019",
+    "titulo": "Participación área cosechada de cultivos de leguminosas"
+   },
+   {
+    "id": "1020",
+    "titulo": "Participación área cosechada de cultivos de plantas medicinales"
+   },
+   {
+    "id": "1021",
+    "titulo": "Participación área cosechada de tubérculos"
+   },
+   {
+    "id": "1022",
+    "titulo": "Participación área cosechada flores y follajes"
+   },
+   {
+    "id": "1023",
+    "titulo": "Participación área cosechada frutales"
+   },
+   {
+    "id": "1024",
+    "titulo": "Rendimiento en toneladas por hectárea cosechada de hortalizas"
+   },
+   {
+    "id": "1025",
+    "titulo": "Participación en área cosechada de otros cultivos permanentes"
+   },
+   {
+    "id": "1026",
+    "titulo": "Participación área cosechada otros cultivos transitorios"
+   },
+   {
+    "id": "1041",
+    "titulo": "Este indicador mide las toneladas por hectárea cosechada de cereales por municipio"
+   },
+   {
+    "id": "1042",
+    "titulo": "Rendimiento en toneladas por hectáreas cosechadas de fibras por desagregación de cultivos y municipios productores"
+   },
+   {
+    "id": "1043",
+    "titulo": "Rendimiento en toneladas por hectáreas cosechada de flores y follajes por desagregación de cultivos y municipios productores"
+   },
+   {
+    "id": "1044",
+    "titulo": "Rendimiento en toneladas por hectárea cosechada de tubérculos por desagregación de cultivos y municipios productores"
+   },
+   {
+    "id": "1045",
+    "titulo": "Rendimiento en toneladas por hectárea cosechada de leguminosas por desagregación de cultivos y municipios productores"
+   },
+   {
+    "id": "1046",
+    "titulo": "Rendimiento en toneladas por hectáreas cosechada de otros cultivos transitorios por desagregación de cultivos y municipios productores"
+   },
+   {
+    "id": "1047",
+    "titulo": "Rendimiento en toneladas por hectárea cosechada de plantas medicinales por desagregación de cultivos y municipios productores"
+   },
+   {
+    "id": "1059",
+    "titulo": "IDC Pilar 1 Instituciones valor normalizado y ranking 2020 - 2022"
+   },
+   {
+    "id": "1061",
+    "titulo": "Índice departamental pilar 2 infraestructura"
+   },
+   {
+    "id": "1062",
+    "titulo": "IDC Pilar 3 TIC Valor Ranking y valor normalizado 2020 - 2022"
+   },
+   {
+    "id": "1063",
+    "titulo": "IDC Pilar 4 Sostenibilidad ambiental valor ranking y valor normalizado"
+   },
+   {
+    "id": "1064",
+    "titulo": "IDC Pilar 5 Salud Boyacá Ranking y valor normalizado 2020 - 2022"
+   },
+   {
+    "id": "1065",
+    "titulo": "IDC Pilar 6 Educación Basica y media Valor Ranking y valor normalizado Boyacá 2020 - 2022"
+   },
+   {
+    "id": "1066",
+    "titulo": "IDC Pilar 7 Educación Superior y formacion para el trabajo Valor Ranking y valor normalizado Boyacá 2020 - 2022"
+   },
+   {
+    "id": "1067",
+    "titulo": "IDC Pilar 8 Entorno para los negocios Valor Ranking y valor normalizado Boyacá 2020 - 2022"
+   },
+   {
+    "id": "1068",
+    "titulo": "IDC Pilar 9 Mercado laboral Valor Ranking y valor normalizado Boyacá 2020 - 2022"
+   },
+   {
+    "id": "1069",
+    "titulo": "IDC Pilar 10 Sistema financiero Ranking y valor normalizado Boyacá 2020 - 2022"
+   },
+   {
+    "id": "1070",
+    "titulo": "IDC Pilar 11 Tamaño del mercado Ranking y valor normalizado Boyacá 2020 - 2022"
+   },
+   {
+    "id": "1071",
+    "titulo": "IDC Pilar 12 sofisticación y deiversificación de merccados Ranking y valor normalizado Boyacá 2020 - 2022"
+   },
+   {
+    "id": "1072",
+    "titulo": "IDC Pilar 13 Innovación Ranking y valor normalizado Boyacá 2018 - 2019"
+   },
+   {
+    "id": "1077",
+    "titulo": "Fut- gastos de inversión"
+   },
+   {
+    "id": "1082",
+    "titulo": "Gastos de regalías para el departamento según destinación especifica"
+   },
+   {
+    "id": "1083",
+    "titulo": "Ingresos de regalías para el departamento según fondos de ingresos"
+   },
+   {
+    "id": "1084",
+    "titulo": "Fut- cuentas por pagar"
+   },
+   {
+    "id": "1086",
+    "titulo": "Puesto del grupo medicion desempeño municipal"
+   },
+   {
+    "id": "1087",
+    "titulo": "Puntaje en la dimension de gestion en la medicion desempeño municipal"
+   },
+   {
+    "id": "1088",
+    "titulo": "Puntaje en resultados de medición desempeño municipal"
+   },
+   {
+    "id": "1096",
+    "titulo": "FUT gastos de inversión"
+   },
+   {
+    "id": "1114",
+    "titulo": "Inventario otras especies del departamento"
+   },
+   {
+    "id": "1116",
+    "titulo": "Departamento de procedencia turistas"
+   },
+   {
+    "id": "1119",
+    "titulo": "Llegada de visitantes extranjeros no residentes por departamento destino"
+   },
+   {
+    "id": "1120",
+    "titulo": "Motivo del viaje (naturaleza, aventura, cultural, bienestar, trabajo y otros)"
+   },
+   {
+    "id": "1125",
+    "titulo": "Tiempo de permanencia"
+   },
+   {
+    "id": "1126",
+    "titulo": "Tipo de alojamiento"
+   },
+   {
+    "id": "1127",
+    "titulo": "Tipo de transporte"
+   },
+   {
+    "id": "1128",
+    "titulo": "Variaciones anuales del personal total y por categoria"
+   },
+   {
+    "id": "1507",
+    "titulo": "Índice de clasificación municipal"
+   },
+   {
+    "id": "1508",
+    "titulo": "Rango de clasificación según IDF"
+   },
+   {
+    "id": "1509",
+    "titulo": "Índice de clasificación grupo de capacidades iniciales"
+   },
+   {
+    "id": "1510",
+    "titulo": "Variación del índice de eficacia municipal"
+   },
+   {
+    "id": "1511",
+    "titulo": "Viabilidad ICLD"
+   },
+   {
+    "id": "1512",
+    "titulo": "Nivel de cumplimiento del sistema general de participaciones"
+   },
+   {
+    "id": "1902",
+    "titulo": "Producto Interno Bruto del Departamento"
+   }
+  ]
+ },
+ "2": {
+  "observatorio": "social",
+  "ya_correctas": [],
+  "movidas": {
+   "2121": {
+    "desde": "2202",
+    "titulo": "Partos atendidos por personal calificado",
+    "parecido": 1.0
+   },
+   "2016": {
+    "desde": "2300",
+    "titulo": "Intentos de suicidio",
+    "parecido": 1.0
+   },
+   "2302": {
+    "desde": "2415",
+    "titulo": "Ejecución de sanciones ICBF",
+    "parecido": 0.963
+   },
+   "2212": {
+    "desde": "2101",
+    "titulo": "Resultados Pruebas Saber",
+    "parecido": 0.95
+   },
+   "2213": {
+    "desde": "2102",
+    "titulo": "Infraestructura educativa",
+    "parecido": 0.95
+   },
+   "2209": {
+    "desde": "2107",
+    "titulo": "Tasa de repitencia escolar",
+    "parecido": 0.95
+   },
+   "2207": {
+    "desde": "2108",
+    "titulo": "Tasa de aprobación escolar",
+    "parecido": 0.95
+   },
+   "2208": {
+    "desde": "2109",
+    "titulo": "Tasa de reprobación escolar",
+    "parecido": 0.95
+   },
+   "2131": {
+    "desde": "2203",
+    "titulo": "Mortalidad por desnutrición",
+    "parecido": 0.95
+   },
+   "2140": {
+    "desde": "2206",
+    "titulo": "Mortalidad prematura",
+    "parecido": 0.95
+   },
+   "2914": {
+    "desde": "2207",
+    "titulo": "Mortalidad perinatal y neonatal",
+    "parecido": 0.95
+   },
+   "2132": {
+    "desde": "2209",
+    "titulo": "Mortalidad en menores de 5 años",
+    "parecido": 0.95
+   },
+   "2104": {
+    "desde": "2215",
+    "titulo": "Cáncer infantil",
+    "parecido": 0.95
+   },
+   "2105": {
+    "desde": "2216",
+    "titulo": "Casos de leucemia",
+    "parecido": 0.95
+   },
+   "2801": {
+    "desde": "2405",
+    "titulo": "Intentos de suicidio",
+    "parecido": 0.95
+   },
+   "2531": {
+    "desde": "2413",
+    "titulo": "Adolescentes aprehendidos",
+    "parecido": 0.95
+   },
+   "2712": {
+    "desde": "2502",
+    "titulo": "Pobreza multidimensional por sexo",
+    "parecido": 0.95
+   },
+   "2533": {
+    "desde": "2600",
+    "titulo": "Ejecución de sanciones ICBF",
+    "parecido": 0.95
+   },
+   "2015": {
+    "desde": "2701",
+    "titulo": "Atenciones médicas por tipos de violencia",
+    "parecido": 0.877
+   }
+  },
+  "fichas_sin_carpeta": [
+   {
+    "id": "2000",
+    "titulo": "Estadísticas y proyecciones demográficas"
+   },
+   {
+    "id": "2100",
+    "titulo": "Cobertura del Programa de Alimentación Escolar (PAE)"
+   },
+   {
+    "id": "2103",
+    "titulo": "Tasa de deserción escolar"
+   },
+   {
+    "id": "2104",
+    "titulo": "Matriculados por discapacidad y etnia"
+   },
+   {
+    "id": "2105",
+    "titulo": "Matriculados por nivel educativo"
+   },
+   {
+    "id": "2106",
+    "titulo": "Repitencia por discapacidad y etnia"
+   },
+   {
+    "id": "2110",
+    "titulo": "Cobertura educativa"
+   },
+   {
+    "id": "2111",
+    "titulo": "Cobertura educativa por etnia y discapacidad"
+   },
+   {
+    "id": "2200",
+    "titulo": "Morbilidad Materna Extrema (MME)"
+   },
+   {
+    "id": "2201",
+    "titulo": "Cobertura de vacunación"
+   },
+   {
+    "id": "2204",
+    "titulo": "Mortalidad por Enfermedad Respiratoria Aguda (ERA)"
+   },
+   {
+    "id": "2205",
+    "titulo": "Mortalidad por VIH/SIDA"
+   },
+   {
+    "id": "2208",
+    "titulo": "Mortalidad reportada en SIVIGILA"
+   },
+   {
+    "id": "2210",
+    "titulo": "Enfermedades transmitidas por vector"
+   },
+   {
+    "id": "2211",
+    "titulo": "Enfermedades infecciosas"
+   },
+   {
+    "id": "2212",
+    "titulo": "Indicadores de salud materno-infantil"
+   },
+   {
+    "id": "2213",
+    "titulo": "Tasa de fecundidad"
+   },
+   {
+    "id": "2214",
+    "titulo": "Cobertura de afiliación al SGSSS"
+   },
+   {
+    "id": "2217",
+    "titulo": "Afiliados al SGSSS por edad"
+   },
+   {
+    "id": "2301",
+    "titulo": "Deportistas con discapacidad"
+   },
+   {
+    "id": "2302",
+    "titulo": "Certificados de discapacidad emitidos"
+   },
+   {
+    "id": "2303",
+    "titulo": "Enfermedades infecciosas"
+   },
+   {
+    "id": "2304",
+    "titulo": "Enfermedades transmitidas por vector"
+   },
+   {
+    "id": "2305",
+    "titulo": "Repitencia por discapacidad y etnia"
+   },
+   {
+    "id": "2306",
+    "titulo": "Cobertura educativa por etnia y discapacidad"
+   },
+   {
+    "id": "2307",
+    "titulo": "Matriculados por discapacidad y etnia"
+   },
+   {
+    "id": "2400",
+    "titulo": "Fecundidad en adolescentes de 14 a 19 años"
+   },
+   {
+    "id": "2401",
+    "titulo": "Lesiones no fatales – Medicina Legal"
+   },
+   {
+    "id": "2402",
+    "titulo": "Víctimas del conflicto armado"
+   },
+   {
+    "id": "2403",
+    "titulo": "Muertes violentas – Medicina Legal"
+   },
+   {
+    "id": "2404",
+    "titulo": "Casos de feminicidio"
+   },
+   {
+    "id": "2406",
+    "titulo": "Enfermedades transmitidas por vector"
+   },
+   {
+    "id": "2407",
+    "titulo": "Mortalidad por VIH/SIDA"
+   },
+   {
+    "id": "2408",
+    "titulo": "Indicadores de salud materno-infantil"
+   },
+   {
+    "id": "2409",
+    "titulo": "Enfermedades infecciosas"
+   },
+   {
+    "id": "2410",
+    "titulo": "Cobertura de afiliación al SGSSS"
+   },
+   {
+    "id": "2411",
+    "titulo": "Afiliados al SGSSS por edad"
+   },
+   {
+    "id": "2412",
+    "titulo": "Morbilidad Materna Extrema (MME)"
+   },
+   {
+    "id": "2414",
+    "titulo": "Consejo de adolescentes"
+   },
+   {
+    "id": "2416",
+    "titulo": "Estadísticas y proyecciones demográficas"
+   },
+   {
+    "id": "2500",
+    "titulo": "Encuesta de Calidad de Vida – Hogares campesinos"
+   },
+   {
+    "id": "2501",
+    "titulo": "Encuesta de Calidad de Vida (ECV)"
+   },
+   {
+    "id": "2601",
+    "titulo": "Consejo de adolescentes"
+   },
+   {
+    "id": "2602",
+    "titulo": "Adolescentes aprehendidos"
+   },
+   {
+    "id": "2700",
+    "titulo": "Intentos de suicidio"
+   },
+   {
+    "id": "2702",
+    "titulo": "Víctimas del conflicto armado"
+   },
+   {
+    "id": "2703",
+    "titulo": "Convivencia escolar"
+   },
+   {
+    "id": "2704",
+    "titulo": "Casos de feminicidio"
+   },
+   {
+    "id": "2705",
+    "titulo": "Muertes violentas – Medicina Legal"
+   },
+   {
+    "id": "2706",
+    "titulo": "Lesiones no fatales – Medicina Legal"
+   }
+  ],
+  "carpetas_sin_ficha": [
+   {
+    "id": "2001",
+    "titulo": "Feminicidios"
+   },
+   {
+    "id": "2002",
+    "titulo": "Muertes en accidente de tránsito"
+   },
+   {
+    "id": "2003",
+    "titulo": "Presuntos homicidios"
+   },
+   {
+    "id": "2004",
+    "titulo": "Muerte violenta accidental"
+   },
+   {
+    "id": "2005",
+    "titulo": "Suicidios"
+   },
+   {
+    "id": "2006",
+    "titulo": "Muerte violenta sin determinar"
+   },
+   {
+    "id": "2007",
+    "titulo": "Muerte indeterminada"
+   },
+   {
+    "id": "2008",
+    "titulo": "Violencia a niños, niñas y adolescentes"
+   },
+   {
+    "id": "2009",
+    "titulo": "Violencia intrafamiliar"
+   },
+   {
+    "id": "2010",
+    "titulo": "Presunto delito sexual"
+   },
+   {
+    "id": "2011",
+    "titulo": "Violencia de pareja"
+   },
+   {
+    "id": "2012",
+    "titulo": "Violencia interpersonal"
+   },
+   {
+    "id": "2013",
+    "titulo": "Violencia a adulto mayor"
+   },
+   {
+    "id": "2014",
+    "titulo": "Violencia por convivencia educativa"
+   },
+   {
+    "id": "2017",
+    "titulo": "Delitos contra la libertad e integridad sexual"
+   },
+   {
+    "id": "2018",
+    "titulo": "Desaparición Forzada"
+   },
+   {
+    "id": "2019",
+    "titulo": "Minas antipersonal"
+   },
+   {
+    "id": "2020",
+    "titulo": "Secuestro"
+   },
+   {
+    "id": "2100",
+    "titulo": "Cobertura de afiliación en salud"
+   },
+   {
+    "id": "2101",
+    "titulo": "Personas Afiliadas Al Sgsss"
+   },
+   {
+    "id": "2102",
+    "titulo": "Número de casos de Morbilidad Materna Extrema"
+   },
+   {
+    "id": "2103",
+    "titulo": "Casos Desnutrición Aguda En Menores De 5 Años"
+   },
+   {
+    "id": "2106",
+    "titulo": "Número de casos de Leucemia Mieloide Aguda en Boyacá"
+   },
+   {
+    "id": "2107",
+    "titulo": "Casos De La Enfermedad De Chagas"
+   },
+   {
+    "id": "2108",
+    "titulo": "Número de casos de chikunguña en los municipios de Boyacá"
+   },
+   {
+    "id": "2109",
+    "titulo": "Número De Casos De Morbilidad Por Dengue"
+   },
+   {
+    "id": "2110",
+    "titulo": "Casos de Malaria Asociada (Formas Mixtas)"
+   },
+   {
+    "id": "2111",
+    "titulo": "Casos de Malaria Complicada"
+   },
+   {
+    "id": "2112",
+    "titulo": "Casos de Malaria Falciparum"
+   },
+   {
+    "id": "2113",
+    "titulo": "Casos de Malaria Vivax"
+   },
+   {
+    "id": "2114",
+    "titulo": "Casos de tuberculosis extra pulmonar"
+   },
+   {
+    "id": "2115",
+    "titulo": "Casos de tuberculosis pulmonar"
+   },
+   {
+    "id": "2116",
+    "titulo": "Número de casos de Varicela Individual en el departamento de Boyacá"
+   },
+   {
+    "id": "2117",
+    "titulo": "Número de mujeres de 10 a 14 años que han sido madres o estan embarazadas"
+   },
+   {
+    "id": "2118",
+    "titulo": "Casos de Fecundidad específica en mujeres de 15 a 19 años en el departamento de Boyacá"
+   },
+   {
+    "id": "2119",
+    "titulo": "Número de casos de Nacidos Vivos en Boyacá"
+   },
+   {
+    "id": "2120",
+    "titulo": "Número De Casos De Niños Con Bajo Peso Al Nacer"
+   },
+   {
+    "id": "2122",
+    "titulo": "Total nacidos vivos con 4 o más controles prenatales"
+   },
+   {
+    "id": "2123",
+    "titulo": "Casos de niños y niñas menores de 1 año con vacunación antipolio en Boyacá"
+   },
+   {
+    "id": "2124",
+    "titulo": "Casos de Vacunación Con Bcg En Nacidos Vivos"
+   },
+   {
+    "id": "2125",
+    "titulo": "Casos de niños y niñas menores de 1 año con vacunación (Fiebre Amarilla) en Boyacá"
+   },
+   {
+    "id": "2126",
+    "titulo": "Casos de niños y niñas menores de 1 año con vacunación (Neumococo) en Boyacá"
+   },
+   {
+    "id": "2127",
+    "titulo": "Casos de niños y niñas menores de 1 año con vacunación (Pentavalente) en Boyacá"
+   },
+   {
+    "id": "2129",
+    "titulo": "Casos de niños y niñas menores de 1 año con vacunación (Triple viral) en Boyacá"
+   },
+   {
+    "id": "2130",
+    "titulo": "Vacunación Con Dpt Acelular En Gestantes A Partir De La Semana De Gestación 14"
+   },
+   {
+    "id": "2133",
+    "titulo": "Casos de mortalidad en menores de 1 año"
+   },
+   {
+    "id": "2134",
+    "titulo": "Número de casos Mortalidad Neonatal en los municipios de Boyacá"
+   },
+   {
+    "id": "2135",
+    "titulo": "Número de casos Mortalidad Perinatal en los municipios de Boyacá"
+   },
+   {
+    "id": "2136",
+    "titulo": "Casos de mortalidad materna"
+   },
+   {
+    "id": "2137",
+    "titulo": "Número De Casos Por Mortalidad Por Era En Niños Y Niñas Menores De 5 Años"
+   },
+   {
+    "id": "2138",
+    "titulo": "Casos De Mortalidad Por Eda En Niños Y Niñas Menores De 5 Años"
+   },
+   {
+    "id": "2139",
+    "titulo": "Casos de mortalidad por VIH"
+   },
+   {
+    "id": "2201",
+    "titulo": "Tasa de cobertura bruta escolar en todos los niveles"
+   },
+   {
+    "id": "2202",
+    "titulo": "Tasa de cobertura neta escolar en todos los niveles"
+   },
+   {
+    "id": "2203",
+    "titulo": "Tasa de cobertura neta por discapacidad y clasificación étnica"
+   },
+   {
+    "id": "2204",
+    "titulo": "Tasa de cobertura bruta por discapacidad y clasificación étnica"
+   },
+   {
+    "id": "2205",
+    "titulo": "Numero de alumnos matriculados en todos los niveles"
+   },
+   {
+    "id": "2206",
+    "titulo": "Matriculados por discapacidad y clasificación étnica"
+   },
+   {
+    "id": "2210",
+    "titulo": "Tasa de repitencia por discapacidad y clasificación étnica"
+   },
+   {
+    "id": "2211",
+    "titulo": "Tasa de desercion intra-anual en todos los niveles"
+   },
+   {
+    "id": "2215",
+    "titulo": "Plan de alimentación escolar"
+   },
+   {
+    "id": "2301",
+    "titulo": "Casos en juzgados consejo superior"
+   },
+   {
+    "id": "2400",
+    "titulo": "Población proyectada DANE del departamento"
+   },
+   {
+    "id": "2501",
+    "titulo": "Feminicidios en población de 14 a 28 años"
+   },
+   {
+    "id": "2502",
+    "titulo": "Homicidios en población de 14 a 28 años"
+   },
+   {
+    "id": "2503",
+    "titulo": "Muerte violenta por accidente de transporte en población de 14 a 28 años"
+   },
+   {
+    "id": "2504",
+    "titulo": "Muerte violenta indeterminada en población de 14 a 28 años"
+   },
+   {
+    "id": "2505",
+    "titulo": "Muerte violenta accidental en población de 14 a 28 años"
+   },
+   {
+    "id": "2506",
+    "titulo": "Muerte violenta sin determinar en población de 14 a 28 años"
+   },
+   {
+    "id": "2507",
+    "titulo": "Suicidios en población de 14 a 28 años"
+   },
+   {
+    "id": "2508",
+    "titulo": "Violencia de pareja en población de 14 a 28 años"
+   },
+   {
+    "id": "2509",
+    "titulo": "Violencia interpersonal en población de 14 a 28 años"
+   },
+   {
+    "id": "2510",
+    "titulo": "Violencia por presunto delito sexual en población de 14 a 28 años"
+   },
+   {
+    "id": "2511",
+    "titulo": "Violencia intrafamiliar en población de 14 a 28 años"
+   },
+   {
+    "id": "2512",
+    "titulo": "Atenciones médicas por violencia en población de 14 a 28 años"
+   },
+   {
+    "id": "2513",
+    "titulo": "Intento de suicidios en población de 14 a 28 años"
+   },
+   {
+    "id": "2514",
+    "titulo": "Delitos contral la libertad e integridad sexual en desarrollo del conflicto armada en población de 14 a 28 años"
+   },
+   {
+    "id": "2515",
+    "titulo": "Desaparición forzada en población de 14 a 28 años"
+   },
+   {
+    "id": "2516",
+    "titulo": "Secuestros en población de 14 a 28 años"
+   },
+   {
+    "id": "2517",
+    "titulo": "Minas antipersonal, munición sin explotar y artefacto explosivo improvisado en población de 14 a 28 años"
+   },
+   {
+    "id": "2518",
+    "titulo": "Proyección de población DANE en población de 14 a 28 años"
+   },
+   {
+    "id": "2519",
+    "titulo": "Cobertura de afiliación en salud en población de 14 a 28 años"
+   },
+   {
+    "id": "2520",
+    "titulo": "Población asegurada en el SGSSS en población de 14 a 28 años"
+   },
+   {
+    "id": "2521",
+    "titulo": "Enfermedad por Chagas en población de 14 a 28 años"
+   },
+   {
+    "id": "2522",
+    "titulo": "Enfermedad por Dengue en población de 14 a 28 años"
+   },
+   {
+    "id": "2523",
+    "titulo": "Enfermedad por Malaria en población de 14 a 28 años"
+   },
+   {
+    "id": "2524",
+    "titulo": "Tuberculosis extra pulmonar en población de 14 a 28 años"
+   },
+   {
+    "id": "2525",
+    "titulo": "Tuberculosis pulmonar en población de 14 a 28 años"
+   },
+   {
+    "id": "2526",
+    "titulo": "Varicela en población de 14 a 28 años"
+   },
+   {
+    "id": "2527",
+    "titulo": "Mortalidad por VIH en población de 14 a 28 años"
+   },
+   {
+    "id": "2528",
+    "titulo": "Fecundidad específica en mujeres de 14 a 19 años"
+   },
+   {
+    "id": "2529",
+    "titulo": "Morbilidad materna extrema en mujeres de 14 a 28 años"
+   },
+   {
+    "id": "2530",
+    "titulo": "Mortalidad materna en mujeres de 14 a 28 años"
+   },
+   {
+    "id": "2532",
+    "titulo": "Casos en juzgados Consejo superior"
+   },
+   {
+    "id": "2601",
+    "titulo": "Población matriculada con discapacidad"
+   },
+   {
+    "id": "2602",
+    "titulo": "Tasa de cobertura en población discapacitada"
+   },
+   {
+    "id": "2603",
+    "titulo": "Tasa de repitencia en población discapacitada"
+   },
+   {
+    "id": "2604",
+    "titulo": "Dengue en población con discapacidad"
+   },
+   {
+    "id": "2605",
+    "titulo": "Desnutrición aguda en menores de 5 años con discapacidad"
+   },
+   {
+    "id": "2606",
+    "titulo": "Tuberculosis en población con discapacidad"
+   },
+   {
+    "id": "2607",
+    "titulo": "Certificados de discapacidad generados por Secretaria de Salud Departamental"
+   },
+   {
+    "id": "2608",
+    "titulo": "Intento de suicidios en población con discapacidad"
+   },
+   {
+    "id": "2609",
+    "titulo": "Programas indeportes"
+   },
+   {
+    "id": "2701",
+    "titulo": "Incidencia de Pobreza Multidimensional según sexo del jefe de hogar"
+   },
+   {
+    "id": "2702",
+    "titulo": "Encuesta de calidad de vida por conformación de hogares"
+   },
+   {
+    "id": "2703",
+    "titulo": "Encuesta de calidad de vida por servicios del hogar"
+   },
+   {
+    "id": "2704",
+    "titulo": "Encuesta de calidad de vida por tenencia de servicios"
+   },
+   {
+    "id": "2705",
+    "titulo": "Encuesta de calidad de vida por Déficit habitacional"
+   },
+   {
+    "id": "2706",
+    "titulo": "Encuesta de calidad de vida por Percepción de ingresos, pobreza, entorno y seguridad"
+   },
+   {
+    "id": "2708",
+    "titulo": "Encuesta de calidad de vida en población campesina Viviendas, hogares campesinos y personas en hogares campesino"
+   },
+   {
+    "id": "2709",
+    "titulo": "Encuesta de calidad de vida en población campesina Hogares por tenencia de vivienda"
+   },
+   {
+    "id": "2710",
+    "titulo": "Encuesta de calidad de vida en población campesina Hogares por tipo de servicio sanitario"
+   },
+   {
+    "id": "2711",
+    "titulo": "Encuesta de calidad de vida en población campesina Hogares por acceso a servicios públicos, privados o comunales"
+   },
+   {
+    "id": "2713",
+    "titulo": "Violencia a niños, niñas y adolescentes"
+   },
+   {
+    "id": "2714",
+    "titulo": "Violencia de pareja"
+   },
+   {
+    "id": "2715",
+    "titulo": "Presunto delito sexual a niños, niñas y adolescentes"
+   },
+   {
+    "id": "2716",
+    "titulo": "Violencia a adulto mayor"
+   },
+   {
+    "id": "2717",
+    "titulo": "Violencia intrafamiliar"
+   },
+   {
+    "id": "2802",
+    "titulo": "Suicidios"
+   },
+   {
+    "id": "2900",
+    "titulo": "Desnutrición aguda en menores de 5 años en población indígena"
+   },
+   {
+    "id": "2901",
+    "titulo": "Enfermedad de chagas en población indígena"
+   },
+   {
+    "id": "2902",
+    "titulo": "Dengue en población indígena"
+   },
+   {
+    "id": "2903",
+    "titulo": "Malaria en población indígena"
+   },
+   {
+    "id": "2904",
+    "titulo": "Tuberculosis en población indígena"
+   },
+   {
+    "id": "2905",
+    "titulo": "Varicela en población indígena"
+   },
+   {
+    "id": "2906",
+    "titulo": "Mujeres de 10 a 14 años embarazadas o que han sido madres en población indígena"
+   },
+   {
+    "id": "2907",
+    "titulo": "Morbilidad materna extrema en población indígena"
+   },
+   {
+    "id": "2908",
+    "titulo": "Partos atendidos por personal calificado en población indígena"
+   },
+   {
+    "id": "2909",
+    "titulo": "Bajo peso al nacer en población indígena"
+   },
+   {
+    "id": "2910",
+    "titulo": "Nacidos vivos en población indígena"
+   },
+   {
+    "id": "2911",
+    "titulo": "Nacidos vivos con 4 o más controles prenatales en población indígena"
+   },
+   {
+    "id": "2912",
+    "titulo": "Mortalidad por desnutrición en población indígena"
+   },
+   {
+    "id": "2913",
+    "titulo": "Mortalidad en menores de 5 años en población indígena"
+   },
+   {
+    "id": "2915",
+    "titulo": "Mortalidad por IRA en población indígena"
+   },
+   {
+    "id": "2916",
+    "titulo": "Intento de suicidios en población indígena"
+   }
+  ]
+ },
+ "3": {
+  "observatorio": "ambiente",
+  "ya_correctas": [
+   "3101",
+   "3102",
+   "3103",
+   "3104",
+   "3105",
+   "3106",
+   "3201",
+   "3203",
+   "3205",
+   "3206",
+   "3207",
+   "3208",
+   "3210",
+   "3211",
+   "3212",
+   "3213",
+   "3301",
+   "3302",
+   "3303",
+   "3304",
+   "3305",
+   "3401",
+   "3402",
+   "3403",
+   "3501",
+   "3502",
+   "3503",
+   "3504",
+   "3505",
+   "3506"
+  ],
+  "movidas": {},
+  "fichas_sin_carpeta": [],
+  "carpetas_sin_ficha": []
+ },
+ "4": {
+  "observatorio": "cti",
+  "ya_correctas": [
+   "4001",
+   "4002",
+   "4003",
+   "4005",
+   "4006",
+   "4007",
+   "4008",
+   "4009",
+   "4010",
+   "4011",
+   "4012",
+   "4013",
+   "4014",
+   "4015",
+   "4016",
+   "4017",
+   "4018",
+   "4019",
+   "4021",
+   "4022",
+   "4023",
+   "4027",
+   "4029",
+   "4030"
+  ],
+  "movidas": {},
+  "fichas_sin_carpeta": [
+   {
+    "id": "4004",
+    "titulo": "Número de software registrados"
+   },
+   {
+    "id": "4020",
+    "titulo": "Participación de la Inversión en ACTI por tipo de actividad dentro PIB"
+   }
+  ],
+  "carpetas_sin_ficha": [
+   {
+    "id": "4004",
+    "titulo": "Dirección de derecho de autor del ministerio de cultura."
+   },
+   {
+    "id": "4020",
+    "titulo": "Nivel porcentual de la Inversión en acti por tipo de actividad"
+   }
+  ]
+ },
+ "5": {
+  "observatorio": "genero",
+  "ya_correctas": [],
+  "movidas": {
+   "5500": {
+    "desde": "5001",
+    "titulo": "Pobreza monetaria según sexo de la persona",
+    "parecido": 0.95
+   },
+   "5501": {
+    "desde": "5002",
+    "titulo": "Pobreza multidimensional según sexo del jefe de hogar",
+    "parecido": 0.95
+   },
+   "5301": {
+    "desde": "5300",
+    "titulo": "Tasa de repitencia escolar por sexo y nivel",
+    "parecido": 0.95
+   },
+   "5701": {
+    "desde": "5700",
+    "titulo": "Mujeres desmovilizadas",
+    "parecido": 0.95
+   }
+  },
+  "fichas_sin_carpeta": [
+   {
+    "id": "5000",
+    "titulo": "Estadísticas y proyecciones demográficas con enfoque de género"
+   },
+   {
+    "id": "5100",
+    "titulo": "Tasa de fecundidad"
+   },
+   {
+    "id": "5101",
+    "titulo": "Indicadores de salud materno-infantil"
+   },
+   {
+    "id": "5102",
+    "titulo": "Mortalidad perinatal y neonatal"
+   },
+   {
+    "id": "5103",
+    "titulo": "Cobertura de afiliación al SGSSS por sexo y edad"
+   },
+   {
+    "id": "5200",
+    "titulo": "Mortalidad prematura por sexo"
+   },
+   {
+    "id": "5201",
+    "titulo": "Mortalidad por VIH/SIDA por sexo"
+   },
+   {
+    "id": "5301",
+    "titulo": "Matriculados por nivel y sexo"
+   },
+   {
+    "id": "5302",
+    "titulo": "Convivencia escolar por sexo y ciclo de vida"
+   },
+   {
+    "id": "5400",
+    "titulo": "Certificados de discapacidad emitidos por sexo"
+   },
+   {
+    "id": "5500",
+    "titulo": "Participación de mujeres en juntas de acción comunal"
+   },
+   {
+    "id": "5501",
+    "titulo": "Mujeres concejalas electas"
+   },
+   {
+    "id": "5502",
+    "titulo": "Mujeres alcaldesas electas"
+   },
+   {
+    "id": "5503",
+    "titulo": "Referente mujer en Consejos Territoriales de Planeación"
+   },
+   {
+    "id": "5600",
+    "titulo": "Programa Mujer Visionaria – proyectos productivos financiados"
+   },
+   {
+    "id": "5701",
+    "titulo": "Mujeres en proceso de reincorporación"
+   },
+   {
+    "id": "5702",
+    "titulo": "Mujeres víctimas del conflicto armado"
+   },
+   {
+    "id": "5800",
+    "titulo": "Atenciones médicas por violencias contra mujeres"
+   },
+   {
+    "id": "5801",
+    "titulo": "Intentos de suicidio en mujeres"
+   },
+   {
+    "id": "5802",
+    "titulo": "Casos de feminicidio"
+   },
+   {
+    "id": "5803",
+    "titulo": "Lesiones no fatales contra mujeres – Medicina Legal"
+   },
+   {
+    "id": "5804",
+    "titulo": "Muertes violentas de mujeres – Medicina Legal"
+   }
+  ],
+  "carpetas_sin_ficha": [
+   {
+    "id": "5100",
+    "titulo": "Proyección Población femenina"
+   },
+   {
+    "id": "5101",
+    "titulo": "Nacidad vivas"
+   },
+   {
+    "id": "5102",
+    "titulo": "Mujeres con certificado de Discapacidad"
+   },
+   {
+    "id": "5200",
+    "titulo": "Número de mujeres que hacen parte de los consejos municipales"
+   },
+   {
+    "id": "5201",
+    "titulo": "Número de mujeres que han sido elegidas como alcaldesas"
+   },
+   {
+    "id": "5202",
+    "titulo": "Número de mujeres que hacen parte de los consejos territoriales de planeación"
+   },
+   {
+    "id": "5203",
+    "titulo": "Número de mujeres que hacen parte de las juntas de acción comunal"
+   },
+   {
+    "id": "5204",
+    "titulo": "Proyectos Agricultura: Mujer Visionaria"
+   },
+   {
+    "id": "5300",
+    "titulo": "Mujeres Matriculadas"
+   },
+   {
+    "id": "5302",
+    "titulo": "Tasa de cobertura neta"
+   },
+   {
+    "id": "5303",
+    "titulo": "Tasa de cobertura bruta"
+   },
+   {
+    "id": "5401",
+    "titulo": "Feminicidios en vida libre de violencia"
+   },
+   {
+    "id": "5402",
+    "titulo": "Muerte violenta por Accidente de transporte con enfoque de género"
+   },
+   {
+    "id": "5403",
+    "titulo": "Presuntos Homicidios  con enfoque de género"
+   },
+   {
+    "id": "5404",
+    "titulo": "Muerte indeterminada con enfoque de género"
+   },
+   {
+    "id": "5405",
+    "titulo": "Muerte accidental con enfoque de género"
+   },
+   {
+    "id": "5406",
+    "titulo": "Muerte sin determinar con enfoque de género"
+   },
+   {
+    "id": "5407",
+    "titulo": "Suicidios con enfoque de género"
+   },
+   {
+    "id": "5408",
+    "titulo": "Violencia de pareja con enfoque de género"
+   },
+   {
+    "id": "5409",
+    "titulo": "Violencia interpersonal con enfoque de género"
+   },
+   {
+    "id": "5410",
+    "titulo": "Presunto delito sexual con enfoque de género"
+   },
+   {
+    "id": "5411",
+    "titulo": "Violencia intrafamiliar con enfoque de género"
+   },
+   {
+    "id": "5412",
+    "titulo": "Violencia a niñas y adolescentes con enfoque de género"
+   },
+   {
+    "id": "5413",
+    "titulo": "Violencia a adulto mayor con enfoque de género"
+   },
+   {
+    "id": "5414",
+    "titulo": "Violencia en convivencia educativa con enfoque de género"
+   },
+   {
+    "id": "5415",
+    "titulo": "Atenciónes médicas por violencia con enfoque de género"
+   },
+   {
+    "id": "5416",
+    "titulo": "Intento de suicidios con enfoque de género"
+   },
+   {
+    "id": "5417",
+    "titulo": "Delitos contra la libertad e integridad sexual con enfoque de género"
+   },
+   {
+    "id": "5418",
+    "titulo": "Desaparición Forzada con enfoque de género"
+   },
+   {
+    "id": "5419",
+    "titulo": "Secuestro con enfoque de género"
+   },
+   {
+    "id": "5601",
+    "titulo": "Mortalidad por VIH SIDA con enfoque de género"
+   },
+   {
+    "id": "5602",
+    "titulo": "Mortalidad perinatal con enfoque de género"
+   },
+   {
+    "id": "5603",
+    "titulo": "Mortalidad prematura en enfermedades crónicas con enfoque de género"
+   },
+   {
+    "id": "5604",
+    "titulo": "Embarazadas o madres de 10 a 14 años con enfoque de género"
+   },
+   {
+    "id": "5605",
+    "titulo": "Embarazadas o madres de 15 a 19 años con enfoque de género"
+   },
+   {
+    "id": "5606",
+    "titulo": "Bajo peso al nacer con enfoque de género"
+   },
+   {
+    "id": "5607",
+    "titulo": "Mortalidad neonatal con enfoque de género"
+   },
+   {
+    "id": "5700",
+    "titulo": "Número de mujeres con proceso de reincorporación activos"
+   }
+  ]
+ }
+}

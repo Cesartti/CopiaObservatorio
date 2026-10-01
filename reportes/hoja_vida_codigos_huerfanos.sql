@@ -1,0 +1,130 @@
+-- Filas de `indicators` que ya no describen ningún indicador publicado.
+-- El portal no las muestra (el título no corresponde), pero conviene
+-- retirarlas para que el CMS no ofrezca fichas sin indicador.
+-- Revisar la lista antes de ejecutar.
+
+-- 1015  Incidencia de Pobreza Multidimensional según sexo del jefe de hogar
+-- 1016  Incidencia de Pobreza Multidimensional según sexo de la persona
+-- 1017  Línea de Pobreza
+-- 1018  Líneas de Pobreza Monetaria Extrema
+-- 1019  Coeficiente de Gini
+-- 1020  Incidencia de la Pobreza Monetaria Segun Sexo De La Persona
+-- 1021  Incidencia de la Pobreza Monetaria Extrema segun sexo de la persona
+-- 1022  Promedio del Ingreso per cápita de la unidad de gasto de la población
+-- 1023  Brecha de la Pobreza Monetaria
+-- 1024  Brecha de la Pobreza Monetaria Extrema
+-- 1025  Incidencia de la pobreza monetaria
+-- 1026  Personas en situación de pobreza
+-- 1041  Rendimiento De Cereales
+-- 1042  Rendimiento De Fibras
+-- 1043  Rendimiento De Flores Y Follajes
+-- 1044  Rendimiento De Tubérculos Y Plátanos
+-- 1045  Rendimiento De Leguminosas
+-- 1046  Rendimiento De Otros Cultivos Transitorios
+-- 1047  Rendimiento De Plantas Medicinales
+-- 1059  Índice Departamental De Competitividad Pilar 1 Instituciones
+-- 1061  Índice Departamental De Competitividad Pilar 2 Infraestructura
+-- 1062  Índice Departamental De Competitividad Pilar 3 Tic
+-- 1063  Índice Departamental De Competitividad Pilar 4 Sostenibilidad Ambiental
+-- 1064  Índice Departamental De Competitividad Pilar 5 Salud
+-- 1065  Índice Departamental De Competitividad Pilar 6 educación básica y media
+-- 1066  Índice Departamental De Competitividad Pilar 7 Educación Superior Y Capacitación
+-- 1067  Índice Departamental De Competitividad Pilar 8 Eficiencia De Los Mercados
+-- 1068  Índice Departamental De Competitividad Pilar 9 Mercado Laboral
+-- 1069  Índice Departamental De Competitividad Pilar 10 Sistema Financiero
+-- 1070  Índice Departamental De Competitividad Pilar 11 Tamaño Del Mercado
+-- 1071  Índice Departamental De Competitividad Pilar 12 Diversificación Y Sofisticación
+-- 1072  Índice Departamental De Competitividad Pilar 13 Innovación
+-- 1077  Total De Inversión Según Destinación Especifica Compromisos Y Gastos Fut
+-- 1082  Ejecución De Gastos - Sistema General De Regalías
+-- 1083  Ejecución De Ingresos - Sistema General De Regalías
+-- 1084  Deudas Por Pagar Fut
+-- 1086  Puesto De Grupo De Capacidades
+-- 1087  Puntaje Componente de Gestión
+-- 1088  Puntaje Componente de Resultados
+-- 1096  Total De Inversión Según Destinación Especifica Fut
+-- 1201  Sacrificio porcino
+-- 1203  Inventario bufalino en el departamento
+-- 1205  Inventario caprino, ovino y equino del departamento
+-- 1206  Inventario porcino en el departamento
+-- 1207  Finca con bovinos
+-- 1208  Granjas tecnificadas porcinos
+-- 1209  Predios búfalos
+-- 1210  Predios aves carne
+-- 1211  Predios aves postura
+-- 1212  Predios aver reproductoras
+-- 1213  Predios aves traspatio
+-- 1214  Predios porcinos comercial familiar
+-- 1215  Predios porcinos comercial industrial
+-- 1216  Predios traspatio porcinos
+-- 1400  Índice departamental de competitividad (IDC)
+-- 1401  Producto Interno Bruto PIB a precios corrientes
+-- 1402  Producto Interno Bruto PIB a precios constantes
+-- 1403  Producto Interno Bruto PIB por habitante
+-- 1404  Producto Interno Bruto PIB por actividad económica
+-- 2000  Estadísticas y proyecciones demográficas
+-- 2100  Cobertura del Programa de Alimentación Escolar (PAE)
+-- 2103  Tasa de deserción escolar
+-- 2106  Repitencia por discapacidad y etnia
+-- 2110  Cobertura educativa
+-- 2111  Cobertura educativa por etnia y discapacidad
+-- 2200  Morbilidad Materna Extrema (MME)
+-- 2201  Cobertura de vacunación
+-- 2204  Mortalidad por Enfermedad Respiratoria Aguda (ERA)
+-- 2205  Mortalidad por VIH/SIDA
+-- 2210  Enfermedades transmitidas por vector
+-- 2211  Enfermedades infecciosas
+-- 2214  Cobertura de afiliación al SGSSS
+-- 2217  Afiliados al SGSSS por edad
+-- 2301  Deportistas con discapacidad
+-- 2303  Enfermedades infecciosas
+-- 2304  Enfermedades transmitidas por vector
+-- 2305  Repitencia por discapacidad y etnia
+-- 2306  Cobertura educativa por etnia y discapacidad
+-- 2307  Matriculados por discapacidad y etnia
+-- 2400  Fecundidad en adolescentes de 14 a 19 años
+-- 2401  Lesiones no fatales – Medicina Legal
+-- 2402  Víctimas del conflicto armado
+-- 2403  Muertes violentas – Medicina Legal
+-- 2404  Casos de feminicidio
+-- 2406  Enfermedades transmitidas por vector
+-- 2407  Mortalidad por VIH/SIDA
+-- 2408  Indicadores de salud materno-infantil
+-- 2409  Enfermedades infecciosas
+-- 2410  Cobertura de afiliación al SGSSS
+-- 2411  Afiliados al SGSSS por edad
+-- 2412  Morbilidad Materna Extrema (MME)
+-- 2414  Consejo de adolescentes
+-- 2416  Estadísticas y proyecciones demográficas
+-- 2500  Encuesta de Calidad de Vida – Hogares campesinos
+-- 2501  Encuesta de Calidad de Vida (ECV)
+-- 2601  Consejo de adolescentes
+-- 2602  Adolescentes aprehendidos
+-- 2700  Intentos de suicidio
+-- 2702  Víctimas del conflicto armado
+-- 2703  Convivencia escolar
+-- 2704  Casos de feminicidio
+-- 2705  Muertes violentas – Medicina Legal
+-- 2706  Lesiones no fatales – Medicina Legal
+-- 4004  Número de software registrados
+-- 4020  Participación de la Inversión en ACTI por tipo de actividad dentro PIB
+-- 5000  Estadísticas y proyecciones demográficas con enfoque de género
+-- 5100  Tasa de fecundidad
+-- 5101  Indicadores de salud materno-infantil
+-- 5102  Mortalidad perinatal y neonatal
+-- 5103  Cobertura de afiliación al SGSSS por sexo y edad
+-- 5200  Mortalidad prematura por sexo
+-- 5201  Mortalidad por VIH/SIDA por sexo
+-- 5302  Convivencia escolar por sexo y ciclo de vida
+-- 5400  Certificados de discapacidad emitidos por sexo
+-- 5502  Mujeres alcaldesas electas
+-- 5503  Referente mujer en Consejos Territoriales de Planeación
+-- 5600  Programa Mujer Visionaria – proyectos productivos financiados
+-- 5702  Mujeres víctimas del conflicto armado
+-- 5800  Atenciones médicas por violencias contra mujeres
+-- 5801  Intentos de suicidio en mujeres
+-- 5802  Casos de feminicidio
+-- 5803  Lesiones no fatales contra mujeres – Medicina Legal
+-- 5804  Muertes violentas de mujeres – Medicina Legal
+
+DELETE FROM indicators WHERE id IN (1015, 1016, 1017, 1018, 1019, 1020, 1021, 1022, 1023, 1024, 1025, 1026, 1041, 1042, 1043, 1044, 1045, 1046, 1047, 1059, 1061, 1062, 1063, 1064, 1065, 1066, 1067, 1068, 1069, 1070, 1071, 1072, 1077, 1082, 1083, 1084, 1086, 1087, 1088, 1096, 1201, 1203, 1205, 1206, 1207, 1208, 1209, 1210, 1211, 1212, 1213, 1214, 1215, 1216, 1400, 1401, 1402, 1403, 1404, 2000, 2100, 2103, 2106, 2110, 2111, 2200, 2201, 2204, 2205, 2210, 2211, 2214, 2217, 2301, 2303, 2304, 2305, 2306, 2307, 2400, 2401, 2402, 2403, 2404, 2406, 2407, 2408, 2409, 2410, 2411, 2412, 2414, 2416, 2500, 2501, 2601, 2602, 2700, 2702, 2703, 2704, 2705, 2706, 4004, 4020, 5000, 5100, 5101, 5102, 5103, 5200, 5201, 5302, 5400, 5502, 5503, 5600, 5702, 5800, 5801, 5802, 5803, 5804);
