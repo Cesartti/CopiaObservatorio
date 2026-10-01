@@ -154,6 +154,24 @@ function fen_grafica(array $serie, string $color, array $oniAnual, string $titul
     #fenMapaAgua{width:100%;height:540px;border-radius:14px;border:1px solid #e6ecf6;background:#eef2f7;z-index:0}
     .fen-map-tools{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-bottom:.6rem}
     .fen-map-tools select,.fen-map-tools input{font-size:.85rem;padding:.35rem .55rem;border:1px solid #dce4f2;border-radius:9px}
+    /* Barra de capas: cada interruptor lleva el color con el que se dibuja esa
+       capa en el mapa, para poder relacionarlos sin leer la leyenda. */
+    .fen-capas{background:#f6f9ff;border:1px solid #e3ebfa;border-radius:12px;padding:.5rem .7rem;gap:.75rem}
+    .fen-capas .form-check{padding-left:2.4rem}
+    .fen-capas .form-check-input{margin-left:-2.4rem;cursor:pointer}
+    .fen-capas .form-check-label{cursor:pointer;white-space:nowrap}
+    .fen-capa-punto{display:inline-block;width:.6rem;height:.6rem;border-radius:50%;
+        margin-right:.3rem;vertical-align:middle;border:1px solid rgba(0,0,0,.25)}
+    .fen-capa-cuenta{color:#64748b;font-variant-numeric:tabular-nums}
+    .fen-capas .form-check-input:not(:checked)+.form-check-label{opacity:.55}
+    /* En pantallas angostas los seis interruptores apilados ocupaban 340 px de
+       alto y empujaban el mapa fuera de la vista: van de a dos por fila. */
+    @media (max-width:575.98px){
+        .fen-capas{display:grid;grid-template-columns:repeat(2,1fr);gap:.4rem .5rem}
+        .fen-capas>span:first-child{grid-column:1 / -1}
+        .fen-capas .form-check-label{white-space:normal}
+        .fen-capas .btn{grid-column:span 1;margin-left:0 !important}
+    }
     .fen-leyenda{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:.6rem;font-size:.8rem;color:#4b5768}
     .fen-leyenda i{width:12px;height:12px;border-radius:50%;display:inline-block;margin-right:.3rem;vertical-align:-1px}
     .fen-form{background:#f8fafc;border:1px solid #e6ecf6;border-radius:14px;padding:1rem}
@@ -487,16 +505,49 @@ function fen_grafica(array $serie, string $color, array $oniAnual, string $titul
                 <option value="alerta">Solo los que están en alerta</option>
             </select>
 
-            <div class="form-check form-switch mb-0 ms-1">
-                <input class="form-check-input" type="checkbox" id="aguaVerEstaciones" checked>
-                <label class="form-check-label small" for="aguaVerEstaciones">Estaciones</label>
-            </div>
-            <div class="form-check form-switch mb-0 ms-1">
-                <input class="form-check-input" type="checkbox" id="aguaVerCalor" checked>
-                <label class="form-check-label small" for="aguaVerCalor">Focos de calor</label>
-            </div>
             <button type="button" class="btn btn-sm btn-danger ms-auto" id="fenBtnReportar">
                 <i class="fa-solid fa-triangle-exclamation me-1" aria-hidden="true"></i> Reportar una alerta
+            </button>
+        </div>
+
+        <?php
+        /* Todo lo que se dibuja encima del mapa se enciende y se apaga desde
+           aquí. Antes la mitad de los interruptores vivía dentro del mapa, en
+           un control de Leaflet plegado que casi nadie abría, y los embalses no
+           tenían ninguno: con 123 municipios, 36 estaciones, 47 focos activos y
+           hasta 123 círculos de calor encima, el mapa se volvía ilegible y no
+           había forma cómoda de quitar nada.
+
+           Arrancan apagadas las capas que más tapan —el calor acumulado, los
+           reportes y los bomberos— y encendidas las tres que explican el estado
+           del agua, que es de lo que trata el panel. */
+        $fenCapas = [
+            ['id' => 'aguaVerEmbalses',   'nombre' => 'Embalses',         'color' => '#0ea5e9', 'inicial' => true],
+            ['id' => 'aguaVerEstaciones', 'nombre' => 'Estaciones',       'color' => '#16a34a', 'inicial' => true],
+            ['id' => 'aguaVerFocos',      'nombre' => 'Focos activos', 'color' => '#dc2626', 'inicial' => true],
+            ['id' => 'aguaVerCalor',      'nombre' => 'Calor acumulado',  'color' => '#ea580c', 'inicial' => false],
+            ['id' => 'aguaVerReportes',   'nombre' => 'Reportes', 'color' => '#7c3aed', 'inicial' => false],
+            ['id' => 'aguaVerBomberos',   'nombre' => 'Bomberos', 'color' => '#0ea5e9', 'inicial' => false],
+        ];
+        ?>
+        <div class="fen-map-tools fen-capas" role="group" aria-label="Capas que se ven en el mapa">
+            <span class="small fw-semibold">Capas del mapa</span>
+            <?php foreach ($fenCapas as $c): ?>
+                <div class="form-check form-switch mb-0">
+                    <input class="form-check-input fen-capa-check" type="checkbox"
+                           id="<?= $c['id'] ?>" <?= $c['inicial'] ? 'checked' : '' ?>>
+                    <label class="form-check-label small" for="<?= $c['id'] ?>">
+                        <i class="fen-capa-punto" style="background:<?= $c['color'] ?>"></i>
+                        <?= htmlspecialchars($c['nombre']) ?>
+                        <span class="fen-capa-cuenta" id="<?= $c['id'] ?>Cuenta"></span>
+                    </label>
+                </div>
+            <?php endforeach; ?>
+            <button type="button" class="btn btn-sm btn-outline-secondary ms-auto" id="aguaCapasNinguna">
+                Solo el mapa base
+            </button>
+            <button type="button" class="btn btn-sm btn-outline-secondary" id="aguaCapasTodas">
+                Mostrar todas
             </button>
         </div>
 
@@ -1035,7 +1086,13 @@ function fen_grafica(array $serie, string $color, array $oniAnual, string $titul
         function pintarCalorAgua() {
             if (!agua.capaCalor) { return; }
             agua.capaCalor.clearLayers();
-            if (!document.getElementById('aguaVerCalor').checked) { return; }
+            if (!document.getElementById('aguaVerCalor').checked) {
+                // Apagada no es lo mismo que vacía: sin esto el pie decía «Sin
+                // focos de calor en el periodo» cuando solo estaba oculta.
+                var apag = document.getElementById('aguaCalorTotal');
+                if (apag) { apag.textContent = 'Capa de calor acumulado apagada'; }
+                return;
+            }
             var suma = focosDelPeriodo();
             var total = 0;
             Object.keys(suma).forEach(function (dane) {
@@ -1100,11 +1157,69 @@ function fen_grafica(array $serie, string $color, array $oniAnual, string $titul
             repintar();
         });
 
-        document.getElementById('aguaVerEstaciones').addEventListener('change', function () {
-            if (!agua.capaEst) { return; }
-            if (this.checked) { agua.capaEst.addTo(agua.mapa); }
-            else { agua.mapa.removeLayer(agua.capaEst); }
+        /* ---- capas del mapa ----
+           Un solo sitio decide qué se ve encima del mapa. Los grupos no existen
+           todos al mismo tiempo —los de novedades llegan con la consulta al
+           API—, así que se piden por función y se vuelve a aplicar cuando se
+           crean. */
+        agua.capas = [
+            { id: 'aguaVerEmbalses',   grupo: function () { return agua.capaEmbalses; } },
+            { id: 'aguaVerEstaciones', grupo: function () { return agua.capaEst; } },
+            { id: 'aguaVerFocos',      grupo: function () { return estado.capaFocos; } },
+            { id: 'aguaVerCalor',      grupo: function () { return agua.capaCalor; },
+              vaciaSiApagada: true, despues: function () { pintarCalorAgua(); } },
+            { id: 'aguaVerReportes',   grupo: function () { return estado.capaReportes; } },
+            { id: 'aguaVerBomberos',   grupo: function () { return estado.capaBomberos; } }
+        ];
+
+        function aplicarCapa(c) {
+            var casilla = document.getElementById(c.id);
+            var grupo = c.grupo();
+            if (casilla && grupo && agua.mapa) {
+                if (casilla.checked) {
+                    if (!agua.mapa.hasLayer(grupo)) { grupo.addTo(agua.mapa); }
+                } else if (agua.mapa.hasLayer(grupo)) {
+                    agua.mapa.removeLayer(grupo);
+                }
+            }
+            // El conteo se lee después de `despues`, no antes: el calor
+            // acumulado se dibuja ahí mismo y leyéndolo antes el número iba
+            // siempre un clic por detrás.
+            if (c.despues) { c.despues(); }
+            var cuenta = document.getElementById(c.id + 'Cuenta');
+            if (cuenta) {
+                var n = grupo ? grupo.getLayers().length : null;
+                // El calor acumulado se vacía al apagarse —se vuelve a calcular
+                // al encenderlo—, así que apagado no se sabe cuántos son y es
+                // mejor no decir «(0)», que se leería como «no hay focos».
+                var incierto = (c.vaciaSiApagada && casilla && !casilla.checked);
+                cuenta.textContent = (n === null || incierto) ? '' : '(' + n + ')';
+                cuenta.title = (n === 0 && !incierto) ? 'Hoy no hay datos en esta capa' : '';
+            }
+        }
+
+        // Pública dentro del módulo: las capas de novedades la llaman al
+        // terminar de cargarse para que el interruptor y el conteo cuadren.
+        agua.aplicarCapas = function () { agua.capas.forEach(aplicarCapa); };
+
+        agua.capas.forEach(function (c) {
+            var casilla = document.getElementById(c.id);
+            if (casilla) {
+                casilla.addEventListener('change', function () { aplicarCapa(c); });
+            }
         });
+
+        function marcarTodas(valor) {
+            agua.capas.forEach(function (c) {
+                var casilla = document.getElementById(c.id);
+                if (casilla) { casilla.checked = valor; }
+            });
+            agua.aplicarCapas();
+        }
+        document.getElementById('aguaCapasNinguna')
+            .addEventListener('click', function () { marcarTodas(false); });
+        document.getElementById('aguaCapasTodas')
+            .addEventListener('click', function () { marcarTodas(true); });
 
         var sel = document.getElementById('aguaCapa');
         if (sel) {
@@ -1310,10 +1425,20 @@ function fen_grafica(array $serie, string $color, array $oniAnual, string $titul
                 + (e.valor === null ? 'Sin lectura reciente'
                     : 'Nivel ' + e.valor + ' ' + e.unidad)).addTo(agua.capaEst);
         });
-        agua.capaEst.addTo(agua.mapa);
+        agua.capaCalor = L.layerGroup();
 
-        agua.capaCalor = L.layerGroup().addTo(agua.mapa);
-        document.getElementById('aguaVerCalor').addEventListener('change', pintarCalorAgua);
+        // Los embalses también van en su propia capa: eran los únicos puntos
+        // que no se podían apagar porque se añadían sueltos al mapa.
+        agua.capaEmbalses = L.layerGroup();
+        (datos.embalses || []).forEach(function (b) {
+            L.circleMarker([b.lat, b.lon], {
+                radius: 11, fillColor: '#0ea5e9', color: '#ffffff', weight: 2, fillOpacity: 0.95
+            }).bindPopup('<strong>' + b.nombre + '</strong><br>Volumen útil: '
+                + (b.pct === null ? 'sin dato' : b.pct + ' %')
+                + (b.fecha ? '<br>Corte: ' + b.fecha : '')).addTo(agua.capaEmbalses);
+        });
+
+        agua.aplicarCapas();
 
         // El histórico del calor se necesita en cualquier capa, no solo en la
         // de sequía, así que se pide apenas se abre el mapa.
@@ -1323,14 +1448,6 @@ function fen_grafica(array $serie, string $color, array $oniAnual, string $titul
         // Se encadena aquí en vez de esperar por reintentos: así no depende de
         // cuánto tarden Leaflet y los límites municipales en llegar.
         iniciarMapa();
-
-        (datos.embalses || []).forEach(function (b) {
-            L.circleMarker([b.lat, b.lon], {
-                radius: 11, fillColor: '#0ea5e9', color: '#ffffff', weight: 2, fillOpacity: 0.95
-            }).bindPopup('<strong>' + b.nombre + '</strong><br>Volumen útil: '
-                + (b.pct === null ? 'sin dato' : b.pct + ' %')
-                + (b.fecha ? '<br>Corte: ' + b.fecha : '')).addTo(agua.mapa);
-        });
     }
 
     /* ---- mapa ---- */
@@ -1361,14 +1478,14 @@ function fen_grafica(array $serie, string $color, array $oniAnual, string $titul
         if (estado.mapa) { return; }
         estado.mapa = agua.mapa;
 
-        estado.capaFocos = L.layerGroup().addTo(estado.mapa);
-        estado.capaReportes = L.layerGroup().addTo(estado.mapa);
+        // Estas tres capas tenían su propio control de Leaflet, plegado en una
+        // esquina del mapa. Ahora sus interruptores están arriba, junto a los
+        // demás, así que el control sobraba: dos sitios distintos para apagar
+        // cosas del mismo mapa.
+        estado.capaFocos = L.layerGroup();
+        estado.capaReportes = L.layerGroup();
         estado.capaBomberos = L.layerGroup();
-        L.control.layers(null, {
-            'Focos de calor activos': estado.capaFocos,
-            'Reportes ciudadanos': estado.capaReportes,
-            'Cuerpos de bomberos': estado.capaBomberos
-        }, { collapsed: true }).addTo(estado.mapa);
+        if (agua.aplicarCapas) { agua.aplicarCapas(); }
 
         estado.mapa.on('click', function (e) {
             // Solo se fija un punto cuando el formulario de reporte está abierto.
@@ -1440,6 +1557,11 @@ function fen_grafica(array $serie, string $color, array $oniAnual, string $titul
             if (avSin) { avSin.style.display = (d.focos_en_boyaca === 0) ? '' : 'none'; }
             f.textContent = resumen + ' Histórico: ' + fuentes + '.' +
                 ((d.avisos && d.avisos.length) ? ' ' + d.avisos.join(' ') : '');
+
+            // Las capas ya tienen contenido: se vuelve a aplicar el estado de
+            // los interruptores para que se dibujen las encendidas y el conteo
+            // de cada una deje de estar vacío.
+            if (agua.aplicarCapas) { agua.aplicarCapas(); }
 
             // El mapa de calor va al final: si el lienzo aún no está listo no debe
             // impedir que se vean los focos, los reportes ni los bomberos.
