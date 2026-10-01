@@ -28,6 +28,7 @@ import collections
 import json
 import os
 import re
+import shutil
 import unicodedata
 import warnings
 
@@ -74,7 +75,11 @@ def resolver_hoja(nombre):
         kt = tokens(k)
         if not kt or not nt:
             continue
-        j = len(nt & kt) / len(nt | kt)
+        # «Presupuestal» y «Presup» son la misma palabra abreviada: cuentan como
+        # coincidencia si una empieza por la otra.
+        comunes = sum(1 for a in nt if any(a.startswith(b) or b.startswith(a) for b in kt))
+        j = comunes / max(len(nt | kt) - comunes + comunes, 1)
+        j = max(j, len(nt & kt) / len(nt | kt))
         if j > mejor[0]:
             mejor = (j, real)
     return mejor[1] if mejor[0] >= 0.34 else None
@@ -121,6 +126,46 @@ def col_dimension(df, usadas):
     return mejor[1]
 
 
+def solo_boyaca(df):
+    """
+    Deja únicamente las filas del departamento.
+
+    Varias hojas traen todos los departamentos y el total nacional. Sin este
+    recorte la serie sumaría al país entero y el indicador diría cualquier cosa.
+    """
+    for c in df.columns:
+        if norm(c) in ('departamento', 'dpto', 'nombre departamento'):
+            v = df[c].astype(str).apply(norm)
+            if v.str.contains('boyaca').any():
+                return df[v.str.contains('boyaca')]
+    return df
+
+
+def filtrar_indicador(df, nombre):
+    """
+    Aísla las filas del indicador pedido en las hojas de formato largo.
+
+    Hojas como «ECV HCAMP» apilan decenas de indicadores distintos en la misma
+    tabla y los distinguen por una columna «INDICADOR». Si no se filtra, los
+    dieciocho indicadores que salen de esa hoja quedarían con la misma gráfica.
+    """
+    col = next((c for c in df.columns if norm(c) in ('indicador', 'nombre indicador')), None)
+    if col is None:
+        return df, None
+    objetivo = tokens(nombre)
+    mejor = (0.0, None)
+    for v in df[col].dropna().astype(str).unique():
+        vt = tokens(v)
+        if not vt:
+            continue
+        j = len(objetivo & vt) / len(objetivo | vt)
+        if j > mejor[0]:
+            mejor = (j, v)
+    if mejor[0] >= 0.3 and mejor[1] is not None:
+        return df[df[col].astype(str) == mejor[1]], mejor[1]
+    return df, None
+
+
 def unidades_mezcladas(df, dim):
     """
     ¿Las filas están en unidades distintas?
@@ -146,6 +191,25 @@ def unidades_mezcladas(df, dim):
     return False
 
 
+def unidad_unica(df):
+    """Devuelve la unidad de la hoja y si hay que promediar en vez de sumar.
+
+    Las hojas que traen columna de unidad lo dicen de frente: «Miles», «Pesos»,
+    «Promedio», «Porcentaje». Sumar los dos primeros tiene sentido; sumar los
+    dos ultimos no, porque un promedio de promedios se calcula promediando y un
+    porcentaje de categorias que no son partes de un mismo total no suma 100.
+    """
+    for c in df.columns:
+        if 'unidad' in norm(c):
+            vals = df[c].dropna().astype(str).str.strip()
+            vals = vals[vals.str.lower().isin(('nan', '')) == False]
+            if vals.nunique() == 1:
+                u = vals.iloc[0]
+                return u, any(k in norm(u) for k in
+                              ('promedio', 'porcentaje', 'indice', 'tasa', 'puntaje', 'razon'))
+    return None, False
+
+
 def anios(df, c):
     num = pd.to_numeric(df[c], errors='coerce')
     if num.between(1990, 2035).mean() > 0.4:
@@ -155,6 +219,26 @@ def anios(df, c):
 
 def escribir(p, c):
     open(p, 'w', encoding='utf-8', newline='\n').write(c)
+
+
+def campo(v):
+    """Encierra en comillas lo que lleve coma o comillas. Hay categorías del
+    DANE que las traen dentro («Negro/a, mulato/a, afrodescendiente…») y sin
+    comillas parten la fila en columnas que no existen."""
+    t = str(v).strip()
+    if any(ch in t for ch in ',"\n'):
+        return '"' + t.replace('"', '""') + '"'
+    return t
+
+
+def unificar(serie):
+    """Junta las categorías que solo se diferencian en mayúsculas o tildes
+    («Total Personas» y «Total personas» son la misma), quedándose con la
+    primera forma que aparece."""
+    canon = {}
+    for v in serie:
+        canon.setdefault(norm(v), str(v).strip())
+    return serie.map(lambda v: canon[norm(v)])
 
 
 def ficha(pares):
@@ -229,12 +313,12 @@ def main():
         nombre = str(r['Nombre indicador']).strip()
         carpeta = os.path.join(OUT, cod)
         os.makedirs(carpeta, exist_ok=True)
-        escribir(os.path.join(carpeta, 'indicador.info'), ficha([
+        info_indicador = ficha([
             ('Categoría', str(r['Categoría']).strip()),
             ('Descripción', nombre), ('Titulo', nombre),
             ('Subcategoría', str(r['Categoría']).strip()), ('Etiquetas', 'ND'),
             ('Fuentes', str(r['Fuente']).strip() or 'BASE DX OBS ECONÓMICO'),
-        ]))
+        ])
 
         hoja = resolver_hoja(r['Nombre hoja base dx'])
         if not hoja:
@@ -242,6 +326,11 @@ def main():
             continue
         try:
             d = leer(hoja)
+            d = solo_boyaca(d)
+            d, fila_ind = filtrar_indicador(d, nombre)
+            if len(d) == 0:
+                pendientes.append((cod, nombre[:40], f'sin filas tras filtrar en {hoja}'))
+                continue
             tipos = []
             ca, cv = col_anio(d), col_valor(d)
             if ca:
@@ -254,14 +343,25 @@ def main():
                     # total: sumar toneladas con quilates no significa nada.
                     mezcla = unidades_mezcladas(s, cd)
                     if not mezcla:
-                        g = (s.assign(_v=pd.to_numeric(s[cv], errors='coerce').fillna(0))
-                             .groupby('_a')['_v'].sum() if cv else s.groupby('_a').size())
+                        # Un promedio, un porcentaje o un índice no se suman: la
+                        # suma de los años promedio de educación por grupo de
+                        # edad daba 30,8 años de escolaridad.
+                        unidad, promediar = unidad_unica(s)
+                        if cv:
+                            gr = s.assign(_v=pd.to_numeric(s[cv], errors='coerce')
+                                          .fillna(0)).groupby('_a')['_v']
+                            g = gr.mean() if promediar else gr.sum()
+                        else:
+                            g = s.groupby('_a').size()
+                        etiqueta = 'Promedio' if promediar else 'Valor'
                         escribir(os.path.join(carpeta, '1.csv'),
-                                 'Año,Valor\n' + ''.join(f'{int(a)},{v:g}\n' for a, v in g.items()))
+                                 f'Año,{etiqueta}\n'
+                                 + ''.join(f'{int(a)},{v:g}\n' for a, v in g.items()))
                         escribir(os.path.join(carpeta, '1.info'), ficha([
                             ('Titulo', f'{nombre} — serie anual'),
-                            ('Descripción', 'Evolución anual.'),
-                            ('Vertical', 'Valor'), ('Horizontal', 'Año')]))
+                            ('Descripción', 'Promedio de las categorías de la fuente, año por '
+                                            'año.' if promediar else 'Evolución anual.'),
+                            ('Vertical', unidad or etiqueta), ('Horizontal', 'Año')]))
                         tipos.append('line')
 
                     # Con unidades mezcladas tampoco sirve una sola gráfica: en
@@ -272,7 +372,8 @@ def main():
                     if mezcla and cd and cu:
                         for unidad in sorted(s[cu].dropna().astype(str).str.strip().unique()):
                             su = s[s[cu].astype(str).str.strip() == unidad]
-                            su = su.assign(_d=su[cd].fillna('Sin dato').astype(str).str.strip())
+                            su = su.assign(_d=unificar(
+                                su[cd].fillna('Sin dato').astype(str).str.strip()))
                             tab = (su.assign(_v=pd.to_numeric(su[cv], errors='coerce').fillna(0))
                                    .pivot_table(index='_a', columns='_d', values='_v',
                                                 aggfunc='sum', fill_value=0)
@@ -283,7 +384,7 @@ def main():
                                 continue
                             n = len(tipos) + 1
                             escribir(os.path.join(carpeta, f'{n}.csv'),
-                                     'Año,' + ','.join(map(str, cols)) + '\n'
+                                     'Año,' + ','.join(campo(c) for c in cols) + '\n'
                                      + ''.join(str(int(a)) + ',' +
                                                ','.join(f'{tab.loc[a, c]:g}' for c in cols) + '\n'
                                                for a in tab.index))
@@ -296,7 +397,7 @@ def main():
                         cd = None       # ya quedó cubierto por unidad
 
                     if cd:
-                        s['_d'] = s[cd].fillna('Sin dato').astype(str).str.strip()
+                        s['_d'] = unificar(s[cd].fillna('Sin dato').astype(str).str.strip())
                         tab = (s.assign(_v=pd.to_numeric(s[cv], errors='coerce').fillna(0))
                                .pivot_table(index='_a', columns='_d', values='_v',
                                             aggfunc='sum', fill_value=0)
@@ -306,7 +407,7 @@ def main():
                         if cols:
                             n = len(tipos) + 1
                             escribir(os.path.join(carpeta, f'{n}.csv'),
-                                     'Año,' + ','.join(map(str, cols)) + '\n'
+                                     'Año,' + ','.join(campo(c) for c in cols) + '\n'
                                      + ''.join(str(int(a)) + ',' +
                                                ','.join(f'{tab.loc[a, c]:g}' for c in cols) + '\n'
                                                for a in tab.index))
@@ -329,7 +430,8 @@ def main():
                          .sort_values(ascending=False).head(12))
                     if len(g):
                         escribir(os.path.join(carpeta, '1.csv'),
-                                 'Municipio,Valor\n' + ''.join(f'{k},{v:g}\n' for k, v in g.items()))
+                                 'Municipio,Valor\n'
+                                 + ''.join(f'{campo(k)},{v:g}\n' for k, v in g.items()))
                         escribir(os.path.join(carpeta, '1.info'), ficha([
                             ('Titulo', f'{nombre} — por municipio'),
                             ('Descripción', 'Principales municipios.'),
@@ -337,6 +439,7 @@ def main():
                         tipos.append('column')
 
             if tipos:
+                escribir(os.path.join(carpeta, 'indicador.info'), info_indicador)
                 escribir(os.path.join(carpeta, 'display.js'), display_js(tipos))
                 hechos += 1
                 print(f'   {cod}  {nombre[:46]:48} hoja «{hoja[:22]}»  {len(tipos)} gráfica(s)')
@@ -344,6 +447,13 @@ def main():
                 pendientes.append((cod, nombre[:40], 'sin datos extraíbles de ' + hoja))
         except Exception as e:
             pendientes.append((cod, nombre[:40], f'ERROR {type(e).__name__}: {str(e)[:50]}'))
+
+    # Las carpetas de los indicadores que no se resolvieron se borran: si se
+    # dejan, el portal los lista como indicadores sin una sola gráfica, que es
+    # justo el problema que arrastran los nueve de Social y Género.
+    for d in sorted(os.listdir(OUT)):
+        if not os.path.isfile(os.path.join(OUT, d, 'display.js')):
+            shutil.rmtree(os.path.join(OUT, d), ignore_errors=True)
 
     print(f'\ncon datos: {hechos}   sin resolver: {len(pendientes)}')
     for c, n, m in pendientes:

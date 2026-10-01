@@ -62,3 +62,7 @@ C:xampphtdocs*
 # Clave de NASA FIRMS (no versionada)
 website/config/fenomenos.local.php
 website/data/fenomenos/cache/
+
+# Staging de generación de indicadores: la salida publicada va en website/indicador
+website/indicador_staging_*/
+scripts/__pycache__/

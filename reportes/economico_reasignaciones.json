@@ -1,0 +1,62 @@
+[
+ {
+  "codigo_maestro": "1112",
+  "codigo_publicado": "1166",
+  "titulo": "Personas de 15 años y más que usan internet por frecuencia de uso",
+  "ocupado_por": "Inventario avicola del departamento"
+ },
+ {
+  "codigo_maestro": "1113",
+  "codigo_publicado": "1167",
+  "titulo": "Promedio de años de educación de las personas de 15 años y más",
+  "ocupado_por": "Inventario bovino del departamento"
+ },
+ {
+  "codigo_maestro": "1114",
+  "codigo_publicado": "1168",
+  "titulo": "Calificación promedio de satisfacción con la vida en general y otros aspectos",
+  "ocupado_por": "Inventario otras especies del departamento"
+ },
+ {
+  "codigo_maestro": "1116",
+  "codigo_publicado": "1169",
+  "titulo": "Población de 15 años y más por sexo, según actividad principal la semana anterior a la aplicación de la encuesta",
+  "ocupado_por": "Departamento de procedencia turistas"
+ },
+ {
+  "codigo_maestro": "1119",
+  "codigo_publicado": "1170",
+  "titulo": "Viviendas, hogares y personas",
+  "ocupado_por": "Llegada de visitantes extranjeros no residentes por departamento destino"
+ },
+ {
+  "codigo_maestro": "1120",
+  "codigo_publicado": "1171",
+  "titulo": "Hogares por número de personas",
+  "ocupado_por": "Motivo del viaje (naturaleza, aventura, cultural, bienestar, trabajo y otros)"
+ },
+ {
+  "codigo_maestro": "1125",
+  "codigo_publicado": "1172",
+  "titulo": "Hogares por tipo de tenencia de la vivienda",
+  "ocupado_por": "Tiempo de permanencia"
+ },
+ {
+  "codigo_maestro": "1126",
+  "codigo_publicado": "1173",
+  "titulo": "Hogares por los bienes y servicios que poseen",
+  "ocupado_por": "Tipo de alojamiento"
+ },
+ {
+  "codigo_maestro": "1127",
+  "codigo_publicado": "1174",
+  "titulo": "Hogares con servicio de internet, por tipo de conexión",
+  "ocupado_por": "Tipo de transporte"
+ },
+ {
+  "codigo_maestro": "1128",
+  "codigo_publicado": "1175",
+  "titulo": "Hogares por opinión del jefe/a o del cónyuge sobre los ingresos de su hogar",
+  "ocupado_por": "Variaciones anuales del personal total y por categoria"
+ }
+]

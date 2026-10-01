@@ -1,0 +1,5 @@
+Tipo:Gráfico
+Titulo:Cuentas Por Pagar y Reservas Presupuestales Municipales — total departamental por año
+Descripción:Suma de los municipios de Boyacá. No se muestra 2025: la fuente aún no reporta todos los municipios. Se toma únicamente la fila TOTAL de cada municipio: el formulario trae además el detalle por concepto, y sumarlo todo contaría dos veces el mismo dinero.
+Vertical:Millones de pesos
+Horizontal:Año
