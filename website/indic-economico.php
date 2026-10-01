@@ -317,8 +317,8 @@ include 'include/header.php';
                         <ul class="icon-list-items">
                             <li class="icon-list-item"><span class="icon">📚</span><a href="./indicador.php?id=1110"> Asistencia escolar 15–21 años</a></li>
                             <li class="icon-list-item"><span class="icon">🌐</span><a href="./indicador.php?id=1111"> Acceso a internet por tipo de conexión</a></li>
-                            <li class="icon-list-item"><span class="icon">📶</span><a href="./indicador.php?id=1112"> Uso de internet por frecuencia</a></li>
-                            <li class="icon-list-item"><span class="icon">🎓</span><a href="./indicador.php?id=1113"> Promedio de años de educación</a></li>
+                            <li class="icon-list-item"><span class="icon">📶</span><a href="./indicador.php?id=1166"> Uso de internet por frecuencia</a></li>
+                            <li class="icon-list-item"><span class="icon">🎓</span><a href="./indicador.php?id=1167"> Promedio de años de educación</a></li>
                         </ul>
                     </div>
                 </div>
@@ -329,9 +329,9 @@ include 'include/header.php';
                     </button>
                     <div class="accordion-content">
                         <ul class="icon-list-items">
-                            <li class="icon-list-item"><span class="icon">🙂</span><a href="./indicador.php?id=1114"> Satisfacción con la vida y otros aspectos</a></li>
+                            <li class="icon-list-item"><span class="icon">🙂</span><a href="./indicador.php?id=1168"> Satisfacción con la vida y otros aspectos</a></li>
                             <li class="icon-list-item"><span class="icon">👨‍👩‍👧</span><a href="./indicador.php?id=1115"> Hogares según sexo del jefe/a y presencia de hijos</a></li>
-                            <li class="icon-list-item"><span class="icon">👥</span><a href="./indicador.php?id=1116"> Actividad principal por sexo (15 años y más)</a></li>
+                            <li class="icon-list-item"><span class="icon">👥</span><a href="./indicador.php?id=1169"> Actividad principal por sexo (15 años y más)</a></li>
                         </ul>
                     </div>
                 </div>
@@ -342,7 +342,8 @@ include 'include/header.php';
                     </button>
                     <div class="accordion-content">
                         <ul class="icon-list-items">
-                            <li class="icon-list-item"><span class="icon">🏛️</span><a href="./indicador.php?id=1600"> Medición de Desempeño Municipal (MDM)</a></li>
+                            <li class="icon-list-item"><span class="icon">🏛️</span><a href="./indicador.php?id=1506"> Medición de Desempeño Municipal (MDM)</a></li>
+                            <li class="icon-list-item"><span class="icon">🧩</span><a href="./indicador.php?id=1509"> Grupo de capacidades iniciales del municipio</a></li>
                         </ul>
                     </div>
                 </div>
@@ -382,7 +383,7 @@ include 'include/header.php';
                     <div class="accordion-content">
                         <ul class="icon-list-items">
                             <li class="icon-list-item"><span class="icon">💰</span><a href="./indicador.php?id=1500"> Ingresos totales municipales</a></li>
-                            <li class="icon-list-item"><span class="icon">💸</span><a href="./indicador.php?id=1501"> Gastos totales municipales</a></li>
+                            <li class="icon-list-item"><span class="icon">💸</span><a href="./indicador.php?id=1501"> Gastos de funcionamiento municipales</a></li>
                         </ul>
                     </div>
                 </div>
@@ -408,6 +409,11 @@ include 'include/header.php';
                         <ul class="icon-list-items">
                             <li class="icon-list-item"><span class="icon">⚖️</span><a href="./indicador.php?id=1503"> Indicador de racionalidad del gasto (Ley 617)</a></li>
                             <li class="icon-list-item"><span class="icon">📊</span><a href="./indicador.php?id=1504"> Índice de Desempeño Fiscal (IDF)</a></li>
+                            <li class="icon-list-item"><span class="icon">🏷️</span><a href="./indicador.php?id=1507"> Categoría de ley de los municipios</a></li>
+                            <li class="icon-list-item"><span class="icon">📶</span><a href="./indicador.php?id=1508"> Rango de clasificación según el IDF</a></li>
+                            <li class="icon-list-item"><span class="icon">📈</span><a href="./indicador.php?id=1510"> Variación del índice de eficacia municipal</a></li>
+                            <li class="icon-list-item"><span class="icon">🏦</span><a href="./indicador.php?id=1511"> Viabilidad del ICLD (Ley 617)</a></li>
+                            <li class="icon-list-item"><span class="icon">✅</span><a href="./indicador.php?id=1512"> Cumplimiento de requisitos legales del SGP</a></li>
                         </ul>
                     </div>
                 </div>
