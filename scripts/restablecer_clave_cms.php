@@ -24,16 +24,35 @@ if (PHP_SAPI !== 'cli') {
     exit("Este script solo se ejecuta por consola.\n");
 }
 
-$raiz = dirname(__DIR__);
-$config = $raiz . '/website/config/database.php';
-if (!is_file($config)) {
-    // En el servidor el docroot es website/, así que el script puede quedar al lado.
-    $config = $raiz . '/config/database.php';
+/* El script tiene que servir en tres sitios distintos: en el repositorio
+   (donde el sitio cuelga de website/), en el docroot del servidor (donde el
+   contenido de website/ está en la raíz) y dentro de una subcarpeta de ese
+   docroot. Importa cuál se encuentra: las credenciales reales están en
+   `config/database.local.php`, que NO se versiona y solo existe en el docroot,
+   así que el script debe ejecutarse allí. */
+$candidatos = [];
+foreach ([__DIR__, dirname(__DIR__), getcwd()] as $base) {
+    $candidatos[] = $base . '/config/database.php';
+    $candidatos[] = $base . '/website/config/database.php';
 }
-if (!is_file($config)) {
-    exit("No encuentro config/database.php. Ejecute el script desde la raíz del sitio.\n");
+$config = null;
+foreach ($candidatos as $c) {
+    if (is_file($c)) {
+        $config = $c;
+        break;
+    }
+}
+if ($config === null) {
+    fwrite(STDERR, "No encuentro config/database.php. Copie este archivo al docroot del\n"
+        . "sitio y ejecútelo desde allí, que es donde está database.local.php.\n");
+    exit(1);
 }
 require_once $config;
+
+if (!is_file(dirname($config) . '/database.local.php')) {
+    fwrite(STDOUT, "[aviso] No hay database.local.php junto a la configuración. Si esto es\n"
+        . "        el clon del repositorio y no el docroot, la conexión va a fallar.\n\n");
+}
 
 $pdo = cms_pdo();
 if (!$pdo) {
