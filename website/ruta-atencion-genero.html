@@ -656,6 +656,19 @@
     font-style: italic;
   }
   .paso-ruta .normativa::before { content: "⚖ "; font-style: normal; margin-right: 4px; }
+  .paso-ruta .paso-enlace {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 14px;
+    background: var(--morado);
+    color: #fff;
+    border-radius: 999px;
+    font-size: 0.82em;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .paso-ruta .paso-enlace::before { content: "📍 "; }
+  .paso-ruta .paso-enlace:hover { filter: brightness(1.15); }
   .paso-ruta .urgencia {
     margin-top: 10px;
     padding: 8px 12px;
@@ -910,6 +923,13 @@ const VIOLENCIAS_COMUN = {
   psicologica: { icono: '💬', titulo: 'Verbal, psicológica o económica', desc: 'Insultos, control, amenazas' }
 };
 
+// La mujer suma la violencia laboral, que es una de las cuatro puertas de
+// entrada de la ruta y tiene autoridad propia: el Ministerio del Trabajo.
+const VIOLENCIAS_COMUN_MUJER = {
+  ...VIOLENCIAS_COMUN,
+  laboral: { icono: '🏢', titulo: 'Laboral', desc: 'Acoso, hostigamiento o agresión en el entorno de trabajo' }
+};
+
 const VIOLENCIAS_INST_MUJER = {
   fisica: { icono: '✊', titulo: 'Física', desc: 'Golpes, lesiones, daño físico' },
   sexual: { icono: '⚠', titulo: 'Sexual', desc: 'Activación Código Verde (Res. 459/2012)' },
@@ -1039,6 +1059,20 @@ const P = {
     { tipo: 'judicial', titulo: 'Juez de Conocimiento', desc: 'Adelanta el juicio oral y determina la responsabilidad penal.', tags: ['Juicio'] },
     { tipo: 'judicial', titulo: 'Sentencia o Preclusión', desc: 'Cierre del proceso penal: condena, absolución o preclusión.', tags: ['Cierre'] }
   ],
+  orientacionApoyo: () => ({
+    tipo: 'otro',
+    titulo: 'Orientación y apoyo',
+    desc: 'Tienes derecho a recibir información clara, completa, veraz y oportuna sobre tus derechos. Los municipios brindan información y asesoría a las mujeres víctimas.',
+    normativa: 'Artículos 8 y 20 de la Ley 1257 de 2008',
+    tags: ['Derecho a información']
+  }),
+  atencionSaludPsicologica: () => ({
+    tipo: 'medico',
+    titulo: 'Atención en salud',
+    desc: 'La atención para estos tipos de violencia debe ser integral y sensible: valoración por psicología, intervención en crisis e información sobre tus derechos. La institución reporta el caso a las entidades competentes.',
+    enlace: { url: 'mapaESE.html', texto: 'Ver el mapa de ESE del departamento' },
+    tags: ['Salud mental', 'Reporte obligatorio']
+  }),
   inspeccionPolicia: () => ({
     tipo: 'policia',
     titulo: 'Inspección de Policía / Convivencia y Paz',
@@ -1335,6 +1369,7 @@ function rutaComunMujerFisicaDentro() {
       tipo: 'medico',
       titulo: 'Atención Médica como urgencia',
       desc: 'Acude de inmediato a hospital o centro de salud si hay heridas, signos de trauma, miedo por tu vida, o necesidad de certificar lesiones.',
+      enlace: { url: 'mapaESE.html', texto: 'Ver el mapa de ESE del departamento' },
       urgencia: 'No se necesita denuncia previa. Es un derecho constitucional.',
       detalles: [
         'Atención gratuita - sin copagos (Sentencia T-735/2017).',
@@ -1378,15 +1413,18 @@ function rutaComunMujerFisicaDentro() {
 
 function rutaComunMujerFisicaFuera() {
   return [
+    P.orientacionApoyo(),
     {
       tipo: 'medico',
       titulo: 'Atención Médica integral',
       desc: 'Acude al centro de salud más cercano. Es un derecho como urgencia médica.',
+      enlace: { url: 'mapaESE.html', texto: 'Ver el mapa de ESE del departamento' },
       tags: ['Salud']
     },
     P.valoracionMedicoLegal(),
     P.policiaNacional(),
     P.inspeccionPolicia(),
+    ...P.evaluaRiesgoMedida(false),
     P.fiscaliaUri(),
     ...P.jueces()
   ];
@@ -1394,9 +1432,11 @@ function rutaComunMujerFisicaFuera() {
 
 function rutaComunMujerSexual() {
   return [
+    P.orientacionApoyo(),
     {
       tipo: 'medico',
       titulo: 'Atención Médica - URGENCIA siempre',
+      enlace: { url: 'mapaESE.html', texto: 'Ver el mapa de ESE del departamento' },
       desc: 'Todo caso de violencia sexual es una urgencia médica, sin importar el tiempo transcurrido.',
       urgencia: '¡Siempre te vamos a creer! No se necesita denuncia previa.',
       tags: ['Código Verde', 'Urgencia']
@@ -1475,7 +1515,10 @@ function rutaComunMujerSexual() {
 
 function rutaComunMujerPsicologicaDentro() {
   return [
+    P.orientacionApoyo(),
+    P.atencionSaludPsicologica(),
     P.comisariaFamilia(),
+    ...P.evaluaRiesgoMedida(false),
     P.fiscaliaUri(),
     {
       tipo: 'otro',
@@ -1489,6 +1532,8 @@ function rutaComunMujerPsicologicaDentro() {
 
 function rutaComunMujerPsicologicaFuera() {
   return [
+    P.orientacionApoyo(),
+    P.atencionSaludPsicologica(),
     {
       tipo: 'decision',
       titulo: '¿En qué escenario ocurrió?',
@@ -1515,6 +1560,35 @@ function rutaComunMujerPsicologicaFuera() {
       tags: ['Ministerio Público']
     },
     P.inspeccionPolicia(),
+    P.fiscaliaUri(),
+    ...P.jueces()
+  ];
+}
+
+function rutaComunMujerLaboral() {
+  return [
+    P.orientacionApoyo(),
+    {
+      tipo: 'otro',
+      titulo: 'Ministerio del Trabajo',
+      desc: 'Dirígete al Ministerio del Trabajo si eres víctima de este tipo de violencia. Es cualquier acción, comportamiento o actitud en el entorno laboral que busque dañar, intimidar, humillar o perjudicar a una persona o a un grupo de trabajadores: agresiones verbales, maltrato psicológico, acoso laboral, amenazas, discriminación u hostigamiento.',
+      normativa: 'Ley 1010 de 2006 · Ley 1257 de 2008',
+      tags: ['Acoso laboral', 'Inspección del trabajo']
+    },
+    {
+      tipo: 'otro',
+      titulo: 'Comité de Convivencia Laboral',
+      desc: 'Toda empresa pública o privada debe tener uno. Recibe la queja, escucha a las partes y formula un plan de mejora antes de que el caso escale.',
+      normativa: 'Resolución 652 de 2012 del Ministerio del Trabajo',
+      tags: ['Empleador']
+    },
+    P.atencionSaludPsicologica(),
+    {
+      tipo: 'otro',
+      titulo: 'Ministerio Público',
+      desc: 'Personería, Defensoría del Pueblo y Procuraduría, cuando el agresor es un servidor público o la entidad no responde.',
+      tags: ['Ministerio Público']
+    },
     P.fiscaliaUri(),
     ...P.jueces()
   ];
@@ -1587,6 +1661,7 @@ function obtenerRuta() {
       if (violencia === 'fisica') return contexto === 'dentro' ? rutaComunMujerFisicaDentro() : rutaComunMujerFisicaFuera();
       if (violencia === 'sexual') return rutaComunMujerSexual();
       if (violencia === 'psicologica') return contexto === 'dentro' ? rutaComunMujerPsicologicaDentro() : rutaComunMujerPsicologicaFuera();
+      if (violencia === 'laboral') return rutaComunMujerLaboral();
     }
     if (victima === 'nna') return rutaComunNNA(violencia, contexto);
     if (victima === 'lgbtiq') return rutaComunLGBTIQ(violencia, contexto);
@@ -1628,7 +1703,7 @@ function setVictima(v) {
   if (estado.tipo === 'institucional') {
     lista = v === 'mujer' ? VIOLENCIAS_INST_MUJER : VIOLENCIAS_INST_NNA;
   } else {
-    lista = VIOLENCIAS_COMUN;
+    lista = v === 'mujer' ? VIOLENCIAS_COMUN_MUJER : VIOLENCIAS_COMUN;
   }
 
   const cont = document.getElementById('opciones-violencia');
@@ -1646,6 +1721,15 @@ function setVictima(v) {
 function setViolencia(v) {
   estado.violencia = v;
   document.getElementById('sec-violencia').style.display = 'none';
+
+  // La violencia laboral ocurre, por definición, en el entorno de trabajo:
+  // preguntar si fue dentro o fuera del hogar no tiene sentido.
+  if (v === 'laboral') {
+    estado.contexto = 'laboral';
+    iniciarViaje();
+    return;
+  }
+
   document.getElementById('sec-contexto').style.display = '';
 
   const lista = estado.tipo === 'institucional' ? CONTEXTOS_INST : CONTEXTOS_COMUN;
@@ -1738,6 +1822,9 @@ function crearPasoElement(paso, idx) {
   if (paso.urgencia) html += `<div class="urgencia">${paso.urgencia}</div>`;
   if (paso.detalles) html += '<ul>' + paso.detalles.map(d => `<li>${d}</li>`).join('') + '</ul>';
   if (paso.normativa) html += `<div class="normativa">${paso.normativa}</div>`;
+  if (paso.enlace) {
+    html += `<a class="paso-enlace" href="${paso.enlace.url}" target="_blank" rel="noopener">${paso.enlace.texto}</a>`;
+  }
   if (paso.municipios) {
     html += '<div class="tags">' + paso.municipios.map(m => `<span class="tag">${m}</span>`).join('') + '</div>';
   }
