@@ -669,6 +669,52 @@
   }
   .paso-ruta .paso-enlace::before { content: "📍 "; }
   .paso-ruta .paso-enlace:hover { filter: brightness(1.15); }
+  .paso-ruta .paso-mas {
+    display: block;
+    width: 100%;
+    margin-top: 8px;
+    padding: 9px 14px;
+    background: #fff;
+    border: 1.5px solid var(--morado);
+    color: var(--morado);
+    border-radius: 10px;
+    font-size: 0.82em;
+    font-weight: 600;
+    font-family: inherit;
+    text-align: left;
+    cursor: pointer;
+  }
+  .paso-ruta .paso-mas::before { content: "＋ "; font-weight: 700; }
+  .paso-ruta .paso-mas:hover { background: var(--morado); color: #fff; }
+
+  .detalle-fondo {
+    position: fixed; inset: 0; z-index: 9000;
+    background: rgba(20, 8, 32, 0.72);
+    display: none; align-items: center; justify-content: center;
+    padding: 20px;
+  }
+  .detalle-fondo.abierto { display: flex; }
+  .detalle-caja {
+    background: #fff; border-radius: 18px;
+    max-width: 720px; width: 100%; max-height: 82vh;
+    overflow-y: auto; padding: 28px 30px 26px;
+    box-shadow: 0 24px 60px rgba(0,0,0,0.45);
+  }
+  .detalle-caja h3 {
+    margin: 0 0 14px; color: var(--morado);
+    font-size: 1.22em; padding-right: 36px;
+  }
+  .detalle-caja p { margin: 0 0 12px; line-height: 1.6; color: #333; }
+  .detalle-caja ul { margin: 0 0 12px; padding-left: 20px; line-height: 1.6; color: #333; }
+  .detalle-caja li { margin-bottom: 7px; }
+  .detalle-caja .fuente { font-size: 0.85em; color: #6b6b6b; font-style: italic; }
+  .detalle-cerrar {
+    position: absolute; top: 0; right: 0;
+    margin: 18px 22px 0 0;
+    background: none; border: 0; font-size: 1.9em;
+    line-height: 1; color: var(--morado); cursor: pointer;
+  }
+  .detalle-caja { position: relative; }
   .paso-ruta .urgencia {
     margin-top: 10px;
     padding: 8px 12px;
@@ -1059,20 +1105,6 @@ const P = {
     { tipo: 'judicial', titulo: 'Juez de Conocimiento', desc: 'Adelanta el juicio oral y determina la responsabilidad penal.', tags: ['Juicio'] },
     { tipo: 'judicial', titulo: 'Sentencia o Preclusión', desc: 'Cierre del proceso penal: condena, absolución o preclusión.', tags: ['Cierre'] }
   ],
-  orientacionApoyo: () => ({
-    tipo: 'otro',
-    titulo: 'Orientación y apoyo',
-    desc: 'Tienes derecho a recibir información clara, completa, veraz y oportuna sobre tus derechos. Los municipios brindan información y asesoría a las mujeres víctimas.',
-    normativa: 'Artículos 8 y 20 de la Ley 1257 de 2008',
-    tags: ['Derecho a información']
-  }),
-  atencionSaludPsicologica: () => ({
-    tipo: 'medico',
-    titulo: 'Atención en salud',
-    desc: 'La atención para estos tipos de violencia debe ser integral y sensible: valoración por psicología, intervención en crisis e información sobre tus derechos. La institución reporta el caso a las entidades competentes.',
-    enlace: { url: 'mapaESE.html', texto: 'Ver el mapa de ESE del departamento' },
-    tags: ['Salud mental', 'Reporte obligatorio']
-  }),
   inspeccionPolicia: () => ({
     tipo: 'policia',
     titulo: 'Inspección de Policía / Convivencia y Paz',
@@ -1355,242 +1387,284 @@ function rutaInstNNA(violencia, contexto) {
 }
 
 // ============================ RUTAS COMUNITARIAS (existentes) ============================
+//
+// La rama de mujer sigue «ULTIMO AVANCE RUTA MUJER.pptx» al pie de la letra.
+// El PowerPoint organiza cada violencia en cuatro puertas —orientación y
+// apoyo, atención en salud, protección y denuncia— y cuelga de varias de
+// ellas pantallas de detalle. Aquí esas pantallas son ventanas emergentes,
+// con el texto tal como está en la diapositiva.
 
-function rutaComunMujerFisicaDentro() {
+// Texto que el PowerPoint repite en las tres violencias que lo tienen.
+const TXT = {
+  orientacion: {
+    tipo: 'otro',
+    titulo: 'Orientación y apoyo',
+    desc: 'Las mujeres víctimas de violencias tienen derecho a recibir información clara, completa, veraz y oportuna sobre sus derechos. Los municipios brindarán información y asesoría a mujeres víctimas.',
+    normativa: 'Artículos 8 y 20 de la Ley 1257 de 2008',
+    tags: ['Orientación y apoyo']
+  },
+  atencionGarantizada: (conSala) => ({
+    tipo: 'medico',
+    titulo: 'Para la atención en salud se deben garantizar',
+    desc: 'Psicología, otras acciones del sector salud y la activación interinstitucional de la ruta.',
+    detalles: [
+      '<b>Psicología:</b> intervención en crisis e información sobre sus derechos.',
+      '<b>Otras acciones en sector salud:</b> atención de psiquiatría, trabajo social y atención especializada en salud mental. Notificación al Sivigila. Consulta para el agresor.',
+      '<b>Activación interinstitucional de la ruta:</b> sector protección y sector justicia.'
+    ].concat(conSala ? ['<b>Solicitud de sala situacional</b> municipal o departamental.'] : []),
+    tags: ['Psicología', 'Sivigila', 'Activación de ruta']
+  }),
+  comisariaCompetencia: {
+    titulo: 'Comisaría de familia · competencia',
+    html: '<p><b>COMPETENCIA (Ley 2126 de 2021).</b> Los comisarios y comisarías de familia serán competentes para conocer la violencia en el contexto familiar que, para los efectos de esta ley, comprende toda acción u omisión que pueda causar o resulte en daño o sufrimiento físico, sexual, psicológico, patrimonial o económico, amenaza, agravio, ofensa o cualquier otra forma de agresión que se comete por uno o más miembros del núcleo familiar, contra uno o más integrantes del mismo, aunque no convivan bajo el mismo techo, los cuales pueden ser:</p><ul><li>Los cónyuges o compañeros permanentes, aunque se hubieren separado o divorciado.</li><li>Las personas encargadas del cuidado de uno o varios miembros de una familia en su domicilio o en cualquier lugar.</li><li>El padre o la madre, aun cuando no convivan en el mismo hogar, si el maltrato se dirige contra el otro.</li><li>Personas que residan en el mismo hogar o integran la unidad doméstica sin relación de parentesco.</li><li>Personas con las que se sostiene o se haya sostenido una relación de pareja, cohabitacional o no, de carácter permanente que se caracterice por la estabilidad.</li></ul>'
+  },
+  comisariaFunciones: {
+    titulo: 'Comisaría de familia · funciones y medidas',
+    html: '<p>La Comisaría de Familia de tu territorio hace parte de la Administración Municipal, la cual dentro de sus funciones están:</p><ul><li>Recibir denuncias correspondientes a hechos de violencia en el contexto familiar.</li><li>Evaluarán tu nivel de riesgo y otorgará las medidas de protección y ordenará medidas de atención.</li><li>Ordenará y articulará acciones con la Policía para garantizar la protección y la seguridad de la o las víctimas.</li><li>Realizará seguimiento.</li></ul><p><b>Artículo 16 de la Ley 1257 de 2008.</b> Mediante proceso administrativo por violencia intrafamiliar o en el marco de un proceso judicial realiza:</p><ul><li>Desalojo del agresor.</li><li>Direccionar a tratamiento terapéutico o reeducativo.</li><li>Decidir régimen de custodia y visitas.</li><li>Abstenerse de acudir a donde se encuentre la víctima.</li><li>Suspensión de la tenencia de armas.</li><li>Decidir uso y disfrute de la vivienda familiar.</li><li>Prohibir enajenar bienes.</li><li>Devolución de objetos de uso personal, entre otros.</li><li>Medidas de protección provisional o definitiva.</li></ul><p><b>Medidas de atención:</b> autoridades encargadas de brindar medidas de atención a mujeres.</p>'
+  },
+  convivenciaYPaz: {
+    titulo: 'Inspección de Convivencia y Paz',
+    html: '<p>Los casos de inspección de convivencia y paz, regulados principalmente por el Código Nacional de Seguridad y Convivencia Ciudadana, atienden asuntos de convivencia ciudadana y medidas correctivas.</p><p>Pueden intervenir en casos como:</p><ul><li>Riñas o alteraciones del orden público (empujón, rasguño, halar el cabello), groserías.</li><li>Cumplimiento de medidas policivas.</li><li>Protección inmediata cuando no hay autoridad judicial disponible.</li><li>Casos de perturbación a la convivencia.</li><li>Apoyo a medidas de protección ordenadas por comisarías o jueces.</li></ul>'
+  },
+  fueraFiscalia: {
+    titulo: 'Fuera del contexto familiar · Fiscalía y jueces',
+    html: '<p><b>Artículo 134 del Código de Procedimiento Penal. Medidas de atención y protección a las víctimas.</b> Las víctimas, en garantía de su seguridad y el respeto a su intimidad, podrán por conducto del fiscal solicitar al juez de control de garantías las medidas indispensables para su atención y protección. Igual solicitud podrán formular las víctimas, por sí mismas o por medio de su abogado, durante el juicio oral y el incidente de reparación integral. (Ley 1257 de 2008)</p><p>Intervienen la Unidad de Reacción Inmediata URI, la Sala de Denuncias y la Fiscalía Local, el Juez de Control de Garantías y el Juez de Conocimiento.</p><p>Normalmente el caso queda en conocimiento de la Fiscalía General de la Nación, especialmente como delito penal y eventualmente con medidas de protección para la víctima, en: lesiones personales, amenazas, actos de discriminación, intento de feminicidio, feminicidio, violencia sexual y agresiones por razones de género u orientación sexual. También cubre agresiones entre vecinas y vecinos, compañeros de trabajo o desconocidos.</p><p class="fuente">Código Penal Colombiano · Ley 1761 de 2015 (Ley Rosa Elvira Cely, feminicidio)</p>'
+  },
+  canalesFiscalia: {
+    titulo: 'Canales de acceso a la Fiscalía',
+    html: '<p>Activa la ruta el primer conocedor del delito. También puedes acudir a la Fiscalía (URI, Sala de Denuncias) e informar cuando se identifique un presunto delito.</p><p>La apertura del proceso legal en fiscalía se identifica a través del número único de noticia criminal, que se asigna una vez la policía judicial reporta el caso. Con ese número se puede hacer trazabilidad y seguimiento en www.fiscalia.gov.co, en la pestaña «consulte su denuncia», en el seguimiento de casos del SPOA (Sistema Penal Oral Acusatorio).</p><p><b>Centro de Atención de la Fiscalía (CAF):</b> Tunja, Duitama, Sogamoso y Chiquinquirá.</p><p><b>Unidades de Fiscalía locales:</b> Aquitania, Buenavista, Chiquinquirá, Cómbita, Duitama, El Cocuy, Garagoa, Guateque, Labranzagrande, Miraflores, Monguí, Moniquirá, Muzo, Otanche, Paipa, Pajarito, Paz de Río, Ramiriquí, Samacá, Santa Rosa de Viterbo, Santana, Siachoque, Soatá, Soacha, Ventaquemada y Villa de Leyva.</p><p><b>Puntos de Atención de la Fiscalía (PAF), por convenio con las alcaldías:</b> Tuta, Pesca, Nobsa, Toca, Chita, Sativanorte, Sativasur, Maripí, Caldas, Pauna, Belén, San Luis de Gaceno, Pisba y San José de Pare.</p><p>En los municipios donde no se cuenta con CAF ni con PAF, las unidades locales y seccionales cumplen la función de recepción.</p>'
+  }
+};
+
+function pasoComisaria() {
+  return {
+    tipo: 'comisaria',
+    titulo: 'Comisaría de familia',
+    desc: 'Recibe las denuncias por hechos de violencia en el contexto familiar, evalúa tu nivel de riesgo, otorga las medidas de protección, ordena las medidas de atención, articula con la Policía y realiza seguimiento.',
+    normativa: 'Ley 2126 de 2021 · Artículo 16 de la Ley 1257 de 2008',
+    masInfo: [TXT.comisariaCompetencia, TXT.comisariaFunciones],
+    tags: ['Dentro del contexto familiar', 'Medidas de protección', 'Medidas de atención']
+  };
+}
+
+function pasoInspeccion() {
+  return {
+    tipo: 'policia',
+    titulo: 'Inspección de Policía de tu municipio',
+    desc: 'Fuera del contexto familiar, la encargada de tu caso será la Inspección de Policía de tu municipio: recepción de una denuncia o queja, investigación del caso y aplicación de medidas correctivas o sancionatorias (caución).',
+    masInfo: [TXT.convivenciaYPaz],
+    tags: ['Fuera del contexto familiar', 'Caución']
+  };
+}
+
+function pasoProteccion() {
+  return {
+    tipo: 'policia',
+    titulo: 'Para protección',
+    desc: 'Si quieres denunciar y recibir protección de parte de las autoridades pertinentes puedes:',
+    detalles: [
+      'Si el presunto agresor está cerca de ti, puedes llamar a la <b>línea nacional 123</b> de la Policía Nacional o acudir a la Inspección de Convivencia y Paz más cercana o a la URI de tu territorio.',
+      'Si quieres solicitar una <b>medida de protección</b> para poner fin a los hechos de violencia, puedes acudir a la Comisaría de Familia o a la Unidad de Reacción Inmediata URI - Fiscalía Local.'
+    ],
+    tags: ['Línea 123', 'Medida de protección']
+  };
+}
+
+function pasoDenunciar(medicoLegal) {
+  return {
+    tipo: 'fiscalia',
+    titulo: 'Para denunciar',
+    desc: 'Activa la ruta el primer conocedor del delito. También puedes acudir a la Fiscalía (URI, Sala de Denuncias) e informar cuando se identifique un presunto delito.',
+    detalles: [
+      'Derecho a la verdad, justicia, reparación y garantías de no repetición.',
+      'Derecho a decidir voluntariamente si quieres o no ser confrontada con tu agresor en cualquier procedimiento judicial o administrativo.',
+      'La apertura del proceso en fiscalía se identifica con el <b>número único de noticia criminal</b>, con el que puedes hacer seguimiento en www.fiscalia.gov.co, en «consulte su denuncia» del SPOA.',
+      '<b>Valoración médico legal:</b> ' + medicoLegal
+    ],
+    normativa: 'Artículos 7, 8 y 13 de la Ley 1257 de 2008 · Ley 9 de 1952 · Ley 906 de 1986 · Decreto 2455 de 1986',
+    enlace: { url: 'https://sicecon.fiscalia.gov.co/denuncia/LlenarFormulario', texto: 'Denuncia fácil en la página de la Fiscalía' },
+    masInfo: [TXT.canalesFiscalia],
+    tags: ['Noticia criminal', 'Medicina Legal']
+  };
+}
+
+function ramaProteccion() {
   return [
-    {
-      tipo: 'otro',
-      titulo: 'Orientación y apoyo inicial',
-      desc: 'Tienes derecho a recibir información clara, completa y oportuna sobre tus derechos. Los municipios brindan asesoría a mujeres víctimas.',
-      normativa: 'Artículos 8 y 20 de la Ley 1257 de 2008',
-      tags: ['Derecho a información']
-    },
-    {
-      tipo: 'medico',
-      titulo: 'Atención Médica como urgencia',
-      desc: 'Acude de inmediato a hospital o centro de salud si hay heridas, signos de trauma, miedo por tu vida, o necesidad de certificar lesiones.',
-      enlace: { url: 'mapaESE.html', texto: 'Ver el mapa de ESE del departamento' },
-      urgencia: 'No se necesita denuncia previa. Es un derecho constitucional.',
-      detalles: [
-        'Atención gratuita - sin copagos (Sentencia T-735/2017).',
-        'Reserva de identidad.',
-        'La institución reporta a Policía, Fiscalía, Comisaría, ICBF.'
-      ],
-      tags: ['Salud', 'Gratuita']
-    },
-    P.valoracionMedicoLegal('Se requiere solicitud de entidad competente. Practicado por médico oficial o rural.'),
-    P.policiaNacional(),
-    P.comisariaFamilia(),
-    ...P.evaluaRiesgoMedida(false),
+    pasoProteccion(),
     {
       tipo: 'decision',
-      titulo: '¿Hubo persona detenida en flagrancia?',
-      desc: 'Esto determina el canal de investigación.',
+      titulo: '¡La agresión fue!',
+      desc: 'De esto depende a qué autoridad acudir.',
       decision: {
         opciones: [
-          { texto: 'Sí, flagrancia', valor: 'si' },
-          { texto: 'No', valor: 'no' }
+          { texto: 'Dentro del contexto familiar', valor: 'd' },
+          { texto: 'Fuera del contexto familiar', valor: 'f' }
         ]
       }
     },
+    { _ramaSi: ['d'], ...pasoComisaria() },
+    { _ramaSi: ['f'], ...pasoInspeccion() },
     {
-      _ramaSi: ['si'],
+      _ramaSi: ['f'],
       tipo: 'fiscalia',
-      titulo: 'Investigación Penal · CAIVAS (flagrancia)',
-      desc: 'Centro de Atención e Investigación a Víctimas de delitos sexuales (en algunos contextos).',
-      tags: ['CAIVAS']
-    },
-    {
-      _ramaSi: ['no'],
-      tipo: 'fiscalia',
-      titulo: 'Investigación · Fiscalía CAVIF',
-      desc: 'Centro de Atención a Víctimas de Violencia Intrafamiliar.',
-      tags: ['CAVIF']
-    },
-    ...P.jueces()
+      titulo: 'Fuera del contexto familiar · Fiscalía',
+      desc: 'Puede llegar a la Inspección de Convivencia y Paz o a la Fiscalía. Intervienen la URI, la Sala de Denuncias y la Fiscalía Local, el Juez de Control de Garantías y el Juez de Conocimiento.',
+      normativa: 'Artículo 134 del Código de Procedimiento Penal',
+      masInfo: [TXT.fueraFiscalia],
+      tags: ['URI', 'Jueces']
+    }
   ];
 }
 
-function rutaComunMujerFisicaFuera() {
+function rutaComunMujerFisica() {
   return [
-    P.orientacionApoyo(),
+    TXT.orientacion,
     {
       tipo: 'medico',
-      titulo: 'Atención Médica integral',
-      desc: 'Acude al centro de salud más cercano. Es un derecho como urgencia médica.',
+      titulo: 'Atención en salud',
+      desc: 'Se debe acudir de inmediato a un hospital o centro de salud cuando:',
+      detalles: [
+        'La persona tiene heridas visibles, contusiones, fracturas, quemaduras o sangrado.',
+        'Hay signos de trauma (dolor fuerte, dificultad para moverse, inconsciencia).',
+        'La víctima siente miedo por su vida o integridad.',
+        'Se requiere valoración médica para certificar lesiones, lo cual puede ser evidencia legal u obtener tu incapacidad.'
+      ],
+      urgencia: 'No se necesita denuncia previa para recibir atención médica. Es un derecho constitucional recibir atención de urgencias en cualquier hospital público o privado. Sin embargo, para el examen médico legal se requiere la solicitud de una entidad competente.',
       enlace: { url: 'mapaESE.html', texto: 'Ver el mapa de ESE del departamento' },
-      tags: ['Salud']
+      masInfo: [{
+        titulo: 'Tus derechos en la atención médica',
+        html: '<ul><li>Tienes derecho a ser atendida como urgencia médica en todos los puestos de salud, ESE municipales y hospitales del departamento.</li><li>Recibir información clara, completa, veraz y oportuna en relación con la salud sexual y reproductiva.</li><li>Ser tratada con reserva de identidad al recibir la asistencia médica.</li><li>La atención médica es gratuita. No se deben interponer barreras de acceso como copagos, cuotas moderadoras u otros condicionantes (Sentencia T-735 de 2017).</li><li>La institución deberá reportar a las entidades pertinentes del caso: Policía, Fiscalía, Comisaría de Familia y Defensoría de Familia del ICBF.</li></ul><p>Debe garantizar la intervención sobre las consecuencias en salud física y mental que puedan haber causado las violencias.</p>'
+      }],
+      tags: ['Urgencia', 'Gratuita', 'Reserva de identidad']
     },
-    P.valoracionMedicoLegal(),
-    P.policiaNacional(),
-    P.inspeccionPolicia(),
-    ...P.evaluaRiesgoMedida(false),
-    P.fiscaliaUri(),
-    ...P.jueces()
+    TXT.atencionGarantizada(false),
+    ...ramaProteccion(),
+    pasoDenunciar('se puede practicar por parte de un médico oficial o rural, en cualquier sede del Instituto de Medicina Legal, hospital regional o centro de salud. Se requiere solicitud de entidad competente.')
+  ];
+}
+
+function rutaComunMujerPsicologica() {
+  return [
+    TXT.orientacion,
+    {
+      tipo: 'medico',
+      titulo: 'Atención en salud',
+      desc: 'La atención en salud para estos tipos de violencia debe ser integral, sensible y centrada en la persona. No solo implica tratar las consecuencias emocionales del abuso, como la ansiedad, la depresión o el estrés postraumático, sino también ofrecer un entorno seguro, de confianza y sin juicios, donde la víctima pueda hablar de lo que ha vivido.',
+      detalles: [
+        'Los profesionales de la salud mental, como psicólogos y psiquiatras, brindan contención emocional, acompañamiento terapéutico y herramientas para recuperar la autoestima y la autonomía.',
+        'El sistema de salud debe trabajar en coordinación con trabajo social, orientación legal y redes de apoyo comunitario.',
+        'La detección temprana por parte de los médicos de atención primaria es esencial: muchas veces las víctimas no identifican o no reconocen el abuso como tal.',
+        'La institución deberá reportar a las entidades pertinentes del caso (Policía, Fiscalía, Comisaría de Familia). Si se requiere valoración médico legal por daño psíquico, esta solamente se puede realizar en Medicina Legal.'
+      ],
+      enlace: { url: 'mapaESE.html', texto: 'Ver el mapa de ESE del departamento' },
+      tags: ['Salud mental', 'Reporte obligatorio']
+    },
+    TXT.atencionGarantizada(false),
+    ...ramaProteccion(),
+    pasoDenunciar('en caso de requerir valoración por daño psíquico, esta solamente se puede realizar en Medicina Legal.')
+  ];
+}
+
+function rutaComunMujerLaboral() {
+  return [
+    {
+      tipo: 'otro',
+      titulo: 'Violencia laboral',
+      desc: 'Es cualquier acción, comportamiento o actitud que se da en el entorno de trabajo y que tiene como objetivo o resultado dañar, intimidar, humillar o perjudicar a una persona o grupo de trabajadores. Puede manifestarse de distintas formas, como agresiones verbales, maltratos psicológicos, acoso laboral (mobbing), amenazas, discriminación, hostigamiento o incluso violencia física. Esta violencia puede provenir de superiores o de compañeros de trabajo.',
+      tags: ['Definición']
+    },
+    {
+      tipo: 'otro',
+      titulo: 'Ministerio del Trabajo',
+      desc: 'Dirígete al Ministerio del Trabajo si eres víctima de este tipo de violencia.',
+      tags: ['Ministerio del Trabajo']
+    }
   ];
 }
 
 function rutaComunMujerSexual() {
   return [
-    P.orientacionApoyo(),
+    TXT.orientacion,
     {
       tipo: 'medico',
-      titulo: 'Atención Médica - URGENCIA siempre',
+      titulo: 'Atención en salud',
+      desc: 'Todo caso de atención a víctimas de violencia sexual es una urgencia sin importar el tiempo de ocurrencia del hecho. Por lo anterior, es la primera institución a la que debes acudir.',
+      urgencia: '¡Ten en cuenta que siempre te vamos a creer!',
+      detalles: [
+        'No se necesita denuncia previa ni se requiere solicitud escrita de autoridad competente, según la Resolución 459 de 2012, para el examen médico legal sexológico en delitos sexuales.',
+        'Tienes derecho a ser atendida como urgencia médica en todos los puestos de salud, ESE municipales y hospitales del departamento.',
+        'La atención médica es gratuita. No se deben interponer barreras de acceso como copagos o cuotas moderadoras (Sentencia T-735 de 2017).'
+      ],
       enlace: { url: 'mapaESE.html', texto: 'Ver el mapa de ESE del departamento' },
-      desc: 'Todo caso de violencia sexual es una urgencia médica, sin importar el tiempo transcurrido.',
-      urgencia: '¡Siempre te vamos a creer! No se necesita denuncia previa.',
-      tags: ['Código Verde', 'Urgencia']
+      tags: ['Urgencia siempre', 'Resolución 459/2012']
     },
     {
       tipo: 'decision',
-      titulo: '¿Cuánto tiempo ha pasado desde la agresión?',
-      desc: 'El tiempo determina el tipo de atención y profilaxis.',
+      titulo: '¿Cuánto tiempo ha pasado desde el hecho?',
+      desc: 'De esto depende la atención que debe recibirse.',
       decision: {
         opciones: [
-          { texto: '< 72 horas', valor: 't1' },
-          { texto: '72-120 horas', valor: 't2' },
-          { texto: '> 120 horas', valor: 't3' }
+          { texto: 'Primeras 72 horas', valor: 't1' },
+          { texto: 'Entre 72 y 120 horas', valor: 't2' },
+          { texto: 'Más de 120 horas', valor: 't3' }
         ]
       }
     },
     {
       _ramaSi: ['t1'],
       tipo: 'medico',
-      titulo: 'Triage I · Menos de 72 horas',
-      desc: 'Atención inmediata:',
+      titulo: 'Si el hecho ocurrió durante las primeras 72 horas',
+      desc: 'En los casos donde hubo contacto sexual se proporcionará profilaxis para disminuir el riesgo de contagio de infecciones de transmisión sexual (ITS) y VIH, además de anticoncepción de emergencia para reducir el riesgo de embarazo.',
       detalles: [
-        'Profilaxis para ITS y VIH.',
-        'Anticoncepción de emergencia.',
-        'Pruebas diagnósticas y toma de muestras.',
-        'Reporte obligatorio a autoridades.'
+        'Tomar las pruebas diagnósticas necesarias para explorar el estado de salud de la víctima.',
+        'Tienes derecho a recibir asesoría para IVE (interrupción voluntaria del embarazo) en el marco de la Resolución 051 de 2023 del MSPS, realizar las remisiones pertinentes a especialidades y programar los seguimientos que se requieran según el caso.',
+        'Dar tu consentimiento informado para los exámenes médico-legales o psíquicos y escoger el sexo del facultativo para la práctica de los mismos, dentro de las posibilidades ofrecidas por el servicio.',
+        'La institución deberá reportar a las entidades pertinentes del caso: Policía, Fiscalía, Comisaría de Familia y Defensoría de Familia del ICBF.'
       ],
-      tags: ['Triage I']
+      tags: ['Profilaxis ITS y VIH', 'Anticoncepción de emergencia', 'IVE']
     },
     {
       _ramaSi: ['t2'],
       tipo: 'medico',
-      titulo: 'Triage II · Entre 72 y 120 horas',
-      desc: 'Prueba de embarazo, asesoría y prueba rápida VIH, exámenes ITS, profilaxis post-exposición, asesoría IVE.',
+      titulo: 'Atención en salud después de las 72 horas y antes de 120',
+      desc: 'La violencia sexual siempre es una urgencia: no aplican restricciones por nivel de complejidad ni por tipo de aseguramiento en salud para que la víctima reciba los procedimientos que requiere.',
+      detalles: [
+        'Prueba de embarazo.',
+        'Asesoría para prueba de VIH y prueba rápida de anticuerpos para VIH.',
+        'Examen confirmatorio para VIH en caso de prueba rápida positiva.',
+        'Exámenes diagnósticos y confirmatorios para ITS.',
+        'Profilaxis posexposición ITS y VIH.',
+        'Asesoría para IVE en el marco de las Sentencias C-355 de 2006 y C-055 de 2022.'
+      ],
       tags: ['Triage II']
     },
     {
       _ramaSi: ['t3'],
       tipo: 'medico',
-      titulo: 'Después de 120 horas',
-      desc: 'Valoración integral, derivación a especialistas (IVE, psicoterapia, psiquiatría), atención según condición clínica.',
-      tags: ['>120h']
+      titulo: 'Atención en salud después de 120 horas',
+      desc: 'Se realizará valoración del estado físico y emocional y, en caso de que se requiera, se deriva hacia otros profesionales de la salud para asegurar la atención integral: médicos especialistas, IVE y psicoterapia.',
+      detalles: [
+        'Independientemente del tipo de agresión sexual sufrida o del momento de la consulta, el médico o la médica debe solicitar todos los exámenes diagnósticos necesarios según la condición clínica de la víctima. En la historia clínica se debe dejar registro tanto de la solicitud como de los resultados e interpretaciones.',
+        'La institución deberá reportar a las entidades pertinentes del caso: Policía, Fiscalía y Comisaría de Familia.'
+      ],
+      tags: ['>120 horas']
     },
     {
       tipo: 'medico',
-      titulo: 'Interrupción Voluntaria del Embarazo (IVE)',
-      desc: 'Derecho a asesoría y acceso a IVE en caso de embarazo producto de la violencia.',
-      normativa: 'Sentencias C-355/2006 y C-055/2022 · Resolución 051/2023 MSPS',
-      tags: ['IVE']
-    },
-    P.valoracionMedicoLegal('NO se requiere solicitud previa ni autoridad competente. Derecho a escoger el sexo del profesional.'),
-    P.policiaNacional(),
-    {
-      tipo: 'decision',
-      titulo: '¿La agresión fue dentro o fuera del contexto familiar?',
-      desc: 'Esto define a qué autoridad acudir para la medida de protección.',
-      decision: {
-        opciones: [
-          { texto: 'Dentro (pareja/familia)', valor: 'd' },
-          { texto: 'Fuera', valor: 'f' }
-        ]
-      }
-    },
-    { _ramaSi: ['d'], ...P.comisariaFamilia() },
-    { _ramaSi: ['f'], ...P.inspeccionPolicia() },
-    P.fiscaliaUri(),
-    {
-      tipo: 'fiscalia',
-      titulo: 'CAIVAS · Investigación especializada',
-      desc: 'Centro de Atención e Investigación Integral a Víctimas de Delitos Sexuales.',
-      tags: ['CAIVAS']
-    },
-    ...P.jueces()
-  ];
-}
-
-function rutaComunMujerPsicologicaDentro() {
-  return [
-    P.orientacionApoyo(),
-    P.atencionSaludPsicologica(),
-    P.comisariaFamilia(),
-    ...P.evaluaRiesgoMedida(false),
-    P.fiscaliaUri(),
-    {
-      tipo: 'otro',
-      titulo: 'Ministerio Público',
-      desc: 'Personería, Defensoría del Pueblo y Procuraduría como garantes del proceso.',
-      tags: ['Vigilancia']
-    },
-    ...P.jueces()
-  ];
-}
-
-function rutaComunMujerPsicologicaFuera() {
-  return [
-    P.orientacionApoyo(),
-    P.atencionSaludPsicologica(),
-    {
-      tipo: 'decision',
-      titulo: '¿En qué escenario ocurrió?',
-      desc: 'Cada escenario tiene una autoridad responsable.',
-      decision: {
-        opciones: [
-          { texto: 'Laboral', valor: 'lab' },
-          { texto: 'Comunitario / Otro', valor: 'com' }
-        ]
-      }
+      titulo: 'Urgencia y traslado',
+      desc: 'Si por la condición de la paciente, o para efectuar alguna consulta, interconsulta, procedimiento o tratamiento que haga parte de la atención integral en urgencias para la víctima de violencia sexual, se hace necesario el desplazamiento a otro nivel de complejidad o a otra institución, se debe garantizar el transporte a la víctima de violencia sexual y a su acompañante.',
+      tags: ['Triage I · menos de 72 horas', 'Triage II · más de 72 horas']
     },
     {
-      _ramaSi: ['lab'],
-      tipo: 'otro',
-      titulo: 'Ministerio del Trabajo',
-      desc: 'Para casos de acoso laboral en sector privado o público.',
-      tags: ['Laboral']
+      tipo: 'medico',
+      titulo: 'Valoración médico legal',
+      desc: 'Se puede practicar por parte de un médico oficial o rural, en cualquier sede del Instituto de Medicina Legal, hospital regional o centro de salud. Es importante que acudas al más cercano.',
+      normativa: 'Ley 9 de 1952 · Ley 906 de 1986 · Decreto 2455 de 1986',
+      tags: ['INMLCF']
     },
-    {
-      _ramaSi: ['com'],
-      tipo: 'otro',
-      titulo: 'Personería / Defensoría / Procuraduría',
-      desc: 'Ministerio Público en escenarios institucionales o comunitarios.',
-      tags: ['Ministerio Público']
-    },
-    P.inspeccionPolicia(),
-    P.fiscaliaUri(),
-    ...P.jueces()
-  ];
-}
-
-function rutaComunMujerLaboral() {
-  return [
-    P.orientacionApoyo(),
-    {
-      tipo: 'otro',
-      titulo: 'Ministerio del Trabajo',
-      desc: 'Dirígete al Ministerio del Trabajo si eres víctima de este tipo de violencia. Es cualquier acción, comportamiento o actitud en el entorno laboral que busque dañar, intimidar, humillar o perjudicar a una persona o a un grupo de trabajadores: agresiones verbales, maltrato psicológico, acoso laboral, amenazas, discriminación u hostigamiento.',
-      normativa: 'Ley 1010 de 2006 · Ley 1257 de 2008',
-      tags: ['Acoso laboral', 'Inspección del trabajo']
-    },
-    {
-      tipo: 'otro',
-      titulo: 'Comité de Convivencia Laboral',
-      desc: 'Toda empresa pública o privada debe tener uno. Recibe la queja, escucha a las partes y formula un plan de mejora antes de que el caso escale.',
-      normativa: 'Resolución 652 de 2012 del Ministerio del Trabajo',
-      tags: ['Empleador']
-    },
-    P.atencionSaludPsicologica(),
-    {
-      tipo: 'otro',
-      titulo: 'Ministerio Público',
-      desc: 'Personería, Defensoría del Pueblo y Procuraduría, cuando el agresor es un servidor público o la entidad no responde.',
-      tags: ['Ministerio Público']
-    },
-    P.fiscaliaUri(),
-    ...P.jueces()
+    TXT.atencionGarantizada(true),
+    ...ramaProteccion(),
+    pasoDenunciar('se puede practicar por parte de un médico oficial o rural, en cualquier sede del Instituto de Medicina Legal, hospital regional o centro de salud. Es importante que acudas al más cercano.')
   ];
 }
 
@@ -1658,9 +1732,9 @@ function obtenerRuta() {
     }
   } else {
     if (victima === 'mujer') {
-      if (violencia === 'fisica') return contexto === 'dentro' ? rutaComunMujerFisicaDentro() : rutaComunMujerFisicaFuera();
+      if (violencia === 'fisica') return rutaComunMujerFisica();
       if (violencia === 'sexual') return rutaComunMujerSexual();
-      if (violencia === 'psicologica') return contexto === 'dentro' ? rutaComunMujerPsicologicaDentro() : rutaComunMujerPsicologicaFuera();
+      if (violencia === 'psicologica') return rutaComunMujerPsicologica();
       if (violencia === 'laboral') return rutaComunMujerLaboral();
     }
     if (victima === 'nna') return rutaComunNNA(violencia, contexto);
@@ -1722,10 +1796,11 @@ function setViolencia(v) {
   estado.violencia = v;
   document.getElementById('sec-violencia').style.display = 'none';
 
-  // La violencia laboral ocurre, por definición, en el entorno de trabajo:
-  // preguntar si fue dentro o fuera del hogar no tiene sentido.
-  if (v === 'laboral') {
-    estado.contexto = 'laboral';
+  // En la rama de mujer el contexto no se pregunta aquí: el PowerPoint lo
+  // pregunta dentro de la puerta de protección, que es donde cambia la
+  // autoridad competente.
+  if (estado.tipo === 'comunitaria' && estado.victima === 'mujer') {
+    estado.contexto = null;
     iniciarViaje();
     return;
   }
@@ -1825,6 +1900,11 @@ function crearPasoElement(paso, idx) {
   if (paso.enlace) {
     html += `<a class="paso-enlace" href="${paso.enlace.url}" target="_blank" rel="noopener">${paso.enlace.texto}</a>`;
   }
+  if (paso.masInfo) {
+    paso.masInfo.forEach((m, k) => {
+      html += `<button class="paso-mas" onclick="abrirDetalle(${idx},${k})">${m.titulo}</button>`;
+    });
+  }
   if (paso.municipios) {
     html += '<div class="tags">' + paso.municipios.map(m => `<span class="tag">${m}</span>`).join('') + '</div>';
   }
@@ -1849,6 +1929,27 @@ function crearPasoElement(paso, idx) {
 
   return div;
 }
+
+// Las pantallas de detalle del PowerPoint se abren como ventana emergente,
+// para no alargar la tarjeta del paso con texto normativo largo.
+function abrirDetalle(idxPaso, idxInfo) {
+  const info = obtenerRuta()[idxPaso].masInfo[idxInfo];
+  document.getElementById('detalleTitulo').textContent = info.titulo;
+  document.getElementById('detalleCuerpo').innerHTML = info.html;
+  const modal = document.getElementById('detalleModal');
+  modal.classList.add('abierto');
+  modal.querySelector('.detalle-caja').scrollTop = 0;
+  document.body.style.overflow = 'hidden';
+}
+
+function cerrarDetalle() {
+  document.getElementById('detalleModal').classList.remove('abierto');
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') cerrarDetalle();
+});
 
 function elegirDecision(idxDecision, valor) {
   // Marca el botón seleccionado y descarta los otros
@@ -2225,5 +2326,13 @@ function reiniciar() {
 // Inicialización
 actualizarParallax();
 </script>
+<div class="detalle-fondo" id="detalleModal" onclick="if(event.target===this) cerrarDetalle()">
+  <div class="detalle-caja">
+    <button class="detalle-cerrar" onclick="cerrarDetalle()" aria-label="Cerrar">&times;</button>
+    <h3 id="detalleTitulo"></h3>
+    <div id="detalleCuerpo"></div>
+  </div>
+</div>
+
 </body>
 </html>
