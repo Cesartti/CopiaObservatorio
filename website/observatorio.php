@@ -466,6 +466,12 @@ $obsTabActive = $tabActiveByObs[$slug] ?? $obs['color'];
     </section>
 
     <?php
+    // Una convocatoria con fecha no puede quedar al pie de la página.
+    $avisoSlug = $slug;
+    include __DIR__ . '/include/aviso-destacado.php';
+    ?>
+
+    <?php
     // Categorías: datos pre-calculados para que observatory-description.php
     // pueda renderizar las tarjetas en el medio (entre Consulta y Fuentes).
     $categoriesByObs = require __DIR__ . '/config/observatory_categories.php';

@@ -235,6 +235,13 @@ function ig_embed_url(string $shortcode): string {
     </section>
     <?php endif; ?>
 
+    <?php
+    // El mismo aviso de la convocatoria vigente, para que no haya que entrar
+    // al micrositio a enterarse.
+    $avisoSlug = 'general';
+    include __DIR__ . '/include/aviso-destacado.php';
+    ?>
+
     <section id="observatorios" class="container py-4">
         <div class="section-head">
             <h2>Micrositios por observatorio</h2>
