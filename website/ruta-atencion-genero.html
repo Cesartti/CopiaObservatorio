@@ -195,7 +195,7 @@
     transition: opacity 0.6s;
   }
   /* Cuando la imagen FONDO está activa, ocultamos las capas decorativas duplicadas.
-     IMPORTANTE: incluye .bg-sky — es un degradado opaco con z-index -2 que de lo
+     IMPORTANTE: incluye .bg-sky, que es un degradado opaco con z-index -2 que de lo
      contrario tapa por completo la imagen FONDO (z-index -3). */
   body.con-imagen-fondo .bg-sky,
   body.con-imagen-fondo .montanas-back,
@@ -291,6 +291,14 @@
     font-size: 0.78em;
     margin-left: 10px;
   }
+  header.top .badge.ruta {
+    background: rgba(255,255,255,0.14);
+    border: 1px solid rgba(255,255,255,0.28);
+  }
+  @media (max-width: 640px) {
+    header.top .badge.ruta { display: block !important; margin: 4px 0 0; }
+    header.top .badge.ruta:empty { display: none !important; }
+  }
   header.top button {
     background: rgba(255,255,255,0.12);
     color: white;
@@ -365,6 +373,9 @@
     max-width: 1100px;
     width: 100%;
   }
+  /* Con una sola opción visible, la tarjeta se estiraba a lo ancho de la fila
+     y parecía un error de maquetación. */
+  .opciones:has(> .opcion-card:only-child) { max-width: 420px; }
   .opcion-card {
     background: rgba(12,14,28,0.58);
     border: 2px solid rgba(255,255,255,0.22);
@@ -385,6 +396,143 @@
     box-shadow: 0 12px 32px rgba(91,42,134,0.4);
   }
   .opcion-card .icono { font-size: 3em; margin-bottom: 10px; }
+  /* «Ver más» abre la definición sin elegir la tarjeta: hay que poder leer
+     qué es cada violencia antes de comprometerse con una rama de la ruta. */
+  .opcion-mas {
+    margin-top: 12px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.32);
+    color: #e8d5f8;
+    font-size: 0.82em;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    padding: 7px 16px;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background 0.18s, border-color 0.18s;
+  }
+  .opcion-mas:hover { background: rgba(255,255,255,0.2); border-color: #fff; color: #fff; }
+  .sub-seccion {
+    max-width: 680px;
+    margin: -8px auto 26px;
+    text-align: center;
+    color: #c8cad6;
+    line-height: 1.6;
+  }
+  /* Las cuatro puertas llevan la esquina de color de la pieza de la Secretaría. */
+  .opcion-card.puerta { position: relative; overflow: hidden; }
+  .opcion-card.puerta::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 54px; height: 54px;
+    background: var(--tono);
+    clip-path: polygon(0 0, 100% 0, 0 100%);
+  }
+  .opcion-card.puerta::after {
+    content: '';
+    position: absolute;
+    bottom: 0; right: 0;
+    width: 54px; height: 54px;
+    background: var(--tono);
+    clip-path: polygon(100% 0, 100% 100%, 0 100%);
+  }
+  .opcion-card.puerta h3 { color: #fff; }
+  .barra-puertas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    max-width: 1000px;
+    margin: 0 auto 10px;
+    padding: 0 18px;
+  }
+  .puerta-chip {
+    background: rgba(12,14,28,0.55);
+    border: 2px solid var(--tono);
+    color: #e8d5f8;
+    font-size: 0.85em;
+    font-weight: 600;
+    padding: 9px 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.18s, color 0.18s;
+  }
+  .puerta-chip:hover { background: var(--tono); color: #fff; }
+  .puerta-chip.activa { background: var(--tono); color: #fff; }
+  .barra-puertas.abajo { margin: 0 auto; }
+  #cierreRuta { position: relative; z-index: 4; padding: 0 0 70px; }
+  /* Sobre el pasto los botones se perdían: una franja clara los despega. */
+  .barra-puertas-zona, .zona-botones {
+    background: rgba(255,255,255,0.14);
+    backdrop-filter: blur(6px);
+    border-top: 1px solid rgba(255,255,255,0.22);
+    border-bottom: 1px solid rgba(255,255,255,0.22);
+    padding: 14px 18px;
+  }
+  .zona-botones { margin-top: 26px; }
+  .barra-rama {
+    max-width: 1000px;
+    margin: 0 auto 8px;
+    text-align: center;
+    font-size: 0.95em;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: #e8d5f8;
+  }
+  .opcion-card.puerta .paso-icono {
+    width: 42px; height: 42px; border-radius: 11px;
+    background: var(--tono); margin: 0 auto 12px; display: flex;
+  }
+  .opcion-card.puerta .paso-icono svg { width: 24px; height: 24px; color: #fff; }
+  #tituloPuerta { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+  .tp-violencia {
+    display: inline-block;
+    padding: 5px 16px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.14);
+    border: 1px solid rgba(255,255,255,0.3);
+    font-size: 0.56em;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .tp-pregunta { display: block; }
+  .puerta-chip.inicio { font-weight: 700; }
+  /* Cierre de la ruta: la pregunta que lleva a la sala situacional. */
+  .cierre-sala {
+    position: relative;
+    z-index: 3;
+    max-width: 760px;
+    margin: 30px auto 0;
+    padding: 26px 28px;
+    background: rgba(12,14,28,0.72);
+    border: 2px solid rgba(255,255,255,0.22);
+    border-radius: 18px;
+    backdrop-filter: blur(8px);
+  }
+  .cierre-sala h3 { margin: 0 0 16px; font-size: 1.15em; color: #e8d5f8; text-align: center; }
+  .cierre-sala .decision-buttons { justify-content: center; }
+  .cierre-ok { margin: 18px 0 0; color: #c8cad6; line-height: 1.6; text-align: center; }
+  .sala-situacional {
+    margin-top: 20px;
+    padding: 20px 22px;
+    background: rgba(255,255,255,0.06);
+    border-left: 4px solid #E8A33D;
+    border-radius: 12px;
+    color: #d8dae6;
+    line-height: 1.65;
+  }
+  .sala-situacional h4 { margin: 0 0 12px; font-size: 1.05em; color: #F2C078; }
+  .sala-situacional ul { margin: 12px 0; padding-left: 20px; }
+  .sala-situacional li { margin-bottom: 10px; }
+  .sala-situacional b { color: #fff; }
+  .sala-aviso {
+    margin: 14px 0 0;
+    padding: 12px 14px;
+    background: rgba(232,163,61,0.14);
+    border-radius: 10px;
+    color: #f0dcc0;
+  }
   .opcion-card h3 { font-size: 1.2em; margin-bottom: 6px; color: #e8d5f8; }
   .opcion-card p { font-size: 0.9em; color: #c8cad6; line-height: 1.5; }
   .opcion-card.institucional { border-color: rgba(232,156,58,0.4); }
@@ -622,7 +770,22 @@
     color: var(--morado);
     margin-bottom: 8px;
     font-size: 1.15em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
   }
+  .paso-icono {
+    flex: 0 0 34px;
+    width: 34px; height: 34px;
+    display: inline-flex; align-items: center; justify-content: center;
+    border-radius: 9px;
+    background: currentColor;
+  }
+  .paso-icono svg { width: 20px; height: 20px; color: #fff; }
+  /* Con logo real: fondo blanco, que es donde esas marcas se leen. */
+  .paso-icono.logo { background: #fff; border: 1px solid rgba(0,0,0,0.1); }
+  .paso-icono.logo img { width: 26px; height: 26px; object-fit: contain; }
+  .opcion-card.puerta .paso-icono.logo img { width: 32px; height: 32px; }
   .paso-ruta.tipo-medico h4 { color: var(--rojo); }
   .paso-ruta.tipo-policia h4 { color: var(--azul); }
   .paso-ruta.tipo-fiscalia h4 { color: #b66f1c; }
@@ -707,6 +870,91 @@
   .detalle-caja p { margin: 0 0 12px; line-height: 1.6; color: #333; }
   .detalle-caja ul { margin: 0 0 12px; padding-left: 20px; line-height: 1.6; color: #333; }
   .detalle-caja li { margin-bottom: 7px; }
+  /* Diagrama de situaciones tipo II, calcado de la lámina de la Secretaría:
+     caja de arranque, bifurcación, dos ramas de color y aviso al pie. */
+  .dia2 { margin: 16px 0 6px; color: #333; }
+  .dia2-top, .dia2-acc {
+    border: 2px solid #2F2F2F; border-radius: 8px;
+    background: #EFEFEF; padding: 9px 12px;
+  }
+  .dia2-top ol, .dia2-acc ol { margin: 0; padding-left: 20px; }
+  .dia2-top li, .dia2-acc li { margin: 2px 0; line-height: 1.5; font-size: 0.92em; }
+  .dia2-bifurca { position: relative; height: 28px; }
+  .dia2-bifurca::before {
+    content: ''; position: absolute; left: 50%; top: 0;
+    width: 2px; height: 14px; background: #2F2F2F;
+  }
+  .dia2-bifurca span {
+    position: absolute; left: 25%; right: 25%; top: 13px;
+    height: 2px; background: #2F2F2F;
+  }
+  .dia2-bifurca span::before, .dia2-bifurca span::after {
+    content: ''; position: absolute; top: 0; width: 2px; height: 15px; background: #2F2F2F;
+  }
+  .dia2-bifurca span::before { left: 0; }
+  .dia2-bifurca span::after { right: 0; }
+  .dia2-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .dia2-cab {
+    border: 2px solid; border-radius: 8px; padding: 8px 10px;
+    font-weight: 700; text-align: center; font-size: 0.9em; line-height: 1.4;
+  }
+  .dia2-col.verde { --punto: #7FA661; }
+  .dia2-col.rojo  { --punto: #C0704E; }
+  .dia2-col.verde .dia2-cab { background: #E2EFD9; border-color: #9CC185; }
+  .dia2-col.rojo  .dia2-cab { background: #FBE0D5; border-color: #E5A98E; }
+  .dia2-col .dia2-acc { margin-top: 10px; }
+  .dia2-pasos { list-style: none; margin: 14px 0 0; padding: 0 0 0 20px; position: relative; }
+  .dia2-pasos::before {
+    content: ''; position: absolute; left: 4px; top: 8px; bottom: 8px;
+    width: 2px; background: var(--punto); opacity: 0.5;
+  }
+  .dia2-pasos li { position: relative; margin-bottom: 13px; line-height: 1.5; font-size: 0.88em; }
+  .dia2-pasos li:last-child { margin-bottom: 0; }
+  .dia2-pasos li::before {
+    content: ''; position: absolute; left: -20px; top: 5px;
+    width: 10px; height: 10px; border-radius: 50%; background: var(--punto);
+  }
+  .dia2-pie {
+    margin-top: 16px; border: 2px solid #E5A98E; border-radius: 8px;
+    background: #FBE0D5; padding: 10px 13px; line-height: 1.55; font-size: 0.92em;
+  }
+  @media (max-width: 620px) {
+    .dia2-cols { grid-template-columns: 1fr; }
+    .dia2-bifurca { height: 16px; }
+    .dia2-bifurca span { display: none; }
+  }
+  /* Diagrama de situaciones tipo III: una secuencia de cuatro pasos y, debajo,
+     las acciones que acompañan todo el proceso. */
+  .dia-oficial { margin: 0 0 12px; font-size: 0.85em; color: #6b6b6b; text-transform: uppercase; letter-spacing: 0.03em; font-weight: 700; }
+  .dia3-sub {
+    margin: 0 0 14px; padding: 7px 12px; background: #B3261E; color: #fff;
+    border-radius: 6px; font-weight: 700; font-size: 0.92em; text-align: center;
+  }
+  .dia3-pasos { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+  .dia3-paso {
+    position: relative; border: 2px solid #2F2F2F; border-left: 5px solid #1E8449;
+    border-radius: 8px; padding: 30px 11px 11px; background: #fff;
+  }
+  .dia3-num {
+    position: absolute; top: -2px; left: 10px;
+    font-size: 1.9em; font-weight: 800; line-height: 1; color: #1E8449;
+  }
+  .dia3-paso p { margin: 0; font-size: 0.86em; line-height: 1.45; color: #333; }
+  .dia3-cards {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 11px;
+    margin-top: 16px; padding: 13px; background: #EFF1F4; border-radius: 10px;
+  }
+  .dia3-card {
+    background: #fff; border-radius: 8px; padding: 11px 13px;
+    font-size: 0.85em; line-height: 1.5; color: #333;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+  }
+  .dia3-card.alerta { border: 2px solid #B3261E; color: #8C1D18; }
+  .dia3-card.alerta b { color: #B3261E; }
+  @media (max-width: 620px) {
+    .dia3-pasos { grid-template-columns: 1fr 1fr; }
+    .dia3-cards { grid-template-columns: 1fr; }
+  }
   .detalle-caja .fuente { font-size: 0.85em; color: #6b6b6b; font-style: italic; }
   .detalle-cerrar {
     position: absolute; top: 0; right: 0;
@@ -838,7 +1086,7 @@
 
 <!-- Barra superior fija -->
 <header class="top">
-  <h1>📍 Ruta de Atención <span class="badge" id="badge-modo">Selecciona</span></h1>
+  <h1>📍 Ruta de Atención <span class="badge" id="badge-modo">Selecciona</span><span class="badge ruta" id="badge-ruta" style="display:none"></span></h1>
   <button onclick="reiniciar()">↺ Reiniciar</button>
 </header>
 
@@ -903,11 +1151,24 @@
   <div class="opciones" id="opciones-violencia"></div>
 </section>
 
+<!-- SECCIÓN: PUERTA · las cuatro del PowerPoint -->
+<section class="seccion seccion-seleccion" id="sec-puerta" style="display:none">
+  <h2 id="tituloPuerta">¿Qué necesitas ahora?</h2>
+  <p class="sub-seccion" id="subPuerta"></p>
+  <div class="opciones" id="opciones-puerta"></div>
+</section>
+
 <!-- SECCIÓN: CONTEXTO -->
 <section class="seccion seccion-seleccion" id="sec-contexto" style="display:none">
   <h2>¿Dónde ocurrió la agresión?</h2>
   <div class="opciones" id="opciones-contexto"></div>
 </section>
+
+<!-- Las cuatro puertas, siempre a la mano mientras se recorre una de ellas -->
+<div class="barra-puertas-zona" id="zonaPuertas" style="display:none">
+  <p class="barra-rama" id="barraRama"></p>
+  <div class="barra-puertas" id="barraPuertas"></div>
+</div>
 
 <!-- CAMINO VERTICAL CON LA RUTA -->
 <div class="camino-wrap" id="camino">
@@ -920,6 +1181,9 @@
   <div id="pasosContainer"></div>
 </div>
 
+<!-- Fuera de la carretera: si va dentro, el asfalto le pasa por encima. -->
+<div id="cierreRuta"></div>
+
 <footer>
   <div class="creditos">
     <p class="cred-titulo"><strong>Gobernación de Boyacá</strong></p>
@@ -928,14 +1192,14 @@
     <div class="cred-grupo">
       <p class="cred-entidad">Secretaría de Salud de Boyacá · Dirección de Promoción y Prevención</p>
       <p class="cred-sub">Programa de Salud Sexual y Reproductiva</p>
-      <p class="cred-persona"><b>Candy Samanta Rodríguez</b> — Directora de Promoción y Prevención en Salud</p>
-      <p class="cred-persona"><b>Constanza Marcela García</b> — Referente Departamental de Salud Sexual y Reproductiva</p>
-      <p class="cred-persona"><b>Laura Salud Tibaduisa</b> — Creadora de la ruta</p>
+      <p class="cred-persona"><b>Candy Samanta Rodríguez</b>, Directora de Promoción y Prevención en Salud</p>
+      <p class="cred-persona"><b>Constanza Marcela García</b>, Referente Departamental de Salud Sexual y Reproductiva</p>
+      <p class="cred-persona"><b>Laura Tibaduiza Cristancho</b>, Creadora de la ruta</p>
     </div>
 
     <div class="cred-grupo">
       <p class="cred-entidad">Instituto Nacional de Medicina Legal y Ciencias Forenses · Seccional Boyacá</p>
-      <p class="cred-persona"><b>Mario Gómez</b> — Psicólogo</p>
+      <p class="cred-persona"><b>Mario Gómez</b>, Psicólogo</p>
     </div>
 
     <div class="cred-grupo">
@@ -945,9 +1209,9 @@
 
     <div class="cred-grupo">
       <p class="cred-entidad">Secretaría de Planeación de Boyacá · Dirección de Seguimiento y Planeación Territorial</p>
-      <p class="cred-persona"><b>Giovanna Lobatón Piñeros</b> — Directora de Seguimiento y Planeación Territorial</p>
-      <p class="cred-persona"><b>César Monroy</b> — Desarrollador web</p>
-      <p class="cred-persona"><b>Camilo Mejía</b> — Diseñador gráfico</p>
+      <p class="cred-persona"><b>Giovanna Lobatón Piñeros</b>, Directora de Seguimiento y Planeación Territorial</p>
+      <p class="cred-persona"><b>César Monroy</b>, Desarrollador web</p>
+      <p class="cred-persona"><b>Camilo Mejía</b>, Diseñador gráfico</p>
     </div>
 
     <p class="cred-pie">Rutas institucionales basadas en mapas oficiales aportados por la Gobernación de Boyacá.</p>
@@ -969,11 +1233,12 @@ const VIOLENCIAS_COMUN = {
   psicologica: { icono: '💬', titulo: 'Verbal, psicológica o económica', desc: 'Insultos, control, amenazas' }
 };
 
-// La mujer suma la violencia laboral, que es una de las cuatro puertas de
-// entrada de la ruta y tiene autoridad propia: el Ministerio del Trabajo.
+// La mujer suma la violencia institucional, que es una de las cuatro puertas
+// de entrada de la ruta y se abre por ámbito: empresa privada, institución del
+// Estado o institución educativa.
 const VIOLENCIAS_COMUN_MUJER = {
   ...VIOLENCIAS_COMUN,
-  laboral: { icono: '🏢', titulo: 'Laboral', desc: 'Acoso, hostigamiento o agresión en el entorno de trabajo' }
+  laboral: { icono: '🏢', titulo: 'Institucional', desc: 'Barreras, violencia o acoso en el trabajo, el Estado o la educación' }
 };
 
 const VIOLENCIAS_INST_MUJER = {
@@ -996,6 +1261,128 @@ const VIOLENCIAS_INST_NNA = {
   negligencia: { icono: '🚪', titulo: 'Negligencia / Abandono', desc: 'Omisión de cuidados básicos' },
   vicaria: { icono: '👥', titulo: 'Vicaria', desc: 'Usar al NNA para dañar al otro progenitor' }
 };
+
+// Definición de cada tipo de violencia, para la ventana que abre «Ver más».
+//
+// Las cuatro primeras, sexual, física, laboral y psicológica/verbal/emocional
+// y económica, están tomadas de la pieza de la Secretaría sobre la Ley 1257 de
+// 2008. Las demás se redactaron para que ninguna tarjeta quede sin explicación
+// y están pendientes de revisión del equipo jurídico.
+const DEFINICIONES_VIOLENCIA = {
+  sexual: {
+    titulo: 'Violencia sexual',
+    cuerpo: '<p>La Organización Mundial de la Salud y la Organización Panamericana de '
+          + 'la Salud la definen como «todo acto sexual, la tentativa de consumar un '
+          + 'acto sexual, los comentarios o insinuaciones sexuales no deseados, o las '
+          + 'acciones para comercializar o utilizar de cualquier otro modo la '
+          + 'sexualidad de una persona».</p>',
+    fuente: 'OMS · OPS. Marco: Ley 1257 de 2008.'
+  },
+  fisica: {
+    titulo: 'Violencia física',
+    cuerpo: '<p>Son todas las agresiones que atentan contra el cuerpo de una persona, '
+          + 'ya sea a través de golpes, lanzamiento de objetos, encierro, sacudidas o '
+          + 'estrujones, entre otras conductas que puedan ocasionar daños físicos.</p>',
+    fuente: 'Ley 1257 de 2008.'
+  },
+  psicologica: {
+    titulo: 'Violencia psicológica, verbal, emocional y económica',
+    cuerpo: '<p>Es una forma de maltrato que no deja huellas físicas, pero sí profundos '
+          + 'daños en la salud mental y emocional de quien la sufre. Se manifiesta a '
+          + 'través de insultos, humillaciones, amenazas, manipulaciones, desprecio, '
+          + 'control excesivo y otras conductas que buscan disminuir la autoestima y el '
+          + 'bienestar de la persona.</p>'
+          + '<p>Aunque muchas veces pasa desapercibida o es minimizada, genera '
+          + 'inseguridad, ansiedad, depresión e incluso puede llevar al aislamiento '
+          + 'social. Reconocerla es fundamental para poder detenerla y buscar ayuda.</p>',
+    fuente: 'Ley 1257 de 2008.'
+  },
+  laboral: {
+    titulo: 'Violencia institucional',
+    cuerpo: '<p>La violencia institucional contra las mujeres se entiende como el conjunto de acciones, omisiones, prácticas, decisiones, procedimientos y barreras institucionales que, en el marco de la prestación de servicios de atención, protección, acceso a la justicia y restablecimiento de derechos, vulneran, obstaculizan o limitan el ejercicio efectivo de los derechos de las mujeres víctimas de violencias basadas en género.</p>'
+          + '<p>Esta forma de violencia puede manifestarse mediante la desatención, la negligencia, las demoras injustificadas, la falta de información clara y oportuna, la imposición de requisitos innecesarios, la desarticulación entre las entidades responsables, la minimización de los hechos denunciados, los prejuicios y estereotipos de género, el cuestionamiento de los testimonios, la culpabilización de las víctimas y la repetición innecesaria de sus relatos, entre otras prácticas que pueden generar revictimización y profundizar las afectaciones físicas, psicológicas, sociales y económicas derivadas de las violencias sufridas.</p>'
+          + '<p>La violencia institucional contra las mujeres puede presentarse en diferentes ámbitos de la sociedad, como las instituciones educativas, los espacios laborales y las entidades del Estado, a través de acciones u omisiones, prácticas discriminatorias, abuso de poder, negligencia, barreras de acceso a derechos o reproducción de estereotipos de género.</p>',
+    fuente: 'Ley 1257 de 2008 · Ley 1010 de 2006.'
+  },
+  economica: {
+    titulo: 'Violencia económica y patrimonial',
+    cuerpo: '<p>Es el control o la privación de los recursos que una persona necesita '
+          + 'para vivir: quitarle el dinero, impedirle trabajar o estudiar, negarle lo '
+          + 'necesario para el sostenimiento, o esconder, dañar o apropiarse de sus '
+          + 'bienes, documentos, instrumentos de trabajo o valores.</p>',
+    fuente: 'Ley 1257 de 2008, artículo 3 (daño patrimonial).'
+  },
+  vicaria: {
+    titulo: 'Violencia vicaria',
+    cuerpo: '<p>Es el daño que el agresor causa a los hijos, las hijas u otras personas '
+          + 'queridas por la mujer con el propósito de herirla a ella. Incluye '
+          + 'amenazarlos, maltratarlos, alejarlos de la madre o usarlos para presionarla '
+          + 'o castigarla.</p>',
+    fuente: 'Pendiente de revisión jurídica.'
+  },
+  acosoLaboral: {
+    titulo: 'Acoso laboral',
+    cuerpo: '<p>Es la conducta persistente y demostrable de un jefe, un compañero o un '
+          + 'subalterno dirigida a infundir miedo, intimidación, angustia o perjuicio '
+          + 'laboral, o a inducir la renuncia de la persona trabajadora. Comprende el '
+          + 'maltrato, la persecución, la discriminación, el entorpecimiento del trabajo '
+          + 'y la desprotección.</p>',
+    fuente: 'Ley 1010 de 2006.'
+  },
+  acosoSexLaboral: {
+    titulo: 'Acoso sexual laboral',
+    cuerpo: '<p>Es el acoso, la persecución o el hostigamiento de carácter sexual que una '
+          + 'persona ejerce en el entorno de trabajo valiéndose de su superioridad, su '
+          + 'autoridad o su posición. Incluye insinuaciones, contacto no deseado y '
+          + 'presión sexual a cambio de beneficios laborales o bajo amenaza de '
+          + 'perjuicio.</p>',
+    fuente: 'Código Penal, artículo 210 A · Ley 1010 de 2006.'
+  },
+  social: {
+    titulo: 'Violencia social o comunitaria',
+    cuerpo: '<p>Es la que ocurre fuera del ámbito doméstico: en la calle, el transporte, '
+          + 'los espacios educativos, los entornos digitales o la vida comunitaria. '
+          + 'Comprende el acoso callejero, la difusión de contenido íntimo sin '
+          + 'consentimiento, la discriminación y las agresiones en el espacio público.</p>',
+    fuente: 'Pendiente de revisión jurídica.'
+  },
+  politica: {
+    titulo: 'Violencia política',
+    cuerpo: '<p>Es la que se dirige contra las mujeres por su participación en la vida '
+          + 'pública: como candidatas, electas, lideresas o servidoras públicas. Busca '
+          + 'impedir, limitar o anular el ejercicio de sus derechos políticos mediante '
+          + 'presiones, amenazas, desprestigio o exclusión de sus funciones.</p>',
+    fuente: 'Pendiente de revisión jurídica.'
+  },
+  economicaLaboral: {
+    titulo: 'Violencia económica o laboral contra niñez y adolescencia',
+    cuerpo: '<p>Es la explotación económica de niños, niñas y adolescentes: ponerlos a '
+          + 'trabajar en actividades que ponen en riesgo su salud, su integridad o su '
+          + 'educación, o apropiarse de lo que ganan. El trabajo infantil está prohibido '
+          + 'y el adolescente autorizado a trabajar tiene protección especial.</p>',
+    fuente: 'Ley 1098 de 2006, Código de la Infancia y la Adolescencia.'
+  },
+  negligencia: {
+    titulo: 'Negligencia o abandono',
+    cuerpo: '<p>Es la omisión de los cuidados que un niño, una niña o un adolescente '
+          + 'necesita: alimentación, salud, higiene, educación, afecto, supervisión y '
+          + 'protección frente al peligro. No es un hecho aislado sino una falta '
+          + 'sostenida de quien tiene el deber de cuidarlo.</p>',
+    fuente: 'Ley 1098 de 2006, Código de la Infancia y la Adolescencia.'
+  }
+};
+
+function abrirDefinicion(clave) {
+  const d = DEFINICIONES_VIOLENCIA[clave];
+  if (!d) return;
+  document.getElementById('detalleTitulo').textContent = d.titulo;
+  document.getElementById('detalleCuerpo').innerHTML =
+    d.cuerpo + (d.fuente ? `<p class="fuente">${d.fuente}</p>` : '');
+  const modal = document.getElementById('detalleModal');
+  modal.classList.add('abierto');
+  modal.querySelector('.detalle-caja').scrollTop = 0;
+  document.body.style.overflow = 'hidden';
+}
 
 const CONTEXTOS_INST = {
   familiar: { icono: '🏠', titulo: 'Familiar', desc: 'Padres, madres, hermanos, abuelos, tíos, cuidadores, empleados domésticos' },
@@ -1389,22 +1776,92 @@ function rutaInstNNA(violencia, contexto) {
 // ============================ RUTAS COMUNITARIAS (existentes) ============================
 //
 // La rama de mujer sigue «ULTIMO AVANCE RUTA MUJER.pptx» al pie de la letra.
-// El PowerPoint organiza cada violencia en cuatro puertas —orientación y
-// apoyo, atención en salud, protección y denuncia— y cuelga de varias de
-// ellas pantallas de detalle. Aquí esas pantallas son ventanas emergentes,
+// El PowerPoint organiza cada violencia en cuatro puertas: orientación y
+// apoyo, atención en salud, protección y denuncia. De varias de ellas cuelgan
+// pantallas de detalle. Aquí esas pantallas son ventanas emergentes,
 // con el texto tal como está en la diapositiva.
 
 // Texto que el PowerPoint repite en las tres violencias que lo tienen.
+// Diapositiva de la sala situacional municipal del Mecanismo Articulador.
+const SALA_SITUACIONAL = `
+  <div class="sala-situacional">
+    <h4>¿Sabías que puedes solicitar una sala situacional municipal?</h4>
+    <p>La sala situacional se convoca cuando la ruta no responde. Procede, entre
+    otros casos, por:</p>
+    <ul>
+      <li><b>Negación del servicio o mora injustificada</b> y barreras para la
+      atención integral por más de un actor institucional de salud, protección o
+      justicia de carácter municipal o departamental competente en la atención de
+      las víctimas por razones de sexo y género, con especial atención en
+      violencias de género dentro y fuera del ámbito familiar y en violencias por
+      prejuicio y discriminación en contextos socio-comunitarios, políticos,
+      educativos, laborales e institucionales.</li>
+      <li><b>Barreras por acción u omisión de las entidades competentes:</b> no
+      recibir el caso o la denuncia, no otorgar las medidas de protección en los
+      términos de ley, incumplir el seguimiento de esas medidas por parte de la
+      Policía Nacional, u omitir la apertura del incidente de incumplimiento por
+      parte de las Comisarías de Familia.</li>
+      <li><b>Dificultades en la reasignación de procesos</b> de Comisaría de
+      Familia o Defensoría de Familia del ICBF tras un cambio de municipio de
+      residencia, o barreras en la atención del caso por competencia subsidiaria
+      según los términos de ley.</li>
+    </ul>
+    <p><b>Quién puede solicitarla.</b> Las instituciones y los procesos
+    organizativos de la sociedad civil, a través de la Secretaría Técnica del
+    Mecanismo Articulador.</p>
+    <p class="sala-aviso">Si en el municipio no se logra resolver la barrera, el
+    caso se eleva al departamento. Ten presente que primero debe agotarse la
+    instancia municipal.</p>
+  </div>`;
+
 const TXT = {
   orientacion: {
     tipo: 'otro',
+    puerta: 'orientacion',
     titulo: 'Orientación y apoyo',
-    desc: 'Las mujeres víctimas de violencias tienen derecho a recibir información clara, completa, veraz y oportuna sobre sus derechos. Los municipios brindarán información y asesoría a mujeres víctimas.',
+    desc: 'Las mujeres víctimas de violencias tienen derecho a recibir información clara, completa, veraz y oportuna sobre sus derechos. Los municipios brindarán información y asesoría a mujeres víctimas. Puedes pedir orientación en:',
+    detalles: [
+      '<b>Comisarías y Defensorías de Familia.</b>',
+      '<b>Procuraduría General de la Nación.</b>',
+      '<b>Personerías municipales.</b>',
+      '<b>Defensoría del Pueblo.</b>',
+      '<b>Alcaldías municipales y Gobernación.</b>',
+      '<b>E.S.E. y hospitales municipales.</b>',
+      '<b>Consultorios jurídicos.</b>',
+      '<b>Otras no institucionales:</b> organizaciones sociales y ONG.'
+    ],
+    urgencia: 'Si requieres más información puedes llamar a la línea 155, a la línea 122 de la Fiscalía General de la Nación, a la línea 106 de salud mental o a la línea 123 de emergencias de la Policía Nacional.',
     normativa: 'Artículos 8 y 20 de la Ley 1257 de 2008',
-    tags: ['Orientación y apoyo']
+    masInfo: [{
+      titulo: 'Organizaciones de base comunitaria',
+      html: '<p>Además de las entidades del Estado, puedes acudir a organizaciones de '
+          + 'base comunitaria que acompañan a mujeres víctimas de violencias.</p>'
+          + '<p>No necesitas haber denunciado para pedir orientación en ninguna de '
+          + 'ellas.</p>'
+    }],
+    tags: ['Línea 155', 'Línea 122', 'Línea 106', 'Línea 123']
+  },
+  // Diapositiva 9 del PowerPoint. Estaba como ventana emergente dentro del
+  // paso de atención médica; va como paso propio, porque son los derechos que
+  // hay que poder exigir en la puerta del hospital, no una nota al pie.
+  derechosSalud: {
+    tipo: 'medico',
+    puerta: 'salud',
+    titulo: 'Tus derechos en la atención en salud',
+    desc: 'El sistema de salud debe garantizar la intervención sobre las consecuencias en salud física y mental que puedan haber causado las violencias.',
+    detalles: [
+      'Tienes derecho a ser atendida como <b>urgencia médica</b> en todos los puestos de salud, ESE municipales y hospitales del departamento.',
+      'Recibir <b>información clara, completa, veraz y oportuna</b> en relación con la salud sexual y reproductiva.',
+      'Ser tratada con <b>reserva de identidad</b> al recibir la asistencia médica.',
+      'La atención médica es <b>gratuita</b>. No se deben interponer barreras de acceso como copagos, cuotas moderadoras u otros condicionantes (Sentencia T-735 de 2017).',
+      'La institución <b>deberá reportar</b> a las entidades pertinentes del caso: Policía, Fiscalía, Comisaría de Familia y Defensoría de Familia del ICBF.'
+    ],
+    normativa: 'Sentencia T-735 de 2017',
+    tags: ['Urgencia', 'Gratuita', 'Reserva de identidad']
   },
   atencionGarantizada: (conSala) => ({
     tipo: 'medico',
+    puerta: 'salud',
     titulo: 'Para la atención en salud se deben garantizar',
     desc: 'Psicología, otras acciones del sector salud y la activación interinstitucional de la ruta.',
     detalles: [
@@ -1416,11 +1873,278 @@ const TXT = {
   }),
   comisariaCompetencia: {
     titulo: 'Comisaría de familia · competencia',
-    html: '<p><b>COMPETENCIA (Ley 2126 de 2021).</b> Los comisarios y comisarías de familia serán competentes para conocer la violencia en el contexto familiar que, para los efectos de esta ley, comprende toda acción u omisión que pueda causar o resulte en daño o sufrimiento físico, sexual, psicológico, patrimonial o económico, amenaza, agravio, ofensa o cualquier otra forma de agresión que se comete por uno o más miembros del núcleo familiar, contra uno o más integrantes del mismo, aunque no convivan bajo el mismo techo, los cuales pueden ser:</p><ul><li>Los cónyuges o compañeros permanentes, aunque se hubieren separado o divorciado.</li><li>Las personas encargadas del cuidado de uno o varios miembros de una familia en su domicilio o en cualquier lugar.</li><li>El padre o la madre, aun cuando no convivan en el mismo hogar, si el maltrato se dirige contra el otro.</li><li>Personas que residan en el mismo hogar o integran la unidad doméstica sin relación de parentesco.</li><li>Personas con las que se sostiene o se haya sostenido una relación de pareja, cohabitacional o no, de carácter permanente que se caracterice por la estabilidad.</li></ul>'
+    html: '<p><b>COMPETENCIA (Ley 2126 de 2021).</b> Los comisarios y comisarías de familia serán competentes para conocer la violencia en el contexto familiar que, para los efectos de esta ley, comprende toda acción u omisión que pueda causar o resulte en daño o sufrimiento físico, sexual, psicológico, patrimonial o económico, amenaza, agravio, ofensa o cualquier otra forma de agresión que se comete por uno o más miembros del núcleo familiar, contra uno o más integrantes del mismo, aunque no convivan bajo el mismo techo, los cuales pueden ser:</p><ul><li>Los cónyuges o compañeros permanentes, aunque se hubieren separado o divorciado, o personas con quien mantiene o haya mantenido relaciones extramatrimoniales.</li><li>Las personas encargadas del cuidado de uno o varios miembros de una familia en su domicilio o en cualquier lugar.</li><li>El padre o la madre, aun cuando no convivan en el mismo hogar, si el maltrato se dirige contra el otro.</li><li>Personas que residan en el mismo hogar o integran la unidad doméstica sin relación de parentesco.</li><li>Personas con las que se sostiene o se haya sostenido una relación de pareja, cohabitacional o no, de carácter permanente que se caracterice por la estabilidad.</li></ul>'
   },
   comisariaFunciones: {
     titulo: 'Comisaría de familia · funciones y medidas',
-    html: '<p>La Comisaría de Familia de tu territorio hace parte de la Administración Municipal, la cual dentro de sus funciones están:</p><ul><li>Recibir denuncias correspondientes a hechos de violencia en el contexto familiar.</li><li>Evaluarán tu nivel de riesgo y otorgará las medidas de protección y ordenará medidas de atención.</li><li>Ordenará y articulará acciones con la Policía para garantizar la protección y la seguridad de la o las víctimas.</li><li>Realizará seguimiento.</li></ul><p><b>Artículo 16 de la Ley 1257 de 2008.</b> Mediante proceso administrativo por violencia intrafamiliar o en el marco de un proceso judicial realiza:</p><ul><li>Desalojo del agresor.</li><li>Direccionar a tratamiento terapéutico o reeducativo.</li><li>Decidir régimen de custodia y visitas.</li><li>Abstenerse de acudir a donde se encuentre la víctima.</li><li>Suspensión de la tenencia de armas.</li><li>Decidir uso y disfrute de la vivienda familiar.</li><li>Prohibir enajenar bienes.</li><li>Devolución de objetos de uso personal, entre otros.</li><li>Medidas de protección provisional o definitiva.</li></ul><p><b>Medidas de atención:</b> autoridades encargadas de brindar medidas de atención a mujeres.</p>'
+    html: '<p>La Comisaría de Familia de tu territorio hace parte de la Administración Municipal, la cual dentro de sus funciones están:</p><ul><li>Recibir denuncias correspondientes a hechos de violencia en el contexto familiar.</li><li>Evaluarán tu nivel de riesgo y otorgará las medidas de protección y ordenará medidas de atención.</li><li>Ordenará y articulará acciones con la Policía para garantizar la protección y la seguridad de la o las víctimas.</li><li>Realizará seguimiento.</li></ul><p><b>Artículo 16 de la Ley 1257 de 2008.</b> Mediante proceso administrativo por violencia intrafamiliar o en el marco de un proceso judicial realiza:</p><ul><li>Desalojo del agresor.</li><li>Direccionar a tratamiento terapéutico o reeducativo.</li><li>Decidir régimen de custodia y visitas.</li><li>Abstenerse de acudir a donde se encuentre la víctima.</li><li>Suspensión de la tenencia de armas.</li><li>Decidir uso y disfrute de la vivienda familiar.</li><li>Prohibir enajenar bienes.</li><li>Devolución de objetos de uso personal, entre otros.</li><li>Medidas de protección provisional o definitiva.</li></ul><p><b>Medidas de atención.</b> Son las que cubren habitación, transporte y alimentación mientras dura el riesgo. Se detallan en la ventana «Medidas de atención a mujeres víctimas».</p>'
+  },
+  contextoFamiliar: {
+    titulo: '¿Dentro o fuera del contexto familiar?',
+    html: '<p>De esto depende la autoridad competente, así que conviene tenerlo '
+        + 'claro antes de elegir.</p>'
+        + '<p><b>Dentro del contexto familiar.</b> Es toda acción u omisión que pueda '
+        + 'causar o resulte en daño o sufrimiento físico, sexual, psicológico, '
+        + 'patrimonial o económico, amenaza, agravio, ofensa o cualquier otra forma de '
+        + 'agresión cometida por uno o más miembros del núcleo familiar contra uno o '
+        + 'más integrantes del mismo, <b>aunque no convivan bajo el mismo techo</b>. '
+        + 'Los cuales pueden ser:</p>'
+        + '<ul><li>Los cónyuges o compañeros permanentes, aunque se hubieren separado '
+        + 'o divorciado, o personas con quien mantiene o haya mantenido relaciones '
+        + 'extramatrimoniales.</li>'
+        + '<li>Las personas encargadas del cuidado de uno o varios miembros de una '
+        + 'familia en su domicilio o en cualquier lugar.</li>'
+        + '<li>El padre o la madre, aun cuando no convivan en el mismo hogar, si el '
+        + 'maltrato se dirige contra el otro.</li>'
+        + '<li>Personas que residan en el mismo hogar o integran la unidad doméstica '
+        + 'sin relación de parentesco.</li>'
+        + '<li>Personas con las que se sostiene o se haya sostenido una relación de '
+        + 'pareja, cohabitacional o no, de carácter permanente que se caracterice por '
+        + 'la estabilidad.</li></ul>'
+        + '<p>En estos casos la autoridad competente es la <b>Comisaría de '
+        + 'Familia</b>.</p>'
+        + '<p><b>Fuera del contexto familiar.</b> Es la agresión que no encaja en '
+        + 'ninguno de los casos anteriores: la que ocurre en el espacio público, el '
+        + 'entorno educativo, el laboral, el virtual o el institucional, y la que '
+        + 'proviene de vecinas y vecinos, compañeros de trabajo o personas '
+        + 'desconocidas. Ahí intervienen la <b>Inspección de Convivencia y Paz</b> y '
+        + 'la <b>Fiscalía</b>.</p>'
+        + '<p class="fuente">Ley 2126 de 2021, competencia de las comisarías de '
+        + 'familia.</p>'
+  },
+  tutelaDuitama: {
+    titulo: 'Prohibición de discriminación a trabajadoras sexuales',
+    html: '<p>El rechazo por la forma de vestir y el trato indigno son violencia.</p>'
+        + '<p>La sentencia resolvió una acción de tutela contra la Alcaldía Municipal '
+        + 'de Duitama y su Secretaría de Gobierno, el Concejo Municipal, la Policía '
+        + 'Nacional Estación Duitama y un líder comunal delegado de la Junta de Acción '
+        + 'Comunal del barrio Centro de Duitama.</p>'
+        + '<p>La decisión tiene <b>efecto erga omnes</b>: obliga más allá de las partes '
+        + 'del proceso, así que puede invocarse en cualquier municipio.</p>'
+        + '<p class="fuente">Corte Constitucional, Sentencia T-310 de 2022</p>'
+  },
+  mintrabajoCanales: {
+    titulo: 'Canales de atención del Ministerio del Trabajo',
+    html: '<p><b>Presenciales en Boyacá</b></p>'
+        + '<ul><li><b>Dirección Territorial Boyacá:</b> carrera 9A n.º 14-46, Tunja.</li>'
+        + '<li><b>Inspección Municipal de Sogamoso:</b> calle 16A n.º 11A-65, piso 2.</li>'
+        + '<li><b>Inspección Municipal de Duitama:</b> carrera 15 n.º 14-23, Palacio de '
+        + 'Justicia, oficina 307.</li>'
+        + '<li><b>Inspección Municipal de Chiquinquirá:</b> carrera 8 n.º 19-33, '
+        + 'edificio Atalaya, local 101.</li>'
+        + '<li><b>Inspección Municipal de Puerto Boyacá:</b> carrera 2 n.º 10-21, '
+        + 'local 6, edificio administrativo municipal.</li>'
+        + '<li><b>Inspección Municipal de Guateque:</b> carrera 6 n.º 9-26, palacio '
+        + 'municipal, piso 2.</li>'
+        + '<li><b>Inspección Municipal de Soatá:</b> carrera 4 n.º 10-75, palacio '
+        + 'municipal, primer piso.</li></ul>'
+        + '<p><b>Virtuales</b></p>'
+        + '<ul><li>Radicar PQR en el portal del Ministerio del Trabajo, '
+        + '<b>www.mintrabajo.gov.co</b>, en el enlace «Radicar PQR».</li>'
+        + '<li>Documentos escritos a la Dirección Territorial Boyacá: '
+        + '<b>dtboyaca@mintrabajo.gov.co</b></li></ul>'
+  },
+  mintrabajoNormas: {
+    titulo: 'Qué respalda tu reclamo ante el Ministerio del Trabajo',
+    html: '<ul><li><b>Resolución 4607 de 2022.</b> Creó el Grupo Élite por la Equidad '
+        + 'de Género, para adelantar inspecciones y actuaciones dirigidas a prevenir '
+        + 'las conductas generadoras de violencia de género, disminuir las brechas '
+        + 'salariales y garantizar los derechos laborales.</li>'
+        + '<li><b>Circular 026 de 2023.</b> Aboga por eliminar toda discriminación en '
+        + 'el mundo del trabajo y reconoce a las mujeres en sus diversidades como '
+        + 'especialmente expuestas a estas violencias.</li>'
+        + '<li><b>Circular 075 del 20 de junio de 2025.</b> Directrices para prevenir, '
+        + 'identificar y atender el acoso laboral y sexual y la discriminación: '
+        + 'procesos de selección inclusivos y actuación de los comités de '
+        + 'convivencia.</li></ul>'
+  },
+  salaSituacionalVentana: {
+    titulo: 'Sala situacional municipal o departamental',
+    html: SALA_SITUACIONAL
+  },
+  ministerioPublico: {
+    titulo: 'Quién es quién en el Ministerio Público',
+    html: '<p>Lo integran la Procuraduría General de la Nación, la Defensoría del '
+        + 'Pueblo y las personerías municipales.</p>'
+        + '<p><b>Defensoría del Pueblo.</b> Vela por la promoción y la garantía de los '
+        + 'derechos humanos. Ofrece atención, orientación y asesoría sobre el ejercicio '
+        + 'de los derechos, y ejerce control sobre las actuaciones de funcionarias y '
+        + 'funcionarios públicos, o de particulares que prestan servicios públicos.</p>'
+        + '<p><b>Personerías municipales.</b> Trabajan por la protección de los '
+        + 'derechos humanos y el interés público en el territorio, y vigilan las '
+        + 'actuaciones de funcionarias y funcionarios. En las personerías se accede a '
+        + '<b>asesoría gratuita</b> para presentar acciones de tutela y derechos de '
+        + 'petición.</p>'
+        + '<p><b>Procuraduría General de la Nación.</b> Investiga la conducta de '
+        + 'funcionarias y funcionarios públicos, incluidos los miembros de la Policía, '
+        + 'cuando en ejercicio de sus funciones generen discriminación, exclusión o '
+        + 'violencia, con poder preferente para investigar y garantizar derechos.</p>'
+  },
+  rutaUniversitaria: {
+    titulo: 'Acoso sexual y violencias de género en educación superior',
+    html: '<p>La <b>Ley 2365 de 2024</b> establece medidas de prevención, protección y '
+        + 'atención frente al acoso sexual, y la <b>Resolución 020310 del 31 de julio '
+        + 'de 2026</b> del Ministerio de Educación Nacional fija las directrices para '
+        + 'prevenir, detectar, atender y sancionar las violencias basadas en género y '
+        + 'el acoso sexual en las instituciones de formación técnica, tecnológica y educación superior.</p>'
+        + '<p>El procedimiento tiene cinco momentos:</p>'
+        + '<ol><li><b>Recepción</b> por la primera persona que conoce el hecho.</li>'
+        + '<li><b>Valoración del riesgo:</b> riesgo para la vida o la integridad, '
+        + 'amenaza o intimidación, posibilidad de nuevas agresiones, convivencia o '
+        + 'contacto permanente con el presunto agresor, riesgo académico, laboral o '
+        + 'económico, violencia sexual, violencia digital y situaciones que involucren '
+        + 'a menores de edad.</li>'
+        + '<li><b>Medidas de protección:</b> evitar el contacto entre la víctima y el '
+        + 'presunto agresor, modificar temporalmente horarios o espacios, cambios de '
+        + 'grupo o de actividades académicas, medidas frente a prácticas, monitorías o '
+        + 'actividades laborales, protección de la información personal, acompañamiento '
+        + 'psicológico y jurídico, y medidas frente a comunicaciones o acoso '
+        + 'digital.</li>'
+        + '<li><b>Procedimiento disciplinario:</b> trámite interno para determinar si '
+        + 'una persona vinculada a la institución incurrió en una conducta prohibida '
+        + 'y, si corresponde, imponer la consecuencia que fije el reglamento.</li>'
+        + '<li><b>Seguimiento:</b> si las medidas siguen siendo necesarias, si cesaron '
+        + 'las conductas, si hay riesgo de represalias, si puedes continuar tus '
+        + 'estudios o tu trabajo sin afectaciones y si necesitas seguir con '
+        + 'acompañamiento.</li></ol>'
+        + '<p class="fuente">Ley 30 de 1992 · Ley 2365 de 2024 · Resolución 020310 de '
+        + '2026 del Ministerio de Educación Nacional</p>'
+  },
+  situacionesTipo2: {
+    titulo: 'Protocolo para situaciones tipo II',
+    html: '<p class="dia-oficial">Ruta de atención para presuntos casos de '
+        + 'violencias basadas en género. Situaciones tipo II.</p>'
+        + '<div class="dia2">'
+        + '  <div class="dia2-top">'
+        + '    <ol><li>Activar los protocolos para situaciones tipo II.</li>'
+        + '    <li>Obtener más información sobre la situación.</li></ol>'
+        + '  </div>'
+        + '  <div class="dia2-bifurca"><span></span></div>'
+        + '  <div class="dia2-cols">'
+        + '    <div class="dia2-col verde">'
+        + '      <div class="dia2-cab">Si no se presentan daños al cuerpo o a la salud '
+        + 'de la víctima:</div>'
+        + '      <div class="dia2-acc"><ol>'
+        + '        <li>Establecer acuerdos de convivencia y compromisos para el o los '
+        + 'victimarios.</li>'
+        + '        <li>Reportar en el Sistema de Información Unificado para la '
+        + 'Convivencia Escolar, SIUCE.</li>'
+        + '      </ol></div>'
+        + '    <ul class="dia2-pasos">'
+        + '      <li>En caso de ser necesario y si hay personas preparadas para '
+        + 'ello, realizar primeros auxilios psicológicos y medidas de contención '
+        + 'emocional para posibles situaciones de crisis en víctimas.</li>'
+        + '      <li>Guardar confidencialidad máxima y respeto a la dignidad de la '
+        + 'víctima y convocar a familia o acudiente de involucrados.</li>'
+        + '      <li>Adoptar e implementar acciones de promoción y prevención.</li>'
+        + '      <li>Realizar seguimiento y garantizar trayectoria educativa a la '
+        + 'víctima y al victimario si es otro estudiante.</li>'
+        + '    </ul>'
+        + '    </div>'
+        + '    <div class="dia2-col rojo">'
+        + '      <div class="dia2-cab">Si se presentan daños al cuerpo o a la salud de '
+        + 'la víctima:</div>'
+        + '      <div class="dia2-acc"><ol>'
+        + '        <li>Solicitar ayuda de urgencias a la línea 123 o a cualquier '
+        + 'contacto de salud del territorio.</li>'
+        + '      </ol></div>'
+        + '    <ul class="dia2-pasos">'
+        + '      <li>En caso de ser necesario y si hay personas preparadas para '
+        + 'ello, realizar primeros auxilios psicológicos y medidas de contención '
+        + 'emocional para posibles situaciones de crisis en víctimas.</li>'
+        + '      <li>Guardar confidencialidad máxima y respeto a la dignidad de la '
+        + 'víctima y convocar a familia o acudiente de involucrados.</li>'
+        + '      <li>Adoptar e implementar acciones de promoción y prevención.</li>'
+        + '      <li>Realizar seguimiento y garantizar trayectoria educativa a la '
+        + 'víctima y al victimario si es otro estudiante.</li>'
+        + '    </ul>'
+        + '    </div>'
+        + '  </div>'
+        + '  <div class="dia2-pie"><b>Si el victimario es un docente, directivo docente '
+        + 'o administrativo:</b> conocido el caso, separar inmediatamente al victimario '
+        + 'del aula y evitar que tenga contacto con niños, niñas y adolescentes.</div>'
+        + '</div>'
+        + '<p class="fuente">Directiva Ministerial 01 del Ministerio de Educación '
+        + 'Nacional</p>'
+  },
+  situacionesTipo3: {
+    titulo: 'Protocolo para situaciones tipo III',
+    html: '<p class="dia-oficial">Ruta de atención para presuntos casos de '
+        + 'violencias basadas en género. Situaciones tipo III.</p>'
+        + '<p class="dia3-sub">Presunto delito asociado a violencias basadas en '
+        + 'género.</p>'
+        + '<div class="dia3-pasos">'
+        + '  <div class="dia3-paso"><span class="dia3-num">1</span>'
+        + '    <p>Activar el protocolo para situaciones tipo III.</p></div>'
+        + '  <div class="dia3-paso"><span class="dia3-num">2</span>'
+        + '    <p>Llamar a la línea 123 o a cualquier contacto de salud del territorio '
+        + 'y acompañar a la víctima hasta que sea atendida en salud.</p></div>'
+        + '  <div class="dia3-paso"><span class="dia3-num">3</span>'
+        + '    <p>Informar a la Policía Nacional o a la Fiscalía General de la Nación '
+        + 'y al ICBF.</p></div>'
+        + '  <div class="dia3-paso"><span class="dia3-num">4</span>'
+        + '    <p>Denunciar ante la Comisaría de Familia o el Defensor de '
+        + 'Familia.</p></div>'
+        + '</div>'
+        + '<div class="dia3-cards">'
+        + '  <div class="dia3-card">En caso de ser necesario y si hay personas '
+        + 'preparadas para ello, realizar primeros auxilios psicológicos y medidas de '
+        + 'contención emocional para posibles situaciones de crisis en víctimas.</div>'
+        + '  <div class="dia3-card">Guardar confidencialidad máxima y respeto a la '
+        + 'dignidad de la víctima y convocar a familia o acudiente de '
+        + 'involucrados.</div>'
+        + '  <div class="dia3-card">Reportar en el Sistema de Información Unificado '
+        + 'para la Convivencia Escolar, SIUCE.</div>'
+        + '  <div class="dia3-card">Adoptar e implementar acciones de promoción y '
+        + 'prevención.</div>'
+        + '  <div class="dia3-card">Realizar seguimiento y garantizar trayectoria '
+        + 'educativa a la víctima y al victimario si es otro estudiante.</div>'
+        + '  <div class="dia3-card alerta"><b>Conocido el caso:</b> separar '
+        + 'inmediatamente al victimario del aula y evitar que tenga contacto con niños, '
+        + 'niñas y adolescentes.</div>'
+        + '</div>'
+        + '<p class="fuente">Directiva Ministerial 01 del Ministerio de Educación '
+        + 'Nacional</p>'
+  },
+  convivenciaEscolar: {
+    titulo: 'Convivencia escolar · marco y tipos de caso',
+    html: '<p>La <b>Ley 1620 de 2013</b> y el <b>Decreto 1965 de 2013</b> crearon el '
+        + 'Sistema Nacional de Convivencia Escolar, que obliga a los colegios a tener '
+        + 'manuales y protocolos que prevengan la violencia escolar y la '
+        + 'discriminación, y fija las rutas de atención dentro de la institución.</p>'
+        + '<p>Los casos <b>tipo II</b> son agresión escolar, acoso y ciberacoso. Los '
+        + '<b>tipo III</b> son agresiones graves que pueden constituir delito: esos se '
+        + 'elevan al Comité de Convivencia Escolar Municipal y se notifican a las '
+        + 'autoridades competentes.</p>'
+        + '<p class="fuente">Ley 115 de 1994 · Ley 1620 de 2013 · Decreto 1965 de 2013 '
+        + '· Sentencias T-478 de 2015 y T-529 de 2024</p>'
+  },
+  medidasAtencion: {
+    titulo: 'Medidas de atención a mujeres víctimas',
+    html: '<p>No son lo mismo que las medidas de protección. Las de atención cubren lo '
+        + 'material mientras dura el riesgo.</p>'
+        + '<p><b>Mujeres víctimas</b><br><span class="fuente">Artículo 19 de la Ley '
+        + '1257 de 2008 · Decreto 1792 de 2012 · Ley 1753 de 2015, artículo 67 · '
+        + 'Decreto 780 de 2016 · Resolución 595 de 2020 · Resolución 1255 de '
+        + '2020</span></p>'
+        + '<ul><li>Garantizar <b>habitación, transporte y alimentación</b> a la mujer '
+        + 'víctima y a sus personas a cargo, a través del Sistema General de Seguridad '
+        + 'Social en Salud.</li>'
+        + '<li>A través de IPS u hoteles.</li>'
+        + '<li><b>Subsidio monetario</b> si no se cuenta con hotel, o si la víctima '
+        + 'decide no permanecer allí.</li>'
+        + '<li>Incluye además <b>asistencia médica, psicológica y psiquiátrica</b>.</li>'
+        + '<li>Hasta por <b>seis meses, prorrogables</b> por otro tanto, siempre que la '
+        + 'situación lo amerite.</li>'
+        + '<li><b>Ubicación reservada.</b></li></ul>'
+        + '<p><b>Autoridades encargadas de brindar medidas de atención a mujeres</b></p>'
+        + '<ul><li><b>Quién imparte la medida:</b> la autoridad competente, es decir la '
+        + 'Comisaría de Familia, el juez de control de garantías, el juez civil '
+        + 'municipal o el promiscuo municipal.</li>'
+        + '<li><b>Quién brinda la atención:</b> las entidades territoriales del orden '
+        + 'distrital y departamental, conforme a las Resoluciones 595 y 1255 de 2020 '
+        + 'del Ministerio de Salud y a los Decretos 1630 de 2019 y 075 de 2024.</li>'
+        + '</ul>'
   },
   convivenciaYPaz: {
     titulo: 'Inspección de Convivencia y Paz',
@@ -1431,41 +2155,117 @@ const TXT = {
     html: '<p><b>Artículo 134 del Código de Procedimiento Penal. Medidas de atención y protección a las víctimas.</b> Las víctimas, en garantía de su seguridad y el respeto a su intimidad, podrán por conducto del fiscal solicitar al juez de control de garantías las medidas indispensables para su atención y protección. Igual solicitud podrán formular las víctimas, por sí mismas o por medio de su abogado, durante el juicio oral y el incidente de reparación integral. (Ley 1257 de 2008)</p><p>Intervienen la Unidad de Reacción Inmediata URI, la Sala de Denuncias y la Fiscalía Local, el Juez de Control de Garantías y el Juez de Conocimiento.</p><p>Normalmente el caso queda en conocimiento de la Fiscalía General de la Nación, especialmente como delito penal y eventualmente con medidas de protección para la víctima, en: lesiones personales, amenazas, actos de discriminación, intento de feminicidio, feminicidio, violencia sexual y agresiones por razones de género u orientación sexual. También cubre agresiones entre vecinas y vecinos, compañeros de trabajo o desconocidos.</p><p class="fuente">Código Penal Colombiano · Ley 1761 de 2015 (Ley Rosa Elvira Cely, feminicidio)</p>'
   },
   canalesFiscalia: {
-    titulo: 'Canales de acceso a la Fiscalía',
+    titulo: 'Canales de acceso para denunciar',
     html: '<p>Activa la ruta el primer conocedor del delito. También puedes acudir a la Fiscalía (URI, Sala de Denuncias) e informar cuando se identifique un presunto delito.</p><p>La apertura del proceso legal en fiscalía se identifica a través del número único de noticia criminal, que se asigna una vez la policía judicial reporta el caso. Con ese número se puede hacer trazabilidad y seguimiento en www.fiscalia.gov.co, en la pestaña «consulte su denuncia», en el seguimiento de casos del SPOA (Sistema Penal Oral Acusatorio).</p><p><b>Centro de Atención de la Fiscalía (CAF):</b> Tunja, Duitama, Sogamoso y Chiquinquirá.</p><p><b>Unidades de Fiscalía locales:</b> Aquitania, Buenavista, Chiquinquirá, Cómbita, Duitama, El Cocuy, Garagoa, Guateque, Labranzagrande, Miraflores, Monguí, Moniquirá, Muzo, Otanche, Paipa, Pajarito, Paz de Río, Ramiriquí, Samacá, Santa Rosa de Viterbo, Santana, Siachoque, Soatá, Soacha, Ventaquemada y Villa de Leyva.</p><p><b>Puntos de Atención de la Fiscalía (PAF), por convenio con las alcaldías:</b> Tuta, Pesca, Nobsa, Toca, Chita, Sativanorte, Sativasur, Maripí, Caldas, Pauna, Belén, San Luis de Gaceno, Pisba y San José de Pare.</p><p>En los municipios donde no se cuenta con CAF ni con PAF, las unidades locales y seccionales cumplen la función de recepción.</p>'
   }
 };
 
-function pasoComisaria() {
+// Dicho una sola vez: aparece en atención en salud, en protección y en la
+// Comisaría de la rama de violencia verbal y psicológica.
+const DANO_PSIQUICO = 'Si se requiere valoración médico legal por <b>daño psíquico</b>, '
+                    + 'esta solamente se puede realizar en Medicina Legal.';
+
+function pasoComisaria(variante) {
+  // La diapositiva 24, la de violencia verbal, suma dos renglones que la 15,
+  // la de física, no trae.
+  const verbal = variante === 'verbal';
+  const funciones = [
+    'Recibir las denuncias correspondientes a hechos de violencia en el contexto familiar.'
+  ];
+  if (verbal) {
+    funciones.push('Conocer hechos de violencia ocurridos <b>fuera</b> del contexto familiar.');
+  }
+  funciones.push('Evaluar tu nivel de riesgo, otorgar las <b>medidas de protección</b> y ordenar <b>medidas de atención</b>.');
+  if (verbal) funciones.push(DANO_PSIQUICO);
+  funciones.push('Ordenar y articular acciones con la Policía para garantizar tu protección y tu seguridad.');
+  funciones.push('Realizar seguimiento al caso.');
+
   return {
     tipo: 'comisaria',
     titulo: 'Comisaría de familia',
-    desc: 'Recibe las denuncias por hechos de violencia en el contexto familiar, evalúa tu nivel de riesgo, otorga las medidas de protección, ordena las medidas de atención, articula con la Policía y realiza seguimiento.',
+    desc: 'La Comisaría de Familia de tu territorio hace parte de la administración municipal y es la competente cuando la violencia ocurre en el contexto familiar. Dentro de sus funciones están:',
+    detalles: funciones,
+    urgencia: 'Mediante proceso administrativo por violencia intrafamiliar, o en el marco de un proceso judicial, la Comisaría puede ordenar el desalojo del agresor, direccionarlo a tratamiento terapéutico o reeducativo, decidir el régimen de custodia y visitas, prohibirle acudir a donde te encuentres, suspenderle la tenencia de armas, decidir el uso y disfrute de la vivienda familiar, prohibir enajenar bienes y ordenar la devolución de objetos de uso personal, entre otras medidas, provisionales o definitivas.',
     normativa: 'Ley 2126 de 2021 · Artículo 16 de la Ley 1257 de 2008',
-    masInfo: [TXT.comisariaCompetencia, TXT.comisariaFunciones],
+    masInfo: [TXT.comisariaCompetencia, TXT.comisariaFunciones,
+              TXT.medidasAtencion],
     tags: ['Dentro del contexto familiar', 'Medidas de protección', 'Medidas de atención']
   };
 }
 
-function pasoInspeccion() {
+function pasoInspeccion(variante) {
+  if (variante === 'verbal') {
+    return {
+      tipo: 'policia',
+      titulo: 'Inspección de Policía de tu municipio',
+      desc: 'Fuera del contexto familiar, la encargada de tu caso será la Inspección de Policía de tu municipio:',
+      detalles: [
+        'Recepción de una denuncia o queja.',
+        'Investigación del caso.',
+        'Aplicación de medidas correctivas o sancionatorias (caución).'
+      ],
+      masInfo: [TXT.convivenciaYPaz],
+      tags: ['Fuera del contexto familiar', 'Caución']
+    };
+  }
   return {
     tipo: 'policia',
     titulo: 'Inspección de Policía de tu municipio',
-    desc: 'Fuera del contexto familiar, la encargada de tu caso será la Inspección de Policía de tu municipio: recepción de una denuncia o queja, investigación del caso y aplicación de medidas correctivas o sancionatorias (caución).',
+    desc: 'Fuera del contexto familiar la autoridad cambia según el entorno donde ocurrió la agresión:',
+    detalles: [
+      '<b>Entorno comunitario, educativo o virtual →</b> Inspección de Convivencia y Paz. Recibe la denuncia o queja, investiga el caso y aplica medidas correctivas o sancionatorias (caución).',
+      '<b>Entorno institucional →</b> Personería municipal, Defensoría del Pueblo y Procuraduría General de la Nación.'
+    ],
     masInfo: [TXT.convivenciaYPaz],
-    tags: ['Fuera del contexto familiar', 'Caución']
+    tags: ['Comunitario', 'Educativo', 'Virtual', 'Institucional', 'Caución']
   };
 }
 
-function pasoProteccion() {
+// El artículo 134 y quiénes intervienen. En física se añaden los delitos que
+// normalmente quedan en conocimiento de la Fiscalía; en verbal no van.
+function pasoFueraFiscalia(variante) {
+  const INTERVIENEN = [
+    '<b>Unidad de Reacción Inmediata URI</b>, Sala de Denuncias y Fiscalía Local.',
+    '<b>Juez de Conocimiento.</b>',
+    '<b>Juez de Control de Garantías.</b>'
+  ];
+  const ART134 = 'Las víctimas, en garantía de su seguridad y el respeto a su intimidad, pueden por conducto del fiscal solicitar al juez de control de garantías las medidas indispensables para su atención y protección. La misma solicitud pueden formularla por sí mismas o por medio de su abogado durante el juicio oral y el incidente de reparación integral.';
+  if (variante === 'verbal') {
+    return {
+      _ramaSi: ['f'],
+      tipo: 'fiscalia',
+      titulo: 'Fuera del contexto familiar · Fiscalía',
+      desc: 'Artículo 134 del Código de Procedimiento Penal, medidas de atención y protección a las víctimas. Intervienen:',
+      detalles: INTERVIENEN,
+      urgencia: ART134,
+      normativa: 'Artículo 134 del Código de Procedimiento Penal · Ley 1257 de 2008',
+      masInfo: [TXT.canalesFiscalia],
+      tags: ['URI', 'Jueces']
+    };
+  }
+  return {
+    _ramaSi: ['f'],
+    tipo: 'fiscalia',
+    titulo: 'Fuera del contexto familiar · Fiscalía',
+    desc: 'Normalmente el caso queda en conocimiento de la Fiscalía General de la Nación como delito penal, y eventualmente con medidas de protección para la víctima, en lesiones personales, amenazas, actos de discriminación, intento de feminicidio, feminicidio, violencia sexual y agresiones por razones de género u orientación sexual. También cubre agresiones entre vecinas y vecinos, compañeros de trabajo o desconocidos. Intervienen:',
+    detalles: INTERVIENEN,
+    urgencia: ART134,
+    normativa: 'Artículo 134 del Código de Procedimiento Penal · Ley 1257 de 2008 · Ley 1761 de 2015',
+    masInfo: [TXT.fueraFiscalia, TXT.canalesFiscalia],
+    tags: ['URI', 'Jueces', 'Canales de la Fiscalía']
+  };
+}
+
+function pasoProteccion(extra) {
   return {
     tipo: 'policia',
+    puerta: 'proteccion',
     titulo: 'Para protección',
     desc: 'Si quieres denunciar y recibir protección de parte de las autoridades pertinentes puedes:',
     detalles: [
       'Si el presunto agresor está cerca de ti, puedes llamar a la <b>línea nacional 123</b> de la Policía Nacional o acudir a la Inspección de Convivencia y Paz más cercana o a la URI de tu territorio.',
       'Si quieres solicitar una <b>medida de protección</b> para poner fin a los hechos de violencia, puedes acudir a la Comisaría de Familia o a la Unidad de Reacción Inmediata URI - Fiscalía Local.'
-    ],
+    ].concat(extra ? [extra] : []),
     tags: ['Línea 123', 'Medida de protección']
   };
 }
@@ -1473,6 +2273,7 @@ function pasoProteccion() {
 function pasoDenunciar(medicoLegal) {
   return {
     tipo: 'fiscalia',
+    puerta: 'denuncia',
     titulo: 'Para denunciar',
     desc: 'Activa la ruta el primer conocedor del delito. También puedes acudir a la Fiscalía (URI, Sala de Denuncias) e informar cuando se identifique un presunto delito.',
     detalles: [
@@ -1488,13 +2289,16 @@ function pasoDenunciar(medicoLegal) {
   };
 }
 
-function ramaProteccion() {
+// `variante` nombra de qué rama del PowerPoint sale el contenido: 'fisica'
+// para las diapositivas 41 a 43 y 'verbal' para las 23 y 24.
+function ramaProteccion(extraProteccion, variante = 'fisica') {
   return [
-    pasoProteccion(),
+    pasoProteccion(extraProteccion),
     {
       tipo: 'decision',
       titulo: '¡La agresión fue!',
-      desc: 'De esto depende a qué autoridad acudir.',
+      desc: 'De esto depende a qué autoridad acudir. Si no estás segura, mira primero la diferencia.',
+      masInfo: [TXT.contextoFamiliar],
       decision: {
         opciones: [
           { texto: 'Dentro del contexto familiar', valor: 'd' },
@@ -1502,17 +2306,9 @@ function ramaProteccion() {
         ]
       }
     },
-    { _ramaSi: ['d'], ...pasoComisaria() },
-    { _ramaSi: ['f'], ...pasoInspeccion() },
-    {
-      _ramaSi: ['f'],
-      tipo: 'fiscalia',
-      titulo: 'Fuera del contexto familiar · Fiscalía',
-      desc: 'Puede llegar a la Inspección de Convivencia y Paz o a la Fiscalía. Intervienen la URI, la Sala de Denuncias y la Fiscalía Local, el Juez de Control de Garantías y el Juez de Conocimiento.',
-      normativa: 'Artículo 134 del Código de Procedimiento Penal',
-      masInfo: [TXT.fueraFiscalia],
-      tags: ['URI', 'Jueces']
-    }
+    { _ramaSi: ['d'], ...pasoComisaria(variante) },
+    { _ramaSi: ['f'], ...pasoInspeccion(variante) },
+    pasoFueraFiscalia(variante)
   ];
 }
 
@@ -1531,12 +2327,9 @@ function rutaComunMujerFisica() {
       ],
       urgencia: 'No se necesita denuncia previa para recibir atención médica. Es un derecho constitucional recibir atención de urgencias en cualquier hospital público o privado. Sin embargo, para el examen médico legal se requiere la solicitud de una entidad competente.',
       enlace: { url: 'mapaESE.html', texto: 'Ver el mapa de ESE del departamento' },
-      masInfo: [{
-        titulo: 'Tus derechos en la atención médica',
-        html: '<ul><li>Tienes derecho a ser atendida como urgencia médica en todos los puestos de salud, ESE municipales y hospitales del departamento.</li><li>Recibir información clara, completa, veraz y oportuna en relación con la salud sexual y reproductiva.</li><li>Ser tratada con reserva de identidad al recibir la asistencia médica.</li><li>La atención médica es gratuita. No se deben interponer barreras de acceso como copagos, cuotas moderadoras u otros condicionantes (Sentencia T-735 de 2017).</li><li>La institución deberá reportar a las entidades pertinentes del caso: Policía, Fiscalía, Comisaría de Familia y Defensoría de Familia del ICBF.</li></ul><p>Debe garantizar la intervención sobre las consecuencias en salud física y mental que puedan haber causado las violencias.</p>'
-      }],
       tags: ['Urgencia', 'Gratuita', 'Reserva de identidad']
     },
+    TXT.derechosSalud,
     TXT.atencionGarantizada(false),
     ...ramaProteccion(),
     pasoDenunciar('se puede practicar por parte de un médico oficial o rural, en cualquier sede del Instituto de Medicina Legal, hospital regional o centro de salud. Se requiere solicitud de entidad competente.')
@@ -1554,13 +2347,15 @@ function rutaComunMujerPsicologica() {
         'Los profesionales de la salud mental, como psicólogos y psiquiatras, brindan contención emocional, acompañamiento terapéutico y herramientas para recuperar la autoestima y la autonomía.',
         'El sistema de salud debe trabajar en coordinación con trabajo social, orientación legal y redes de apoyo comunitario.',
         'La detección temprana por parte de los médicos de atención primaria es esencial: muchas veces las víctimas no identifican o no reconocen el abuso como tal.',
-        'La institución deberá reportar a las entidades pertinentes del caso (Policía, Fiscalía, Comisaría de Familia). Si se requiere valoración médico legal por daño psíquico, esta solamente se puede realizar en Medicina Legal.'
+        'La institución deberá reportar a las entidades pertinentes del caso (Policía, Fiscalía, Comisaría de Familia).',
+        DANO_PSIQUICO
       ],
       enlace: { url: 'mapaESE.html', texto: 'Ver el mapa de ESE del departamento' },
       tags: ['Salud mental', 'Reporte obligatorio']
     },
+    TXT.derechosSalud,
     TXT.atencionGarantizada(false),
-    ...ramaProteccion(),
+    ...ramaProteccion(DANO_PSIQUICO, 'verbal'),
     pasoDenunciar('en caso de requerir valoración por daño psíquico, esta solamente se puede realizar en Medicina Legal.')
   ];
 }
@@ -1569,15 +2364,133 @@ function rutaComunMujerLaboral() {
   return [
     {
       tipo: 'otro',
-      titulo: 'Violencia laboral',
-      desc: 'Es cualquier acción, comportamiento o actitud que se da en el entorno de trabajo y que tiene como objetivo o resultado dañar, intimidar, humillar o perjudicar a una persona o grupo de trabajadores. Puede manifestarse de distintas formas, como agresiones verbales, maltratos psicológicos, acoso laboral (mobbing), amenazas, discriminación, hostigamiento o incluso violencia física. Esta violencia puede provenir de superiores o de compañeros de trabajo.',
-      tags: ['Definición']
+      titulo: 'Violencia institucional',
+      desc: 'La violencia institucional contra las mujeres se entiende como el conjunto de acciones, omisiones, prácticas, decisiones, procedimientos y barreras institucionales que, en el marco de la prestación de servicios de atención, protección, acceso a la justicia y restablecimiento de derechos, vulneran, obstaculizan o limitan el ejercicio efectivo de los derechos de las mujeres víctimas de violencias basadas en género.</p><p>Esta forma de violencia puede manifestarse mediante la desatención, la negligencia, las demoras injustificadas, la falta de información clara y oportuna, la imposición de requisitos innecesarios, la desarticulación entre las entidades responsables, la minimización de los hechos denunciados, los prejuicios y estereotipos de género, el cuestionamiento de los testimonios, la culpabilización de las víctimas y la repetición innecesaria de sus relatos, entre otras prácticas que pueden generar revictimización y profundizar las afectaciones físicas, psicológicas, sociales y económicas derivadas de las violencias sufridas.</p><p>La violencia institucional contra las mujeres puede presentarse en diferentes ámbitos de la sociedad, como las instituciones educativas, los espacios laborales y las entidades del Estado, a través de acciones u omisiones, prácticas discriminatorias, abuso de poder, negligencia, barreras de acceso a derechos o reproducción de estereotipos de género.',
+      urgencia: 'Guarda las pruebas de lo que estás viviendo: correos electrónicos, chats, mensajes y los nombres de quienes presenciaron los hechos. Sin ellas el reclamo se vuelve tu palabra contra la de la entidad.',
+      normativa: 'Ley 1010 de 2006',
+      tags: ['Mobbing', 'Violencia', 'Pruebas']
     },
     {
+      tipo: 'decision',
+      titulo: '¿Dónde ocurrió?',
+      desc: 'La autoridad competente cambia según el ámbito. Elige dónde pasó.',
+      decision: {
+        opciones: [
+          { texto: 'En espacios de trabajo', valor: 'lp' },
+          { texto: 'En una institución del Estado', valor: 'le' },
+          { texto: 'En una institución educativa', valor: 'lu' }
+        ]
+      }
+    },
+
+    // --------------------------------------------- espacios de trabajo
+    {
+      _ramaSi: ['lp'],
       tipo: 'otro',
-      titulo: 'Ministerio del Trabajo',
-      desc: 'Dirígete al Ministerio del Trabajo si eres víctima de este tipo de violencia.',
-      tags: ['Ministerio del Trabajo']
+      titulo: 'Espacios de trabajo',
+      desc: 'Pase lo que pase y sea cual sea el empleador, estas tres cosas aplican siempre:',
+      detalles: [
+        '<b>Denuncia</b> ante la Inspección del Trabajo, la Fiscalía General de la Nación o la Defensoría del Pueblo.',
+        '<b>Guarda las pruebas</b> de la violencia sufrida: correos electrónicos, chats y testimonios.',
+        'Cuando inicies el procedimiento de denuncia o queja por la violación de derechos, <b>pon el caso en conocimiento</b> de las organizaciones sociales que defienden esos derechos o de la Defensoría del Pueblo de tu municipio, para que acompañen tu proceso y sean veedoras de las respuestas del Estado.'
+      ],
+      masInfo: [TXT.canalesFiscalia],
+      tags: ['Inspección del Trabajo', 'Fiscalía', 'Defensoría', 'Veeduría']
+    },
+    {
+      _ramaSi: ['lp'],
+      tipo: 'otro',
+      titulo: 'Sector privado · Ministerio del Trabajo',
+      desc: 'En el sector privado la entidad competente es el Ministerio del Trabajo.',
+      detalles: [
+        'El Ministerio del Trabajo tiene entre sus obligaciones la promoción y protección de los derechos humanos de las mujeres en el mundo del trabajo.',
+        'Por los canales virtuales o presenciales, el <b>Grupo de Atención al Ciudadano</b> procurará brindarte la orientación.',
+        'Si el Ministerio no es competente, <b>redireccionará</b> tu caso a la entidad idónea.',
+        'Para resolver la PQR se cumplen los términos de ley según el tipo de información o consulta radicada.'
+      ],
+      masInfo: [TXT.mintrabajoCanales, TXT.mintrabajoNormas],
+      normativa: 'Resolución 4607 de 2022 · Circular 026 de 2023 · Circular 075 de 2025',
+      tags: ['PQR', 'Grupo de Atención al Ciudadano']
+    },
+    {
+      _ramaSi: ['lp'],
+      tipo: 'policia',
+      titulo: 'Actividades sexuales pagas',
+      desc: 'Quienes ejercen actividades sexuales pagas tienen un desarrollo propio en la jurisprudencia, que obliga a las autoridades a:',
+      detalles: [
+        'Realizar <b>pedagogía sobre el POT</b>: si hay que reubicar personas por delimitación de zonas, debe hacerse con pedagogía previa.',
+        '<b>Sensibilizar y capacitar</b> a la Policía Nacional y a las funcionarias y los funcionarios públicos en lenguaje inclusivo y narrativas no discriminatorias.',
+        'Adoptar <b>política pública</b> para la generación de oportunidades: acceso a educación, salud y emprendimiento.',
+        'La <b>Defensoría del Pueblo</b> acompaña los procesos donde se realicen campañas y jornadas de salud sexual y reproductiva.',
+        'La <b>Policía Nacional</b> tiene un protocolo específico para la atención a personas con actividades sexuales pagas.',
+        '<b>Transversalizar</b> los ejes para población migrante.'
+      ],
+      urgencia: 'El rechazo por la forma de vestir y el trato indigno son violencia, y la prohibición de ejercerla contra trabajadoras sexuales tiene efecto erga omnes.',
+      masInfo: [TXT.tutelaDuitama],
+      normativa: 'Corte Constitucional, Sentencia T-310 de 2022',
+      tags: ['T-310 de 2022', 'Efecto erga omnes']
+    },
+
+    // --------------------------------------- instituciones del Estado
+    {
+      _ramaSi: ['le'],
+      tipo: 'otro',
+      titulo: 'Control interno disciplinario',
+      desc: 'En tu institución de trabajo o como ciudadana, dirige la PQR a la Oficina de Control Interno Disciplinario de esa entidad. Además:',
+      detalles: [
+        'Si es una <b>entidad de salud</b>, puedes acudir a la <b>Superintendencia Nacional de Salud</b>.',
+        'Si la violencia viene de <b>cualquier institución</b>, puedes acudir a la <b>Personería</b>, a la <b>Defensoría del Pueblo</b> o a la <b>Procuraduría</b>.'
+      ],
+      tags: ['PQR', 'Entidad pública', 'Superintendencia']
+    },
+    {
+      _ramaSi: ['le'],
+      tipo: 'policia',
+      titulo: 'Ministerio Público',
+      desc: 'Su máximo organismo es la Procuraduría General de la Nación, y también lo integran la Defensoría del Pueblo y las personerías.',
+      detalles: [
+        '<b>Procuraduría General de la Nación.</b> Investiga la conducta o el comportamiento de las funcionarias y los funcionarios públicos, incluidos los miembros de la Policía, cuando en ejercicio de sus funciones generen discriminación, exclusión o violencia, y aplica su <b>poder preferente</b> para investigar y garantizar derechos.',
+        '<b>Defensoría del Pueblo.</b> Vela por la promoción y la garantía de los derechos humanos y del derecho internacional humanitario. Ofrece atención, orientación y asesoría, y ejerce control sobre las actuaciones de funcionarias y funcionarios públicos o de particulares que prestan servicios públicos.',
+        '<b>Personerías municipales.</b> Trabajan por la protección de los derechos humanos y el interés público en el territorio y vigilan las actuaciones de funcionarias y funcionarios. En ellas se accede a <b>asesoría gratuita</b> para presentar acciones de tutela y derechos de petición.'
+      ],
+      masInfo: [TXT.ministerioPublico],
+      tags: ['Personería', 'Defensoría', 'Procuraduría', 'Poder preferente']
+    },
+    {
+      _ramaSi: ['le'],
+      tipo: 'otro',
+      titulo: 'Sala situacional municipal o departamental',
+      desc: 'Si la ruta no responde, puedes pedir que el caso se lleve a una sala situacional de violencias basadas en género.',
+      urgencia: 'Si en el municipio no se logra resolver la barrera, el caso se eleva al departamento. Primero debe agotarse la instancia municipal.',
+      masInfo: [TXT.salaSituacionalVentana],
+      tags: ['Mecanismo Articulador', 'Lineamientos de activación']
+    },
+
+    // -------------------------------------- instituciones educativas
+    {
+      _ramaSi: ['lu'],
+      tipo: 'otro',
+      titulo: 'Colegio · comité de convivencia escolar',
+      desc: 'En educación preescolar, básica y media el caso entra por el comité de convivencia escolar de la institución.',
+      detalles: [
+        'La institución educativa lleva el caso al <b>comité de convivencia escolar institucional</b>.',
+        'Si es <b>tipo II</b>, es decir agresión escolar, acoso o ciberacoso, o <b>tipo III</b>, agresiones graves que pueden ser delito, se eleva al <b>Comité de Convivencia Escolar Municipal</b>.',
+        'Se activa el protocolo escolar, que define las acciones a seguir y la notificación a las autoridades competentes.'
+      ],
+      masInfo: [TXT.convivenciaEscolar, TXT.situacionesTipo2,
+                TXT.situacionesTipo3],
+      normativa: 'Ley 1620 de 2013 · Decreto 1965 de 2013',
+      tags: ['Comité institucional', 'Comité municipal', 'Protocolo']
+    },
+    {
+      _ramaSi: ['lu'],
+      tipo: 'otro',
+      titulo: 'Formación técnica, tecnológica y superior · ruta institucional',
+      desc: 'En las instituciones de formación técnica, tecnológica y educación superior la institución debe tener su propia ruta frente al acoso sexual y las violencias de género: recepción, valoración del riesgo, medidas de protección, procedimiento disciplinario y seguimiento.',
+      urgencia: 'La ruta de la institución educativa no reemplaza la de salud, ni la de protección, ni la penal. Según tu voluntad y las circunstancias, deberían activarse en cadena: institución educativa, servicios de salud, autoridades competentes y acompañamiento jurídico y psicosocial.',
+      masInfo: [TXT.rutaUniversitaria],
+      normativa: 'Ley 30 de 1992 · Ley 2365 de 2024 · Resolución 020310 de 2026',
+      tags: ['Acoso sexual', 'Medidas de protección', 'Seguimiento']
     }
   ];
 }
@@ -1614,20 +2527,20 @@ function rutaComunMujerSexual() {
       _ramaSi: ['t1'],
       tipo: 'medico',
       titulo: 'Si el hecho ocurrió durante las primeras 72 horas',
-      desc: 'En los casos donde hubo contacto sexual se proporcionará profilaxis para disminuir el riesgo de contagio de infecciones de transmisión sexual (ITS) y VIH, además de anticoncepción de emergencia para reducir el riesgo de embarazo.',
+      desc: 'Se clasifica como <b>Triage I</b>: atención inmediata. En los casos donde hubo contacto sexual se proporcionará profilaxis para disminuir el riesgo de contagio de infecciones de transmisión sexual (ITS) y VIH, además de anticoncepción de emergencia para reducir el riesgo de embarazo.',
       detalles: [
         'Tomar las pruebas diagnósticas necesarias para explorar el estado de salud de la víctima.',
         'Tienes derecho a recibir asesoría para IVE (interrupción voluntaria del embarazo) en el marco de la Resolución 051 de 2023 del MSPS, realizar las remisiones pertinentes a especialidades y programar los seguimientos que se requieran según el caso.',
         'Dar tu consentimiento informado para los exámenes médico-legales o psíquicos y escoger el sexo del facultativo para la práctica de los mismos, dentro de las posibilidades ofrecidas por el servicio.',
         'La institución deberá reportar a las entidades pertinentes del caso: Policía, Fiscalía, Comisaría de Familia y Defensoría de Familia del ICBF.'
       ],
-      tags: ['Profilaxis ITS y VIH', 'Anticoncepción de emergencia', 'IVE']
+      tags: ['Triage I', 'Profilaxis ITS y VIH', 'Anticoncepción de emergencia', 'IVE']
     },
     {
       _ramaSi: ['t2'],
       tipo: 'medico',
       titulo: 'Atención en salud después de las 72 horas y antes de 120',
-      desc: 'La violencia sexual siempre es una urgencia: no aplican restricciones por nivel de complejidad ni por tipo de aseguramiento en salud para que la víctima reciba los procedimientos que requiere.',
+      desc: 'Se clasifica como <b>Triage II</b>. La violencia sexual siempre es una urgencia: no aplican restricciones por nivel de complejidad ni por tipo de aseguramiento en salud para que la víctima reciba los procedimientos que requiere.',
       detalles: [
         'Prueba de embarazo.',
         'Asesoría para prueba de VIH y prueba rápida de anticuerpos para VIH.',
@@ -1642,12 +2555,12 @@ function rutaComunMujerSexual() {
       _ramaSi: ['t3'],
       tipo: 'medico',
       titulo: 'Atención en salud después de 120 horas',
-      desc: 'Se realizará valoración del estado físico y emocional y, en caso de que se requiera, se deriva hacia otros profesionales de la salud para asegurar la atención integral: médicos especialistas, IVE y psicoterapia.',
+      desc: 'Se clasifica como <b>Triage II</b>. Se realizará valoración del estado físico y emocional y, en caso de que se requiera, se deriva hacia otros profesionales de la salud para asegurar la atención integral: médicos especialistas, IVE y psicoterapia.',
       detalles: [
         'Independientemente del tipo de agresión sexual sufrida o del momento de la consulta, el médico o la médica debe solicitar todos los exámenes diagnósticos necesarios según la condición clínica de la víctima. En la historia clínica se debe dejar registro tanto de la solicitud como de los resultados e interpretaciones.',
         'La institución deberá reportar a las entidades pertinentes del caso: Policía, Fiscalía y Comisaría de Familia.'
       ],
-      tags: ['>120 horas']
+      tags: ['Triage II', 'más de 120 horas']
     },
     {
       tipo: 'medico',
@@ -1662,6 +2575,7 @@ function rutaComunMujerSexual() {
       normativa: 'Ley 9 de 1952 · Ley 906 de 1986 · Decreto 2455 de 1986',
       tags: ['INMLCF']
     },
+    TXT.derechosSalud,
     TXT.atencionGarantizada(true),
     ...ramaProteccion(),
     pasoDenunciar('se puede practicar por parte de un médico oficial o rural, en cualquier sede del Instituto de Medicina Legal, hospital regional o centro de salud. Es importante que acudas al más cercano.')
@@ -1721,7 +2635,32 @@ function rutaComunLGBTIQ(violencia, contexto) {
 }
 
 // ============================ OBTENER RUTA ============================
-function obtenerRuta() {
+// Las cuatro puertas del PowerPoint. Después de elegir el tipo de violencia,
+// la persona escoge por dónde entrar; cada puerta muestra solo sus pasos y la
+// barra de arriba deja pasar a las otras sin volver a empezar.
+const PUERTAS = {
+  orientacion: { titulo: 'Para orientación y apoyo', color: '#F2A900', icono: 'otro',
+                 desc: 'Dónde te informan y te asesoran sobre tus derechos' },
+  salud:       { titulo: 'Para atención en salud', color: '#58B947', icono: 'medico',
+                 desc: 'Atención médica, valoración de lesiones y salud mental' },
+  proteccion:  { titulo: 'Para protección', color: '#0B74B0', icono: 'policia',
+                 desc: 'Medidas de protección y autoridades que las ordenan' },
+  denuncia:    { titulo: 'Para denunciar', color: '#16B3B9', icono: 'fiscalia',
+                 desc: 'Cómo poner la denuncia y qué pasa después' }
+};
+
+// Un paso hereda la puerta del anterior: así basta con marcar la primera de
+// cada bloque y no hay que etiquetar paso por paso.
+function clasificarPuertas(pasos) {
+  let actual = 'orientacion';
+  return pasos.map(p => {
+    if (p.puerta) actual = p.puerta;
+    else if (p.tipo === 'medico') actual = 'salud';
+    return { ...p, _puerta: actual };
+  });
+}
+
+function rutaBase() {
   const { tipo, victima, violencia, contexto } = estado;
   if (tipo === 'institucional') {
     if (victima === 'mujer') {
@@ -1743,8 +2682,23 @@ function obtenerRuta() {
   return [];
 }
 
+// Qué puertas trae realmente esta ruta, en el orden del PowerPoint.
+function puertasDisponibles() {
+  const hay = new Set(clasificarPuertas(rutaBase()).map(p => p._puerta));
+  return Object.keys(PUERTAS).filter(k => hay.has(k));
+}
+
+function obtenerRuta() {
+  const pasos = clasificarPuertas(rutaBase());
+  if (estado.puerta && estado.puerta !== 'todo') {
+    const soloPuerta = pasos.filter(p => p._puerta === estado.puerta);
+    if (soloPuerta.length) return soloPuerta;
+  }
+  return pasos;
+}
+
 // ============================ ESTADO Y FLUJO ============================
-let estado = { tipo: null, victima: null, violencia: null, contexto: null };
+let estado = { tipo: null, victima: null, violencia: null, contexto: null, puerta: null };
 let decisiones = {}; // para los botones de decisión
 
 function setTipo(t) {
@@ -1752,8 +2706,18 @@ function setTipo(t) {
   document.getElementById('badge-modo').textContent = t === 'institucional' ? 'Institucional' : 'Comunitaria';
   document.getElementById('sec-tipo').style.display = 'none';
   document.getElementById('sec-victima').style.display = '';
-  // Poblaciones disponibles según tipo
-  const pobs = t === 'institucional' ? ['mujer','nna'] : ['mujer','nna','lgbtiq'];
+  actualizarBadgeRuta();
+  // Poblaciones que se publican en cada ruta.
+  //
+  // En la comunitaria solo se muestra la de mujer, que es la aprobada. Las de
+  // niñez y adolescencia y la de población LGBTIQ+ siguen completas en este
+  // archivo, con sus violencias, sus pasos y sus recursos, y se habilitan
+  // devolviéndolas a esta lista, sin tocar nada más.
+  const POBS_VISIBLES = {
+    institucional: ['mujer', 'nna'],
+    comunitaria: ['mujer']            // pendientes de aprobación: 'nna', 'lgbtiq'
+  };
+  const pobs = POBS_VISIBLES[t] || ['mujer'];
   const cont = document.getElementById('opciones-victima');
   cont.innerHTML = '';
   pobs.forEach(k => {
@@ -1772,6 +2736,7 @@ function setVictima(v) {
   setFondoPoblacion(v);
   document.getElementById('sec-victima').style.display = 'none';
   document.getElementById('sec-violencia').style.display = '';
+  actualizarBadgeRuta();
 
   let lista;
   if (estado.tipo === 'institucional') {
@@ -1786,6 +2751,15 @@ function setVictima(v) {
     const div = document.createElement('div');
     div.className = 'opcion-card';
     div.innerHTML = `<div class="icono">${info.icono}</div><h3>${info.titulo}</h3><p>${info.desc || ''}</p>`;
+    if (DEFINICIONES_VIOLENCIA[k]) {
+      const mas = document.createElement('button');
+      mas.type = 'button';
+      mas.className = 'opcion-mas';
+      mas.textContent = 'Ver más';
+      // Sin frenar el clic aquí, leer la definición elegiría la tarjeta.
+      mas.onclick = ev => { ev.stopPropagation(); abrirDefinicion(k); };
+      div.appendChild(mas);
+    }
     div.onclick = () => setViolencia(k);
     cont.appendChild(div);
   }
@@ -1801,7 +2775,7 @@ function setViolencia(v) {
   // autoridad competente.
   if (estado.tipo === 'comunitaria' && estado.victima === 'mujer') {
     estado.contexto = null;
-    iniciarViaje();
+    mostrarPuertas();
     return;
   }
 
@@ -1826,6 +2800,138 @@ function setContexto(c) {
   iniciarViaje();
 }
 
+// Pantalla de las cuatro puertas, después de elegir el tipo de violencia.
+function mostrarPuertas() {
+  const disponibles = puertasDisponibles();
+  // Si la ruta no está organizada en puertas, no se interpone una pantalla
+  // que no decide nada.
+  if (disponibles.length < 2) {
+    estado.puerta = null;
+    iniciarViaje();
+    return;
+  }
+
+  const info = (VIOLENCIAS_COMUN_MUJER[estado.violencia] || {});
+  const nombre = (info.titulo || '').toLowerCase();
+  document.getElementById('tituloPuerta').innerHTML =
+    '<span class="tp-violencia">Violencia ' + nombre + '</span>'
+    + '<span class="tp-pregunta">¿Qué necesitas ahora?</span>';
+  document.getElementById('subPuerta').textContent =
+    'En hechos de violencia ' + nombre + ' debes tener en cuenta lo siguiente. '
+    + 'Elige por dónde empezar: desde la ruta puedes pasar a las demás sin '
+    + 'volver a empezar.';
+
+  const cont = document.getElementById('opciones-puerta');
+  cont.innerHTML = '';
+  disponibles.forEach(k => {
+    const p = PUERTAS[k];
+    const div = document.createElement('div');
+    div.className = 'opcion-card puerta';
+    div.style.setProperty('--tono', p.color);
+    div.innerHTML = iconoEntidad(p.icono) + `<h3>${p.titulo}</h3><p>${p.desc}</p>`;
+    div.onclick = () => setPuerta(k);
+    cont.appendChild(div);
+  });
+
+  actualizarBadgeRuta();
+  document.getElementById('sec-puerta').style.display = '';
+  document.getElementById('sec-puerta').scrollIntoView({ behavior: 'smooth' });
+}
+
+// La barra superior recuerda en qué rama se está: población, tipo de
+// violencia y puerta. Con cuatro violencias y cuatro puertas, sin esto se
+// pierde el hilo al saltar de una a otra.
+function actualizarBadgeRuta() {
+  const b = document.getElementById('badge-ruta');
+  const partes = [];
+  if (estado.victima) partes.push((POBLACIONES[estado.victima] || {}).titulo);
+  if (estado.violencia) {
+    const cat = estado.tipo === 'institucional'
+      ? (estado.victima === 'mujer' ? VIOLENCIAS_INST_MUJER : VIOLENCIAS_INST_NNA)
+      : (estado.victima === 'mujer' ? VIOLENCIAS_COMUN_MUJER : VIOLENCIAS_COMUN);
+    const info = cat[estado.violencia];
+    if (info) partes.push('violencia ' + info.titulo.toLowerCase());
+  }
+  if (estado.puerta && estado.puerta !== 'todo' && PUERTAS[estado.puerta]) {
+    partes.push(PUERTAS[estado.puerta].titulo.replace(/^Para /, ''));
+  } else if (estado.puerta === 'todo') {
+    partes.push('ruta completa');
+  }
+  b.textContent = partes.filter(Boolean).join(' · ');
+  b.style.display = partes.length ? '' : 'none';
+}
+
+// Vuelve al selector de tipo de violencia conservando población y tipo de
+// ruta: cambiar de violencia no debería obligar a empezar de cero.
+function volverAViolencia() {
+  estado.violencia = null;
+  estado.contexto = null;
+  estado.puerta = null;
+  decisiones = {};
+  document.body.classList.remove('modo-viaje');
+  document.getElementById('pasosContainer').innerHTML = '';
+  document.getElementById('cierreRuta').innerHTML = '';
+  document.getElementById('zonaPuertas').style.display = 'none';
+  document.querySelectorAll('.seccion-seleccion').forEach(sec => sec.style.display = 'none');
+  setVictima(estado.victima);
+  actualizarBadgeRuta();
+  document.getElementById('sec-violencia').scrollIntoView({ behavior: 'smooth' });
+}
+
+function setPuerta(p) {
+  estado.puerta = p;
+  document.getElementById('sec-puerta').style.display = 'none';
+  iniciarViaje();
+}
+
+// La barra deja saltar entre puertas sin rehacer la selección. Va arriba del
+// camino y se repite al pie, que es donde se termina de leer.
+function pintarPuertas(barra, conInicio) {
+  barra.innerHTML = '';
+  const puertas = puertasDisponibles();
+  if (puertas.length > 1) {
+    puertas.concat('todo').forEach(k => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'puerta-chip' + (k === estado.puerta ? ' activa' : '');
+      b.style.setProperty('--tono', k === 'todo' ? '#8e44ad' : PUERTAS[k].color);
+      b.textContent = k === 'todo' ? 'Ver la ruta completa' : PUERTAS[k].titulo;
+      b.onclick = () => setPuerta(k);
+      barra.appendChild(b);
+    });
+  }
+  if (conInicio) {
+    const volver = document.createElement('button');
+    volver.type = 'button';
+    volver.className = 'puerta-chip inicio';
+    volver.style.setProperty('--tono', '#7D2D91');
+    volver.textContent = 'Cambiar tipo de violencia';
+    volver.onclick = () => volverAViolencia();
+    barra.appendChild(volver);
+
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'puerta-chip inicio';
+    b.style.setProperty('--tono', '#C0392B');
+    b.textContent = 'Volver al inicio';
+    b.onclick = () => reiniciar();
+    barra.appendChild(b);
+  }
+}
+
+function renderBarraPuertas() {
+  const zona = document.getElementById('zonaPuertas');
+  if (!estado.puerta) { zona.style.display = 'none'; return; }
+  zona.style.display = '';
+  const cat = estado.tipo === 'institucional'
+    ? (estado.victima === 'mujer' ? VIOLENCIAS_INST_MUJER : VIOLENCIAS_INST_NNA)
+    : (estado.victima === 'mujer' ? VIOLENCIAS_COMUN_MUJER : VIOLENCIAS_COMUN);
+  const info = cat[estado.violencia];
+  document.getElementById('barraRama').textContent =
+    info ? 'Violencia ' + info.titulo.toLowerCase() : '';
+  pintarPuertas(document.getElementById('barraPuertas'), false);
+}
+
 function iniciarViaje() {
   document.body.classList.add('modo-viaje');
   // Oculta selecciones
@@ -1840,6 +2946,8 @@ function iniciarViaje() {
 
 function renderizarPasos() {
   decisiones = {};
+  actualizarBadgeRuta();
+  renderBarraPuertas();
   const pasos = obtenerRuta();
   const cont = document.getElementById('pasosContainer');
   cont.innerHTML = '';
@@ -1860,7 +2968,7 @@ function renderizarPasos() {
   renderIconosCamino(pasos, altoTotal);
 
   // Ajusta altura del wrapper
-  document.getElementById('camino').style.minHeight = (altoTotal + 200) + 'px';
+  document.getElementById('camino').style.minHeight = (altoTotal + 90) + 'px';
 
   // Renderiza cada paso
   pasos.forEach((paso, idx) => {
@@ -1878,11 +2986,49 @@ function renderizarPasos() {
     <p>Recuerda: el Ministerio Público (Personería, Defensoría, Procuraduría) acompaña todo el proceso. Conserva siempre copia de denuncias, valoraciones y notificaciones.</p>
     <p style="margin-top:14px; font-size:0.95em;">📞 <strong>Línea Nacional 123</strong> · <strong>Línea Mujer 155</strong></p>
   `;
-  cont.appendChild(final);
+  const cierreRuta = document.getElementById('cierreRuta');
+  cierreRuta.innerHTML = '';
+  cierreRuta.appendChild(final);
+
+  // Cierre: si la ruta no resolvió en el municipio, hay un paso más que casi
+  // nadie conoce.
+  const cierre = document.createElement('div');
+  cierre.className = 'cierre-sala';
+  cierre.innerHTML = `
+    <h3>¿Tuviste una atención integral, integrada y de calidad en tu municipio?</h3>
+    <div class="decision-buttons">
+      <button class="decision-btn" data-r="si" onclick="responderAtencion(true)">Sí</button>
+      <button class="decision-btn" data-r="no" onclick="responderAtencion(false)">No</button>
+    </div>
+    <div id="respuestaAtencion"></div>`;
+  cierreRuta.appendChild(cierre);
+
+  // Las puertas se repiten al pie, con la salida al inicio.
+  const zonaAbajo = document.createElement('div');
+  zonaAbajo.className = 'zona-botones';
+  const abajo = document.createElement('div');
+  abajo.className = 'barra-puertas abajo';
+  zonaAbajo.appendChild(abajo);
+  cierreRuta.appendChild(zonaAbajo);
+  pintarPuertas(abajo, true);
 
   // Activa observador
   setTimeout(activarObserver, 100);
 }
+
+function responderAtencion(hubo) {
+  document.querySelectorAll('.cierre-sala .decision-btn').forEach(b => {
+    b.classList.remove('seleccionado', 'descartado');
+    b.classList.add((b.dataset.r === 'si') === hubo ? 'seleccionado' : 'descartado');
+  });
+  const caja = document.getElementById('respuestaAtencion');
+  caja.innerHTML = hubo
+    ? '<p class="cierre-ok">Con esto finaliza la ruta. Conserva copia de las '
+      + 'denuncias, valoraciones y notificaciones que te entreguen.</p>'
+    : SALA_SITUACIONAL;
+  caja.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
 
 function crearPasoElement(paso, idx) {
   const div = document.createElement('div');
@@ -1891,7 +3037,7 @@ function crearPasoElement(paso, idx) {
   if (paso._ramaSi) div.dataset.ramaSi = paso._ramaSi.join(',');
 
   let html = `<div class="num">${idx + 1}</div>
-    <h4>${paso.titulo}</h4>
+    <h4>${iconoEntidad(paso.tipo)}<span class="paso-titulo">${paso.titulo}</span></h4>
     <p>${paso.desc || ''}</p>`;
 
   if (paso.urgencia) html += `<div class="urgencia">${paso.urgencia}</div>`;
@@ -1954,7 +3100,10 @@ document.addEventListener('keydown', e => {
 function elegirDecision(idxDecision, valor) {
   // Marca el botón seleccionado y descarta los otros
   const decisionEl = document.querySelector(`.paso-ruta[data-idx="${idxDecision}"]`);
+  // Se limpia antes de marcar: si no, al cambiar de opción quedaban las dos
+  // apagadas y la decisión parecía definitiva.
   decisionEl.querySelectorAll('.decision-btn').forEach(btn => {
+    btn.classList.remove('seleccionado', 'descartado');
     if (btn.dataset.valor === valor) btn.classList.add('seleccionado');
     else btn.classList.add('descartado');
   });
@@ -1986,6 +3135,45 @@ const ICONO_POBLACION = {
   nna: '🧒',
   lgbtiq: '🧑‍🎨'
 };
+
+// Iconos de entidad, dibujados aquí mismo. No son los logotipos oficiales:
+// esos son marca registrada y su uso habría que pedirlo a cada entidad.
+const SVG_ENTIDAD = {
+  // Balanza: Fiscalía.
+  fiscalia: '<path d="M12 3v18M7 21h10M5 8h14M12 5 5 8l-2.5 5a3.5 3.5 0 0 0 7 0L7 8M12 5l7 3 2.5 5a3.5 3.5 0 0 1-7 0L17 8"/>',
+  // Casa con techo: Comisaría de Familia.
+  comisaria: '<path d="M3 10.5 12 4l9 6.5M5 9.8V20h14V9.8M10 20v-5h4v5"/>',
+  // Escudo: Inspección de Policía.
+  policia: '<path d="M12 3 5 6v5.5c0 4.3 2.9 8.2 7 9.5 4.1-1.3 7-5.2 7-9.5V6l-7-3Z"/><path d="m9.5 12 1.8 1.8 3.4-3.6"/>',
+  // Mazo: jueces.
+  judicial: '<path d="m14 5 5 5M16.5 2.5 21.5 7.5M12.5 6.5 17.5 11.5M11 8 4 15l5 5 7-7M3 21h8"/>',
+  // Cruz médica: salud.
+  medico: '<path d="M4 7h16v13H4zM9 7V4h6v3M12 11v6M9 14h6"/>',
+  // Figura de niñez: ICBF.
+  icbf: '<circle cx="12" cy="6.5" r="3"/><path d="M6 21v-3a6 6 0 0 1 12 0v3M9.5 14.5h5"/>',
+  // Bifurcación: decisiones.
+  decision: '<path d="M6 3v6a4 4 0 0 0 4 4h8M18 9l3 4-3 4M6 21v-4"/>',
+  // Información: pasos sin entidad propia.
+  otro: '<circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 7.6v.5"/>'
+};
+
+// Entidades con logo propio ya alojado en el sitio. Se usa el archivo local,
+// no uno traído de internet: el enlace externo se cae y aquí no puede fallar.
+const LOGO_ENTIDAD = {
+  fiscalia: 'assets/svg/carruselGenero/Fiscalia.png',
+  icbf: 'assets/svg/carruselGenero/ICBF.png'
+};
+
+function iconoEntidad(tipo) {
+  if (LOGO_ENTIDAD[tipo]) {
+    return '<span class="paso-icono logo" aria-hidden="true">'
+         + '<img src="' + LOGO_ENTIDAD[tipo] + '" alt=""></span>';
+  }
+  const d = SVG_ENTIDAD[tipo] || SVG_ENTIDAD.otro;
+  return '<span class="paso-icono" aria-hidden="true">'
+       + '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" '
+       + 'stroke-linecap="round" stroke-linejoin="round">' + d + '</svg></span>';
+}
 
 const ICONO_ENTIDAD = {
   medico: '🏥',
@@ -2177,6 +3365,7 @@ function actualizarPersonajeScroll() {
   if (stepIdx !== st.ultimoStepIdx) {
     st.ultimoStepIdx = stepIdx;
     const paso = st.pasos[stepIdx];
+    if (!paso) return;
     const entEl = st.personajeEl.querySelector('#personajeEnt');
     const labelEl = st.personajeEl.querySelector('#personajeEtiqueta');
     if (entEl) {
@@ -2306,14 +3495,19 @@ try {
 
 // ============================ REINICIAR ============================
 function reiniciar() {
-  estado = { tipo: null, victima: null, violencia: null, contexto: null };
+  estado = { tipo: null, victima: null, violencia: null, contexto: null, puerta: null };
   decisiones = {};
   document.body.classList.remove('modo-viaje');
   document.body.classList.remove('con-imagen-fondo');
   document.querySelectorAll('.seccion-seleccion').forEach(s => s.style.display = 'none');
   document.getElementById('sec-tipo').style.display = '';
   document.getElementById('badge-modo').textContent = 'Selecciona';
+  actualizarBadgeRuta();
+  _viajeEstado = { pasos: null, altoTotal: null, posicionesPasos: null,
+                   hitos: null, personajeEl: null, ultimoStepIdx: -1 };
   document.getElementById('pasosContainer').innerHTML = '';
+  document.getElementById('cierreRuta').innerHTML = '';
+  document.getElementById('zonaPuertas').style.display = 'none';
   document.getElementById('caminoIconosHTML').innerHTML = '';
   // Limpia las imágenes de fondo
   const fondo = document.getElementById('fondoImg');
