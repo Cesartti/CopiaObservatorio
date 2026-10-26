@@ -518,13 +518,16 @@ $obsTabActive = $tabActiveByObs[$slug] ?? $obs['color'];
     $obsDescHideFuentes = $genderMode ? false : true;
     ?>
     <?php require __DIR__ . '/include/observatory-description.php'; ?>
-    <div class="row g-3 mb-2 align-items-start">
-        <div class="col-lg-8">
-            <?php require __DIR__ . '/include/cms-widget-carousel.php'; ?>
-        </div>
-        <aside class="col-lg-4">
-            <?php require __DIR__ . '/include/genero-sidebar.php'; ?>
-        </aside>
+    <?php
+    /* La galeria va de lado a lado y las categorias debajo, en rejilla.
+       Cuando compartian fila, la columna de categorias era mas corta que la
+       galeria y dejaba un hueco en blanco a la derecha. */
+    ?>
+    <div class="mb-2">
+        <?php require __DIR__ . '/include/cms-widget-carousel.php'; ?>
+    </div>
+    <div class="mb-2">
+        <?php require __DIR__ . '/include/genero-sidebar.php'; ?>
     </div>
 
     <?php if ($economicMode): ?>

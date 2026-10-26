@@ -13,6 +13,9 @@ $gsD = $gsDetailsMap[$slug] ?? [];
     .obs-side-widget{background:#fff;border:1px solid #e8edf5;border-radius:16px;padding:1.1rem 1.15rem;box-shadow:0 4px 14px rgba(0,0,0,.05);margin-bottom:1rem}
     .obs-side-widget>h3{font-size:.74rem;text-transform:uppercase;letter-spacing:.06em;color:#6b7280;font-weight:700;margin:0 0 .85rem;display:flex;align-items:center;gap:.5rem}
     .obs-side-widget>h3 i{color:var(--obs-color,#0d6efd)}
+    /* En rejilla: tantas por fila como quepan, y siguen hacia abajo. */
+    .obs-side-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:.6rem}
+    .obs-side-grid .side-line-card{margin-bottom:0}
     .side-line-card{display:flex;align-items:center;gap:.7rem;width:100%;text-align:left;background:#fff;border:1px solid rgba(var(--c-rgb,13,110,253),.25);border-radius:12px;padding:.55rem .7rem;margin-bottom:.5rem;cursor:pointer;transition:transform .15s ease,box-shadow .15s ease}
     .side-line-card:hover{transform:translateX(3px);box-shadow:0 6px 14px rgba(var(--c-rgb,13,110,253),.22)}
     .side-line-card:last-child{margin-bottom:0}
@@ -30,6 +33,7 @@ $gsD = $gsDetailsMap[$slug] ?? [];
 <?php if (!empty($lineKeys ?? []) && function_exists('obs_category_color')): ?>
 <div class="obs-side-widget">
     <h3><i class="fa-solid fa-layer-group" aria-hidden="true"></i> Categorías</h3>
+    <div class="obs-side-grid">
     <?php foreach ($lineKeys as $cat):
         $count = $lineCounts[$cat] ?? 0;
         $cColor = obs_category_color($cat);
@@ -48,6 +52,7 @@ $gsD = $gsDetailsMap[$slug] ?? [];
             <i class="fa-solid fa-chevron-right side-line-card__arrow" aria-hidden="true"></i>
         </button>
     <?php endforeach; ?>
+    </div>
 </div>
 <?php endif; ?>
 
