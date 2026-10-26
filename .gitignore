@@ -66,3 +66,6 @@ website/data/fenomenos/cache/
 # Staging de generación de indicadores: la salida publicada va en website/indicador
 website/indicador_staging_*/
 scripts/__pycache__/
+
+# Sobrescritura local de la tarjeta de observatorios externos (no va a producción)
+website/config/observatorios_externos.local.php

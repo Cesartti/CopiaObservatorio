@@ -1,6 +1,20 @@
 <?php
 header('Content-Type: text/html; charset=UTF-8');
 $observatories = require __DIR__ . '/config/observatories.php';
+// Observatorios aliados que viven fuera de esta plataforma: solo tarjeta en la portada.
+$externalObservatories = is_file(__DIR__ . '/config/observatorios_externos.php')
+    ? require __DIR__ . '/config/observatorios_externos.php'
+    : [];
+// Sobrescritura local, sin versionar, para probar una tarjeta antes de publicarla.
+if (is_file(__DIR__ . '/config/observatorios_externos.local.php')) {
+    $extLocal = require __DIR__ . '/config/observatorios_externos.local.php';
+    if (is_array($extLocal)) {
+        foreach ($extLocal as $extSlugLocal => $extDatos) {
+            $externalObservatories[$extSlugLocal] = array_merge(
+                $externalObservatories[$extSlugLocal] ?? [], (array) $extDatos);
+        }
+    }
+}
 require_once __DIR__ . '/lib/cms_public_content.php';
 require_once __DIR__ . '/config/database.php';
 require_once __DIR__ . '/lib/visit_tracking.php';
@@ -272,6 +286,48 @@ function ig_embed_url(string $shortcode): string {
                         <div class="d-flex gap-2 flex-wrap">
                             <a class="btn btn-sm btn-dark" href="observatorio.php?slug=<?= urlencode($slug) ?>">Entrar</a>
                             <a class="btn btn-sm btn-outline-secondary" href="<?= htmlspecialchars($obs['legacy_url']) ?>">Vista actual</a>
+                        </div>
+                    </article>
+                </div>
+            <?php endforeach; ?>
+
+            <?php
+            /* Observatorios aliados que no viven en esta plataforma: solo tarjeta,
+               y «Entrar» sale del sitio. Ver config/observatorios_externos.php. */
+            foreach ($externalObservatories as $extSlug => $ext):
+                if (empty($ext['activo']) || trim((string) ($ext['url'] ?? '')) === '') {
+                    continue;
+                }
+                $hexExt = ltrim((string) ($ext['color'] ?? '#0f3557'), '#');
+                if (strlen($hexExt) === 3) {
+                    $hexExt = $hexExt[0].$hexExt[0].$hexExt[1].$hexExt[1].$hexExt[2].$hexExt[2];
+                }
+                $extColorRgb = implode(',', [hexdec(substr($hexExt, 0, 2)), hexdec(substr($hexExt, 2, 2)), hexdec(substr($hexExt, 4, 2))]);
+                $extCats = $ext['categories'] ?? [];
+            ?>
+                <div class="col-md-6 col-xl-4">
+                    <article class="obs-card" style="--obs-color: <?= htmlspecialchars($ext['color']) ?>; --obs-accent: <?= htmlspecialchars($ext['accent']) ?>; --obs-color-rgb: <?= htmlspecialchars($extColorRgb) ?>;">
+                        <div class="obs-card__icon"><i class="fa-solid <?= htmlspecialchars($ext['icon']) ?>"></i></div>
+                        <h3><?= htmlspecialchars($ext['name']) ?></h3>
+                        <p><?= htmlspecialchars($ext['description']) ?></p>
+                        <?php if (!empty($extCats)): ?>
+                        <span class="obs-card__cats-label">Qué encontrarás aquí</span>
+                        <ul class="obs-card__cats">
+                            <?php foreach ($extCats as $cat): ?>
+                            <li><?= htmlspecialchars($cat) ?></li>
+                            <?php endforeach; ?>
+                        </ul>
+                        <?php endif; ?>
+                        <div class="d-flex gap-2 flex-wrap">
+                            <?php /* La flecha y el texto del lector de pantalla avisan de que
+                                     se abre en otra pestaña; nada más, porque de dónde salga
+                                     la plataforma no le cambia nada a quien la consulta. */ ?>
+                            <a class="btn btn-sm btn-dark" href="<?= htmlspecialchars($ext['url']) ?>"
+                               target="_blank" rel="noopener">
+                                Entrar
+                                <i class="fa-solid fa-arrow-up-right-from-square ms-1" aria-hidden="true"></i>
+                                <span class="visually-hidden">(se abre en una pestaña nueva)</span>
+                            </a>
                         </div>
                     </article>
                 </div>
