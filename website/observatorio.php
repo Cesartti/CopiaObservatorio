@@ -137,9 +137,14 @@ function obs_category_icon(string $name): string
         'salud sexual y reproductiva'  => 'fa-baby',
         'salud y mortalidad'           => 'fa-heart-pulse',
         'salud'                        => 'fa-heart-pulse',
+        'vida libre de violencias'     => 'fa-shield-halved',
         'violencias contra la mujer'   => 'fa-shield-halved',
         'violencia'                    => 'fa-triangle-exclamation',
         // género
+        'contexto socio demografico'   => 'fa-people-group',
+        'participacion y liderazgo'    => 'fa-landmark',
+        'construccion de paz'          => 'fa-dove',
+        'educacion y tic'              => 'fa-graduation-cap',
         'empoderamiento economico'     => 'fa-hand-holding-dollar',
         'participacion politica'       => 'fa-landmark',
         'reintegracion y conflicto'    => 'fa-handshake',
@@ -183,9 +188,14 @@ function obs_category_color(string $name): string
         'salud sexual y reproductiva'  => '#f43f5e', // rosa-rojo
         'salud y mortalidad'           => '#dc2626', // rojo
         'salud'                        => '#ef4444', // rojo salud
+        'vida libre de violencias'     => '#be185d', // magenta oscuro
         'violencias contra la mujer'   => '#be185d', // magenta oscuro
         'violencia'                    => '#b91c1c', // rojo oscuro
         // Género — paleta rosa/magenta/púrpura
+        'contexto socio demografico'   => '#a855f7', // púrpura
+        'participacion y liderazgo'    => '#6366f1', // índigo
+        'construccion de paz'          => '#0ea5e9', // azul cielo
+        'educacion y tic'              => '#06b6d4', // cian
         'empoderamiento economico'     => '#ec4899', // rosa
         'participacion politica'       => '#6366f1', // índigo
         'reintegracion y conflicto'    => '#f59e0b', // ámbar contraste

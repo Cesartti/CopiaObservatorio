@@ -224,58 +224,46 @@ return [
     ],
 
     'genero' => [
-        'Demografía y población' => [
+        'Contexto Socio demográfico' => [
             'intro' => 'Caracterización demográfica de la población femenina del departamento.',
-            'consulta' => ['Población femenina total y proyecciones', 'Pobreza monetaria y multidimensional por sexo'],
-            'fuentes' => ['DANE — Proyecciones de Población', 'DANE — GEIH', 'DANE — ECV'],
+            'consulta' => ['Población femenina total y proyecciones', 'Nacidas vivas', 'Mujeres con certificado de discapacidad'],
+            'fuentes' => ['DANE, Proyecciones de Población', 'DANE, Estadísticas Vitales', 'RLCPD, MinSalud'],
             'periodicidad' => 'Anual',
         ],
-        'Salud sexual y reproductiva' => [
-            'intro' => 'Indicadores de salud sexual y reproductiva de la población femenina del departamento.',
-            'consulta' => ['Tasa de fecundidad', 'Indicadores materno-infantiles', 'Mortalidad perinatal y neonatal', 'Cobertura de afiliación al SGSSS por sexo'],
-            'fuentes' => ['MinSalud — SISPRO', 'SIVIGILA', 'BDUA'],
+        'Salud Sexual y Reproductiva' => [
+            'intro' => 'Salud sexual y reproductiva y mortalidad de la población femenina del departamento.',
+            'consulta' => ['Embarazo en niñas y adolescentes', 'Mortalidad perinatal y neonatal', 'Bajo peso al nacer', 'Mortalidad por VIH/SIDA', 'Mortalidad prematura por enfermedades crónicas'],
+            'fuentes' => ['MinSalud, SISPRO', 'SIVIGILA', 'Secretaría de Salud de Boyacá'],
             'periodicidad' => 'Mensual / Anual',
         ],
-        'Salud y mortalidad' => [
-            'intro' => 'Indicadores de mortalidad y salud general con desagregación por sexo.',
-            'consulta' => ['Mortalidad prematura por sexo', 'Mortalidad por VIH/SIDA por sexo'],
-            'fuentes' => ['Secretaría de Salud de Boyacá', 'SIVIGILA'],
-            'periodicidad' => 'Anual',
-        ],
-        'Educación' => [
+        'Educación y TIC' => [
             'intro' => 'Indicadores educativos con desagregación por sexo y nivel.',
-            'consulta' => ['Repitencia escolar por sexo y nivel', 'Matriculados por nivel y sexo', 'Convivencia escolar por sexo'],
-            'fuentes' => ['Ministerio de Educación Nacional (SIMAT)', 'Sistema de Convivencia Escolar (SIUCE)'],
+            'consulta' => ['Mujeres matriculadas por nivel', 'Tasa de repitencia', 'Tasa de cobertura neta y bruta'],
+            'fuentes' => ['Ministerio de Educación Nacional (SIMAT)'],
             'periodicidad' => 'Anual',
         ],
-        'Discapacidad' => [
-            'intro' => 'Caracterización de la población femenina con discapacidad.',
-            'consulta' => ['Certificados de discapacidad emitidos a mujeres'],
-            'fuentes' => ['RLCPD — MinSalud'],
-            'periodicidad' => 'Anual',
-        ],
-        'Participación política' => [
+        'Participación y Liderazgo' => [
             'intro' => 'Participación política y comunitaria de las mujeres del departamento.',
-            'consulta' => ['Mujeres en juntas de acción comunal', 'Mujeres concejalas electas', 'Mujeres alcaldesas electas', 'Referente mujer en Consejos Territoriales de Planeación'],
-            'fuentes' => ['Registraduría Nacional', 'Secretaría de la Mujer y Equidad de Género', 'DNP — CTP'],
+            'consulta' => ['Mujeres en juntas de acción comunal', 'Mujeres concejalas y alcaldesas electas', 'Mujeres en consejos territoriales de planeación', 'Mujeres en consejos de juventud', 'Programa Mujer Visionaria'],
+            'fuentes' => ['Registraduría Nacional', 'Secretaría de la Mujer y Equidad de Género', 'DNP, Consejos Territoriales de Planeación'],
             'periodicidad' => 'Cuatrienal',
         ],
         'Empoderamiento económico' => [
-            'intro' => 'Programas e iniciativas de autonomía y empoderamiento económico de las mujeres del departamento.',
-            'consulta' => ['Programa Mujer Visionaria — proyectos productivos financiados'],
-            'fuentes' => ['Secretaría de la Mujer y Equidad de Género de Boyacá'],
+            'intro' => 'Autonomía económica de las mujeres del departamento.',
+            'consulta' => ['Pobreza monetaria por sexo', 'Pobreza multidimensional por sexo'],
+            'fuentes' => ['DANE, GEIH', 'DANE, ECV'],
             'periodicidad' => 'Anual',
         ],
-        'Reintegración y conflicto' => [
-            'intro' => 'Mujeres en procesos de desmovilización, reincorporación y víctimas del conflicto armado.',
-            'consulta' => ['Mujeres desmovilizadas', 'Mujeres en proceso de reincorporación', 'Mujeres víctimas del conflicto armado'],
-            'fuentes' => ['Agencia para la Reincorporación y la Normalización (ARN)', 'Unidad para las Víctimas (UARIV)'],
+        'Construcción de paz' => [
+            'intro' => 'Mujeres en procesos de desmovilización y reincorporación.',
+            'consulta' => ['Mujeres desmovilizadas que ingresaron al proceso de reintegración', 'Mujeres con proceso de reincorporación activo'],
+            'fuentes' => ['Agencia para la Reincorporación y la Normalización (ARN)'],
             'periodicidad' => 'Anual',
         ],
-        'Violencias contra la mujer' => [
-            'intro' => 'Hechos victimizantes contra las mujeres del departamento: atenciones médicas, casos de feminicidio, intentos de suicidio, lesiones no fatales y muertes violentas.',
-            'consulta' => ['Atenciones médicas por violencias contra mujeres', 'Intentos de suicidio en mujeres', 'Casos de feminicidio', 'Lesiones no fatales y muertes violentas (Medicina Legal)'],
-            'fuentes' => ['Medicina Legal — Forensis', 'SIVIGILA — violencias', 'Línea 155'],
+        'Vida libre de Violencias' => [
+            'intro' => 'Hechos victimizantes contra las mujeres del departamento: atenciones médicas, feminicidios, intentos de suicidio, lesiones no fatales y muertes violentas.',
+            'consulta' => ['Atenciones médicas por violencia', 'Feminicidios', 'Violencia de pareja, interpersonal y entre otros familiares', 'Presunto delito sexual', 'Intentos de suicidio', 'Muertes violentas', 'Desaparición forzada y secuestro'],
+            'fuentes' => ['Medicina Legal, Forensis', 'SIVIGILA, violencias', 'ICBF', 'Unidad para las Víctimas'],
             'periodicidad' => 'Mensual / Anual',
         ],
     ],
