@@ -189,6 +189,11 @@ include 'include/site-header.php';
 </div>
 
 <!-- Nuestros aliados (mismo carrusel de integrantes del observatorio de género) -->
-<?php $integrantesHeading = 'Nuestros aliados'; require __DIR__ . '/include/integrantes-carrusel.php'; ?>
+<?php
+// La UPTC sale de aliados: ya figura arriba entre los miembros fundadores.
+$integrantesHeading = 'Nuestros aliados';
+$integrantesExcluir = ['uptc', 'pedagógica y tecnológica'];
+require __DIR__ . '/include/integrantes-carrusel.php';
+?>
 
 <?php require __DIR__ . '/include/site-footer.php'; ?>

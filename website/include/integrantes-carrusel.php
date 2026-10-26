@@ -10,10 +10,20 @@
  * Requiere $msWidgetSections (calculado en observatorio.php).
  */
 $intSection = $msWidgetSections['widget-integrantes'] ?? null;
+// Quien incluye el carrusel puede excluir entidades que en su pagina ya
+// aparecen en otro bloque: en «Nosotros», la UPTC esta entre los miembros
+// fundadores y repetirla abajo como aliada confunde.
+$intExcluir = array_map('mb_strtolower', (array) ($integrantesExcluir ?? []));
 $intItems = [];
 foreach (($intSection['children'] ?? []) as $intChild) {
+    $intNombre = (string) ($intChild['title'] ?? '');
+    foreach ($intExcluir as $intFuera) {
+        if ($intFuera !== '' && mb_strpos(mb_strtolower($intNombre), $intFuera) !== false) {
+            continue 2;
+        }
+    }
     $intItems[] = [
-        'name' => (string) ($intChild['title'] ?? ''),
+        'name' => $intNombre,
         'logo' => trim((string) ($intChild['image_url'] ?? '')),
     ];
 }
