@@ -57,7 +57,7 @@
 						<li>Validar y/o proponer indicadores estratégicos de acuerdo a las necesidades en el ámbito social, ambiental, económico o tecnológico que los actores del ecosistema de CTI demanden.</li>
 						<li>Garantizar los mecanismos para la participación efectiva y continua de los integrantes de la ROB, a través del flujo continuo de comunicación para garantizar  su funcionamiento.</li>
 						<li>Promover escenarios de co-creación y co-participación del conocimiento de CTeI en Boyacá apropiando los análisis, estudios, estrategias que fortalezcan la interacción y trabajo conjunto de los diferentes sectores públicos o privados que lo integren, para la formulación de las políticas públicas y toma de decisiones que promuevan el desarrollo de los territorios.</li>
-						<li>Generar espacios de divulgación y dialogo para la comprensión de las diferentes realidades del territorio a través de retos que permitan la participación incluyente de los diferentes actores del ecosistema de CTI en el marco de la Red de Observatorios de Boyacá – ROB.</li>
+						<li>Generar espacios de divulgación y diálogo para la comprensión de las diferentes realidades del territorio a través de retos que permitan la participación incluyente de los diferentes actores del ecosistema de CTI en el marco de la Red de Observatorios de Boyacá – ROB.</li>
 					</ul>
 				</p>
 			</div>
@@ -130,7 +130,7 @@
 			</h2>
 			<div class="elementor-fake">
 				<p class="parr">
-					La estructura matricial con distribución vertical es la más pertinente para las organizaciones, basadas en conocimiento, donde se crearán y desarrollarán, equipos especializados para cada una de sus líneas de investigación y procesos de formulación; esta estructura permitirá que sus miembros puedan trabajar de manera flexible en diferentes servicios y proyectos, en el cual cada área funcional, mantendrá un conjunto de personas de diferentes universidades y diversos grupos de interés académico, ambiental y organizacional, con competencias para cumplir con los requisitos de los proyectos de la Red Observatorios de Boyacá – ROB. Esta estructura se encuentra encabezada por la Junta Directiva Fundadores teniendo como secretaria técnica a la Secretaría de Planeación de Boyacá, asesorada por un Consejo de Gobernanza, de manera que haya una visión incluyente y participativa de las orientaciones de la Red Observatorios de Boyacá – ROB.
+					La estructura matricial con distribución vertical es la más pertinente para las organizaciones, basadas en conocimiento, donde se crearán y desarrollarán, equipos especializados para cada una de sus líneas de investigación y procesos de formulación; esta estructura permitirá que sus miembros puedan trabajar de manera flexible en diferentes servicios y proyectos, en el cual cada área funcional, mantendrá un conjunto de personas de diferentes universidades y diversos grupos de interés académico, ambiental y organizacional, con competencias para cumplir con los requisitos de los proyectos de la Red Observatorios de Boyacá – ROB. Esta estructura se encuentra encabezada por la Junta Directiva Fundadores teniendo como secretaría técnica a la Secretaría de Planeación de Boyacá, asesorada por un Consejo de Gobernanza, de manera que haya una visión incluyente y participativa de las orientaciones de la Red Observatorios de Boyacá – ROB.
 				</p>
 			</div>
 			<img src="assets/pictures/organigrama.png" style="width:100%;">

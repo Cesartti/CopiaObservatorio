@@ -86,7 +86,7 @@ $visitasIndicGenero = incrementar_contador_pagina('indic-genero', 43200); // 12h
                 
                 <div class="col-12 col-sm-12">
                     <h2 class="indicador-title">
-                        Dimensión Asuntos de Genero
+                        Dimensión Asuntos de Género
                     </h2>
                     <div class="indicador-description">
                         <p class="description">
@@ -440,10 +440,10 @@ $visitasIndicGenero = incrementar_contador_pagina('indic-genero', 43200); // 12h
                                     </div>
                                 </div>
                                 <div class="accordion-item">
-                                    <button class="accordion-button" onclick="toggleAccordion(this)">Proposito</button>
+                                    <button class="accordion-button" onclick="toggleAccordion(this)">Propósito</button>
                                     <div class="accordion-content">
                                         <ul class="icon-list-items">
-                                        <li class="icon-list-item"><span class="icon-list-text">Proposito</span></li>
+                                        <li class="icon-list-item"><span class="icon-list-text">Propósito</span></li>
                                         <p>Impulsar la igualdad de género en Boyacá mediante la producción y difusión de conocimiento basado en datos verificables, que respalden políticas públicas efectivas y acciones estratégicas orientadas a la garantía de derechos y la disminución de las brechas de género.</p>
                                             <!-- Agregar más indicadores aquí -->
                                         </ul>
@@ -2259,7 +2259,7 @@ $visitasIndicGenero = incrementar_contador_pagina('indic-genero', 43200); // 12h
                    <div class="seguimiento-block">
                                     <div class="seguimiento-title"><span class="icon">🟣</span> Reportes Sociales Participativos: Voces, Datos y Soluciones desde las Comunidades</div>
                                             <p>
-                                            La sección Reportes Sociales está diseñada para visibilizar análisis detallados de datos recolectados directamente desde las comunidades, con énfasis en encuestas de percepción social realizadas principalmente relacionadas con asuntos de genero. Su objetivo es identificar problemáticas estructurales, emocionales e institucionales que afectan la seguridad, la equidad de género y la calidad de vida en los territorios. Aquí se publican informes construidos con rigor técnico que permiten comprender cómo se sienten las personas en sus entornos, qué barreras enfrentan y qué propuestas emergen desde la ciudadanía para transformar su realidad.
+                                            La sección Reportes Sociales está diseñada para visibilizar análisis detallados de datos recolectados directamente desde las comunidades, con énfasis en encuestas de percepción social realizadas principalmente relacionadas con asuntos de género. Su objetivo es identificar problemáticas estructurales, emocionales e institucionales que afectan la seguridad, la equidad de género y la calidad de vida en los territorios. Aquí se publican informes construidos con rigor técnico que permiten comprender cómo se sienten las personas en sus entornos, qué barreras enfrentan y qué propuestas emergen desde la ciudadanía para transformar su realidad.
                                             </p>
  
                                     </div>

@@ -667,7 +667,7 @@ function showIndicatorInfo() {
         ${fila('Entidad responsable', data.entidad_responsable)}
         ${fila('Observaciones', data.observaciones)}
         <p class="mt-3"><a class="btn btn-sm btn-outline-primary"
-           href="indicador.php?id=${data.codigo}">Ver las ${data.graficas} grafica(s) del indicador</a></p>
+           href="indicador.php?id=${data.codigo}">Ver las ${data.graficas} gráfica(s) del indicador</a></p>
     `;
 }
 

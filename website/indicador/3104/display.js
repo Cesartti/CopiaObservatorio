@@ -1,6 +1,6 @@
 class Chart1 extends AbstractMap{
 	constructor(info,csv,chart){
-		super(info,csv,chart,'Hectareas',null,null,'geo',false);
+		super(info,csv,chart,'Hectáreas',null,null,'geo',false);
 	}
 }
 

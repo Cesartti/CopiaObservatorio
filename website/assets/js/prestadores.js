@@ -1169,13 +1169,13 @@ var prestadoresData = [
     "municipio": "Tutazá",
     "prestadores": [
       {
-        "nombre": "EMPTRESA SOCIAL DEL ESTADO CENTRO DE SALUD SIMON BOLIVAR DE TUTAZA",
+        "nombre": "EMPRESA SOCIAL DEL ESTADO CENTRO DE SALUD SIMON BOLIVAR DE TUTAZA",
         "direccion": "PARQUE PRINCIPAL",
         "horario": "Martes: 8:00AM-5:00PM | Jueves: 8:00AM-5:00PM",
         "dias_atencion": "Lunes a Viernes"
       },
       {
-        "nombre": "EMPTRESA SOCIAL DEL ESTADO CENTRO DE SALUD SIMON BOLIVAR DE TUTAZA",
+        "nombre": "EMPRESA SOCIAL DEL ESTADO CENTRO DE SALUD SIMON BOLIVAR DE TUTAZA",
         "direccion": "SR LA CAPILLA, VEREDA EL PARAMO",
         "horario": "Lunes a Viernes: 08 a 16 | Sábado: 00 a 00 | Domingo: 00 a 00",
         "dias_atencion": "Lunes a Viernes, Sábado, Domingo"

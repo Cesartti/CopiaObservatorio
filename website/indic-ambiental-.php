@@ -95,7 +95,7 @@
                                 <li class="indicador-subtitle">Aire</li>
 								<li class="icon-list-item">
                                     <a href="./indicador.php?id=3017">
-                                            <span class="icon-list-text">Nivel de la calidad del aíre Nobsa - Material particulado PM-10</span>
+                                            <span class="icon-list-text">Nivel de la calidad del aire Nobsa - Material particulado PM-10</span>
                                      </a>
                                 </li>    
                                 <li class="icon-list-item">

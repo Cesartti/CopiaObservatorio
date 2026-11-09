@@ -60,11 +60,11 @@
     <div class="col">
       <a href="#dim-genero" class="dimension-card dimension-card--genero shadow-sm">
         <div class="dimension-card__icon mb-3">
-          <img src="assets/svg/genero-color.svg" alt="Dimensión Asuntos de genero">
+          <img src="assets/svg/genero-color.svg" alt="Dimensión Asuntos de género">
         </div>
-        <h3 class="dimension-card__title">Genero</h3>
+        <h3 class="dimension-card__title">Género</h3>
         <p class="dimension-card__text">
-          Asuntos de genero.
+          Asuntos de género.
         </p>
       </a>
     </div>

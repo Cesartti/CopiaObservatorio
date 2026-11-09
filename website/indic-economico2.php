@@ -153,7 +153,7 @@ include 'include/header.php';
                     <option value="1087">Puntaje En Gestión</option>
                     <option value="1088">Puntaje En Resultados</option>
                     <option value="1089">Puntaje General MDM Por Año</option>
-                    <option value="1096">Total De Inversión Según Destinación Especifica FUT</option>
+                    <option value="1096">Total De Inversión Según Destinación Específica FUT</option>
                     <option value="1112">Inventario Avícola</option>
                     <option value="1113">Inventario Bovino</option>
                     <option value="1114">Inventario Otras Especies</option>

@@ -70,7 +70,7 @@ class Chart4 extends AbstractMap{
 
 class Chart5 extends AbstractMap{
 	constructor(info,csv,chart){
-		super(info,csv,chart,'Hectareas','Año','Área');
+		super(info,csv,chart,'Hectáreas','Año','Área');
 	}
 }
 
