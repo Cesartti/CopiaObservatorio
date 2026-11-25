@@ -86,13 +86,13 @@ function boletin_card(array $b): void
 <?php
 // Dimensiones presentes (para los botones de filtro)
 $presentDims = [];
-if (!empty($groups['general'])) {
-    $presentDims['general'] = 'Generales';
-}
 foreach ($obsById as $oid => $o) {
     if (!empty($groups[$oid])) {
         $presentDims[$o['slug']] = $o['name'];
     }
+}
+if (!empty($groups['general'])) {
+    $presentDims['general'] = 'Generales';
 }
 ?>
 <main class="container py-3">
@@ -109,13 +109,6 @@ foreach ($obsById as $oid => $o) {
     </div>
     <?php endif; ?>
 
-    <?php if (!empty($groups['general'])): ?>
-        <section class="bol-section" data-dim="general">
-            <h2><i class="fa-solid fa-layer-group me-2"></i>Boletines generales</h2>
-            <div class="row g-3"><?php foreach ($groups['general'] as $b) { boletin_card($b); } ?></div>
-        </section>
-    <?php endif; ?>
-
     <?php foreach ($obsById as $oid => $o): ?>
         <?php if (!empty($groups[$oid])): ?>
             <section class="bol-section" data-dim="<?= htmlspecialchars($o['slug']) ?>" id="obs-<?= htmlspecialchars($o['slug']) ?>">
@@ -124,6 +117,13 @@ foreach ($obsById as $oid => $o) {
             </section>
         <?php endif; ?>
     <?php endforeach; ?>
+
+    <?php if (!empty($groups['general'])): ?>
+        <section class="bol-section" data-dim="general">
+            <h2><i class="fa-solid fa-layer-group me-2"></i>Boletines generales</h2>
+            <div class="row g-3"><?php foreach ($groups['general'] as $b) { boletin_card($b); } ?></div>
+        </section>
+    <?php endif; ?>
 </main>
 
 <?php require __DIR__ . '/include/site-footer.php'; ?>

@@ -13,11 +13,27 @@ function cms_bulletin_slug(string $s): string
     return trim($s, '-') ?: 'boletin';
 }
 
+/**
+ * Orden de los grupos de boletines: Social, Economico, Ambiental, CTeI, Genero.
+ * Los generales (observatory_id NULL) van siempre al final.
+ */
+const CMS_BULLETINS_OBS_ORDER = [2, 1, 3, 4, 5];
+
+/** Expresion SQL que ordena por CMS_BULLETINS_OBS_ORDER (los demas, despues). */
+function cms_bulletins_obs_order_sql(string $col): string
+{
+    $sql = 'CASE ' . $col;
+    foreach (CMS_BULLETINS_OBS_ORDER as $pos => $id) {
+        $sql .= ' WHEN ' . (int) $id . ' THEN ' . $pos;
+    }
+    return $sql . ' ELSE ' . count(CMS_BULLETINS_OBS_ORDER) . ' END';
+}
+
 /** Observatorios para el selector del CMS (id, slug, name). */
 function cms_bulletins_observatories(PDO $pdo): array
 {
     try {
-        return $pdo->query('SELECT id, slug, name FROM observatories ORDER BY id ASC')->fetchAll(PDO::FETCH_ASSOC);
+        return $pdo->query('SELECT id, slug, name FROM observatories ORDER BY ' . cms_bulletins_obs_order_sql('id') . ', id ASC')->fetchAll(PDO::FETCH_ASSOC);
     } catch (Throwable $e) {
         return [];
     }
@@ -47,7 +63,9 @@ function cms_bulletins_fetch(?PDO $pdo, $filter = 'all', bool $onlyActive = true
     if ($where) {
         $sql .= ' WHERE ' . implode(' AND ', $where);
     }
-    $sql .= ' ORDER BY (observatory_id IS NULL) DESC, observatory_id ASC, sort_order ASC, published_at DESC, id DESC';
+    // generales al final; dentro de cada grupo, del mas reciente al mas antiguo
+    $sql .= ' ORDER BY (observatory_id IS NULL) ASC, ' . cms_bulletins_obs_order_sql('observatory_id')
+        . ', (published_at IS NULL) ASC, published_at DESC, sort_order DESC, id DESC';
     try {
         $st = $pdo->prepare($sql);
         $st->execute($params);
