@@ -28,7 +28,7 @@ function boletin_card(array $b): void
     $cover = cms_bulletin_href((string) ($b['cover_url'] ?? ''));
     $fecha = !empty($b['published_at']) ? date('d/m/Y', strtotime((string) $b['published_at'])) : '';
     ?>
-    <div class="col-md-6 col-lg-4">
+    <div class="col-6 col-md-4 col-lg-3">
         <article class="bol-card h-100">
             <div class="bol-cover">
                 <?php if ($cover !== ''): ?>
@@ -59,15 +59,16 @@ function boletin_card(array $b): void
     .bol-section h2{font-size:1.15rem;font-weight:800;color:#0b2744;border-left:4px solid var(--obs-accent,#23a9b8);padding-left:.6rem;margin-bottom:1rem}
     .bol-card{display:flex;flex-direction:column;background:#fff;border:1px solid #e8edf5;border-radius:14px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.05);transition:transform .15s,box-shadow .15s}
     .bol-card:hover{transform:translateY(-3px);box-shadow:0 10px 26px rgba(0,0,0,.1)}
-    .bol-cover{height:150px;background:#f0eef3;display:flex;align-items:center;justify-content:center;overflow:hidden}
-    .bol-cover img{width:100%;height:100%;object-fit:cover}
+    .bol-cover{aspect-ratio:612/792;background:#f0eef3;display:flex;align-items:center;justify-content:center;overflow:hidden;border-bottom:1px solid #e8edf5}
+    .bol-cover img{width:100%;height:100%;object-fit:cover;object-position:top center;transition:transform .25s}
+    .bol-card:hover .bol-cover img{transform:scale(1.03)}
     .bol-cover-fallback{font-size:3rem;color:#0b2744;opacity:.4}
     .bol-body{padding:1rem 1.1rem 1.2rem;display:flex;flex-direction:column;gap:.4rem;flex:1}
     .bol-cat{align-self:flex-start;background:rgba(35,169,184,.12);color:#0b6b78;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;padding:.15rem .55rem;border-radius:999px}
     .bol-body h3{font-size:1rem;font-weight:700;color:#13243a;margin:.1rem 0 0}
     .bol-body p{font-size:.86rem;color:#5b6b7f;margin:0;flex:1}
-    .bol-meta{display:flex;align-items:center;justify-content:space-between;gap:.5rem;margin-top:.4rem;font-size:.8rem;color:#6b7280}
-    .bol-btn{background:#0b2744;color:#fff!important;border-radius:999px;padding:.35rem .8rem;font-size:.8rem;font-weight:600;text-decoration:none}
+    .bol-meta{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.5rem;margin-top:.4rem;font-size:.8rem;color:#6b7280}
+    .bol-btn{white-space:nowrap;background:#0b2744;color:#fff!important;border-radius:999px;padding:.35rem .8rem;font-size:.8rem;font-weight:600;text-decoration:none}
     .bol-btn:hover{background:#16406e}
     .bol-filter{display:flex;flex-wrap:wrap;gap:.5rem;margin:.4rem 0 .2rem}
     .bol-filter-btn{border:1px solid #cfdae8;background:#fff;color:#0b2744;border-radius:999px;padding:.4rem 1.05rem;font-size:.85rem;font-weight:600;cursor:pointer;transition:.15s}

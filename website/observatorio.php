@@ -1751,7 +1751,7 @@ $obsTabActive = $tabActiveByObs[$slug] ?? $obs['color'];
         $bcover = cms_bulletin_href((string) ($b['cover_url'] ?? ''));
         $bfecha = !empty($b['published_at']) ? date('d/m/Y', strtotime((string) $b['published_at'])) : '';
     ?>
-        <div class="col-md-6 col-lg-4">
+        <div class="col-6 col-md-4 col-lg-3">
             <article class="obs-bol-card h-100">
                 <div class="obs-bol-cover">
                     <?php if ($bcover !== ''): ?><img src="<?= htmlspecialchars($bcover) ?>" alt="<?= htmlspecialchars($b['title']) ?>" loading="lazy"><?php else: ?><span><i class="fa-solid fa-file-pdf"></i></span><?php endif; ?>
@@ -1772,13 +1772,13 @@ $obsTabActive = $tabActiveByObs[$slug] ?? $obs['color'];
 </section>
 <style>
     .obs-bol-card{display:flex;flex-direction:column;background:#fff;border:1px solid #e8edf5;border-radius:14px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.05)}
-    .obs-bol-cover{height:140px;background:#f0eef3;display:flex;align-items:center;justify-content:center;overflow:hidden}
-    .obs-bol-cover img{width:100%;height:100%;object-fit:cover}.obs-bol-cover span{font-size:2.6rem;color:var(--obs-color);opacity:.4}
+    .obs-bol-cover{aspect-ratio:612/792;background:#f0eef3;display:flex;align-items:center;justify-content:center;overflow:hidden;border-bottom:1px solid #e8edf5}
+    .obs-bol-cover img{width:100%;height:100%;object-fit:cover;object-position:top center}.obs-bol-cover span{font-size:2.6rem;color:var(--obs-color);opacity:.4}
     .obs-bol-body{padding:.9rem 1rem 1.1rem;display:flex;flex-direction:column;gap:.35rem;flex:1}
     .obs-bol-cat{align-self:flex-start;background:rgba(var(--obs-color-rgb,13,110,253),.12);color:var(--obs-color);font-size:.68rem;font-weight:700;text-transform:uppercase;padding:.12rem .5rem;border-radius:999px}
     .obs-bol-body h3{font-size:.98rem;font-weight:700;margin:.1rem 0 0;color:#13243a}.obs-bol-body p{font-size:.84rem;color:#5b6b7f;margin:0;flex:1}
     .obs-bol-meta{display:flex;align-items:center;justify-content:space-between;margin-top:.3rem;font-size:.8rem;color:#6b7280}
-    .obs-bol-btn{background:var(--obs-color);color:#fff!important;border-radius:999px;padding:.3rem .75rem;font-size:.8rem;font-weight:600;text-decoration:none}
+    .obs-bol-btn{white-space:nowrap;background:var(--obs-color);color:#fff!important;border-radius:999px;padding:.3rem .75rem;font-size:.8rem;font-weight:600;text-decoration:none}
 </style>
 <?php endif; ?>
 
