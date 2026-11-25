@@ -438,6 +438,53 @@
     clip-path: polygon(100% 0, 100% 100%, 0 100%);
   }
   .opcion-card.puerta h3 { color: #fff; }
+  /* Puertas con escena ilustrada: la tarjeta toma la proporción del diseño
+     (4311 x 2477) y cada capa se ubica en %, así escala igual en cualquier
+     pantalla. Un velo negro con transparencia apaga solo la foto de fondo;
+     personas, flores, ola e icono quedan a todo color, y el texto va al
+     centro sobre su propio panel oscuro para que se lea siempre. */
+  #opciones-puerta { grid-template-columns: 1fr; }
+  @media (min-width: 700px) { #opciones-puerta { grid-template-columns: repeat(2, 1fr); } }
+  .opcion-card.escena {
+    padding: 0;
+    aspect-ratio: 4311 / 2477;
+    container-type: inline-size;
+    border-color: color-mix(in srgb, var(--tono) 70%, transparent);
+    background: #23262d;
+    backdrop-filter: none;
+  }
+  .opcion-card.escena::before, .opcion-card.escena::after { content: none; }
+  .opcion-card.escena:hover { border-color: var(--tono); box-shadow: 0 12px 32px color-mix(in srgb, var(--tono) 45%, transparent); }
+  .escena-capas { position: absolute; inset: 0; overflow: hidden; }
+  .escena-capas .capa { position: absolute; height: auto; display: block; max-width: none; pointer-events: none; user-select: none; }
+  .capa-fondo   { z-index: 1; }
+  .escena-velo  { position: absolute; inset: 0; z-index: 2; background: rgba(0,0,0,0.38); }
+  .capa-flores  { z-index: 3; }
+  .capa-persona { z-index: 4; transition: transform 0.35s ease; }
+  .capa-ola     { z-index: 5; }
+  .capa-icono   { z-index: 6; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.35)); }
+  .opcion-card.escena:hover .capa-persona { transform: translateY(-1.5%); }
+  .escena-texto {
+    position: absolute; z-index: 7;
+    left: 50%; top: 61%; transform: translate(-50%, -50%);
+    width: 44%;
+    padding: 3.2cqi 3cqi;
+    background: rgba(12,14,28,0.66);
+    border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 2.6cqi;
+    backdrop-filter: blur(4px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+  }
+  .opcion-card.escena .escena-texto h3 { font-size: clamp(0.95rem, 4cqi, 1.45rem); margin-bottom: 0.35em; color: #fff; line-height: 1.2; }
+  .opcion-card.escena .escena-texto p  { font-size: clamp(0.78rem, 2.6cqi, 0.98rem); color: #e6e8f0; line-height: 1.4; }
+  /* Tarjeta angosta (celular): el panel se ensancha y monta un poco sobre
+     las personas; el texto manda. */
+  @container (max-width: 520px) {
+    .escena-texto { width: 62%; top: 63%; padding: 2.6cqi 3cqi; }
+  }
+  @container (max-width: 360px) {
+    .escena-texto { width: 74%; }
+  }
   .barra-puertas {
     display: flex;
     flex-wrap: wrap;
@@ -2641,13 +2688,31 @@ function rutaComunLGBTIQ(violencia, contexto) {
 const PUERTAS = {
   orientacion: { titulo: 'Para orientación y apoyo', color: '#F2A900', icono: 'otro',
                  desc: 'Dónde te informan y te asesoran sobre tus derechos' },
-  salud:       { titulo: 'Para atención en salud', color: '#58B947', icono: 'medico',
+  salud:       { titulo: 'Para atención en salud', color: '#16B3B9', icono: 'medico',
                  desc: 'Atención médica, valoración de lesiones y salud mental' },
-  proteccion:  { titulo: 'Para protección', color: '#0B74B0', icono: 'policia',
+  proteccion:  { titulo: 'Para protección', color: '#58B947', icono: 'policia',
                  desc: 'Medidas de protección y autoridades que las ordenan' },
-  denuncia:    { titulo: 'Para denunciar', color: '#16B3B9', icono: 'fiscalia',
+  denuncia:    { titulo: 'Para denunciar', color: '#8A28C9', icono: 'fiscalia',
                  desc: 'Cómo poner la denuncia y qué pasa después' }
 };
+
+// Cada puerta es una escena armada por capas (fondo, flores, personas, ola e
+// icono), en el orden y la posición de la pieza de diseño. Las posiciones van
+// en % de un lienzo de 4311 x 2477: la tarjeta guarda esa proporción y todo
+// escala junto. Las genera scripts/ruta_puertas_fondos.py.
+const ESCENAS_PUERTA = {"proteccion":{"fondo":{"l":0.0,"t":0.0,"w":100.0},"flores-izq":{"l":0.0,"t":0.0,"w":22.25},"flores-der":{"l":86.57,"t":0.0,"w":13.43},"persona-izq":{"l":0.0,"t":4.68,"w":29.02},"persona-der":{"l":73.67,"t":4.52,"w":26.3},"ola":{"l":0.0,"t":46.18,"w":100.0},"icono":{"l":40.2,"t":0.0,"w":19.6}},"salud":{"fondo":{"l":0.0,"t":0.0,"w":100.02},"flores-izq":{"l":0.0,"t":0.0,"w":18.7},"flores-der":{"l":85.8,"t":0.0,"w":14.2},"persona-izq":{"l":0.0,"t":5.17,"w":29.13},"persona-der":{"l":75.64,"t":21.48,"w":24.36},"ola":{"l":0.0,"t":50.38,"w":100.0},"icono":{"l":40.2,"t":0.0,"w":19.6}},"denuncia":{"fondo":{"l":0.0,"t":0.0,"w":100.02},"flores-izq":{"l":0.0,"t":0.0,"w":20.78},"flores-der":{"l":86.55,"t":0.0,"w":13.45},"persona-izq":{"l":0.0,"t":6.3,"w":26.93},"persona-der":{"l":80.33,"t":19.7,"w":19.67},"ola":{"l":0.0,"t":44.89,"w":100.0},"icono":{"l":40.2,"t":0.0,"w":19.6}},"orientacion":{"fondo":{"l":0.0,"t":0.0,"w":100.02},"flores-izq":{"l":0.0,"t":0.0,"w":19.39},"flores-der":{"l":86.99,"t":0.0,"w":13.01},"persona-izq":{"l":0.0,"t":8.6,"w":31.99},"persona-der":{"l":73.97,"t":20.02,"w":26.03},"ola":{"l":0.0,"t":61.36,"w":100.0},"icono":{"l":40.2,"t":0.0,"w":19.6}}};
+const CAPAS_ESCENA = ['fondo', 'flores-izq', 'flores-der', 'persona-izq', 'persona-der', 'ola', 'icono'];
+
+function escenaPuerta(k) {
+  const capas = ESCENAS_PUERTA[k];
+  if (!capas) return '';
+  return '<div class="escena-capas" aria-hidden="true">' + CAPAS_ESCENA.map(c => {
+    const p = capas[c];
+    return `<img class="capa capa-${c.split('-')[0]}" src="assets/img/ruta-puertas/${k}/${c}.webp" alt="" ` +
+           `style="left:${p.l}%;top:${p.t}%;width:${p.w}%">` +
+           (c === 'fondo' ? '<span class="escena-velo"></span>' : '');
+  }).join('') + '</div>';
+}
 
 // Un paso hereda la puerta del anterior: así basta con marcar la primera de
 // cada bloque y no hay que etiquetar paso por paso.
@@ -2826,9 +2891,12 @@ function mostrarPuertas() {
   disponibles.forEach(k => {
     const p = PUERTAS[k];
     const div = document.createElement('div');
-    div.className = 'opcion-card puerta';
+    const conEscena = !!ESCENAS_PUERTA[k];
+    div.className = 'opcion-card puerta' + (conEscena ? ' escena' : '');
     div.style.setProperty('--tono', p.color);
-    div.innerHTML = iconoEntidad(p.icono) + `<h3>${p.titulo}</h3><p>${p.desc}</p>`;
+    div.innerHTML = conEscena
+      ? escenaPuerta(k) + `<div class="escena-texto"><h3>${p.titulo}</h3><p>${p.desc}</p></div>`
+      : iconoEntidad(p.icono) + `<h3>${p.titulo}</h3><p>${p.desc}</p>`;
     div.onclick = () => setPuerta(k);
     cont.appendChild(div);
   });
